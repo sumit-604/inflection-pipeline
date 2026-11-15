@@ -256,6 +256,11 @@ Overall grade: **B (Good)**. Basis: the trailing four quarters, Q3 FY26 to Q2 FY
 
 ---
 
+---
+ORCHESTRATOR ERRATA, SOURCE FIDELITY (2026-11-15; Verifier A findings, B12a rows 2 and 4; figures corrected at source)
+- Section 3D "Mix at 31 Oct": oil and gas is Rs 889.95 cr, not Rs 890.12 cr. The Thailand oil and gas row in the 13 Nov 2026 order filing (p.2) shows opening 0.17, executed 0.17, closing 0.00. Power 1,677.48 + oil and gas 889.95 + others 19.00 = 2,586.43, the printed total.
+- Section 0 row 24: "Rs 72.4 cr trade credits and leases" covers trade credits alone (7,242.76 INR lacs, Q2 FY27 results p.5). Lease liabilities are a further 1,657.96 + 584.97 INR lacs = Rs 22.43 cr; together Rs 94.86 cr.
+
 ```yaml
 stage: B05-concall
 company: "DEEDEV"

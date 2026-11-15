@@ -168,6 +168,11 @@ Shared dependencies: rows 1-2 (thermal chain) and rows 3-4 (gas turbine and HRSG
 
 Performed: 7 searches and 1 fetch (listed in the block). Skipped or incomplete, status partial: powerpeakdigest.com fetch returned HTTP 403 (80-83.5 GW figure rests on the search summary and deck p.30); CEA Apr-Jun 2026 totals not read (PENDING LIVE VERIFICATION); USD/INR not retrieved; peer piping-only revenue search returned plastic-pipe pages only; no HRSG or engineered-spool market size source found.
 
+---
+ORCHESTRATOR ERRATA, SOURCE FIDELITY (2026-11-15; Verifier A findings, B12a rows 2 and 3; figures corrected at source)
+- Section 3A filter table: oil and gas at 31 Oct 2026 is Rs 889.95 cr, not Rs 890.12 cr (13 Nov 2026 order filing p.2, closing column).
+- Section 3A and Section 6 row 1: the India piping book is 59.05% power and 40.95% non-power (1,304.47 of 2,209.04, same filing, closing column), not 59.6% and 40.4%. The split of Rs 321 cr / Rs 218 cr reads Rs 318 cr / Rs 221 cr.
+
 ```yaml
 stage: B09-tam
 company: "DEEDEV"

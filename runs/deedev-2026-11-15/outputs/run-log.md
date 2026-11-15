@@ -51,3 +51,6 @@ Gaps
 - Stage 7: the agent stalled (stream watchdog, no progress for 600 s) AFTER writing its full report (480 lines, closed YAML block) and BEFORE writing the block file. The orchestrator wrote outputs/blocks/B07-emoat.yaml from the report with tools/extract_block.py (run-pipeline step 3: block absent, written from the stage output). No re-invoke was needed. The failed notification carried no usage figure, so the ledger row is n/a.
 - Stage 9: status partial, five searches skipped (powerpeakdigest 403, CEA Apr-Jun 2026 report, USD/INR rate, peer piping-only revenue, HRSG market size).
 - Verifiers A, B, C (phase 1 scope), D dispatched once each; manifest verifier_runs set to 1 each before dispatch.
+- Verifiers: all four returned complete; each report and block passed the completion check separately. Verifier A identity check: no CRITICAL rows, nothing struck. No REWORK trigger. Confidence delta overall 83.3, set by peer_utilisation.
+- Source fidelity: three Verifier A MAJOR rows (source_fidelity true) corrected at source by orchestrator errata in 03-ardeep.md, 05-concall.md and 09-tam.md. Gate held, no disagreement to log.
+- Verifier B acceptance: block field 88.9% used as written; the fully-caught-only reading is 44.4%. Sent to Halt 1 as an operator open item.

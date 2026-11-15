@@ -457,6 +457,10 @@ ORCHESTRATOR ERRATA (2026-11-15; reported by the stage itself, which could not e
 - Anchors in Phase 2 written "p.~" (RPT details, Note 11A, lease note) are approximate, not verified page anchors.
 - The Q2 FY27 standalone operating cash flow cited as "p.9" sits in the standalone block of the results file; the page is unconfirmed.
 
+---
+ORCHESTRATOR ERRATUM, SOURCE FIDELITY (2026-11-15; Verifier A finding, B12a row 1; figure corrected at source)
+- Phase 2C closing paragraph: the contingent-liabilities total "25,152.11 lacs (28.4% of net worth)" is wrong. The three components are each correct in the AR and sum to 22,970.21 (Note 32B p.229) + 1,384.96 (Note 46 p.251) + 1,120.09 (Note 32(e) p.230) = 25,475.26 INR lacs = 28.7% of net worth 88,706.85 INR lacs. Use 25,475.26 and 28.7%.
+
 ```yaml
 stage: B03-ardeep
 company: "DEEDEV"

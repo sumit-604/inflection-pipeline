@@ -188,6 +188,10 @@ Decision line: Gate 0 verdict AVOID on the mechanical scorecard. Per CLAUDE.md, 
 - Screener "Adjusted Equity Shares" and PRICE rows partly blank; not used.
 - Prospectus restated figures (FY21 to FY23) are INR million; they were cross-checked to screener CFO and receivables for the same years and tie.
 
+---
+ORCHESTRATOR ERRATUM (2026-11-15; Verifier A finding, B12a row 6, not a source-fidelity row)
+- Section 1 note: EBITDA 195.84 is computed from the Data_Sheet annual expense rows. It does not "equal the screener operating profit": the Data_Sheet has no annual operating-profit row, and the four FY26 quarterly operating profits sum to 191.21. On 191.21, D1 reads 3.59x and still scores 0. Override 6 is unchanged.
+
 ```yaml
 stage: B01-gate0
 company: "DEEDEV"

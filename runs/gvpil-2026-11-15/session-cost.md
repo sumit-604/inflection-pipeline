@@ -1,0 +1,9 @@
+# Session cost ledger: GVPIL 2026-11-15 (Phase 1)
+
+Token figures come from the subagent result metadata. This harness exposes only the total tokens and the wall time per subagent. Input, cache-read, cache-write and output splits are not exposed and are written n/a, never estimated.
+
+| # | stage | model | effort | in_tok | cache_read | cache_write | out_tok | total_tok | wall | run# |
+|---|-------|-------|--------|--------|------------|-------------|---------|-----------|------|------|
+| S1-BCD | step1 brief, peers, cap row | claude-opus-5-5 | default | n/a | n/a | n/a | n/a | 121963 | 7m58s | 1 |
+| S1-F | step1 corpus collection | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 175252 | 26m38s | 1 |
+| 1 | stage-01-gate0 | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 78049 | 3m52s | 1 |

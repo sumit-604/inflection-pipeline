@@ -40,3 +40,16 @@ Removed from announcements/: Nov 2025 and Feb/May 2026 transcripts, Q4/Q1/Q2 res
 - Filed BSE shareholding pattern PDF (Sep 2026) not obtained; screener-derived table only. No pledge detail.
 - Screener export: only Data_Sheet CSV per company is populated; the 5 other sheets (P&L, Quarters, BS, CF, Customization) are empty in every export. The Data_Sheet itself holds annual P&L, quarters to Sep 2026, balance sheet and cash flow.
 - FGD contract terminations (Jaypee Bina / Nigrie): no matching BSE filing found in the 12-month list.
+
+## Phase 1 orchestration (2026-11-15)
+
+- Checkout guard: `git fetch origin main` ok; framework diff against origin/main empty.
+- Identity: screener symbol GVPIL (GEPIL returns 404), URL https://www.screener.in/company/GVPIL/consolidated/ OK on tools/check_url.py after 429 retries. Legal name GE Power India Limited, BSE 532309.
+- Steps B, C, D ran on an Opus 5.5 subagent with live web (operator batch instruction). Step F ran on a Sonnet 5.5 subagent.
+- Sector cap row: "EPC / Civil construction" (20x), section-1b chunk 05 line 48. The brief names "Cables / Industrial products" (25x) as the other reading.
+- Tooling gate: all PDFs pre-extracted to page-marked .txt (tools/extract_pdfs.py). tools/check_extraction.py flags one file GARBLED: inputs/announcements/20261115-f68052f4-...pdf. Its page 1 is a readable company cover letter; the garbled pages are a vernacular newspaper notice of the results. Not OCR-repaired; named as unreadable beyond page 1.
+- Stages and verifiers receive .txt paths.
+- Reporting units: results and AR in INR million; screener Data Sheet in INR crore.
+- Verifier A shadow: NOT RUN here. Nine /step1 sessions run in parallel today; the single shadow run belongs to the TD Power session (operator batch instruction). .claude/shadow.yaml is left untouched in this worktree.
+- Empty-folder confirmation: suppressed per /step1 autonomy contract; standing answer "proceed with the gaps".
+- Agent dispatch: this harness launches subagents asynchronously. Each stage is treated as done only after its report and block files pass the completion check.

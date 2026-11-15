@@ -12,3 +12,5 @@ collector_warnings:
   - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
   - "no rating PDF yet: add later the same way"
 notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."
+remediation_cycles: 0
+verifier_runs: {A: 0, B: 0, C: 0, D: 0}

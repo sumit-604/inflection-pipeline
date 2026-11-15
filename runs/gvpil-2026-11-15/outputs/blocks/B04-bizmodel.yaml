@@ -1,0 +1,77 @@
+stage: B04-bizmodel
+company: "GVPIL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "concalls: no Q1 FY27 or Q2 FY27 earnings-call transcript"
+  - "shareholding: screener-derived table only; filed pattern and pledge detail absent"
+  - "screening: only Data_Sheet CSVs populated"
+  - "presentation: no Q2 FY27 deck yet"
+  - "research: none; prospectus not expected"
+  - "ar: no core services backlog split, no order inflow, no numeric FY27 guidance in AR26 (backlog and execution quote found in Q4 deck and Q4 call)"
+  - "revenue split by business line (core services, upgrades, FGD, legacy) NOT FOUND in any document; AR Note 35 gives nature split only"
+  - "named competitors and market share NOT FOUND in documents; 18% of Rs 3,500-4,000 Cr target market is self-reported on Q4 call"
+  - "customer names behind top-two 38.6% NOT FOUND"
+  - "Q4 deck backlog and order charts are images; year labels read from chart order"
+flags:
+  - {type: FLAG-GUIDANCE, reason: "Brief's 11% FY27 margin guide is the FY26 entity-level normalised EBITDA including discontinued Durgapur; CFO declined to give a range (Q4 call p.15 of 16). 85-90% quote is on 'order in hand' not named as core services (Q4 call p.7 of 16)"}
+  - {type: FLAG-ORDERS-CORRECTION, reason: "RPO fall of 38.9% is driven by 7,749 INR M FGD EP termination (Results Q1 FY27 p.15); like-for-like fall -13.8% (calc). B02/B03 book-to-bill 0.18 omits the add-back; deck intake 877 Cr = 8,770 INR M; 1,327 INR M gap to RPO bridge unexplained (calc)"}
+  - {type: FLAG-EARNINGS, reason: "H1 FY27 EBITDA ex other income 12.2% (calc) but other income = 51.9% of PBT (calc); Q2 FY27 margin 9.8% vs Q1 14.5%; brief's 48% Q2 other-income share reproduces as 59.0%"}
+  - {type: FLAG-REVENUE-SPLIT, reason: "Line-wise revenue split not disclosed; only one quarter (Q2 FY26) mix statement, about 55% core services (Q2FY26 call p.6 of 15)"}
+  - {type: FLAG-DEMERGER, reason: "NCLT sanctioned 1 Oct 2026, not effective at 30 Sep 2026; consideration value and post-demerger supply price NOT FOUND; 5-year capacity-reserved agreement at pre-agreed price"}
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Construction contracts, over time (nature row; legacy new-build, FGD-EP and upgrade mapping to lines NOT FOUND) (AR26 Note 35 p.176)", type: "project / percentage of completion", pct_of_revenue: 60.2, predictability: "M"}
+  - {name: "Sale of products, point in time (spares and parts; line mapping NOT FOUND) (AR26 Note 35 p.176)", type: "product and spares sales", pct_of_revenue: 38.7, predictability: "M"}
+  - {name: "Sale of services (AR26 Note 35 p.176)", type: "service fees", pct_of_revenue: 0.9, predictability: "M"}
+asset_intensity: "light"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - "installed-base OEM data and emergency repair capability: medium to high"
+  - "parent IP licence and controls lock-in: medium, depends on parent"
+  - "GE brand in bidding: medium"
+  - "switching costs on own-fleet parts: medium, weaker on oOEM"
+valuation_methods:
+  primary: {method: "P/E on normalised continuing earnings (ex other income, ex reversals, normal tax)", why: "Capital-light, net cash, earnings in transition; FY26 profit is one-off flattered"}
+  secondary: {method: "EV/EBITDA on normalised core EBITDA, net cash shown with and without the INR M 4,500.0 group deposit", why: "Cross-checks the P/E and removes tax-shield distortion"}
+  tertiary: {method: "Net cash plus order-book value floor", why: "Cash is a large share of market value; floor view"}
+  not_applicable: ["DCF as primary (no numeric guidance)", "EV/Sales", "P/B", "dividend yield", "SOTP (gas and hydro sold, Durgapur leaves)"]
+irrelevant_ratios:
+  - "reported EBITDA margin 27.0%: includes reversals, write-backs, insurance and group income"
+  - "press-release EBITDA % on total income: divides by revenue plus other income"
+  - "MD&A net profit margin and RoNW: mis-stated per B03"
+  - "RPO trend and book-to-bill: distorted by 7,749 INR M termination"
+  - "debtors turnover: driven by one-time BHEL cash"
+  - "net cash INR M 8,473.1: includes INR M 4,500.0 unsecured group deposit"
+  - "FY26 P/E: EPS includes discontinued loss and one-offs"
+must_track_metrics:
+  - {metric: "core services order intake and services backlog (Cr)", healthy: "intake above 734 Cr FY26 and rising; backlog above 1,218 Cr", red_flag: "backlog below 1,124 Cr (Mar'25) or intake down YoY"}
+  - {metric: "EBITDA ex other income and ex reversals", healthy: "11-14% (FY26 12.4%, H1 FY27 12.2%, calc)", red_flag: "below 10% (Q2 FY27 9.8%)"}
+  - {metric: "other income as % of PBT", healthy: "below 25%", red_flag: "above 50% (H1 FY27 51.9%)"}
+  - {metric: "CFO excluding group-deposit movements vs PAT", healthy: "CFO at least PAT", red_flag: "CFO below PAT"}
+  - {metric: "group deposit balance and guarantee cover (INR M)", healthy: "at or below 4,500.0 with cover", red_flag: "balance rising toward 10,000 with no cover"}
+unit_economics:
+  unit: "one rupee of continuing core services and upgrade revenue (per-job data NOT FOUND)"
+  revenue_per_unit: "NOT FOUND per job; Rs 100 of revenue is the base"
+  margin_per_unit: "about Rs 12.4 EBITDA ex other income per Rs 100 FY26 (calc); materials 60.2, employees 14.5, other 12.9"
+  key_lever: "material cost share and employee cost leverage; post-demerger supply price"
+first_deterioration_signals:
+  - {risk: "services backlog does not convert", first_signal: "services backlog and revenue growth"}
+  - {risk: "core margin masked by other income", first_signal: "EBITDA ex other income below 10%"}
+  - {risk: "post-demerger supply price", first_signal: "cost of materials % of revenue above 67%"}
+  - {risk: "group deposit growth", first_signal: "deposit balance and other income"}
+  - {risk: "working-capital rebuild", first_signal: "inventory and receivable days"}
+  - {risk: "key management gaps", first_signal: "CFO and CS appointments in filings"}
+mgmt_questions:
+  - "What share of revenue is core services, upgrades, FGD and legacy in FY26 and H1 FY27?"
+  - "Does 85-90% execution apply to the Rs 1,218 Cr services backlog or the whole Rs 1,628 Cr?"
+  - "What explains Q2 FY27 9.8% margin against Q1 14.5%?"
+  - "What makes up INR M 631.6 H1 FY27 other income?"
+  - "What is the JSW supply price after demerger?"
+  - "Will the group deposit rise toward the INR M 10,000 ceiling?"
+  - "Who are the top two customers at 38.6%?"
+one_line_verdict: "Service-led hybrid with real order growth, thin disclosure on line mix, and profit still leaning on other income and one-offs."
+analyst_note: "Three corrections for later stages. (1) The brief's 11% is the FY26 entity-level normalised EBITDA including discontinued Durgapur, not an FY27 guide; the CFO refused a range. (2) RPO fall of 38.9% is mostly the 7,749 INR M Jaypee FGD EP termination; like-for-like -13.8% (calc). B02/B03 book-to-bill 0.18 should not be used; deck intake was 877 Cr. (3) Margin ex other income was 12.4% FY26 (calc), 14.5% Q1 and 9.8% Q2 FY27, but other income was 51.9% of H1 PBT; pool interest at 5.5-6.35% on 4,500 INR M explains only about a quarter of it (calc), so composition is open. Revenue split by line is NOT FOUND."

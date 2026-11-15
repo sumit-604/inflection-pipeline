@@ -11,3 +11,4 @@ Token figures come from subagent result metadata. This harness exposes only tota
 | 2 | stage-02-notes-pass (pass 1) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 232236 | 6m41s | 1 |
 | 2 | stage-02-notes-pass (pass 2) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 189034 | 6m14s | 2 |
 | 2 | stage-02-notes-pass (pass 3) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 99426 | 2m21s | 3 |
+| 3 | stage-03-ardeep | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 463796 | 18m16s | 1 |

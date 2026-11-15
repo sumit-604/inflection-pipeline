@@ -1,0 +1,75 @@
+stage: B05-concall
+company: "QLL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "No concall transcripts published (declared); Sections 2E, 2C tone, analyst Q&A and 3C have no source"
+  - "No filed management guidance between May 2025 deck and May 2026 MD&A; no quarterly guidance trail"
+  - "Customer concentration, order book, utilisation by lab NOT FOUND IN DOCUMENT (B03)"
+  - "Bengaluru USFDA lab: May 2026 MD&A says consolidated; deck says Hyderabad acquisition complete by June 2026; no completion filing through 14 Nov 2026 (B03); status NOT FOUND"
+  - "NCD up to Rs 65 Cr issue status, ITC Ltd suit status NOT FOUND (B03)"
+flags:
+  - "FLAG-GUIDANCE: PAT margin guide cut 15-17% (20 May 2026 MD&A) to 14-15% (AR, Aug 2026) with no stated reason; H1 FY27 EBITDA margin 21.6% and PAT margin 9.1% vs FY27 guide 25-27% and 14-15%"
+  - "FLAG-GUIDANCE: 20 May 2026 MD&A said FY27 ranges hold the H2 FY26 exit run-rate (25.7% / 14.1%); H1 FY27 printed 21.6% / 9.1%, below that exit"
+  - "FLAG-GUIDANCE: FY29 operating margin >30%, FY31 overseas >=30% and FY32 debt-free dropped from the AR; revenue Rs 500 Cr by FY31 kept"
+  - "FLAG-DISCLOSURE-CONFLICT: AR gives FY26 EPS 12.49; results and deck give 13.38 (B03)"
+quarters_analysed: []
+triggers:
+  - {priority: 1, name: "Operating leverage on acquired ITCPL and new labs (EBITDA margin to 25-27%)", type: "margin", timeframe: "near (H2 FY27)", conviction: "L", confirm_signal: "H2 FY27 consolidated EBITDA margin >=27% (H1 FY27 21.6%)", kill_signal: "H2 FY27 margin below 24%"}
+  - {priority: 2, name: "FY27 revenue growth 35-40% (full-year consolidation of FY26 acquisitions, capacity adds Mumbai, Chennai, Bhubaneshwar, Pune EMI/EMC, Noida)", type: "revenue", timeframe: "near", conviction: "M", confirm_signal: "H2 FY27 revenue 9583 to 10206 Lakh (+36% to +45% YoY)", kill_signal: "H2 FY27 revenue growth below 25% YoY"}
+  - {priority: 3, name: "Standalone margin re-convergence to 26-29%", type: "margin", timeframe: "near", conviction: "M", confirm_signal: "Standalone EBITDA margin above 26% in H2 FY27 (H1 FY27 25.9%)", kill_signal: "Standalone margin stays below 25%"}
+  - {priority: 4, name: "Selective bolt-on M&A in pharma, food, E&E (USFDA lab, Hyderabad)", type: "both", timeframe: "medium", conviction: "L", confirm_signal: "Completion filing of the named target with valuation report", kill_signal: "No named target by Mar 2027; 2200 Lakh of the raise used for unidentified acquisitions"}
+  - {priority: 5, name: "Rs 500 Cr revenue by FY31 and debt-free by FY32 (FY32 dropped in AR)", type: "revenue", timeframe: "long", conviction: "L", confirm_signal: "Net debt/EBITDA falling below 3.0x and CFO/PBT above 90%", kill_signal: "Borrowings keep rising (11466.88 Lakh at 30 Sep 2026) with CFO/PBT near 40%"}
+guidance:
+  - {item: "FY27 consolidated revenue growth", number: "35-40% over FY26 12451.81 Lakh", timeframe: "FY27", stated_in: "20 May 2026 MD&A p.3; AR pp.23, 73"}
+  - {item: "FY27 consolidated EBITDA margin", number: "25-27%", timeframe: "FY27", stated_in: "20 May 2026 MD&A p.3; AR p.23"}
+  - {item: "FY27 consolidated PAT margin", number: "15-17% (May 2026), cut to 14-15% (AR)", timeframe: "FY27", stated_in: "20 May 2026 MD&A p.3; AR pp.23, 73"}
+  - {item: "Standalone margin re-converge to historical levels", number: "about 26-29% (B03 derived range)", timeframe: "FY27", stated_in: "20 May 2026 MD&A p.3"}
+  - {item: "Net debt/EBITDA to compress meaningfully", number: "about 3.0x at FY26", timeframe: "FY27", stated_in: "20 May 2026 MD&A p.3"}
+  - {item: "Consolidated revenue", number: "above Rs 500 Cr", timeframe: "FY31", stated_in: "20 May 2026 MD&A p.3; AR p.24"}
+  - {item: "Operating margin", number: "above 30%", timeframe: "next three years", stated_in: "20 May 2026 MD&A p.3 (dropped in AR)"}
+  - {item: "Overseas revenue share", number: "at least 30%", timeframe: "FY31", stated_in: "20 May 2026 MD&A p.3 (dropped in AR)"}
+  - {item: "Cash-surplus, debt-free", number: "debt-free", timeframe: "FY32", stated_in: "20 May 2026 MD&A p.3 (dropped in AR)"}
+  - {item: "Double revenue every two years; 30% EBITDA margin", number: "2x per 2 years; 30%", timeframe: "FY25-FY27", stated_in: "May 2025 deck p.13"}
+  - {item: "IPO proceeds use", number: "1831.18 Lakh: capex 622.38, promoter loan 818.16, WC 250.00, GCP 140.64", timeframe: "post Jan 2024 listing", stated_in: "Prospectus Objects of the Issue; AR Note 38 p.188"}
+promise_delivery:
+  delivered: 2
+  partial: 3
+  missed: 4
+  rows:
+    - {promised_in: "Prospectus, Jan 2024", promise: "Use IPO net proceeds 1831.18 Lakh on capex, promoter loan repayment, working capital, GCP", outcome: "delivered", explanation: "AR Note 38 p.188: 1277.83 used FY24 plus 553.35 FY25, unutilised nil; each head matches its allocation. Company-reported, not independently verified."}
+    - {promised_in: "May 2025 deck (H2 FY25) p.13", promise: "2X revenue every 2 years", outcome: "delivered", explanation: "Consolidated 29.18 Cr FY24 to 124.52 Cr FY26 (4.3x), mostly acquired (ITCPL). Standalone organic +47% in FY26 (45.9 to 67.6 Cr), near the 41% a year that doubling needs."}
+    - {promised_in: "May 2025 deck p.13", promise: "30% EBITDA margin", outcome: "missed", explanation: "FY26 consolidated EBITDA margin 23.5% (MD&A p.2). No explanation; the 30% target reappears as above 30% over three years in the May 2026 MD&A."}
+    - {promised_in: "20 May 2026 MD&A p.3", promise: "FY27 revenue +35-40%", outcome: "partial", explanation: "H1 FY27 revenue 7226.65 Lakh, +33.2% YoY, +2.8% on H2 FY26 (B03). H2 needs +36% to +45% YoY. Half-year check only."}
+    - {promised_in: "20 May 2026 MD&A p.3", promise: "FY27 EBITDA margin 25-27%, holding H2 FY26 exit of 25.7%", outcome: "missed", explanation: "H1 FY27 21.6% (derived: PBT 855.11 + finance 387.02 + D&A 397.11 - other income 80.94 = 1558.30 on 7226.65). 4.1 points below the H2 FY26 exit. No management explanation on file."}
+    - {promised_in: "20 May 2026 MD&A p.3", promise: "FY27 PAT margin 15-17%", outcome: "missed", explanation: "H1 FY27 PAT 660.01 on 7226.65 = 9.1%. Range cut to 14-15% in the AR without comment. H2 needs 17.7% to 19.4% to hit the cut range (B03)."}
+    - {promised_in: "20 May 2026 MD&A p.3", promise: "Standalone margin re-converges to historical", outcome: "partial", explanation: "Standalone H1 FY27 EBITDA 25.9% (B03 derived), flat on 25.9% in H2 FY26, vs 28.9% in H2 FY25. One half-year."}
+    - {promised_in: "20 May 2026 MD&A p.3", promise: "Net debt/EBITDA to compress from about 3.0x in FY27", outcome: "missed", explanation: "Borrowings 9297.55 Lakh (31 Mar 2026) to 11466.88 (30 Sep 2026); finance cost 387.02 vs 288.09 in H2 FY26; about 3.6x on annualised H1 EBITDA (B03 derived)."}
+    - {promised_in: "May 2026 deck p.23 (per B03)", promise: "USFDA pharma lab commercial; Hyderabad acquisition complete by June 2026", outcome: "partial", explanation: "No completion filing through 14 Nov 2026 (B03). May MD&A p.2 says a Bengaluru USFDA lab was added in FY26; the two descriptions are not reconciled. Unconfirmed, not proven missed."}
+excuse_pattern: "silence-heavy; no external blame found"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "No-concall default C held. Period H2 FY25 to H1 FY27: revenue and IPO-use promises delivered (IPO use company-reported), but 30% margin goal missed, FY27 margin and leverage guide off track at H1, PAT guide cut with no stated reason, three long-dated targets dropped. Not enough delivery evidence for B."
+peer_questions:
+  - {question: "What EBITDA margin do listed Indian testing, inspection and diagnostics labs earn at 20-30% revenue growth, and does margin hold when a large share of growth is acquired?", why: "QLL guides 25-27% against 21.6% in H1 FY27; tests whether the guide is peer-consistent or stretched", check_peers: ["Vimta Labs", "Krsnaa Diagnostics", "Dr Lal PathLabs"]}
+  - {question: "What organic revenue growth do peers report and guide for, and how do they split organic from acquired growth?", why: "QLL claims 35-40% FY27 growth; standalone organic was 47% in FY26; need a peer base rate", check_peers: ["Vimta Labs", "Krsnaa Diagnostics", "Dr Lal PathLabs"]}
+  - {question: "What CFO/PBT and receivable days do peers sustain, and how do they discuss government or PPP collections?", why: "QLL CFO/PBT 75.7% FY26 and 42% H1 FY27; receivables over 6 months 22.4%; 6 PPP labs", check_peers: ["Krsnaa Diagnostics", "Vimta Labs"]}
+  - {question: "How long do new labs take to reach target utilisation and margin, and what capex per lab do peers cite?", why: "QLL ties margin rise to new labs crossing utilisation thresholds; no utilisation data on file", check_peers: ["Vimta Labs", "Dr Lal PathLabs", "Krsnaa Diagnostics"]}
+  - {question: "What multiples and margin profiles do peers cite for bolt-on lab acquisitions, and how do they handle goodwill and integration cost?", why: "QLL goodwill 7811.56 Lakh, 51.2% of equity; 2200 Lakh of the new raise earmarked for unidentified acquisitions", check_peers: ["Dr Lal PathLabs", "Vimta Labs", "Krsnaa Diagnostics"]}
+  - {question: "Do peers set export or overseas revenue targets, and what share do they reach?", why: "QLL target of 30% overseas by FY31 vs 2.7% exports in FY26 (dropped in the AR)", check_peers: ["Vimta Labs"]}
+red_flags:
+  - "Guidance cut without explanation: PAT margin 15-17% to 14-15% within three months (MD&A 20 May 2026 vs AR Aug 2026)"
+  - "FY27 margin guidance said to hold the H2 FY26 exit rate; H1 FY27 EBITDA 21.6%, PAT 9.1%"
+  - "Three long-dated targets (FY29 margin, FY31 overseas, FY32 debt-free) dropped quietly from the AR"
+  - "Leverage rising (borrowings +23% in six months) against a stated plan to compress"
+  - "Two FY26 EPS figures (13.38 and 12.49) and conflicting USFDA lab descriptions weaken disclosure trust"
+dropped_triggers:
+  - "Operating margin above 30% in three years (in May 2026 MD&A, absent from AR)"
+  - "Overseas revenue at least 30% by FY31 (in May 2026 MD&A, absent from AR)"
+  - "Debt-free and cash-surplus by FY32 (in May 2026 MD&A, absent from AR)"
+timeline_slippages:
+  - "30% EBITDA margin: May 2025 deck aimed for it within FY25-FY27; May 2026 MD&A moves it to above 30% over the next three years"
+  - "Hyderabad acquisition and USFDA lab due June 2026: no completion filing through 14 Nov 2026"
+analyst_note: "No-concall mode. Credibility rests on the filed record: May 2025 deck, May 2026 MD&A, AR (Aug 2026), results to H1 FY27 (13 Nov 2026). FY27 delivery checks are half-year only, so missed rows describe H1 run-rate, not final FY27. The 24 Nov 2026 call is the first chance to test the margin gap. Separating observation: H2 FY27 EBITDA margin at or above 27% reads H1 as timing; below 24% reads the guide as set off the H2 FY26 peak."

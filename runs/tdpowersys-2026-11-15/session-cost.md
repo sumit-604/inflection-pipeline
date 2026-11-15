@@ -9,3 +9,4 @@ Per-stage token ledger, from subagent result metadata. This harness exposes only
 | 1 | gate0 | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 88054 | 4m33s | 1 |
 | 0 | intake-check | claude-haiku-5-5 | medium | n/a | n/a | n/a | n/a | 152132 | 4m53s | 1 |
 | 2 | notes-pass1 | claude-sonnet-5-5 | default-high | n/a | n/a | n/a | n/a | 268688 | 9m46s | 1 |
+| 2 | notes-pass2 | claude-sonnet-5-5 | default-high | n/a | n/a | n/a | n/a | 244582 | 8m02s | 2 |

@@ -7,3 +7,4 @@ Per-stage token ledger, from subagent result metadata. This harness exposes only
 | S1 | step1-brief-peers-cap (Steps B-D) | claude-opus-5-5 | default | n/a | n/a | n/a | n/a | 138613 | 7m15s | 1 |
 | S1 | step1-corpus-collection (Step F) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 225467 | 34m43s | 1 |
 | 1 | gate0 | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 88054 | 4m33s | 1 |
+| 0 | intake-check | claude-haiku-5-5 | medium | n/a | n/a | n/a | n/a | 152132 | 4m53s | 1 |

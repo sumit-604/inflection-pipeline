@@ -9,3 +9,4 @@ Token columns: the harness exposes one total per subagent run (subagent_tokens),
 | 0 | stage-00-intake-check | claude-haiku-5-5 | medium | n/a | n/a | n/a | n/a | 87149 | 178s | 1 |
 | 1 | stage-01-gate0 | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 75888 | 203s | 1 |
 | 2 | stage-02-notes-pass (pass 1) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 184862 | 410s | 1 |
+| 2 | stage-02-notes-pass (pass 2) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 183402 | 526s | 2 |

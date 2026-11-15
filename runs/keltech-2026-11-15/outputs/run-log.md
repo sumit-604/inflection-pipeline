@@ -21,3 +21,14 @@ Gaps:
 - Formal BSE shareholding pattern (promoter pledge, FII/DII breakdown for Sep 2026): not retrieved.
 - Premier Explosives Q2 FY27 transcript: not published on screener yet at run time.
 - SOLARINDS Q1 FY27 transcript: none exists on screener, only a presentation.
+
+## Phase 1 orchestration (2026-11-15)
+- Checkout guard: passed against origin/main b4ec38ce.
+- Spear gate: passed on the OVERRIDE line in companies/KELTECH.md.
+- LESSONS pre-read done. No lesson tagged for sector "Cables / Industrial products". No archetype declared yet.
+- Tooling gate: the whole run reads pre-extracted page-marked .txt (tools/extract_pdfs.py). The rating .txt was re-extracted from the PDF; the HTML extraction is kept as *_html-extract.txt. The Q1 FY27 results .txt is the tesseract OCR text with [page N] markers.
+- No file came through the Chrome browser fallback. The one remaining document gap (BSE shareholding pattern, Sep 2026) is not in the screener Documents section, so the fallback did not apply.
+- Stage 0: the intake check proposed four moves out of inputs/other/. All four were confirmed at the page and deliberately not moved (contract caps). See B00-inputs.yaml.
+- Empty-folder confirmation suppressed per /step1. Standing answer: proceed with the gaps.
+- Verifier A shadow NOT run here. The single shadow run belongs to the TD Power session of this batch. .claude/shadow.yaml is untouched by this run.
+- Subagent calls dispatch in the background in this harness. Completion is proven per stage by report and block files on disk before any later stage reads them.

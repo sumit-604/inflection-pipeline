@@ -32,3 +32,5 @@ Gaps:
 - Empty-folder confirmation suppressed per /step1. Standing answer: proceed with the gaps.
 - Verifier A shadow NOT run here. The single shadow run belongs to the TD Power session of this batch. .claude/shadow.yaml is untouched by this run.
 - Subagent calls dispatch in the background in this harness. Completion is proven per stage by report and block files on disk before any later stage reads them.
+- Stage 3 erratum prepended to 03-ardeep.md (EBIT 4,984.66 should read 3,984.66 Rs lakh). Stage 3 also found the Step B brief's AR page cites wrong: CWIP is PDF p.106 (brief says p37) and 'presentations: None' is p.68 (brief says p41). The brief is memory, not a source; stage anchors govern.
+- Dispatch order after stage 3: wave A stages 4, 5, 8; wave B stages 6, 7, 9 (stage 9 needs the B04 block, stages 6 and 7 need B05).

@@ -10,3 +10,4 @@ Per-stage token ledger. Subagents run async in this app; the result metadata giv
 | 2 | notes-pass (pass 2) | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 174123 | 383s | 2 |
 | 2 | notes-pass (pass 3) | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 82097 | 146s | 3 |
 | 3 | ardeep | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 289405 | 676s | 1 |
+| 4 | bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 165562 | 358s | 1 |

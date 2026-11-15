@@ -24,3 +24,5 @@ cache-read, cache-write and output splits are not exposed and are written n/a, n
 | 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 329096 | 8m29s | 2 |
 | 12c | verifier-c-framework (stalled, no output) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | n/a | stalled >10m | 1 |
 | 12c | verifier-c-framework (phase-1 scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 158958 | 13m33s | 2 |
+| 12b | verifier-b-redflags (stalled, no output) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | n/a | stalled >10m | 1 |
+| 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 320666 | 18m38s | 2 |

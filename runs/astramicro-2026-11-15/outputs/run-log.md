@@ -41,3 +41,14 @@ None. No Chrome fallback was needed.
 ### Mechanical issues
 - Hard-coded REPO_ROOT; headed Playwright launch failure; BSE API returned 403 Access Denied intermittently (needed fresh session, Accept-Language header and retries); collector deleted `_download/` at the end.
 - Extraction: tools/extract_pdfs.py and tools/check_extraction.py ran clean (no flagged files, no OCR needed).
+
+## Phase 1 run log (orchestrator)
+
+- 2026-11-15: checkout guard passed (origin/main diff empty). Spear gate passed on the OVERRIDE line in companies/ASTRAMICRO.md.
+- LESSONS pre-read done. Archetype not yet declared; matched on sector only: no tagged lessons for "Defence / strategic".
+- Tooling gate: all PDFs pre-extracted to page-marked .txt at Step F; check_extraction clean. Stages and verifiers get the .txt paths.
+- Execution: the Agent tool in this desktop session dispatches every subagent asynchronously and notifies on completion. The orchestrator waits for each notification and applies the completion check (report file, block file, block parses) before any dependent stage starts.
+- Stage 0: intake check (Haiku 5.5) returned 43 rows, 0 unreadable, 0 unidentified, 1 proposed move (Q2 FY27 press release, presentation/ to results/). Type confirmed at page 1; not moved (reason in B00.input_gaps).
+- Freshness: pair 1 FAILS (Q2 FY27 results held, Q2 FY27 transcript not yet filed). B00.freshness_verdict = CORPUS GAPPED-FRESHNESS; the gate recommendation caps at PROCEED WITH CAVEATS.
+- Empty-folder confirmation suppressed per the /step1 autonomy contract; standing answer "proceed with the gaps".
+- Verifier A shadow: NOT run here. Nine /step1 sessions run in parallel today and the single shadow run belongs to the TD Power session. This run leaves .claude/shadow.yaml untouched.

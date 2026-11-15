@@ -1,0 +1,516 @@
+stage: B00-inputs
+company: ASTRAMICRO
+run_date: '2026-11-15'
+model: orchestrator session (claude-fable-5-2); identity rows from stage-00-intake-check (claude-haiku-5-5)
+status: complete
+input_gaps:
+- 'COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend.'
+- 'COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet,
+  screener:Cash Flow, screener:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again.'
+- 'COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again'
+- 'COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way'
+- 'RESOLVED at Step F: shareholding/ now holds the BSE Sep 2026 pattern (text extracted from the BSE XBRL viewer; no PDF). results/ now holds Q4 FY26, Q1 FY27, Q2 FY27 (direct BSE download). rating/ now
+  holds the CRISIL 28 Aug 2026 rationale as page text (.txt, no PDF exists).'
+- 'ABSENT: Q2 FY27 concall transcript (call held 2026-11-13; BSE carries only the audio filing 92bb686f). HIGH. Freshness pair 1 FAILS.'
+- 'ABSENT: screener sheets Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization exported EMPTY; no CSV written. Only screener-Data_Sheet.csv is populated (annual FY17-FY26, quarters to Sep 2026,
+  balance sheet, cash flow).'
+- 'ABSENT: PARAS peer concalls. Screener lists none and 90 BSE filings (scrip 543367, Nov 2025 to Nov 2026) hold no transcript. peer-concalls/ holds 8 files (APOLLO 4, DATAPATTNS 4), not 12.'
+- 'ABSENT in announcements/: filing on the successor MD appointment (Oct 2026 per step1 brief, web-sourced); only the Apr 2026 stepping-down filings are held.'
+- 'ABSENT in announcements/: warrant / preferential allotment filing (outside the 12-month BSE window). Monitoring agency reports (Q4 FY26, Q2 FY27) and the Q2 FY27 deviation statement are held.'
+- 'EMPTY FOLDER: prospectus/ (not expected; long-listed, not a gap). EMPTY FOLDER: research/ (no effect on anchored evidence).'
+- annual-report/ holds two ARs (FY26 and FY25). The FY26 AR is THE annual report for stages 2, 3, 4, 7; the FY25 AR is a prior-year reference only.
+- 'IDENTITY: presentation/2026-11-12_Q2FY27_press_release_4b8f4126.pdf is a results press release (intake proposed results/). Orchestrator confirmed the type at page 1 and left it in presentation/: results/
+  holds the three statutory filings and the contract has no press-release folder. Not moved.'
+- 'IDENTITY NOTE: concalls/Concall_Jun_2026_Transcript.pdf is the Q4 FY26 call held 2026-05-27 (filename month is the filing month). announcements/2026-09-18_AGM-voting-results body text reads ''held on
+  September 18, 2025'' against a 2026 letter date; unresolved, flagged.'
+- 'EMPTY-FOLDER CONFIRMATION suppressed per /step1 autonomy contract: standing answer ''proceed with the gaps''. No question was asked.'
+- 'Pre-extracted text: every PDF has a page-marked .txt beside it (tools/extract_pdfs.py; check_extraction clean; no OCR needed). Stages and verifiers read the .txt and cite the PDF page.'
+flags: []
+analyst_note: ''
+manifest:
+  company: Astra Microwave Products Ltd
+  ticker: ASTRAMICRO
+  cmp: 1704.0
+  market_cap_cr: 16174.0
+  run_type: full
+  concalls_available: true
+sector_cap_row: Defence / strategic
+sector_cap_row_evidence: 'Cap 38x. Row chosen at /step1 Step D: defence about 83% of Q2 FY27 revenue per the Q2 FY27 investor presentation (inputs/presentation/Investor_Presentation_1.pdf, revenue break-up
+  slide); customers DRDO, DPSUs, services. Cite: .claude/skills/section-1b/references/05-sector-cap.md, sector cap table. Collector guess "Pharma / CDMO" rejected. B04 to confirm.'
+reporting_units:
+  results: 'INR Lakhs (face of Q2 FY27 results: "All amounts are in Rs. Lakhs, unless otherwise stated"; order book note in Rs crores)'
+  annual_report: INR Lakh (FY26 AR financial highlights; stage 2 confirms at the statement face)
+  screener: INR Cr
+  presentation: read off the slide face
+spear:
+  line: 'Spear: OVERRIDE 2026-11-15 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)'
+  load_bearing_facts:
+  - 'Guidance vs delivery: FY27 revenue guidance about Rs 1,350 Cr vs H1 FY27 consolidated revenue Rs 440 Cr; FY26 guidance vs FY26 delivery Rs 1,163 Cr.'
+  - 'Cash conversion: FY26 CFO +Rs 387 Cr after three negative years; H1 FY27 CFO minus Rs 148 Cr; short-term debt Rs 412 Cr. One-year catch-up or structural?'
+  - 'Concentration: HAL Uttam radar order Rs 1,878.8 Cr, about 48% of Rs 3,937 Cr standalone book. Scope, schedule, margin, advances.'
+  - 'Governance and structure: demerger into Astra Space Technologies; MD change; promoter 6.54%; Rs 130.5 Cr unpaid warrant balance due 2026-12-29; ARC 51% equity-accounted; related-party sales to ARC.'
+  status: web-sourced company memory; every item to be verified against filings
+freshness_pairs:
+- pair: RESULTS to CONCALL
+  trigger_doc: inputs/results/2026-11-12_Q2FY27_results_70cb396f.pdf
+  mate_expected: Q2 FY27 concall transcript in inputs/concalls/
+  status: FAIL
+  missing_doc: 'Q2 FY27 earnings call transcript (call held 2026-11-13); expected source: BSE corporate announcements for scrip 532493 or the screener documents page'
+- pair: RATING BULLETIN to RATIONALE
+  trigger_doc: inputs/rating/CRISIL_rationale_2026-08-28.txt
+  mate_expected: full rationale
+  status: PASS
+  missing_doc: ''
+- pair: SEBI ORDER to ORDER TEXT
+  trigger_doc: none found by keyword search of the FY26 AR text; stages 3 and 8 report any SEBI order they meet
+  mate_expected: order text
+  status: PASS
+  missing_doc: ''
+- pair: AR to LATEST AUDITED ANNUAL RESULTS
+  trigger_doc: inputs/results/2026-05-26_Q4FY26_audited_results_f086a834.pdf
+  mate_expected: FY26 annual report
+  status: PASS
+  missing_doc: ''
+freshness_verdict: CORPUS GAPPED-FRESHNESS
+concall_quarter_map:
+- file: inputs/concalls/Concall_Feb_2026_Transcript.pdf
+  quarter: Q3 FY26
+  call_date: '2026-02-13'
+- file: inputs/concalls/Concall_Jun_2026_Transcript.pdf
+  quarter: Q4 FY26
+  call_date: '2026-05-27'
+- file: inputs/concalls/Concall_Aug_2026_Transcript.pdf
+  quarter: Q1 FY27
+  call_date: '2026-08-11'
+corpus_manifest:
+- path: inputs/announcements/2025-11-18_subsidiary-name-change_66dfa126.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 30 intimation, name change of wholly owned subsidiary'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Event letter dated 2025-11-18. No reporting period. Identity from .txt twin page 1.
+- path: inputs/announcements/2025-12-11_IMD-order_a228258a.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 30 order receipt intimation'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Event letter dated 2025-12-11. Order from Indian Meteorological Department. No reporting period.
+- path: inputs/announcements/2025-12-12_astra-rafael-comsys-order-dec25_fe3558cf.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 30 order receipt intimation (JV order)'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Event letter dated 2025-12-12. Order received by Astra Rafael Comsys Private Limited (JV). No reporting period.
+- path: inputs/announcements/2025-12-12_crisil-rating-intimation-dec25_2c77128e.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 30 credit rating intimation'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Event letter dated 2025-12-12. No reporting period on page 1.
+- path: inputs/announcements/2025-12-26_BEL-MoU_d651813b.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 30 intimation, MoU executed with Bharat Electronics Limited'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Event letter dated 2025-12-26. No reporting period.
+- path: inputs/announcements/2026-01-08_astra-rafael-comsys-order-jan26_ca45b5f7.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 30 order receipt intimation (JV order)'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Event letter dated 2026-01-08. Order received by Astra Rafael Comsys Private Limited (JV). No reporting period.
+- path: inputs/announcements/2026-02-12_KMP-change-feb26_95e558f6.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 30 KMP change (CFO)'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Event letter dated 2026-02-12. Board meeting of 2026-02-12. No reporting period.
+- path: inputs/announcements/2026-02-27_demerger-inprinciple-approval_2297cb95.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 30 in-principle approval of scheme of arrangement (demerger)'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Event letter dated 2026-02-27. No reporting period.
+- path: inputs/announcements/2026-02-27_demerger-press-release-revised_5a14fc72.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 30 revised press release, demerger'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Event letter dated 2026-02-27. The enclosed press release is not on page 1. No reporting period.
+- path: inputs/announcements/2026-04-02_astra-rafael-comsys-order-apr26_a91dc946.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 30 order receipt intimation (JV order)'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Event letter dated 2026-04-02. Order received by Astra Rafael Comsys Private Limited (JV). No reporting period.
+- path: inputs/announcements/2026-04-03_MD-stepping-down-press-release_502e03c7.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 30 press release, MD stepping down'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Event letter dated 2026-04-03. Enclosed press release not on page 1. No reporting period.
+- path: inputs/announcements/2026-04-03_MD-stepping-down_234fc5e8.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 30 intimation, MD stepping down'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Event letter dated 2026-04-03. Same event as the press release row above (second document). No reporting period.
+- path: inputs/announcements/2026-05-12_monitoring-agency-report-q4fy26_dcb0d689.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: monitoring agency report cover letter (preferential issue)'
+  period: FY26 Q4 (quarter ended 2026-03-31)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Cover letter dated 2026-05-12. Enclosed CRISIL monitoring agency report not on page 1.
+- path: inputs/announcements/2026-06-01_scheme-board-meeting-intimation_279e73c7.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 29 board meeting intimation (scheme of arrangement)'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Letter dated 2026-06-01 for board meeting of 2026-06-10. No reporting period.
+- path: inputs/announcements/2026-06-10_scheme-of-arrangement-board-approval_32c8cfe4.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 30 board approval of scheme of arrangement'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Letter dated 2026-06-10. Scheme between Astra Microwave Products Limited and Astra Space Technologies Private Limited. No reporting period.
+- path: inputs/announcements/2026-07-30_HAL-orders-jul26_5899cb8f.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 30 order receipt intimation (HAL)'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Event letter dated 2026-07-30. No reporting period.
+- path: inputs/announcements/2026-08-19_subsidiary-conversion-to-public-ltd_c0aa143b.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 30 intimation, subsidiary conversion to public limited company'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Letter dated 2026-08-19. Subsidiary is Astra Space Technologies Private Limited. No reporting period.
+- path: inputs/announcements/2026-08-31_crisil-rating-intimation-aug26_34168055.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 30 credit rating intimation'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Letter dated 2026-08-31. Company letter attaching CRISIL rating action. No reporting period.
+- path: inputs/announcements/2026-09-18_AGM-voting-results_976b8610.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 44(3) AGM voting results'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Letter dated 2026-09-18 for 35th AGM. Body text says AGM held September 18, 2025, which conflicts with the letter date and the AR cover letter (AGM 2026-09-18). Flag for the orchestrator.
+- path: inputs/announcements/2026-10-29_demerger-exchange-observation-letters-oct26_53cae40e.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 30 exchange observation letters (BSE no adverse observations, NSE no objection), demerger scheme'
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Letter dated 2026-10-29. No reporting period.
+- path: inputs/announcements/2026-11-12_deviation-statement-q2fy27_f7d8af46.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: Reg 32 statement of deviation or variation of funds'
+  period: FY27 Q2 (quarter ended 2026-09-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Letter dated 2026-11-12. Reports no deviation for the quarter ended 2026-09-30.
+- path: inputs/announcements/2026-11-12_monitoring-agency-report-q2fy27_8a3e30b9.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: 'announcement: monitoring agency report cover letter (preferential issue)'
+  period: FY27 Q2 (quarter ended 2026-09-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Cover letter dated 2026-11-12. Enclosed CRISIL monitoring agency report not on page 1.
+- path: inputs/annual-report/Annual_Report_2025.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: annual report
+  period: FY25 (year ended 2025-03-31)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Page 1 is the filing letter dated 2025-08-20 submitting the 34th Annual Report for the year ended 31 March 2025. Annual report body starts on page 2.
+- path: inputs/annual-report/Annual_Report_2026.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: annual report
+  period: FY26 (year ended 2026-03-31)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Page 1 is the filing letter dated 2026-08-22 submitting the 35th Annual Report for the year ended 31 March 2026. Page 2 cover reads Annual Report 2025-26.
+- path: inputs/concalls/Concall_Aug_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: concall transcript (company)
+  period: FY27 Q1 (call 2026-08-11)
+  folder_match: true
+  proposed_move: ''
+  page_read: 2
+  note: 'Page 1 cover letter dated 2026-08-17 has no reporting period. Period from page 2 transcript header: Q1 FY27 Earnings Conference Call, August 11, 2026.'
+- path: inputs/concalls/Concall_Feb_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: concall transcript (company)
+  period: FY26 Q3 (call 2026-02-13)
+  folder_match: true
+  proposed_move: ''
+  page_read: 2
+  note: 'Page 1 cover letter dated 2026-02-19 has no reporting period. Period from page 2 transcript header: Q3 FY26 Earnings Conference Call, February 13, 2026.'
+- path: inputs/concalls/Concall_Jun_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: concall transcript (company)
+  period: FY26 Q4 (call 2026-05-27)
+  folder_match: true
+  proposed_move: ''
+  page_read: 2
+  note: 'Filename says Jun 2026. Page 1 cover letter dated 2026-06-01 says the call was held May 27, 2026. Period from page 2 header: Q4 FY26 Earnings Conference Call, May 27, 2026.'
+- path: inputs/peer-concalls/APOLLO-Concall_Aug_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Apollo Micro Systems Limited (APOLLO, scrip 540879)
+  doc_type: concall transcript (peer)
+  period: FY27 Q1 (call 2026-08-08)
+  folder_match: true
+  proposed_move: ''
+  page_read: 2
+  note: 'Peer document, not ASTRAMICRO evidence. Page 1 cover letter dated 2026-08-10 has no reporting period. Period from page 2 header: Q1 FY27 Earnings Conference Call, August 08, 2026.'
+- path: inputs/peer-concalls/APOLLO-Concall_Feb_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Apollo Micro Systems Limited (APOLLO, scrip 540879)
+  doc_type: concall transcript (peer)
+  period: FY26 Q3 (call 2026-02-09)
+  folder_match: true
+  proposed_move: ''
+  page_read: 2
+  note: 'Peer document, not ASTRAMICRO evidence. Page 1 cover letter dated 2026-02-12 has no reporting period. Period from page 2 header: Q3 FY26 Earnings Conference Call, February 09, 2026.'
+- path: inputs/peer-concalls/APOLLO-Concall_May_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Apollo Micro Systems Limited (APOLLO, scrip 540879)
+  doc_type: concall transcript (peer)
+  period: FY26 Q4 (call 2026-05-19)
+  folder_match: true
+  proposed_move: ''
+  page_read: 2
+  note: 'Peer document, not ASTRAMICRO evidence. Page 1 cover letter dated 2026-05-21 has no reporting period. Period from page 2 header: Q4 FY26 Earnings Conference Call, May 19, 2026.'
+- path: inputs/peer-concalls/APOLLO-Concall_Oct_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Apollo Micro Systems Limited (APOLLO)
+  doc_type: concall transcript (peer)
+  period: FY27 Q2 (call 2026-10-26)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: 'Peer document, not ASTRAMICRO evidence. Page 1 is the transcript cover: Q2 FY27 Earnings Conference Call, October 26, 2026. No cover letter.'
+- path: inputs/peer-concalls/DATAPATTNS-Concall_Aug_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Data Patterns (India) Limited (DATAPATTNS, code 543428)
+  doc_type: concall transcript (peer)
+  period: FY27 Q1 (quarter ended 2026-06-30; call 2026-07-31)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer document, not ASTRAMICRO evidence. Page 1 letter dated 2026-08-07 states the quarter ended June 30, 2026.
+- path: inputs/peer-concalls/DATAPATTNS-Concall_Feb_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Data Patterns (India) Limited (DATAPATTNS, code 543428)
+  doc_type: concall transcript (peer)
+  period: FY26 Q3 (quarter ended 2025-12-31; call 2026-02-06)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer document, not ASTRAMICRO evidence. Page 1 letter dated 2026-02-12 states the quarter ended December 31, 2025.
+- path: inputs/peer-concalls/DATAPATTNS-Concall_May_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Data Patterns (India) Limited (DATAPATTNS, code 543428)
+  doc_type: concall transcript (peer)
+  period: FY26 Q4 (year ended 2026-03-31; call 2026-05-15)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer document, not ASTRAMICRO evidence. Page 1 letter dated 2026-05-22 states the quarter and year ended March 31, 2026.
+- path: inputs/peer-concalls/DATAPATTNS-Concall_Nov_2025_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Data Patterns (India) Limited (DATAPATTNS, code 543428)
+  doc_type: concall transcript (peer)
+  period: FY26 Q2 (quarter ended 2025-09-30; call 2025-11-13)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer document, not ASTRAMICRO evidence. Page 1 letter dated 2025-11-19 states the quarter and half year ended September 30, 2025.
+- path: inputs/presentation/2026-11-12_Q2FY27_press_release_4b8f4126.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: press release (Q2 and H1 FY27 unaudited results)
+  period: FY27 Q2 (quarter ended 2026-09-30)
+  folder_match: false
+  proposed_move: inputs/results/
+  page_read: 1
+  note: 'Type mismatch, low severity: a results press release sits in presentation/. results/ holds the results documents. Orchestrator decides.'
+- path: inputs/presentation/Investor_Presentation_1.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: investor presentation (cover letter)
+  period: 'FY27 Q2 (letter: Q2 and FY 27, dated 2026-11-12)'
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Page 1 is the cover letter dated 2026-11-12 enclosing the investor presentation. Slides start on page 2.
+- path: inputs/results/2026-05-26_Q4FY26_audited_results_f086a834.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: results (audited, board outcome)
+  period: FY26 Q4 (year ended 2026-03-31)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Letter dated 2026-05-26 for audited results, quarter and year ended March 31, 2026.
+- path: inputs/results/2026-08-10_Q1FY27_results_c4386b87.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: results (unaudited, board outcome)
+  period: FY27 Q1 (quarter ended 2026-06-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Letter dated 2026-08-10 for unaudited results, quarter ended 30 June 2026.
+- path: inputs/results/2026-11-12_Q2FY27_results_70cb396f.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: results (unaudited, board outcome)
+  period: FY27 Q2 (quarter and half year ended 2026-09-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Letter dated 2026-11-12 for unaudited results, quarter and half year ended 30 September 2026.
+- path: inputs/rating/CRISIL_rationale_2026-08-28.txt
+  file_type: txt
+  content_ok: true
+  issuer: Astra Microwave Products Limited
+  doc_type: rating (CRISIL rating rationale)
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: 'Rationale dated August 28, 2026: long-term upgraded to Crisil A+/Stable, short-term reaffirmed Crisil A1. No reporting period on page 1. The .txt has no page markers; page_read 1 is the start of
+    the file. No PDF twin.'
+- path: inputs/shareholding/BSE_shareholding_pattern_2026-09-30.txt
+  file_type: txt
+  content_ok: true
+  issuer: Astra Microwave Products Limited (BSE scrip 532493)
+  doc_type: shareholding pattern (BSE, Reg 31(1)(b))
+  period: FY27 Q2 (quarter ended 2026-09-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Header states quarter ended 30-09-2026, filed 2026-10-09. The .txt has no page markers; page_read 1 is the start of the file. No PDF twin.
+- path: inputs/screening/screener-Data_Sheet.csv
+  file_type: csv
+  content_ok: true
+  issuer: Astra Microwave Products Ltd
+  doc_type: screening data sheet (aggregator export, not a filing)
+  period: FY17 to FY26 annual; quarters Q1 FY25 to Q2 FY27 (report dates 2024-06-30 to 2026-09-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: COMPANY NAME row reads ASTRA MICROWAVE PRODUCTS LTD. Figures sit beside row labels. No PDF twin.

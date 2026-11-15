@@ -144,3 +144,7 @@ searches_skipped:
 verdict_basis: "No SEBI, criminal or auditor-resignation record found; CAUTION because INR M 4,500.0 sits unsecured with the promoter's own cash-pool header, royalty is split across two lines, and the CFO, CS and WTD seats turned over in 2026"
 analyst_note: "Fact 2 check: confirmed in part. Gas sale INR M 438.6 (Rs 43.86 cr) and hydro INR 1 are in Note 36 p.180 as slump sales to fellow subsidiaries; their pricing basis is not in the notes. Royalty FY26 is Rs 43.57 cr in Note 36 (not Rs 13.21 cr; that is the AR25 P&L line 132.1). Durgapur consideration to the company: NOT FOUND; NCLT sanctioned 1 Oct 2026 (company filing). Classification is STRUCTURE, not INTEGRITY: GEV is a US-listed BBB/BBB+ guarantor, terms follow transfer-pricing rates, no default alleged. Tripwires: guarantee covering the ICD in writing; ICD size above INR M 4,500; royalty reconciliation; permanent CFO tenure."
 ```
+
+
+---
+ORCHESTRATOR ERRATUM (2026-11-16, appended from Verifier A finding B12a; the stage agent cannot edit its own report): Section 3A prints group materials purchases as INR M 697.6. Verifier A source truth: INR M 699.1 (AR26 Note 36, purchase of materials and components, fellow subsidiaries, p.181). Use 699.1. The FY25 royalty gap of 382.4 is on the AR25-original basis (514.5 less 132.1); against the re-presented 121.5 the gap is 393.0.

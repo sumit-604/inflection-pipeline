@@ -328,3 +328,7 @@ mgmt_questions:
 one_line_verdict: "Service-led hybrid with real order growth, thin disclosure on line mix, and profit still leaning on other income and one-offs."
 analyst_note: "Three corrections for later stages. (1) The brief's 11% is the FY26 entity-level normalised EBITDA including discontinued Durgapur, not an FY27 guide; the CFO refused a range. (2) RPO fall of 38.9% is mostly the 7,749 INR M Jaypee FGD EP termination; like-for-like -13.8% (calc). B02/B03 book-to-bill 0.18 should not be used; deck intake was 877 Cr. (3) Margin ex other income was 12.4% FY26 (calc), 14.5% Q1 and 9.8% Q2 FY27, but other income was 51.9% of H1 PBT; pool interest at 5.5-6.35% on 4,500 INR M explains only about a quarter of it (calc), so composition is open. Revenue split by line is NOT FOUND."
 ```
+
+
+---
+ORCHESTRATOR ERRATUM (2026-11-16, appended from Verifier A finding B12a): Section 3B must-track row "Material cost % of revenue" prints Q2 FY27 as 67.6%. That figure is gross of the WIP change (2,103.8 / 3,112.3, Results Q2 FY27 p.3). The 60.2% FY26 and 67.3% FY25 bases are net of the WIP change. On the same net basis Q2 FY27 is 64.4%, so the 67% red-flag line is not tripped.

@@ -175,3 +175,7 @@ downstream_candidates:
 demand_externally_verifiable: true
 analyst_note: "See full note in B09-tam.yaml: 4,000 is a SAM-type claim; 2,500 carried as the only defined figure; SOM anchored to intake share moves little between readings; CAGR is core order intake, not company revenue."
 ```
+
+
+---
+ORCHESTRATOR ERRATUM (2026-11-16, appended from Verifier A findings B12a): (1) Section 2 Method 2 prints "Rs 1.1 Cr per MW a year". Rs 2,500 Cr over 224,150 MW is about Rs 1.1 lakh per MW a year; the printed unit is 100x too high. (2) Section 3B second reading: CAGR is 7.7%, not 7.8%. (3) Section 4A PLF 65.2%, 66-68% and demand growth 0.8% are attributed to ICRA but are not in the corpus ICRA rationale; they are web-search attributions, UNANCHORED.

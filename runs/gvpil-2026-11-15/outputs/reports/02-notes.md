@@ -236,3 +236,7 @@ restatements_found:
 going_concern_language: "NONE adverse. CARO clause (xix) no material uncertainty (auditor's report p.130-131, outside notes); 'going concern' elsewhere refers to the slump-sale and demerger transfers"
 analyst_note: "Pass 3 closed the three open items. (1) Royalty booking: no note names it; the word appears only in Notes 33 and 36; real cost likely inside cost of materials (inference), profit effect unproven. (2) Slump-sale deductions: closing balances tie only with them, values equal FY25 to one decimal, total 322.7 exceeds Durgapur block 280.3; the loss-order row flips sign under one label; P&L effect NOT STATED, bound nil to 299.2 on warranty. (3) INR M 247.0: continuing cost carries no matching charge (entity-level PBT ties 3,123.3 - 698.0 = 2,425.3; FY25 re-presentation moved cost lines only). The exposure is post-demerger supply cost, not misstatement. ICD: YELLOW on the Notice guarantee (outside notes); RED on the Notes alone. Net cash 8,473.1 with ICD, 3,973.1 without."
 ```
+
+
+---
+ORCHESTRATOR ERRATUM (2026-11-16, appended from Verifier A finding B12a): "55.3% of the INR M 3,174.4 step-up" computes to 55.2% ((1,320.0 + 433.5) / 3,174.4). Stage 3 already uses 55.2%.

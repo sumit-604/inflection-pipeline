@@ -34,3 +34,7 @@ Gaps:
 - Subagent calls dispatch in the background in this harness. Completion is proven per stage by report and block files on disk before any later stage reads them.
 - Stage 3 erratum prepended to 03-ardeep.md (EBIT 4,984.66 should read 3,984.66 Rs lakh). Stage 3 also found the Step B brief's AR page cites wrong: CWIP is PDF p.106 (brief says p37) and 'presentations: None' is p.68 (brief says p41). The brief is memory, not a source; stage anchors govern.
 - Dispatch order after stage 3: wave A stages 4, 5, 8; wave B stages 6, 7, 9 (stage 9 needs the B04 block, stages 6 and 7 need B05).
+- Stage 6 errata prepended to 06-peers.md (four page-cite slips the stage reported itself).
+- Stage 5 no-call cost: 174,554 total tokens against the 100k target (LESSONS open action C2).
+- Stages 8 and 9 returned status partial (searches skipped or failed; lists in their blocks).
+- B06 block file ended with a stray markdown fence line and failed to parse. The orchestrator removed that one line; no content changed. No stage retry was needed.

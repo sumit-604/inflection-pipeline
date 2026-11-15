@@ -1,0 +1,13 @@
+stage: B02-notes-pass1
+company: "INVPRECQ"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+note: "Pass 1 of 3. Final B02-notes block is written by pass 3."
+report: runs/invprecq-2026-11-15/outputs/reports/02-notes-pass1.md
+load_bearing_facts:
+  - {n: 1, result: "partly reachable; FY26 baseline CFO 2,577.89 vs PAT 1,176.62 Rs lakh; H1 FY27 not reachable"}
+  - {n: 2, result: "FY26 A&D 1,086.42 lakh = 5.86% confirmed (Cons Note 38 p.174); H1 FY27, HAL, MKU not reachable"}
+  - {n: 3, result: "not reachable; no capital commitments or events-after note in AR Notes"}
+  - {n: 4, result: "reconciled; 185.79=castings segment 18,579.08, 188.45=revenue 18,844.62, 189.7=total income 18,968.21 Rs lakh"}
+red_flags: []

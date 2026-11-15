@@ -1,3 +1,8 @@
+> VERIFIER A CORRECTIONS (B12a, source-fidelity gate; appended by the orchestrator 2026-11-16; the corrected values govern everywhere downstream):
+> - F2: H1 FY27 Explosives segment result is 1,953.31 Rs lakh on revenue 30,323.32 Rs lakh, margin 6.44% (Q2 FY27 results PDF p.6), not 1,963.31 / 30,320.32 / 6.47% or 6.48%. The stage 5 trigger 2 confirm signal of 6.5% was set against the wrong base.
+> - F3: Q2 FY27 other income is 209.80 Rs lakh; EBITDA ex other income is 1,309.51 (8.16%) for Q2 and 2,689.11 (7.82%) for H1 (Q2 FY27 results PDF p.5), not 200.80 / 1,318.51 (8.21%) / 2,698.11 (7.85%).
+> - F7: Peer page anchors: SOLARINDS Q2FY26 Rs 960 Cr is p.4 (not p.3); SOLARINDS Q2FY27 Rs 17,568 Cr is p.10 (not p.9); APOLLO Q4FY26 IDL about Rs 380 Cr is p.9 (not p.10); PREMEXPLN Q1FY27 6% regular explosives is p.9. The numbers are correct.
+
 > ORCHESTRATOR ERRATA (2026-11-15, reported by the stage itself, which has no edit tool). Page cites in the text below that the stage corrected after writing: (1) Q9 and the coverage map cite APOLLO Q3FY26 "p.13" for the IDL order book; the correct page is 12 (also the "p.13 area" guidance quote). (2) Section 2E risk 8 cites PREMEXPLN Q4FY26 "pp.6, 18"; the correct pages are 6 and 17. (3) The Q9 Evidence cell cites APOLLO Q2FY27 "p.17"; the correct pages are 19-20. The block file B06-peers.yaml carries the corrected Q4FY26 pages.
 
 # STAGE 6 PEER VERIFICATION: Keltech Energies Ltd (KELTECH, BSE 506528)

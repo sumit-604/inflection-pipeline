@@ -1,0 +1,57 @@
+stage: confidence
+company: KELTECH
+run_date: '2026-11-15'
+phase: '1'
+confidence_delta:
+  numerical_acceptance: 95
+  redflag_coverage: 78
+  framework_adherence: 90.7
+  peer_utilisation: 100
+  overall: 78
+  overall_set_by: redflag_coverage (B12b)
+  not_applicable: []
+denominators:
+  numerical_acceptance: 'B12a: about 300 numbers checked of about 560 material; mandatory tier 32 of 32'
+  redflag_coverage: 'B12b: 7 of 9 material items (5 caught outright, 2 partially caught counted as already had)'
+  framework_adherence: 'B12c phase-1 portion only: 68 of 75 rules (Gate 0 44 of 46, emerging moat 24 of 29); valuation
+    component PENDING PHASE 3'
+  peer_utilisation: 'B12d: 12 of 12 peer transcripts confirmed substantive; B12d own acceptance_rate 92'
+band: 75-89 normal, note specifics; set by redflag_coverage
+verifier_a_identity_check: 0 CRITICAL rows in B12a; nothing to test; nothing struck by the orchestrator (the verifier's
+  own rule 5b self-check struck 5 rows before reporting).
+rework_triggers:
+  verifier_a_confirmed_critical: false
+  any_acceptance_below_60_on_4_plus: false
+  rework: false
+sensitivity_open_item: Verifier B states that if its 2 PARTIALLY CAUGHT material items are excluded, redflag_coverage
+  is 5 of 9 = 55.6%, below the 60% REWORK line (OR-29). The orchestrator used B12b.acceptance_rate as emitted (78),
+  which is the Section 5 definition, and did not re-score it. Whether partially caught items count is an operator
+  ruling. Carried to Halt 1 as an OPEN ITEM.
+verifier_counts:
+  A:
+    critical: 0
+    major: 5
+    minor: 2
+  B:
+    critical: 0
+    major: 4
+    minor: 13
+  C:
+    critical: 0
+    major: 3
+    minor: 4
+  D:
+    critical: 0
+    major: 1
+    minor: 2
+remediation_cycles: 0
+verifier_runs:
+  A: 1
+  B: 1
+  C: 1
+  D: 1
+mechanical_reruns: Verifiers A, B, C stalled once with no output (harness stream watchdog) and were re-invoked;
+  not counted.
+disagreement_set: Source-fidelity corrections F1 to F7 of B12a applied to the stage reports as prepended correction
+  notes (GATE HELD, figure corrected at source). No Verifier A flag was cleared.
+shadow: verifier-a-shadow not run in this session (batch instruction); .claude/shadow.yaml untouched.

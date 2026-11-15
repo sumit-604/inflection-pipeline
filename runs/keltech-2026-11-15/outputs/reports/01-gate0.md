@@ -1,3 +1,6 @@
+> VERIFIER A CORRECTIONS (B12a, source-fidelity gate; appended by the orchestrator 2026-11-16; the corrected values govern everywhere downstream):
+> - F4: Finance costs 417.88 Rs lakh and exceptional income 317.76 Rs lakh are anchored at AR p.99 (P&L), p.27 and p.130 (Note 23), not 'AR p.4'. The values are correct.
+
 # STAGE 1: GATE 0 SCORECARD — KELTECH (Keltech Energies Ltd, BSE 506528)
 Run date 2026-11-15. Model claude-sonnet-5-5. Standalone filer. CMP Rs 16,564, market cap Rs 1,656 Cr (screener-data, B00 manifest).
 

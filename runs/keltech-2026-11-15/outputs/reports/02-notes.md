@@ -1,3 +1,6 @@
+> VERIFIER A CORRECTIONS (B12a, source-fidelity gate; appended by the orchestrator 2026-11-16; the corrected values govern everywhere downstream):
+> - F5: The bank-return gaps of 19.2% to 30.3% (inventory) and 20.4% (receivables) are shares of the amount REPORTED IN THE RETURN (AR p.118, Note 13). As a share of books they are 23.7% to 43.6% and 25.6%. The label 'above books' is wrong.
+
 # Stage 2, Notes Pass 3 (pattern pass) and consolidation: KELTECH, run 2026-11-15
 
 Source: runs/keltech-2026-11-15/inputs/annual-report/AR_FY2025-26.pdf (text twin AR_FY2025-26.txt). Unit: Rs LAKH on the face of every statement and note (Note 2.2, p.89). Nothing is converted. Pages are PDF pages (= [page N] markers). "Derived" means my arithmetic on printed figures. Pass 2 corrections A1 and A2 govern over Pass 1 (A1: the Chowgule & Company receivable 84.51 sits in the above-1,095-day column of Note 26, p.135, not 731-1,095; A2: contingent item 30(b) rebuilds to 1,375.43 + 151.50 + 121.02 = 1,647.95).

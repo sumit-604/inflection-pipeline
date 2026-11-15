@@ -1,3 +1,6 @@
+> VERIFIER A CORRECTIONS (B12a, source-fidelity gate; appended by the orchestrator 2026-11-16; the corrected values govern everywhere downstream):
+> - F2: H1 FY27 Explosives segment result is 1,953.31 Rs lakh on revenue 30,323.32 Rs lakh, margin 6.44% (Q2 FY27 results PDF p.6), not 1,963.31 / 30,320.32 / 6.47% or 6.48%. The stage 5 trigger 2 confirm signal of 6.5% was set against the wrong base.
+
 # Stage 4: Business Model Decoder. KELTECH (Keltech Energies Ltd), run 2026-11-15
 
 Sources and anchors. AR = runs/keltech-2026-11-15/inputs/annual-report/AR_FY2025-26.pdf (text twin read; PDF page numbers; printed folio is PDF page minus 3). AR figures are Rs LAKH. CRISIL = CRISIL_2026-02-13_rationale.pdf, Rs CRORE, PDF page. Q2 = 2026-11-14_Q2FY27_board-outcome-and-results.pdf, Rs lakh; its tables are OCR-grade, so digits from it are marked "OCR read". SCR = screener-Data_Sheet.csv, Rs Cr, FY26 column. S3 = outputs/reports/03-ardeep.md (my own derived figures are repeated there with the same arithmetic). "Derived" = my arithmetic on printed figures. Nothing converted silently. Investor presentation: NOT PROVIDED (the company issues none, AR p.68). No concalls (B00). NOT FOUND means the provided documents do not say it.

@@ -1,3 +1,6 @@
+> VERIFIER A CORRECTIONS (B12a, source-fidelity gate; appended by the orchestrator 2026-11-16; the corrected values govern everywhere downstream):
+> - F2: H1 FY27 Explosives segment result is 1,953.31 Rs lakh on revenue 30,323.32 Rs lakh, margin 6.44% (Q2 FY27 results PDF p.6), not 1,963.31 / 30,320.32 / 6.47% or 6.48%. The stage 5 trigger 2 confirm signal of 6.5% was set against the wrong base.
+
 # Stage 7: Emerging Moat Scan, 22 categories. KELTECH (Keltech Energies Ltd, BSE 506528)
 Run date 2026-11-15. Model claude-sonnet-5-5. This is the Emerging Competitive Advantages scan. It is a separate analysis from any later deliberation stage.
 

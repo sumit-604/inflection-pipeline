@@ -1,3 +1,8 @@
+> VERIFIER A CORRECTIONS (B12a, source-fidelity gate; appended by the orchestrator 2026-11-16; the corrected values govern everywhere downstream):
+> - F1: Q4 FY26 Explosives segment revenue is 12,355.58 Rs lakh and growth is +7.70% (Q4 FY26 audited results PDF p.10), not 12,365.58 and +7.8%.
+> - F2: H1 FY27 Explosives segment result is 1,953.31 Rs lakh on revenue 30,323.32 Rs lakh, margin 6.44% (Q2 FY27 results PDF p.6), not 1,963.31 / 30,320.32 / 6.47% or 6.48%. The stage 5 trigger 2 confirm signal of 6.5% was set against the wrong base.
+> - F3: Q2 FY27 other income is 209.80 Rs lakh; EBITDA ex other income is 1,309.51 (8.16%) for Q2 and 2,689.11 (7.82%) for H1 (Q2 FY27 results PDF p.5), not 200.80 / 1,318.51 (8.21%) / 2,698.11 (7.85%).
+
 # Stage 5: Concall analysis, NO-CONCALL MODE. KELTECH, run 2026-11-15
 
 Mode: manifest `concalls_available: false`. Keltech holds no earnings calls and issues no investor presentation (AR FY2025-26 p.68: "Presentations made to institutional investors or to the analysts: None"; "The Company does not make any official news release of any type"). Bounded read, as the instruction file defines.

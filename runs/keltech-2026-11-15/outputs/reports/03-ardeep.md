@@ -1,3 +1,6 @@
+> VERIFIER A CORRECTIONS (B12a, source-fidelity gate; appended by the orchestrator 2026-11-16; the corrected values govern everywhere downstream):
+> - F6: Note 13(c) outstanding liabilities 2,695.09 Rs lakh is at AR p.119, not p.120.
+
 > ORCHESTRATOR ERRATUM (2026-11-15, reported by the stage itself, which has no edit tool): in Phase 3C, the "Margin waterfall FY26" line prints "EBIT incl. other income 4,984.66". The correct figure is 3,984.66 Rs lakh (4,087.95 + 660.19 - 763.48, shown in the same line's bracket). The YAML block is unaffected.
 
 # Stage 3: Annual Report Deep Dive, backward read. KELTECH, run 2026-11-15

@@ -39,3 +39,8 @@ Gaps:
 - Stages 8 and 9 returned status partial (searches skipped or failed; lists in their blocks).
 - B06 block file ended with a stray markdown fence line and failed to parse. The orchestrator removed that one line; no content changed. No stage retry was needed.
 - Verifiers A, B and C stalled on first dispatch (harness stream watchdog: no progress for 600s) and left no report or block. Mechanical failure: each is re-invoked once in the foreground path; this does not count against verifier_runs. Verifier D completed on first dispatch.
+- Verifiers: A 0 CRITICAL / 5 MAJOR / 2 MINOR (95%); B 0 / 4 / 13 (78%); C phase-1 0 / 3 / 4 (90.7%); D 0 / 1 / 2 (12 of 12 substantive). verifier_runs set to 1 each in the manifest.
+- Verifier A identity check: no CRITICAL rows, nothing struck by the orchestrator.
+- No REWORK trigger. No remediation cycle run (remediation_cycles stays 0).
+- Confidence delta overall 78, set by redflag_coverage. OPEN ITEM for Halt 1: Verifier B's strict count without partially caught items is 55.6%; the orchestrator used the emitted 78 and did not re-score.
+- Verifier A corrections F1 to F7 prepended to the affected stage reports; all verifier corrections collected in outputs/reports/ERRATA-verifier-corrections.md. Stage blocks keep the stage text; the errata file governs.

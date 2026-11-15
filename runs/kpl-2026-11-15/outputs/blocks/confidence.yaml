@@ -1,0 +1,17 @@
+stage: confidence
+company: KPL
+run_date: 2026-11-15
+phase: 1
+confidence_delta:
+  numerical_acceptance: 99      # B12a: 390 checked, 55 of 55 mandatory; 0 CRITICAL, 0 MAJOR, 3 MINOR; no source-fidelity finding
+  redflag_coverage: 63          # B12b: 12 of 19 MATERIAL items fully caught (6 partly caught, 1 missed); denominator 19 >= 4
+  framework_adherence: 86       # B12c phase-1 scope (Gate 0 + Emerging Moat): 69 of 80 rules passed; valuation half PENDING phase 3
+  peer_utilisation: 90          # B12d: 9 of 10 peer transcripts used substantively (1 cited-only, stale); B12d.acceptance_rate 100
+  overall: 63
+  overall_set_by: redflag_coverage
+  not_applicable: []
+  pending: ["framework_adherence valuation component (B10, B11) deferred to phase 3"]
+band: "60-74: PROCEED verdicts downgrade one level"
+verifier_a_identity_check: "No CRITICAL rows in B12a; nothing to strike."
+rework_triggers: "None. No CONFIRMED Verifier A CRITICAL; no acceptance rate below 60% on a denominator of 4 or more (lowest: B12b 63% on 19)."
+verifier_a_shadow: "not run in this session (single shadow run assigned to the TD Power session)"

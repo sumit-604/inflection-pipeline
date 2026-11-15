@@ -1,0 +1,50 @@
+stage: B12c
+company: "KPL"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+scope: "phase-1: Gate 0 (B01) + Emerging Moat (B07). Valuation half (B10, B11) pending phase 3; no valuation framework doc loaded."
+gate0:
+  rules_checked: 53
+  fails:
+    - "G03 MAJOR: ROCE computed on (NW + borrowings) for all 10 years, not the fixed EBIT / (TA - CL). Formula basis shown only FY25 23.0% and FY26 27.4% (proxy 17.0%, 21.7%). Mixed basis keeps Block A 13, core 61, GOOD; rule-5 NOT FOUND reading gives Block A 4, core 52, AVERAGE. Separating observation: TA and CL (or screener ROCE) for >= 3 years in the corpus."
+    - "G06 MINOR: FCF on CFO + CFI proxy FY17-FY24, not CFO - capex excluding acquisitions. FY25/FY26 cross-checks keep sign. B2/B3 for FY17-FY24 undetermined; GOOD holds on any Block B value."
+    - "G39 MINOR: M5 scored 1 on a 4-name peer set with segment rank not evidenced; rule gives PEER DATA NEEDED = 0. Recomputed moat 18, grand total 79, moats present 3, MODERATE unchanged."
+    - "G52 MINOR: fenced YAML in 01-gate0.md differs from outputs/blocks/B01-gate0.yaml (input_gaps, deal_breakers, data_notes pointer, analyst_note). Scored fields match."
+    - "G53 MINOR: E4 numerator gap (Note 34 GST items Rs 6.30 Cr + Rs 30.26 Cr inside or outside Rs 36.98 Cr) absent from block input_gaps/data_notes. If outside: E4 = 1, Block E 10, core 59, AVERAGE, FLAG-GATE0 due."
+emoat:
+  rules_checked: 27
+  fails:
+    - "E03 MINOR: BE capitalisation Rs 4.34 Cr (a recount item) anchored 'AR via B03' with no AR page; Unit 6 CWIP 'via B03'; Section 2D items untagged. No score change."
+    - "E10 MINOR: R1 typed '📄 (2) and 🎙️' (RCGM submission AR p.48; CDSCO nod BSE 24 Jul 2026, both 📄 under the taxonomy) but scored 0.7 with no reason. Recomputed R1 2.0, total 10.9, NONE holds."
+    - "E11 MINOR: G1 scored 1.0 with its core tests failed while G2 scored 0 with two listed indicators present (inventory Rs 78 to 74 Cr, 111 to 77 days; debtor days 203 to 178). Same bar: G2 0.7-1.0 (total 11.0-11.3) or G1 0 (total 9.3). NONE holds."
+    - "E12 MINOR: A4 labelled Moderate at raw 2 / adjusted 1.4 while E1, H2, R1 labelled Weak at raw 2 / adjusted 1.4; active_categories inconsistent (B2 only, or five rows)."
+    - "E19 MINOR: report says pipeline items are 'in the register, not the score', but A4, R1, E1, H2 score 1.4 each (5.6 of 10.3) on items also registered. Score stands under the 0.7x rule; statement wrong. Strict reading: E1, H2 to 0, total 7.5, NONE holds."
+    - "E27 MINOR: evidence_mix claim 9 and inference 3 do not reconcile with report tags (14 🎙️-tagged items in Section 3; >= 8 🔍-tagged items); counting basis not stated. documented 10 reconciles."
+valuation: {status: "pending", rules_checked: 0, fails: []}  # phase 3; stages 10 and 11 not run
+expectation_ledger: {status: "pending", present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}  # rules 13-14; any fail = REWORK stage 11; pending phase 3
+business_understanding_narrative: {status: "pending", present: null, five_questions: null, prose_only: null, b09_candidates_referenced: null, no_valuation_vocabulary: null, fails: []}  # rule 9; any fail = REWORK stage 13; pending /finalize
+recomputed_destination_pe: ""  # not in phase-1 scope
+recomputed_decision: ""        # concur: Gate 0 GOOD (most evidenced reading); EM class NONE (recomputed 11.6-11.9)
+findings:
+  - {id: "C-G03", stage: "B01", severity: "MAJOR", rule: "Gate 0 formula definitions: ROCE fixed, no substitutes; rule 5 NOT FOUND = 0", claimed: "ROCE on NW + borrowings; A1 3, A2 1, A4 5; Block A 13; core 61; GOOD", recomputed: "Mixed basis (FY25 23.0%, FY26 27.4%): Block A 13, core 61, GOOD. Rule-5 strict: Block A 4, core 52, AVERAGE", decision_effect: "survives on most evidenced reading; decision-changing only if the corpus holds no TA and CL for >= 3 years"}
+  - {id: "C-G06", stage: "B01", severity: "MINOR", rule: "Gate 0 formula definitions: FCF = CFO - capex excluding acquisitions", claimed: "CFO + CFI proxy; B2 0, B3 0", recomputed: "FY17-FY24 undetermined; FY25/FY26 sign unchanged", decision_effect: "none; GOOD holds on any Block B value"}
+  - {id: "C-G39", stage: "B01", severity: "MINOR", rule: "Block F: peer data not provided = 0, PEER DATA NEEDED", claimed: "M5 1 (top 5 of a 4-name set)", recomputed: "M5 0; moat 18; grand total 79; MODERATE", decision_effect: "none"}
+  - {id: "C-G52", stage: "B01", severity: "MINOR", rule: "Output: end with exactly this fenced YAML block", claimed: "report copy and block file differ in four text fields", recomputed: "scored fields identical", decision_effect: "none"}
+  - {id: "C-G53", stage: "B01", severity: "MINOR", rule: "Unresolved inputs carried to input_gaps / data_notes", claimed: "E4 3 on Rs 36.98 Cr; GST composition noted in report body only", recomputed: "if GST items outside the total: 22.3%, E4 1, core 59, AVERAGE", decision_effect: "presentational; class-sensitive; Note 34 read decides"}
+  - {id: "C-E03", stage: "B07", severity: "MINOR", rule: "Rules 2-3: tag and source anchor on every evidence item", claimed: "recount item anchored 'AR via B03'; 2D items untagged", recomputed: "recount 10, or 9 if the B03 route lacks an AR page", decision_effect: "none"}
+  - {id: "C-E10", stage: "B07", severity: "MINOR", rule: "Section 5 multiplier by evidence quality; taxonomy: regulatory application submitted = 📄", claimed: "R1 2 x 0.7 = 1.4", recomputed: "R1 2 x 1.0 = 2.0; total 10.9", decision_effect: "none; NONE holds"}
+  - {id: "C-E11", stage: "B07", severity: "MINOR", rule: "Same bar for like evidence (Rule J); rule 5 NO EVIDENCE only where none exists", claimed: "G1 1.0; G2 0", recomputed: "G2 0.7-1.0 (total 11.0-11.3) or G1 0 (total 9.3)", decision_effect: "none; NONE holds"}
+  - {id: "C-E12", stage: "B07", severity: "MINOR", rule: "Section 3 strength labels consistent with scores; active_categories Strong/Moderate only", claimed: "A4 Moderate; E1, H2, R1 Weak; all at adjusted 1.4", recomputed: "active_categories B2 only, or A4, B2, E1, H2, R1", decision_effect: "none; guard not triggered"}
+  - {id: "C-E19", stage: "B07", severity: "MINOR", rule: "Optionality Register: watched, never scored", claimed: "pipeline 'in the register, not the score'", recomputed: "5.6 of 10.3 on registered items; strict reading total 7.5", decision_effect: "none on class; forward double-credit risk at stage 11 (F-1)"}
+  - {id: "C-E27", stage: "B07", severity: "MINOR", rule: "Block evidence_mix = item counts", claimed: "documented 10, claim 9, inference 3", recomputed: "documented 10; claim >= 14 (Section 3 tags); inference >= 8", decision_effect: "none"}
+forward_flags:
+  - "F-1 stage 11 Pillar 3: em_score already credits R1/A4/E1/H2 for items also in catalysts_12m (Unit 6 licence, EPO, Pembrolizumab, BE dossiers, EU MAs); no second credit as catalyst proximity."
+  - "F-2 Halt 1: Gate 0 core 61, line 60. Downside routes to AVERAGE: ROCE rule-5 reading (52), E4 composition (59), B1 knife-edge (59, Rs 2.02 Cr CFO headroom)."
+  - "F-3 operator ruling candidate: mixed-tier multiplier rule absent in prompts/07 Section 5; decides NONE (10.3; recompute 11.6-11.9) vs MODEST (12.4-13.4) on this name."
+  - "F-4 Verifier A pointers: B1 headroom Rs 2.02 Cr; C1 0.11pp under 20%; D1 0.07x over 1.0x; Note 34 sum 36.56 vs 36.98; FAT 3.23x (B01, 155.57) vs 3.35x (B07, 150)."
+pending_rules: "Verifier C rules 4, 6, 7, 11-15 at phase 3; rules 9-10 at /finalize. Rule 8 checked (B07 categories 21 and 22 present, scored 0 correctly)."
+critical_count: 0
+major_count: 1
+minor_count: 10
+acceptance_rate: 86             # 69 passed / 80 checked = 86.25%

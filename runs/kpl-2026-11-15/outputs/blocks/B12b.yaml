@@ -1,0 +1,43 @@
+stage: B12b
+company: "KPL"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 32
+caught: 19
+partially_caught: 9
+missed:
+  - {severity: "MAJOR", item: "F4: FY29 1,000 Cr guide not ex-biologics per management; downside without hormones and biologics is 800-850 Cr; FY30 1,500 Cr both excludes and includes them by analyst; B05 1A rows 5-6 take 'excluded' at face value", anchor: "KPL-May [page 6], [page 8], [page 17], [page 21]; KPL-Aug [page 13], [page 18], [page 19]"}
+  - {severity: "MINOR", item: "F25: deck shows 500 L bioreactor expansion complete; only 100 L CDSCO-approved, 500 L approval awaited", anchor: "KPL-Aug, Manan, [page 12]"}
+  - {severity: "MINOR", item: "F27: opening says nearly 30% of delayed receivables recovered; Q&A says 40%", anchor: "KPL-May [page 3], [page 11]"}
+  - {severity: "MINOR", item: "F28: oncology expansion 'will generate revenue immediately' vs same-answer audit list and peer transfer timelines of 3-12 months", anchor: "KPL-Aug [page 17]; CAP-Aug26 [page 13]; SEN-Oct26 [page 16]-[page 17]; LIN-Feb26 [page 7]"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
+credibility_grade_concur: "lower: C; two evasions repeated across both quarters, an oncology cut ratified through an analyst's wrong recall, and forward statements that failed on stage, composition and timing outweigh P&L beats the CFO says he sets low"
+findings:   # consolidated rows; counts below are of these rows
+  - {severity: "MAJOR", target: "B05", item: "MISSED F4: FY29 1,000 Cr guide composition; management downside ex-biologics 800-850 Cr; FY30 include/exclude contradiction", anchor: "KPL-May [page 6], [page 8], [page 17], [page 21]; KPL-Aug [page 13], [page 18], [page 19]"}
+  - {severity: "MAJOR", target: "B05, B06", item: "PARTIALLY CAUGHT F5: registrations 2-3 a quarter vs 60-70 in three quarters; 1.5-2 million each fails under rupee (9-14 Cr a year vs 197-217 Cr FY27 increment, derived) and dollar (90-140 million USD, peers far lower) readings; B06 Q4 rupee reading untested", anchor: "KPL-Aug [page 4]-[page 5], [page 7]; CAP-May26 [page 5], [page 17]-[page 18]; SEN-Jul26 [page 15]-[page 16]; LIN-Feb26 [page 6]"}
+  - {severity: "MAJOR", target: "B06", item: "PARTIALLY CAUGHT F6: 'very less competition' in LATAM vs Caplin and Senores entering Mexico; B06 Q5 omits it", anchor: "KPL-Aug [page 5]; CAP-Nov25 [page 5], [page 10]; CAP-May26 [page 6]; CAP-Aug26 [page 3]; SEN-Jul26 [page 12]"}
+  - {severity: "MAJOR", target: "B05, B06", item: "PARTIALLY CAUGHT F8: Q4 FY26 gross margin war excuse contradicts same-call 'not much increase... API prices' and Caplin COGS rise under 2%", anchor: "KPL-May [page 15], [page 17]-[page 18]; KPL-Aug [page 11]; CAP-May26 [page 16]"}
+  - {severity: "MAJOR", target: "B05", item: "PARTIALLY CAUGHT F11: May called the EPO trial 'proceeding'; Aug shows pre-clinical just done and trials starting Nov-Dec 2026; B05 drops the 'Q4 of the next calendar year' self-correction, overstating the registration slip", anchor: "KPL-May [page 12]; KPL-Aug [page 3]-[page 4]"}
+  - {severity: "MAJOR", target: "B05", item: "PARTIALLY CAUGHT F12: oncology headroom told to market (25-35% utilised) walked back to 65% then 75-80%; filed as industry intelligence; not linked to the oncology cut", anchor: "KPL-May [page 4], [page 9]; KPL-Aug [page 15]"}
+  - {severity: "MAJOR", target: "B05", item: "PARTIALLY CAUGHT F20 and spot check wrong: 2A row 21 counts German registrations as partial with no evidence; corrected tally 9 delivered, 6 partial, 5 missed, 2 open; Aug FY28 Europe timing and May unfiled-registration claim unused", anchor: "KPL-May [page 8], [page 13], [page 18]; KPL-Aug [page 19]"}
+  - {severity: "MINOR", target: "B05", item: "Auditor: Aug CFO misquotes his May timeline ('I told that in Q3 or Q4') vs May 'next quarter'", anchor: "KPL-May [page 19]; KPL-Aug [page 16]"}
+  - {severity: "MINOR", target: "B05", item: "Aug reuses May 208-day cash conversion cycle as a debtor-day base", anchor: "KPL-May [page 3]; KPL-Aug [page 9]"}
+  - {severity: "MINOR", target: "B05", item: "4D #9 OVERSTATED: BE margin fade quoted without the same-answer replacement mechanism", anchor: "KPL-May [page 10]"}
+  - {severity: "MINOR", target: "B06", item: "Q2 attributes 'not your core market' to Caplin; analyst Richa said it", anchor: "CAP-May26 [page 14]"}
+  - {severity: "MINOR", target: "B06", item: "FLAG-APPROVAL-SHARE-LOW OVERSTATED: KPL FY26 cohort ratio vs peer cumulative ratios; Caplin count includes partners", anchor: "KPL-Aug [page 7]; CAP-Nov25 [page 5]; SEN-Oct26 [page 17]"}
+  - {severity: "MINOR", target: "B06", item: "FLAG-REGULATED-MARGIN-CONDITIONAL and cross-peer hypothesis OVERSTATED: Caplin Steriles is an ANDA owner at 30% vs group 38-39%; Lincoln does not attribute its guide change to Canada CDMO; Senores leg holds", anchor: "CAP-Feb26 [page 3]; CAP-May26 [page 7], [page 15], [page 18]; LIN-May24 [page 10]; LIN-Feb26 [page 6], [page 8]"}
+  - {severity: "MINOR", target: "B05", item: "PARTIALLY CAUGHT F19: hormone revenue told four ways in one call; only 150-200 recorded", anchor: "KPL-Aug [page 8], [page 13], [page 15], [page 18]"}
+  - {severity: "MINOR", target: "B05", item: "MISSED F25: 500 L bioreactor approval gap", anchor: "KPL-Aug [page 12]"}
+  - {severity: "MINOR", target: "B05", item: "MISSED F27: 30% vs 40% receivables recovered", anchor: "KPL-May [page 3], [page 11]"}
+  - {severity: "MINOR", target: "B05, B06", item: "MISSED F28: 'revenue immediately' from oncology expansion vs audits and peer timelines", anchor: "KPL-Aug [page 17]; CAP-Aug26 [page 13]; SEN-Oct26 [page 16]-[page 17]; LIN-Feb26 [page 7]"}
+  - {severity: "MINOR", target: "B06", item: "PARTIALLY CAUGHT F29: Keytruda first-wave claim not tested against Caplin second-wave view and Chinese biosimilar density", anchor: "KPL-Aug [page 9]; CAP-Feb26 [page 16]; CAP-Nov25 [page 17]"}
+  - {severity: "MINOR", target: "B06", item: "PARTIALLY CAUGHT F30: Lincoln 'Germany was full' not tied to KPL German registration claim", anchor: "LIN-Feb26 [page 7]; KPL-May [page 13]"}
+critical_count: 0
+major_count: 7
+minor_count: 12
+material_found: 19
+material_caught: 12
+acceptance_rate: 63
+coverage_basis: "19 material (2 CRITICAL, 17 MAJOR) of 32 listed; 12 caught, 6 partially caught, 1 missed; rate counts CAUGHT only; counting partials as caught gives 18/19 = 95%"

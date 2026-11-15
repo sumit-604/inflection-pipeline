@@ -17,3 +17,7 @@ Token columns: the harness exposes one total per subagent run (subagent_tokens),
 | 5 | stage-05-concall | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 234920 | 599s | 1 |
 | 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 278880 | 328s | 1 |
 | 7 | stage-07-emoat | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 174445 | 354s | 1 |
+| 9 | stage-09-tam | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 140721 | 402s | 1 |
+| 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 357620 | 610s | 1 |
+| 12c | verifier-c-framework (phase-1 scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 160090 | 799s | 1 |
+| 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 59753 | 68s | 1 |

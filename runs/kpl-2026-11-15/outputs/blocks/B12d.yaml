@@ -1,0 +1,21 @@
+stage: B12d
+company: "KPL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 10
+substantive_confirmed: 9
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "LINCOLN Q3 FY26", missed_item: "Lincoln spends INR 5-7 Cr a year on registrations and BE studies and re-registers partner-held LatAm products as owned; a cost-per-registration datapoint for Q4/Q8 (B06 cites only the re-registration, p.10)", anchor: "LINCOLN-Concall_Feb_2026_Transcript.txt lines 422-428 (page 10-11 boundary)"}
+  - {peer: "SENORES Q1 FY27", missed_item: "Apnar plant utilisation 80-90%, mostly product-led; industry context for Q6 utilisation", anchor: "SENORES-Concall_Aug_2026_Transcript.txt lines 524-529"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, item: "Lincoln INR 5-7 Cr a year registration spend not used in Q4 or Q8"}
+  - {severity: MINOR, item: "Senores Apnar utilisation 80-90% not used in Q6 context"}
+  - {severity: MINOR, item: "Q8 PARTIALLY VERIFIED margin-gap leg rests on one peer (Senores, not assigned); both assigned peers give no gap. Verdict cap is right; wording should say single-peer on margin gap"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 100

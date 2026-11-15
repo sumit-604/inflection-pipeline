@@ -1,0 +1,19 @@
+stage: B12a
+company: "KPL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+numbers_checked: 390
+mandatory_checked: 55
+mandatory_total: 55
+findings:
+  - {severity: "MINOR", location: "04-bizmodel.md analyst_note and B04 yaml (FY26 tax rate 24.7%)", claimed: "2,214.62 / 8,949.27 (AR p.30 lines) = 24.7%, basis not labelled", source_truth: "Consolidated tax 2,214.62 pairs with consolidated PBT 8,949.21 (AR p.188 P&L). 8,949.27 is STANDALONE PBT (AR p.30 standalone column). Report 03 section 2G correctly uses 8,949.21. Ratio is 24.75% either way", note: "Unlabelled standalone/consolidated mix in the denominator. Rate is unchanged to one decimal, so no decision effect. Reported as UNANCHORED (basis) under rule 5a", source_fidelity: false}
+  - {severity: "MINOR", location: "05-concall.md trigger 3 kill_signal and B05 yaml (PAT guide cut to about 111-116 Cr, derived at 31.2% and 28.3%)", claimed: "111-116 Cr", source_truth: "From the report's own stated inputs (H1 PAT 54.65 Cr per Q2 results p.16; H2 PBT about 86 Cr; tax 31.2% and 28.3%) the range reproduces as 113.8 to 116.3 Cr. The lower end 111 does not reproduce under the stated inputs or under the 189 Cr EBITDA low end (about 112.0)", note: "Derived figure with unstated inputs at its low end. Labelled derived and [INFERENCE]; not a source number", source_fidelity: false}
+  - {severity: "MINOR", location: "07-emoat.md anchors 'May call p.15' (Hikma Pharma, Algeria partner), 'May call p.17' (no increase in loans), 'May call p.21' (partners more or less fixed), 'Aug call p.10' (capex from running cash flows)", claimed: "p.15 / p.17 / p.21 / p.10", source_truth: "Statements exist in the transcripts. On the file's [page N] markers they sit on May p.16, p.18, p.22 and Aug p.11. They match only the printed footer numbering (footer = marker minus 1). Other B07 and B05 anchors use the marker numbering (for example Aug p.5 SD Pharma, May p.5 hormone WHO-GMP)", note: "Mixed page-numbering convention, convention not stated in B07. Numbers and quotes are real; the anchor is imprecise by one page", source_fidelity: false}
+critical_count: 0
+major_count: 0
+minor_count: 3
+false_positives_struck: 5
+material_universe: 500
+acceptance_rate: 99
+coverage_note: "Mandatory tier = 55 figures, all 55 checked (Phase 1: no B10/B11, so no verdict card or computed Section 1B pillar; tier set as 32 Gate 0 scorecard lines A1-E4 and M1-M12, 7 Gate 0 load-bearing figures, 16 Section 1B feeder figures carried in B03/B04/B05/B07/B09). Sample tier: about 500 material numbers by my count (every table cell and headline figure that feeds a score, flag, trigger or guidance row); 335 further numbers checked (390 in total). Not checkable against the PDFs supplied, named so they are not read as verified: web-sourced figures in B08 (registrationwala, Tofler, Trendlyne, DRAP recall alert, ValuePickr, AmbitionBox) and B09 (IMARC LATAM 39.4 bn, IMARC injectables 54.5 bn and 7.5 and 5.8 percent shares, EMR MEA 35.45 bn, Pharmexcil growth, RBI 95.2492, Towards Healthcare Brazil 38 percent, EPO and hormone pools, India exports); the Step-1 brief P/E 41.1x (B04, B09 label it unanchored); the 28-32 and 24-26 percent registration-type EBITDA figures (B04 labels unanchored). B09 arithmetic on those inputs was re-computed and ties. Not opened: Q4 FY26 results PDF, the Caplin Q3 FY26 and Senores Q1 FY27 calls, Lincoln calls (peer anchors checked: Caplin Nov 2025 and May 2026 and Aug 2026, Senores Jan and Nov 2026 and May 2026). Source-fidelity result: no MISMATCH, no ANCHOR NOT FOUND, no material UNANCHORED."

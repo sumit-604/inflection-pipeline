@@ -49,3 +49,5 @@ Gaps
 - Stage 8: status partial, six searches skipped (sebi.gov.in entity search, MCA21, Trendlyne 405, proxy advisers, Glassdoor, tax appeal status). Verdict CAUTION. No SEBI order found; freshness pair 3 stays PASS, provisional on the skipped sebi.gov.in lookup.
 - Stage 6: one report erratum appended by the orchestrator (order book is point-in-time, not H1 intake).
 - Stage 7: the agent stalled (stream watchdog, no progress for 600 s) AFTER writing its full report (480 lines, closed YAML block) and BEFORE writing the block file. The orchestrator wrote outputs/blocks/B07-emoat.yaml from the report with tools/extract_block.py (run-pipeline step 3: block absent, written from the stage output). No re-invoke was needed. The failed notification carried no usage figure, so the ledger row is n/a.
+- Stage 9: status partial, five searches skipped (powerpeakdigest 403, CEA Apr-Jun 2026 report, USD/INR rate, peer piping-only revenue, HRSG market size).
+- Verifiers A, B, C (phase 1 scope), D dispatched once each; manifest verifier_runs set to 1 each before dispatch.

@@ -48,3 +48,5 @@ No document came through the Chrome download path. I used a new tab in the opera
 - FLAG-DISAGREEMENT settled (B02 rank 3 vs B03): over-one-year receivables FY26 = 1,186.73 L (AR Note 11); B02's 888.35 L was the over-two-year sum. Erratum appended to 02-notes.md, 02-notes-pass2.md and B02-notes.yaml (orchestrator_corrections).
 - Stage 1 report erratum appended (garbled other-income line; stage agent reported it).
 - SEBI freshness pair re-checked after stage 3: the only SEBI order in the AR is Exemption Order WTM/KCV/CFD/18/2025-26 (8 Jan 2026); its text is in inputs/announcements/20260220-61-General-Updates. Pair stays PASS.
+- Stages 6 and 7 first invocations stalled (stream watchdog, no progress for 600s; API-side). Mechanical re-invoke, run# 2 each.
+- Stage 6: the stalled run had already written a complete report (closed YAML block) and a parsing block file; accepted from disk per 7A. Its token usage was not reported (n/a). Stage 7 re-invoked.

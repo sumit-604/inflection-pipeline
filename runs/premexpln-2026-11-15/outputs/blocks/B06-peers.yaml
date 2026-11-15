@@ -1,0 +1,63 @@
+stage: B06-peers
+company: "PREMEXPLN"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "PEER CONCALLS: BDL (third selected peer) has no transcripts in the corpus (none on screener or NSE feed); recorded UNUSED. 8 of 12 peer transcripts present (SOLARINDS 4, ASTRAMICRO 4). No defence PSU receivable, inspection or LD evidence from a PSU peer."
+  - "PEER SCOPE: neither peer makes chaff, flares or mines; neither discloses LD, export licence timing or MIL supply; Q8 and Q10 peers (ASTRAMICRO) are electronics, not energetics. Solar Q2 FY27 call held 4 Nov 2026 (file name carries 13 Nov); Astra Q2 FY27 call not in corpus."
+  - "FRESHNESS (B00/B05): Premier Q2 FY27 concall (13 Nov 2026) transcript ABSENT; the order book bridge, Katepally status and licence receipts remain NOT FOUND."
+  - "COLLECTOR (B00): shareholding folder empty at collection, repaired at /step1 with limits; screener export sheets empty (only Data_Sheet CSV populated); no results PDFs/rating PDFs from collector, repaired at /step1."
+  - "OCR TEXT LAYER (B00): Premier results filings are scans; load-bearing figures need the PDF page."
+  - "ANNOUNCEMENTS (B00): BSE API 403, NSE feed only (16 Nov 2025 to 13 Nov 2026); nine open-offer attachments are zip files not opened; Reg 29(1) acquirer name illegible."
+  - "RESEARCH (B00): no broker notes."
+  - "STAGE 5 (B05): no H1 FY27 cash flow statement or receivable ageing read; Peddakandukur licence suspension and restoration orders not in filed feed; licence reference numbers and export licence cover in rupees NOT FOUND."
+flags:
+  - "No peer mentions Premier Explosives by name or description (Part 2D): zero direct competitive evidence."
+  - "Peer margins on the defence mix sit at 27-33% (SOLARINDS consolidated 27.95% FY26, 29.02% Q2 FY27; ASTRAMICRO standalone EBITDA 30.9% Q3 FY26) and both peers met or beat FY26 revenue guidance; Premier missed by 22%. The shortfall is company-specific, not sector-wide."
+  - "SOLARINDS says it protects margin through rise-and-fall clauses and inventory (Q4 FY26 p7-8); Premier blamed industry-wide input prices for its margin. The peer evidence supports the price rise, not the claim that it cannot be passed on."
+  - "ASTRAMICRO shows the same pattern as Premier on timing (inspection and approval delays, Q3 FY26 p9; Q1 FY27 p17; QRSAM order slipped March to Q1 to June to not-yet), but within-year, with guidance held."
+  - "SOLARINDS 155 mm commercial start slipped Q4 FY26 -> 3-4 months after May 2026 -> end FY27 (analyst); corroborates a long build-to-qualification gap for energetics capacity."
+verified:
+  - {claim: "Peers hold margins at or above 15-20% EBITDA on a defence mix (Q4)", peers: ["SOLARINDS", "ASTRAMICRO"], anchor_count: 6}
+  - {claim: "MoD/PSU defence cash conversion lags profit; receivables and inventory build (Q9)", peers: ["ASTRAMICRO", "SOLARINDS"], anchor_count: 6}
+partially_verified:
+  - {claim: "MoD inspection and stage-clearance delays push deliveries across quarter-ends (Q1; LD reversal part UNVERIFIABLE)", peers: ["ASTRAMICRO"]}
+  - {claim: "Explosive and energetic input prices rose and hit margin (Q3; MIL supply failure UNVERIFIABLE)", peers: ["SOLARINDS"]}
+  - {claim: "Industry growth rates: budget +15% corroborated (Astra); defence exports +62.7% not corroborated; peer growth ranges +15-20% (Astra) to +94% (Solar) (Q5)", peers: ["ASTRAMICRO", "SOLARINDS"]}
+  - {claim: "Capex cycle: RDX/HMX and munition capacity slip between build and qualification (Q6; RDX/HMX itself not discussed)", peers: ["SOLARINDS"]}
+  - {claim: "QRSAM supplier-tier orders lag the BEL main order by 3-4 months and the main order slips (Q8; propellant share UNVERIFIABLE)", peers: ["ASTRAMICRO"]}
+  - {claim: "Peers split orders by segment and domestic/export, Astra by programme; neither discloses export licence cover (Q11)", peers: ["SOLARINDS", "ASTRAMICRO"]}
+contradicted: []
+unverifiable:
+  - {claim: "Export licence turnaround (3-6 months, then 3-4 months plus buyer import licence) and refusal or cancellation frequency (Q2)", peers_checked: ["SOLARINDS", "ASTRAMICRO"]}
+  - {claim: "Premier is the only Indian company qualified for countermeasures (chaff, flares); peers on mines or medium-calibre ammunition (Q7): Solar makes 23/30/40 mm but no peer mentions chaff, flares or mines", peers_checked: ["SOLARINDS", "ASTRAMICRO"]}
+  - {claim: "Post-acquisition integration, orders and related-party flows after a defence electronics group buys an energetics maker (Q10)", peers_checked: ["ASTRAMICRO", "SOLARINDS"]}
+peer_coverage_map:
+  - {peer: "SOLARINDS", quarter: "Q2 FY26 (call 11 Nov 2025)", usage: "SUBSTANTIVE", contribution: "H1 FY26 OCF Rs 95 Cr vs Rs 545 Cr, WC target 90 days (p10-11); L1 pricing at CIL/Singareni (p14); 23/30/40 mm products (p6); capex deferral (p12)"}
+  - {peer: "SOLARINDS", quarter: "Q3 FY26 (call 4 Feb 2026)", usage: "SUBSTANTIVE", contribution: "Defence Rs 702 Cr +72% (p4); Pinaka dispatch pending (p5); order book split Rs 18,000 Cr defence, Rs 6,500-7,000 Cr domestic (p7); margin 27-28% (p8); no product-wise disclosure (p10)"}
+  - {peer: "SOLARINDS", quarter: "Q4 FY26 (call 15 May 2026)", usage: "SUBSTANTIVE", contribution: "Input price pass-through, escalation about 60% of rise, inventory (p7-8); WC swing Rs 1,600 Cr (p9-10); 155 mm 3-4 months (p5); Kalyani entry (p6-7); capex Rs 2,050 Cr (p3)"}
+  - {peer: "SOLARINDS", quarter: "Q2 FY27 (call 4 Nov 2026)", usage: "SUBSTANTIVE", contribution: "EBITDA 29.02% (p2); order book Rs 20,178 Cr, defence Rs 17,568 Cr (p9); Pinaka Rs 6,000 + 3,000 Cr (p5); banned-country exports rule (p9); Omnia no detail (p6)"}
+  - {peer: "ASTRAMICRO", quarter: "Q2 FY26 (call 13 Nov 2025)", usage: "SUBSTANTIVE", contribution: "Receivables unlocked, WC days (p8); QRSAM revenue from FY27 (p6); counter-drone L2 loss on cost (p14); gross margin 45-50% (p12)"}
+  - {peer: "ASTRAMICRO", quarter: "Q3 FY26 (call 13 Feb 2026)", usage: "SUBSTANTIVE", contribution: "Inspection and approval delays (p9); receivables, inventory, advances 25% of gross (p6-7); budget +15% and L1 reform (p3); QRSAM order timing (p15)"}
+  - {peer: "ASTRAMICRO", quarter: "Q4 FY26 (call 27 May 2026)", usage: "SUBSTANTIVE", contribution: "OCF Rs 370 Cr vs -Rs 99 Cr (p3); defence exports Rs 38,000 Cr (p2); QRSAM and FOPM timing (p16); EBITDA 33.3% Q4 and 'top end' margin warning (p8, p11)"}
+  - {peer: "ASTRAMICRO", quarter: "Q1 FY27 (call 11 Aug 2026)", usage: "SUBSTANTIVE", contribution: "Q1 miss on inspection and supply chain (p17); QRSAM Rs 700-800 Cr (p6); WC not improving (p13-14); supply-chain stretch risk (p5)"}
+  - {peer: "BDL", quarter: "NONE", usage: "UNUSED", contribution: "No transcripts exist in corpus (none on screener or NSE feed); corpus gap, not an omission"}
+industry_cross_read:
+  demand: "Consensus strong: Solar defence revenue +94% FY26 and order book Rs 20,178 Cr (Nov 2026); Astra order book Rs 4,300 Cr after a Rs 2,205 Cr HAL order; both say order backlog is not the constraint, execution is. Split on pace: Solar +69% YoY Q2 FY27, Astra guides only 15-20%."
+  pricing_inputs: "Solar confirms commodity and ammonium nitrate price rises in FY27 but holds 28-29% EBITDA through rise-and-fall clauses (about 60% of rise) and inventory; Astra holds 45-55% gross margin on build-to-spec. Premier's 9-10% core margin does not match either peer's margin outcome."
+  capex_cycle: "Capacity race among scaled peers, not a lone expander: Solar Rs 2,050 Cr FY27 capex (Rs 2,700 Cr over two years) and a new 155 mm and medium-calibre line; Astra Rs 40-50 Cr a year plus a new building. Premier's Rs 60 Cr Katepally is small beside Solar's and slipped on the same build-to-qualification gap Solar shows on 155 mm."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Procurement shift away from L1 lowest-price toward technical parameters and owned IPR (ASTRAMICRO Q3 FY26 p3): hurts price-won suppliers; Premier lost Coal India bulk and Jagdalpur on price (B05)."
+  - "CIL and Singareni buy on L1 basis rather than value (SOLARINDS Q2 FY26 p14): matches Premier's bulk explosives loss."
+  - "New private competitor entering explosives, Kalyani Group (SOLARINDS Q4 FY26 p6-7)."
+  - "Commodity price spike can cut demand for a few months; ammonium nitrate (SOLARINDS Q4 FY26 p11)."
+  - "Supply chains stretched as countries restock defence inventory (ASTRAMICRO Q1 FY27 p5)."
+  - "Foreign content and FX on defence orders forces early inventory build and obsolescence risk (ASTRAMICRO Q3 FY26 p7); JV FX provision about USD 2 million (Q4 FY26 p17)."
+  - "DRDO and user approval delays in development contracts push revenue across periods (ASTRAMICRO Q3 FY26 p9-10)."
+  - "Working capital intensity: PSUs pass little financing down, production orders carry no advance (ASTRAMICRO Q3 FY26 p6, p11)."
+  - "Geopolitics-driven inventory build lifted Solar's FY26 working capital by about Rs 1,600 Cr (SOLARINDS Q4 FY26 p9-10)."
+  - "Defence export orders depend on a Government of India banned-country list (SOLARINDS Q2 FY27 p9)."
+net_narrative_effect: "complicates"
+analyst_note: "The peer set supports the sector backdrop Premier cites (strong defence demand, inspection and approval delays, working capital drag, input price rises) but not the size of Premier's miss. Both peers earned 28-33% EBITDA and met or beat guidance. Solar names escalation clauses and inventory as its margin shield; Astra exited low value-add build-to-print at single-digit margin. Premier's pattern (bulk explosives at low single digit, lost on price) sits on the side the peers left. No peer has chaff, flare or mine evidence, so the moat claim stays untested. Zero contradictions, but the 6 partials rest on one peer each and the 3 unverifiables are the licence, moat and integration items that matter most to the thesis. BDL, the only PSU peer and the buyer-side view, is missing."

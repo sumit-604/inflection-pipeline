@@ -1,0 +1,636 @@
+stage: B00-intake
+model: claude-haiku-5-5
+status: complete
+corpus_manifest:
+  - path: inputs/announcements/20260106-2c11dce8-e16e-4e18-abe1-ba3f0f37c64b.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: board outcome"
+    period: "2026-01-06 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 identical to twin 20260106-8bc396f6 (same date, same header). Possible duplicate filing; not a misfile."
+  - path: inputs/announcements/20260106-8bc396f6-d8c0-471d-9160-872684cf2e74.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: board outcome"
+    period: "2026-01-06 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Possible duplicate of 20260106-2c11dce8 on page 1."
+  - path: inputs/announcements/20260317-47e7d5d0-ae39-459a-a17d-0a9635c22eff.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: Reg 30 intimation (geopolitical impact on orders)"
+    period: "2026-03-17 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260319-bf391072-468b-4382-8938-26183944e5a5.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: Reg 30 (commencement of commercial production, seamless pipe plant)"
+    period: "2026-03-19 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260401-0c972c21-4573-452d-8066-cd8803abdf6c.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: Reg 30 (PSERC final tariff order, subsidiary Malwa Power)"
+    period: "2026-04-01 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260521-ed295f93-a58f-4678-858a-2186edadcd44.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: Reg 30 (major order, material subsidiary)"
+    period: "2026-05-21 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260530-01ee8562-c9d0-4f5d-8720-382013eb003b.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: Reg 30 (contract wins, INR 386.86 Cr)"
+    period: "2026-05-30 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260602-a1f30b26-7df7-4f46-a738-419cf28297dc.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: Reg 30 (contract wins, INR 206.55 Cr)"
+    period: "2026-06-02 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260603-692306e6-da6e-4e6a-ba7b-6f42bf80d9fa.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: board outcome"
+    period: "2026-06-03 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260623-846a9c7a-767d-4a11-8081-eef2074c409c.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: Reg 30 (order to wholly owned subsidiary DEE Fabricom)"
+    period: "2026-06-23 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260627-1beee715-7a97-4e18-a398-1c921e8e76d8.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: EGM outcome (preferential issue passed)"
+    period: "2026-06-27 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260708-0f25c10a-7279-4dda-ada7-60c991719a2f.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: fund-raising committee outcome (allotment of 59,76,096 preferential shares)"
+    period: "2026-07-08 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260729-26299ab0-d88f-40b8-b73f-3d17e96a80a7.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: trading approval for preferential shares"
+    period: "2026-07-29 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260820-2ba4db67-1366-411e-9047-304db7f209d8.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: Reg 30 (contract wins, INR 36 Cr job work)"
+    period: "2026-08-20 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260821-cc8a35b1-9291-4353-8cae-3809ab5c3adb.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: board outcome"
+    period: "2026-08-21 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260922-4075561a-da36-4230-9fb4-21d8e6b78ff1.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: analyst/institutional investor meet schedule"
+    period: "2026-09-22 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260922-913090d8-94d0-4981-af71-c22f19bb1b02.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: plant visit intimation (Anjar, 30 Sep 2026)"
+    period: "2026-09-21 (filing date on page)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Filename date 20260922 differs from page date 21 September 2026. Page date used."
+  - path: inputs/announcements/20260924-45f61375-3610-44f4-8380-6ac6eb60c0f4.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: AGM outcome (23 Sep 2026)"
+    period: "2026-09-24 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260924-87246f76-476a-4b77-96d3-d7225cf61dec.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: voting results, 37th AGM"
+    period: "2026-09-24 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260926-935c3b40-c95e-4d4c-b14f-d773de81d366.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: trading window closure"
+    period: "2026-09-26 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261008-265df74e-da5a-4a50-8647-a667261b0c95.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: Reg 30 (wholly owned subsidiary, intent for windmill tower supply)"
+    period: "2026-10-08 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261009-0940f37b-edcf-4997-9c5f-9a1d62a28203.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: Reg 74(5) depository certificate (RTA)"
+    period: "Quarter ended 2026-09-30 (filing date 2026-10-09)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261009-62648ed9-7c2c-4f24-9577-019af68225fe.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: monthly execution and order position (Annexure A)"
+    period: "Sep 2026 (1-30 Sep 2026; filing date 2026-10-09)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261015-8049f76e-2147-4041-bfc6-79cd8cddb736.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: Reg 30 (subject not captured in first page read)"
+    period: "2026-10-15 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Subject line beyond page-1 header not captured; identity is the company's own Reg 30 filing."
+  - path: inputs/announcements/20261016-2b35419a-cd31-4cdc-a4f8-c22611f0e093.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: Reg 30 (framework agreement, nuclear power sector)"
+    period: "2026-10-16 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261104-5af20912-a1ab-4f1e-8cbb-b1ac021a5e90.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: credit rating revision (CARE)"
+    period: "2026-11-04 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261106-5ef73e39-e6b2-453a-a469-d272f48e8e19.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: ESOP allotment and grant of 93,920 options"
+    period: "2026-11-06 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261111-74e7b622-d2b3-4b57-8643-601fc8600fea.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: earnings conference call intimation"
+    period: "2026-11-11 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261111-cbfb3b69-ac7e-419c-921b-a36bb7a7a160.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: Reg 29 board meeting intimation"
+    period: "2026-11-11 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261113-2bc19af2-8c1c-4e90-92ea-089d6872cd3d.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: monthly execution and order position update"
+    period: "2026-11-13 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261114-0f6763ea-da21-4c04-b688-3620cdc11cb2.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: board outcome (Q2 and half year ended 30 Sep 2026)"
+    period: "2026-11-14 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261114-aa9b1cd6-4a3d-489e-b1c2-1db64538900e.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: board outcome (Q2 and half year ended 30 Sep 2026)"
+    period: "2026-11-14 (filing date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 identical to 20261114-0f6763ea. Possible duplicate filing; not a misfile."
+  - path: inputs/announcements/20261114-ac6313bb-0696-4cd9-9095-f055dd73fb05.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "exchange disclosure: monitoring agency report (quarter ended 30 Sep 2026)"
+    period: "Quarter ended 2026-09-30 (filing date 2026-11-14)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/annual-report/Annual_Report_2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "annual report (BSE transmittal letter dated 27 Aug 2026; AR and AGM notice enclosed)"
+    period: "FY ended 2026-03-31 (FY26)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is the transmittal cover with issuer and period. AR body follows; page 2 not needed."
+  - path: inputs/concalls/Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "concall transcript (filing letter; call 6 Aug 2026)"
+    period: "Q1 FY27 (quarter ended 2026-06-30)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/concalls/Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "concall transcript (filing letter; call 5 Feb 2026)"
+    period: "Q3 FY26 (quarter ended 2025-12-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/concalls/Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "concall transcript (filing letter; call 22 May 2026)"
+    period: "Q4 and FY26 (year ended 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/other/Annual_Report_2025.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "annual report (36th AR; BSE transmittal letter dated 2 Sep 2025)"
+    period: "FY 2024-25 (year ended 2025-03-31)"
+    folder_match: false
+    proposed_move: ""
+    page_read: 1
+    note: "inputs/other/ is preserved and never consumed. Identity recorded; no move proposed. Type belongs in annual-report/ if the orchestrator ever relocates it."
+  - path: inputs/other/Concall_Nov_2025_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "concall transcript (filing letter dated 12 Nov 2025; call 7 Nov 2025)"
+    period: "Q2 FY26 (quarter ended 2025-09-30)"
+    folder_match: false
+    proposed_move: ""
+    page_read: 1
+    note: "inputs/other/ is preserved and never consumed. Identity recorded; no move proposed. Type belongs in concalls/ if relocated."
+  - path: inputs/other/Results_Q3FY26_20260203.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "results (board outcome approving unaudited results)"
+    period: "Q3 and 9M FY26 (quarter and nine months ended 2025-12-31)"
+    folder_match: false
+    proposed_move: ""
+    page_read: 1
+    note: "PDF page 1 reads 'Date: 3rd February, 2026'. The .txt twin reads '34 February, 2026' (OCR error in twin); PDF page used. inputs/other/ is preserved and never consumed; no move proposed. Type belongs in results/ if relocated."
+  - path: inputs/peer-concalls/ANUP-Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "The Anup Engineering Ltd"
+    doc_type: "concall transcript (peer)"
+    period: "Q1 FY27 (quarter ended 2026-06-30; call 6 Aug 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/ANUP-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "The Anup Engineering Ltd"
+    doc_type: "concall transcript (peer)"
+    period: "Q3 and 9M FY26 (ended 2025-12-31; call 4 Feb 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/ANUP-Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "The Anup Engineering Ltd"
+    doc_type: "concall transcript (peer)"
+    period: "Q4 and FY26 (year ended 2026-03-31; call 28 May 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/ANUP-Concall_Nov_2025_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "The Anup Engineering Ltd"
+    doc_type: "concall transcript (peer)"
+    period: "Q2 FY26 (quarter ended 2025-09-30; call 10 Nov 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/ISGEC-Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "ISGEC Heavy Engineering Ltd"
+    doc_type: "concall transcript (peer; filing letter 18 Aug 2026)"
+    period: "Q1 FY27 (quarter ended 2026-06-30; call 12 Aug 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/ISGEC-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "ISGEC Heavy Engineering Ltd"
+    doc_type: "concall transcript (peer; filing letter 16 Feb 2026)"
+    period: "Q3 and 9M FY26 (ended 2025-12-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/ISGEC-Concall_Jun_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "ISGEC Heavy Engineering Ltd"
+    doc_type: "concall transcript (peer; filing letter 3 Jun 2026)"
+    period: "Q4 and FY26 (year ended 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "File name says Jun 2026; the period on the page is Q4 and FY26 per the letter."
+  - path: inputs/peer-concalls/ISGEC-Concall_Nov_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "ISGEC Heavy Engineering Ltd"
+    doc_type: "concall transcript (peer; filing letter 12 Nov 2026)"
+    period: "Q2 FY27 (quarter and half year ended 2026-09-30)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/RATNAMANI-Concall_May_2025_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ratnamani Metals & Tubes Ltd"
+    doc_type: "concall transcript (peer; filing letter 21 May 2025)"
+    period: "Q4 and FY25 (year ended 2025-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter reference reads Q4/2025-26, but the subject line reads 'quarter and year ended on March 31, 2025'. Subject line used."
+  - path: inputs/peer-concalls/RATNAMANI-Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ratnamani Metals & Tubes Ltd"
+    doc_type: "concall transcript (peer; filing letter 20 May 2026)"
+    period: "Q4 and FY26 (year ended 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/RATNAMANI-Concall_Nov_2025_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ratnamani Metals & Tubes Ltd"
+    doc_type: "concall transcript (peer; filing letter 13 Nov 2025)"
+    period: "Q2 and H1 FY26 (ended 2025-09-30)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/RATNAMANI-Concall_Nov_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ratnamani Metals & Tubes Ltd"
+    doc_type: "concall transcript (peer; filing letter 12 Nov 2026)"
+    period: "Q2 and H1 FY27 (ended 2026-09-30)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/presentation/Investor_Presentation_1.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "investor presentation (filing letter dated 5 Aug 2026)"
+    period: "Q1 FY27 (quarter ended 2026-06-30)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/prospectus/DEE_Prospectus_June2024.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "prospectus (100% book built offer)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 22 June 2024. Financial period is not on page 1; left blank."
+  - path: inputs/rating/CARE_Rationale_20261109.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "rating (CARE Ratings press release and rationale)"
+    period: "Review of FY26 (year ended 2026-03-31); release dated 2026-11-09"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/results/Results_Q1FY27_20260804.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "results (board outcome approving unaudited Q1 results)"
+    period: "Q1 FY27 (quarter ended 2026-06-30; board 2026-08-04)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/results/Results_Q2FY27_20261114.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "results (board outcome approving unaudited Q2 results)"
+    period: "Q2 FY27 and H1 FY27 (quarter and half year ended 2026-09-30; board 2026-11-14)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/results/Results_Q4FY26_20260521.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "results (board outcome approving audited Q4 and FY results)"
+    period: "Q4 and FY26 (quarter and year ended 2026-03-31; board 2026-05-21)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Text layer is mixed OCR per the twin header (22 pages re-OCR'd, 0 still corrupt). Identity taken from page 1."
+  - path: inputs/screening/ANUP-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "The Anup Engineering Ltd"
+    doc_type: "data sheet (screener export, peer)"
+    period: "FY2020 to FY2026 (latest report date 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/screening/ISGEC-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "ISGEC Heavy Engineering Ltd"
+    doc_type: "data sheet (screener export, peer)"
+    period: "FY2017 to FY2026 (latest report date 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/screening/RATNAMANI-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Ratnamani Metals & Tubes Ltd"
+    doc_type: "data sheet (screener export, peer)"
+    period: "FY2017 to FY2026 (latest report date 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/screening/screener-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "data sheet (screener export, main company)"
+    period: "FY2020 to FY2026 (latest report date 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/shareholding/shareholding-30Sep2026.txt
+    file_type: txt
+    content_ok: true
+    issuer: "DEE Development Engineers Ltd"
+    doc_type: "shareholding pattern (NSE XBRL, filed 2026-10-16)"
+    period: "Quarter ended 2026-09-30"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Text-only document; no PDF twin in the list. Structured XBRL flattening, not a page-marked file."
+unreadable: []
+unidentified: []

@@ -34,3 +34,12 @@ Gaps
 - other/Annual_Report_2025.pdf has a custom-font text layer (GARBLED per check_extraction); not OCR-repaired because it is outside the contract.
 - announcements 20260924-45f61375 (AGM) and 87246f76 (scrutinizer report) have mostly image pages; low value, not OCR-repaired.
 - Results_Q4FY26 .txt: ocr_repair writes '===== PAGE N =====' markers; rewritten to '[page N]' so check_extraction accepts it (now clean).
+
+## Phase 1 run log (2026-11-15)
+
+- Checkout guard: git fetch origin main OK; diff against origin/main (b4ec38ce) over .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md is empty.
+- Step A: screener returned 429 on the first check (nine parallel sessions); the consolidated URL returned OK on retry.
+- Steps B, C, D ran on an Opus 5.5 subagent (174,664 tokens, 481 s). Step F ran on a Sonnet 5.5 subagent (179,931 tokens, 1,392 s). These are intake rows, outside the Phase 1 stage ledger.
+- Verifier A shadow: NOT run here. Nine /step1 sessions run in parallel today; the single shadow run belongs to the TD Power session (operator batch instruction). .claude/shadow.yaml not touched.
+- Tooling gate: pypdf test-read of inputs/results/Results_Q2FY27_20261114.pdf page 4 OK. Text route is the default: every PDF has a page-marked .txt.
+- Freshness: RESULTS to CONCALL fails (Q2 FY27 call is on 17 Nov 2026). B00.freshness_verdict CORPUS GAPPED-FRESHNESS; gate caps at PROCEED WITH CAVEATS.

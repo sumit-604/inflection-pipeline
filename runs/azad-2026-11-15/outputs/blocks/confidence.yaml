@@ -1,0 +1,25 @@
+stage: confidence
+company: AZAD
+run_date: 2026-11-15
+phase: 1
+confidence_delta:
+  numerical_acceptance: 99.3      # B12a: 400 numbers checked (mandatory tier 78 of 78), 0 CRITICAL, 1 MAJOR, 2 MINOR
+  redflag_coverage: 75.0          # B12b: 9 of 12 MATERIAL flags fully caught upstream (91.7% counting partial catches)
+  framework_adherence: 90.4       # B12c PHASE 1 PORTION ONLY: Gate 0 + Emerging Moat, 85 of 94 rules. Valuation adherence PENDING PHASE 3.
+  peer_utilisation: 78.0          # B12d: 7 of 9 peer transcripts handled correctly (8 of 9 substantive use confirmed)
+  overall: 75.0
+  overall_set_by: redflag_coverage
+  not_applicable: []              # every component has a denominator of 4 or more (400, 12, 94, 9)
+band: "75-89 normal, note specifics"
+rework_check:
+  verifier_a_critical_confirmed: 0
+  identity_check: "No CRITICAL rows in B12a; nothing to strike. Verifier A itself struck three candidate rows under its rule 5b."
+  any_acceptance_below_60: false
+  rework: false
+source_fidelity_findings:        # B12a rows with source_fidelity: true; non-overridable
+  - "MAJOR: 02-notes rank 9 cites 104.04 as the consolidated Note 34 USD sensitivity; consolidated is 104.07 (AR2026 p.245), 104.04 is standalone. Already corrected in 03-ardeep (104.07). Not a verdict-card, Section 1B or Gate 0 input. Downstream uses 104.07."
+  - "MINOR: 02-notes P3-1 anchors standalone OCF (1,232.63) to [page 156]; the figure is on AR2026 p.123. Value correct; anchor corrected to p.123."
+verifier_disagreements: "none (no downstream step holds a position against a Verifier A source-fidelity finding)"
+remediation_cycles: 0
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+verifier_a_shadow: "not run in this session (2026-11-15 batch: the single shadow run belongs to the TD Power session)"

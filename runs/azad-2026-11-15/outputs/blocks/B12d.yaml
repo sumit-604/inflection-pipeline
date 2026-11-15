@@ -1,0 +1,26 @@
+stage: B12d
+company: "AZAD"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 9
+substantive_confirmed: 8
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "MTARTECH (Q2 FY27)", missed_item: "MTAR says 50 days is not sustainable: year-end target about 100 days, long-term goal 150 days over 2-3 years; GST refund Rs 70-80 Cr per year is part of the lever", anchor: "MTARTECH_Concall_Transcript_2026-11-06.pdf [page 10], [page 11]"}
+  - {peer: "PTCIL (Jun 2023)", missed_item: "Industrial gas turbines named as 'very big area that's evolving' and gas turbine certification 'much, much shorter' than aerospace; B06 says no peer speaks to gas turbine", anchor: "PTCIL_Concall_Transcript_2023-06-09.pdf [page 10], [page 31]"}
+  - {peer: "PTCIL (Jun 2023)", missed_item: "EBITDA margin 26% to 29% FY22 to FY23; analyst: working capital requirement very high, ROE sub-10% (Q6 and Q1 left PTCIL out)", anchor: "PTCIL_Concall_Transcript_2023-06-09.pdf [page 19], [page 20]"}
+claims_all_addressed: true
+verdict_discipline_fails:
+  - "Q12 PARTIALLY VERIFIED although no peer quotes any wallet-share figure and the under-2% claim stays unchecked (MINOR, not silence: peers spoke on wallet share qualitatively)"
+  - "Q13 PARTIALLY VERIFIED although B06 says the 5-6% revenue lift is not tested; peers only place FX elsewhere (MINOR)"
+findings:
+  - {severity: MAJOR, item: "Q1 and Part 5 present MTAR 260 to 50 days as the cash fix and omit MTAR's own statement that 50 days is not sustainable (100 by year end, 150 long term). This bears directly on Azad's 160-180 and 200-day targets.", anchor: "MTARTECH_Concall_Transcript_2026-11-06.pdf [page 10], [page 11]"}
+  - {severity: MAJOR, item: "FLAG-NO-GAS-TURBINE-PEER and 'Gas turbine: silent' overstate. PTCIL names industrial gas turbines as an evolving market and says their approvals are much shorter than aerospace. No growth rate is given, so the no-growth-rate point stands.", anchor: "PTCIL_Concall_Transcript_2023-06-09.pdf [page 10], [page 31]"}
+  - {severity: MINOR, item: "PTCIL EBITDA margin trend and working-capital/ROE remark not used in Q6 or Q1 (stale 2023 source)", anchor: "PTCIL_Concall_Transcript_2023-06-09.pdf [page 19], [page 20]"}
+  - {severity: MINOR, item: "Q12 and Q13 verdict grade is generous (see verdict_discipline_fails)", anchor: "B06 Part 1 Q12, Q13"}
+  - {severity: INFO, item: "Spot-checked anchors all found: MT-Q3 p6 260 days; MT-Q4 p13 advances quote; MT-Q1 p7 59 days; MT-Q2 p13 USD 1 Mn discounted; UN-ACQ p10 93%, p16 wallet share; UN-Q4 p7 120-125; UN-Q1 p7 130; UN-Q2 p9 equity raise, p13 fungible, p17 qualification year; PT-23 p10 and p20 content located. Only Q11 is VERIFIED and it has two independent peers (MTAR debt, Unimech equity). No upgrade from silence found. All 14 peer_questions received a verdict."}
+critical_count: 0
+major_count: 2
+minor_count: 2
+acceptance_rate: 78

@@ -1,0 +1,39 @@
+stage: B02-notes-pass2
+company: "DEEDEV"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+pass: 2
+report_path: "runs/deedev-2026-11-15/outputs/reports/02-notes-pass2.md"
+unit: "INR lacs (source unit, not converted)"
+input_gaps:
+  - "empty screener P&L/BS/CF/Quarters sheets (Data_Sheet populated)"
+  - "Q2 FY27 concall transcript absent (call on 17 Nov 2026, after run date; CORPUS GAPPED-FRESHNESS)"
+  - "Q2 FY27 investor presentation absent"
+  - "research empty"
+  - "shareholding is XBRL text"
+  - "consolidated Note 2 policy text outside useful lives and leases searched by keyword, not read to the last line"
+pass_2_empty: false
+flags:
+  - {type: FLAG-LEVERAGE, reason: "net debt and gearing exclude trade credits 6,577.63 that policy 2.2(v) calls financing; gearing with trade credits about 44.3% standalone, 45.18% consolidated (reported 41.89% / 42.87%, policy band 30-50%); TReDS gross additions 30,028.24 = 32.7% of revenue (Note 2.2(v) p.178; Note 6D p.190; Cons. Note 35 p.343; derived)"}
+  - {type: FLAG-CASH, reason: "carried from pass 1; no pass 2 change to the receivables reading"}
+corrections_to_pass1:
+  - "Exceptional item exists: Impact of Labour Codes 119.23 standalone, 194.44 consolidated (P&L p.159; Cons. P&L p.263); pass 1 said none"
+  - "First-time standards found in Note 2.3 pp.179-180 (Ind AS 21, 7/107, 12, 1); no material impact"
+  - "Thailand interest income fall is explained by FY25 loan conversion (7.39% on average loan vs 7.50% stated); Thailand FY25 profit 1,138.76 contradicts 'profits from current year' (Cons. Note 36 p.344)"
+top_findings_pass2:
+  - {rank: 1, finding: "Net debt excludes trade credits; gearing 44.3% standalone and 45.18% consolidated with them; TReDS additions 30,028.24 (32.7% of revenue)", note_ref: "Note 2.2(v) p.178; Note 6D p.190; Cons. Note 35 p.343", rating: "RED"}
+  - {rank: 2, finding: "Supplier-finance wording contradicts across policy and risk notes", note_ref: "Note 2.2(v) p.178; Cons. Note 34 p.343; Cons. Note 15 p.313", rating: "YELLOW"}
+  - {rank: 3, finding: "Labour-code charge is an exceptional item 119.23 / 194.44; gratuity past service 190.03 unfunded", note_ref: "P&L p.159; Cons. P&L p.263; Cons. Note 28 p.325", rating: "YELLOW"}
+  - {rank: 4, finding: "Group power segment loss 1,083.14 (profit 1,078.96); no power CGU impairment inputs disclosed", note_ref: "Cons. Note 31 pp.333-334; Cons. Note 26 p.322", rating: "RED"}
+  - {rank: 5, finding: "Consolidated liquidity table drops trade credits 6,577.63 in FY26; near-term term debt shown 679.63 vs current maturities 4,228.58", note_ref: "Cons. Note 34 p.342; Cons. Note 9A p.301", rating: "YELLOW"}
+  - {rank: 6, finding: "Thailand cost 9,190.78 exceeds net assets 6,214.11; profit text contradicts FY25 profit", note_ref: "Cons. Note 36 p.344; Note 5(b) p.185", rating: "YELLOW"}
+  - {rank: 7, finding: "Promoter-family pay inside subsidiaries; Ashima Bansal paid 93.30 after leaving WTD role; new Molsieve-linked related parties and director loan 143.93", note_ref: "Cons. Note 29B-C pp.328-329", rating: "YELLOW"}
+  - {rank: 8, finding: "Group vs standalone customer table mismatch (Numaligarh FY25); foreign receivables 8,320.93 with no stated currency", note_ref: "Cons. Note 31 p.336; Cons. Note 34 pp.340-341", rating: "YELLOW"}
+  - {rank: 9, finding: "Guarantees given in year 3,096.74 (consolidated text) vs 4,216.33 (standalone table); outstanding 668.89", note_ref: "Cons. Note 29E(i) p.330; Note 31B p.223", rating: "YELLOW"}
+  - {rank: 10, finding: "Forward liability 303.43 absent from fair-value hierarchy; Ind AS 1 covenant change from FY27 under assessment, headroom not disclosed", note_ref: "Cons. Notes 32-33 pp.336-338; Note 2.5 pp.180-181", rating: "YELLOW"}
+  - {rank: 11, finding: "Intangible under development 454.08 (nil); Molsieve goodwill 602.56 on loss-making entity; government balances 6,794.07 (7.4% of revenue) unexplained", note_ref: "Cons. Note 26 p.322; Cons. Note 38 p.346; Note 7 p.192", rating: "YELLOW"}
+receivables_trend: "no pass 2 change: deteriorating per pass 1; group over-6-month and bank-return gaps unchanged"
+restatements_found: []
+going_concern_language: "NONE new in pass 2; Cons. Note 45(b) p.351 MPPL viability language stands (pass 1)"
+analyst_note: "Pass 2 read the standalone policy text 2.2(m)-2.5 and consolidated Notes 15-46 line by line. Policy text is mostly boilerplate; the value is in the supplier-finance contradiction and the trade-credit exclusion from net debt (derived arithmetic ties exactly to the consolidated gearing note). Pass 1 corrected on exceptional items and Thailand interest."

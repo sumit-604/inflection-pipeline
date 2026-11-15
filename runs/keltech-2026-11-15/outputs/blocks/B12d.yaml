@@ -1,0 +1,21 @@
+stage: B12d
+company: "KELTECH"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "APOLLO Q4FY26", missed_item: "IDL presently negative EBITDA (May 2026); Apollo buys defence explosive fill from outsourcers and will keep captive demand; defence explosive supplier base 'pretty small'", anchor: "APOLLO-Q4FY26 transcript p.18, lines 724-740"}
+claims_all_addressed: true
+verdict_discipline_fails:
+  - {claim: "Q9 IDL demand and margins", issue: "VERIFIED rests on APOLLO alone for IDL specifics; PREMEXPLN corroborates only the Coal India margin sub-point; should be PARTIALLY VERIFIED (single peer)", severity: MAJOR}
+findings:
+  - {id: 1, severity: MAJOR, item: "Q9 VERIFIED on one peer", anchor: "06-peers.md Q9; B06 verified[] entry Q9"}
+  - {id: 2, severity: MINOR, item: "Page drift: SOLARINDS Q2FY27 Rs 17,568 Cr defence order book is p.10 not p.9; PREMEXPLN Q1FY27 94/6 order split precedes p.10", anchor: "SOLARINDS-Q2FY27 line 393; PREMEXPLN-Q1FY27 line 325"}
+  - {id: 3, severity: MINOR, item: "Unused APOLLO Q4FY26 p.18 statements (negative EBITDA, captive buying, small supplier base)", anchor: "APOLLO-Q4FY26 lines 724-740"}
+critical_count: 0
+major_count: 1
+minor_count: 2
+acceptance_rate: 92

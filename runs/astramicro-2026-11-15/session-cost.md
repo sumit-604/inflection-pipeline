@@ -25,3 +25,38 @@ subagent, so the split columns are n/a, never estimated.
 | 12c | verifier-c-framework (phase 1: Gate 0 + EM) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 188,989 | 15m24s | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 65,289 | 1m32s | 1 |
 | 13 | stage-13-synthesis (phase 1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 212,410 | 10m25s | 1 |
+| 9b | stage-09b-dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 298,494 | 13m41s | 1 |
+
+## SUMMARY (close-out, step 6c)
+
+Run total over the ledger rows with a figure: 4,236,868 tokens (20 rows; the
+stage 2 pass 2 row is n/a and is left out). Phase 1 stages and verifiers alone
+(without S1 and S2): 3,909,505 tokens.
+
+### (a) TOP FIVE BY TOKENS
+| rank | stage | total_tok | share of run total |
+|---|---|---|---|
+| 1 | verifier-a-numerical | 493,633 | 11.7% |
+| 2 | stage-03-ardeep | 471,250 | 11.1% |
+| 3 | stage-02-notes-pass (3 passes; pass 2 n/a, so a floor) | 380,017 | 9.0% |
+| 4 | verifier-b-redflags | 303,729 | 7.2% |
+| 5 | stage-09b-dossier | 298,494 | 7.0% |
+
+### (b) DOWNSHIFT FAILURES
+none. stage-00-intake-check ran on claude-haiku-5-5 and verifier A on
+claude-sonnet-5-5, their frontmatter models. verifier-a-shadow did not run in
+this session (it belongs to the TD Power session of the same batch).
+
+### (c) COST SPIKES
+none. No prior run exists for ASTRAMICRO.
+
+### (d) OPERATOR SNAPSHOT
+SESSION TOTAL (/cost)
+
+
+### (e) FRESH VS RE-READ
+The harness exposed only total tokens per subagent in this session, so every
+row carries n/a in the split columns and all 21 rows are left out of these sums.
+Fresh tokens (cache write + output + uncached input): n/a (21 of 21 rows left out)
+Re-read tokens (cache read): n/a (21 of 21 rows left out)
+Re-read multiple (re-read / cache write): n/a (21 of 21 rows left out)

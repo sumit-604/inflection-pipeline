@@ -1,0 +1,98 @@
+stage: B03-ardeep
+company: "QLL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Concall transcripts absent (declared): guidance read from the AR (pp.22-24, 73), the 20 May 2026 MD&A filing and the May 2026 deck only"
+  - "Shareholding: screener extract only; BSE shareholding filing not fetched (B00); Sep 2026 pledge not filing-anchored; the FY26 Reg 31(4) no-encumbrance declaration is filing-anchored"
+  - "AR is Indian GAAP: ECL matrix, ROU asset, fair-value hierarchy, ESOP notes NOT FOUND IN DOCUMENT"
+  - "AGM item 3 RPT limits table lost in text extraction (AR p.34); FY27 guarantee limits unreadable; PDF check needed"
+  - "Customer concentration, covenants, interest-waived amount, goodwill test inputs, swap valuation report, ITC Ltd suit status, CARO 3(xix) text for QTIPL and LabOps: NOT FOUND IN DOCUMENT"
+  - "NCD (up to Rs 65 Cr) issue status, Bengaluru USFDA lab acquisition cost, company secretary successor after 30 Jul 2026: NOT FOUND in AR or filings"
+  - "Peer-review status of the statutory auditor and group-wide audit fees (subsidiaries) NOT FOUND IN DOCUMENT"
+flags:
+  - "FLAG-CASH: CFO/PBT 75.7% consolidated (FY25 100.8%); FCF -3249.05; H1 FY27 consolidated 42.0% and standalone 39.1%; receivables over 6 months 22.4%; interest paid sits in financing (CFO after interest 953.53)"
+  - "FLAG-DISCLOSURE-CONFLICT: two EPS figures for one audited year (13.38 results/presentation vs 12.49 AR); Board report says no adverse remark vs CARO Annexure A (p.99); CARO (xv) says no non-cash director transactions vs 3640.15 TIC share allotment; Board vs committee attendance for Alok Agarwal on 29 Aug 2025, 20 Dec 2025, 16 Mar 2026"
+  - "FLAG-GUIDANCE: PAT margin guide lowered from 15-17% (May 2026 filing/deck) to 14-15% (AR, Aug 2026); H1 FY27 EBITDA margin 21.6% and PAT margin 9.1% vs guide 25-27% and 14-15%; FY29/FY31/FY32 numeric targets dropped in AR"
+phase_verdicts: {p1: "YELLOW", p2: "RED", p3: "YELLOW", p4: "YELLOW", p5: "YELLOW", p6: "YELLOW", p7_best_fit: "GARP WATCHLIST / Capex-led growth WATCHLIST; no strategy passes cleanly"}
+overall_quality: 4.5
+quality_components: {governance: 4.0, accounting: 4.5, balance_sheet: 4.0, earnings: 5.5}
+kill_switch_notes:
+  - "p1: reviewer would not stop; Board report denies adverse CARO remarks that Annexure A (p.99) lists (3(iii)(b), 3(v), 3(xix)); CARO (xv) conflicts with the TIC allotment"
+  - "p2: reviewer would not stop; needs the ITCPL swap valuation report and goodwill test inputs before valuing 7811.56 of goodwill"
+  - "p3: reviewer would not stop; needs cash flow restated for the minority-interest line (97.92), an elimination schedule and an explanation of presentation ROE 22%"
+  - "p4: reviewer would not stop; treat FY27 guidance as unproven after H1 FY27"
+  - "p5: reviewer would not stop; no pledge, no selling, no regulator action; needs swap valuation and AAL collection"
+  - "p6: reviewer would not stop; treat FY29 margin, FY31 overseas and FY32 debt-free targets as withdrawn"
+triple_pass_verification:
+  verified: 12
+  discrepancies:
+    - {finding_rank: 1, triple_pass_value: "ITCPL net assets 752.02", ar_value: "752.02 is ITCPL share in consolidated net assets (C-Note 34); ITCPL own net worth 1905.65 (AOC-1 p.66: 50.98 + 1854.67); cost 8498.99 = 4.46x own net worth", note_ref: "C-Note 34 p.140; Board report Annexure A p.66"}
+    - {finding_rank: 7, triple_pass_value: "CARO adverse: 3(iii)(b) QLL and ITCPL; 3(xix) QTIPL and LabOps", ar_value: "Annexure A also lists 3(v) for QLL (excess application money 2.27 not refunded); standalone CARO (ix)(a) reports Axis Bank vehicle-loan default 1.57 principal and 0.61 interest, 6 delays", note_ref: "Consolidated Annexure A p.99; standalone CARO pp.152-153"}
+    - {finding_rank: 0, triple_pass_value: "EPS 13.38 'does not reconcile'; 13.38 derived as total PAT over weighted shares", ar_value: "13.38 is the EPS filed in the audited results of 20 May 2026 (minority shown nil, owners 1460.15) and in the presentation p.9; AR statements show 12.49 and owners 1362.22; H1 FY27 filing prints FY26 EPS 12.49", note_ref: "Results 20260520-dc0311a3 p.5; AR P&L p.103; H1 FY27 results p.11"}
+    - {finding_rank: 9, triple_pass_value: "Intra-group sales 242.13 not eliminated", ar_value: "Not re-derived in this pass; AOC-2 shows QLL revenue from ITCPL 177.58 and QTIPL software fees 26.45", note_ref: "AOC-2 pp.80-81"}
+    - {finding_rank: 10, triple_pass_value: "Gratuity actuarial expense 50.68 vs P&L 28.90", ar_value: "28.90 confirmed on standalone cash flow; 50.68 not located by string search", note_ref: "S-CF; C-Note 27 pp.135-136"}
+missing_risks:
+  - {risk: "ITC Ltd trade-mark suit against ITCPL, Rs 50 Cr punitive damages claimed; status unknown, not in contingent liabilities or risk text", evidence: "Prospectus PDF p.289 (CS/159/2022 Calcutta HC); absent from AR C-Note 28 p.137; deck p.20 still uses ITC Labs"}
+  - {risk: "Dependence on promoter balance sheets for credit (guarantees, mortgages, HDFC sanction)", evidence: "C-Note 26 pp.132-134; announcement 20260603-77c97589 p.2; AGM item 3 pp.33-35"}
+  - {risk: "Goodwill impairment, 51.2% of equity, no test inputs", evidence: "BS p.102; Note 40 p.143"}
+  - {risk: "Leverage and refinancing: net debt/EBITDA 2.96x, borrowings +86% then 11466.88 at 30 Sep 2026; NCD up to Rs 65 Cr", evidence: "BS p.102; H1 FY27 results p.12; 20251220-0fab5880 pp.1-3"}
+  - {risk: "Customer concentration and government/PPP dependence not disclosed", evidence: "C-Note 29 p.137; MD&A pp.70, 78"}
+  - {risk: "Compliance-function churn: three company-secretary departures (Apr 2025, Feb 2026, Jul 2026), vacancy since 30 Jul 2026, independent director resigned 29 Oct 2026", evidence: "C-Note 26 p.131; announcements 20260209-0b4f223a, 20260730-44102f7e, 20261029-5e7edc16"}
+  - {risk: "Receivable ageing and cash conversion not discussed in MD&A", evidence: "C-Note 15 p.127; CF p.104; MD&A p.75"}
+  - {risk: "Unidentified acquisitions incl. Cybersecurity use 2200.00 of the 4698.06 raise (strategy drift)", evidence: "EGM notice 20260924-fd526286 p.12"}
+guidance_table:
+  - {claim: "FY27 consolidated revenue growth", number: "35-40% on 12451.81 Lakh = 16810 to 17433; H2 FY27 needs 9583 to 10206 (+36% to +45% YoY)", timeframe: "FY27", credibility: "LOW-MEDIUM; H1 FY27 7226.65 Lakh (+33.2% YoY, +2.8% on H2 FY26); AR pp.23, 73; filing 20260520-78cbc582 p.3"}
+  - {claim: "FY27 consolidated EBITDA margin", number: "25-27% (deck 25-26%)", timeframe: "FY27", credibility: "LOW; H1 FY27 21.6% (derived); H2 FY27 needs about 27.5%; AR pp.23, 73; deck p.25"}
+  - {claim: "FY27 PAT margin", number: "15-17% (May 2026 filing and deck); 14-15% (AR)", timeframe: "FY27", credibility: "LOW; H1 FY27 9.1%; H2 needs about 17.7% for 14% and 19.4% for 15% (derived); range cut in AR; filing p.3, deck p.25, AR pp.23, 73"}
+  - {claim: "Consolidated revenue ambition", number: "Rs 500+ Cr by FY31 (about 32% CAGR from 124.52 Cr, derived)", timeframe: "FY31", credibility: "LOW-MEDIUM; acquisition dependent; AR p.24; filing p.3"}
+  - {claim: "Operating margin above 30%", number: ">30%", timeframe: "next three years (FY29)", credibility: "LOW; FY26 23.6%; filing p.3 only, dropped in AR"}
+  - {claim: "Overseas share of revenue", number: ">=30%", timeframe: "FY31", credibility: "LOW; FY26 exports 333.06 Lakh = 2.7% (C-Note 29 p.137); filing p.3 only, dropped in AR"}
+  - {claim: "Debt-free and cash-surplus", number: "debt-free", timeframe: "FY32", credibility: "LOW; borrowings 9297.55 (FY26), 11466.88 (30 Sep 2026); NCD Rs 65 Cr and HDFC Rs 91.31 Cr; filing p.3 only, dropped in AR"}
+  - {claim: "Net debt/EBITDA to compress meaningfully", number: "about 3.0x at FY26", timeframe: "FY27", credibility: "LOW; about 3.6x on annualised H1 FY27 EBITDA (derived); filing p.3"}
+  - {claim: "Double revenue every two years; 30% EBITDA margin", number: "2x per 2 years; 30%", timeframe: "FY25-FY27 (May 2025 deck)", credibility: "MIXED; revenue 4.3x FY24 to FY26 via acquisitions; EBITDA margin 23.6% vs 30%; deck May 2025 p.13"}
+  - {claim: "USFDA pharma lab commercial; Hyderabad acquisition complete", number: "n/a", timeframe: "June 2026", credibility: "LOW; no completion filed through 14 Nov 2026; deck p.23"}
+  - {claim: "Standalone margin re-converges to historical", number: "about 26-29%", timeframe: "FY27", credibility: "HIGH so far; standalone H1 FY27 EBITDA 25.9% (derived); filing p.3"}
+monitorables:
+  - {metric: "Consolidated EBITDA margin H2 FY27", threshold: ">=27% for a 25% year (H1 FY27 21.6%)", where: "H2 FY27 results; 24 Nov 2026 call", why: "Tests the 25-27% guide"}
+  - {metric: "Consolidated PAT margin H2 FY27", threshold: ">15% (H1 FY27 9.1%)", where: "H2 FY27 results", why: "Tests the cut 14-15% guide"}
+  - {metric: "CFO/PBT consolidated", threshold: ">90% (H1 FY27 42%)", where: "Cash flow statement H2/FY27", why: "FLAG-CASH"}
+  - {metric: "Receivables over 6 months share", threshold: "<20% of gross (FY26 22.4%)", where: "Annual Note 15", why: "Collection quality"}
+  - {metric: "Net debt/EBITDA", threshold: "<3.0x (about 3.6x annualised H1)", where: "Balance sheet 31 Mar 2027", why: "Leverage"}
+  - {metric: "Interest cover (EBIT/finance cost)", threshold: ">4x (H1 FY27 3.21x)", where: "H2 P&L", why: "Debt service"}
+  - {metric: "ITCPL PAT and goodwill test inputs", threshold: "ITCPL PAT >= 710.83 Lakh; test inputs disclosed", where: "FY27 AR AOC-1 and notes", why: "8498.99 cost, 7811.56 goodwill"}
+  - {metric: "Use of 4698.06 Lakh raise; named target for 2200 Lakh acquisitions", threshold: "Named target, priced, with valuation report", where: "BSE filings after in-principle approval", why: "Capital allocation, related-party warrants"}
+  - {metric: "AAL Biosciences receivable 77.82 and AAL Research advance 151.06", threshold: "Collected; no new advances", where: "FY27 RPT note", why: "Insider financing"}
+  - {metric: "Company secretary and independent director appointments", threshold: "Both filled and filed", where: "BSE Reg 30 filings", why: "Compliance function and board independence"}
+  - {metric: "ITC Ltd v ITCPL suit status", threshold: "Status and exposure disclosed", where: "FY27 AR contingent liabilities", why: "Up to Rs 50 Cr claim"}
+ar_new_downstream_entities:
+  - name: "LabOps Global Private Limited (formerly Protomation Technologies)"
+    where_in_ar: "Board report pp.49-50; Secretarial Audit p.84; AOC-1 p.66"
+    entity_type: "Subsidiary (74%); acquired 23 May 2025 for Rs 7,400"
+  - name: "Kishan Chand Grover and Divya Grover"
+    where_in_ar: "Secretarial Audit p.84 (sellers of LabOps); C-Note 26 pp.131-132 (relatives of KMP on payroll 10.02 and 26.72)"
+    entity_type: "RPT counterparties / KMP relatives"
+  - name: "ASC BSR And Company LLP"
+    where_in_ar: "C-Note 26 pp.131, 133; AOC-2 p.81 (professional fees 3.21)"
+    entity_type: "RPT counterparty (KMP-influenced enterprise); first-time status not found in FY25 AR text by name search"
+  - name: "Quality Council of India (work order, coal sampling at Western Coalfields loading points)"
+    where_in_ar: "MD&A L p.78"
+    entity_type: "Institutional customer (post year-end order)"
+  - name: "Indian Oil Corporation Limited (2G Ethanol QC lab operation and testing, awarded to ITCPL)"
+    where_in_ar: "MD&A L p.78"
+    entity_type: "Institutional customer (post year-end order)"
+  - name: "Tata, Cipla, Reliance, Sun Pharma, Dr Reddy's, Patanjali"
+    where_in_ar: "Director profile, Kamal Grover p.19"
+    entity_type: "Named customer claims; no revenue share disclosed; no customer above 10% disclosed"
+strengths_top3:
+  - "Real growth with margins: revenue 12451.81 Lakh (+77.3%), EBITDA margin 23.6%, standalone organic revenue +47% (P&L p.103; MD&A p.75)"
+  - "No promoter pledge, no promoter selling, no SEBI action, clean FY26 secretarial audit (pp.82-84; announcement 20260406-e7da577b)"
+  - "Standalone margin holds: standalone H1 FY27 EBITDA margin 25.9% (derived); 16-lab network across sectors (MD&A p.70)"
+red_flags_top3:
+  - "Goodwill 7811.56 (51.2% of equity) built partly via a 5199.73 Lakh share swap with the promoter holding company; no valuation report, no impairment inputs (C-Notes 11e, 26, 38, 40)"
+  - "Cash and leverage: CFO/PBT 75.7% (H1 FY27 42%), FCF -3249.05, borrowings +86% then +23% in six months, credit resting on promoter guarantees and mortgages"
+  - "Disclosure conflicts: two EPS figures; Board 'no adverse remark' vs CARO Annexure A; CARO (xv) vs TIC allotment; 'no related party loans' vs 151.06 AAL advance; PAT guide cut without comment"
+best_fit_strategy: "GARP WATCHLIST (closest), Capex-led growth WATCHLIST; no strategy passes cleanly"
+one_line_verdict: "Fast, mostly acquired growth with strong reported margins on a promoter-linked, goodwill-heavy balance sheet whose cash conversion and H1 FY27 margins do not yet support the FY27 guidance; GARP on WATCHLIST, not a pass."
+analyst_note: "Open point settled: the 22 Sep 2026 board approved two instruments, 3,86,000 equity shares at Rs 518.55 (up to 2001.60 Lakh, 26 allottees, one promoter, Kamal Grover 1,200) and 5,20,000 warrants at Rs 518.55 (up to 2696.46 Lakh, TIC Services only, 25% upfront). Memory is right on warrants. The 15-17% PAT margin guide is the May 2026 figure; the AR says 14-15%. EPS 13.38 is the filed results EPS (minority shown nil); AR statements give 12.49 and owners PAT 1362.22. Memory's 6.30 cr NOT FOUND. No SEBI order exists; the only penalty is an exchange penalty of Rs 6.66 lakh (FY25 secretarial audit). Competing readings of the swap: arm's-length price for a business that earned 710.83 Lakh, or insider-priced paper tracking the buyer's own price; separating observation is the missing valuation report and goodwill test inputs. Page numbers use the [page N] markers."

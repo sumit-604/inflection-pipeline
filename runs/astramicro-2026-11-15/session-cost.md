@@ -15,3 +15,4 @@ subagent, so the split columns are n/a, never estimated.
 | 2 | stage-02-notes-pass (pass 3) | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 118,971 | 4m57s | 1 |
 | 3 | stage-03-ardeep | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 471,250 | 17m43s | 1 |
 | 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 130,293 | 4m30s | 1 |
+| 5 | stage-05-concall | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 159,956 | 5m58s | 1 |

@@ -1,0 +1,43 @@
+stage: B02-notes-pass1
+company: "KELTECH"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+unit: "Rs lakh (AR face); not converted"
+report: runs/keltech-2026-11-15/outputs/reports/02-notes-pass1.md
+input_gaps:
+  - "B00 carried: shareholding/ empty of filed pattern; screener capture only, no pledge and no FII line (UA FII+DII qualifier and pledge trend OPEN)"
+  - "B00 carried: peer sheets PREMEXPLN and APOLLO P&L, Quarters, Balance Sheet, Cash Flow, Customization came out empty; only Data_Sheet CSVs exist"
+  - "B00 carried: collector warnings on AR, results and rating are STALE; repaired by direct HTTP (AR_FY2025-26.pdf, three results filings, CRISIL rationale)"
+  - "B00 carried: concalls ABSENT, DECLARED (no-concall mode); presentation ABSENT; prospectus ABSENT not a gap; research ABSENT"
+  - "B00 carried: Q1 FY27 results pages 2-4 scanned, OCR reads"
+  - "B00 carried: other/ holds AR FY2024-25, Q3 FY26 results (scanned), duplicate Q2 FY27, SOLARINDS call and presentation; never consumed"
+  - "B00 carried: Verifier A shadow NOT RUN in this run"
+  - "Pass 1: FY24 receivable, payable and inventory days NOT FOUND (needs AR FY2024-25, held in other/, never consumed)"
+  - "Pass 1: TNT sanctioned loan, TNT vs silo split of CWIP, export markets and margin, Lavgan service nature, family settlement: NOT FOUND IN DOCUMENT"
+flags:
+  - {type: FLAG-BANK-RETURNS, reason: "Note 13 p.118: inventory per quarterly bank returns exceeds books by 19-30% in all four quarters (above the stated 10% line); Dec-25 receivables 20.4% above books"}
+  - {type: FLAG-CASH, reason: "CFO 4850.02 lakh includes capital advance unwinding 1091.48 and bank deposit lines (CFS pp.102-103); receivable days flat at 42, over-6-month share 7.08% vs 4.25%"}
+top_findings:
+  - {rank: 1, finding: "Bank quarterly returns show inventory 19-30% above books in all four quarters; Mar-26 return inventory 4203.59 equals Mar-25 balance sheet inventory", note_ref: "Note 13, p.118", rating: "red", why: "Possible overstated security to lenders; basis unexplained; auditor ICFR opinion carries a financial-closure exception (p.88)"}
+  - {rank: 2, finding: "TNT funding visibility: CWIP 3800.82, commitments 3996.21, TNT loan drawn 2045.46, undrawn long-term facilities nil", note_ref: "Notes 3, 13(a), 26, 31, pp.106, 117, 136, 141", rating: "yellow", why: "Load-bearing build; brief cites ~Rs 190 Cr cost and Rs 135 Cr debt, notes show far less drawn or committed"}
+  - {rank: 3, finding: "CFO 4850.02 vs FY25 -1757.03 depends on capital advance unwinding 1091.48 and bank deposit lines in operating activities", note_ref: "CFS pp.102-103; Notes 8, 5(e), 5(f)", rating: "yellow", why: "Cash conversion evidence must be cleaned before use"}
+  - {rank: 4, finding: "Exceptional income 317.76 (8.2% of PBT) on post-year-end CESTAT order; duty receivable 401.95; refund application not yet filed", note_ref: "Note 40, p.146", rating: "yellow", why: "Non-recurring, reversible if appealed"}
+  - {rank: 5, finding: "PSU receivables unconfirmed; powder factor provision 394.40 (+132%); FY25 revenue had 884.72 one-off reversal", note_ref: "Notes 14, 17, pp.121, 125", rating: "yellow", why: "Distorts FY26 growth base (10.7% on like basis vs 8.7%) and receivable evidence"}
+  - {rank: 6, finding: "Receivables over 6 months 441.11 = 7.08% of gross; ECL bucket splits conflict between Notes 5(c) and 26; 44.33 written off with allowance not shown as used", note_ref: "Notes 5(c), 26, 22, pp.109, 135, 128", rating: "yellow", why: "Ageing slipping; provisioning disclosure unreliable"}
+  - {rank: 7, finding: "Chowgule items: 84.51 receivable from major shareholder aged over 2 years and denied by Note 5(c)(ii); Lavgan 100.00 services, balance 116.00 unchanged, nature not described", note_ref: "Notes 29, 5(c), pp.139-140, 108-109", rating: "yellow", why: "Promoter-group dealings with thin disclosure"}
+  - {rank: 8, finding: "Legal and professional +33.2% to 1459.52 (unitemised); repairs -52.5% to 708.51", note_ref: "Note 22, p.128", rating: "yellow", why: "Expense mix flatters FY26 margin; cause not disclosed"}
+  - {rank: 9, finding: "Explosives segment profit 3051.85 vs 3129.40 on revenue +11.8%; ROCE 19.95% vs 24.59% explained as NA", note_ref: "Notes 28, 41, pp.137, 147", rating: "yellow", why: "Growth not converting to segment profit while capex ramps"}
+  - {rank: 10, finding: "FX gain 274.29 (7.1% of PBT); exposures called naturally hedged while net USD assets ~1522.69", note_ref: "Notes 18, 26, pp.125, 133", rating: "yellow", why: "Earnings sensitivity to INR"}
+red_flags:
+  - "Note 13 p.118: stock and debtor statements to the consortium differ from books beyond the stated 10% line"
+questions_for_mgmt:
+  - "Why does inventory in the quarterly bank returns exceed books by 19-30% every quarter, and who reconciled it?"
+  - "What is the sanctioned TNT loan, the TNT share of CWIP, and the funding plan for commitments of 3996.21?"
+  - "What are the services bought from Chowgule Lavgan Shiprepair, on what terms, and why does the 116.00 balance not move?"
+  - "Why has the 84.51 receivable from Chowgule and Company stayed unpaid, and why does Note 5(c) say no such receivable exists?"
+  - "What is in legal and professional fees of 1459.52 and in outstanding liabilities of 2695.09?"
+receivables_trend: "stable on days (42.2 FY26 vs 42.4 FY25), ageing slipping: over 6 months 441.11 = 7.08% of gross vs 4.25% (incl disputed 44.33); 6m-1y bucket 56.71 to 305.37 (Rs lakh, Note 5(c) pp.108-109)"
+restatements_found: []
+going_concern_language: "NONE"
+analyst_note: "Pass 1 only. Rs lakh throughout. Derived figures (days, percentages, net debt, clean-CFO components) are arithmetic on anchored inputs. Pass 3 should weigh Finding 1 with the auditor ICFR exception on p.88. Internal note inconsistencies (gratuity, lease ROU, ECL buckets) are disclosure-quality points, not restatements. No SEBI order in the notes."

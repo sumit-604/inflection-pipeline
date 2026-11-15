@@ -1,0 +1,76 @@
+stage: B05-concall
+company: "KELTECH"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "NO-CONCALL MODE: no transcripts, no presentations (AR p.68 'None'); Sections 2C tone, 2E repeated questions and 3C analyst Q&A have no source."
+  - "B00: shareholding/ PARTIAL (screener capture; no pledge, no FII line); the formal BSE pattern for Sep 2026 not retrieved."
+  - "B00: Q3 FY26 results held in other/ (scanned), never consumed; quarterly series Q4 FY26, Q1 FY27, Q2 FY27 only."
+  - "B00: Q1 FY27 pp.2-4 are OCR; cross-checked against the 30.06.2026 column of the Q2 FY27 filing (revenue 18,327.96, PAT 808.05 match). Q2 FY27 cash-flow line items are misaligned in the text twin; subtotals used."
+  - "NOT FOUND: TNT capacity, licence, offtake, TNT versus Surjagarh silo split of CWIP, capital commitments at Sep 2026, quarterly export value and markets, Explosives and Perlite volumes in MT for H1 FY27, receipt date of the CESTAT refund, share of capital creditors in trade payables."
+  - "Collector warnings carried from B00 (peer-sheet tabs empty for PREMEXPLN and APOLLO; shareholding empty; Verifier A shadow not run) are unchanged and do not alter this stage."
+flags:
+  - {type: FLAG-TNT-PACE, reason: "TNT plant (CRISIL: Rs 190 Cr cost, Rs 135 Cr Canara Bank term loan to 30-Sep-34, operations April 2027). CWIP 3,800.82 lakh at Mar 2026 to 6,280.63 at Sep 2026; upper-bound spend with other non-current assets 7,551.58 lakh = 39.7% of 19,000 lakh; remaining at least 11,448.42 lakh against H1 payments of 2,530.34 lakh. No company statement on timing since Feb 2026 (Q2 FY27 pp.7-8; CRISIL pp.2-3; derived)."}
+  - {type: FLAG-SEGMENT-BASIS, reason: "AR Note 28 p.137 Explosives result 3,051.85 (FY26) and 3,129.40 (FY25) lakh differs from audited results filing 2,587.54 and 2,967.22 by 464.31 and 162.18 lakh; the AR allocates part of un-allocable income into the segment. Use the filing basis for quarterly comparison (Q4 FY26 p.10; derived)."}
+  - {type: FLAG-CASH, reason: "H1 FY27 CFO 638.39 lakh vs PAT 1,633.10 = 0.39x; FCF -1,934.84; payables days 76.1 vs 67.8 (Q2 FY27 pp.5, 7-9; derived). INDETERMINATE: capital creditor share in payables NOT FOUND; caps at caveats."}
+  - {type: FLAG-CONTROL-TRANSITION, reason: "LOI 27 Oct 2026 for 4,09,940 shares (40.99%) from Chowgule and Co Pvt Ltd to Vijay V Chowgule, no cash consideration, aggregate promoter holding unchanged, transfer not yet effected; Board approved 14 Nov 2026 (announcement 2026-10-28; Q2 FY27 board outcome pp.1-2)."}
+quarters_analysed: ["Q4 FY26 (results filing only)", "Q1 FY27 (results filing only)", "Q2 FY27 (results filing only)"]
+triggers:
+  - {priority: 1, name: "TNT plant starts April 2027", type: "both", timeframe: "medium", conviction: "M", confirm_signal: "CWIP moves into PPE by Q4 FY27 or Q1 FY28 filing; depreciation steps up; total spend near Rs 190 Cr; company states capacity and offtake", kill_signal: "CWIP plus advances still below about Rs 150 Cr at Dec 2026; date restated to FY28; cost above Rs 190 Cr or debt above Rs 135 Cr"}
+  - {priority: 2, name: "Explosives volume ramp (revenue +35% H1 FY27)", type: "revenue", timeframe: "near", conviction: "M", confirm_signal: "Q3 FY27 Explosives revenue growth above 20% year on year with filing-basis segment margin at or above 6.5%", kill_signal: "Segment margin back to 4.66% (Q4 FY26) or growth below 10%"}
+  - {priority: 3, name: "Operating leverage (EBITDA ex other income 8.21% Q2 FY27)", type: "margin", timeframe: "near", conviction: "M", confirm_signal: "EBITDA margin above 8% for two more quarters", kill_signal: "Margin below 7% as depreciation and interest grow"}
+  - {priority: 4, name: "CESTAT refund inflow 401.95 lakh", type: "cash", timeframe: "near", conviction: "M", confirm_signal: "Cash receipt shown in a quarterly cash flow", kill_signal: "Refund contested or delayed beyond FY27"}
+  - {priority: 5, name: "Exports ramp", type: "revenue", timeframe: "medium", conviction: "L", confirm_signal: "Export value disclosed quarterly and above 15.6% share", kill_signal: "Share below 15.6% of revenue"}
+  - {priority: 6, name: "Perlite pharma and cryogenic", type: "revenue", timeframe: "medium", conviction: "L", confirm_signal: "Perlite segment result above 91.52 lakh for H1 FY27", kill_signal: "Perlite result back to negative"}
+  - {priority: 7, name: "Family settlement completes (Group B 44.96% direct)", type: "governance", timeframe: "near", conviction: "M", confirm_signal: "SAST disclosure of completion with aggregate promoter holding unchanged at 54.33%", kill_signal: "Aggregate promoter holding falls or pledge appears"}
+guidance:
+  - {item: "TNT plant cost", number: "about Rs 190 crore", timeframe: "medium term", stated_in: "CRISIL 2026-02-13 p.2 (Rs crore)"}
+  - {item: "TNT term debt, Canara Bank", number: "Rs 135 crore, matures 30-Sep-34", timeframe: "to Sep 2034", stated_in: "CRISIL 2026-02-13 pp.2-3 (Rs crore)"}
+  - {item: "TNT start of operations", number: "April 2027", timeframe: "April 2027", stated_in: "CRISIL 2026-02-13 p.2"}
+  - {item: "Nitration based accessories commissioned fully", number: "2027", timeframe: "2027", stated_in: "AR FY2025-26 Board's Report p.29"}
+  - {item: "Net worth at 31 Mar 2026", number: "about Rs 145 crore", timeframe: "Mar 2026", stated_in: "CRISIL 2026-02-13 p.1 (Rs crore)"}
+  - {item: "Annual cash accrual", number: "Rs 32-38 crore a year", timeframe: "medium term", stated_in: "CRISIL 2026-02-13 p.2 (Rs crore)"}
+  - {item: "Borrowing power", number: "up to Rs 400 crore (40,000 lakh), passed at AGM 7 Aug 2026", timeframe: "any time", stated_in: "AR Notice item 8 pp.8-9, 19; AGM outcome 2026-08-07"}
+  - {item: "Dividend", number: "Rs 1.50 per share, 15.00 lakh", timeframe: "FY26", stated_in: "Q4 FY26 results note 5"}
+  - {item: "Revenue, margin, order book, return targets, plant capacities", number: "NOT FOUND", timeframe: "n/a", stated_in: "none stated"}
+promise_delivery:
+  delivered: 4
+  partial: 6
+  missed: 0
+  rows:
+    - {promised_in: "CRISIL Feb 2026; AR p.29", promise: "TNT plant Rs 190 Cr, Rs 135 Cr debt, operations April 2027", outcome: "PENDING (counted partial)", explanation: "CWIP 3,800.82 to 6,280.63 lakh; remaining spend at least Rs 114.5 Cr; no company statement on timing since Feb 2026"}
+    - {promised_in: "AR MD&A p.55", promise: "New plant commissioned March 2026 expected to stabilise", outcome: "PARTIAL", explanation: "Explosives revenue +34.8% Q1 and +36.9% Q2 FY27; filing-basis segment margin 6.47% H1 FY27 vs 6.70% H1 FY26; volumes NOT FOUND"}
+    - {promised_in: "AR MD&A p.55", promise: "Focus majorly into exports", outcome: "PARTIAL", explanation: "Exports +11.0% (Board's Report says +7%), share 15.57% vs 15.24% of revenue; quarterly exports NOT FOUND"}
+    - {promised_in: "AR MD&A p.55", promise: "Perlite filter-aid into pharma for higher volumes", outcome: "PARTIAL", explanation: "H1 Perlite revenue +9.5%, result 91.52 vs 0.62 lakh; Q1 -16.7%, Q2 +48.8%; volumes NOT FOUND"}
+    - {promised_in: "AR MD&A p.55", promise: "Industry grows on mining and infrastructure", outcome: "DELIVERED", explanation: "Explosives revenue H1 +35.7% (company level; no industry data)"}
+    - {promised_in: "CRISIL Feb 2026 p.1", promise: "Net worth about Rs 145 Cr at Mar 2026", outcome: "DELIVERED", explanation: "15,294.66 lakh = Rs 152.95 Cr"}
+    - {promised_in: "CRISIL Feb 2026 p.2", promise: "Cash accrual Rs 32-38 Cr a year", outcome: "DELIVERED", explanation: "FY26 Rs 36.3 Cr, Rs 33.1 Cr without the non-cash exceptional (derived)"}
+    - {promised_in: "Q4 FY26 note 5", promise: "Dividend Rs 1.50 per share", outcome: "DELIVERED", explanation: "Approved at AGM 7 Aug 2026; 15.00 lakh paid in H1 FY27 cash flow"}
+    - {promised_in: "AR CG annex pp.77-78", promise: "Family settlement under execution; holdings may change", outcome: "PARTIAL", explanation: "LOI 27 Oct 2026, Board approval 14 Nov 2026, transfer not effected; 5y9m after the MOFS"}
+    - {promised_in: "Q4 FY26 note 3; AR Note 40", promise: "CESTAT refund 317.76 lakh recognised; application being filed", outcome: "PENDING (counted partial)", explanation: "No inflow in H1 FY27; receivable on books"}
+excuse_pattern: "silence-dominant: no misses to explain, no explanation offered for adverse items (ROCE fall, Perlite swing, ICFR exception); not assessable without Q&A"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "No-concall mode default C held. Q4 FY26, Q1 FY27, Q2 FY27 filings against AR and CRISIL guidance: 4 delivered, 6 partial (2 pending), 0 missed; the delivered items test third-party expectations, the one multi-year commitment (TNT, April 2027) is untested and its spend pace needs a step-up, the company supplies no TNT terms, and AR and filing segment results differ by 464.31 lakh."
+peer_questions:
+  - {question: "What industry volume growth do peers report for bulk and cartridge explosives in FY26 and H1 FY27, and is it near Keltech's 35% Explosives revenue growth?", why: "Keltech claims industry growth with no number; separates market growth from share gain", check_peers: ["SOLARINDS", "PREMEXPLN"]}
+  - {question: "How do peers describe ammonium nitrate cost, supply and the pass-through lag to customers?", why: "AN is 61.9% of Keltech revenue; margin stability turns on pass-through", check_peers: ["SOLARINDS", "APOLLO"]}
+  - {question: "What are peers' realised prices and competitive intensity in bulk emulsion and cartridge explosives, including Coal India and PSU tender behaviour?", why: "Keltech revenue +35% needs a price versus volume split; PSU and MDO customers are central", check_peers: ["SOLARINDS", "PREMEXPLN"]}
+  - {question: "Is there demand and supply tightness in TNT and defence energetics, who buys, and at what price?", why: "Keltech's Rs 190 Cr TNT plant has no stated offtake or capacity", check_peers: ["SOLARINDS", "PREMEXPLN", "APOLLO"]}
+  - {question: "What capacity additions in explosives, detonators and accessories are peers building, and on what timeline?", why: "Tests whether Keltech capacity lands in a tight or a crowded market", check_peers: ["SOLARINDS", "PREMEXPLN", "APOLLO"]}
+  - {question: "How do peers describe export markets, products and margins for explosives and accessories?", why: "Keltech exports Rs 82.84 Cr (15.6%) with no market, product or margin disclosed", check_peers: ["SOLARINDS", "PREMEXPLN"]}
+  - {question: "What capex-to-commissioning timelines do peers report for new energetics plants, and how often do dates slip?", why: "Base rate for Keltech's April 2027 TNT start", check_peers: ["PREMEXPLN", "SOLARINDS", "APOLLO"]}
+  - {question: "What working capital days and supplier credit practice do peers report, especially for PSU receivables and deductions?", why: "Keltech H1 FY27 CFO is 0.39x PAT and payables days rose to 76.1", check_peers: ["SOLARINDS", "PREMEXPLN"]}
+  - {question: "How does Apollo Micro Systems describe demand and margins at IDL Explosives?", why: "Closest listed read-across for an accessories and bulk explosives unit", check_peers: ["APOLLO"]}
+red_flags:
+  - "TNT cost-to-complete at least Rs 114.5 Cr against H1 FY27 payments of Rs 25.3 Cr; no company statement on timing since Feb 2026 (High)"
+  - "AR and audited-results segment result bases differ by 464.31 lakh (FY26) and 162.18 lakh (FY25) with no explanation (Medium)"
+  - "H1 FY27 CFO 638.39 lakh is 0.39x PAT; free cash flow -1,934.84 lakh; payables days 76.1 vs 67.8 (Medium)"
+  - "Finance cost +76.3% and depreciation +28.7% in H1 FY27 against PAT +13.4% (Medium)"
+  - "No calls, presentations or press releases; TNT intent known only through a rating agency (Medium)"
+  - "Family settlement transfer pending, Group B direct holding would reach 44.96% (Low to Medium)"
+dropped_triggers: []
+timeline_slippages: []
+analyst_note: "Three things a later stage cannot rebuild from the fields. (1) The TNT loan is sanctioned: CRISIL p.3 lists a Rs 135 Cr Canara Bank term loan maturing 30-Sep-34, so the B03 sanction gap is closed; the open issue is pace, not funding. Two readings: payment is back-ended and April 2027 holds, or the date slips; the separating observation is CWIP plus advances at Dec 2026 and Mar 2027 against the 114.5 Cr remainder. (2) Use the filing segment basis, not the AR Note 28 basis, for any quarterly margin work; the AR allocates 464.31 lakh of un-allocable income into Explosives. (3) Grade C is held on thin evidence that is near B; a TNT commissioning inside FY27 near Rs 190 Cr would lift it. Rs lakh in AR and filings, Rs crore in CRISIL."

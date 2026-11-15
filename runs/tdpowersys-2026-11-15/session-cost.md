@@ -23,3 +23,4 @@ Per-stage token ledger, from subagent result metadata. This harness exposes only
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 54834 | 1m10s | 1 |
 | 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 321092 | 15m09s | 1 |
 | 12c | verifier-c-framework-phase1 | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 199455 | 17m54s | 1 |
+| 13 | synthesis-lite | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 211083 | 11m19s | 1 |

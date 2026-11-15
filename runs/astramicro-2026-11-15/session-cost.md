@@ -13,3 +13,4 @@ subagent, so the split columns are n/a, never estimated.
 | 2 | stage-02-notes-pass (pass 1) | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 261,046 | 7m31s | 1 |
 | 2 | stage-02-notes-pass (pass 2) | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | n/a | n/a (report written 19:12 IST; session ended before usage metadata arrived) | 1 |
 | 2 | stage-02-notes-pass (pass 3) | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 118,971 | 4m57s | 1 |
+| 3 | stage-03-ardeep | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 471,250 | 17m43s | 1 |

@@ -1,0 +1,89 @@
+stage: B03-ardeep
+company: "ASTRAMICRO"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Q2 FY27 concall transcript absent (call held 2026-11-13, not yet filed)"
+  - "screener sheets other than Data Sheet empty"
+  - "PARAS peer concalls absent"
+  - "prospectus and research folders empty (not expected)"
+  - "AR: Q1 FY27 results (10 Aug 2026) not in the AR; FY23 CFO and FY24 balance sheet not in this AR; names of the three customers above 10% of revenue, ARC credit terms and ageing, warrant allottees beyond Somani group, promoter pledge, covenant terms, HAL order date, bid value behind the 9.68% strike rate and the Rs 6,000-8,000 Cr pipeline timeframe all NOT FOUND IN DOCUMENT"
+flags:
+  - "FLAG-CASH"
+phase_verdicts: {p1: "YELLOW: unmodified opinion; one adverse CARO remark (unfiled March 2026 lender returns); audit trail gap", p2: "YELLOW: ARC chain and >2 year receivables; 12 of 15 stage 2 findings verified, 3 refined", p3: "YELLOW: CFO 37,595.92 strong but timing supported; EBITDA bases mismatch between FY26 and FY25", p4: "YELLOW: headline numbers tie; explanations contradicted four times; four quantified risks missing from risk text", p5: "YELLOW: no regulatory action; MD exit, CFO churn and related-party conflicts around the 18 Sep 2026 AGM", p6: "YELLOW: 5 of 9 tested claims fail or are contradicted; 10 quiet-abandonment items", p7_best_fit: "GARP WATCHLIST"}
+overall_quality: 6.0
+quality_components: {governance: 5.0, accounting: 6.0, balance_sheet: 6.5, earnings: 6.5}
+kill_switch_notes:
+  - "P1: reviewer would not stop; unmodified opinion, no default or fraud; clear March 2026 returns omission and audit trail gap"
+  - "P2: reviewer would not stop; want ARC credit terms and ageing basis before sizing"
+  - "P3: reviewer would not stop; want 30 Jun and 30 Sep 2026 deposit and working capital lines before treating CFO as run rate"
+  - "P4: reviewer would not stop; do not rely on narrative explanations of margin, defence mix or rating without the filing"
+  - "P5: reviewer would not stop; hold sizing until the 18 Sep 2026 AGM votes on Items 7, 8 and 9 are known"
+  - "P6: reviewer would not stop; numbers tie, explanations do not"
+  - "P7: reviewer would not stop; FAIL rows are valuation, cash history and consensus positioning, not integrity"
+triple_pass_verification:
+  verified: 12
+  discrepancies:
+    - {finding_rank: 10, triple_pass_value: "warrant window ends about 23-24 Dec 2026 (calc)", ar_value: "on or before 29 Dec 2026", note_ref: "CG report pp.180, 183; Note 13 p.235"}
+    - {finding_rank: 11, triple_pass_value: "demerger: board in-principle 27 Feb 2026 only", ar_value: "Board approved the Scheme on 10 Jun 2026 and ASTPL Board on 12 Jun 2026; application filed with Stock Exchanges", note_ref: "Directors' Report p.93; MD&A p.190; Note 47 p.265 (as at 26 May 2026)"}
+    - {finding_rank: 14, triple_pass_value: "77,950 Janyu shares remaining", ar_value: "49,351 remaining (77,837 less 28,486 sold)", note_ref: "Note 46 p.265; Cons Note 49 p.347"}
+missing_risks:
+  - {risk: "ARC receivable 19,579.28 (27.9% of current gross) and guarantee 8,000.00 with no credit terms; absent from MD&A risk list", evidence: "Note 31 pp.246-247; MD&A p.192"}
+  - {risk: "Customer concentration: three unnamed customers 52.84% of revenue", evidence: "Note 33(c) p.251; FY25 AR p.28 had claimed more than 90% from existing multi-year customers"}
+  - {risk: "Receivables over 2 years 8,158.33 with ECL cover down to 14.9% on a government presumption", evidence: "Note 39 p.255; Note 44 p.263"}
+  - {risk: "Unfiled March 2026 lender returns and ARC lender return mismatches up to 4,874.94", evidence: "Note 43(iii) p.260; CARO ii(b) p.204; Annexure IV p.280"}
+  - {risk: "Management transition: MD exit 30 Sep 2026, three CFOs in FY26, two independent director exits", evidence: "Directors' Report pp.96-97; CG p.175"}
+  - {risk: "Warrant balance Rs 130.50 Cr due by 29 Dec 2026 at Rs 864 vs implied 31 Mar 2026 price about Rs 856 (calc); forfeiture terms NOT FOUND", evidence: "CG pp.180, 183; AR p.8"}
+  - {risk: "Demerger takes 25.1% of order book and 13.5% of sales out of the listed entity; carve-out figures NOT FOUND", evidence: "MD&A pp.190-191 (calc); Note 47 p.265"}
+  - {risk: "Working capital reversal: payable days 72 vs 38 and Q4 42.0% of revenue", evidence: "BRSR p.134; AR p.12"}
+  - {risk: "Audit trail not maintained for privileged users and direct database changes", evidence: "Auditor's report p.201"}
+  - {risk: "ARC capitalised development 9,427.48 is 114.7% of its net assets; ARC borrowings 11,122.02 vs 1,896.92", evidence: "Cons Note 46 pp.341-342"}
+guidance_table:
+  - {claim: "FY26 revenue growth (FY25 AR p.26)", number: "15 to 20%", timeframe: "FY26", credibility: "LOW: delivered 10.67%"}
+  - {claim: "Top line of Rs 1,200+ Cr with margins maintained (FY25 AR p.157)", number: "Rs 1,200 Cr", timeframe: "coming years", credibility: "MEDIUM: Rs 1,155.67 Cr, 3.7% short; margin beaten"}
+  - {claim: "Bid Rs 1,600 Cr at about 60% success (FY25 AR p.26)", number: "Rs 1,600 Cr bids; 60%", timeframe: "FY26", credibility: "MEDIUM: inflow Rs 1,336 Cr; AR26 strike rate 9.68% on a different basis; bid value NOT FOUND"}
+  - {claim: "System revenue share 15% to 50% (FY25 AR p.26)", number: "50%", timeframe: "3 to 5 years", credibility: "MEDIUM: 27.8% reported; definition unverified"}
+  - {claim: "Capex Rs 45 Cr equipment plus Rs 45 Cr building (FY25 AR p.157)", number: "Rs 90 Cr", timeframe: "FY26", credibility: "MEDIUM: Rs 72.66 Cr (p.34); cash capex Rs 82.24 Cr"}
+  - {claim: "ARC growth 10 to 15% a year, PBT 10 to 15% (FY25 AR p.157)", number: "10-15%", timeframe: "next few years", credibility: "LOW: revenue +47.9%, PAT -1.3%"}
+  - {claim: "Revenue above Rs 1,600 Cr from Rs 1,156 Cr (AR26 p.30)", number: "Rs 1,600 Cr", timeframe: "FY29", credibility: "UNTESTED: implied CAGR 11.5%, below FY25 guidance"}
+  - {claim: "ARC revenue above Rs 600 Cr from Rs 361 Cr (AR26 p.190)", number: "Rs 600 Cr", timeframe: "FY27", credibility: "UNTESTED: +66% implied; ARC order book Rs 622 Cr"}
+  - {claim: "Capex Rs 75 Cr and R&D Rs 60 Cr (AR26 pp.34, 192)", number: "Rs 75 Cr; Rs 60 Cr", timeframe: "FY27", credibility: "UNTESTED"}
+  - {claim: "Sanctioned limit utilisation below 22% (AR26 p.34)", number: "22%", timeframe: "FY26", credibility: "LOW: 26.1% at year end (p.192)"}
+  - {claim: "Pipeline Rs 6,000 to 8,000 Cr (AR26 p.26)", number: "Rs 6,000-8,000 Cr", timeframe: "not stated", credibility: "NOT FOUND: no timeframe"}
+monitorables:
+  - {metric: "AMPL receivable from ARC with ageing", threshold: "at or below 19,579.28 Rs Lakhs and aged disclosure", where: "Q2/Q3 FY27 results RPT table", why: "largest single cash exposure and a related party"}
+  - {metric: "Receivables over 2 years and ECL cover", threshold: "at or below 8,158.33 Rs Lakhs; cover at or above 14.9%", where: "next annual report Note 44; investor decks", why: "collection and provisioning quality"}
+  - {metric: "Year-end deposit and working capital lines at 30 Sep 2026", threshold: "net debt to equity without the 16,000.00 deposit at or below 0.22", where: "Q2 FY27 balance sheet", why: "separates genuine liquidity from a year-end holding"}
+  - {metric: "H1 FY27 CFO and payable days", threshold: "CFO positive; payable days at or below 72", where: "Q2 FY27 cash flow; BRSR", why: "structural versus catch-up cash conversion"}
+  - {metric: "Warrant balance receipt", threshold: "Rs 130.50 Cr received by 29 Dec 2026", where: "exchange filings on conversion", why: "insider confidence and cash"}
+  - {metric: "Q4 share of revenue and Q1/Q2 run rate", threshold: "Q4 at or below 42.0%; Q1 and Q2 above 17.2% and 18.5% of FY26", where: "quarterly results", why: "revenue skew and acceptance timing"}
+  - {metric: "Gross margin and EBITDA ex-other-income", threshold: "gross margin at or above 49.2%; EBITDA ex-other-income at or above 28.07%", where: "quarterly results and concall", why: "whether the material-cost gain is mix or timing"}
+  - {metric: "Order book including HAL Uttam and defence book-to-bill", threshold: "order book at or above Rs 2,141.21 Cr plus Rs 2,205.23 Cr incl. taxes; defence book-to-bill above 1.08", where: "Q2 FY27 concall (absent) and exchange filings", why: "growth visibility"}
+  - {metric: "Demerger filings", threshold: "valuation report, exchange ratio, NCLT filing, carve-out financials published", where: "exchange filings", why: "25.1% of order book leaves the listed entity"}
+  - {metric: "AGM 18 Sep 2026 votes", threshold: "Items 7, 8 and 9 outcomes and dissent level", where: "AGM voting results", why: "governance quality: MD compensation and Rs 200 Cr ARC limit"}
+  - {metric: "Lender returns filing", threshold: "Q1 and Q2 FY27 returns filed; no CARO ii(b) remark next year", where: "bank correspondence; next audit report", why: "drawing power and covenant risk"}
+ar_new_downstream_entities:
+  - name: "Fermionic Design Private Limited"
+    where_in_ar: "Note 4 p.230 and MD&A investments table p.194 (1,760 shares, 18.08 Rs Lakhs; nil in FY25)"
+    entity_type: "new unquoted investee"
+  - name: "Manjeera Digital Systems Private Limited"
+    where_in_ar: "Corporate snapshot p.7 (50:50 partner in Navictronics; not found in FY25 AR by text search)"
+    entity_type: "JV partner"
+  - name: "Virupaksha, VLSRSAM, SAMOOHA, Hisar, D4, LLLWR, Drishti radar family"
+    where_in_ar: "pp.25, 29, 30, 54, 64 (named programmes and platforms; not found in FY25 AR by text search)"
+    entity_type: "named platforms"
+  - name: "Three external customers above 10% of revenue (61,052.05 Rs Lakhs)"
+    where_in_ar: "Note 33(c) p.251 (names not disclosed)"
+    entity_type: "customers (unnamed)"
+strengths_top3:
+  - "Margin step-up that ties to the statements: PAT +24.0%, gross margin 43.87% to 49.18%, EBITDA ex-other-income 25.51% to 28.07% like for like, ROE operational (p.208)"
+  - "Deleveraging and liquidity: borrowings -31.4%, net debt Rs 123.10 Cr vs Rs 397.27 Cr, D/E 0.22, cash 16,456.80, undrawn lines 56,514.50 (pp.207, 242, 257)"
+  - "Order visibility: order book Rs 2,141.21 Cr (1.85x revenue) plus HAL Uttam order Rs 2,205.23 Cr over five years after year end; ARC order book Rs 622 Cr (pp.28, 31, 190)"
+red_flags_top3:
+  - "ARC chain: receivable 19,579.28 (27.9% of current gross) with no credit terms, guarantee 8,000.00, sales +115.8%, five directors holding ARC shares, Board report says no material RPT while the Notice seeks Rs 200 Cr (pp.82, 84, 86, 95, 247)"
+  - "Growth and cash timing: listed remainder grew 5.1% as Space and Met supplied 56.3% of growth; Q4 is 42.0% of revenue and 54.9% of PAT; receivables over 2 years +77.7%; March 2026 lender returns unfiled (pp.12, 191, 255, 260)"
+  - "Governance transition and credibility: MD exits 30 Sep 2026 with Rs 1.36 Cr cash compensation proposed, three CFOs in a year, four rating versions and a mixed EBITDA basis across pages (pp.7, 26, 34, 35, 81, 94, 96)"
+best_fit_strategy: "GARP (WATCHLIST), with Capex-Led Growth as the secondary lens"
+one_line_verdict: "GARP-transition WATCHLIST: record-margin, deleveraged defence electronics name whose 10.67% growth was 5.1% in the part that stays listed and whose cash recovery still rests on ARC and old receivables."
+analyst_note: "All figures Rs Lakhs unless Rs Cr. Three readings a later stage cannot rebuild. (1) Growth: FY26 revenue +10.67% (11,144 lakhs); Space and Met, both being demerged, supplied 6,274 (56.3%); Defence sales fell 0.5% (MD&A p.191). Listed remainder grew about 5.1% (calc). (2) Exports: foreign-customer revenue is only 215.93 (Note 33a p.251); the 16,228 exports-incl-deemed line sits within 2.16 of ARC sales plus that figure (INFERENCE: ARC is the deemed-export customer). (3) Margin: headline EBITDA 29.7% includes other income, the FY25 comparator 25.47% excludes it; like for like gain is about 2.5 points. Cash separator: ARC receivable and over-2-year bucket at 30 Sep 2026. B02 corrections: warrant window ends 29 Dec 2026; Janyu remaining lot 49,351; Scheme approved 10 Jun 2026; brief's three negative CFO years shows two in this AR; ARC 51 percent is AMPL 50 plus about 0.8 held by directors (INFERENCE)."

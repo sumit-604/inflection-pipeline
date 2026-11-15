@@ -45,3 +45,6 @@ No document came through the Chrome download path. I used a new tab in the opera
 - Verifier A shadow: NOT run here. Nine /step1 sessions run in parallel on 2026-11-15 and the single shadow run belongs to the TD Power session (operator batch instruction). .claude/shadow.yaml is not touched by this run; manifest carries verifier_a_shadow: skipped.
 - EMPTY-FOLDER CONFIRMATION suppressed under /step1 (standing answer: proceed with the gaps).
 - Text route: every inputs/ PDF has a page-marked .txt beside it; stages and verifiers read the .txt and open the PDF page where text is garbled.
+- FLAG-DISAGREEMENT settled (B02 rank 3 vs B03): over-one-year receivables FY26 = 1,186.73 L (AR Note 11); B02's 888.35 L was the over-two-year sum. Erratum appended to 02-notes.md, 02-notes-pass2.md and B02-notes.yaml (orchestrator_corrections).
+- Stage 1 report erratum appended (garbled other-income line; stage agent reported it).
+- SEBI freshness pair re-checked after stage 3: the only SEBI order in the AR is Exemption Order WTM/KCV/CFD/18/2025-26 (8 Jan 2026); its text is in inputs/announcements/20260220-61-General-Updates. Pair stays PASS.

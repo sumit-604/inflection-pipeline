@@ -11,3 +11,4 @@ Per-subagent token ledger. The harness exposes only total tokens and wall time p
 | 2 | notes pass 1 | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 178,733 | 6m34s | 1 |
 | 2 | notes pass 2 | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 190,758 | 6m38s | 2 |
 | 2 | notes pass 3 | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 75,137 | 1m59s | 3 |
+| 3 | ardeep | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 430,121 | 15m22s | 1 |

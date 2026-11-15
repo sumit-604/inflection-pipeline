@@ -140,3 +140,6 @@ Policies 2.1-2.24, PPE/intangibles roll, investments, receivable levels and days
 | N15 | No restated FY25 amounts found on 18 checked lines | Note 46, p.153 | 🟢 |
 
 Pass 2 emits no YAML block. The B02-notes block comes from Pass 3.
+
+---
+ORCHESTRATOR CORRECTION 2026-11-15 (FLAG-DISAGREEMENT, B02 vs B03, settled at source: AR FY26 Note 11 ageing row 'Considered good 3,724.82 | 942.85 | 395.64 | 298.38 | 556.28 | 332.07 | 6,250.04', txt line 8311): receivables over ONE year at 31 Mar 2026 are 298.38 + 556.28 + 332.07 = 1,186.73 L, up from 887.36 L at 31 Mar 2025 (+33.7%). The 888.35 L figure is the over-TWO-year sum only. The 'nothing collected net' wording applies to the over-two-year balance against last year's over-one-year balance. All INR lakhs.

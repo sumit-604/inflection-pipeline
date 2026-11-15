@@ -1,0 +1,53 @@
+stage: B00-inputs
+company: KPL
+run_date: 2026-11-15
+model: orchestrator session (inline); document identity by stage-00-intake-check (claude-haiku-5-5)
+status: complete
+spear: "Spear: OVERRIDE 2026-11-15 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+load_bearing_facts:   # first verification priority; from step1-business-brief.md (web brief, NOT anchored)
+  - "Guidance vs delivery: FY27 guidance Rs 720 Cr+ revenue, EBITDA Rs 189-196 Cr, PAT Rs 122 Cr+; verify Q2 FY27 PAT in the filed results (Rs 29 Cr vs Rs 50 Cr in one call summary) and the Q2 tax rate."
+  - "Governance: statutory auditor (and, per an analyst, the company secretary) resigned on results day 12 Nov 2026; verify letters, reasons and the new auditor appointment in exchange filings."
+  - "Cash conversion: FY26 CFO Rs 17 Cr vs PAT Rs 67 Cr; debtor days 203-208; receivables up Rs 55 Cr in H1 FY27; Rs 60-70 Cr Middle East debtors stuck at Q4 FY26. Verify in AR ageing and H1 cash flow."
+  - "Mix shift: own-registration revenue (28-32% EBITDA) vs partner-held (24-26%); verify revenue share and partner or customer concentration."
+sector_cap_row: "Pharma / CDMO"
+sector_cap_row_evidence: "Formulation maker; about 90% out-licensing/supply under own or partner registrations, about 10% CDMO (step1 brief, web; to be confirmed by B04). Cap table: .claude/skills/section-1b/references/05-sector-cap.md, row 'Pharma / CDMO', cap 38x."
+reporting_units: {results: "INR lakhs", annual_report: "INR lakhs", screener: "INR Cr", presentation: "check face of each slide"}
+inventory:
+  prospectus: 0          # not expected; listed BSE SME 2016 (web brief), not within 3 years
+  annual-report: 2       # FY2025-26 (primary, Annual_Report_2026.pdf) and FY2024-25 (prior-year reference, Annual_Report_2025.pdf)
+  results: 3             # Q4 FY26 audited, Q1 FY27, Q2 FY27
+  rating: 1              # ICRA full rationale 7 May 2026
+  concalls: 2            # Q4 FY26 (21 May 2026), Q1 FY27 (12 Aug 2026)
+  peer-concalls: 10      # CAPLIPOINT 4, SENORES 4, LINCOLN 2
+  announcements: 16
+  shareholding: 2        # BSE Sep 2026 summary (txt + raw html); no category breakdown
+  research: 0
+  screening: 4           # Data_Sheet only, KPL + 3 peers; figures present
+  presentation: 3        # Q4 FY26, Q1 FY27, Q2 FY27
+  other: 0
+input_gaps:
+  - "KPL Q2 FY27 concall transcript ABSENT: call held 13 Nov 2026; screener and BSE carry PPT and audio only as of 16 Nov 2026. Freshness pair 1 FAILS. Re-collect after about 20 Nov 2026."
+  - "KPL Q3 FY26 (Feb 2026) concall transcript ABSENT: only an investor-meet recording exists. concalls/ holds 2 of 3."
+  - "research/ empty (non-anchored; leads only)."
+  - "prospectus/ empty: not expected for a company listed in 2016; not a gap."
+  - "shareholding/: BSE summary statement only (promoter 54.86%, public 45.14%, no pledge, Sep 2026). No FII/DII category breakdown, so the UA institutional-absence qualifier is unevidenced from filings."
+  - "screening/: screener export sheets Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization are ABSENT for KPL and all three peers (empty formula sheets, no CSV written). Data_Sheet CSVs are populated (FY17-FY26 annual, quarters to Sep 2026)."
+  - "peer-concalls 10 of 12: no CAPLIPOINT Q2 FY27 call yet; LINCOLN has only Feb 2026 and a stale May 2024 call."
+  - "No company secretary resignation filing found on BSE; the 14 Nov 2026 filing is signed by the incumbent company secretary. Statutory auditor resignation and appointment are filed (results pack 12 Nov 2026)."
+  - "Duplicates kept by design: results/20261112-Q2FY27-results-board-outcome-49e6260f.pdf has the same letter as announcements/20261112-4a20fb35-....pdf; rating/ICRA_rationale_... equals announcements/20260508-1ab08dfa-....pdf."
+  - "collector_warnings verbatim (1): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. [Since filled in part by direct BSE fetch.]"
+  - "collector_warnings verbatim (2): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener and all three peers: Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization."
+  - "collector_warnings verbatim (3): no results PDFs yet (screener has none): add later on github or locally + --push-again. [Since filled by direct BSE download.]"
+  - "collector_warnings verbatim (4): no rating PDF yet: add later the same way. [Since filled by direct BSE download.]"
+  - "collector_warnings verbatim (5): only 2 concalls -> no-concall mode. [Not applied: concalls_available stays true; stage 5 runs on the two transcripts.]"
+  - "Empty-folder confirmation SUPPRESSED per /step1 autonomy contract; standing answer 'proceed with the gaps'."
+  - "Pre-extracted text: every inputs PDF has a page-marked .txt beside it (tools/extract_pdfs.py; check_extraction clean). Stages read the .txt; the PDF is the authority on a doubt."
+freshness_pairs:
+  - {pair: "results to concall", trigger_doc: "inputs/results/20261112-Q2FY27-results-board-outcome-49e6260f.pdf", mate_expected: "KPL Q2 FY27 concall transcript (call 13 Nov 2026)", status: FAIL, missing_doc: "KPL Q2 FY27 concall transcript; expected source BSE/NSE filing or screener Concalls row, not published as of 2026-11-16"}
+  - {pair: "rating bulletin to rationale", trigger_doc: "inputs/rating/ICRA_rationale_2026-05-07_via_BSE_20260508.pdf", mate_expected: "full rationale", status: PASS, missing_doc: ""}
+  - {pair: "SEBI order to order text", trigger_doc: "none referenced (orchestrator keyword check of AR FY26; stages to report any found)", mate_expected: "n/a", status: PASS, missing_doc: ""}
+  - {pair: "AR to latest audited annual results", trigger_doc: "inputs/results/20260519-3ba529f9-....pdf (FY26 audited)", mate_expected: "AR FY2025-26", status: PASS, missing_doc: ""}
+freshness_verdict: CORPUS GAPPED-FRESHNESS
+corpus_manifest_ref: "outputs/blocks/B00-intake.yaml (43 rows; no misfile, no UNIDENTIFIED, no moves; all rows folder_match true)"
+flags: []
+analyst_note: ""

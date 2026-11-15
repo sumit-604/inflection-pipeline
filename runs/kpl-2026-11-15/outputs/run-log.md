@@ -59,3 +59,9 @@ See manifest.yaml; five entries (shareholding empty, screener sheets empty, no r
 - manifest.yaml company corrected by hand from "Kpl" to "Kwality Pharmaceuticals Ltd" (collector name scrape defect).
 - Q2 FY27 transcript check by the orchestrator: the screener concall row for Nov 2026 carries PPT and REC links only, no Transcript link. The gap is real. Chrome fallback not used: no file exists to download.
 - Verifier A shadow: NOT run here. Nine /step1 sessions run in parallel and the single shadow run belongs to the TD Power session. .claude/shadow.yaml is left untouched by this run.
+- LESSONS pre-read done (active LESSONS.md). Open actions noted; none blocks Phase 1. No tagged lessons for sector "Pharma / CDMO"; no archetype declared yet.
+- Stage 0: B00-intake (Haiku 5.5) found no misfile and no UNIDENTIFIED row in 43 files; nothing to verify at the page, no moves. B00-inputs written inline. Units: results and AR in INR lakhs, screener in INR Cr.
+- Freshness pair 1 FAILS (Q2 FY27 results present, Q2 FY27 transcript not published). B00.freshness_verdict = CORPUS GAPPED-FRESHNESS; the gate recommendation caps at PROCEED WITH CAVEATS.
+- Empty-folder confirmation suppressed per /step1; proceeding with gaps.
+- Harness note: the Agent tool dispatches every subagent in the background in this desktop session. The orchestrator waits for each completion notice and then applies the PROVE COMPLETION check (report and block on disk) before any dependent stage starts.
+- annual-report/ holds two ARs. Stages use FY2025-26 as the AR; FY2024-25 is passed as a prior-year reference only.

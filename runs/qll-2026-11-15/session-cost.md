@@ -23,3 +23,31 @@ Token figures come from subagent result metadata. This harness exposes only tota
 | 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 422667 | 25m49s | 1 |
 | 12c | verifier-c-framework (phase-1 scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 185539 | 15m56s | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 40533 | 0m42s | 1 |
+| 13 | stage-13-synthesis (phase 1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 207066 | 9m58s | 1 |
+| 9b | stage-09b-dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 227522 | 9m23s | 1 |
+
+## Close-out summary (Phase 1, 2026-11-15)
+
+Run total over ledger rows with a token figure: 4,005,532 tokens (19 rows; the stalled stage 9 run 1 has no figure and is left out). Intake rows S1 (313,058) are included; Phase 1 stages and verifiers alone total 3,692,474.
+
+(a) TOP FIVE BY TOKENS
+1. stage 2 notes triple-pass (3 runs): 520,696 (13.0%)
+2. stage 3 AR deep dive: 463,796 (11.6%)
+3. verifier B red flags (Opus 5.5 xhigh): 422,667 (10.6%)
+4. verifier A numerical: 329,966 (8.2%)
+5. stage 6 peers: 293,869 (7.3%)
+
+(b) DOWNSHIFT FAILURES: none. stage-00-intake-check ran on claude-haiku-5-5; verifier A ran on claude-sonnet-5-5. verifier-a-shadow did not run in this session (the single shadow run belongs to the TD Power session of this batch).
+
+(c) COST SPIKES: none (no prior run for QLL).
+
+Open action C2 measurement (LESSONS.md, 2026-10-04): stage 5 in no-call mode cost 63,841 tokens, under the 100k target (Kwick 254k).
+
+(d) SESSION TOTAL (/cost)
+
+
+(e) FRESH VS RE-READ
+This harness reports one total per subagent and no input, cache-read, cache-write or output split. All 20 ledger rows carry n/a in those columns and are left out of the sums.
+Fresh tokens (cache write + output + uncached input): n/a (20 rows left out)
+Re-read tokens (cache read): n/a (20 rows left out)
+Re-read multiple (re-read / cache write): n/a (20 rows left out)

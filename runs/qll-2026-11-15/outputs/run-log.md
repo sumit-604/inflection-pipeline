@@ -46,3 +46,9 @@ Collector ran clean in dry-run (scratch wrapper for REPO_ROOT, headless sitecust
 - Execution: this harness dispatches subagents asynchronously with a completion notification. The orchestrator waits for each notification and runs the completion check (report file, block file, block parses) before any dependent stage.
 - Stage 0: B00-intake (Haiku 5.5) 83 rows, 0 misfiles, 0 unreadable. Freshness pairs OK (pair 1 skipped, no-concall).
 - Stage 9 run 1 stalled (stream watchdog, no progress for 600s) and left no report or block. Mechanical re-invoke (run 2), not counted against any cap.
+- Stage reports 07 and 08: orchestrator errata appended (missing closing YAML block; approximate page anchors).
+- Verifiers: A 98.8% (0 CRITICAL, 4 MAJOR source-fidelity, each corrected at source by erratum on reports 01, 02, 03, 07); B 64% (14 material, 5 MAJOR missed; reads credibility D vs B05 C); C phase-1 88.7% (E08 MAJOR: capex-embedded growth 98% as written vs 72%); D 100%. Identity check: no CRITICAL rows, nothing struck. No REWORK, no remediation cycle. verifier_runs A1 B1 C1 D1.
+- Confidence delta overall 64, set by redflag_coverage (band 60-74).
+- Synthesis-lite: gate verdict PROCEED WITH FLAGS; FLAG-CASH INDETERMINATE, FLAG-GATE0. The synthesis asks for an operator ruling on verdict order (CMSINFO 2026-08-29 stopped at CAVEATS on like inputs).
+- Stage 09b: CORPUS GAPPED, fragility FRAGILE. Mechanical dossier check PASS (six sections, one verdict line, draft marker, annex 10 questions, hash line). Stray scratch file outputs/reports/edit_dummy.txt left by the stage was deleted.
+- A transient permission-classifier failure blocked one batch of four tool calls before the verifier dispatch; retried once, no effect on outputs.

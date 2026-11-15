@@ -1,0 +1,39 @@
+stage: B12b
+company: "PREMEXPLN"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+independent_flags_found: 32
+caught: 21
+partially_caught: 6
+missed:
+  - {severity: "MAJOR", item: "Expected credit loss provisions and forex losses sat in earlier quarters' other expenses (analyst: Rs 20 Cr to Rs 11 Cr); only call statement on receivable quality; amount NOT FOUND in transcripts; absent from B05 and B06", anchor: "Q1 FY27 call 14 Aug 2026, p4, TVC answering Paras Kulkarni"}
+  - {severity: "MINOR", item: "QRSAM peer tension: Astra says BEL placed FOPM orders on all vendors and Astra holds QRSAM FOPM orders, while Premier (claimed sole propellant source) has no order and says tenders are not called; B06 Q8 calls Premier's position consistent", anchor: "Premier Q3 FY26 p9 and Q1 FY27 p8, TVC; ASTRAMICRO Q4 FY26 p16, Q1 FY27 p6 and p13"}
+  - {severity: "MINOR", item: "Explosives and services order books identical two quarters running (Rs 51.8/51.8 Cr; Rs 42/42 Cr); CFO then calls the non-defence 6% industrial explosives", anchor: "Q3 FY26 p3, VK; Q1 FY27 p3 and p8, VK"}
+  - {severity: "MINOR", item: "Board fund-raise permission raised by analyst, MD answered on land only; B05 1C says QIP not discussed in Q3 FY26", anchor: "Q3 FY26 p11, Varun Jain / TVC"}
+  - {severity: "MINOR", item: "July 2023 order remaining value stated four ways (Rs 110-112 Cr; Rs 60 Cr flare part; little portion; Rs 75 Cr); MD and CFO contradicted each other on whether stock awaiting inspection was included", anchor: "Q3 FY26 p10, TVC/VK; Q4 FY26 p7, VK; Q1 FY27 p5, VK"}
+pipeline_flags_not_supported: []   # none NOT SUPPORTED; four B05 statements and one B06 statement OVERSTATED (findings 5-9)
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur: D. Every dated Q3 FY26 and Q4 FY26 operational promise slipped and the FY27 guide rose after a 22% FY26 miss; my added contradictions (raw-material pass-through, shifting excuses, blocked FY27 drivers) reinforce D without moving it, and B05 names the C separating observation correctly"
+findings:
+  - {severity: "MAJOR", location: "B05 0.2 and 2D item 2", item: "Credit-loss provisions and forex losses in earlier quarters' other expenses not captured", assessment: "MISSED", anchor: "Q1 FY27 p4, TVC", note: "Only call evidence on receivable impairment; bears on load-bearing fact 2 (cash conversion); amount NOT FOUND in transcripts, read Q4 FY26 results notes and AR"}
+  - {severity: "MAJOR", location: "B05 3B pricing bullet and T7; B06 Q3 and 2B", item: "Q3 FY26 claim that escalation clauses protect margin carried as fact; Q1 FY27 says price rises wait until contracts are completed", assessment: "PARTIALLY CAUGHT, misclassified as industry intelligence", anchor: "Q3 FY26 p7, VK/TVC; Q1 FY27 p11, VK; SOLARINDS Q4 FY26 p7-8", note: "Stage 11 margin bridge must not cite escalation-clause protection without the contrary Q1 FY27 statement"}
+  - {severity: "MINOR", location: "B05 2B", item: "Shifting shortfall explanations; Q1 FY27 denial of customer acceptance delay vs Q3 FY26 inspection narrative; MIL reason presented as said before but absent in Q3 FY26", assessment: "PARTIALLY CAUGHT", anchor: "Q3 FY26 p6, p8; Q4 FY26 p5; Q1 FY27 p8-9", note: "Reclassify as cross-call contradiction"}
+  - {severity: "MINOR", location: "B05 1C, 2A row 11, 4A P6", item: "FY27 growth drivers (mines, drone payloads, ammunition) blocked another 6 months; Q3 FY26 said mines already delivering", assessment: "PARTIALLY CAUGHT, under-weighted", anchor: "Q4 FY26 p15, p5, p16; Q1 FY27 p6; Q3 FY26 p5, p7", note: "Tie to F1 FY27 guide credibility; absent from 4D"}
+  - {severity: "MINOR", location: "B05 4D F4", item: "Export 'this quarter' figure read against Q2 FY27 revenue", assessment: "OVERSTATED", anchor: "Q1 FY27 p5, Paras Kulkarni / TVC", note: "Question asked about FY27; Q3 FY26 export misstatement is real"}
+  - {severity: "MINOR", location: "B05 4D F8", item: "Management called the acquisition done before SPA close", assessment: "OVERSTATED", anchor: "Q1 FY27 p3 vs p7, TVC", note: "Same call treats Apollo as pending; rest of F8 supported"}
+  - {severity: "MINOR", location: "B05 2B pattern check", item: "Accident and its cost volunteered in Q4 closing", assessment: "OVERSTATED", anchor: "Q4 FY26 p16 closing; Q3 FY26 p8", note: "Cost was elicited by an analyst; accident volunteered inside a Q4 FY26 p5 answer"}
+  - {severity: "MINOR", location: "B05 2E rows 2 and 3", item: "Deflected every time (guidance; LD timing)", assessment: "OVERSTATED", anchor: "Q3 FY26 p8; Q1 FY27 p5", note: "Guide was cut with reasons; LD window was given; both remain repeated-question signals"}
+  - {severity: "MINOR", location: "B06 Q8 net read", item: "BEL QRSAM main order not signed by August 2026; Premier position consistent", assessment: "OVERSTATED (inference as fact); peer tension MISSED", anchor: "ASTRAMICRO Q1 FY27 p6, p13; ASTRAMICRO Q4 FY26 p16; Premier Q1 FY27 p8", note: "Astra transcript does not state the BEL contract status"}
+  - {severity: "MINOR", location: "B05 1C QIP row", item: "QIP not discussed on Q3 FY26 call", assessment: "MISSED skipped question", anchor: "Q3 FY26 p11, Varun Jain / TVC", note: "Fund-raise raised, answer on land only"}
+  - {severity: "MINOR", location: "B05 and B06 anchors", item: "Page anchors mix footer and PDF-marker bases; several one page off", assessment: "Weak anchors", anchor: "B05 Q3 FY26 p9 (is p8), Q4 FY26 p11 (p10), Q1 FY27 p10 (p9), Q4 FY26 p6 (p5), Q3 FY26 p5 VK (p6); B06 ASTRAMICRO Q1 FY27 p14 (p13)", note: "No quote fabricated; anchor fidelity is Verifier A's domain"}
+  - {severity: "MINOR", location: "B05 2A row 5", item: "July 2023 order remaining value stated four ways; MD/CFO contradiction", assessment: "MISSED", anchor: "Q3 FY26 p10; Q4 FY26 p7; Q1 FY27 p5", note: "Slippage itself caught"}
+  - {severity: "MINOR", location: "B05 3D", item: "Identical explosives and services order books two quarters running", assessment: "MISSED", anchor: "Q3 FY26 p3; Q1 FY27 p3, p8", note: "Ask how the split is built"}
+  - {severity: "MINOR", location: "B05 1C, 2A row 7, 2C", item: "Skipped post-board call for land travel; within-call capex conflict; Q4 FY26 to Q1 FY27 tone shift", assessment: "PARTIALLY CAUGHT", anchor: "Q3 FY26 p13, p11; Q4 FY26 p2-3, p10; Q1 FY27 p2-3", note: "Presentational"}
+critical_count: 0
+major_count: 2
+minor_count: 12
+material_found: 15
+material_caught: 11
+acceptance_rate: 73
+coverage_basis: "15 material (1 CRITICAL, 14 MAJOR) of 32 listed (17 MINOR); 11 CAUGHT, 3 PARTIALLY CAUGHT, 1 MISSED (MAJOR); rate counts CAUGHT only, 11/15 = 73%; partials as caught 14/15 = 93%, half credit 83%; 3 main and 8 peer transcripts read in full; BDL none; Premier Q2 FY27 transcript absent"

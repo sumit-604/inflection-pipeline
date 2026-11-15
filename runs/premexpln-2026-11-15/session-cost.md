@@ -19,3 +19,6 @@ Per-subagent token ledger. The harness exposes only total tokens and wall time p
 | 7 | emoat | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | n/a | n/a (stalled, nothing written) | 1 |
 | 7 | emoat | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 180,937 | 6m43s | 2 |
 | 9 | tam | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 126,499 | 5m57s | 1 |
+| 12d | verifier D peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 53,722 | 0m58s | 1 |
+| 12a | verifier A numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 254,888 | 8m57s | 1 |
+| 12b | verifier B redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 345,724 | 13m56s | 1 |

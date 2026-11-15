@@ -50,3 +50,7 @@ No document came through the Chrome download path. I used a new tab in the opera
 - SEBI freshness pair re-checked after stage 3: the only SEBI order in the AR is Exemption Order WTM/KCV/CFD/18/2025-26 (8 Jan 2026); its text is in inputs/announcements/20260220-61-General-Updates. Pair stays PASS.
 - Stages 6 and 7 first invocations stalled (stream watchdog, no progress for 600s; API-side). Mechanical re-invoke, run# 2 each.
 - Stage 6: the stalled run had already written a complete report (closed YAML block) and a parsing block file; accepted from disk per 7A. Its token usage was not reported (n/a). Stage 7 re-invoked.
+- Verifiers A, B, C (phase 1 scope), D each ran once (manifest verifier_runs 1 each). Completion check passed for all four. Verifier A identity check: no CRITICAL rows, nothing struck. No REWORK trigger. No remediation cycle run (remediation_cycles stays 0).
+- Verifier B and C block `model` fields read claude-opus-5-5, matching the agent frontmatter.
+- Verifier C reported a prompt defect: prompts/12-verifiers-pipeline.md line 379 holds patch text instead of the YAML key. Not edited here (framework files travel on their own branch); recorded in LESSONS_ARCHIVE.md.
+- Confidence delta: overall 73 set by redflag_coverage; peer_utilisation not applicable (denominator 3).

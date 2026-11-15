@@ -1112,3 +1112,17 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+
+## 2026-11-15 · KPL /step1 to Halt 1 (runs/kpl-2026-11-15)
+- Collector: REPO_ROOT hard-coded to a missing path and headed Chromium "spawn UNKNOWN"; ran through a scratch wrapper and a headless hook. Collector fetched no results, rating or shareholding; a direct BSE download filled them. Its BSE fetch caps at 25 rows; two 6-month windows gave 77.
+- Collector named the folder from the clock date (2026-11-16) after an overnight pause; moved to kpl-2026-11-15. It wrote company "Kpl" in the manifest; fixed by hand.
+- Screener Financials export: only Data_Sheet came out populated, for KPL and all three peers.
+- Q2 FY27 transcript not published (call 13 Nov 2026, audio only): freshness pair 1 FAIL, gate capped at PROCEED WITH CAVEATS. Re-collect after about 20 Nov 2026.
+- Run paused overnight on a declined task-list call; resumed on the operator's word on 2026-11-16. No stage stalled.
+- Desktop Agent tool dispatches every subagent in the background; the orchestrator waited for each completion notice and proved report and block on disk before any dependent stage.
+- Subagent token split (in, cache read, cache write, out) is not exposed in this harness; session-cost.md carries totals only, and the fresh vs re-read lines are n/a.
+- Stages 5, 8 and 09b had no Edit tool and reported their own defects at hand-back; the orchestrator appended errata to reports 05 and 08.
+- Stage 5 task message gave filing dates (21 May, 12 Aug) as call dates; transcripts say 19 May and 10 Aug. The orchestrator should read call dates off the transcript, not the cover letter.
+- Verifier C: Gate 0 used a substitute ROCE formula (MAJOR); prompts/07 has no rule for rows that mix evidence tiers (NONE vs MODEST on this name). Both go to the operator at Halt 1.
+- Verifier A shadow not run here by batch instruction (TD Power session owns the single run). No DOWNSHIFT FAILURE, no COST SPIKE.

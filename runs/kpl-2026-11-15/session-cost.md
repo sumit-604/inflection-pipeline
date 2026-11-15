@@ -22,3 +22,32 @@ Token columns: the harness exposes one total per subagent run (subagent_tokens),
 | 12c | verifier-c-framework (phase-1 scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 160090 | 799s | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 59753 | 68s | 1 |
 | 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 400662 | 873s | 1 |
+| 13 | stage-13-synthesis (phase 1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 205744 | 762s | 1 |
+| 9b | stage-09b-dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 242146 | 676s | 1 |
+
+## Close-out summary (Phase 1)
+
+Run total over 20 ledger rows (subagents only): 3,823,615 tokens. Phase 1 stages and verifiers only (excluding the two step1 pre rows): 3,542,131.
+
+### (a) Top five by tokens
+- stage-02-notes-pass: 447,524 (11.7%)
+- verifier-b-redflags: 400,662 (10.5%)
+- verifier-a-numerical: 357,620 (9.4%)
+- stage-03-ardeep: 355,490 (9.3%)
+- stage-06-peers: 278,880 (7.3%)
+
+### (b) Downshift failures
+none. stage-00-intake-check ran on claude-haiku-5-5; verifier A ran on claude-sonnet-5-5; verifier-a-shadow did not run in this session (the single shadow run belongs to the TD Power session).
+
+### (c) Cost spikes
+none. No prior run exists for KPL.
+
+### (d) Operator snapshot
+SESSION TOTAL (/cost)
+
+
+### (e) Fresh vs re-read
+The harness exposed one total per subagent run. The in / cache_read / cache_write / out split is n/a on every row, so all 20 rows are left out of the sums below.
+Fresh tokens (cache write + output + uncached input): n/a
+Re-read tokens (cache read): n/a
+Re-read multiple (re-read / cache write): n/a

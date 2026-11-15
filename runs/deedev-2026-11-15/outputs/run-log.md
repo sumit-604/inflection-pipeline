@@ -47,3 +47,4 @@ Gaps
 - Stage 2 pass 2: same report-tail defect as pass 1; block appended as an erratum. Pass 2 corrected pass 1 on the exceptional item (Labour Codes), first-time standards and Thailand interest.
 - Stage 3: report errata appended by the orchestrator (five items the stage reported but could not edit). Stray outputs/blocks/_fix_marker.txt removed. Stage 3 found no SEBI order; freshness pair 3 stays PASS.
 - Stage 8: status partial, six searches skipped (sebi.gov.in entity search, MCA21, Trendlyne 405, proxy advisers, Glassdoor, tax appeal status). Verdict CAUTION. No SEBI order found; freshness pair 3 stays PASS, provisional on the skipped sebi.gov.in lookup.
+- Stage 6: one report erratum appended by the orchestrator (order book is point-in-time, not H1 intake).

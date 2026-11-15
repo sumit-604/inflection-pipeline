@@ -1,0 +1,38 @@
+stage: B01-gate0
+company: "KPL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Promoter holding 3 years ago (Sep 2023 or Mar 2023) NOT FOUND in inputs: E2 scored 0. Observed only 54.83% Mar 2025 (AR 2025 shareholding table), 54.87% Mar 2026 (AR 2026 p.82), 54.86% Sep 2026 (BSE summary). Resolving at +/-1pp would add 3 to Block E."
+  - "Trade payables for FY17 to FY24 NOT FOUND in screener Data Sheet (Other Liabilities only): B4 and M12 use bounds, not point values."
+  - "Capex split (PPE + intangibles) NOT FOUND in Data Sheet for FY17 to FY24: FCF uses CFO + CFI proxy; FY25 and FY26 cross-checked to AR p.191."
+  - "R&D expense NOT FOUND (AR p.48 gives only about Rs 0.6 Cr R&D machinery spend, 60 lakh): M6 = 0."
+  - "Count of listed players in the regulated segment NOT FOUND in inputs: M7 = 0."
+  - "Current liabilities for FY17 to FY24 NOT FOUND in Data Sheet: ROCE computed on a net worth + borrowings proxy (conservative)."
+flags: []
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 13, B: 4, C: 17, D: 15, E: 12}
+core_score: 61
+moat_score: 19
+grand_total: 80
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "GOOD"
+deal_breakers:
+  - "#2 Block B 4 < 8 -> max GOOD. Years driving it: FY26 CFO 17.06 vs PAT 67.35 (Rs Cr); FCF proxy negative in FY17, FY18, FY20, FY22, FY23, FY26; WC days up by more than 15 FY17 to FY26 (receivable days 84 to 203)."
+history_downgrade: false
+data_notes:
+  - "Units: screener Data Sheet in Rs Cr (consolidated; receivables 280.05 matches AR consolidated 28005.24 lakhs, p.184). AR and results in Rs lakhs, converted by /100 and stated."
+  - "FY22 outlier: sales 456.19, PBT 161.57, PAT 119.99 (Rs Cr, screener-data); EBITDA margin 37.6% and ROCE 69.9% inflate medians' upper tail; the median is robust to it."
+  - "ROCE computed (Data Sheet has no ROCE): (PBT + interest) / (equity capital + reserves + borrowings), closing. Overstates capital against the TA - CL definition, so conservative. Formula basis FY26: 100.46 / (592.21 - 225.52) = 27.4% (AR p.184-185); FY25 23.0%."
+  - "EBITDA derived = sales - (RM + power + other mfr + employee + selling + other exp - change in inventory); reconciles to PBT in every year."
+  - "Peer data limited to 3 names (CAPLIPOINT, SENORES, LINCOLN): FY26 EBITDA margin 35.0 / 26.6 / 14.6%, median 26.6% vs KPL 23.5%. Gross margin proxy (sales - material cost)/sales: 60.4 / 60.2 / 53.6%, median 60.2% vs KPL 48.6%."
+  - "M5 scored on a 4-name set only (mcap Rs Cr: CAPLIPOINT 18156.91, SENORES 5409.45, KPL 3966.41, LINCOLN 1045.65); KPL 3rd by mcap and 3rd by margin. Segment-wide rank not evidenced."
+  - "M11 is mechanically applied; network effects are not a pharma maker's moat. 5 points rest on revenue CAGR 26.1% (FY23-26) vs 21.7% (FY20-23) and selling % of sales 12.3% to 8.2%."
+  - "Core 61 sits 1 point above the 60 line. Thin margin."
+  - "Load-bearing fact 1 CONFIRMED: Q2 FY27 consolidated PAT Rs 2902.62 lakhs = Rs 29.03 Cr (results Q2 FY27 p.16; screener 29.03); tax Rs 1319.16 lakhs on PBT Rs 4221.77 lakhs = 31.2%. Not Rs 50 Cr."
+  - "Load-bearing fact 3 CONFIRMED: FY26 CFO Rs 17.06 Cr (screener-data) vs PAT Rs 67.35 Cr; consolidated trade receivables Rs 280.05 Cr (AR p.184) to Rs 335.04 Cr at 30 Sep 2026 (results Q2 FY27 p.14: 33503.65 lakhs), up Rs 54.98 Cr (cash flow p.18: 5498.41 lakhs). Company states debtor days 203 (FY26) to 178 (H1 FY27) (results Q2 FY27 p.4); not recomputed here."
+block_b_trend: "deteriorating: CFO/PAT 1.32 in FY25 (52.72/39.85) to 0.25 in FY26 (17.06/67.35); cumulative 0.857"
+analyst_note: "Block B is the whole story. Earnings and returns climbed (ROCE proxy 17.0% FY17 to 21.7% FY26; PAT CAGR 39.5%) but cash did not follow: cumulative FCF proxy is negative (Rs -2.52 Cr) over ten years and receivables rose from Rs 22.61 Cr to Rs 280.05 Cr (screener-data). GOOD is capped by deal-breaker 2, and core 61 is one point over AVERAGE. Moat score rests on margin expansion, fixed asset turnover and a mechanical M11; margin and gross margin sit below peer median. Cash conversion and receivable collection are the downstream priority."

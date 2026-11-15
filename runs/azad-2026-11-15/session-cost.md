@@ -7,3 +7,4 @@ Token figures come from subagent result metadata. The harness exposes one total 
 | S1-BCD | step1 brief, peers, cap row | claude-opus-5-5 | default | n/a | n/a | n/a | n/a | 120630 | 6m31s | 1 |
 | S1-F | step1 corpus collection | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 193318 | 22m13s | 1 |
 | 0 | stage-00-intake-check | claude-haiku-5-5 | medium | n/a | n/a | n/a | n/a | 118812 | 3m48s | 1 |
+| 1 | stage-01-gate0 | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 105065 | 5m08s | 1 |

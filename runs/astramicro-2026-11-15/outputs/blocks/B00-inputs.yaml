@@ -25,6 +25,9 @@ input_gaps:
   September 18, 2025'' against a 2026 letter date; unresolved, flagged.'
 - 'EMPTY-FOLDER CONFIRMATION suppressed per /step1 autonomy contract: standing answer ''proceed with the gaps''. No question was asked.'
 - 'Pre-extracted text: every PDF has a page-marked .txt beside it (tools/extract_pdfs.py; check_extraction clean; no OCR needed). Stages and verifiers read the .txt and cite the PDF page.'
+- 'SEBI items surfaced by stage 8 from WEB sources (not referenced in any corpus filing, so freshness pair 3 is not re-scored): (1) SEBI inquiry email of 2 Mar 2026 on the FY24 results, company reply 6
+  Mar 2026 (media only; the company''s Reg 30 text is not in corpus); (2) SEBI Adjudication Order SD/AO/65/2010 against M/s Suresh Kumar Somani, identity with the Astra director NOT confirmed; (3) SEBI
+  order on Skanda Aerospace (Dec 2017, a shareholder). None of the texts is in the corpus. Operator upload list at Halt 1.'
 flags: []
 analyst_note: ''
 manifest:

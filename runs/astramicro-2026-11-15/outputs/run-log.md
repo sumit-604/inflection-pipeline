@@ -59,3 +59,4 @@ None. No Chrome fallback was needed.
 - Stage 4: 4 late corrections appended as ERRATA. FLAG-DISAGREEMENT settled at source: Q2 FY27 opening order book is Rs 2,156.44 Cr (Q1 FY27 results note) and Q2 inflow is Rs 2,036 Cr (press release); stage 4 inference to the contrary withdrawn, recorded in B04.conflicts_settled.
 - Stage 5: report ended with a pointer instead of the inline YAML block; orchestrator appended the block file verbatim to 05-concall.md.
 - Stage 5: the block file was written wrapped in code fences and did not parse; orchestrator stripped the fence lines (no content change), after which it parses. Not counted as a malformed-block retry.
+- Stage 8: status partial (MCA, eCourts/SAT, proxy-advisor and name-level searches skipped; listed in the block). 4 late corrections appended as ERRATA. Three web-sourced SEBI items recorded in B00.input_gaps for the operator upload list.

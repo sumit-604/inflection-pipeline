@@ -1,0 +1,76 @@
+stage: B08-promoter
+company: "ASTRAMICRO"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: partial                # web searches ran; MCA, eCourts, SCORES, proxy-advisor reports and original exchange filings not reachable; see searches_skipped
+input_gaps:
+  - "Q2 FY27 concall transcript absent (not yet filed)"
+  - "Filing on the successor MD appointment and the warrant / preferential allotment filing not in announcements/ (allottee names taken from BSE shareholding pattern 30 Sep 2026 numeric match plus Bajaj Broking article 21 May 2025, MEDIA REPORTED)"
+  - "Prospectus empty (long-listed company, not expected); research empty; PARAS peer concalls absent"
+  - "SEBI regulatory inquiry (email 2 Mar 2026, reply 6 Mar 2026, FY24 results window 22 Mar to 31 May 2024): company Reg 30 text not in corpus; seen only through InvestyWise and ScanX summaries; freshness-pair item"
+  - "SEBI Adjudication Order SD/AO/65/2010 dated 21 May 2010 against M/s Suresh Kumar Somani (Kolkata broker): text read on sebi.gov.in, not in corpus; identity with the Astra director NOT confirmed; freshness-pair item"
+  - "SEBI order on Skanda Aerospace (Dec 2017, shareholder, SAST disclosure): not in corpus; media only; no link to promoters or directors"
+  - "Promoter-group entity map, MCA director networks, eCourts and SAT records: not reachable in this container"
+  - "Pledge history: only the 30 Sep 2026 filing is in corpus; 3-year series NOT FOUND"
+  - "Proxy-advisor reports for the 18 Sep 2026 AGM: NOT FOUND"
+flags: []                      # verdict is CAUTION; FLAG-PROMOTER is raised for CONCERN/AVOID only. Open items carried in analyst_note and adverse_findings.
+verdict: CAUTION
+scorecard: {clean: 4, caution: 6, red: 0}
+deal_breakers: []              # none triggered; one mid-term independent exit in 3 years (Varadarajan, 22 May 2025), Dhingra completed her tenure
+adverse_findings:
+  - {finding: "Item 9 ARC related-party limit Rs 200 Cr for FY27 passed with 35.687% of institutional votes polled AGAINST (8,125,181 shares, 31.8% of institutional holdings); promoter group voted 6,205,827 shares FOR on a resolution flagged 'promoter interested: Yes' while the Notice says all related parties shall abstain; non-promoter vote still passes at 83.7% (calc). Directors' Report says no material RPT in FY26 although ARC FY26 transactions were Rs 160.09 Cr (13.85% of revenue)", evidence_tier: VERIFIED, source: "Voting results 2026-09-18 pp.4-13; AR FY26 Notice pp.82-86, Directors' Report p.95, AOC-2 p.102", date: "2026-09-18"}
+  - {finding: "Audit Committee member Suresh Kumar Somani (non-independent NED) holds 0.10% of ARC and 289,351 warrants personally; his Ratnabali bloc holds 6.30% of AMPL (30 Sep 2026) plus 289,351 warrants (Ratnabali Equity) and 231,481 (family trust, FY25 AR p.68); Somani group is 40.2% of the warrant issue (calc). He sits on the committee that approves ARC RPTs", evidence_tier: VERIFIED, source: "AR FY26 CG pp.167, 171; Notice p.86; BSE shareholding 2026-09-30 Tables II-III; FY25 AR p.68 via B03", date: "2026-09-30"}
+  - {finding: "SEBI sent a regulatory inquiry email on 2 Mar 2026 about the FY24 results announced 24 May 2024 (asked for chronology, insider and Designated Person lists, SDD extract); company replied 6 Mar 2026; no outcome found. Pattern is an information request, not an order", evidence_tier: MEDIA REPORTED, source: "InvestyWise https://www.investywise.com/?p=60062; ScanX; company Reg 30 text not in corpus", date: "2026-03-06"}
+  - {finding: "SEBI Adjudication Order SD/AO/65/2010 (21 May 2010) found M/s Suresh Kumar Somani, Kolkata broker, liable for price manipulation in Aurangabad Cryogenics (PFUTP Regs 3, 4 and broker Code of Conduct); penalty Rs 2,50,000. Astra director of the same name runs Ratnabali Group (Kolkata registered entities, 42 years in equity markets). Identity NOT confirmed (no DIN or PAN match)", evidence_tier: UNVERIFIED, source: "https://www.sebi.gov.in/adjorder/sureshkumarsomani.pdf pp.1, 12-14; AR FY26 CG p.169", date: "2010-05-21"}
+  - {finding: "Voluntarily departing MD S. Gurunatha Reddy to receive Rs 1,35,68,889 cash compensation (7/12 of three-year average pay Rs 2,32,60,953) for the unexpired tenure; resolution text says Rs 1,35,00,000, explanatory statement Rs 1,35,68,889; passed with 0.043% against. 3 Apr 2026 Reg 30 filing said he would continue as Executive Director; AR (10 Aug 2026) says he ceases as MD and Director on 30 Sep 2026; he is to join Astra Space Technologies as Director", evidence_tier: VERIFIED, source: "AR FY26 Notice pp.69, 81; Directors' Report p.96; Reg 30 2026-04-03 p.2; press release 2026-04-03; voting results p.12", date: "2026-09-18"}
+  - {finding: "Chitrakar (promoter, age 75 on 24 Jan 2026) re-election by rotation drew 25.73% institutional votes against (10.43% of all votes polled); reason not disclosed; he sits on NRC and holds 0.20% of ARC", evidence_tier: VERIFIED, source: "Voting results 2026-09-18 p.6; AR FY26 CG p.179 (age-75 continuation), Notice p.86", date: "2026-09-18"}
+  - {finding: "Management churn: CFO Mallampati retired 9 Apr 2025, CFO Rungta 10 Apr 2025 to 11 Feb 2026 (moved to wholly owned subsidiary ASTPL as CFO), CFO Devathi from 12 Feb 2026; independent director Varadarajan resigned 22 May 2025 'preoccupation' about 6 months after joining the Audit Committee (12 Nov 2024); Dhingra completed tenure 26 Jun 2025; independents 3 of 8 (37.5%); Kumar attendance 60%", evidence_tier: VERIFIED, source: "FY25 AR Directors' Report and CFO table; AR FY26 pp.96-97, CG pp.166-170, Reg 30 2026-02-12", date: "2026-02-12"}
+  - {finding: "Warrant issue 2,013,885 at Rs 864 allotted to six holders, about 71.3% to identified insiders or their affiliates (Kabra 28.7%, Somani group 40.2%, Renuka Chitrakar 2.3%) and 28.7% to Gopikishan Damani (non-promoter investor); CMP Rs 1,704 per run manifest is 97.2% above the exercise price; Rs 130.50 Cr balance due by 29 Dec 2026; forfeiture terms NOT FOUND IN DOCUMENT", evidence_tier: VERIFIED, source: "BSE shareholding 2026-09-30 Tables II-III (warrant columns); AR FY26 CG p.180; monitoring report Q2 FY27 pp.7-9; allottee names Bajaj Broking 2025-05-21 (MEDIA REPORTED)", date: "2026-09-30"}
+  - {finding: "Control is diffuse: promoter and promoter group hold 6.54% (two individuals); Ratnabali Investment holds 6.30% and FY25 AR Notice named persons acting in concert at 5.28% (FY26 equivalent NOT FOUND); promoter share fell from 12.84% (pre Oct 2019) through reclassifications to 6.54%", evidence_tier: MEDIA REPORTED, source: "BSE shareholding 2026-09-30 (6.54%, 6.30% verified); reclassification figures from company filings summarised in search results; FY25 AR p.68 via B03", date: "2026-09-30"}
+transition_evidence:
+  - {item: "Independent directors with real credentials added 22 May 2025: Venu Raman Kumar (founder M*Modal, Nasdaq-listed, acquired for over USD 1 bn in 2012; founded Aeries Technology and CASHe) and Anuradha Mookerjee (IRS 1986 batch topper); Mookerjee chairs the Audit Committee", anchor: "AR FY26 CG pp.168-170, Directors' Report p.96"}
+  - {item: "Planned internal MD succession: JMD Dr M.V. Reddy (on Board since 29 Apr 2013) becomes MD 1 Oct 2026 to 29 Apr 2028; Special Resolution passed 99.9999% for", anchor: "AR FY26 Directors' Report p.96; voting results p.10"}
+  - {item: "Institutional entry: mutual funds 15.58% (HDFC Defence Fund 4.76%, Kotak 2.37%, Nippon Small Cap 2.32%, Motilal Oswal Defence Index 1.20%) and FPIs 10.48% at 30 Sep 2026 vs 13.96% and 7.56% at 31 Mar 2026", anchor: "BSE shareholding 2026-09-30 Table III; AR FY26 CG p.180 via B03"}
+  - {item: "Pledge nil, no NDU, no other encumbrance on promoter shares at 30 Sep 2026", anchor: "BSE shareholding 2026-09-30 cover items 7-9"}
+  - {item: "Demerger of space, meteorology and hydrology into wholly owned ASTPL is a pure mirror: 1 ASTPL share for 1 AMPL share, no cash, post-scheme holders identical (promoters 6.45%, public 93.55%); recommended by Independent Directors Committee and Audit Committee; BSE and NSE 'no adverse observations' 29 Oct 2026", anchor: "Reg 30 2026-06-10 Annexure A items 1-5; observation letters 2026-10-29"}
+  - {item: "Insiders put own money into the warrant issue (Kabra Rs 12.50 Cr upfront, Rs 37.50 Cr balance due)", anchor: "BSE shareholding 2026-09-30; calc 578,703 x Rs 216 and x Rs 648"}
+pledge_pct_latest: 0
+pledge_trend: "stable at nil on the one filing in corpus (30 Sep 2026: pledge, NDU and other encumbrance all No); earlier quarters and 3-year series NOT FOUND"
+searches_performed:
+  - "Astra Microwave Products SEBI order promoter OR director penalty"
+  - "Astra Microwave Products Atim Kabra Frontline Strategy Strategic Ventures Fund Mauritius"
+  - "Astra Microwave AGM 2026 proxy advisor IiAS OR SES OR InGovern recommendation against related party Astra Rafael Comsys"
+  - "Ratnabali Investment Suresh Kumar Somani Astra Microwave stake"
+  - "Astra Microwave Products disclosure regulatory inquiry SEBI email March 2 2026 reply March 6 2026 Structured Digital Database"
+  - "Astra Microwave Products Prakash Anand Chitrakar co-founder DEL scientist profile"
+  - "Astra Microwave Products Glassdoor OR AmbitionBox employee reviews rating"
+  - "Astra Microwave promoter controversy OR fraud OR investigation OR short seller OR raid"
+  - "Astra Microwave Products clarification X account Atim Kabra impersonation notice"
+  - "Astra Microwave Products reclassification promoter group to public category"
+  - "Astra Microwave Products 10 August 2026 resignation senior management OR CTO OR director Regulation 30"
+  - "Gopikishan Damani Astra Microwave warrants preferential issue 2025 investor"
+  - "Astra Microwave Products news November 2026 warrants conversion OR management OR governance"
+  - "Ratnabali Capital Markets Somani SEBI order"
+  - "Venu Raman Kumar Aeries Technology Nasdaq CASHe controversy OR lawsuit OR SEC"
+  - "Astra Microwave Gurunatha Reddy managing director chartered accountant background Astra Space Technologies director"
+  - "Ratnabali Group Suresh Kumar Somani Kolkata stock broker investor Hyderabad"
+  - "WebFetch investywise.com/?p=60062 (SEBI inquiry disclosure)"
+  - "WebFetch bajajbroking.in warrant allottee table (21 May 2025)"
+  - "WebFetch trendlyne.com ASM status page"
+  - "WebFetch marketscreener Suresh Kumar Somani profile"
+  - "WebFetch businesstoday.in Oct 2023 corporate guarantee clarification"
+  - "WebFetch sebi.gov.in/adjorder/sureshkumarsomani.pdf (read pp.1-3, 12-14 as images)"
+searches_skipped:
+  - "MCA / RoC director network and strike-off check for promoter-group entities (no MCA access)"
+  - "eCourts, NCLT, SAT, NGT, CCI, consumer forum searches by name"
+  - "SCORES complaint history"
+  - "IiAS, SES, InGovern 2026 AGM reports (not public); only the Oct 2023 and 2025 proxy-advisor references seen via media and AR"
+  - "Original BSE or NSE text of the SEBI inquiry disclosure and of the 2026 warrant allotment filing"
+  - "Pledge history for 12 quarters (Trendlyne or BSE series)"
+  - "Open SEBI result URLs from search 1 (sebi.gov.in feb-2024 1708514961658.pdf and apr-2023 1682679608810_1.pdf) not opened; relevance unknown"
+  - "ProPublica-style searches on Renuka Chitrakar, Dr M.V. Reddy, Anuradha Mookerjee, Avinash Chander, Rahul Rungta, Srinivasarao Devathi individually"
+  - "Rafael Advanced Defense Systems as JV partner: separate reputation check"
+  - "Strategic Ventures Limited (1.76% holder) ownership link to Kabra-linked Strategic Ventures Fund (Mauritius): not searched"
+  - "Glassdoor: only AmbitionBox found"
+verdict_basis: "No SEBI order, ban, pledge, fraud finding or auditor exit against the company or its promoters; CAUTION because control is diffuse (promoters 6.54%), an interested non-independent director sits on the Audit Committee that clears the ARC related-party limit (35.7% institutional dissent), an open SEBI inquiry on FY24 results has no outcome, the MD exits with cash compensation, and insiders took 71% of a discounted warrant issue"
+analyst_note: "Management-run company; read 'promoter' as three groups. (1) Chitrakar family 6.54%, passive, no pledge. (2) Ratnabali/Somani bloc 6.30% plus 40.2% of the warrants, with a board seat and Audit Committee seat. (3) Kabra, executive director, 3.12% equity plus 28.7% of the warrants. Biggest decisions for the operator: identity check of the Somani SEBI 2010 order (DIN or PAN), outcome of the SEBI FY24 results inquiry, and whether the 29 Dec 2026 warrant balance of Rs 130.50 Cr arrives. Warrants are 97% in the money at CMP Rs 1,704 (manifest), so lapse is unlikely. April 2026 Reg 30 said the outgoing MD stays as Executive Director; the AR says he leaves the Board. Resolve from the successor-MD filing."

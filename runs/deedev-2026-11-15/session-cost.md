@@ -21,3 +21,43 @@ Per-stage token ledger. Subagents run async in this app; the result metadata giv
 | 12c | verifier-c-framework (phase 1) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 167460 | 775s | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 48534 | 65s | 1 |
 | 13 | synthesis (phase 1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 202633 | 668s | 1 |
+| 9b | halt1 dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 305969 | 819s | 1 |
+
+## SUMMARY (close-out)
+
+Run total across 18 ledger rows (subagents only): 3,469,994 tokens. One row (stage 7 emoat) carries n/a: its agent stalled after writing the report and the failed notification gave no usage figure, so the true total is higher by that stage.
+
+Intake rows outside the Phase 1 stage ledger: Steps B, C, D on claude-opus-5-5, 174,664 tokens, 481 s; Step F corpus collection on claude-sonnet-5-5, 179,931 tokens, 1,392 s.
+
+### (a) TOP FIVE BY TOKENS
+
+| rank | stage | total_tok | share of run total |
+|---|---|---|---|
+| 1 | notes-pass | 470,312 | 13.6% |
+| 2 | verifier-b-redflags | 422,288 | 12.2% |
+| 3 | verifier-a-numerical | 394,817 | 11.4% |
+| 4 | halt1 dossier | 305,969 | 8.8% |
+| 5 | ardeep | 289,405 | 8.3% |
+
+The three notes passes are summed into one stage total (470,312).
+
+### (b) DOWNSHIFT FAILURES
+
+none. stage-00-intake-check ran on claude-haiku-5-5; verifier A ran on claude-sonnet-5-5. verifier-a-shadow did not run in this session (the single shadow run belongs to the TD Power session, operator batch instruction 2026-11-15).
+
+### (c) COST SPIKES
+
+none. No prior run exists for DEEDEV.
+
+### (d) OPERATOR SNAPSHOT
+
+SESSION TOTAL (/cost)
+
+
+### (e) FRESH VS RE-READ
+
+The app gives one total token figure per subagent, not the split. All 18 ledger rows carry n/a in the in_tok, cache_read, cache_write and out_tok columns, so all 18 rows are left out of the sums below. Nothing is estimated.
+
+Fresh tokens (cache write + output + uncached input): n/a (18 rows left out)
+Re-read tokens (cache read): n/a (18 rows left out)
+Re-read multiple (re-read / cache write): n/a (18 rows left out)

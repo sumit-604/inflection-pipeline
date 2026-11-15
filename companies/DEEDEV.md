@@ -9,6 +9,11 @@ Not set. Step 1 intake only; no thesis has been built or signed.
 
 ## DECISION STATUS AND ENTRY ZONE
 Not set. No valuation has run; stages 10 and 11 are phase 3.
+Phase 1 gate recommendation 2026-11-15: PROCEED WITH CAVEATS, capped by
+CORPUS GAPPED-FRESHNESS (Q2 FY27 call transcript absent; call on 17 Nov 2026)
+and an INDETERMINATE cash-conversion determination. Flags: FLAG-PROMOTER
+(CAUTION), FLAG-CASH, FLAG-GATE0 (Gate 0 classification AVOID, core 39/100).
+Phase 1 confidence delta 83.3, set by peer utilisation.
 
 ## SPEAR
 Spear: OVERRIDE 2026-11-15 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)
@@ -41,7 +46,20 @@ runs/deedev-2026-11-15/step1-business-brief.md
 DRAFT - NOT SIGNED. Stage 09b drafts it at Halt 1 in
 runs/deedev-2026-11-15/outputs/reports/09b-understanding-dossier.md Section 2.
 The operator signs it in claude.ai. Nothing after Halt 1 runs on an unsigned
-model.
+model. The draft, for the operator to accept or reject:
+  - FROM rung -> TO rung: R2 COST-ADVANTAGED CONVERTER (ROCE evidence sits
+    between R1 and R2) -> R3 VALUE-ADDED / SPEC'D SUPPLIER, piping line
+  - Archetype: Build-to-spec component maker (piping, heavy fabrication);
+    biomass power drafted as Licence/scarcity business
+  - Engine: fill Anjar and the 7,000 MTPA seamless plant against fixed
+    overhead; seamless backward integration; Thailand HRSG reservation
+  - Proof gate: H2 FY27 operating EBITDA margin at or above 19%; H2 FY27
+    operating cash flow positive with CFO/EBITDA at or above 0.5; FY27
+    operating cycle at or below 220 days
+  - Ugliness verdict: UNRESOLVED between ARTIFACT-OF-CLIMB and
+    STRUCTURAL-FEATURE
+  - Open at Halt 1: Verifier B acceptance basis (88.9% vs 44.4%); emerging
+    moat band NONE vs MODEST (Verifier C F-EM-1)
 
 ## HALT 1 GATE
 - Mental Model signed: NOT SIGNED.

@@ -55,3 +55,5 @@ Gaps
 - Source fidelity: three Verifier A MAJOR rows (source_fidelity true) corrected at source by orchestrator errata in 03-ardeep.md, 05-concall.md and 09-tam.md. Gate held, no disagreement to log.
 - Verifier B acceptance: block field 88.9% used as written; the fully-caught-only reading is 44.4%. Sent to Halt 1 as an operator open item.
 - Synthesis-lite: three final files written; verdict PROCEED WITH CAVEATS (freshness cap and INDETERMINATE cash). Missing mate is line 1 of gate-recommendation.md. Orchestrator note appended to business-narrative.md on the Verifier C emerging-moat reading (stage could not edit).
+- Stage 09b: dossier passed the mechanical check (six section headers in order, one corpus verdict line in the body, DRAFT marker in Section 2, annex questions 6.1 to 6.10, corpus commit hash line 21c75533). Missing mate is line 1 of gate-recommendation.md.
+- Close-out: session-cost.md summary written; no DOWNSHIFT FAILURE, no COST SPIKE. LESSONS_ARCHIVE.md entry appended. companies/DEEDEV.md updated with the phase 1 gate line and the unsigned draft model.

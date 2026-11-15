@@ -51,6 +51,8 @@ input_gaps:
 - 'MISFILE MOVED: inputs/announcements/2553A87B-C739-4EA8-9989-FC49D887987E-132258.pdf -> inputs/other/ (results extract of another, unnamed issuer: paid-up capital Rs 17,553 lakhs, face value Rs 10). Never consumed.'
 - 'UNIDENTIFIED ACQUIRER: inputs/announcements/E70E41CF_39DE_40E0_A761_A85C0CA48817_102508.pdf is a Reg 29(1) disclosure on Premier Explosives shares; the acquirer name is illegible in the OCR text.'
 - 'DUPLICATES in announcements/ (same filing from BSE and NSE): 20260709-34/-35, 20260813-24/-25, 20261001-11/-498a18c3, 20261002-10/-ce127e60, 20261003-09/-99af4aeb, 20261105-05/-8eb7a5ad, 20261112-03/-54c1b4d5, 20261112-02/-c46c595d, 20261113-00/-94becea0, 20261113-01/-3ef294be. Several ''Analysts-Institutional-Investor-Meet'' files are presentations or audio-link notices; the page governs.'
+- 'SEBI AO ORDER 2017 TEXT ABSENT: Adjudication Order of 31 Oct 2017 in respect of Amarnath Gupta in the matter of Premier Explosives Ltd (sebi.gov.in, found by stage 8 on web). Subject and penalty NOT FOUND. Not referenced in a corpus filing, so the SEBI freshness pair stays PASS; the text is an operator upload item.'
+- 'SEBI INSIDER-TRADING COMMUNICATION of 3 Nov 2025 (company disclosure 4 Nov 2025, media-reported; stage 8): the disclosure falls before the 16 Nov 2025 announcement window and is not in the corpus.'
 freshness_pairs:
 - pair: RESULTS to CONCALL
   trigger_doc: inputs/results/20261112-Q2FY27-results.pdf
@@ -64,11 +66,11 @@ freshness_pairs:
   missing_doc: ''
   note: the 2026-05-20 release carries the detailed rationale; the 2026-07-21 release carries its own watch rationale
 - pair: SEBI ORDER to ORDER TEXT
-  trigger_doc: none identified at stage 0
-  mate_expected: ''
+  trigger_doc: inputs/annual-report/Annual_Report_2026.pdf p.41 (SEBI Exemption Order WTM/KCV/CFD/18/2025-26, 8 Jan 2026)
+  mate_expected: order text
   status: PASS
   missing_doc: ''
-  note: re-checked after stages 3 and 8
+  note: 'PASS: the order text is in the corpus at inputs/announcements/20260220-61-General-Updates.pdf. Outside the pair rule (not referenced in any corpus filing): stage 8 found by web a SEBI Adjudication Order of 31 Oct 2017 in respect of Amarnath Gupta in the matter of Premier Explosives Ltd (https://www.sebi.gov.in/enforcement/orders/oct-2017/adjudication-order-in-respect-of-amarnath-gupta-in-the-matter-of-premier-explosives-ltd_36405.html); its text was NOT READ by stage 8 or by one orchestrator fetch (page shell only). It goes on the operator''s upload list at Halt 1.'
 - pair: AR to LATEST AUDITED ANNUAL RESULTS
   trigger_doc: inputs/results/20260529-Q4FY26-results.pdf (FY26 audited)
   mate_expected: FY2025-26 annual report

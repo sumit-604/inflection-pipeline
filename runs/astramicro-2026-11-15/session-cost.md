@@ -11,3 +11,4 @@ subagent, so the split columns are n/a, never estimated.
 | 0 | stage-00-intake-check | claude-haiku-5-5 | medium | n/a | n/a | n/a | n/a | 117,169 | 3m01s | 1 |
 | 1 | stage-01-gate0 | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 87,250 | 3m59s | 1 |
 | 2 | stage-02-notes-pass (pass 1) | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 261,046 | 7m31s | 1 |
+| 2 | stage-02-notes-pass (pass 2) | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | n/a | n/a (report written 19:12 IST; session ended before usage metadata arrived) | 1 |

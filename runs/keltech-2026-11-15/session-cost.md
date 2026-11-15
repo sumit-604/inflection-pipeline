@@ -61,7 +61,7 @@ SESSION TOTAL (/cost)
 
 ### (e) FRESH VS RE-READ
 
-All 21 ledger rows carry n/a in the in_tok, cache_read and cache_write columns, so all 21 rows are left out of the sums.
-Fresh tokens (cache write + output + uncached input): n/a (21 rows left out)
-Re-read tokens (cache read): n/a (21 rows left out)
-Re-read multiple (re-read / cache write): n/a (21 rows left out)
+All 23 ledger rows carry n/a in the in_tok, cache_read and cache_write columns, so all 23 rows are left out of the sums.
+Fresh tokens (cache write + output + uncached input): n/a (23 rows left out)
+Re-read tokens (cache read): n/a (23 rows left out)
+Re-read multiple (re-read / cache write): n/a (23 rows left out)

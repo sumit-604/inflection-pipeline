@@ -1,0 +1,97 @@
+stage: B09-tam
+company: "GVPIL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "concalls: no Q1 FY27 or Q2 FY27 earnings-call transcript"
+  - "presentation: no Q2 FY27 deck yet"
+  - "revenue split by business line NOT FOUND in any filing (B04); share is measured on core order intake, not revenue"
+  - "research: none"
+flags:
+  - {type: FLAG-MGMT-TAM-SHIFT, reason: "Management market size moved from Rs 2,500 Cr a year (Q3 FY26 call p.7,13 of 21; defined as own plus non-GEPIL target fleet, ex nuclear) to Rs 3,500-4,000 Cr (Q4 FY26 call p.8 of 16; no definition). Same Rs 734 Cr FY26 core intake is 29.4% of 2,500 and 18.4% of 4,000 (calc). Denominators not reconciled."}
+  - {type: FLAG-TAM-NOT-SIZED-EXTERNALLY, reason: "No external source gives India thermal aftermarket size in Rs Cr. The only dated hard datapoint is BHEL spares and services bookings Rs 3,500-3,800 Cr FY23-FY24 (B06, STALE). IMARC USD 1,043.6M 2025 is scope-unknown, direction only. Realistic TAM NOT FOUND."}
+  - {type: FLAG-SAM-IS-MGMT-DEFINED, reason: "SAM is carried on management's own target-fleet number. Fleet MW behind it NOT FOUND. Chinese-make and BHEL-make unit mix NOT FOUND."}
+  - {type: FLAG-TAM-GROWTH-PROXY, reason: "Aftermarket growth rate NOT FOUND. 4% is a capacity proxy: 44 GW under construction on 224 GW fleet over 5 years (calc, timing assumed). New units need service only after 5-6 years (Q3 FY26 call p.14)."}
+  - {type: FLAG-CAPACITY-NOT-DISCLOSED, reason: "Stage 7 capex-embedded growth 0. No stated capacity. Capacity check cannot confirm or fail."}
+market_definition: "India annual spend on spares, repairs, outages and upgrades for coal-fired boiler, turbine and generator fleets (own GE fleet plus similar-geometry non-GE fleets), ex nuclear, ex new-build; export boiler spares for GE machines (Rs 450-600 Cr per management) shown separately"
+tam_cr: {conservative: 4234, realistic: "NOT FOUND"}
+sam_cr: 2500
+sam_pct_of_tam: 59
+som_3yr_cr: 883
+som_5yr_cr: 986
+som_implied_revenue_cagr: {yr3: 6.4, yr5: 6.1}   # core services order intake basis, from Rs 734 Cr FY26; company revenue split NOT FOUND
+current_sam_share_pct: 29.4
+revenue_headroom_x: 3.4
+tam_growth_pct: 4
+runway_class: "MODERATE"
+mgmt_claim_cr: 4000
+mgmt_claim_ratio: 1.6    # 4,000 claim over 2,500 defined figure; the claim is a SAM-type number, not a TAM
+mgmt_claim_read: "reasonable"   # 1.6x sits above the 1.5x band and below the 2x inflated line; stretched, undefined
+capacity_check: "NOT FOUND (no stated capacity); asset-light model with capex-embedded growth 0; no disclosed capacity step needed for 6% growth; SOM side is not the optimistic one"
+methods_used:
+  - "Management claim comparison (Q3 and Q4 FY26 calls)"
+  - "Peer aggregation (BHEL spares and services, dated, plus GVPIL intake)"
+  - "Fleet-based growth proxy (CEA, CREA fleet and pipeline)"
+  - "Third-party report (IMARC maintenance market, direction only)"
+stale_data_flags:
+  - {datapoint: "BHEL spares and services bookings Rs 3,500-3,800 Cr", source: "BHEL Q4 FY23 and Q4 FY24 calls via B06", year: "FY23-FY24"}
+  - {datapoint: "CEA R&M list of 223 units (63.4 GW) age basis Dec 2022", source: "CEA R&M programme via search result", year: 2022}
+  - {datapoint: "80 GW coal addition by 2031-32 plan", source: "CEA NEP via Enerdata/Powerline", year: 2023}
+searches_performed:
+  - "India coal-based thermal installed capacity GW CEA 2026 lignite"
+  - "India thermal R&M life extension CEA units older than 25 years GW"
+  - "BHEL power sector services spares order booking FY26 annual report"
+  - "India thermal capacity addition plan 2032 CEA NEP coal 80 GW"
+  - "India thermal power plant aftermarket services spares market size crore"
+  - "GE Power India GVPIL Q2 FY27 results services orders"
+  - "India coal thermal PLF FY26 electricity demand growth"
+searches_skipped:
+  - "BHEL FY26 spares and services bookings: not in any search result; fill NOT FOUND"
+  - "CEA R&M document BTG market size in Rs Cr: snippet showed no values; PDF not fetched"
+  - "Doosan, Thermax, L&T, Power Mech thermal services revenue: not searched; competitor aggregation incomplete"
+downstream_candidates:
+  - signal: "NTPC and state genco outage plans and spares tenders"
+    entity_type: "end-customer"
+    demand_link: "Planned outages and breakdown repairs create core services orders for OEM and non-OEM units."
+    likely_source: "NTPC and genco tender portals and exchange filings per registry"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Non-GE fleet owners (Adani Power, JSW Energy, Chinese-make operators)"
+    entity_type: "end-customer"
+    demand_link: "Non-GEPIL assets gave 53% of Q3 FY26 core orders; share gain depends on these owners."
+    likely_source: "Company exchange filings and results calls of each owner"
+    cadence: "quarterly"
+    shared: false
+  - signal: "CEA R&M and life extension programme phases"
+    entity_type: "regulatory"
+    demand_link: "63.4 GW of units listed for R&M; upgrade orders depend on actual award pace."
+    likely_source: "CEA R&M programme page and CERC orders per registry"
+    cadence: "event-driven"
+    shared: false
+  - signal: "All-India coal PLF and generation"
+    entity_type: "macro"
+    demand_link: "Higher PLF raises wear and outage spares demand; PLF 65.2% FY26 per ICRA."
+    likely_source: "CEA monthly generation reports and Grid-India"
+    cadence: "monthly"
+    shared: true
+  - signal: "MoEFCC FGD applicability notification and compliance dates"
+    entity_type: "regulatory"
+    demand_link: "Only about 8 GW category A must install FGD; FGD O&M and EP run-off depend on it."
+    likely_source: "MoEFCC notifications per registry (regulator orders page)"
+    cadence: "event-driven"
+    shared: false
+  - signal: "BHEL spares and services bookings"
+    entity_type: "counterparty"
+    demand_link: "BHEL competes for the same fleets; its service bookings show market size and share pressure."
+    likely_source: "BHEL quarterly results calls and exchange filings"
+    cadence: "quarterly"
+    shared: false
+  - signal: "JSW Energy Durgapur demerger completion and supply terms"
+    entity_type: "counterparty"
+    demand_link: "JSW is a fleet owner (customer) and the future boiler supplier; one entity, two revenue and cost links."
+    likely_source: "BSE and NSE filings, NCLT order per registry"
+    cadence: "event-driven"
+    shared: true
+demand_externally_verifiable: true
+analyst_note: "Treat Rs 4,000 Cr as a management SAM-type claim, not a TAM. Central SAM is Rs 2,500 Cr because it alone carries a definition (Q3 FY26 call: own about Rs 500 Cr plus non-GEPIL, yearly average, ex nuclear). The two readings: 2,500 (defined target fleet) vs 3,500-4,000 (undefined, possibly adds Chinese-make and other fleets). The observation that separates them: a fleet MW or unit list behind the denominator on the next call. SOM is anchored to intake share, so it moves little between the two (883 vs about 918 Cr at 3 years, calc); the readings differ on headroom, not on near-term growth. SOM CAGR 6% is below the 25-32% core intake growth of FY22-26 because share is already about 29% on the defined base; faster growth needs the larger market to be real. Per no-shading, that is a path to size, not an input to cut. SOM CAGR is a core-order-intake rate, not company revenue."

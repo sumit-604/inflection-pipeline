@@ -19,3 +19,4 @@ Token figures come from the subagent result metadata. This harness exposes only 
 | 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | n/a | stalled 600s | 1 |
 | 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 145292 | 6m43s | 2 |
 | 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 182742 | 4m54s | 1 |
+| 7 | stage-07-emoat | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 195762 | 7m18s | 1 |

@@ -52,3 +52,4 @@ None. No Chrome fallback was needed.
 - Freshness: pair 1 FAILS (Q2 FY27 results held, Q2 FY27 transcript not yet filed). B00.freshness_verdict = CORPUS GAPPED-FRESHNESS; the gate recommendation caps at PROCEED WITH CAVEATS.
 - Empty-folder confirmation suppressed per the /step1 autonomy contract; standing answer "proceed with the gaps".
 - Verifier A shadow: NOT run here. Nine /step1 sessions run in parallel today and the single shadow run belongs to the TD Power session. This run leaves .claude/shadow.yaml untouched.
+- Stage 2 pass 1: the agent could not edit its own report and wrote a separate errata file (3 anchor/number fixes, 1 caveat). Orchestrator appended it to 02-notes-pass1.md under an ERRATA heading and removed the separate file.

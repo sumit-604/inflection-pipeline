@@ -1,0 +1,19 @@
+company: Qualitek Labs Ltd
+ticker: QLL
+cmp: 552.0   # screener 2026-11-15
+market_cap_cr: 643.0   # screener top-ratios 2026-11-15 (643 Cr)
+run_date: 2026-11-15
+run_type: full
+listed_date: 2024-01-29
+concalls_available: false      # no main-company transcript published on screener/BSE/company site
+sector_cap_row: "Consulting / Engineering services"   # Step 1 Section D ruling
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, VIMTALABS:Profit & Loss, VIMTALABS:Quarters, VIMTALABS:Balance Sheet, VIMTALABS:Cash Flow, VIMTALABS:Customization, KRSNAA:Profit & Loss, KRSNAA:Quarters, KRSNAA:Balance Sheet, KRSNAA:Cash Flow, KRSNAA:Customization, LALPATHLAB:Profit & Loss, LALPATHLAB:Quarters, LALPATHLAB:Balance Sheet, LALPATHLAB:Cash Flow, LALPATHLAB:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "RESOLVED in Step F: results PDFs added from BSE (H1 FY26, FY26 audited, H1 FY27)."
+  - "no credit rating report found (searched web and BSE filings 2023-12 to 2026-11); company appears unrated or rating not public"
+  - "no main-company concall transcript exists on screener (shows Transcript chips with no link for May 2026 and May 2025), BSE or company site; H1 FY27 call intimated 2026-11-14, not yet held"
+  - "shareholding/ holds a screener extract only; BSE shareholding PDF blocked by BSE bot wall (403)"
+  - "QLL Data_Sheet Quarters block is EMPTY and P&L/BS/CF lack FY23 and FY24 columns (screener data gap)"
+notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."

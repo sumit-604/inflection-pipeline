@@ -1,0 +1,85 @@
+stage: B03-ardeep
+company: "INVPRECQ"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "H1 FY27 cash conversion, 11% A&D share, HAL and MKU programmes and monthly-supply ramp: not in the AR (AR ends 31-Mar-2026). HAL appears only as an award; MKU and monthly supply NOT FOUND IN DOCUMENT"
+  - "Rs 100 Cr capex approval, funding mix, timeline and any capital commitment: NOT FOUND IN DOCUMENT (no commitment note; events after balance sheet date 'N.A.')"
+  - "Borrowing rates, lenders, maturity buckets beyond one year, covenants; ECL matrix; lease discount rate; capitalised borrowing cost on solar: NOT FOUND IN DOCUMENT"
+  - "Solar plant commissioning date, cost, generation and saving: NOT FOUND IN DOCUMENT; AR contradicts itself (Annexure 4 p.74 vs p.77)"
+  - "Customer concentration, order book, capacity utilisation (capacity printed as 3,060 t and 1,500 t on the same page, AR p.30), US share of exports: NOT FOUND IN DOCUMENT"
+  - "BSE Regulation 17 fine amount and date; AGM 13-Aug-2026 voting result on Item 4: NOT FOUND IN DOCUMENT"
+  - "FY2024-25 AR is not a run input; used only to test whether named entities are new; prior-year tone drift not assessed"
+  - "Page convention: B02 anchors run one page higher than PDF pages (marker precedes content); this report anchors to PDF page"
+flags: []
+phase_verdicts: {p1: "GREEN", p2: "YELLOW", p3: "YELLOW", p4: "YELLOW", p5: "YELLOW (near red on pay governance; FLAG-PROMOTER-PRELIM not raised: no pledge or selling)", p6: "YELLOW", p7_best_fit: "GARP (transition) WATCHLIST; no strategy passes on AR evidence alone"}
+overall_quality: 6.25
+quality_components: {governance: 5, accounting: 7, balance_sheet: 6, earnings: 7}
+kill_switch_notes:
+  - "p1: would not stop; unmodified opinion, clean standalone CARO, no going concern language"
+  - "p2: would not stop; no note shows earnings management, gaps are disclosure and RPT questions"
+  - "p3: would not stop; CFO/EBITDA 81.6%, EBIT cover 3.82x"
+  - "p4: would not stop; gaps are narrative and disclosure"
+  - "p5: would not stop; no pledge, fraud or adverse order; want AGM Item 4 vote and NRC record before sizing"
+  - "p6: would not stop; narrative changes how growth is read (auto-led), not whether numbers are real"
+triple_pass_verification:
+  verified: 15
+  discrepancies:
+    - {finding_rank: "all", triple_pass_value: "page anchors N (marker read as page end)", ar_value: "PDF page N minus 1 (marker precedes content; confirmed on PDF pages 110, 74, 75)", note_ref: "convention only; note numbers and values all correct"}
+    - {finding_rank: "P1-0.1 (not Top 15)", triple_pass_value: "cycle about 134 days (closing-balance cost-proxy method)", ar_value: "101.61 days net on Note 39 basis (99.42 + 80.09 - 77.90); 179.51 gross", note_ref: "Note 39 p.136; method difference, neither equals CARE 133 or screener 245"}
+missing_risks:
+  - {risk: "External processing dependence 27.4% of revenue vs 'fully integrated' claim", evidence: "Note 30 p.128; AR p.30, p.33"}
+  - {risk: "75.8% short-term floating debt, BBB-/A3 rating, no covenant disclosure", evidence: "Note 17 p.124; Note 33 pp.130-131; Board report item 32 p.59"}
+  - {risk: "Promoter-related counterparties: unmoved 306.00 capital advance and 100.00 deposit; guarantee commission 84.52", evidence: "Note 38 pp.134-135; Notes 8-9 p.120"}
+  - {risk: "Customer concentration unquantified; no major-customer disclosure", evidence: "Cons Note 38 pp.172-173; MD&A p.76"}
+  - {risk: "Auto 63.84% and ICE-linked product list; electrification not in threats (INFERENCE)", evidence: "Cons Note 38 p.173; AR p.26; p.76"}
+  - {risk: "Solar execution, cost and depreciation step; contradictory commissioning disclosure", evidence: "AR p.18, p.19, p.74, p.77; Cons Note 38 p.173"}
+  - {risk: "Single-site exposure (one factory address)", evidence: "CG general information p.89"}
+  - {risk: "Labour-code follow-on and gratuity funded ratio 53.8% with no FY26 contribution", evidence: "Note 36 p.132; Note 40 p.137"}
+  - {risk: "Key-person and family control; CMD pay +51.2%, Rs 18 Cr ceiling, NRC chair absent", evidence: "Note 38 p.134; Notice p.45, p.52; CG p.82"}
+guidance_table:
+  - {claim: "4 MW solar 'operational targeted for the second half of FY 2026' (Annexure 4)", number: "4 MW", timeframe: "H2 FY26", credibility: "LOW: period elapsed at report date; p.77 says commissioned; date NOT FOUND"}
+  - {claim: "Solar to deliver lower energy costs and improved operating margins (CFO message, p.19)", number: "none", timeframe: "coming years", credibility: "UNSCORABLE: no kWh or Rs figure"}
+  - {claim: "Civil aviation 'decisive phase of growth', incremental volume orders (p.36)", number: "none", timeframe: "none", credibility: "LOW specificity: no civil order in Year at Glance"}
+  - {claim: "Dividend Rs 1 per share, 100.00 lakh (p.55; Notice p.45)", number: "100.00 lakh", timeframe: "AGM 13-Aug-2026", credibility: "HIGH: payout 8.5% of PAT"}
+  - {claim: "India defence exports CAGR about 17% from Rs 159 bn FY23 to Rs 538 bn FY30 (MD&A p.76)", number: "17%", timeframe: "FY23-FY30", credibility: "LOW: own arithmetic on the endpoints gives 19.0%; source unnamed"}
+monitorables:
+  - {metric: "Operating EBITDA margin excl. other income", threshold: "at or above 16.0%; below 15.0% is reversal", where: "Q3 FY27 results P&L", why: "FY26 step 13.63% to 16.40%"}
+  - {metric: "Change in inventories credit and WIP", threshold: "WIP growth above revenue growth for two quarters", where: "results P&L and half-year balance sheet; Notes 10, 26", why: "absorption risk; fact 1"}
+  - {metric: "D/E and ND/EBITDA with term-loan additions", threshold: "D/E above 0.80 or ND/EBITDA above 2.5x", where: "half-year balance sheet; sanction announcements", why: "Rs 100 Cr plan is 97% of equity; BBB-"}
+  - {metric: "A&D share and named programmes", threshold: "11% claim needs filed order values; below 8% weakens thesis", where: "investor presentation; Reg 30 order announcements", why: "fact 2; FY26 5.86%; defence lumpy 5.65, 3.29, 7.90"}
+  - {metric: "Receivables over 6 months", threshold: "above 1% of receivables", where: "next AR Note 11.1", why: "currently 0.15%"}
+  - {metric: "Related-party balances and flows", threshold: "306.00 and 100.00 unchanged a third year; flows above 5% of revenue", where: "next AR Note 38", why: "4.70% of revenue today"}
+  - {metric: "Solar commissioning date, cost, generation", threshold: "filed in next results or AR", where: "Q3 FY27 notes; FY27 AR Note 2", why: "depreciation step 131.83 to 247.18 lakh"}
+  - {metric: "AGM Item 4 voting result", threshold: "dissent above 20%", where: "BSE voting result (not in corpus)", why: "Rs 18 Cr managerial pay ceiling"}
+ar_new_downstream_entities:
+  - name: "PLR Systems Private Limited (Adani Group and Israel Weapon Industries JV)"
+    where_in_ar: "Year at Glance, AR p.77 (contract Jul 2025, precision castings for defence; no order value)"
+    entity_type: "customer"
+  - name: "Gas Turbine Research Establishment (GTRE), DRDO, Ministry of Defence"
+    where_in_ar: "Year at Glance, AR p.77 (supply order Feb 2026, HP turbine super alloy castings; no order value)"
+    entity_type: "customer"
+  - name: "Adani Defence and Aerospace"
+    where_in_ar: "Year at Glance, AR p.77 (appreciation certificate for first lot of LMGs)"
+    entity_type: "customer"
+  - name: "Festo India"
+    where_in_ar: "Year at Glance, AR p.77 (Award of Excellence 2026, DFPD localisation project)"
+    entity_type: "customer"
+  - name: "Hindustan Aeronautics Limited (HAL)"
+    where_in_ar: "Year at Glance AR p.77 (Maharatna CPSE award for indigenisation); AR p.14 (components recognised by HAL)"
+    entity_type: "customer or recognising body (relationship and programme not stated)"
+  - name: "Mahindra and Mahindra"
+    where_in_ar: "Year at Glance AR p.77 (appreciation for timely supply); AR p.11 (2009 award); not found in FY2024-25 AR text"
+    entity_type: "customer"
+strengths_top3:
+  - "Operating EBITDA margin excluding other income up 277 bp to 16.40% on nameable lines (power and fuel -168 bp, materials -134 bp); EBIT cover 3.82x from 2.25x (P&L p.108; Notes 25, 26, 30)"
+  - "Clean receivables (over 6 months 0.15%, days 80.09) and clean statutory record: unmodified opinion, no wilful default, pledge nil (Note 11.1 p.121; CARO p.102-104; MGT-9 p.68)"
+  - "A&D and exports growing from a small base with named customers: A&D 10.87 Cr from 5.39 Cr, exports +36.3%, GTRE and PLR orders (AR p.24, p.77; Cons Note 38 p.173)"
+red_flags_top3:
+  - "Promoter-family value flow: cash take 507.91 lakh = 29.1% of pre-exceptional PBT, CMD pay +51.2%, Rs 18 Cr ceiling, 306.00 and 100.00 unmoved, NRC chair absent (Note 38 pp.134-135; Notice p.45; CG p.82)"
+  - "Funding opacity: 75.8% short-term floating debt, BBB-, no rates or covenants, solar asset with contradictory disclosure, Rs 100 Cr plan equal to 97% of equity and absent from the AR (Note 17 p.124; p.74, p.77)"
+  - "Narrative vs operations: growth auto-led (90.8% of industry-split increment, auto share 60.05% to 63.84%) while the AR credits diversification; capacity 3,060 t vs 1,500 t, board size and machine counts conflict (Cons Note 38 p.173; p.30; p.78)"
+best_fit_strategy: "GARP (transition) WATCHLIST"
+one_line_verdict: "Real margin recovery and clean receivables on an auto-led base, held back by promoter-family cash flow, opaque short-term funding and an A&D line that is 5.86% of revenue; best fit GARP transition on WATCHLIST."
+analyst_note: "Page convention: markers precede content, so AR p.N here is PDF page N; B02 anchors read one higher. All 15 B02 findings verify on number and note. New points: (1) the 277 bp margin gain is explained by power and fuel and materials, not A&D mix; auto gave 90.8% of the revenue increment. (2) Solar likely absorbed about 87% of plant additions (derived from power segment assets) and looks mostly debt funded, so FY26 capex is not A&D capacity. (3) Other borrowing cost and the other-current-assets rise both equal 99.86; guarantee commission 84.52 probably sits inside borrowing cost (INFERENCE). (4) The NRC met once, the chair was absent, CMD and spouse are members. (5) Capacity is printed as 3,060 t and 1,500 t on one page; dispatch is 1,557 t, so utilisation is undecidable. (6) Own cycle on the Note 39 basis is 101.6 days, not 134. The H1 FY27 parts of facts 1 to 3 and the Rs 100 Cr plan are not in the AR."

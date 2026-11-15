@@ -45,3 +45,4 @@ Gaps
 - Freshness: RESULTS to CONCALL fails (Q2 FY27 call is on 17 Nov 2026). B00.freshness_verdict CORPUS GAPPED-FRESHNESS; gate caps at PROCEED WITH CAVEATS.
 - Stage 2 pass 1: report did not end with its YAML block; block file present and valid. Orchestrator appended the block to the report as an erratum (file governs). Pass 1 declared partial coverage (standalone policy text, consolidated Notes 2, 17-26, 32-37); pass 2 was told to cover those first.
 - Stage 2 pass 2: same report-tail defect as pass 1; block appended as an erratum. Pass 2 corrected pass 1 on the exceptional item (Labour Codes), first-time standards and Thailand interest.
+- Stage 3: report errata appended by the orchestrator (five items the stage reported but could not edit). Stray outputs/blocks/_fix_marker.txt removed. Stage 3 found no SEBI order; freshness pair 3 stays PASS.

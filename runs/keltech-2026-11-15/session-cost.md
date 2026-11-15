@@ -11,3 +11,4 @@ cache-read, cache-write and output splits are not exposed and are written n/a, n
 | 1 | stage-01-gate0 | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 104114 | 4m48s | 1 |
 | 2 | stage-02-notes-pass (pass 1) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 158208 | 6m34s | 1 |
 | 2 | stage-02-notes-pass (pass 2) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 179403 | 6m22s | 2 |
+| 2 | stage-02-notes-pass (pass 3) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 93551 | 2m57s | 3 |

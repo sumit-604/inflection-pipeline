@@ -31,3 +31,17 @@ Collector ran clean in dry-run (scratch wrapper for REPO_ROOT, headless sitecust
 **Misfiles:** none moved between folders. Removed the duplicate H1 FY27 results copy from announcements/ (kept in results/). Renamed presentation file to Investor_Presentation_May2026_H2FY26.pdf.
 
 **Manifest:** company Qualitek Labs Ltd, ticker QLL, cmp 552.0, market_cap_cr 643.0 (collector values; confirmed on the screener page, not 0), run_date 2026-11-15, run_type full, sector_cap_row "Consulting / Engineering services", listed_date 2024-01-29, concalls_available false, warnings kept and extended. Parses with yaml.
+
+## Phase 1 orchestration (2026-11-15)
+- Checkout guard: PASS against origin/main (b4ec38ce). Run branch run/qll-2026-11-15 cut from origin/main. Corpus commit eef45981.
+- Identity: Qualitek Labs Ltd, BSE SME 544091, symbol QLL. Screener resolves only by BSE code: https://www.screener.in/company/544091/consolidated/ (check_url OK 200). Run ticker QLL.
+- Steps B, C, D ran on an Opus 5.5 subagent with live web; Step F on a Sonnet 5.5 subagent (operator batch instruction).
+- Brief vs corpus: the brief said concalls_available true (screener Transcript chips). Step F found no transcript link on screener, BSE or the company site. Manifest set to concalls_available false; Phase 1 runs in NO-CONCALL MODE. The company does hold calls; H1 FY27 call is on 2026-11-24.
+- Chrome download fallback: not used. No file came through the browser. The missing documents (main transcripts, rating) have no link on the screener Documents section; the BSE shareholding PDF (403) is not hosted there.
+- LESSONS pre-read done. No tagged lessons for sector "Consulting / Engineering services"; no archetype declared yet. Open actions read (C2: record stage 5 no-call cost, target under 100k).
+- Tooling gate: every inputs/ PDF has a page-marked .txt; stages and verifiers get the .txt path, PDF as fallback.
+- SPEAR GATE: PASS (OVERRIDE line in companies/QLL.md).
+- EMPTY-FOLDER CONFIRMATION: suppressed per /step1 autonomy contract; proceed with the gaps (rating, concalls, research).
+- Verifier A shadow: NOT RUN here. Nine /step1 sessions run in parallel today; the single shadow run belongs to the TD Power session. .claude/shadow.yaml left untouched by this run.
+- Execution: this harness dispatches subagents asynchronously with a completion notification. The orchestrator waits for each notification and runs the completion check (report file, block file, block parses) before any dependent stage.
+- Stage 0: B00-intake (Haiku 5.5) 83 rows, 0 misfiles, 0 unreadable. Freshness pairs OK (pair 1 skipped, no-concall).

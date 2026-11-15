@@ -17,3 +17,6 @@ collector_warnings:
   - "shareholding/ holds a screener extract only; BSE shareholding PDF blocked by BSE bot wall (403)"
   - "QLL Data_Sheet Quarters block is EMPTY and P&L/BS/CF lack FY23 and FY24 columns (screener data gap)"
 notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."
+remediation_cycles: 0
+verifier_runs: {A: 0, B: 0, C: 0, D: 0}
+verifier_a_shadow: "not run here (2026-11-15 batch: the single shadow run belongs to the TD Power session)"

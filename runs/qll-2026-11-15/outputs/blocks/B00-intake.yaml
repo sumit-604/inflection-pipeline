@@ -1,0 +1,852 @@
+stage: B00-intake
+model: claude-haiku-5-5
+status: complete
+corpus_manifest:
+  # ---------- inputs/announcements (58 PDFs, all Qualitek exchange filings) ----------
+  - path: inputs/announcements/20251211-5ef25fa8-1a5f-45f8-918a-8c4d3d01409a.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Reg 30 outcome of board meeting 10 Dec 2025 (HDFC corporate guarantee). Text in .txt beside it."
+  - path: inputs/announcements/20251217-f6b00535-01a6-45dc-8e1e-5664e95f45fe.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Reg 29 intimation dated 17 Dec 2025 of board meeting 20 Dec 2025 (NCD issue)."
+  - path: inputs/announcements/20251220-0fab5880-7f5e-418e-a224-d142575dd791.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Reg 30 outcome 20 Dec 2025 (NCD up to Rs 65 Cr). Page 1 identical to 20251220-cccc69b5; duplicate candidate, no move proposed."
+  - path: inputs/announcements/20251220-cccc69b5-7df2-4393-8e3b-01a012e5dc59.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 identical to 20251220-0fab5880 (outcome 20 Dec 2025); duplicate candidate, no move proposed."
+  - path: inputs/announcements/20260107-3024a831-62d9-4b0e-8789-e6c39f400a8a.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: "Q3 FY26 (quarter ended 31 Dec 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Reg 74(5) depository certificate from RTA, dated 7 Jan 2026."
+  - path: inputs/announcements/20260202-0b4f223a-498e-496b-a42d-4cf06a9fe2ee.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Investor meet and facility visit intimation, dated 2 Feb 2026."
+  - path: inputs/announcements/20260209-7b6ff1b4-556f-49a0-a053-7734f5c90718.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cessation of Company Secretary (KMP), dated 9 Feb 2026."
+  - path: inputs/announcements/20260211-c303ae33-05cb-4981-9255-a0cbc0ab6fdd.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Clarification on CS resignation under SEBI circular, dated 11 Feb 2026."
+  - path: inputs/announcements/20260217-91d6214b-27e5-4071-bc5e-f8a799192059.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Live IR interaction intimation for 21 Feb 2026, dated 17 Feb 2026."
+  - path: inputs/announcements/20260302-ac4586a7-22d0-4829-9854-da87d23e6e0f.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Investor interaction intimation (Bharat Connect conference, 6 Mar 2026), dated 2 Mar 2026."
+  - path: inputs/announcements/20260327-e48cc01e-c987-41d3-85ac-c4b048f67790.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: "Q4 FY26 (quarter and year ended 31 Mar 2026), trading window closure"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Trading window closure notice, dated 27 Mar 2026."
+  - path: inputs/announcements/20260406-176018d2-d352-43a9-9707-f02f9ac80def.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: "Q4 FY26 (quarter and FY ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Reg 74(5) depository certificate from RTA, dated 6 Apr 2026."
+  - path: inputs/announcements/20260406-7ec5f921-9e3b-4ebd-92c3-f4c8ff9865cb.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: "FY 2025-26 (year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Reg 24A secretarial compliance report non-applicability, dated 6 Apr 2026."
+  - path: inputs/announcements/20260406-e7da577b-0ea8-4d13-bb4b-eb4fe0ae1d78.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: "FY 2025-26 (year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Promoter Reg 31(4) no-encumbrance declaration, dated 6 Apr 2026."
+  - path: inputs/announcements/20260413-fcf1fd70-86bb-4a66-8e95-e4c552acc003.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Reg 30 disclosure: MD podcast interview on TIC industry, dated 13 Apr 2026."
+  - path: inputs/announcements/20260420-8e0d2409-7741-4e67-984d-b04734de642c.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Outcome of board meeting: appointment of Company Secretary, dated 20 Apr 2026. Page 1 identical to 20260420-b271df9e; duplicate candidate."
+  - path: inputs/announcements/20260420-b271df9e-8412-427e-81d0-b3d12751d993.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 identical to 20260420-8e0d2409 (CS appointment); duplicate candidate, no move proposed."
+  - path: inputs/announcements/20260512-e178ff3e-58f6-4859-bc58-2b384f359152.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Reg 29 intimation of board meeting on 15 May 2026, dated 12 May 2026."
+  - path: inputs/announcements/20260515-7ab51708-37a4-4fe4-a559-1dd167bb5c8b.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: "FY 2025-26 (audited results, half year and year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Rescheduling of board meeting on 15 May 2026, dated 15 May 2026."
+  - path: inputs/announcements/20260520-78cbc582-e5c2-400d-b9a9-0e6e2cd444b1.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: "H2 FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Submission of MD&A for H2 FY26, dated 20 May 2026."
+  - path: inputs/announcements/20260520-dd37fc23-aca0-4d48-95a4-24184477958c.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: "FY 2025-26 (year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Outcome of board meeting 20 May 2026 (audited FY26 results). Same filing as results/20260520-dc0311a3; cross-folder duplicate, no move proposed."
+  - path: inputs/announcements/20260521-f77bb66f-b5db-43ab-a28e-74902b506abf.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: "H2 and FY 2025-26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Filing letter for Investor Presentation H2 and FY 2025-26, dated 21 May 2026. Cover letter; same deck as presentation/Investor_Presentation_May2026_H2FY26."
+  - path: inputs/announcements/20260602-0399b3fe-7d32-4622-8410-4909c1339d13.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Appointment of IR advisor effective 2 Jun 2026, dated 2 Jun 2026."
+  - path: inputs/announcements/20260603-77c97589-4d4b-4e47-805c-366f622cafd5.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Outcome of board meeting 3 Jun 2026: credit facilities from HDFC Bank, dated 3 Jun 2026."
+  - path: inputs/announcements/20260625-02c1dc1b-a8eb-44ba-8d82-1839aa6478a4.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Work order from Indian Oil Corporation to subsidiary Interstellar Testing Centre, dated 25 Jun 2026."
+  - path: inputs/announcements/20260625-fe69b871-c21d-4078-bae0-3569ab5a6d40.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Press release filing, dated 25 Jun 2026."
+  - path: inputs/announcements/20260710-aedbbe9d-c1bf-468d-8e97-3b82032cf1b7.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Reg 74(5) depository certificate, dated 10 Jul 2026."
+  - path: inputs/announcements/20260730-44102f7e-5ee9-4076-9775-c47f45ac2052.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Resignation of Company Secretary (Mohit Kumar), dated 30 Jul 2026."
+  - path: inputs/announcements/20260829-71a8605c-b701-43c4-81bf-851f07b2caf0.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Outcome of board meeting 29 Aug 2026 (draft AGM notice approved). Page 1 identical to 20260829-8f6cab84; duplicate candidate."
+  - path: inputs/announcements/20260829-8f6cab84-ae8d-4fe5-b97e-e7ba4e5c1171.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 identical to 20260829-71a8605c (outcome 29 Aug 2026); duplicate candidate, no move proposed."
+  - path: inputs/announcements/20260829-cb5d9c5c-9b80-43bf-98c9-e99df68b1f36.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Intimation of 8th AGM, remote e-voting and cut-off, dated 29 Aug 2026."
+  - path: inputs/announcements/20260903-990cb628-df66-4240-b2f8-03dfd7fdeceb.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: "FY 2025-26 (AGM notice and integrated annual report)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Notice convening 8th AGM and Integrated Annual Report FY 2025-26, dated 3 Sep 2026. Same letter as annual-report/Annual_Report_2026."
+  - path: inputs/announcements/20260904-ade75168-1c92-4349-9b9c-b9a380a4a6b8.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Newspaper publication of AGM notice, dated 4 Sep 2026."
+  - path: inputs/announcements/20260907-d2d6e19d-c93c-4ab0-8c49-094ffae99cdb.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Withdrawal of Item No. 4 from 8th AGM notice, dated 7 Sep 2026. Page 1 identical to 20260907-eaf45b41; duplicate candidate."
+  - path: inputs/announcements/20260907-eaf45b41-ccb0-4eb2-bd7e-6b73b1ceaf7e.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 identical to 20260907-d2d6e19d (withdrawal of Item No. 4); duplicate candidate, no move proposed."
+  - path: inputs/announcements/20260917-58ea6047-9be7-4772-8ab6-4ba4f7ad04a7.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Reg 29 intimation of board meeting, dated 17 Sep 2026. Agenda not visible on page 1."
+  - path: inputs/announcements/20260922-b4cbe4e6-4868-4eb0-aea9-ce411a9fcf02.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Outcome of board meeting 22 Sep 2026: preferential issue of equity shares (up to 3,86,000 shares), subject to shareholder approval."
+  - path: inputs/announcements/20260923-7bb8e0c3-3b28-4898-96dc-78410f24db05.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Outcome of Preferential Issue Committee meeting, dated 23 Sep 2026."
+  - path: inputs/announcements/20260924-fd526286-de9e-4a0a-ba14-9e05bdd71682.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Notice calling EGM on 16 Oct 2026, dated 24 Sep 2026."
+  - path: inputs/announcements/20260925-22e8ea8f-07cc-4815-812f-a84c2ac4bfd8.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Newspaper clippings of EGM notice, dated 25 Sep 2026."
+  - path: inputs/announcements/20260925-2a9057c9-f174-4d9b-83d9-afb7dcb0068e.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Summary of proceedings of 8th AGM held 25 Sep 2026, dated 25 Sep 2026."
+  - path: inputs/announcements/20260926-7848ccd6-9365-404e-a5f0-7b323f64e69b.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: "Q2 FY27 (quarter ended 30 Sep 2026), trading window closure"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Trading window closure notice, dated 26 Sep 2026."
+  - path: inputs/announcements/20260926-97e33b16-8ef6-417c-aea7-9669a8312f17.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Voting results and scrutinizer report for 8th AGM, dated 26 Sep 2026. PDF opened and page 1 checked as image."
+  - path: inputs/announcements/20261009-374ab7bd-7d7a-45e3-be31-a6b0f6f0e771.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: "Q2 FY27 (quarter ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Reg 74(5) depository certificate, dated 9 Oct 2026."
+  - path: inputs/announcements/20261012-7e45c616-4d16-42f9-ae66-caba1a955007.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Corrigendum to EGM notice for 16 Oct 2026, dated 12 Oct 2026."
+  - path: inputs/announcements/20261016-5c0a5a30-2f04-47f4-ad33-aea4bf4f1394.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Proceedings of EGM held 16 Oct 2026, dated 16 Oct 2026. Page 1 identical to 20261016-6330c4eb; duplicate candidate."
+  - path: inputs/announcements/20261016-6330c4eb-422e-4a79-aaf9-74d68091ca6f.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 identical to 20261016-5c0a5a30 (EGM proceedings); duplicate candidate, no move proposed."
+  - path: inputs/announcements/20261018-d0ca2f7e-1a45-4a40-8d6d-2403caa89e96.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "E-voting result and scrutinizer report for EGM of 16 Oct 2026, dated 18 Oct 2026."
+  - path: inputs/announcements/20261019-8cd7ef42-5701-4e94-850b-267f0dff4c90.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Work order from BRDC, Government of Meghalaya, to subsidiary Interstellar Testing Centre, dated 19 Oct 2026. Page 1 identical to 20261019-95723f4d; duplicate candidate."
+  - path: inputs/announcements/20261019-95723f4d-5f98-4b2c-a924-667fbdf0a523.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 identical to 20261019-8cd7ef42 (BRDC work order); duplicate candidate, no move proposed."
+  - path: inputs/announcements/20261029-5e7edc16-2028-4474-9567-948b6e6faab4.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Resignation of Independent Director (Ajay Agarwal), dated 29 Oct 2026. Page 1 identical to 20261029-9a1c1bfd; duplicate candidate."
+  - path: inputs/announcements/20261029-9a1c1bfd-197d-4c5f-9d0c-31403f48a7ea.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 identical to 20261029-5e7edc16 (ID resignation); duplicate candidate, no move proposed."
+  - path: inputs/announcements/20261103-7bbea0b5-1967-481d-bc71-a7fee88f4e32.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: "H1 FY27 (half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Reg 29 intimation of board meeting on 13 Nov 2026 for H1 FY27 results, dated 3 Nov 2026."
+  - path: inputs/announcements/20261113-05e9700a-af68-4847-8c44-07e54a97a3a2.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: "H1 FY27 (half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Outcome of board meeting 13 Nov 2026 (H1 FY27 results, objects clause alteration, EGM). Same filing as results/20261113-190e3152; cross-folder duplicate, no move proposed."
+  - path: inputs/announcements/20261113-c4dee558-d9ff-49e2-8106-53b78605c21d.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Notice of Second EGM for 5 Dec 2026, dated 13 Nov 2026."
+  - path: inputs/announcements/20261114-080a5e86-23d1-45a2-8a1e-4462e1f11a8a.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Newspaper publication of Second EGM notice, dated 14 Nov 2026. Page 1 identical to 20261114-16192e74; duplicate candidate."
+  - path: inputs/announcements/20261114-16192e74-f3bf-4551-8aca-2e0b2ee9dfc6.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 identical to 20261114-080a5e86 (EGM newspaper publication); duplicate candidate, no move proposed."
+  - path: inputs/announcements/20261114-ffae6832-1101-4be1-af68-8d766966b35d.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "exchange announcement"
+    period: "H1 FY27 (half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Intimation of earnings conference call for H1 FY27 on 24 Nov 2026, dated 14 Nov 2026."
+
+  # ---------- inputs/annual-report (2 PDFs) ----------
+  - path: inputs/annual-report/Annual_Report_2025.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "annual report (AGM notice and integrated AR cover letter)"
+    period: "FY 2024-25 (year ended 31 Mar 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is BSE covering letter dated 3 Sep 2025 for 7th AGM (25 Sep 2025). Annual report body not on page 1."
+  - path: inputs/annual-report/Annual_Report_2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "annual report (AGM notice and integrated AR cover letter)"
+    period: "FY 2025-26 (year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is BSE covering letter dated 3 Sep 2026 for 8th AGM. PDF opened and page 1 checked as image. Annual report body not on page 1."
+
+  # ---------- inputs/peer-concalls (12 PDFs, three peers) ----------
+  - path: inputs/peer-concalls/KRSNAA-Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Krsnaa Diagnostics Ltd (peer; BSE 543328)"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Filename says Aug 2026; page 1 gives quarter ended 30 Jun 2026, letter dated 19 Aug 2026."
+  - path: inputs/peer-concalls/KRSNAA-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Krsnaa Diagnostics Ltd (peer; BSE 543328)"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q3 FY26 (quarter and nine months ended 31 Dec 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 11 Feb 2026."
+  - path: inputs/peer-concalls/KRSNAA-Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Krsnaa Diagnostics Ltd (peer; BSE 543328)"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q4 FY26 (quarter and year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 29 May 2026."
+  - path: inputs/peer-concalls/KRSNAA-Concall_Nov_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Krsnaa Diagnostics Ltd (peer; BSE 543328)"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q2 FY27 (quarter and half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 7 Nov 2026."
+  - path: inputs/peer-concalls/LALPATHLAB-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Dr Lal PathLabs Ltd (peer; BSE 539524)"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q3 FY26 (9M FY26)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 3 Feb 2026."
+  - path: inputs/peer-concalls/LALPATHLAB-Concall_Jul_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Dr Lal PathLabs Ltd (peer; BSE 539524)"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q1 FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 30 Jul 2026."
+  - path: inputs/peer-concalls/LALPATHLAB-Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Dr Lal PathLabs Ltd (peer; BSE 539524)"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q4 FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 6 May 2026."
+  - path: inputs/peer-concalls/LALPATHLAB-Concall_Nov_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Dr Lal PathLabs Ltd (peer; BSE 539524)"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q2 FY27 (H1 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 10 Nov 2026."
+  - path: inputs/peer-concalls/VIMTALABS-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Vimta Labs Ltd (peer; BSE 524394)"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q3 FY26 (call held 28 Jan 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 3 Feb 2026."
+  - path: inputs/peer-concalls/VIMTALABS-Concall_Jul_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Vimta Labs Ltd (peer; BSE 524394)"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q1 FY27 (call held 20 Jul 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 24 Jul 2026."
+  - path: inputs/peer-concalls/VIMTALABS-Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Vimta Labs Ltd (peer; BSE 524394)"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q4 FY26 (call held 6 May 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 12 May 2026."
+  - path: inputs/peer-concalls/VIMTALABS-Concall_Nov_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Vimta Labs Ltd (peer; BSE 524394)"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q2 FY27 (call held 30 Oct 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 4 Nov 2026. PDF opened and page 1 checked as image."
+
+  # ---------- inputs/presentation (2 PDFs) ----------
+  - path: inputs/presentation/Investor_Presentation_May2025_H2FY25.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "investor presentation"
+    period: "H2 FY25 and FY 2024-25"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cover page of investor presentation (May 2025)."
+  - path: inputs/presentation/Investor_Presentation_May2026_H2FY26.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "investor presentation (filing cover letter)"
+    period: "H2 FY26 and FY 2025-26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is BSE covering letter dated 21 May 2026 for the H2 and FY 2025-26 deck. Deck pages not on page 1."
+
+  # ---------- inputs/prospectus (1 PDF) ----------
+  - path: inputs/prospectus/Qualitek_Final_Prospectus_Jan2024.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "prospectus (final, IPO)"
+    period: "IPO Jan 2024 (prospectus dated 12 Jan 2024)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Final prospectus dated 12 Jan 2024 (page 1 line 'Dated: January 12, 2024'); issue 18-22 Jan 2024. Fresh issue Rs 1,964.40 lakh."
+
+  # ---------- inputs/results (3 PDFs) ----------
+  - path: inputs/results/20251112-d1d63f49-19cd-4840-9a26-2e58ce595a74.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "results (outcome of board meeting with results annexure)"
+    period: "Q2 FY26 and H1 FY26 (quarter and half year ended 30 Sep 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Outcome letter dated 12 Nov 2025; unaudited standalone and consolidated results in Annexure-I. Reporting unit not on page 1."
+  - path: inputs/results/20260520-dc0311a3-a98d-4699-a9a5-cc8f0292bda1.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "results (outcome of board meeting with audited results)"
+    period: "FY 2025-26 (half year and year ended 31 Mar 2026, audited)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Outcome letter dated 20 May 2026; unmodified audit opinion declared. Same filing as announcements/20260520-dd37fc23."
+  - path: inputs/results/20261113-190e3152-723f-4dd6-b960-3db581435d45.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "results (outcome of board meeting with unaudited results)"
+    period: "H1 FY27 (half year ended 30 Sep 2026, unaudited)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Outcome letter dated 13 Nov 2026. Same filing as announcements/20261113-05e9700a."
+
+  # ---------- inputs/screening (4 CSVs; figures beside row labels, file opens) ----------
+  - path: inputs/screening/KRSNAA-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Krsnaa Diagnostics Ltd (peer)"
+    doc_type: "screener data sheet (peer)"
+    period: "FY 2025-26 (latest report date 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Company name row: KRSNAA DIAGNOSTICS LTD. Peer data in screening folder is correct."
+  - path: inputs/screening/LALPATHLAB-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Dr Lal PathLabs Ltd (peer)"
+    doc_type: "screener data sheet (peer)"
+    period: "FY 2025-26 (latest report date 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Company name row: DR LAL PATHLABS LTD. Peer data in screening folder is correct."
+  - path: inputs/screening/VIMTALABS-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Vimta Labs Ltd (peer)"
+    doc_type: "screener data sheet (peer)"
+    period: "FY 2023-24 (latest report date 2024-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Company name row: VIMTA LABS LTD. Latest year in sheet is 2024-03-31, older than the other peer sheets."
+  - path: inputs/screening/screener-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Qualitek Labs Ltd"
+    doc_type: "screener data sheet (main company)"
+    period: "FY 2025-26 (latest report date 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Company name row: QUALITEK LABS LTD. Main company screener sheet in screening folder."
+
+  # ---------- inputs/shareholding (1 TXT, no page markers) ----------
+  - path: inputs/shareholding/screener-shareholding-pattern-extract-2026-11-15.txt
+    file_type: txt
+    content_ok: true
+    issuer: "Qualitek Labs Ltd (BSE 544091, per source line)"
+    doc_type: "shareholding pattern extract (secondary, screener.in; not the BSE filing)"
+    period: "Mar 2024 to Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Source line says screener.in consolidated shareholding, fetched 2026-11-15. BSE PDF not fetched (403). Plain text file, no page markers."
+
+unreadable: []
+unidentified: []

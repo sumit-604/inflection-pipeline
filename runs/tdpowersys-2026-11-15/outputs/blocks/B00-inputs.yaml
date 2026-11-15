@@ -1,0 +1,53 @@
+stage: B00-inputs
+company: TDPOWERSYS
+run_date: 2026-11-15
+model: orchestrator-session
+status: complete
+spear: "OVERRIDE 2026-11-15 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+load_bearing_facts:
+  - "Guidance vs delivery: FY27 revenue guidance Rs 2,400 cr+ -> Rs 2,600 cr -> Rs 2,900-3,000 cr; H1 FY27 delivered Rs 1,481.5 cr; FY28 Rs 3,200 cr is capacity, not guidance (brief; verify in filings)"
+  - "Customer concentration: FY26 consolidated Customer A 23.17%, Customer B 10.74%; standalone three customers above 10% (brief; verify in AR segment note)"
+  - "Cash conversion: CFO/PAT 23% FY25, 54% FY26; debtor days 146; H1 FY27 receivables Rs 742.1 cr -> Rs 952.9 cr; other current liabilities Rs 190.3 cr -> Rs 430.3 cr (brief; verify)"
+  - "Governance: promoter holding 26.51%; SAST Reg 29(1) filing 14 Nov 2026; FY26 subsidiary transactions Rs 256.3 cr (Europe GmbH), Rs 167.1 cr (USA Inc) (brief; verify)"
+sector_cap_row: "Cables / Industrial products"
+sector_cap_row_evidence: "Company reports one segment, manufacture of AC generators and electric motors (FY26 AR segment note, per Step-1 brief; B04 to confirm). Cap 25x. Cite: .claude/skills/section-1b/references/05-sector-cap.md line 38. Collector guess Pharma / CDMO rejected."
+reporting_units: {results: "INR lakh", annual_report: "INR lakh", screener: "INR Cr", manifest: "INR Cr"}
+inventory:
+  prospectus: 0          # not expected; listed 2011
+  annual-report: 1       # FY2025-26
+  results: 3             # Q2 FY27, Q1 FY27, Q4 FY26
+  rating: 1              # CRISIL rationale 22 Jun 2026 (print of the HTML rationale)
+  concalls: 3            # Q3 FY26, Q4 FY26, Q1 FY27
+  peer-concalls: 12      # CGPOWER x4, TRITURBINE x4, AZAD x4 (Q2 FY26 to Q1 FY27)
+  announcements: 66
+  shareholding: 2        # 30 Sep 2026 Reg 31; post-QIP 12 Oct 2026
+  research: 0
+  screening: 1           # Data_Sheet only
+  presentation: 1        # Q2 FY27
+  other: 4               # older AR FY2024-25, Q2 FY26 transcript, Jun 2026 shareholding image, CRISIL html
+concall_quarter_map:
+  - {file: inputs/concalls/1_2026-02-04_Q3FY26_Transcript.pdf, quarter: Q3 FY26}
+  - {file: inputs/concalls/2_2026-05-19_Q4FY26_Transcript.pdf, quarter: Q4 FY26}
+  - {file: inputs/concalls/3_2026-08-18_Q1FY27_Transcript.pdf, quarter: Q1 FY27}
+input_gaps:
+  - "FRESHNESS: Q2 FY27 earnings call transcript absent (call held 13 Nov 2026; BSE, screener and tdps.co.in show audio only as of 15 Nov 2026). Expected source: BSE corporate announcements for 533553, about 19 Nov 2026."
+  - "collector_warning (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. [REPAIRED in Step F: two shareholding filings downloaded from tdps.co.in]"
+  - "collector_warning (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again. [OPEN: those five sheets are ABSENT documents; Data_Sheet is populated, annual FY2017-FY2026, quarterly Jun 2024-Sep 2026; Number of shares row blank]"
+  - "collector_warning (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again [REPAIRED in Step F: three results filings downloaded from BSE]"
+  - "collector_warning (verbatim): no rating PDF yet: add later the same way [REPAIRED in Step F: CRISIL rationale 22 Jun 2026, a print of the HTML rationale, not the agency PDF]"
+  - "research/ empty: no broker notes (non-anchored source only; no effect on anchored evidence)"
+  - "prospectus/ empty: not expected, company listed 2011; not a gap"
+  - "Peer Q2 FY27 transcripts absent: TRITURBINE and AZAD list audio only; CGPOWER latest is Q1 FY27"
+  - "No peer screening sheets (collector peer pass delivered zero files; peer transcripts fetched by direct download)"
+  - "Rating: only CRISIL checked; no other agency rationale sought"
+  - "Read route: pre-extracted page-marked .txt beside every PDF (tools/extract_pdfs.py) for all stages and verifiers; the SAST Reg 29(1) scan of 14 Nov 2026 and one newspaper notice went through OCR"
+empty_folder_confirmation: "SUPPRESSED per /step1 autonomy contract; standing answer: proceed with the gaps. Empty folders: prospectus, research."
+freshness_pairs:
+  - {pair: "results to concall", trigger_doc: "inputs/results/1_Q2FY27_results_2026-11-12.pdf", mate_expected: "Q2 FY27 concall transcript in inputs/concalls/", status: FAIL, missing_doc: "TD Power Systems Q2 FY27 earnings call transcript (call 13 Nov 2026); expected on BSE about 19 Nov 2026"}
+  - {pair: "rating bulletin to rationale", trigger_doc: "inputs/rating/CRISIL_TDPowerSystems_2026-06-22_rating_rationale.pdf", mate_expected: "full rationale", status: PASS, missing_doc: ""}
+  - {pair: "SEBI order to order text", trigger_doc: "none identified at stage 0", mate_expected: "order text", status: PASS, missing_doc: ""}
+  - {pair: "AR to latest audited annual results", trigger_doc: "inputs/results/3_Q4FY26_results_2026-05-14.pdf (audited FY26)", mate_expected: "FY2025-26 annual report", status: PASS, missing_doc: ""}
+freshness_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_manifest: []       # filled from B00-intake.yaml after the identity check is verified
+flags: []
+analyst_note: ""

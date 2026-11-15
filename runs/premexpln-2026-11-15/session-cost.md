@@ -22,3 +22,4 @@ Per-subagent token ledger. The harness exposes only total tokens and wall time p
 | 12d | verifier D peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 53,722 | 0m58s | 1 |
 | 12a | verifier A numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 254,888 | 8m57s | 1 |
 | 12b | verifier B redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 345,724 | 13m56s | 1 |
+| 12c | verifier C framework (phase 1) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 159,062 | 13m59s | 1 |

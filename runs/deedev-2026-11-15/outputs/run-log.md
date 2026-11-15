@@ -54,3 +54,4 @@ Gaps
 - Verifiers: all four returned complete; each report and block passed the completion check separately. Verifier A identity check: no CRITICAL rows, nothing struck. No REWORK trigger. Confidence delta overall 83.3, set by peer_utilisation.
 - Source fidelity: three Verifier A MAJOR rows (source_fidelity true) corrected at source by orchestrator errata in 03-ardeep.md, 05-concall.md and 09-tam.md. Gate held, no disagreement to log.
 - Verifier B acceptance: block field 88.9% used as written; the fully-caught-only reading is 44.4%. Sent to Halt 1 as an operator open item.
+- Synthesis-lite: three final files written; verdict PROCEED WITH CAVEATS (freshness cap and INDETERMINATE cash). Missing mate is line 1 of gate-recommendation.md. Orchestrator note appended to business-narrative.md on the Verifier C emerging-moat reading (stage could not edit).

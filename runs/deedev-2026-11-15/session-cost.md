@@ -20,3 +20,4 @@ Per-stage token ledger. Subagents run async in this app; the result metadata giv
 | 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 422288 | 1001s | 1 |
 | 12c | verifier-c-framework (phase 1) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 167460 | 775s | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 48534 | 65s | 1 |
+| 13 | synthesis (phase 1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 202633 | 668s | 1 |

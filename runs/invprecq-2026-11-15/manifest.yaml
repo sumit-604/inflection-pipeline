@@ -15,4 +15,5 @@ collector_warnings:
 repair_note: "Step F 2026-11-15: collector warnings above about empty shareholding, results and rating folders are repaired by direct BSE/CARE download and a BSE page capture (see outputs/run-log.md). Screener Data_Sheet is the only populated export (P&L and Balance Sheet); Quarters and Cash Flow sheets are empty."
 notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."
 remediation_cycles: 0
-verifier_runs: {A: 0, B: 0, C: 0, D: 0}
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+verifier_a_shadow: not run (shadow belongs to the TD Power session, 2026-11-15)

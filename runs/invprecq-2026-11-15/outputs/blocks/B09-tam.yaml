@@ -1,0 +1,98 @@
+stage: B09-tam
+company: "INVPRECQ"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "India investment casting split by material and application (IMARC page gives no shares): SAM filters NOT FOUND, SAM carried as a ceiling equal to TAM"
+  - "Unorganised share, top-3 concentration, India imports of investment castings, investment casting tonnage: NOT FOUND; bottom-up and import substitution methods not built"
+  - "Two management market sizes (AR USD 18-20 bn unsourced; deck USD 17.4 bn Grand View); both global, no India claim"
+  - "Revenue base: castings 18,579.08 lakh (AR segment), 18,539.50 lakh (results sales and AR KPI mix), 18,844.62 lakh with power; cause of the 39.58 lakh gap NOT FOUND"
+  - "Secondary sources used for PIB, ACMA, IIF and PTC figures (press mirrors), not the primary releases"
+flags:
+  - "SAM-CEILING: SAM equals TAM (5,119) because no sourced filter exists; headroom 27.6x overstated; TAM > SAM not shown"
+  - "CAPACITY-5Y: central 5y SOM 408.4 Cr needs 3,422 t = 111.8% of 3,060 t nameplate; gap 43.3 Cr; only 1.9% capex is committed (B07); SOM is the optimistic side at year 5"
+  - "MGMT-CLAIM: global claim is 30.1x the India conservative TAM; claim is not an India TAM; two different bases in AR and deck"
+  - "MRFR-INTERNAL-CONFLICT: MRFR gives USD 1.5, 1.61 and 2.27 bn for 2024 on one page; used as the L-confidence upper reading only"
+  - "PACE: H1 FY27 sales run-rate (+26.5% yoy, derived) is above the 19.0% SOM CAGR; SOM is a cross-check, not a base"
+  - "BASE-YEAR: IMARC 2025 base treated as FY26; calendar or fiscal NOT FOUND"
+market_definition: "India-made investment (lost-wax) castings built to print, 8 g to 330 kg, steel to nickel and cobalt superalloys, for auto, industrial/energy, farm and A&D; excludes sand, die and lost-foam castings, forgings and the power segment"
+tam_cr: {conservative: 5119, realistic: 5119}
+sam_cr: 5119
+sam_pct_of_tam: 100
+som_3yr_cr: 312.7
+som_5yr_cr: 408.4
+som_implied_revenue_cagr: {yr3: 19.0, yr5: 17.1}
+current_sam_share_pct: 3.63
+revenue_headroom_x: 27.6
+tam_growth_pct: 2.76
+runway_class: "GOOD"
+mgmt_claim_cr: 154081
+mgmt_claim_ratio: 30.1
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient at year 3 (2,621 t, 85.6% of 3,060 t); year 5 gap of 43.3 Cr (3,422 t, 111.8% of nameplate) at constant revenue per tonne; the SOM is the optimistic side against committed capacity (1.9%), the 100 Cr approval (49.1% ceiling, about 92.5 Cr) is not committed"
+methods_used:
+  - "Top-down: IMARC India (carried) and MRFR India (upper reading)"
+  - "Peer revenue aggregation: floor only (I&PCL + PTC standalone = 475.6 Cr)"
+  - "Global benchmark: Grand View global; India share 3.3% (IMARC basis)"
+stale_data_flags:
+  - {datapoint: "India defence exports 159 bn FY23 to 538 bn FY30 (~17%, own arithmetic 19.0%)", source: "AR FY2025-26 MD&A p.76, source unnamed", year: 2023}
+  - {datapoint: "About 700 investment casting foundries, about 175 in Rajkot", source: "academic survey paper, data 2019-20", year: 2020}
+  - {datapoint: "Global investment casting USD 18-20 bn, CAGR 4.7-5.4%", source: "AR FY2025-26 MD&A p.76, unnamed research", year: 2026}
+searches_performed:
+  - "India investment casting market size USD billion forecast CAGR"
+  - "India casting industry production million tonnes 2024-25 IIF"
+  - "India aerospace defence castings forgings import dependence market size 2030"
+  - "IMARC India investment casting page (fetch)"
+  - "ACMA India auto component industry turnover FY2025-26"
+  - "Grand View Research investment casting market 2033"
+  - "India defence production record FY2025-26 PIB"
+  - "PTC Industries FY2026 revenue consolidated"
+  - "India investment casting units Rajkot organised unorganised exports"
+  - "MRFR India investment casting page (fetch)"
+searches_skipped: []
+downstream_candidates:
+  - signal: "Indian vehicle production, ICE and hybrid"
+    entity_type: "macro"
+    demand_link: "Auto is 63.84% of FY26 revenue; castings follow OEM build schedules."
+    likely_source: "SIAM monthly production data"
+    cadence: "monthly"
+    shared: false
+  - signal: "Tractor and farm equipment volumes"
+    entity_type: "end-customer"
+    demand_link: "Farm is 10.02% of FY26 revenue."
+    likely_source: "Tractor Manufacturers Association releases (PENDING LIVE VERIFICATION)"
+    cadence: "monthly"
+    shared: false
+  - signal: "HAL purchase orders and supply schedules"
+    entity_type: "end-customer"
+    demand_link: "HAL approved supplier; PO dated 05-Sep-2026; A&D share depends on monthly supply."
+    likely_source: "HAL results and releases; I&PCL Reg 30 on BSE"
+    cadence: "event-driven"
+    shared: false
+  - signal: "GTRE/DRDO engine programmes"
+    entity_type: "counterparty"
+    demand_link: "GTRE order on filing; casting content in indigenous engines."
+    likely_source: "PIB Ministry of Defence; DRDO releases"
+    cadence: "event-driven"
+    shared: false
+  - signal: "MoD capital procurement and defence production data"
+    entity_type: "regulatory"
+    demand_link: "Funds the HAL, GTRE and MKU programmes together; correlated catalyst."
+    likely_source: "PIB Ministry of Defence"
+    cadence: "event-driven"
+    shared: true
+  - signal: "India casting exports and US tariff changes"
+    entity_type: "macro"
+    demand_link: "Exports are 11.82% of revenue; US is the largest export destination for Indian castings."
+    likely_source: "DGCI&S tradestat.commerce.gov.in"
+    cadence: "monthly"
+    shared: false
+  - signal: "Nickel and cobalt price"
+    entity_type: "macro"
+    demand_link: "Superalloy input cost; pass-through lag sets margin and working capital."
+    likely_source: "LME and exchange price feeds; peer disclosures"
+    cadence: "monthly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "TAM is the IMARC India figure (579.1 M USD x 88.4 = 5,119 Cr, FX implied by ACMA FY26). MRFR gives 13,260 Cr but contradicts itself three ways on one page, so it is the L-confidence upper reading, not averaged. SAM could not be filtered (no segment shares), so SAM is a ceiling and headroom is overstated. Central SOM uses +2 pp in 3 years because H1 FY27 sales annualised show a 0.72 pp gain in about a year (top of the normal band). Year-5 SOM needs 111.8% of the 3,060 t nameplate at FY26 revenue per tonne; 3,060 t is confirmed over 1,500 t because 1,557 t dispatch is 50.9% of 3,060 (deck says 51%). SOM CAGR is a cross-check for stage 11, not a base."

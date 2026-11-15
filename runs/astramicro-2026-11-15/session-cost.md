@@ -24,3 +24,4 @@ subagent, so the split columns are n/a, never estimated.
 | 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 303,729 | 17m01s | 1 |
 | 12c | verifier-c-framework (phase 1: Gate 0 + EM) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 188,989 | 15m24s | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 65,289 | 1m32s | 1 |
+| 13 | stage-13-synthesis (phase 1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 212,410 | 10m25s | 1 |

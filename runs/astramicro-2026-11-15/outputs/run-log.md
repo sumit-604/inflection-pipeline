@@ -68,3 +68,4 @@ None. No Chrome fallback was needed.
 - Verifier A identity check: no CRITICAL rows; nothing struck by the orchestrator.
 - Confidence delta: overall 87.0, set by framework_adherence (phase-1 portion); peer_utilisation NOT APPLICABLE (2 peers). No REWORK trigger; remediation_cycles stays 0.
 - Disagreement set for synthesis: none so far (no downstream step has contested a Verifier A source-fidelity finding).
+- Synthesis-lite: three files plus the disagreement log ("none") written. Verdict PROCEED WITH CAVEATS (FLAG-CASH INDETERMINATE and the freshness cap both bind). Missing mate is line 1 of gate-recommendation.md. The synthesis pulled one CRISIL working-capital quote from the rating text itself (rationale text line 108); no verifier has checked that quote.

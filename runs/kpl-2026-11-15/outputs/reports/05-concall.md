@@ -326,5 +326,5 @@ Change that would make the next run cheaper: provide the Q2 FY27 call text as so
 ## ERRATA (appended by the orchestrator, 2026-11-16; the stage agent cannot edit its own report)
 
 Reported by the stage agent itself at hand-back; not re-derived by the orchestrator.
-- Section 3C, the row for Manan's question: the phrase "Receivables stayed high at the next two filings" is unsupported. It should read "Receivables rose ₹55.0 Cr in the next six months" (Q2 FY27 results p.14 and p.18, ₹ lakhs: 28,005.24 to 33,503.65).
+- Section 3C, the row for Manan's question: the phrase "Receivables stayed high at the next two filings" is unsupported. It should read "Receivables rose ₹55.0 Cr in the next six months" (the figures are in this report, section 3 row 8: ₹28,005.24 to ₹33,503.65 lakh, Q2 results p.15 as cited there).
 - Call dates: the calls were held on 19 May 2026 and 10 Aug 2026. The orchestrator's task message gave 21 May and 12 Aug, which are the filing dates. The transcript dates govern.

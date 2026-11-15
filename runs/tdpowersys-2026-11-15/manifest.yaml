@@ -15,3 +15,4 @@ collector_warnings:
 notes: "Collected by collect_to_repo.py v3 and repaired in /step1 Step F (see outputs/run-log.md). sector_cap_row set in /step1 Step D from section-1b chunk 05. Peers: CGPOWER, TRITURBINE, AZAD. Filings report in Rs lakh; manifest and screener in Rs crore."
 remediation_cycles: 0
 verifier_runs: {A: 0, B: 0, C: 0, D: 0}
+verifier_a_shadow: run

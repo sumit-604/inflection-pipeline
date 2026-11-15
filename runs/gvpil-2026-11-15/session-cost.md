@@ -24,3 +24,5 @@ Token figures come from the subagent result metadata. This harness exposes only 
 | 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 339295 | 10m19s | 1 |
 | 12c | verifier-c-framework (phase-1 scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 163087 | 13m23s | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 61926 | 1m26s | 1 |
+| 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 254214 | 16m24s | 1 |
+| 13 | stage-13-synthesis (PHASE 1 LITE) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 225382 | 12m24s | 1 |

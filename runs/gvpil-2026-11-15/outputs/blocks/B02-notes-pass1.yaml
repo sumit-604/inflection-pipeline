@@ -1,0 +1,48 @@
+stage: B02-notes-pass1
+company: "GVPIL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+pass: 1
+unit: "INR million (face of document: 'All amounts in H million'); nothing converted"
+report: "runs/gvpil-2026-11-15/outputs/reports/02-notes-pass1.md"
+input_gaps:
+  - "concalls: no Q1 FY27 or Q2 FY27 earnings-call transcript"
+  - "shareholding: screener-derived table only; filed pattern and pledge detail absent"
+  - "screening: only Data_Sheet CSVs populated"
+  - "research: none; prospectus not expected (long-listed)"
+  - "notes: no FY24 comparatives in this AR; all trends are 2-year"
+  - "notes: contingent liability stage/forum, customer names, Durgapur consideration (in notes), MAT credit, loss expiry schedule NOT FOUND IN DOCUMENT"
+flags:
+  - {type: FLAG-CASH, reason: "FY26 CFO INR M 4,692.5 rests on receivables release INR M +5,136.0 (BHEL settlement cash INR M 3,430.6; retention receivables 8,574.1 to 4,751.7) net of INR M (2,106.6) fall in customer advances and billing in excess (Note 25, p.164; cash flow p.133). Aged >6m share flat at 15.9% (15.8% FY25). Inventory days 46 to 71 (calc). Net receivable days 409 to 219 (calc). Not a receivables deterioration; a one-time-release quality flag."}
+  - {type: FLAG-RPT, reason: "INR M 4,500.0 on-demand ICD to fellow subsidiary LM Wind Power Blades (India), 21.4% of total assets, 106% of cash, no ECL (Note 16, p.158; Note 36, p.181)."}
+accounting_quality: 0
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "INR M 4,500.0 on-demand ICD to LM Wind Power Blades (India), fellow subsidiary; 5.49%-6.35%; no ECL; 21.4% of total assets; 106% of cash", note_ref: "Note 16 p.158; Note 36 p.181, p.183; Note 43 p.189", rating: RED, why: "Cash-like balance sits with a group entity outside company control; the lead net cash of 880 cr counts it"}
+  - {rank: 2, finding: "FY26 profit before exceptional INR M 3,399.0 includes INR M 1,016.6 receivable loss-allowance reversal (BHEL settlement) and INR M 240.9 write-backs; ex both, INR M 2,141.5; EBITDA ex other income ex reversal 12.4% of revenue (calc)", note_ref: "Notes 33, 28, 53 p.167-168, p.202", rating: RED, why: "27.0% reported margin is not run-rate"}
+  - {rank: 3, finding: "CFO INR M 4,692.5 driven by receivables release INR M +5,136.0 net of INR M (2,106.6) customer advance and billing-in-excess unwind; retention receivables down INR M 3,822.4", note_ref: "Cash flow p.133; Note 13 p.156; Note 25 p.164", rating: RED, why: "Settlement-led collection; cannot repeat at this scale; contract-link to FGD not stated in notes"}
+  - {rank: 4, finding: "Remaining performance obligation INR M 16,278 vs INR M 26,623, down 38.9% while revenue +21.2%; cover 1.28x revenue", note_ref: "Note 27 p.166", rating: RED, why: "Forward revenue base shrinking; RPO scope (Durgapur, intra-group) not stated"}
+  - {rank: 5, finding: "Royalty and trademark fee: P&L INR M 125.7 (FY25 121.5) vs related-party table INR M 435.7 (FY25 514.5); gap unexplained; lead Rs 13.21 cr FY25 matches neither", note_ref: "Note 33 p.168; Note 36 p.180", rating: YELLOW, why: "True group royalty burden may be higher than the P&L line"}
+  - {rank: 6, finding: "Hydro sold for INR 1 with net liabilities INR M 2,978.9 (gain 2,369.9, capital reserve 609.0 via Note 2.20 policy choice); Gas sold INR M 438.6 (gain 583.4); Durgapur to JSW: undertaking net liabilities INR M 548.7; swap 10:139 per Board's Report p.28 (not in notes)", note_ref: "Notes 2.20, 47 p.148, p.194-195", rating: YELLOW, why: "Common-control transfers; accounting on demerger not stated"}
+  - {rank: 7, finding: "Contingent liabilities INR M 4,575.9 = 84.2% of net worth; sales tax INR M 2,036.7 alone 37.5%; no provision; contingencies provision already INR M 1,901.3", note_ref: "Note 39 p.185; Note 26 p.165", rating: YELLOW, why: "Stage and forum not disclosed"}
+  - {rank: 8, finding: "Top two customers 38.6% of revenue (34.8% FY25); JV NGSL revenue INR M 1,111.6 (8.8%, 4.2x FY25); names not disclosed", note_ref: "Note 35 p.176; Note 36 p.181", rating: YELLOW, why: "Concentration up and partly related-party"}
+  - {rank: 9, finding: "FY26 provision roll-forwards deduct INR M 185.0 (warranty) and INR M 137.7 (loss orders) as 'slump sale' transfers, though sales closed in FY25; warranty provision -34.0%; allowance reversal quoted as 1,016.6 / 1,050.5 / 1,123.8", note_ref: "Note 26 p.164-165; Notes 33, 43, 53", rating: YELLOW, why: "Possible release outside P&L view; needs Pass 2/3 test"}
+  - {rank: 10, finding: "Inventory +69.9% vs revenue +21.2% (71 vs 46 days, calc); INR M 1,607.0 held in trust (HPGC/Supreme Court) carried as liability; DTA of INR M 1,983.6 unrecognised citing lower order intake", note_ref: "Notes 12, 24, 9 p.155-156, p.163-164", rating: YELLOW, why: "Working capital build, contingent gain/loss, Board language at odds with earnings"}
+red_flags:
+  - "Group ICD INR M 4,500.0 (Note 16)"
+  - "Profit/margin inflated by INR M 1,016.6 ECL reversal and INR M 240.9 write-backs (Notes 33, 28, 53)"
+  - "CFO is a settlement-led working-capital release (cash flow p.133)"
+  - "RPO down 38.9% (Note 27)"
+questions_for_mgmt:
+  - "What are the cash-pool terms, counterparty credit support and repayment plan for the INR M 4,500.0 ICD to LM Wind Power?"
+  - "Why does the related-party royalty total (INR M 435.7) exceed the P&L royalty line (INR M 125.7), and where is the difference booked?"
+  - "Which contract sat behind the INR M 3,400 BHEL settlement, and is any further receivable release expected?"
+  - "Why did warranty and loss-order roll-forwards deduct INR M 185.0 and INR M 137.7 as slump-sale transfers in FY26?"
+  - "Does continuing cost of materials include the INR M 247.0 internal purchase from Durgapur, and how will continuing margin look after the demerger?"
+receivables_trend: "improving net (11,729.5 to 7,624.6 INR M; 409 to 219 days calc), settlement-led; gross aged >6m flat at 15.9% (1,314.1 of 8,260.5) vs 15.8% FY25 (2,132.9 of 13,489.2); retention 4,751.7 INR M = 57.5% of gross; allowance 635.9 = 7.7% of gross"
+restatements_found:
+  - "FY25 continuing and discontinued figures re-presented to move Durgapur to discontinued operations (Note 47(iii), p.194); comparison to originally reported FY25 not yet made (FY25 AR available, not read in Pass 1)"
+going_concern_language: "NONE in notes (borrowings nil; Durgapur and Gas/Hydro sold on going-concern basis; CARO clause (xix) no material uncertainty, auditor's report p.130-131)"
+analyst_note: "Accounting quality score is set in Pass 3. All numbers INR million as printed. Notes show FY26 earnings and cash flow dominated by one-time settlements (BHEL, JPVL), an ECL reversal and write-backs, and a INR M 4,500.0 group ICD. Several note-to-note gaps (royalty, ECL reversal, FX add-back, provision transfers) are flagged for Pass 2 and 3 rather than resolved."

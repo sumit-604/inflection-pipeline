@@ -8,3 +8,4 @@ Token figures come from the subagent result metadata. This harness exposes only 
 | S1-F | step1 corpus collection | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 175252 | 26m38s | 1 |
 | 1 | stage-01-gate0 | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 78049 | 3m52s | 1 |
 | 0 | stage-00-intake-check | claude-haiku-5-5 | medium | n/a | n/a | n/a | n/a | 131344 | 4m10s | 1 |
+| 2 | stage-02-notes-pass (pass 1) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 234786 | 9m13s | 1 |

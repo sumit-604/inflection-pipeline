@@ -1,0 +1,426 @@
+stage: B00-intake
+model: claude-haiku-5-5
+status: complete
+corpus_manifest:
+  - path: inputs/annual-report/Annual_Report_FY2025-26.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "annual report"
+    period: "FY2025-26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is BSE transmittal letter dated 10.07.2026 enclosing AR FY2025-26 and AGM notice."
+  - path: inputs/results/20261114-Q2FY27-results.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "results (un-audited)"
+    period: "Q2 FY27 (quarter and half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Board outcome cover letter dated 14.11.2026. Text copy page 1 OCR is tesseract."
+  - path: inputs/results/20260813-Q1FY27-results.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "results (un-audited)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cover letter dated 13.08.2026."
+  - path: inputs/results/20260525-Q4FY26-results-resubmission.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "results (audited)"
+    period: "Q4 FY26 (year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is dated 19.05.2026, the same date as results/20260519-Q4FY26-results.pdf. The resubmission label comes from the filename only; page 1 does not say resubmission."
+  - path: inputs/results/20260519-Q4FY26-results.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "results (audited)"
+    period: "Q4 FY26 (year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cover letter dated 19.05.2026. See results/20260525 row for the duplicate-date note."
+  - path: inputs/results/20260204-Q3FY26-results.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "results (un-audited, integrated filing)"
+    period: "Q3 FY26 (quarter and nine months ended 31 Dec 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cover letter dated 04.02.2026."
+  - path: inputs/presentation/20261114-Q2FY27-investor-presentation.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "investor presentation"
+    period: "H1 FY27 (six months ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Page 1 of the text copy is a blank marker. Title 'Investor Presentation H1 FY 2026-27, 14 Nov 2026' is on page 2."
+  - path: inputs/presentation/20260519-Q4FY26-investor-presentation.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "investor presentation"
+    period: "Q4 FY26 (Q4 2025-26)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Page 1 of the text copy is a blank marker. Title 'Investor Presentation Q4 2025-26' is on page 2."
+  - path: inputs/rating/20260709-CARE-rationale.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "rating rationale (CARE Ratings press release)"
+    period: "FY2025-26 (data); action dated 09 Jul 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/rating/20260710-credit-rating-intimation.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "rating intimation (Reg 30 letter to BSE)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 10/07/2026. PDF page 1 is an image with no text layer; identity read from the page image. The text copy page 1 is blank and its page 2 holds the CARE rationale, so the text copy does not match the PDF page 1."
+  - path: inputs/shareholding/20260930-shareholding-pattern-Sep2026-BSE-page.txt
+    file_type: txt
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "shareholding pattern"
+    period: "Q2 FY27 (quarter ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Browser text copy of BSE pages (scrip 504786). No PDF beside it and no page markers; the whole file is page 1."
+  - path: inputs/screening/screener-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "screener data sheet (third-party export, not a filing)"
+    period: "FY2017 to FY2026 (annual rows to 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "CSV with figures beside row labels. Company name from the COMPANY NAME row."
+  - path: inputs/announcements/20251211-intimation-of-award.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "exchange intimation (Reg 30, customer award)"
+    period: "FY2025 (award for supply during FY 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 11.12.2025."
+  - path: inputs/announcements/20260204-Q3-board-outcome.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "board outcome"
+    period: "Q3 FY26 (quarter and nine months ended 31 Dec 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 04.02.2026."
+  - path: inputs/announcements/20260213-significant-order.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "exchange intimation (Reg 30, order receipt)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 13 Feb 2026. Defence supply order from GTRE (DRDO). Page gives no period."
+  - path: inputs/announcements/20260331-solar-commissioning.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "exchange intimation (Reg 30, plant commissioning)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 31.03.2026. Solar plant commissioned 30 Mar 2026."
+  - path: inputs/announcements/20260416-reg30-intimation.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "exchange intimation (Reg 30, order receipt)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 16.04.2026. Order from MKU Limited."
+  - path: inputs/announcements/20260519-Q4-board-outcome.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "board outcome"
+    period: "Q4 FY26 (year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 19.05.2026."
+  - path: inputs/announcements/20260630-price-movement-clarification.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "exchange correspondence (price movement clarification)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 30.06.2026, reply to BSE surveillance email of 29.06.2026. No period on page."
+  - path: inputs/announcements/20260813-Q1-board-outcome.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "board outcome"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 13.08.2026."
+  - path: inputs/announcements/20260907-order-receipt.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "exchange intimation (Reg 30, order receipt)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 07.09.2026. Order from HAL received 05.09.2026."
+  - path: inputs/announcements/20260923-93b1ae41-523d-4fc5-a1df-ebac10e63545.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "exchange intimation (Reg 30, order receipt)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 23.09.2026. Order from PLR Systems Pvt Ltd."
+  - path: inputs/announcements/20261009-2f8bab14-b9c8-45b7-ac85-faf1e69e118c.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "compliance certificate (Reg 7(3), RTA)"
+    period: "H1 FY27 (half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 09.10.2026, identified from PDF page 1 image. The text copy pages 1 to 3 are blank and its page 4 is an auditor review report for quarter ended 30 Jun 2026, so the text copy does not match PDF page 1. Check the PDF before any anchor."
+  - path: inputs/announcements/20261017-reg30-update.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "exchange intimation (Reg 30, business update)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 17.10.2026. Series production start for CQB carbine components."
+  - path: inputs/announcements/20261102-24e135d3-e60b-4ef4-a2b8-9f3cd7590b4d.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "exchange intimation (board meeting notice)"
+    period: "Q2 FY27 (quarter ended 30 Sep 2026; meeting 14 Nov 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 02.11.2026."
+  - path: inputs/announcements/20261112-1813754a-a11d-4ded-b0a2-313bc1ae4925.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "exchange intimation (analyst meeting notice)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 12.11.2026. Meeting on 16 Nov 2026."
+  - path: inputs/announcements/20261114-03783cd6-9806-429f-a86c-4c22bc97dfeb.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "board outcome"
+    period: "Q2 FY27 (quarter and half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 14.11.2026."
+  - path: inputs/peer-concalls/ALICON-Concall_Nov_2025_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Alicon Castalloy Ltd"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q2 FY26 (quarter and half year ended 30 Sep 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 12.11.2025, call held 07.11.2025."
+  - path: inputs/peer-concalls/ALICON-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Alicon Castalloy Ltd"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q3 FY26 (nine months ended 31 Dec 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 19.02.2026, call held 16.02.2026."
+  - path: inputs/peer-concalls/ALICON-Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Alicon Castalloy Ltd"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q4 FY26 (year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 16.05.2026, call held 13.05.2026."
+  - path: inputs/peer-concalls/ALICON-Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Alicon Castalloy Ltd"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 18.08.2026, call held 14.08.2026."
+  - path: inputs/peer-concalls/AZAD-Concall_Nov_2025_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Ltd"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q2 FY26 (quarter and half year ended 30 Sep 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 08.11.2025, call held 03.11.2025."
+  - path: inputs/peer-concalls/AZAD-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Ltd"
+    doc_type: "concall (transcript cover letter)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 20.02.2026, call held 14.02.2026. Quarter not named on page 1."
+  - path: inputs/peer-concalls/AZAD-Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Ltd"
+    doc_type: "concall (transcript cover letter)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 22.05.2026, call held 16.05.2026. Quarter not named on page 1."
+  - path: inputs/peer-concalls/AZAD-Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Ltd"
+    doc_type: "concall (transcript cover letter)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Letter dated 14.08.2026, call held 08.08.2026. Quarter not named on page 1."
+  - path: inputs/peer-concalls/STEELCAS-Concall_Nov_2025_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Steelcast Ltd (BSE 513517, NSE STEELCAS)"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q2 FY26 (quarter ended 30 Sep 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Name not printed on page 1; identified from scrip code and symbol on the letter. Letter dated 06.11.2025."
+  - path: inputs/peer-concalls/STEELCAS-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Steelcast Ltd (BSE 513517, NSE STEELCAS)"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q3 FY26 (quarter ended 31 Dec 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Name not printed on page 1; identified from scrip code and symbol. Letter dated 05.02.2026."
+  - path: inputs/peer-concalls/STEELCAS-Concall_Jun_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Steelcast Ltd (BSE 513517, NSE STEELCAS)"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q4 FY26 (year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Name not printed on page 1; identified from scrip code and symbol. Letter dated 08.06.2026, so the Jun in the filename matches the letter date."
+  - path: inputs/peer-concalls/STEELCAS-Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Steelcast Ltd (BSE 513517, NSE STEELCAS)"
+    doc_type: "concall (transcript cover letter)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer filing. Name not printed on page 1; identified from scrip code and symbol. Letter dated 06.08.2026."
+  - path: inputs/other/Annual_Report_FY2024-25.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "annual report"
+    period: "FY2024-25"
+    folder_match: false
+    proposed_move: "inputs/annual-report/Annual_Report_FY2024-25.pdf"
+    page_read: 1
+    note: "MISFILE: main-company AR sits in other/. Page 1 is BSE transmittal letter dated 22.08.2025 enclosing AR FY2024-25 (50th AGM). Text copy has no text on pages 2 to 15, so the PDF page 1 image was read."
+  - path: inputs/other/ppt_9dd1d11c-49c5-486f-9f49-ac8c8e2a2f25.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "investor presentation"
+    period: "Q4 FY25 (Q4 2024-25)"
+    folder_match: false
+    proposed_move: "inputs/presentation/ppt_9dd1d11c-49c5-486f-9f49-ac8c8e2a2f25.pdf"
+    page_read: 2
+    note: "MISFILE: main-company deck sits in other/. Page 1 of the text copy is blank. Title 'Investor Presentation Q4 2024-25' is on page 2. Filename gives no type."
+  - path: inputs/other/ppt_a75cdd22-b722-4ea8-b60b-bc70055b247d.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Investment & Precision Castings Ltd"
+    doc_type: "quarterly performance report (company deck)"
+    period: "Q2 FY26 (Q2 2025-26)"
+    folder_match: false
+    proposed_move: "inputs/presentation/ppt_a75cdd22-b722-4ea8-b60b-bc70055b247d.pdf"
+    page_read: 2
+    note: "MISFILE: main-company deck sits in other/. Page 1 of the text copy is blank. Title 'Quarterly Performance Report Q2 2025-26' is on page 2."
+unreadable: []
+unidentified: []

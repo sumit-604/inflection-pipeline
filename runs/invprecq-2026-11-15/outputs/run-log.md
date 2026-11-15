@@ -35,3 +35,10 @@ BSE base: https://www.bseindia.com/xml-data/corpfiling/AttachLive/ or AttachHis/
 - Shareholding is a text capture, not the XBRL filing PDF. Historical shareholding trend not collected.
 - Concalls: none by design (company holds none).
 - PTC Industries peer not collected (not in companies.txt).
+
+## Phase 1 run log 2026-11-15
+- Checkout guard: PASS (origin/main b4ec38ce). Spear gate: PASS (OVERRIDE line).
+- Verifier A shadow: NOT RUN here. Nine /step1 sessions run in parallel today; the single shadow run belongs to the TD Power session. .claude/shadow.yaml not touched.
+- Stage 0: intake check complete (40 files). Three folder_match false rows verified at the page: two older decks moved from other/ to presentation/; FY2024-25 AR kept in other/ (one-AR contract).
+- Tooling: whole run on pre-extracted .txt. Stages run as harness subagents; completion is proven on disk (report + block) before any dependent stage starts.
+- Ledger: the harness gives total tokens and wall time only; split columns are n/a.

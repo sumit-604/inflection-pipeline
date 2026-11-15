@@ -26,3 +26,4 @@ cache-read, cache-write and output splits are not exposed and are written n/a, n
 | 12c | verifier-c-framework (phase-1 scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 158958 | 13m33s | 2 |
 | 12b | verifier-b-redflags (stalled, no output) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | n/a | stalled >10m | 1 |
 | 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 320666 | 18m38s | 2 |
+| 13 | stage-13-synthesis (phase 1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 188048 | 10m01s | 1 |

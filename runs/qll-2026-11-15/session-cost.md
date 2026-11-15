@@ -16,3 +16,5 @@ Token figures come from subagent result metadata. This harness exposes only tota
 | 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 131875 | 4m24s | 1 |
 | 8 | stage-08-promoter | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 200225 | 6m32s | 1 |
 | 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 293869 | 4m51s | 1 |
+| 7 | stage-07-emoat | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 216316 | 8m11s | 1 |
+| 9 | stage-09-tam (stalled 600s, no output; mechanical re-invoke) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | n/a | n/a | 1 |

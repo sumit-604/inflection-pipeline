@@ -45,3 +45,4 @@ Collector ran clean in dry-run (scratch wrapper for REPO_ROOT, headless sitecust
 - Verifier A shadow: NOT RUN here. Nine /step1 sessions run in parallel today; the single shadow run belongs to the TD Power session. .claude/shadow.yaml left untouched by this run.
 - Execution: this harness dispatches subagents asynchronously with a completion notification. The orchestrator waits for each notification and runs the completion check (report file, block file, block parses) before any dependent stage.
 - Stage 0: B00-intake (Haiku 5.5) 83 rows, 0 misfiles, 0 unreadable. Freshness pairs OK (pair 1 skipped, no-concall).
+- Stage 9 run 1 stalled (stream watchdog, no progress for 600s) and left no report or block. Mechanical re-invoke (run 2), not counted against any cap.

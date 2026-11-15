@@ -1,0 +1,116 @@
+stage: B09-tam
+company: "ASTRAMICRO"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "Q2 FY27 concall transcript absent (call held 2026-11-13, not yet filed)"
+  - "PARAS peer concalls absent"
+  - "screener sheets other than Data Sheet empty; prospectus and research folders empty (not expected)"
+  - "No clean India EW market size for a current year; no EW or communications share of defence electronics (Credence gives radar 27% only); content share of a subsystem supplier in a DPSU programme NOT FOUND"
+  - "Named competitors, top-3 concentration, import share of electronics, and whether the FY28 Rs 1,600 Cr guide is defence-only NOT FOUND"
+  - "Price date of Data Sheet CMP Rs 1,703.5 NOT FOUND; Credence page carries no publication year; deck market slides (pp.23-28) name no source and no base year"
+flags:
+  - "FLAG-SAM-NOT-INDEPENDENT: SAM is management's own programme pool (Rs 25,000-30,000 Cr, Q3 FY26 call PDF p.18) annualised; the independent ceiling after sourced filters is Rs 18,622 Cr a year and the content and qualification filters that would bridge the two are NOT FOUND. SAM is tier-3 evidence, cross-checked for order of magnitude only"
+  - "FLAG-MGMT-CLAIMS-INCONSISTENT: 6-7x FY26 turnover in 5 years (Rs 6,342-7,399 Cr on Rs 1,057 Cr) is 95-111% of the FY31 SAM (Rs 6,650 Cr) and conflicts with management's own cumulative cap of Rs 10,000 Cr and its own FY31 figure of USD 350-400 million (Q1 FY27 call, PDF pp.6, 11-12, 19)"
+  - "FLAG-CAPACITY: installed plus committed capacity about Rs 1,386 Cr (B07 19.9%); SOM FY29 Rs 1,567 Cr leaves a gap of about Rs 181 Cr and SOM FY31 Rs 1,980 Cr a gap of about Rs 594 Cr; the SOM is the optimistic side unless revenue is outsourced or pass-through"
+  - "FLAG-DEMERGER-BASIS: SOM and CAGR are on the defence plus exports remainder (FY26 Rs 1,000.1 Cr), not on Rs 1,155.67 Cr; space and hydro-met (Rs 155.6 Cr FY26) leave from 1 Apr 2027 (mgmt). Stage 11 must align the base"
+  - "FLAG-GUIDE-AHEAD: FY28 guide Rs 1,600 Cr +/-50 equals the FY29 SOM (Rs 1,567 Cr); guidance runs about one year ahead of the market-share lens; basis (whole company or defence-only) NOT FOUND"
+  - "FLAG-DATA-DISAGREEMENT: market slides disagree by up to 5x on radar (deck Rs 12,200 Cr by 2033 at 20.62% vs MarketsandMarkets India military radar USD 1,230.3 M in 2024); scope is the separating observation, not resolved"
+  - "FLAG-FX: USD-denominated third-party sizes converted at the rate on the data date (83.96, 88.66); rupee at 94.68 on 22 Jun 2026 would lift every converted figure by 7-13%"
+market_definition: "Annual Indian defence electronics (radar, EW, SDR and communications, telemetry and missile electronics) bought by MoD, DRDO and DPSUs, plus defence exports; space and hydro-met lines excluded as under demerger"
+tam_cr: {conservative: 17325, realistic: 66052}
+sam_cr: 4460
+sam_pct_of_tam: 6.8
+som_3yr_cr: 1567
+som_5yr_cr: 1980
+som_implied_revenue_cagr: {yr3: 16.2, yr5: 14.6}
+current_sam_share_pct: 24.8
+revenue_headroom_x: 4.46
+tam_growth_pct: 10.5
+runway_class: "GOOD"
+mgmt_claim_cr: 27500
+mgmt_claim_ratio: 0.26
+mgmt_claim_read: "conservative"
+capacity_check: "gap of about Rs 181 Cr at FY29 SOM and Rs 594 Cr at FY31 SOM against capacity of about Rs 1,386 Cr (Rs 1,155.67 Cr x 1.199); the SOM is the optimistic side unless Uttam content is outsourced or pass-through"
+methods_used:
+  - "top-down (Credence defence electronics USD 7.45 B, 2025; deck Rs 65,000-70,000 Cr cross-check; IDSA FY27 budget)"
+  - "bottom-up programme pool (management programme list, Aug 2026 call)"
+  - "peer revenue aggregation (BEL, Data Patterns, Apollo, Astra FY26)"
+  - "import substitution (partial: budget domestic share only)"
+  - "global benchmark not applied (no India-relevant per-capita benchmark in sources)"
+stale_data_flags:
+  - {datapoint: "India military radar USD 1,230.3 M (2024) and USD 1,594.7 M (2029)", source: "MarketsandMarkets search snippet (page returned 403)", year: 2024}
+  - {datapoint: "India radar USD 1.16-1.17 B (2024)", source: "BlueWeave; Expert Market Research (search snippets)", year: 2024}
+  - {datapoint: "Hydrology market Rs 1,634 Cr (2024)", source: "Investor Presentation Q2 FY27, PDF p.28", year: 2024}
+  - {datapoint: "Radar Rs 12,200 Cr by 2033 and EW Rs 9,500 Cr by 2033 (base year not stated)", source: "Investor Presentation Q2 FY27, PDF pp.23-24, no source named", year: "undated"}
+  - {datapoint: "Defence electronics USD 7.45 B base year 2025 (page shows 'Last Updated: Nov 12', no year)", source: "Credence Research India defence electronics page", year: "2025 base, publication year NOT FOUND"}
+  - {datapoint: "Capital outlay BE FY24 Rs 162,600 Cr", source: "IDSA issue brief 2026-27", year: 2024}
+searches_performed:
+  - "Union Budget 2026-27 defence allocation capital outlay (IDSA brief fetched in full)"
+  - "India defence electronics market size crore 2025 2030 CAGR (Credence page fetched)"
+  - "India military radar market size 2024 2030 (MarketsandMarkets, BlueWeave, Expert Market Research snippets)"
+  - "India electronic warfare market size 2030 (no clean figure)"
+  - "BEL FY26 revenue, order book, FY27 guidance"
+  - "India defence production FY26, private share, exports Rs 38,424 Cr"
+  - "Data Patterns and Apollo FY26 revenue"
+  - "DAC acceptance of necessity 2025-26 totals"
+  - "HAL Uttam LCA Mk1A 97 aircraft context"
+  - "Rupee dollar rate (latest hit 22 Jun 2026: 94.68)"
+searches_skipped:
+  - "Bain defence electronics report: link returned the Bain homepage only; the USD 5-6 B figure seen in a snippet is unverified and not used"
+  - "MarketsandMarkets military radar page: HTTP 403, figures taken from the search snippet"
+  - "IBEF, CRISIL, ICRA, Mordor defence sector pages not fetched; no direct India radar or EW figure from them"
+  - "Rupee rate for November 2026 not found; 94.68 (22 Jun 2026) is the latest sourced"
+  - "Astra named competitor list and top-3 concentration: no source found"
+downstream_candidates:
+  - signal: "HAL Uttam AAAU Phase 1 deliveries (12 units by Sep 2027) and LCA Mk1A 97-aircraft schedule"
+    entity_type: "end-customer"
+    demand_link: "Rs 1,878.8 Cr Uttam order is 47.7% of the book; HAL schedule sets the ramp"
+    likely_source: "HAL exchange announcements and concall (Type 1); PIB; HAL Reg 30 filings"
+    cadence: "event-driven"
+    shared: false
+  - signal: "BEL QRSAM contract signing and Astra subsystem purchase orders"
+    entity_type: "end-customer"
+    demand_link: "Rs 700-800 Cr first three regiments; slipped on three calls; BEL also routes Su-30 and radar work"
+    likely_source: "BEL exchange announcements, order-book disclosures and concall (Type 1)"
+    cadence: "quarterly"
+    shared: true
+  - signal: "DRDO development to production milestones (Virupaksha, Angad, AMCA AAAU, SDR)"
+    entity_type: "end-customer"
+    demand_link: "Management claims at least Rs 3,000 Cr of Su-30 programme orders after qualification"
+    likely_source: "PIB (Ministry of Defence); Parliament questions (sansad.in) (Type 4)"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Defence Acquisition Council acceptance of necessity approvals"
+    entity_type: "regulatory"
+    demand_link: "AoN batches set the programme pool; Rs 6.73 lakh crore cleared in 2025-26 per search"
+    likely_source: "PIB (Ministry of Defence) DAC releases (Type 4/5)"
+    cadence: "event-driven"
+    shared: true
+  - signal: "MoD capital acquisition budget and in-year capital expenditure"
+    entity_type: "macro"
+    demand_link: "FY27 capital acquisition Rs 185,467 Cr, 75% earmarked domestic; sets TAM growth of 10.5%"
+    likely_source: "Union Budget documents; PIB; ICRA and CRISIL industry notes (Type 7)"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Astra Rafael Comsys order book and revenue (Rs 622 Cr book at Mar-26)"
+    entity_type: "counterparty"
+    demand_link: "SDR and communications line; related-party receivable; FY27 sales target contradictory"
+    likely_source: "CRISIL or ICRA rating rationale for the unlisted JV; MCA filings (Type 2)"
+    cadence: "event-driven"
+    shared: false
+  - signal: "India defence export value and approvals"
+    entity_type: "macro"
+    demand_link: "Exports incl. deemed were 14.0% of FY26 revenue; national exports Rs 38,424 Cr"
+    likely_source: "PIB defence export releases; DGCI&S tradestat (Type 6)"
+    cadence: "monthly"
+    shared: false
+  - signal: "ISRO and IMD order flow for space and met lines (demerging)"
+    entity_type: "end-customer"
+    demand_link: "Space and hydro-met order book Rs 537 Cr at Mar-26 leaves the listed entity from Apr 2027"
+    likely_source: "ISRO and IMD pages, PIB; Astra Space Technologies Information Memorandum (Type 4)"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Three points a later stage cannot rebuild. (1) SAM is management's Rs 27,500 Cr programme pool spread over FY27-FY31 with 10.5% annual growth (Rs 4,460 Cr in FY27); on a 4-year spread the SOM CAGRs rise about 2pp (yr3 17.9, yr5 15.8). The slip of QRSAM and Su-30 awards separates the two. (2) The SOM uses a 4pp share gain (mid of the 3-5pp aggressive tier) because capacity is a gap and execution is mixed (B05 grade B); 3pp gives 14.8% and 5pp 17.5% for yr3. (3) Current share is already 24.8% of the pool, so headroom comes from pool growth and award timing, not share capture. The guided FY28 Rs 1,600 Cr equals the FY29 SOM. The 6-7x claim exceeds the FY31 SAM."

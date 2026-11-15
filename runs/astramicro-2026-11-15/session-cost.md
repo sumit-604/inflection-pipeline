@@ -19,3 +19,4 @@ subagent, so the split columns are n/a, never estimated.
 | 8 | stage-08-promoter | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 216,093 | 8m53s | 1 |
 | 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 280,372 | 7m28s | 1 |
 | 7 | stage-07-emoat | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 293,741 | 11m37s | 1 |
+| 9 | stage-09-tam | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 210,820 | 10m58s | 1 |

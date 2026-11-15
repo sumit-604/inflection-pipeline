@@ -62,3 +62,5 @@ None. No Chrome fallback was needed.
 - Stage 8: status partial (MCA, eCourts/SAT, proxy-advisor and name-level searches skipped; listed in the block). 4 late corrections appended as ERRATA. Three web-sourced SEBI items recorded in B00.input_gaps for the operator upload list.
 - Stage 6: block file fences stripped (no content change); 5 page-anchor corrections appended as ERRATA. Extra block key cross_peer_hypothesis kept.
 - Stage 7: 3 late notes appended as ERRATA (one page anchor; two method notes).
+- Stage 9: status partial (Bain link dead, MarketsandMarkets 403, IBEF/CRISIL/ICRA/Mordor not fetched, no Nov 2026 FX rate). 4 late corrections appended as ERRATA; block analyst_note figures corrected on the agent instruction.
+- Verifiers: A, B, C (Gate 0 + EM scope), D dispatched together, each with artifact paths only. Shadow not run (see above). .claude/shadow.yaml read: armed; left untouched for the TD Power session.

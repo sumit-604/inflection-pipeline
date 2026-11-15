@@ -17,4 +17,9 @@ Per-stage token ledger, from subagent result metadata. This harness exposes only
 | 5 | concall | claude-sonnet-5-5 | default-high | n/a | n/a | n/a | n/a | 268432 | 15m26s | 1 |
 | 9 | tam | claude-sonnet-5-5 | default-high | n/a | n/a | n/a | n/a | 179848 | 7m34s | 1 |
 | 6 | peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 350236 | 6m43s | 1 |
-| 7 | emoat | claude-sonnet-5-5 | default-high | n/a | n/a | n/a | n/a | PENDING7 | PENDING7 | 1 |
+| 7 | emoat | claude-sonnet-5-5 | default-high | n/a | n/a | n/a | n/a | 240025 | 9m27s | 1 |
+| 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 350183 | 10m08s | 1 |
+| 12a-shadow | verifier-a-shadow | claude-haiku-5-5 | high | n/a | n/a | n/a | n/a | 288922 | 13m51s | 1 |
+| 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 54834 | 1m10s | 1 |
+| 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 321092 | 15m09s | 1 |
+| 12c | verifier-c-framework-phase1 | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 199455 | 17m54s | 1 |

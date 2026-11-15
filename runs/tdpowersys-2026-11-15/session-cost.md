@@ -16,3 +16,4 @@ Per-stage token ledger, from subagent result metadata. This harness exposes only
 | 4 | bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 236256 | 10m27s | 1 |
 | 5 | concall | claude-sonnet-5-5 | default-high | n/a | n/a | n/a | n/a | 268432 | 15m26s | 1 |
 | 9 | tam | claude-sonnet-5-5 | default-high | n/a | n/a | n/a | n/a | 179848 | 7m34s | 1 |
+| 6 | peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 350236 | 6m43s | 1 |

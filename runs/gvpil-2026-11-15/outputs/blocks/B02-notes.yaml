@@ -1,0 +1,56 @@
+stage: B02-notes
+company: "GVPIL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "concalls: no Q1 FY27 or Q2 FY27 earnings-call transcript"
+  - "shareholding: screener-derived table only; filed pattern and pledge detail absent"
+  - "screening: only Data_Sheet CSVs populated"
+  - "research: none; prospectus not expected (long-listed)"
+  - "notes: FY24 comparatives from AR25 as first reported (include Gas/Hydro); not like-for-like with continuing FY25/FY26"
+  - "notes: continuing-basis FY25 related-party table NOT FOUND (Note 36 FY25 column not re-presented)"
+  - "notes: contingent liability stage/forum, customer names, Durgapur demerger consideration and accounting, MAT credit, loss expiry schedule NOT FOUND IN DOCUMENT"
+  - "notes: royalty booking location for the INR M 310.0 gap NOT STATED; P&L effect of Note 26 slump-sale deductions NOT STATED; post-demerger Durgapur supply price NOT FOUND"
+  - "notes: whether the Parent Corporate Guarantee covers the existing INR M 4,500.0 ICD is not stated in the Notes (Notice, outside notes, reads as yes); GVPIL order inflow NOT FOUND (RPO-derived only)"
+flags:
+  - {type: FLAG-RPT, reason: "ICD INR M 4,500.0 to LM Wind Power Blades (India) at the approved cap (cap to be raised to INR M 10,000); absent from Note 42 and Note 43 credit text; Notice (outside notes) says GE Vernova Inc. guarantee secures it; coverage of present balance not confirmed; guarantee label in Note 36 reads as issued but is received; royalty gap INR M 310.0 unreconciled"}
+  - {type: FLAG-EARNINGS, reason: "55.3% of the INR M 3,174.4 profit step-up is the ECL swing (1,320.0) plus other income (433.5); group-sourced income INR M 851.9 = 25.1% of profit before exceptional items; core margin 4.5% FY25 to 12.4%-16.1% FY26 (calc); FY25 continuing result re-presented by INR M 604.8 of Durgapur cost"}
+  - {type: FLAG-ORDERS, reason: "RPO INR M 15,870 / 26,623 / 16,278 (Mar-24/25/26); derived FY26 order additions INR M 2,347.7, book-to-bill 0.18 (calc; RPO scope not stated)"}
+  - {type: FLAG-PROVISION, reason: "Note 26 FY26 warranty (185.0) and loss-order (137.7) 'slump sale' deductions repeat FY25 values; total 322.7 exceeds Durgapur provision block 280.3; closing balances tie only with them; P&L effect NOT STATED; loss-order row sign inverted between years"}
+  - {type: FLAG-DEMERGER, reason: "Durgapur cost INR M 548.0 FY26 (604.8 FY25) sits outside continuing P&L; INR M 247.0 internal billing not charged to continuing cost; post-demerger supply cost NOT FOUND; consideration and accounting of net liabilities INR M 548.7 not in Notes"}
+accounting_quality: 6
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "INR M 4,500.0 demand ICD to LM Wind Power Blades (India) at the approved cap; 21.4% of total assets, 106% of cash (calc); absent from Note 42 and Note 43 credit text; Notice (outside notes) says GE Vernova Inc. guarantee secures it, cap to rise to INR M 10,000", note_ref: "Notes 16, 36, 42, 43 p.158, p.181, p.186-189; Notice L 21301, L 19881", rating: "YELLOW (RED on Notes alone)", why: "Largest non-operating asset, unrated group borrower, no ECL assessment in the Notes; Step-1 net cash depends on it"}
+  - {rank: 2, finding: "Profit before exceptional items INR M 3,399.0 includes reversal INR M 1,016.6, write-backs INR M 240.9, insurance INR M 184.2, group-sourced income INR M 851.9; ECL swing + other income = 55.3% of the INR M 3,174.4 step-up; core margin 4.5% FY25 to 12.4%-16.1% FY26 (calc)", note_ref: "Notes 28, 33, 36, 53 p.167-168, p.180-181, p.202", rating: RED, why: "Reported 27.0% margin is not run-rate; real gains in material cost 67.3% to 60.2% and employee cost 18.5% to 14.5% of revenue"}
+  - {rank: 3, finding: "CFO INR M 4,692.5 is a working-capital release: receivables +5,136.0 vs advances and billing in excess down 2,106.6; receivable unwind two years old (gross 18,950.3 / 13,489.2 / 8,260.5)", note_ref: "Notes 13, 25 p.156-157, p.164; cash flow p.133", rating: YELLOW, why: "Cannot repeat at this scale; aged >6m share 8.4% to 15.9%"}
+  - {rank: 4, finding: "RPO INR M 15,870 / 26,623 / 16,278; derived FY26 order additions INR M 2,347.7, book-to-bill 0.18 (calc)", note_ref: "Note 27 p.166; AR25 L 12521", rating: YELLOW, why: "Book is back at Mar-24 level while revenue grew 21.2%; scope not stated"}
+  - {rank: 5, finding: "Durgapur cost INR M 548.0 (FY25 604.8) sits outside continuing P&L; INR M 247.0 internal billing not charged to continuing cost; post-demerger supply cost NOT FOUND", note_ref: "Note 47(iii), (v), (vi) p.194-198", rating: YELLOW, why: "Continuing margin flattered relative to business as run; cost can return after JSW demerger"}
+  - {rank: 6, finding: "Parent guarantee for bank lines INR M 7,977.6 used (49.9% of INR M 16,000 needed; peak 20,432); debt is INR M 330.0 bank fund-based draw, not nil; net cash INR M 8,473.1 with ICD, 3,973.1 without", note_ref: "Notes 36, 43, 46, 47(v) p.182, p.190, p.193, p.195; Notice L 21569-21583", rating: YELLOW, why: "All bid capacity rests on one guarantor; Note 36 label reads as issued, Notice shows received"}
+  - {rank: 7, finding: "Royalty: P&L INR M 125.7 vs related-party table INR M 435.7; gap INR M 310.0 (380.9 FY24, 382.4 FY25); booking location NOT STATED", note_ref: "Notes 33, 36 p.168, p.180", rating: YELLOW, why: "Group royalty burden not visible in one line; likely inside cost of materials (inference)"}
+  - {rank: 8, finding: "Note 26 'slump sale' deductions (warranty 185.0, loss orders 137.7) repeat FY25 values; total 322.7 > Durgapur block 280.3; warranty provision -34.0%; P&L effect NOT STATED", note_ref: "Notes 26, 47(v) p.164-165, p.195", rating: YELLOW, why: "Possible release up to INR M 299.2 on warranty; cannot be proved or excluded"}
+  - {rank: 9, finding: "Contingent liabilities INR M 4,575.9 = 84.2% of net worth; sales tax 2,036.7 = 37.5%; no case or forum detail; provision for contingencies INR M 1,901.3", note_ref: "Notes 39, 26 p.185, p.165", rating: YELLOW, why: "Amounts grew 5.6% and 7.1%; ratio fell only because equity rebuilt"}
+  - {rank: 10, finding: "Top two customers 38.6% (34.8% FY25); NGSL JV revenue INR M 1,111.6 (8.8%), receivable 703.0, advances 833.0 above the 677.9 advance line", note_ref: "Notes 35, 36, 25 p.176, p.181-183, p.164", rating: YELLOW, why: "JV is customer, supplier, receivable and advance giver; names not disclosed"}
+  - {rank: 11, finding: "Hydro sold for INR 1 (net liabilities INR M 2,978.9); Note 2.20 policy booked gain 2,369.9 and capital reserve 609.0; Durgapur net liabilities INR M 548.7, accounting not stated", note_ref: "Notes 2.20, 47 p.148, p.194-195", rating: YELLOW, why: "Common-control policy choice; FY25 event, closed"}
+  - {rank: 12, finding: "Inventory +69.9% vs revenue +21.2% (71 vs 46 days, calc); FX payables INR M 535.9 over 6 months without stated RBI approval", note_ref: "Notes 12, 23 p.156, p.163", rating: YELLOW, why: "Stock build absorbs cash; regulatory exposure small"}
+  - {rank: 13, finding: "Unrecognised DTA pool INR M 1,806.8 netted (note shows 1,983.6, DTL added); Board cites lower order intake; effective tax rate 2.5% (calc)", note_ref: "Notes 9, 48 p.154-155, p.200", rating: YELLOW, why: "Low cash tax only while losses last; Board order language sits against profit headline"}
+  - {rank: 14, finding: "Labour Codes exceptional INR M 425.7 on draft rules; gratuity past service INR M 320.7; PF trust exemption surrendered, transfer pending; attrition assumption 5.58% vs 8.09%", note_ref: "Notes 34, 47(iv), 59 p.169-175, p.195, p.204", rating: YELLOW, why: "Open-ended cost; possible shortfall on PF transfer"}
+  - {rank: 15, finding: "Other expenses ex-ECL +26.3% (miscellaneous 299.3 vs 20.7; legal 234.8 vs 77.3 unexplained); CFO and company secretary posts open at accounts date", note_ref: "Notes 33, 36 p.165, p.177", rating: YELLOW, why: "Unexplained cost jumps and a governance gap"}
+red_flags:
+  - "Profit step-up INR M 3,174.4 is 55.3% ECL swing plus other income; reported 27.0% margin is not run-rate (core 12.4%-16.1% calc)"
+  - "RPO back to Mar-24 level; derived FY26 order additions INR M 2,347.7 (book-to-bill 0.18)"
+questions_for_mgmt:
+  - "Is the INR M 4,500.0 cash-pool deposit with LM Wind covered today by the GE Vernova Inc. Parent Corporate Guarantee, and why is the loan absent from Note 42 and the Note 43 credit text?"
+  - "What orders were received in FY26, and does the INR M 16,278 RPO include Durgapur or intra-group orders? Derived additions are about INR M 2,348."
+  - "Where is the INR M 310.0 of group royalty, shown in Note 36 but not in the INR M 125.7 P&L line, booked, and why has the gap held at about INR M 380 in FY24 and FY25?"
+  - "What are the INR M 185.0 warranty and INR M 137.7 loss-order deductions labelled slump sale in the FY26 roll-forwards, and what P&L effect do they carry?"
+  - "After the Durgapur demerger, who will make the goods billed at INR M 247.0 internally, at what price, and which cost line will carry INR M 548.0 of Durgapur cost?"
+receivables_trend: "improving, two-year unwind: gross INR M 18,950.3 (Mar-24) / 13,489.2 / 8,260.5; net days 597/409/219 (calc; FY24 not like-for-like); aged >6m INR M 1,597.7 (8.4%) / 2,132.9 (15.8%) / 1,314.1 (15.9%); retention 11,965.9 / 8,574.1 / 4,751.7; allowance 1,959.1 / 1,759.7 / 635.9; FY26 release tied to BHEL cash INR M 3,430.6 (one-time size)"
+restatements_found:
+  - "FY25 continuing profit before tax re-presented from INR M (380.2) (AR25 p.168) to INR M 224.6 (AR26 p.132): INR M 604.8 of Durgapur cost moved to discontinued (employee 399.4, other expenses 181.6, depreciation 6.4, materials 17.4)"
+  - "FY25 line re-presentations: royalty 132.1 to 121.5, reimbursement 270.0 to 256.3, EDP 286.6 to 248.7, security 35.2 to 23.2"
+  - "Note 36 FY25 comparatives NOT re-presented (still include Gas/Hydro flows); Note 26 FY26 column repeats FY25 slump-sale deductions (185.0, 137.7)"
+going_concern_language: "NONE adverse. CARO clause (xix) no material uncertainty (auditor's report p.130-131, outside notes); 'going concern' elsewhere refers to the slump-sale and demerger transfers"
+analyst_note: "Pass 3 closed the three open items. (1) Royalty booking: no note names it; the word appears only in Notes 33 and 36; real cost likely inside cost of materials (inference), profit effect unproven. (2) Slump-sale deductions: closing balances tie only with them, values equal FY25 to one decimal, total 322.7 exceeds Durgapur block 280.3; the loss-order row flips sign under one label; P&L effect NOT STATED, bound nil to 299.2 on warranty. (3) INR M 247.0: continuing cost carries no matching charge (entity-level PBT ties 3,123.3 - 698.0 = 2,425.3; FY25 re-presentation moved cost lines only). The exposure is post-demerger supply cost, not misstatement. ICD: YELLOW on the Notice guarantee (outside notes); RED on the Notes alone. Net cash 8,473.1 with ICD, 3,973.1 without."

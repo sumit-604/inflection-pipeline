@@ -1,0 +1,55 @@
+stage: B00-inputs
+company: PREMEXPLN
+company_name: Premier Explosives Ltd
+run_date: 2026-11-15
+model: claude-fable-5-2   # orchestrator session model, inline stage 0
+status: complete
+spear: "Spear: OVERRIDE 2026-11-15 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+load_bearing_facts:   # from step1-business-brief.md; web leads, first verification priority, not anchored
+  - "Guidance vs delivery: FY27 guide Rs 600-700 cr revenue at 15-20% margin. H1 FY27 delivered Rs 247.84 cr at 9.3% EBITDA margin. The FY26 guide of Rs 500 cr delivered Rs 388 cr. Verify the H2 run rate against the filed segment results."
+  - "Cash conversion: FY26 operating cash flow Rs -1 cr against PAT Rs 45.8 cr. H1 FY26 PAT included Rs 28.96 cr other income. Verify the receivables, contract assets and other income notes in the FY26 annual report."
+  - "Control change and related parties: the Apollo Micro Systems SPA (9 Jul 2026, 41.33%, Rs 1,550 cr) is pending close. Apollo also owns IDL Explosives. Verify SPA terms, non-compete, board changes and post-close related-party transactions."
+  - "Safety and licences: accidents hit the Katepally rocket motor plant and the Peddakandukur flares plant, with licences suspended and later restored. Katepally recommissioning was targeted for Sept-Nov 2026. A Rs 18.9 cr export order was cancelled in April 2026 on licence refusal. Verify incident disclosures, licence status and export licence cover for the export book."
+sector_cap_row: "Defence / strategic"
+sector_cap: "38x"
+sector_cap_evidence: "section-1b chunk 05 sector cap table (.claude/skills/section-1b/references/05-sector-cap.md). /step1 Step D picked the row on web evidence (Defence and Space 86% of Q2 FY27 revenue, 96% of order book; unanchored). Two readings: (a) Defence / strategic 38x; (b) Specialty chemicals 35x if commercial explosives carry the earnings. The observation that separates them: the filed segment revenue and segment result split. Stage 0 re-checks against B04 and the filed segment note. Collector guess was 'Specialty chemicals'."
+reporting_units: {results: "INR Lakhs", annual_report: "INR Lakhs", screener: "INR Cr", rating: "INR (India Ratings web text; unit as printed)"}
+concalls_available: true
+no_concall_mode: false
+inventory:
+  prospectus: 0          # long-listed (screener concalls from 2015; listing date NOT FOUND); not expected, not a gap
+  annual-report: 2       # FY2025-26 (218 pp, Annual_Report_2026) and FY2024-25 (Annual_Report_2025)
+  results: 3             # Q2 FY27 (2026-11-12), Q1 FY27 (2026-08-13), Q4/FY26 audited (2026-05-29)
+  rating: 2              # India Ratings web-text captures (.txt): 2026-05-20 detailed rationale, 2026-07-21 Rating Watch Developing
+  concalls: 3            # Q3 FY26 (Feb 2026), Q4 FY26 (Jun 2026), Q1 FY27 (Aug 2026)
+  peer-concalls: 8       # SOLARINDS 4, ASTRAMICRO 4, BDL 0
+  announcements: 85
+  shareholding: 2        # NSE XBRL Sep 2026 (.xml) and a screener table capture (.txt, secondary)
+  research: 0
+  screening: 1           # screener-Data_Sheet.csv (main company only)
+  presentation: 1        # Q2 FY27 investor presentation (12 Nov 2026)
+  other: 2               # Q2 FY26 transcript (Nov 2025); SOLARINDS Sep 2026 Omnia acquisition call; preserved, never consumed
+input_gaps:
+  - "COLLECTOR: shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "COLLECTOR: screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "COLLECTOR: no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "COLLECTOR: no rating PDF yet: add later the same way"
+  - "REPAIRED at /step1: results (3 quarters, NSE), shareholding (NSE XBRL Sep 2026 plus screener capture), rating (India Ratings web text, 2 releases) and 70 further exchange filings (NSE) were fetched. The collector warnings above on shareholding, results and rating are closed, with the limits named below."
+  - "FRESHNESS: the Q2 FY27 concall transcript is ABSENT. The call was held 13 Nov 2026; only the audio link is filed. Expected source: BSE/NSE transcript filing or screener Documents, within days."
+  - "PEER CONCALLS: BDL has no transcripts on screener or in the NSE feed; 8 of 12 peer transcripts present (SOLARINDS 4, ASTRAMICRO 4)."
+  - "SCREENING: only the main company Data_Sheet CSV is present and populated ('Number of shares' row blank). P&L, Quarters, Balance Sheet, Cash Flow sheets are ABSENT (empty export); Data_Sheet carries the same raw series. No peer screening CSVs."
+  - "RATING: the two rating files are text captures of India Ratings web releases, not PDFs (the agency publishes web text). The 2026-05-20 release carries the full rationale."
+  - "ANNOUNCEMENTS: BSE API returned 403; the list came from NSE (16 Nov 2025 to 13 Nov 2026) plus six earlier items tagged prior-window. Nine open-offer attachments exist only as .zip and were not opened. No fire, accident or licence intimation exists in the 12-month feed; the 2025 intimations are the prior-window files."
+  - "OCR TEXT LAYER: the three results filings are scans with an OCR text layer; 12 announcement files were re-OCR'd. Check load-bearing figures on the PDF page, not only the .txt."
+  - "RESEARCH: empty. No broker notes collected."
+  - "EMPTY-FOLDER CONFIRMATION suppressed under /step1 (standing answer: proceed with the gaps). Empty folders: research, prospectus (not expected)."
+  - "TEXT ROUTE: every inputs/ PDF has a page-marked .txt beside it ([page N] markers), written by tools/extract_pdfs.py. Stages and verifiers read the .txt and open the PDF page where the text is garbled."
+freshness_pairs:
+  - {pair: "RESULTS to CONCALL", trigger_doc: "inputs/results/20261112-Q2FY27-results.pdf", mate_expected: "Q2 FY27 concall transcript (call held 13 Nov 2026)", status: FAIL, missing_doc: "Q2 FY27 concall transcript, Premier Explosives Ltd; expected source BSE/NSE transcript filing or screener Documents"}
+  - {pair: "RATING BULLETIN to RATIONALE", trigger_doc: "inputs/rating/20260721-IndRa-rating-watch-developing-PEL.txt", mate_expected: "full India Ratings rationale", status: PASS, missing_doc: "", note: "the 2026-05-20 release carries the detailed rationale; the 2026-07-21 release carries its own watch rationale"}
+  - {pair: "SEBI ORDER to ORDER TEXT", trigger_doc: "none identified at stage 0", mate_expected: "", status: PASS, missing_doc: "", note: "re-checked after stages 3 and 8"}
+  - {pair: "AR to LATEST AUDITED ANNUAL RESULTS", trigger_doc: "inputs/results/20260529-Q4FY26-results.pdf (FY26 audited)", mate_expected: "FY2025-26 annual report", status: PASS, missing_doc: ""}
+freshness_verdict: CORPUS GAPPED-FRESHNESS
+empty_folder_question: "suppressed by /step1 autonomy contract; defaults taken: run degraded per the DEGRADATION MAP"
+flags: []
+analyst_note: ""

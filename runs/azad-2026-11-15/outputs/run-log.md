@@ -40,3 +40,10 @@ Units: Q2FY27 results and AR FY26 financial statements are printed in INR millio
 - Verifier A shadow: NOT RUN here. Nine /step1 sessions run in parallel today and the single shadow run belongs to the TD Power session. .claude/shadow.yaml is left untouched by this run.
 - inputs/annual-report/ holds two ARs (FY2025-26 and FY2024-25; collector two-most-recent rule). Stages read FY2025-26 as the AR; FY2024-25 is passed as a prior-year reference only.
 - Stages 6 and 7 (dispatched together): both subagents stalled with "no progress for 600s (stream watchdog did not recover)" before writing any file. Mechanical failure (API timeout class, section 7). Both were resumed from their transcripts; this is retry 1 and does not count against any cap.
+- Stages 6 and 7 completed after the resume. Stage 9 ran after stage 7 (it consumes B04 and B07). Stage order run: 0; 1 and 2 (three passes); 3; 4, 5, 8 in parallel; 6 and 7 in parallel; 9; verifiers A, B, C (phase 1 scope), D in parallel; synthesis-lite; 09b.
+- Reports whose stage did not repeat its handoff block had the block file appended verbatim by the orchestrator (01-gate0.md). Errata and caveats the stages reported in their hand-backs were appended to each report (stages have no edit tool).
+- Cross-block figure conflicts are in outputs/blocks/conflicts.yaml (top-5 share settled at 47.0% calc; revenue basis settled; 344 days traced to CARE; subsidiary profit and net debt UNRESOLVED).
+- Verifier A identity check: no CRITICAL rows; nothing struck. Confidence overall 75.0, set by redflag_coverage. No REWORK; remediation_cycles 0; verifier_runs A 1, B 1, C 1, D 1.
+- Mechanical dossier check passed: six section headers in order, one corpus verdict line (CORPUS GAPPED), the DRAFT - PENDING OPERATOR SIGN-OFF marker, ten annex questions, corpus commit hash line e23ed3a7f2f377a012d5562cc9b26381ba966e1b.
+- Subagent dispatch: the harness runs subagents as background tasks with a completion notice. Each stage was proven complete from its report and block files on disk before any later stage read it.
+- Chrome browser fallback: not used; every main-company document came through the collector or direct HTTP.

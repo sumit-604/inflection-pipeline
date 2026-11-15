@@ -23,3 +23,31 @@ Token figures come from subagent result metadata. The harness exposes one total 
 | 12c | verifier-c-framework (phase 1 scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 165581 | 14m03s | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 67331 | 2m08s | 1 |
 | 13 | stage-13-synthesis (phase 1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 237402 | 13m04s | 1 |
+| 9b | stage-09b-dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 308034 | 13m02s | 1 |
+
+## SUMMARY (close-out, 2026-11-16)
+
+Ledger total (subagents only): 4,041,541 tokens over 20 runs.
+
+### (a) TOP FIVE BY TOKENS
+- stage-03-ardeep: 418,728 (10.4%)
+- stage-02-notes-pass: 357,272 (8.8%)
+- verifier-b-redflags: 308,243 (7.6%)
+- stage-09b-dossier: 308,034 (7.6%)
+- verifier-a-numerical: 288,042 (7.1%)
+
+### (b) DOWNSHIFT FAILURES
+none. stage-00-intake-check ran on claude-haiku-5-5 and verifier A on claude-sonnet-5-5, their frontmatter models. verifier-a-shadow did not run in this session (the single shadow run belongs to the TD Power session of the 2026-11-15 batch).
+
+### (c) COST SPIKES
+none. The prior run runs/azad-2026-07-12 has no session-cost.md ledger to compare with.
+
+### (d) OPERATOR SNAPSHOT
+SESSION TOTAL (/cost)
+
+
+### (e) FRESH VS RE-READ
+All 20 ledger rows carry n/a in the in_tok, cache_read, cache_write and out_tok columns (the harness exposes one total per subagent run), so all 20 rows are left out of the three sums below. Nothing is estimated.
+Fresh tokens (cache write + output + uncached input): n/a
+Re-read tokens (cache read): n/a
+Re-read multiple (re-read / cache write): n/a

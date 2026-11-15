@@ -1,0 +1,111 @@
+stage: B09-tam
+company: "AZAD"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: partial                  # searches skipped (see searches_skipped)
+input_gaps:
+  - "Carried from B00: five screener formula sheets absent; research/ empty; QIP placement document not collected; PTC Industries transcript June 2023 and stale."
+  - "NOT FOUND: component-level spend (outsourced, machined) for aero engine and defence parts at Azad's qualified part families; the EY report itself (not in corpus; only the prospectus extract and the Q2 FY27 deck slides)."
+  - "NOT FOUND: outsourced share of the oil and gas drilling and turbomachinery component market; EY report date behind the deck CY29 TAM figures."
+  - "NOT FOUND: per-plant utilisation, take-or-pay terms, civil vs defence split of A&D, Azad share of any single OEM part family (carried from B04 and B07)."
+  - "NOT FOUND: TTM PAT (H1 FY26 PAT not opened); P/E in the valuation line uses FY26 PAT."
+flags:
+  - {type: FLAG-TAM-CLAIM-INFLATED, reason: "Deck CY29 TAM claim totals Rs 343,000 Cr (A&D 219,000 + Energy 31,000 + Oil & Gas 93,000; Q2P [page 16]) = 4.15x the conservative TAM of Rs 82,653 Cr (6.31x against the single-peer floor). Above 2x reads inflated."}
+  - {type: FLAG-AD-TAM-IS-CUSTOMER-REVENUE, reason: "The A&D 'addressable market' (Rs 99k Cr 2022 to 153k Cr 2027, Prospectus [page 200]; Rs 1,190 bn 2023 to 2,190 bn 2029, Q2P [page 20]) is the revenue of five customers (Eaton, Boeing, Honeywell, GE Aerospace, HAL), not component spend. It is 64% of the deck claim and cannot be a TAM for machined parts."}
+  - {type: FLAG-AD-COMPONENT-SPEND-NOT-FOUND, reason: "No sourced figure exists in the corpus or found on the web for outsourced machined aero-engine component spend. The A&D leg of TAM is a peer floor (Howmet Engine Products Q3 2026 x4) and the A&D leg of SAM is derived from management's own wallet-share claim, so it is circular."}
+  - {type: FLAG-WALLET-SHARE-INCONSISTENT, reason: "'Under 2%' (Q2C [page 16]) vs 'single digit' (Q2C [page 17]) vs 'historically low single-digit' (AR26 [page 17]). SAM implied by 2% is a floor, not a measurement."}
+  - {type: FLAG-EY-VINTAGE, reason: "Third-party energy forecast (0% CAGR 2022-27, Prospectus [page 200]) pre-dates the 2025-26 order boom (GE Vernova gas backlog plus slot reservations 122 GW, 8-K 2026-10-28). Deck CY29 energy figure of Rs 31,000 Cr implies 4.7% a year from 2027, so the later EY run already moved up; growth is probably still understated."}
+  - {type: FLAG-CAPACITY-GAP, reason: "SOM yr3 Rs 1,300 Cr exceeds the B07 documented-asset capacity (Rs 770.9 Cr) by Rs 529.2 Cr; needs asset turnover 1.33x vs 0.790x. Management's own per-plant arithmetic (Rs 1,400 to 1,580 Cr for six plants plus existing) covers it at 82 to 93% utilisation, claim tier."}
+  - {type: FLAG-HOWMET-OVERLAP, reason: "Howmet Engine Products includes industrial gas turbine content (gas turbine revenue +45% yoy, Q3 2026 release), so the A&D floor and the energy TAM may overlap by an amount NOT FOUND. Conservative TAM could be overstated; floor-only reading is Rs 54,383 Cr."}
+  - {type: FLAG-ORDERBOOK-MIX, reason: "Order book Rs 6,500 Cr: AR26 [page 18] gives Energy 57% (Rs 3,705 Cr), A&D 29%, O&G 14%; CARE [page 2] gives Energy Rs 3,966 Cr (61.0%), Aerospace Rs 1,834 Cr (28.2%). Energy differs by Rs 261 Cr. Management called the figure 'not order backlog' in Nov (B05)."}
+market_definition: "Global annual spend on outsourced precision airfoils, rotating and stationary hardware and special machined parts for gas, steam and nuclear turbines, plus aero-engine and defence engine components, sold to qualified OEMs (oil and gas drilling and compressor leg not sizeable on current evidence)"
+tam_cr: {conservative: 82653, realistic: 85383}
+sam_cr: 26741
+sam_pct_of_tam: 32.4
+som_3yr_cr: 1300
+som_5yr_cr: 1490
+som_implied_revenue_cagr: {yr3: 29.2, yr5: 19.8}   # base FY26 Rs 602.98 Cr; yr3=FY29, yr5=FY31. Upper reading yr5 Rs 1,850 Cr = 25.1%; bear reading yr3 Rs 1,083 Cr = 21.6%
+current_sam_share_pct: 2.25
+revenue_headroom_x: 44.3
+tam_growth_pct: 7.5
+runway_class: "STRONG"
+mgmt_claim_cr: 343000
+mgmt_claim_ratio: 4.15
+mgmt_claim_read: "inflated"
+capacity_check: "gap of Rs 529 Cr on the B07 documented-asset basis (SOM yr3 Rs 1,300 Cr vs Rs 770.9 Cr at 0.790x turnover); SOM is the optimistic side on documented assets, the plant-throughput claim (Rs 1,400-1,580 Cr for six plants plus existing) is the optimistic side on evidence tier; Q3 and Q4 FY27 plant throughput separates them"
+methods_used: ["Method 1 top-down (EY via prospectus and deck, with subtractions)", "Method 2 bottom-up wallet-share inversion (revenue / stated share)", "Method 3 peer revenue aggregation (single peer, Howmet Engine Products, floor only)", "Method 5 OEM order-book demand cross-check (GE Vernova, Siemens Energy, MHI, Baker Hughes, Howmet)"]
+stale_data_flags:
+  - {datapoint: "Global energy turbine components Rs 27,167 Cr (2022) to Rs 28,270 Cr (2027 forecast, incl. industrial gas blades)", source: "Prospectus [page 172-173], [page 200], EY industry report", year: 2023}
+  - {datapoint: "Aerospace and defence addressable market Rs 99k Cr (2022) to Rs 153k Cr (2027)", source: "Prospectus [page 200], EY", year: 2023}
+  - {datapoint: "Drill bits Rs 28k Cr and downhole tools Rs 32k Cr (2022); direction only (data over 4 years)", source: "Prospectus [page 193-194], EY", year: 2023}
+  - {datapoint: "CY29 TAM Rs 2,190 bn / 310 bn / 930 bn; report date NOT STATED, footnote cites 9M 2024 orders", source: "Q2P [page 16], [page 20], [page 21], EY", year: 2024}
+  - {datapoint: "Gas and steam turbine OEM order share, H1 2022 (McCoy); direction only", source: "Prospectus [page 150-151]", year: 2022}
+searches_performed:
+  - "GE Vernova Q3 2026 gas power backlog slot reservation GW (WebSearch + WebFetch of SEC 8-K press release, 2026-10-28)"
+  - "Siemens Energy fiscal 2026 gas services backlog (WebSearch; secondary sources only)"
+  - "Howmet Aerospace Q3 2026 results engine products (WebSearch + WebFetch finviz press release)"
+  - "global gas turbine market size 2030 forecast (WebSearch; publisher figures range USD 14.0 to 88.1 bn, not used)"
+  - "Mitsubishi Heavy Industries gas turbine orders FY2026 (WebSearch; secondary)"
+  - "aerospace engine castings forgings airfoils outsourcing market size 2030 (WebSearch; no outsourced-airfoil figure found)"
+  - "rupee close November 2026 (WebSearch; PTI-based press close Rs 93.70 on 2026-11-11)"
+  - "Rolls-Royce Pratt Whitney GE Aerospace supplier constraints 2026 (WebSearch; GE Aerospace Q3 2026, CPP acquisition)"
+  - "Baker Hughes Q3 2026 Industrial and Energy Technology orders backlog (WebSearch; secondary)"
+  - "nuclear new build steam turbine Arabelle EDF 2026 (WebSearch; secondary)"
+searches_skipped:
+  - "Lucintel aircraft engine casting market page: HTTP 403; casting market figure (USD 12.80 bn 2024 to 18.95 bn 2030) PENDING LIVE VERIFICATION and not used"
+  - "Siemens Energy FY2026 primary earnings release (siemens-energy.com): not opened; backlog EUR 164 bn and Gas Services EUR 74 bn are from a secondary summary, PENDING LIVE VERIFICATION"
+  - "MHI primary FY2026 H1 release (mhi.com): not opened; backlog 32 to 35 GW differs by source"
+  - "RBI / FBIL reference rate for 2026-11-13: not found; press close used, PENDING LIVE VERIFICATION (telanganatoday.com 2026-11-11 report)"
+  - "IBEF, CRISIL, ICRA, Mordor, Ken, RedSeer market reports: not searched for an outsourced airfoil or machined-component figure; stage completes partial"
+  - "World Nuclear Association new-build and GW-under-construction data: not returned by search"
+downstream_candidates:
+  - signal: "GE Vernova gas equipment backlog plus slot reservations (GW), 122 GW at Q3 2026"
+    entity_type: "end-customer"
+    demand_link: "GE Vernova holds 3 of 6 dedicated Azad plants (50.9% of area); gas slots drive airfoil volumes."
+    likely_source: "SEC EDGAR 8-K and 10-Q, earnings call transcript (Registry Type 3)"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Siemens Energy Gas Services orders and backlog"
+    entity_type: "end-customer"
+    demand_link: "Siemens Energy is a dedicated-plant customer across gas and steam turbine airfoils."
+    likely_source: "Siemens Energy quarterly earnings release and half-yearly reports, IR page (Registry Type 3, EU)"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Mitsubishi Heavy Industries gas turbine orders and the hot-section LTCPA facility milestone"
+    entity_type: "end-customer"
+    demand_link: "MHI hot-section nozzle vanes are an 8-year single-source line; facility due about Mar-Apr 2027."
+    likely_source: "MHI TSE filings and IR library, English releases (Registry Type 3, Japan)"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Rolls-Royce, Pratt and Whitney Canada and Safran qualification acceptance and production orders"
+    entity_type: "end-customer"
+    demand_link: "Aero engine airfoils are the A&D growth leg; RR batch undelivered at 7 Nov 2026."
+    likely_source: "Rolls-Royce half-yearly report and RTX 10-Q; Safran half-year report; Azad exchange filings (Registry Type 3, Type 1)"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Howmet Engine Products revenue and gas turbine commentary (peer read-through of outsourced airfoil demand)"
+    entity_type: "counterparty"
+    demand_link: "Tests whether engine and gas turbine hardware demand and capacity tightness hold; Q3 2026 Engine Products USD 1,451 Mn, +33%."
+    likely_source: "SEC EDGAR 10-Q and earnings call transcript (Registry Type 3)"
+    cadence: "quarterly"
+    shared: false
+  - signal: "GTRE ATGG engine production order and MoD indigenisation policy"
+    entity_type: "regulatory"
+    demand_link: "Production order with count and value would turn a USD 16 Mn Phase 1 award into volume; engine test dates slipped."
+    likely_source: "PIB releases, Parliament questions (sansad.in), Azad exchange filings (Registry Type 4, Type 1)"
+    cadence: "event-driven"
+    shared: false
+  - signal: "BHEL and domestic thermal and nuclear orders (domestic share 12% of H1 FY27 revenue)"
+    entity_type: "end-customer"
+    demand_link: "Domestic revenue grew 2.5x to Rs 43 Cr; indigenisation holds or reverts toward 6%."
+    likely_source: "BHEL concall transcripts and exchange announcements (Registry Type 1)"
+    cadence: "quarterly"
+    shared: false
+  - signal: "USD/INR reference rate"
+    entity_type: "macro"
+    demand_link: "88 to 93% of revenue is exported in USD; rupee lift of 5 to 6% sits below EBITDA."
+    likely_source: "RBI / FBIL reference rate (Registry Type 7)"
+    cadence: "monthly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Three things a later stage cannot rebuild. (1) The A&D leg of management's TAM is customer revenue, so the 4.15x ratio is driven by a definitional error, not by a close call; the energy leg is within 1.1x of the third-party figure. (2) SAM of Rs 26,741 Cr = energy filtered from third-party lines (Rs 21,664 Cr, 75% gas-OEM proxy) plus A&D implied by the 2% wallet-share claim (Rs 5,078 Cr, circular). The unfiltered reading is Rs 76,047 Cr (share 0.79%); the gap sits wholly in A&D. SOM does not depend on SAM, it is capacity-bound: Rs 1,300 Cr yr3 (ARR, order book spread 1,083-1,300 a year, share rule top all agree) and Rs 1,490 Cr yr5 (six plants at Rs 150-180 Cr plus Rs 500 Cr existing). Upper reading yr5 Rs 1,850 Cr (25.1%) equals 25% a year for five years and needs the analyst Rs 1,800-1,900 Cr capacity sum or Phase 2. (3) Load-bearing fact 2: the market does not bind the Rs 1,300 Cr run-rate claim (share 4.4% of SAM at FY29); conversion and capacity do. FY27 guidance of 25% needs H2 only 2.2% above two flat Q2 quarters; the run-rate claim needs 9.3% sequential, which Q1 (+8.3%) and Q2 (+10.1%) matched."

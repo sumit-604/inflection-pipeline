@@ -38,3 +38,30 @@
 - BSE announcements API blocked curl and one endpoint (403); Python requests on AnnSubCategoryGetData worked.
 - The CRISIL rationale is a Chromium print of the HTML page; the original CRISIL PDF could not be fetched.
 - Newspaper-publication and trading-window announcements were skipped by design.
+
+## Step F addendum and Phase 1 run log (orchestrator, 2026-11-15)
+
+### Step F addendum
+- Chrome fallback on screener.in: not used. Every needed file came by direct HTTP. The one missing document, the Q2 FY27 call transcript, does not exist yet: screener lists only the audio recording, so a browser download could not supply it. Gap recorded after that check.
+- manifest.yaml: company name corrected from "Tdpowersys" to "TD Power Systems Ltd"; notes line rewritten; remediation_cycles and verifier_runs counters added; verifier_a_shadow: run added.
+
+### Checkout guard and gates
+- git fetch origin main OK; guard diff empty (origin/main b4ec38ce) before any framework file was read.
+- Spear gate: OVERRIDE line written in companies/TDPOWERSYS.md per the /step1 standing ruling.
+- LESSONS pre-read: no lesson tagged for sector "Cables / Industrial products"; no archetype declared yet (Mental Model unsigned).
+- Empty-folder confirmation: SUPPRESSED per the /step1 autonomy contract. Empty: prospectus (not expected), research.
+- Freshness pair check: results-to-concall FAIL (Q2 FY27 transcript). Verdict CORPUS GAPPED-FRESHNESS. Gate capped at PROCEED WITH CAVEATS.
+
+### Execution notes
+- EXECUTION DISCIPLINE: this harness launches every subagent in the background and notifies on completion; a blocking foreground call is not available. The completion check (report present and non-empty, block file present and parsing, block from this invocation) was applied to every stage and verifier before any later stage read its output. No stage failed the check. No re-invocation was needed.
+- Token ledger: the harness exposes total tokens and wall time only. Input, cache-read, cache-write and output columns are n/a for every row.
+- Stage 0 identity check (Haiku 5.5): 93 rows, 0 unreadable, 0 unidentified, 0 wrong issuer. 29 proposed folder changes; the orchestrator checked each first page and moved none (26 are exchange filings in announcements/ that enclose another document type; 3 are surplus older documents in other/).
+- Stage order: 1 and 2 pass 1 in parallel with the identity check; 2 pass 2; 2 pass 3; 3; then 4, 5, 8 in parallel; 9 after 4; 6 and 7 after 5. Stage 9 ran before stage 7, so its capex input came from B01, B03 and the filings, not from B07 (recorded in B09 input_gaps).
+- Stage 2 read FY24 comparatives from inputs/other/Annual_Report_FY2024-25_older.pdf (prior-year AR, outside the input contract). Figures are anchored to that file by name and page.
+- Stage 2 pass 3 wrote a stub YAML at the end of its report; the orchestrator appended the full block from B02-notes.yaml.
+- Stage 7 reported three anchor slips in its own report; the orchestrator appended them as errata.
+- B08 and B09 are status partial (web searches skipped; lists in the blocks).
+- Verifier A shadow: .claude/shadow.yaml read armed, set to spent and committed (e2a4f8de) before dispatch. Shadow ran on claude-haiku-5-5 beside Verifier A. Comparison table: shadow/verifier-a-comparison.md. Its findings count for nothing.
+- Verifier A identity check: 0 CRITICAL rows, nothing struck. No REWORK trigger. remediation_cycles stays 0. verifier_runs A 1, B 1, C 1, D 1.
+- FLAG-DISAGREEMENT watch (cross-block figures): Q2 FY27 order inflow appears as Rs 822.4 cr and Rs 824.4 cr. The source deck prints 8,224 Mn on slide 26 and 8,244 Mn on slide 28, so the conflict is in the source, not in a block. Promoter holding at 30 Sep 2026 appears as 27.16% (Reg 31, B01 and B08) and 26.5% (deck slide 36, post-QIP denominator, B04, B05, B07); Verifier A logged the unlabelled basis as a MINOR finding. Both go to stage 10 as conflicts to settle at the source.
+- Open items for Halt 1: B12c C-G05 (Gate 0 ROCE proxy; strict reading core 39); seven open Verifier A source-fidelity findings (1 MAJOR, 6 MINOR, none on a Gate 0 input); B12b F1 and F2.

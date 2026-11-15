@@ -10,8 +10,8 @@ global OEMs; a climb only if inflow holds near Rs 750-800 cr a quarter and cash
 conversion follows profit.
 
 ## DECISION STATUS AND ENTRY ZONE
-DRAFT — Step-1 intake only, 2026-11-15. No decision. No entry zone. CMP and
-market cap: runs/tdpowersys-2026-11-15/manifest.yaml. Set at Halt 1 and later
+DRAFT — Step-1 intake only, 2026-11-15. No decision. No entry zone. CMP Rs 638,
+market cap about Rs 20,494 cr (manifest, run date). Set at Halt 1 and later
 phases.
 
 ## SPEAR
@@ -43,7 +43,10 @@ DRAFT — unsigned. The operator signs at Halt 1. Do not run /fttcp or /finalize
 on an unsigned model.
 
 ## HALT 1 GATE
-Not yet reached. Set at Halt 1.
+Halt 1 reached 2026-11-15 (Phase 1 gate recommendation: PROCEED WITH CAVEATS,
+corpus verdict CORPUS GAPPED-FRESHNESS: Q2 FY27 call transcript not yet filed).
+Dossier: runs/tdpowersys-2026-11-15/outputs/reports/09b-understanding-dossier.md.
+Operator decisions pending.
 - Mental Model signed: NOT SIGNED
 - Halt 1 decision (KILL/SHALLOW/PROCEED): pending
 

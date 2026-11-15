@@ -24,3 +24,31 @@ Per-stage token ledger, from subagent result metadata. This harness exposes only
 | 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 321092 | 15m09s | 1 |
 | 12c | verifier-c-framework-phase1 | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 199455 | 17m54s | 1 |
 | 13 | synthesis-lite | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 211083 | 11m19s | 1 |
+| 9b | halt1-dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 322003 | 13m00s | 1 |
+
+## Close-out summary (Phase 1)
+
+Run total, subagents only: 4,985,895 tokens over 21 ledger rows.
+
+### (a) TOP FIVE BY TOKENS
+1. notes (3 passes): 646,725 (13.0% of run total)
+2. ardeep: 455,522 (9.1% of run total)
+3. peers: 350,236 (7.0% of run total)
+4. verifier-a-numerical: 350,183 (7.0% of run total)
+5. halt1-dossier: 322,003 (6.5% of run total)
+
+### (b) DOWNSHIFT FAILURES
+none. stage-00-intake-check ran on claude-haiku-5-5, verifier A on claude-sonnet-5-5, verifier-a-shadow on claude-haiku-5-5, each as set in its agent frontmatter (the Haiku and Verifier A reports state their model; the harness does not print the served model).
+
+### (c) COST SPIKES
+none. No prior run exists for this ticker.
+
+### (d) OPERATOR SNAPSHOT
+SESSION TOTAL (/cost)
+
+
+### (e) FRESH VS RE-READ
+All 21 ledger rows carry n/a in the input, cache-read, cache-write and output columns (the harness exposes total tokens only), so all 21 rows are left out of the three sums below.
+Fresh tokens (cache write + output + uncached input): n/a
+Re-read tokens (cache read): n/a
+Re-read multiple (re-read / cache write): n/a

@@ -1112,3 +1112,13 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+
+## 2026-11-15 · AZAD · /step1 intake, Phase 1 to Halt 1 (runs/azad-2026-11-15)
+- Collector: peers PTCIL, MTARTECH, UNIMECH returned 0 files (screener rate limit, nine parallel sessions); peer transcripts came by direct BSE download. Hard-coded REPO_ROOT and headed Chromium needed a scratch wrapper and a headless hook again.
+- PTC Industries files no transcripts on BSE or NSE; one stale June 2023 document held. Peer selection should check transcript availability first.
+- Stages 6 and 7 stalled together on a 600s stream timeout with nothing written; both resumed from transcript and finished. Wall time lost: about 6 hours unattended.
+- Stage 1 wrote its block file but not the fenced block in its report; orchestrator appended it.
+- Three stages read working-capital days three ways (company 244, CARE 344, stage calc 336/369); the July tripwire 344 is CARE's basis, found only at stage 4. A tripwire in companies/<TICKER>.md should name its source and basis.
+- Subagent token split (input, cache, output) is not exposed in this harness; session-cost.md carries totals only, so the re-read multiple is n/a.
+- Company memory named an open SEBI PIT matter; stage 8 found no trace in corpus or web. Origin of the memory line unknown.

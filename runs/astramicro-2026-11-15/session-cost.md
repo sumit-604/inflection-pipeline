@@ -20,3 +20,7 @@ subagent, so the split columns are n/a, never estimated.
 | 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 280,372 | 7m28s | 1 |
 | 7 | stage-07-emoat | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 293,741 | 11m37s | 1 |
 | 9 | stage-09-tam | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 210,820 | 10m58s | 1 |
+| 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 493,633 | 14m12s | 1 |
+| 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 303,729 | 17m01s | 1 |
+| 12c | verifier-c-framework (phase 1: Gate 0 + EM) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 188,989 | 15m24s | 1 |
+| 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 65,289 | 1m32s | 1 |

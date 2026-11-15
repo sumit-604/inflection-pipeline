@@ -64,3 +64,7 @@ None. No Chrome fallback was needed.
 - Stage 7: 3 late notes appended as ERRATA (one page anchor; two method notes).
 - Stage 9: status partial (Bain link dead, MarketsandMarkets 403, IBEF/CRISIL/ICRA/Mordor not fetched, no Nov 2026 FX rate). 4 late corrections appended as ERRATA; block analyst_note figures corrected on the agent instruction.
 - Verifiers: A, B, C (Gate 0 + EM scope), D dispatched together, each with artifact paths only. Shadow not run (see above). .claude/shadow.yaml read: armed; left untouched for the TD Power session.
+- Verifiers returned. A: 0 CRITICAL, 1 MAJOR, 6 MINOR, acceptance 97.3, mandatory 234 of 234. B: 0 CRITICAL, 4 MAJOR, 10 MINOR, acceptance 91.7 (caught-only sensitivity 58.3, reported not applied). C phase 1: 40 of 46 rules, 87.0, 1 MAJOR (em_score recomputed 19.2 vs 16.5, band unchanged). D: 100 on 2 peers. All four completion checks passed; verifier_runs set to 1 each in the manifest.
+- Verifier A identity check: no CRITICAL rows; nothing struck by the orchestrator.
+- Confidence delta: overall 87.0, set by framework_adherence (phase-1 portion); peer_utilisation NOT APPLICABLE (2 peers). No REWORK trigger; remediation_cycles stays 0.
+- Disagreement set for synthesis: none so far (no downstream step has contested a Verifier A source-fidelity finding).

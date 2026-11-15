@@ -1,0 +1,61 @@
+stage: B08-promoter
+company: "KPL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "Kaler Biopharmachem and Iair Infocom ownership and directors: only aggregator data (Kaler: Ramesh Arora DIN 00462656 and Deepak Bansal DIN 09226818); Iair directors NOT FOUND; MCA not reachable, PENDING LIVE VERIFICATION"
+  - "Q2 FY27 concall transcript absent, so the analyst's company-secretary claim cannot be read at source"
+  - "CRISIL current rating status NOT FOUND; reason for rating non-cooperation NOT FOUND"
+  - "Prashanth Vellanki status NOT FOUND (still on AR list, absent from 31 Aug 2026 AGM attendance, no resignation filing)"
+  - "Promoter pledge 3-year trend NOT FOUND (AR silent; BSE summary Sep 2026 only)"
+  - "Court records (eCourts, HC, NCLT), SEBI enforcement database, proxy advisor reports, SCORES counts, audit fee split NOT SEARCHED or NOT FOUND"
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 4, caution: 5, red: 1}
+deal_breakers:
+  - "AUDITOR RESIGNATION WITHIN 3 YEARS: Vijay Mehra & Co. (FRN 001051N), appointed 24 Sep 2024, resigned 12 Nov 2026, reason 'Due to Pre-occupation in other assignments'; replaced same day by B S R & Co. LLP, subject to member approval (BSE Reg 30 outcome 12 Nov 2026, ANN 20261112-4a20fb35 p.1-2, 19-23)"
+  - "MULTIPLE MID-TERM INDEPENDENT EXITS WITHIN 3 YEARS: Kiran Kumar Verma 26 Jul 2025 and Kartik Kapur 2 Jun 2026, both 'other professional commitments' (AR p.64; ANN 20260602-5daf24b4 p.1, 4-5)"
+adverse_findings:
+  - {finding: "Statutory auditor resigned mid-term, about 25 months into a 5-year term, stock reason, same-day replacement by BSR & Co. LLP; Board states no concerns raised", evidence_tier: "VERIFIED", source: "BSE Reg 30 outcome, ANN 20261112-4a20fb35 p.1-2, 19-23", date: "2026-11-12"}
+  - {finding: "Two director-interested counterparties new in FY26 (Kaler sale 121.48, return 262.75; Iair 20.25 + 6.40 INR lakhs) while Board report says no conflict; aggregator data lists MD (DIN 00462656) and Deepak Bansal (9.24% public holder) as Kaler directors", evidence_tier: "VERIFIED for Note 41 flows; UNVERIFIED for Kaler directors (aggregator)", source: "AR Note 41 p.170-171; Board report p.77; registrationwala.com Kaler page; AR Note 15c p.144", date: "2026-08-08 (AR); aggregator fetched 2026-11-16"}
+  - {finding: "Two independent directors resigned mid-term within 11 months; Kapur 4.5 months into a second term, attended 1 of 12 meetings; Vellanki 1 of 12 and status unresolved", evidence_tier: "VERIFIED", source: "AR p.61-64; ANN 20260602-5daf24b4", date: "2026-06-02"}
+  - {finding: "Five-member family executive bloc including a 32-year-old B.Com CFO who sits on the Audit Committee", evidence_tier: "VERIFIED", source: "AR p.29, 61-62; ANN 20260202-1c9baff5 Annexure B", date: "2026-08-08"}
+  - {finding: "Issuer Not Cooperating status with ICRA (28 Aug 2023 to 7 May 2026) and CRISIL (to at least 25 Sep 2025); reason NOT FOUND; ended by ICRA upgrade to BBB+", evidence_tier: "VERIFIED (ICRA filing); MEDIA for CRISIL dates", source: "ICRA rationale in ANN 20260508-1ab08dfa p.1, 5-6; Trendlyne credit ratings page (search extract)", date: "2026-05-07"}
+  - {finding: "Pakistan DRAP recall alert listing a Kwality Pharmaceuticals ketamine injection batch GN1359 as substandard", evidence_tier: "VERIFIED (regulator alert)", source: "dra.gov.pk recall alert I/S/03-25-33", date: "2025-03-27"}
+  - {finding: "Web text attaching ED attachment Rs 442.85 crore and SEBI insider-trading order to KPL concerns Kwality Ltd (dairy), a different company; not a KPL finding", evidence_tier: "UNVERIFIED (conflation)", source: "whalesbook.com article; livelaw and business-standard search extracts", date: "2026-03-30"}
+transition_evidence:
+  - "B S R & Co. LLP appointed statutory auditor 12 Nov 2026 (member of B S R & Affiliates), not yet ratified by members (ANN 20261112 p.2, 23)"
+  - "ICRA upgrade to BBB+ (Stable)/A2 and removal from Issuer Not Cooperating, 7 May 2026 (ANN 20260508 p.1)"
+  - "Independent bench rebuilt: Sharma Jul 2025, Bedi Jan 2026, Mahajan Jan 2026 (Audit Chair), Kapoor Jun 2026; credentials beyond filing profiles NOT FOUND (AR p.33-34, 61-65; ANN 20260602)"
+  - "Promoter holding 54.83% to 54.87% by Mar 2026, no pledge (BSE summary Sep 2026; AR p.83)"
+pledge_pct_latest: 0
+pledge_trend: "nil at Sep 2026 (BSE summary, 'pledged or otherwise encumbered: No'); promoter group 5,693,069 sh 54.87% Mar 2026 to 5,692,888 sh 54.86% Sep 2026; 3-year trend NOT FOUND"
+searches_performed:
+  - "Kwality Pharmaceuticals Vijay Mehra auditor resignation BSR Nov 2026"
+  - "Kaler Biopharmachem Private Limited directors"
+  - "Iair Infocom Private Limited Amritsar directors"
+  - "Kwality Pharmaceuticals SEBI order OR penalty OR show cause notice Ramesh Kumar Arora"
+  - "Kwality Pharmaceuticals Amritsar GST DRI income tax raid OR ED OR court case"
+  - "tofler IAIR INFOCOM PRIVATE LIMITED Punjab"
+  - "Kwality Pharmaceuticals company secretary Gurpreet Kaur resign 2026"
+  - "Kwality Pharmaceuticals Q2 FY27 concall auditor resignation analyst question"
+  - "Iair Infocom Pvt company India CIN"
+  - "Deepak Bansal Kwality Pharmaceuticals shareholder Kaler Biopharmachem"
+  - "Kwality Pharmaceuticals promoter Ramesh Arora Ajay Arora profile"
+  - "Kwality Pharmaceuticals promoter shares sold gift insider trading"
+  - "Kwality Pharmaceuticals warning letter recall NSQ banned WHO"
+  - "Kwality Pharmaceuticals AmbitionBox Glassdoor"
+  - "Prashanth Vellanki Kwality resigns"
+  - "valuepickr Kwality Pharmaceuticals governance"
+  - "Crisil Kwality Pharmaceuticals issuer not cooperating"
+  - "WebFetch: registrationwala Kaler; tofler KPL directors; dra.gov.pk recall; whalesbook 2026-03-30; valuepickr page 4"
+searches_skipped:
+  - "qorpiq.com Kaler page: HTTP 403"
+  - "dot.gov.in iAir Infocom licence termination letter: HTTP 403, date and signatories NOT FOUND"
+  - "enforcementdirectorate.gov.in Kwality press release: HTTP 404"
+  - "business-standard ED article: HTTP 403"
+  - "MCA master data for Kaler and iAir: not reachable, PENDING LIVE VERIFICATION"
+  - "SEBI enforcement database by name; NCLT, eCourts, High Court records; CDSCO NSQ lists by name; IiAS/SES/InGovern; SCORES counts; AGM dissent percentages"
+verdict_basis: "Clean legal and pledge record, offset by a family-run board with two mid-term independent exits, a mid-term auditor resignation (benign on its face, same-day BSR replacement), and two director-interested counterparties whose ownership is undisclosed; two 6C deal-breakers recorded."
+analyst_note: "Fact 2: the auditor resignation is real and read in full. The letter gives only 'pre-occupation'; no concern was disclosed; the outgoing firm signed the Q2 review the same day; BSR & Co. LLP replaced it, pending member approval within three months. The step-1 brief said KPMG; the filing says BSR & Co. LLP. The company secretary resignation is not in any filing and Gurpreet Kaur signed on 14 Nov 2026. Beware the name collision: ED and SEBI actions on 'Kwality' belong to Kwality Ltd (dairy). One Whalesbook article wrongly attaches them to KPL. Kaler directors (MD DIN 00462656 and Deepak Bansal, the 9.24% public holder) rest on aggregator data; Bansal's overlap is an [INFERENCE] of a possible concert link. Separating observation: BSR's first report and MCA data."

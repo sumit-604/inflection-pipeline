@@ -1112,3 +1112,14 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+## 2026-11-15 · PREMEXPLN /step1 intake + phase 1 (runs/premexpln-2026-11-15)
+- Collector: BSE announcements API returned 403 to scripts; the announcement list came from the NSE feed. Rating agency publishes web text only (no PDF). Screener export sheets empty again (Data_Sheet only); no peer screening CSVs.
+- Corpus: Q2 FY27 concall transcript not yet filed (call 13 Nov 2026), so the run is CORPUS GAPPED-FRESHNESS. BDL has no transcripts; 8 of 12 peer transcripts. One other-issuer results extract sat in announcements/ (moved to other/). The same filings arrived from both BSE and NSE (10 duplicate pairs); the intake check cost 211,120 tokens on 109 documents.
+- Stages 6 and 7 stalled once (stream watchdog, 600s). Stage 6 had already written a complete report and block and was accepted from disk; stage 7 was re-invoked once.
+- Stage 2 read the receivables ageing wrong (over-two-year sum labelled as over one year); stage 3 caught it, Verifier A confirmed MAJOR, orchestrator corrected at source. Stage agents cannot edit their reports; four errata were appended by the orchestrator.
+- No stage read the H1 FY27 cash flow statement in the Q2 FY27 results filing; FLAG-CASH stayed INDETERMINATE for that reason. Stage 5 or stage 1 should read the half-year cash flow when the newest results filing carries one.
+- Verifier C: prompts/12-verifiers-pipeline.md line 379 holds patch text instead of the YAML key (business_understanding_narrative). OPEN: fix on a framework branch, not this run branch.
+- Verifier C: stage 7 scored a documented investor event (H2) at the documented multiplier and scored an existing moat (B2) as emerging; class MODEST against NONE. Left for Halt 1; no remediation cycle run.
+- Verifier A shadow not run here (belongs to the TD Power session, operator batch instruction).
+- session-cost: harness exposes only total tokens per subagent; fresh vs re-read split n/a. No DOWNSHIFT FAILURE, no COST SPIKE.

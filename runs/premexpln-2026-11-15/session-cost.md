@@ -23,3 +23,30 @@ Per-subagent token ledger. The harness exposes only total tokens and wall time p
 | 12a | verifier A numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 254,888 | 8m57s | 1 |
 | 12b | verifier B redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 345,724 | 13m56s | 1 |
 | 12c | verifier C framework (phase 1) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 159,062 | 13m59s | 1 |
+| 13 | synthesis-lite | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 188,660 | 10m50s | 1 |
+| 9b | halt 1 dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 330,197 | 17m37s | 1 |
+
+## SUMMARY (close-out, step 6c)
+
+Run total over ledger rows with a reported figure: 3,541,082 tokens (20 rows; 2 rows n/a: stage 6 run 1 and stage 7 run 1, both stalled before usage was reported). /step1 intake rows (S1-BCD, S1-F) are inside the total: 336,833. Phase 1 rows: 3,204,249.
+
+(a) TOP FIVE BY TOKENS
+1. Stage 2 notes triple-pass (3 passes summed): 444,628 = 12.6%
+2. Stage 3 AR deep dive: 430,121 = 12.1%
+3. Verifier B red flags: 345,724 = 9.8%
+4. Stage 9b Halt 1 dossier: 330,197 = 9.3%
+5. Verifier A numerical: 254,888 = 7.2%
+
+(b) DOWNSHIFT FAILURES: none. stage-00-intake-check ran on claude-haiku-5-5; verifier A ran on claude-sonnet-5-5; verifier-a-shadow did not run (the single shadow run belongs to the TD Power session).
+
+(c) COST SPIKES: none (no prior run for PREMEXPLN).
+
+(d) OPERATOR SNAPSHOT
+SESSION TOTAL (/cost)
+
+
+(e) FRESH VS RE-READ
+The harness reports only total tokens and wall time per subagent. The input, cache-read, cache-write and output split is n/a on every row, so all 22 rows are left out of the three sums.
+Fresh tokens (cache write + output + uncached input): n/a (22 rows left out)
+Re-read tokens (cache read): n/a (22 rows left out)
+Re-read multiple (re-read / cache write): n/a (22 rows left out)

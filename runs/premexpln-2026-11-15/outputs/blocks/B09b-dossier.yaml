@@ -1,0 +1,74 @@
+stage: B09b-dossier
+company: "PREMEXPLN"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "Q2 FY27 concall transcript, Premier Explosives Ltd (call held 13 Nov 2026)"
+    expected_source: "BSE or NSE transcript filing; screener Documents; company IR page"
+    kind: "freshness-pair"
+  - document: "Annual report FY2023-24 (third year of three)"
+    expected_source: "BSE; company IR page"
+    kind: "findable-missing"
+  - document: "SEBI Adjudication Order of 31 Oct 2017 (Amarnath Gupta, Premier Explosives), text"
+    expected_source: "sebi.gov.in"
+    kind: "findable-missing"
+  - document: "Company disclosure of 4 Nov 2025 on the SEBI insider-trading communication of 3 Nov 2025"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Apollo SPA text, Detailed Public Statement (16 Jul 2026), Letter of Offer; nine open-offer zip attachments unopened; Reg 29(1) acquirer name illegible"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Screener Profit & Loss, Quarters, Balance Sheet, Cash Flow sheets (empty export)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "BDL transcripts (customer-side PSU view)"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Broker or research notes"
+    expected_source: "rating agency site"
+    kind: "plausibly-nonexistent"
+  - document: "Segment profit or margin by line (company files one Ind AS 108 segment)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "PESO licence orders (suspension and restoration) and licence numbers"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Defence and space products and services (81% of FY26 revenue; ISRO O&M inside)"
+    archetype: "Build-to-spec component maker"
+  - line: "Commercial explosives (19% of FY26 revenue)"
+    archetype: "Commodity converter"
+transition:
+  - line: "Defence and space products"
+    from_tier: "Between R1 and R2 (FY26 EBITDA before other income 10.0%; ROCE ex other income 8.7%; median ROCE 8.2%; pricing power moderate)"
+    to_tier: "R3 value-added spec'd supplier (management states 15-20% EBITDA on three calls; spec-in on Akash, MRSAM, LRSAM, Astra, Agni)"
+    engine: "Katepally and Peddakandukur capacity commissioned (Rs 60 Cr programme, in-house RDX/HMX and rocket motor plant lowering material cost) plus conversion of the Rs 1,642 Cr, 96% defence order book through inspection clearance and licences"
+    proof_gate: "In both Q3 FY27 and Q4 FY27: EBITDA before other income above 15%, quarterly revenue at or above Rs 170 Cr, material cost below 60% of revenue; companion test FY27 CFO above 0.7x EBITDA"
+    recognition_gap: "OPEN QUESTION for Stage 11 via the PE gap: whether the R3 TO state already looks reflected in market pricing; no number stated; CMP NOT FOUND in the corpus"
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "Q3 FY27 revenue below Rs 130 Cr or Q3 FY27 EBITDA before other income below 12%; refusal or cancellation of the Rs 350.23 Cr export licence; a third plant stoppage or licence suspension at Katepally"
+dominant_variables:
+  - "Order-book conversion pace (quarterly revenue against Rs 170 Cr; Rs 430 Cr MoD order execution)"
+  - "EBITDA margin before other income with the material cost ratio (Q2 FY27 11.9%, material cost 65.1%)"
+  - "Plant and licence availability including export licences (PESO, TGPCB, Rs 350.23 Cr export order)"
+  - "Cash conversion (CFO against EBITDA and PAT; receivables past six months)"
+business_falsifier: "A filed segment result or FY27 AR disclosure showing earnings come from commercial explosives and not defence products, or loss of the spec-in position on the named missile programmes (Akash, MRSAM, LRSAM, Astra, Agni)"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 6
+  verifiability_ratio: "3 of 6 externally observable"
+  single_point_failure: "PESO licence suspension at Katepally (halts conversion of the defence book at that plant)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 4
+research_brief_items: 16
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "d799b834f2572bd474d34a400fae736cecd03d4b"

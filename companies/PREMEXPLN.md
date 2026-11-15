@@ -16,8 +16,10 @@ Load-bearing facts (the run's first verification priority; web leads, not anchor
 4. Safety and licences: accidents hit the Katepally rocket motor plant and the Peddakandukur flares plant, with licences suspended and later restored. Katepally recommissioning was targeted for Sept-Nov 2026. A Rs 18.9 cr export order was cancelled in April 2026 on licence refusal. Verify incident disclosures, licence status and export licence cover for the export book.
 
 ## HALT 1 GATE
-- Mental Model signed: NOT SIGNED
+- Mental Model signed: NOT SIGNED (draft in runs/premexpln-2026-11-15/outputs/reports/09b-understanding-dossier.md)
 - Halt 1 decision (KILL/SHALLOW/PROCEED): pending operator
+- Phase 1 result 2026-11-15 (memory, not a ruling): gate recommendation PROCEED WITH CAVEATS; corpus CORPUS GAPPED-FRESHNESS (Q2 FY27 concall transcript absent; call held 13 Nov 2026); fragility FRAGILE; phase-1 confidence 73 set by redflag_coverage.
+- Open for the operator: sector cap row (manifest "Defence / strategic"; alternative "Specialty chemicals"; segment result NOT FOUND); cash determination INDETERMINATE (H1 FY27 cash flow sits in the Q2 FY27 results filing, read only in the dossier annex); promoter verdict CONCERN (stage 8 partial); Emerging Moat class MODEST against Verifier C's NONE (C-E12, C-E13); SEBI adjudication order of 31 Oct 2017 text absent.
 
 ## OPERATOR RULINGS
 - 2026-11-15: Step-1 intake run; peers auto-selected; empty folders accepted as gaps.

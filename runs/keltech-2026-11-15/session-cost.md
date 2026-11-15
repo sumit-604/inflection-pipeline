@@ -27,3 +27,41 @@ cache-read, cache-write and output splits are not exposed and are written n/a, n
 | 12b | verifier-b-redflags (stalled, no output) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | n/a | stalled >10m | 1 |
 | 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 320666 | 18m38s | 2 |
 | 13 | stage-13-synthesis (phase 1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 188048 | 10m01s | 1 |
+| 9b | stage-09b-dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 199508 | 8m57s | 1 |
+
+## Close-out summary (2026-11-16)
+
+Run total over every ledger row with a figure: 3,481,237 tokens (23 rows; 3 stalled verifier rows carry n/a).
+total_tok is the harness figure reported per subagent at completion (subagent_tokens). The harness exposes no input, cache or output split.
+
+### (a) TOP FIVE BY TOKENS
+
+| rank | stage | total_tok | share of run |
+|---|---|---|---|
+| 1 | 2 stage-02-notes-pass (3 passes) | 431,162 | 12.4% |
+| 2 | 3 stage-03-ardeep | 337,017 | 9.7% |
+| 3 | 12a verifier-a-numerical | 329,096 | 9.5% |
+| 4 | 12b verifier-b-redflags | 320,666 | 9.2% |
+| 5 | 6 stage-06-peers | 202,805 | 5.8% |
+
+### (b) DOWNSHIFT FAILURES
+
+none. stage-00-intake-check ran on claude-haiku-5-5 and verifier A on claude-sonnet-5-5, per the model field of their blocks and the agent frontmatter. verifier-a-shadow did not run in this session (batch instruction: the single shadow run belongs to the TD Power session).
+
+### (c) COST SPIKES
+
+none. No prior run exists for this ticker.
+Note for LESSONS open action C2: stage 5 in no-concall mode used 174,554 tokens against the 100k target.
+
+### (d) OPERATOR SNAPSHOT
+
+SESSION TOTAL (/cost)
+
+(paste /cost output here)
+
+### (e) FRESH VS RE-READ
+
+All 21 ledger rows carry n/a in the in_tok, cache_read and cache_write columns, so all 21 rows are left out of the sums.
+Fresh tokens (cache write + output + uncached input): n/a (21 rows left out)
+Re-read tokens (cache read): n/a (21 rows left out)
+Re-read multiple (re-read / cache write): n/a (21 rows left out)

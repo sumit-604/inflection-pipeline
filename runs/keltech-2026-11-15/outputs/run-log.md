@@ -44,3 +44,7 @@ Gaps:
 - No REWORK trigger. No remediation cycle run (remediation_cycles stays 0).
 - Confidence delta overall 78, set by redflag_coverage. OPEN ITEM for Halt 1: Verifier B's strict count without partially caught items is 55.6%; the orchestrator used the emitted 78 and did not re-score.
 - Verifier A corrections F1 to F7 prepended to the affected stage reports; all verifier corrections collected in outputs/reports/ERRATA-verifier-corrections.md. Stage blocks keep the stage text; the errata file governs.
+- Synthesis-lite wrote the three outputs/final files. Gate recommendation: PROCEED WITH CAVEATS (FLAG-CASH INDETERMINATE). B08 and B09 partial.
+- Stage 09b dossier passed the mechanical check on the first run: six section headers in order, one corpus verdict line (CORPUS GAPPED), the DRAFT marker in Section 2, ten annex questions, corpus commit hash line 98d54e13.
+- Close-out summary appended to session-cost.md. Token splits are not exposed by the harness; only totals and wall time are recorded.
+- Halt 1 reached. Nothing after Halt 1 was run.

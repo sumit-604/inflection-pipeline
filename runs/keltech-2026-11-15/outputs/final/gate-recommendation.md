@@ -141,3 +141,5 @@ The valuation decision, entry range, margin of safety price, both destination PE
 ## Publish check
 
 No publish candidate this analysis.
+
+> ORCHESTRATOR NOTE (2026-11-16): stage 09b ran after this file, as the sequence requires. The Halt 1 dossier now exists at outputs/reports/09b-understanding-dossier.md (corpus verdict CORPUS GAPPED; fragility read FRAGILE; Mental Model DRAFT - PENDING OPERATOR SIGN-OFF). The open item that says the dossier was not found is closed. Every other open item stands.

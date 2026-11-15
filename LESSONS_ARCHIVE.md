@@ -1112,3 +1112,14 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+## 2026-11-15 KELTECH (/step1 intake to Halt 1; runs/keltech-2026-11-15)
+- Collector: headed Chromium failed; headless hook worked. It found no AR, results, rating or shareholding for a BSE-only name that resolves on screener by BSE code (506528). Direct HTTP from BSE and CRISIL repaired all but the filed shareholding pattern (BSE Access Denied).
+- Results text layers were garbled (Q2 FY27, Q4 FY26) and Q1 FY27 was scanned. Three Verifier A MAJORs were digit misreads from the garbled twins. Fix: OCR the results PDFs when check_extraction passes them but the embedded layer is itself OCR.
+- Verifiers A, B and C stalled once (harness stream watchdog, 600s) and were re-invoked. Mechanical, not counted.
+- B06 block file ended with a stray markdown fence; one line removed by the orchestrator.
+- Stage 5 no-call cost 174,554 tokens against the 100k target (open action C2 measured: target missed).
+- Verifier B sensitivity: 78% with partially caught items, 55.6% without. No rule says which count binds OR-29. Needs an operator ruling; carried to Halt 1.
+- The harness exposes only total tokens per subagent; session-cost.md has no cache split and no re-read multiple.
+- Step B brief carried two wrong AR page cites and a wrong 'other revenue' figure; stages caught them. Stage 09b and stage 3 asked for an edit tool to fix their own slips.
+- Verifier A shadow not run here (belongs to the TD Power session of this batch).

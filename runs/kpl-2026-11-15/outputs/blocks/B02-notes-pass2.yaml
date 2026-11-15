@@ -1,0 +1,20 @@
+stage: B02-notes-pass2
+company: "KPL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+pass: 2
+input_gaps: []
+report_path: runs/kpl-2026-11-15/outputs/reports/02-notes-pass2.md
+unit: "INR lakhs (AR face); derived percentages and ratios unit-free"
+pass_2_empty: false
+new_findings_count: 18
+headline_new_findings:
+  - "FY25 CFO includes 1,876.75 ST borrowing (177.52 + 1,876.75 = 2,054.27); like-for-like FY25 CFO 3,395.03 = 85.3% of PAT; AR FY25 CFS line 10298 and BS; AR FY26 CFS p.190-191"
+  - "FX receivables 8,101.83 -> 15,599.05 (59.6% of receivable build); USD lakh 90.27 -> 164.28; Note 37, p.229"
+  - "At least 1,166.32 (67.4%) of FY25 one-year-plus overdue receivables left the ledger, no provision; Note 9(a)/(b), p.212"
+flag_candidates:
+  - {type: FLAG-CASH, reason: "CFO/PAT below 100% two years running on a like-for-like basis (FY25 85.3% derived, FY26 24.6%); FX receivables 59.6% of build; aged-balance exit route not disclosed"}
+corrections_to_pass_1:
+  - "FY25 CFO/PAT 132.4% overstated by 1,876.75 of borrowing inside CFO; like-for-like 85.3% (derived)"
+  - "Pass 1 OCI FY25 -0.97 is gratuity only; Note 15 total OCI -1.78 includes FCTR -0.81"

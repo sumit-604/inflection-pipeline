@@ -13,3 +13,4 @@ Token figures come from subagent result metadata. The harness exposes one total 
 | 2 | stage-02-notes-pass (pass 3) | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 79101 | 2m21s | 3 |
 | 3 | stage-03-ardeep | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 418728 | 19m18s | 1 |
 | 8 | stage-08-promoter | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 252182 | 10m14s | 1 |
+| 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 228709 | 11m13s | 1 |

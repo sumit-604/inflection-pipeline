@@ -1,0 +1,44 @@
+stage: B13-synthesis
+mode: phase-1-lite
+company: "INVPRECQ"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+files_written:
+  - runs/invprecq-2026-11-15/outputs/final/business-narrative.md
+  - runs/invprecq-2026-11-15/outputs/final/gate-recommendation.md
+  - runs/invprecq-2026-11-15/outputs/final/verifier-summary.md
+verdict: "PROCEED WITH CAVEATS"   # gate decision on evidence alone; not an investment decision
+verdict_rule_applied: 3            # FLAG-CASH INDETERMINATE caps at CAVEATS; rule 4 (MAJORs carried, overall 71 in 60-74 band) lands on the same verdict
+verdict_second_readings:
+  - "Rule 1: Verifier B strict rate 29% (2 of 7) would force REWORK under OR-29; block field 71 governs; operator decides at Halt 1"
+  - "Rule 2: INDETERMINATE cash plus stage 8 partial read as decision-record gaps would land INSUFFICIENT EVIDENCE"
+flags_active: [FLAG-CASH, FLAG-GATE0]
+flag_cash_determination: "INDETERMINATE (leading reading GROWTH-INDUCED)"
+flag_cash_falsifier: "Q3 FY27 change-in-inventories credit above 5% of revenue for a second quarter (Q2 FY27 10.4%), or H2 FY27 operating cash below H2 profit"
+flag_promoter: "not active: B08 CAUTION (STRUCTURE), status partial"
+flag_gate0: "AVERAGE, core 49/100, grand 52/160, moats 0; strict G-04+G-07 formulas give core 38 (open item)"
+confidence_delta: {numerical: 98, redflag: 71, framework: 89.5, peer: 100, overall: 71}
+overall_set_by: redflag_coverage
+freshness_verdict: "FRESHNESS PAIRS OK (cap not applied)"
+transition_posture: "PENDING: Mental Model not signed; recognition gap is a stage 11 read"
+valuation_decision: "NOT RUN (phase 1 lite; stages 10, 11, 14, 15 not run)"
+entry_range: null
+headline: "Auto caster bets on defence, cash lags"
+falsification_metric: "Q3 FY27 operating EBITDA margin excluding other income below 15.0% while the change-in-inventories credit shrinks"
+monitorables_count: 8
+contradicted_claims_count: 7   # 1 peer (Steelcast defence view, per B12b F5) + 6 contradicted by own filings (B12b R5 x3, R10, R11, R12)
+open_items_halt1:
+  - "Verifier C G-04 with G-07: Gate 0 ROCE and FCF formula substitutes; strict core 43/44, both 38 (AVOID class); operator ruling"
+  - "Verifier C EM-11: offset rule not in prompts/07; written matrix 10.8-12.6 vs filed 7.8 (NONE vs MODEST); operator ruling"
+  - "Verifier B rate two readings: 71% (block field) vs 29% strict; strict count fires REWORK"
+  - "Stage 8 partial: SEBI, SAT, eCourts, NCLT, MCA21, press archives, BSE fine notice, IiAS/SES/InGovern, electoral bonds, CMD biography not searched"
+  - "B00 corpus gaps: one-quarter shareholding capture; screener sheets empty except Data_Sheet; no Q1 FY27 deck; Q4 FY26 double filing; OCR results; no concalls; PTC not collected"
+  - "Cash determination INDETERMINATE vs GROWTH-INDUCED; CMD pay +51.2% (Note 38) vs +41.10% (Board report) carried on both bases"
+source_fidelity_applied: "3 MINOR anchor findings corrected (CARE p.2/p.3; stage 2 AR anchors minus one; A&D 5.86% at AR p.22); Verifier A arithmetic corrections used (18.8%, Rs 67.71 Cr, 139.14 days)"
+verifier_disagreements: none
+verifier_c_valuation_half: "PENDING PHASE 3"
+verifier_a_shadow: "not run in this session"
+publish_candidate: false
+publish_candidate_summary: ""
+notion_save: "not produced (phase 1 lite)"

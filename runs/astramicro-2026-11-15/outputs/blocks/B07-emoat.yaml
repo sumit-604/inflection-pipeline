@@ -1,0 +1,60 @@
+stage: B07-emoat
+company: "ASTRAMICRO"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Q2 FY27 concall transcript absent (call held 2026-11-13, not yet filed); management explanation of H1 FY27 CFO outflow, Uttam margin and advance terms, and ARC FY27 target NOT FOUND"
+  - "filing on the successor MD appointment and the warrant allotment filing not in announcements/"
+  - "PARAS peer concalls absent; peer raw material ratio, cost of debt and export comparisons NOT FOUND"
+  - "screener sheets other than Data Sheet empty"
+  - "prospectus and research folders empty (not expected)"
+  - "Facility utilisation, installed capacity, capex commissioning dates, patent filings, R&D headcount trend and FY25 total headcount NOT FOUND in any document"
+  - "HAL Uttam order: margin, advance and payment schedule NOT FOUND; draft DAP 2026 text and Scheme of Arrangement text not in corpus"
+  - "Combined-classification matrix text not in repository; standard combination applied"
+flags:
+  - "FLAG-CASH: H1 FY27 standalone CFO -14,612.63 Rs Lakhs; inventory Rs 793 Cr vs Rs 609 Cr; net debt Rs 279 Cr vs Rs 44 Cr (calc, Inv. Pres. p.11)"
+  - "FLAG-GUIDE: FY27 Rs 1,350 Cr +/-25 needs H2 about Rs 913 Cr vs about Rs 745 Cr H2 FY26; H2 order inflow ex-Uttam must be Rs 1,257.8 Cr vs H1 Rs 342.2 Cr (calc)"
+  - "FLAG-CONC: Uttam Rs 1,878.8 Cr ex-tax is 47.7% of the Rs 3,937 Cr book; margin, advance and payment terms NOT FOUND"
+  - "FLAG-CAPEX: FY27 capex Rs 75 Cr (AR p.192) vs Rs 40-50 Cr a year (Q4 FY26 call p.11); H1 FY27 cash capex already Rs 59.97 Cr"
+  - "FLAG-SCALE: nearly triple or 6-7x turnover claim implies fixed asset turnover of 13.5x to 31.6x vs 4.5x-5.5x history at Rs 40-50 Cr capex (calc)"
+  - "FLAG-DEMERGER-TIMING: NSE letter valid to about 29 Apr 2027 for NCLT filing vs claimed independent operation from 1 Apr 2027"
+em_score: 16.5
+em_classification: "MODEST"
+active_categories:
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24 months, execution to FY31-FY32"}
+  - {id: "H2", name: "Strategic partnerships (ARC / Rafael)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "0-12 months, producing"}
+  - {id: "R1", name: "Regulatory and policy tailwind (shared)", strength: "Moderate", evidence_type: "claim", time_to_materialise: "12-36 months"}
+  - {id: "C1", name: "Customer ecosystem (BEL / DRDO cross-sell)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-36 months"}
+evidence_mix: {documented: 27, claim: 24, inference: 5}
+completionist_recount: "recount performed: 27 documented items across 15 categories; 16 of them support a positive score, across 8 categories (A2, B1, B2, C1, F1, F2, G1, H2); 10 categories score above zero, below the guard line of 12"
+catalysts_12m:
+  - {catalyst: "Q3 FY27 results and call: H2 revenue start against Rs 258.2 Cr, working capital update promised at end Q3", window: "Feb 2027", evidence_type: "documented (results) / claim (call)", anchor: "Q1 FY27 call p.14-15, p.18; B05 trigger 2"}
+  - {catalyst: "AMCA AAAU contract signing (Astra L1, BEL L2); said 'within a month' on 11 Aug 2026, no filing by 15 Nov 2026", window: "now to Mar 2027", evidence_type: "claim", anchor: "Q1 FY27 call p.4, pp.15-16"}
+  - {catalyst: "QRSAM BEL contract and Astra subsystem purchase orders (Rs 700-800 Cr, first three regiments); slipped three calls", window: "by Mar 2027", evidence_type: "claim", anchor: "Q1 FY27 call p.7; B05"}
+  - {catalyst: "Demerger: NCLT filing within six months of 29 Oct 2026 letters; claimed independence from 1 Apr 2027; carve-out financials", window: "Dec 2026 to Apr 2027", evidence_type: "documented", anchor: "Reg 30 29 Oct 2026 p.1; NSE letter pp.11-12; Q1 FY27 call p.8"}
+  - {catalyst: "Uttam Phase 1 delivery of 12 units and first disclosed margin or advance terms", window: "by Sep 2027", evidence_type: "documented (order) / claim (schedule)", anchor: "Reg 30 30 Jul 2026 p.2; Q1 FY27 call p.10"}
+  - {catalyst: "Astra-IP product launches (two radars, one ELINT product) against the 'around Diwali' promise; none shown in the 12 Nov 2026 deck", window: "now to Mar 2027", evidence_type: "claim", anchor: "Q1 FY27 call p.9; Inv. Pres. pp.1-42"}
+  - {catalyst: "Warrant balance Rs 130.50 Cr due", window: "by 29 Dec 2026", evidence_type: "documented", anchor: "B03; AR pp.180, 183"}
+  - {catalyst: "Q4 FY27 results: FY27 CFO sign, inventory against Rs 793 Cr, revenue against Rs 1,350 Cr +/-25", window: "May 2027", evidence_type: "documented", anchor: "B05 triggers 2 and 8; Inv. Pres. p.11"}
+capex_embedded_growth_pct: 19.9
+optionality_register:
+  - {optionality: "Astra-owned IP products (EM wall, anti-drone, own radars, ELINT) become priced orders", converting_evidence: "first priced order or user trial acceptance for an Astra-IP product", first_appears: "Reg 30 order filing; Q3 or Q4 FY27 call", window: "6-18 months"}
+  - {optionality: "AMCA AAAU development contract (Astra L1)", converting_evidence: "signed contract with value", first_appears: "Reg 30 order filing", window: "1-6 months"}
+  - {optionality: "Su-30 Virupaksha and Angad production (claimed Rs 3,000 Cr or more)", converting_evidence: "DRDO qualification complete and a production order", first_appears: "Reg 30; FY28 calls", window: "24-48 months"}
+  - {optionality: "QRSAM production orders (Rs 700-800 Cr)", converting_evidence: "BEL contract signed, then Astra purchase orders", first_appears: "Reg 30; BEL disclosures; Q3 FY27 call", window: "3-12 months"}
+  - {optionality: "Exports of build-to-spec products and MMICs to US and Europe", converting_evidence: "export order with value from a named non-related customer", first_appears: "Reg 30; AR Note 33", window: "12-36 months"}
+  - {optionality: "Own satellite, constellation and data monetisation in ASTPL", converting_evidence: "launch contract or committed capex; ASTPL Information Memorandum with capex plan", first_appears: "NSE-mandated Information Memorandum; ASTPL results", window: "6-24 months"}
+  - {optionality: "Navictronics NavIC chip and GNSS products", converting_evidence: "tape-out or first customer order", first_appears: "AR JV note; quarterly results", window: "24-48 months"}
+  - {optionality: "Merchant MMIC sales at scale", converting_evidence: "repeat external MMIC orders with disclosed value", first_appears: "Reg 30; quarterly segment note", window: "12-24 months"}
+  - {optionality: "Mission Mausam radar tenders (ASTPL)", converting_evidence: "IMD tender awards", first_appears: "Reg 30 order filing", window: "6-18 months"}
+  - {optionality: "Patent portfolio and talent asymmetry (A2, I1)", converting_evidence: "patent filings with product linkage; named inventors with employment history; pay comparison with PSU scales (PENDING LIVE VERIFICATION)", first_appears: "ipindia.gov.in; Espacenet; AR remuneration annexure", window: "unknown"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (core 53, cash-conversion deal-breaker) plus Emerging Moat MODEST (16.5, 8.5 short of STRENGTHENING); neither HIGH POTENTIAL nor TURNAROUND conditions are met."
+top_moat_risks:
+  - "Cash conversion: Uttam is a no-advance PSU production order; H1 FY27 CFO Rs -146 Cr, net debt up about Rs 235 Cr"
+  - "Single-order dependence: HAL is 47.7% of the book; ex-HAL book Rs 2,058 Cr is below Rs 2,141 Cr at Mar-26"
+  - "ARC related-party exposure: receivable Rs 195.79 Cr with no stated credit terms, guarantee Rs 80 Cr, FY27 sales target moved from Rs 600+ Cr to Rs 360 Cr"
+  - "Scale claim vs capacity: 3x to 7x turnover claim against Rs 40-50 Cr yearly capex and flat headcount"
+  - "Management transition and demerger carve-out: MD exit 30 Sep 2026, carve-out financials NOT FOUND"
+analyst_note: "Three points a later stage cannot rebuild. (1) Uttam is credited once, in B2 only; A1, C1 and C2 do not repeat it. The gross margin step (28.7% to 49.1%) is credited once, in B1, at 0.5 weight because management credits the build-to-print exit while B04 calls the material cost fall unexplained. (2) The scale arithmetic: net PPE stays near Rs 256 Cr when capex of Rs 40-50 Cr equals depreciation of Rs 43 Cr, so the 3x to 7x turnover claim needs 13.5x to 31.6x fixed asset turnover against 4.5x-5.5x history. Revenue must be pass-through or outsourced, or a claim is wrong. (3) The band is fragile on the downside: if B2 and H2 both fail the score is 10.5 (below 12). It is nowhere near 25 on the upside. The separating observation for Uttam is its disclosed margin and advance, then FY27 CFO sign."

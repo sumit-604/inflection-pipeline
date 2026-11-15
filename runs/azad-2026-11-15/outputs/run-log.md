@@ -39,3 +39,4 @@ Units: Q2FY27 results and AR FY26 financial statements are printed in INR millio
 - manifest.company corrected from "Azad" to "Azad Engineering Ltd" (collector scraped a short name).
 - Verifier A shadow: NOT RUN here. Nine /step1 sessions run in parallel today and the single shadow run belongs to the TD Power session. .claude/shadow.yaml is left untouched by this run.
 - inputs/annual-report/ holds two ARs (FY2025-26 and FY2024-25; collector two-most-recent rule). Stages read FY2025-26 as the AR; FY2024-25 is passed as a prior-year reference only.
+- Stages 6 and 7 (dispatched together): both subagents stalled with "no progress for 600s (stream watchdog did not recover)" before writing any file. Mechanical failure (API timeout class, section 7). Both were resumed from their transcripts; this is retry 1 and does not count against any cap.

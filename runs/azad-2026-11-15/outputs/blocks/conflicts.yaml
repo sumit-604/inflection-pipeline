@@ -1,0 +1,16 @@
+# FLAG-DISAGREEMENT register (orchestrator; cross-block conflicts on the SAME audited figure). Settled at the source or left UNRESOLVED; never averaged.
+conflicts:
+  - figure: "FY26 top-5 customer share of consolidated revenue"
+    values: [{block: B01-gate0, value: "28.4% (inclusive reading) or 47.0% (exclusive reading)"}, {block: B02-notes, value: "41.3% to 47.0%"}, {block: B03-ardeep, value: "47.02% calc = (1,123.97 + 1,711.10) / 6,029.75 Rs Mn"}]
+    source: "Annual_Report_2026.pdf Note 34 [page 242], Note 31(c) [page 237]"
+    disposition: "B03 re-read the source: the 1,711.10 line excludes the top customer, so top-5 including top-1 is 47.0% (a calculation, the AR prints no percentage). 28.4% is arithmetically excluded (two customers at 10% or more). 41.3% is an equal-split assumption. Use 47.0% [calc]; Verifier A to confirm."
+  - figure: "Company-stated working-capital days"
+    values: [{block: B02-notes, value: "AR prints no working-capital days"}, {block: B03-ardeep, value: "244 at FY26 vs 202 at FY25, Chairman letter Annual_Report_2026.pdf [page 7]; definition NOT FOUND"}, {block: B01-gate0, value: "336 at FY26, 369 at H1 FY27 annualised (stage calculation on revenue basis)"}]
+    disposition: "B03 governs on existence: the AR prints 244 vs 202 with no definition. 336 / 369 are stage calculations on a different basis, not a conflict of a printed figure. The July tripwire figure 344 has no basis in this corpus."
+  - figure: "FY26 subsidiary profit (Azad VTC, Azad Prime)"
+    values: [{block: B02-notes, value: "VTC loss (41.97), Prime +13.89 (Note 44)"}, {block: B03-ardeep, value: "AOC-1: VTC PAT +16.68, Prime (2.69) Rs Mn; ties to consolidated statements"}]
+    source: "Annual_Report_2026.pdf AOC-1 [page 47], Note 44 [page 251], CARO xvii [page 187]"
+    disposition: "UNRESOLVED inside the AR: two printed tables disagree and CARO xvii conflicts with AOC-1. Consolidated totals are unaffected (the difference nets to zero). Question for management."
+  - figure: "Q2 FY27 consolidated revenue"
+    values: [{block: B01-gate0, value: "Rs 190.94 Cr (results and screener)"}, {block: B01-gate0 note, value: "concall states Rs 187.8 Cr"}]
+    disposition: "Basis gap (total income vs revenue from operations, or standalone vs consolidated) to be settled by stages 4 and 5 at the results page."

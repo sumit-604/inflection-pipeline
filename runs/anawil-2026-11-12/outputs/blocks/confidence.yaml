@@ -6,14 +6,13 @@ computed_by: orchestrator (prompts/00-orchestrator.md Section 5), from the verif
 confidence_delta:
   numerical_acceptance: 97          # B12a.acceptance_rate; numbers_checked 418; mandatory tier 183 of 183
   redflag_coverage: 100             # B12b.acceptance_rate; material_found 7, material_caught 7
-  framework_adherence: 88.6         # B12c phase-1 scope only: 70 of 79 rules (Gate 0 47 of 52, Emerging Moat 23 of 27)
+  framework_adherence: 86.5         # B12c full: phase 1 70 of 79 + phase 3 97 of 114 = 167 of 193 (phase 3 merged 2026-11-17)
   peer_utilisation: 100             # B12d: 12 of 12 peers confirmed SUBSTANTIVE
-  overall: 88.6                     # min of the applicable components
-  overall_set_by: "framework_adherence (B12c, Gate 0 + Emerging Moat portion)"
+  overall: 86.5                     # min of the applicable components (full four-component delta, phase 3)
+  overall_set_by: "framework_adherence (B12c, Gate 0 + Emerging Moat + valuation adherence)"
   not_applicable: []                # every component has a denominator of 4 or more
 band: "75-89: normal, note specifics"
-pending_phase_3:
-  - "framework_adherence valuation component (B10/B11 audit) is PENDING PHASE 3; the 88.6 covers Gate 0 and Emerging Moat only."
+phase_3_update: "2026-11-17: valuation half of B12c merged (B12c.yaml = merged; B12c-phase1.yaml = phase-1 copy; B12c-phase3.yaml = phase-3 copy). Phase-1 overall was 88.6. Verifier C phase 3 reports 2 CRITICAL and 4 MAJOR, all on operator-approved values or unruled inputs; a Verifier C CRITICAL is not a REWORK trigger (orchestrator Section 4). verifier_runs C stays 1 (deferred half of one run)."
 verifier_a_identity_check: "No CRITICAL rows in B12a, so no row was tested or struck by the orchestrator. Verifier A struck 3 rows itself under its rule 5b."
 rework_test:
   verifier_a_confirmed_critical: 0

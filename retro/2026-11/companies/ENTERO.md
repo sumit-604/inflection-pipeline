@@ -18,7 +18,7 @@ Source: origin/main:runs/entero-2026-07-27/outputs/reports/11-valuation.md §2C 
 "EBITDA margin: 4.03% (FY26) -> 5.0% by Y1-Y2 (already hit 5.0% Q1 FY27), held thereafter."
 Source: origin/main:runs/entero-2026-07-27/outputs/reports/11-valuation.md §2B L207
 Operator revision (after the pipeline run, 2026-08-30): "revenue revised off the Amendment 14 auto-fade-to-10% to ~20% held with ~3% pa dilution ... margin revised from flat 5.0% to 5.0% rising to 6.5% by FY30 ... lifting FY30 owners' EPS Rs 48.9 -> Rs 68.4"
-Source: origin/main:companies/ENTERO.md §DECISION STATUS L28-35
+Source: origin/main:companies/ENTERO.md §DECISION STATUS L28-40
 
 ## Management guidance and promised catalysts
 | Revenue growth (like-for-like) | 30% | FY26 | Q3 FY26 call |
@@ -57,12 +57,12 @@ Source: origin/main:runs/entero-2026-07-27/outputs/reports/05-concall.md L155
 
 ## Risk flags raised before the result, and any overruling
 Files in the export are dated after the FY26 (25-May-2026) and Q1 FY27 (07-Aug-2026) results. Source: origin/main:runs/entero-2026-07-27/outputs/reports/11-valuation.md L3-7
-Overruling on record: "Halt 1 decision OVERRIDDEN to PROCEED. The claude.ai Halt 1 package recommended SHALLOW WATCH" Source: origin/main:companies/ENTERO.md §OPERATOR RULINGS L95-98
-"ROCE 19x on the management basis; both recorded. DISSENT ... 12x" Source: origin/main:companies/ENTERO.md L88-92
-"Pillar 2 cash multiplier: INDETERMINATE (FCF uncomputable, no consolidated capex line)" Source: origin/main:companies/ENTERO.md §OPEN ITEMS L155-157
+Overruling on record: "Halt 1 decision OVERRIDDEN to PROCEED. The claude.ai Halt 1 package recommended SHALLOW WATCH" Source: origin/main:companies/ENTERO.md §OPERATOR RULINGS L105-108
+"ROCE 19x on the management basis; both recorded. DISSENT ... 12x" Source: origin/main:companies/ENTERO.md L94-96
+"Pillar 2 cash multiplier: INDETERMINATE (FCF uncomputable, no consolidated capex line)" Source: origin/main:companies/ENTERO.md §OPEN ITEMS L157-159
 
 ## Verdicts and dates
-"Decision Status: AVOID (on valuation), finalized 2026-08-30. Evidence gate PROCEED WITH CAVEATS (confidence 85, 0 CRITICAL)" Source: origin/main:companies/ENTERO.md L13-15
+"Decision Status: AVOID (on valuation), finalized 2026-08-30. Evidence gate PROCEED WITH CAVEATS (confidence 85, 0 CRITICAL)" Source: origin/main:companies/ENTERO.md L18-20
 "**PROCEED WITH CAVEATS**" Source: origin/main:runs/entero-2026-07-27/outputs/final/gate-recommendation.md L3
 "Archetype set as working-capital-financed distribution roll-up at self-funding scale, NOT multiple arbitrage." Source: origin/main:companies/ENTERO.md L111-113
 Board listing: NOT FOUND ("NSE: ENTERO | BSE: 544122" only).

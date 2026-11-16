@@ -57,7 +57,19 @@ def files_for(series: str, m: dict) -> list[tuple[Path, dict]]:
 def _read_table(p: Path) -> pd.DataFrame:
     if p.suffix.lower() in (".xlsx", ".xls"):
         return pd.read_excel(p)
+    if p.suffix.lower() == ".json":
+        return pd.DataFrame(json.loads(p.read_text()))
     return pd.read_csv(p)
+
+
+def _to_dt(col: pd.Series) -> pd.Series:
+    """ISO strings parse as ISO; anything else day-first (Indian sources)."""
+    s = col.astype(str).str.strip()
+    iso = s.str.match(r"^\d{4}-\d{2}-\d{2}")
+    out = pd.Series(pd.NaT, index=s.index, dtype="datetime64[ns]")
+    out[iso] = pd.to_datetime(s[iso].str[:10], format="%Y-%m-%d", errors="coerce")
+    out[~iso] = pd.to_datetime(s[~iso], dayfirst=True, format="mixed", errors="coerce")
+    return out
 
 
 def _date_col(df: pd.DataFrame) -> str:
@@ -65,7 +77,7 @@ def _date_col(df: pd.DataFrame) -> str:
         if "date" in str(c).lower():
             return c
     for c in df.columns:
-        if pd.to_datetime(df[c], errors="coerce", dayfirst=True).notna().mean() > 0.9:
+        if _to_dt(df[c]).notna().mean() > 0.9:
             return c
     sys.exit(f"no date column in {list(df.columns)}")
 
@@ -112,7 +124,22 @@ def build_mtf(m: dict) -> pd.DataFrame | None:
 
 def build_indices(m: dict) -> dict[str, pd.DataFrame]:
     out = {}
+    metas_by_key: dict[str, list[dict]] = {}
+    nse_names = {"Nifty 50": "nifty_50", "Nifty Smallcap 250": "nifty_smallcap_250",
+                 "Nifty Microcap 250": "nifty_microcap_250"}
     for p, meta in files_for("indices", m):
+        if p.name.startswith("nse_ind_close_all") and p.suffix == ".csv":
+            raw = pd.read_csv(p)
+            for nm, key in nse_names.items():
+                r = raw[raw["index_name"] == nm]
+                df = pd.DataFrame({"date": _to_dt(r["index_date"]),
+                                   "close": pd.to_numeric(r["close"], errors="coerce"),
+                                   "source_url": r["source_url"].values,
+                                   "downloaded_on": meta["downloaded_on"]})
+                prev = out.get(key)
+                out[key] = df if prev is None else pd.concat([prev, df])
+                metas_by_key.setdefault(key, []).append(meta)
+            continue
         key = next((k for k in INDEX_KEYS if k in p.name), None)
         if key is None:
             continue
@@ -120,17 +147,17 @@ def build_indices(m: dict) -> dict[str, pd.DataFrame]:
         df = pd.DataFrame(rows)
         dc = _date_col(df)
         cc = next(c for c in df.columns if str(c).upper() == "CLOSE")
-        df = pd.DataFrame({"date": pd.to_datetime(df[dc], dayfirst=True, format="mixed"),
+        df = pd.DataFrame({"date": _to_dt(df[dc]),
                            "close": pd.to_numeric(df[cc].astype(str).str.replace(",", ""),
                                                   errors="coerce")})
         df = _stamp(df, meta)
+        metas_by_key.setdefault(key, []).append(meta)
         prev = out.get(key)
         out[key] = df if prev is None else pd.concat([prev, df])
     for key, df in out.items():
-        _save(df, key, "close", [{"source_url": u, "downloaded_on": d} for u, d in
-                                 df[["source_url", "downloaded_on"]].drop_duplicates()
-                                 .itertuples(index=False)],
-              "Index close, price return (niftyindices.com historical data)")
+        _save(df, key, "close", metas_by_key[key],
+              "Index close, price return. NSE ind_close_all daily files (NSE Indices "
+              "publishes niftyindices.com); per-day file URL in the source_url column")
     return out
 
 
@@ -147,7 +174,7 @@ def build_cd(m: dict) -> pd.DataFrame | None:
             t = df[tc].astype(str).str.strip().str.lower()
             df = df[t.str.fullmatch(r"3\s*(months?|m)|91\s*days?")]
         parts.append(_stamp(pd.DataFrame({
-            "date": pd.to_datetime(df[dc], dayfirst=True, format="mixed"),
+            "date": _to_dt(df[dc]),
             "cd_3m_pct": pd.to_numeric(df[rc], errors="coerce")}), meta))
         metas.append(meta)
     if not parts:
@@ -181,10 +208,13 @@ def build_laf(m: dict, col: str | None, sign: str | None) -> pd.DataFrame | None
                          "pass --laf-sign surplus_positive or injection_positive")
         raw = pd.to_numeric(df[vc].astype(str).str.replace(",", ""), errors="coerce")
         val = -raw if rule == "injection_positive" else raw
-        parts.append(_stamp(pd.DataFrame({
-            "date": pd.to_datetime(df[dc], dayfirst=True, format="mixed"),
+        part = _stamp(pd.DataFrame({
+            "date": _to_dt(df[dc]),
             "net_laf_cr": val, "raw_value": raw, "raw_column": str(vc),
-            "sign_rule": rule}), meta))
+            "sign_rule": rule}), meta)
+        if "release_url" in df.columns:          # per-release URL beats the listing URL
+            part["source_url"] = df["release_url"].values
+        parts.append(part)
         metas.append(meta)
     if not parts:
         return None

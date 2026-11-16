@@ -24,7 +24,7 @@ Deck guidance table:
 > | PAT margin 4.5-4.75% | period not stated | dR568 | exceeded (5.41% reported Q2) |
 > | ROCE ~30-35% | period not stated | dR571 | "achieved early" on a definition excluding current debt |
 > | CFO/EBITDA 20% | horizon not found | pR159 | delivered 39% H1; payables-funded ...
-Source: SR §guidance tracker L800-L806 (EBITDA row L802, PAT row L803)
+Source: SR §guidance tracker L802-L806 (EBITDA row L802, PAT row L803)
 > Reviewed; bears on D-A3-23 (Q15) ... "we have progressively upgraded our guidance"
 Source: SR L42 (ledger row M015; deck L413)
 
@@ -36,7 +36,7 @@ Source: SR L791, L798, L799
 > The Rs 110.14 Cr land held for sale missed its Aug-2026 completion. What is the new date ...
 Source: SR L733
 > 31-Oct-2026, earnings call (M1). ... 18-Nov-2026, EGM (M4)
-Source: SR §Dated catalysts L916-L918
+Source: SR §Dated catalysts L917-L918
 
 ## Reported results (Q4 FY26 / Q1 FY27 / Q2 or H1 FY27)
 Consolidated, Rs Cr; columns Q2FY26 | Q1FY27 | Q2FY27 | H1FY26 | H1FY27 | FY26:
@@ -47,12 +47,12 @@ Source: SR §Step 1 consolidated table L150, L166, L167
 
 > | Operating EBITDA margin | Op EBITDA / Revenue | 6.73% | 7.79% | 7.94% | 6.55% | 7.87% | 6.90% | ND |
 > | PAT margin | PAT / Revenue | 4.51% | 5.21% | 5.41% | 4.23% | 5.32% | 4.48% | ND |
-Source: SR L177, L183 (approx. margin rows; margin row follows Operating EBITDA row)
+Source: SR L178, L184
 
 > 1. **Did revenue grow YoY?** Yes. Cons +61.05% (1,484.46 to 2,390.66); SA +58.74%. Within India +46.9% ... outside India +183.9%
 Source: SR L300
 
-Q4 FY26 quarter alone: NOT FOUND (only the FY26 column). Results filed 27-Oct-2026 (SR L3).
+Q4 FY26 quarter alone: NOT FOUND (only the FY26 column). Results filed 27-Oct-2026 (SR L4).
 
 ## Management's stated reasons
 NOT FOUND (no call transcript; call on 31-Oct-2026 after the run).
@@ -66,7 +66,7 @@ Source: SR L816
 
 ## Verdicts and dates
 - 2026-10-28: PRE-THESIS READ; protocol_verdict "PROCEED WITH FLAGS" (SR L945); Decision Status none (NP "Page status").
-- Results filed 27-Oct-2026; deck dated 28-Oct-2026 (SR L3).
+- Results filed 27-Oct-2026; deck dated 28-Oct-2026 (SR L4).
 - Next pipeline step: "/step1 (no Spear line on record)" (OB §4).
 
 ## Lessons archive mentions

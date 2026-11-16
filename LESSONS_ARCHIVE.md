@@ -1125,3 +1125,9 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
 - Verifier A shadow skipped: ten parallel runs, one armed switch; kusumgar-2026-11-12 claimed it.
 - prompts/12-verifiers-pipeline.md line 379 template defect reported by Verifier C (note N1); needs a prompt PR.
 - session-cost.md fresh and re-read lines are n/a: the desktop harness gives one token total per subagent.
+
+## 2026-11-17 · ANAWIL /fttcp (runs/anawil-2026-11-12)
+- Cross-family grader skipped: no GEMINI_API_KEY in the desktop environment.
+- Draft ran on the intake model by operator ruling; review and sign-off on Opus 5.5 after a mid-session model change.
+- Operator ruled ROCE FIRING (+2) but asked for the RECOVERING midpoint method in Pillar 1; recorded as an override with both numbers (Track 1 16.1x against 16.9x). Chunk 01 has no rule for this pairing.
+- Handover dossier pre-ruling "trailing-four-half" is ambiguous for a half-yearly filer; operator chose FORWARD FY27.

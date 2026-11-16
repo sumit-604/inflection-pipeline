@@ -280,11 +280,11 @@ Source: origin/claude/qr-route-q2fy27-fb3514:runs/route-q2fy27/work/review_route
 > Nothing is committed. Every file stays in place on branch
 Source: origin/claude/qr-route-q2fy27-fb3514:runs/route-q2fy27/work/PAUSED.md §PAUSED L1-4
 
-> | A1 | pressrelease (runs 1-2) | 56,670 | run 1 41,180; 21 anchors fixed |
-> | A2 | results (base + loop 1) | 106,842 | base 97,522; loop 9,320 |
-> | A2 | presentation | 52,158 | |
-> | A2 | pressrelease | 37,380 | |
-Source: origin/claude/qr-route-q2fy27-fb3514:runs/route-q2fy27/work/PAUSED.md §Key result for the operator L41-44
+
+> - Verdict PROCEED WITH FLAGS. Thesis-broken condition 1 depends on the basis: Adjusted EBITDA margin 10.04% (NOT FIRED, Rs 0.45 Cr headroom, rests on a Rs 6.90 Cr Masivian add-back); reported 9.75% after 9.16% (FIRED, pre-committed exit 50%). Operator ruling needed.
+> - CMP Rs 435 is below the Rs 450 hard floor; the 52-week low Rs 407 is below the Rs 420 floor (date ND).
+> - H1 CFO/PAT 0.22x; Rs 116.83 Cr supplier prepayment; Strategic Premium expiry condition met on filed evidence (no Proximus KPI).
+Source: origin/claude/qr-route-q2fy27-fb3514:runs/route-q2fy27/work/PAUSED.md §Key result for the operator L55-58
 
 ## Verdicts and dates
 > - **Protocol verdict: PROCEED WITH FLAGS (unchanged category, MORE flags).** Cash conversion remains **INDETERMINATE** (Q1, no Reg-33 cash flow; the 75-100% claim is a promise, not delivered data) — this independently caps the cash axis at PROCEED WITH CAVEATS. The operating flags (GM gate breach, 1-of-2 thesis-broken EBITDA margin, India operating loss, standalone PAT −47%, undisclosed corporate actions) plus the NEW concall flags (Grade-C/EVASIVE credibility, guidance withheld, GM-bridge refused, GM-band recalibrated below thesis, MD absent, a spoken figure conflicting with the deck) carry the merged verdict to **PROCEED WITH FLAGS.** Flags propagate; no mechanical failure; there is no

@@ -48,7 +48,7 @@ B11 flags in this run: "FLAG-ONE-QUARTER" ("raw annualization ₹7,640 Cr is FLA
 
 ## Verdicts and dates
 "Headline: Q1 is already in the price. STOP on the Hurdle Ratio at ₹560." (B11 L4); "Tier: A | Hurdle: 25% (divisor 1.953)" 
-Role 5: "DECISION STATUS = AVOID at CMP / passive monitoring" (L37). Role 4 review reviewed 2026-07-24.
+Role 5: "DECISION STATUS = AVOID at CMP / passive monitoring" (L37). Role 4 review reviewed 2026-07-24. "Protocol verdict: PROCEED WITH CAVEATS (capped by INDETERMINATE cash conversion)" (review L435).
 Source: .../valuation/B11_valuation_stltech_q1fy27.md; review_stltech_q1fy27.md L3, L27
 
 ## Lessons archive mentions

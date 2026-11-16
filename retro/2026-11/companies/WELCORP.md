@@ -36,7 +36,7 @@ Q2 FY27: NOT FOUND.
 > Guidance philosophy | Conservative; refuses upward revision despite a beat | "we don't want to revise our guidances...realistic guidance...in the last four years...we have always met them if not exceeded them" (turn 91 / L107)   (L94)
 
 ## Risk flags raised before the result, and any overruling
-> | #1 | KSA ... | first production by Q1 FY27 | slip beyond Q4 FY26 ... | Filing SILENT; deck reframes to "within FY27" ... | AMBER → drifting |   (review L313)
+> | #1 | KSA ... | first production by Q1 FY27 | slip beyond Q4 FY27 ... | Filing SILENT; deck reframes to "within FY27" ... | AMBER → drifting |   (review L313)
 > Original trim ladder: governance/exit triggers ... + new trim triggers (corporate guarantees >Rs6,000 Cr; Sintex FY27 deeper loss).   (L392)
 > **The Sintex deeper-loss TRIM trigger has FIRED.** ... It does NOT change Decision Status by itself   (L340)
 > No thesis-broken (full-exit) trigger has fired. Decision Status stays HELD.   (addendum L162)

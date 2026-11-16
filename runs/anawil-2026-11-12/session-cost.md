@@ -61,4 +61,5 @@ Re-read multiple (re-read / cache write): n/a
 |---|-------|-------|--------|--------|------------|-------------|---------|-----------|------|------|
 | 10 | stage-10-assembly | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 166303 | 4m02s | 1 |
 | 11 | stage-11-valuation | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 429669 | 33m46s | 1 |
-| 14 | stage-14-thesis | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | pending | pending | 1 |
+| 14 | stage-14-thesis | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 311520 | 12m20s | 1 |
+| 15 | stage-15-devil | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | pending | pending | 1 |

@@ -16,9 +16,9 @@ Source: origin/run/emudhra-2026-09-19:runs/emudhra-2026-09-19/outputs/blocks/B05
 - Our optionality register: "GLEIF Validation Agent for LEIL -> ... window Q3 FY27. Currently NOT FOUND."; "UAE in-country trust services -> converts on launch revenue, guided Q2." (company file L97-99)
 
 ## Reported results (Q4 FY26 / Q1 FY27 / Q2 or H1 FY27)
-- "FY26 total income Rs 7,132 Mn (+35%), EBITDA Rs 1,654 Mn (23.2%), PAT Rs 1,100 Mn (+26%)." (step1-business-brief.md L11, 09-19)
+- "FY26 total income Rs 7,132 Mn (+35%), EBITDA Rs 1,654 Mn (23.2%), PAT Rs 1,100 Mn (+26%)." (step1-business-brief.md L12, 09-19)
 - "FY26: revenue Rs 701.58 cr (+35.1%), EBITDA Rs 165.4 cr (23.2%, down 190 bps), PBT Rs 131.31 cr, PAT Rs 110.05 cr (+26.2%)." (company file L75-76)
-- "Q1 FY27: total income Rs 1,925 Mn (+28%), EBITDA Rs 504 Mn (26.2%, +40%), PAT Rs 320 Mn (+28%); international 66%. About 13 points of the 28% came from the Cryptas acquisition, so organic growth was near 15%." (step1-business-brief.md L14)
+- "Q1 FY27: total income Rs 1,925 Mn (+28%), EBITDA Rs 504 Mn (26.2%, +40%), PAT Rs 320 Mn (+28%); international 66%. About 13 points of the 28% came from the Cryptas acquisition, so organic growth was near 15%." (step1-business-brief.md L16)
 - "Beat; actual Rs 713.2 Cr per Q4 FY26 call" (B05 L48); "reported (non-adjusted) EBITDA margin fell to 22.4% in Q4 FY26, down from 23.1% in Q3 FY26" (B05 L50)
 - "Q1 FY27 PAT +27.9% YoY, within/near top of the guided range" (B05 L54)
 Source: origin/run/emudhra-2026-09-19:runs/emudhra-2026-09-19/ (step1-business-brief.md, B05-concall.yaml)

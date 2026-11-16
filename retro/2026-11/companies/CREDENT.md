@@ -14,13 +14,13 @@ Source: origin/run/credent-2026-11-12:companies/CREDENT.md §DECISION STATUS L9,
 - "Enterprise and mid-size clients | 2 enterprise at 12-18 Cr each; 5-10 mid-size at 4-6 Cr each | FY27 to FY28"; "Overseas | not this year; update by next-year H1 call | FY28"
 Source: origin/run/credent-2026-11-12:runs/credent-2026-11-12/outputs/blocks/B05-concall.yaml §guidance L30-42
 - "FY27 revenue INR 320+ Cr; H2 needs 181.91 Cr" (§triggers L21)
-- Brief: "about 45% revenue CAGR to FY30, a Rs 1,000 Cr revenue target and main-board migration in FY30, EBITDA margin 15 to 16% in three years" (step1-business-brief.md item 7, L17)
+- Brief: "about 45% revenue CAGR to FY30, a Rs 1,000 Cr revenue target and main-board migration in FY30, EBITDA margin 15 to 16% in three years" (step1-business-brief.md item 7, L13)
 
 ## Reported results (Q4 FY26 / Q1 FY27 / Q2 or H1 FY27)
 - "FY26 consolidated: revenue Rs 214.2 Cr, EBITDA Rs 28.7 Cr (13%), PAT Rs 18.4 Cr. FY25 standalone restated: revenue Rs 81.8 Cr, PAT Rs 5.5 Cr."
 - "H1 FY27: revenue Rs 138.1 Cr (+53% YoY), EBITDA Rs 18.2 Cr (13%, flat), PAT Rs 14.7 Cr (+95%), which includes a one-time tax credit of Rs 1.78 Cr"
 - "CFO was negative Rs 6.6 Cr in FY26 and negative Rs 3.9 Cr in H1 FY27."
-Source: origin/run/credent-2026-11-12:runs/credent-2026-11-12/step1-business-brief.md items 4, 5, 8 (L12, L13, L16)
+Source: origin/run/credent-2026-11-12:runs/credent-2026-11-12/step1-business-brief.md items 4, 5, 8 (L10, L11, L14)
 - "It reports half yearly, so the corpus holds one listed result (H1 FY27), one call and one annual report."
 Source: runs/credent-2026-11-12/outputs/final/business-narrative.md L11
 - Q1 FY27: NOT FOUND (half-yearly reporter).

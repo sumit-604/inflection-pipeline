@@ -16,7 +16,7 @@ Year-3 scenarios: Bull 25% Rs95 / Base 50% Rs71 / Bear 25% Rs57; prob-weighted C
 Source: same file L45-50
 Notion one-liner: "Book value per share compounds Rs20.1 to Rs29.8 over 3 years; AUM 22% CAGR; ROE 13.2% to 15.0%; destination P/B 2.55x; Year 3 target Rs71"
 Source: origin/claude/quarterly-paisalo-q2fy27-095262:runs/paisalo-q2fy27/work/review_paisalo_q2fy27.md §0A L47
-"FY27 and FY28 annual projections | ND not passed | Notion §5 holds Year 3 only"  Source: same file §0A L53
+"FY27 and FY28 annual projections | ND not passed | Notion §5 holds Year 3 only"  Source: same file §0A L50
 Post-result operator estimate (NOT a baseline, dated 2026-10-23): FY27E PAT 275.9, total income 1,160.6, AUM 8,430.9.
 Source: origin/claude/quarterly-paisalo-q2fy27-095262:runs/paisalo-q2fy27/operator_brief_paisalo_q2fy27.md §2 L24-28
 
@@ -53,7 +53,7 @@ Q2 FY27 / H1 (CON, Rs Cr):
 | PAT | 51.54 | 61.31 | 65.64 | 237.21 | ND | 98.71 | 126.96 |   (Q2 FY26 | Q1 FY27 | Q2 FY27 | FY26 | FY27 | H1 FY26 | H1 FY27)
 | of which fees and commission | 16.76 | 8.94 | 10.12 | 38.96 | ND | 34.13 | 19.06 |
 | Cost-to-income CON (c) | 35.52% | 32.32% | 40.95% |
-Source: origin/claude/quarterly-paisalo-q2fy27-095262:runs/paisalo-q2fy27/work/review_paisalo_q2fy27.md §1L-A L130,L124; §1L-C L161
+Source: origin/claude/quarterly-paisalo-q2fy27-095262:runs/paisalo-q2fy27/work/review_paisalo_q2fy27.md §1L-A L130,L118; §1L-C L161
 Total income Q2 277.31, H1 537.60 (Source: operator_brief_paisalo_q2fy27.md §2 L35); FY26 total income 943.70 (L27)
 "This quarter the loan book grew 33% in a year, to about Rs7,266 Cr. Profit after tax rose 27%, to Rs65.6 Cr."  Source: operator_brief L9
 "Fee income fell 40%. Co-lending with SBI did not start, for the second quarter."  Source: operator_brief L13
@@ -79,7 +79,7 @@ Overruling: none recorded.
 
 ## Verdicts and dates
 Q4 FY26 review 15-May-26; Notion page last updated 14 Jul 2026: "Decision Status: WATCHLIST — 0% held, no position."  Source: notion_thesis_brief.md L4,L7,L30
-Q1 FY27 review 2026-08-05 (A4), concall review 2026-08-06: AVOID flagged for operator ratification. Source: review_paisalo_q1fy27.md L12 (Reviewed: 2026-08-05); review_concall_paisalo_q1fy27.md L8
+Q1 FY27 review 2026-08-05 (A4), concall review 2026-08-06: AVOID flagged for operator ratification. Source: review_paisalo_q1fy27.md L9 (Reviewed: 2026-08-05); review_concall_paisalo_q1fy27.md L8
 Q2 FY27 run date 2026-10-23: "Protocol verdict | PROCEED WITH FLAGS"; proposed AVOID. Source: review_paisalo_q2fy27.md L975
 
 ## Lessons archive mentions

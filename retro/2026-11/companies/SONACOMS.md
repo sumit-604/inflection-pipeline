@@ -42,7 +42,7 @@ Consolidated (Q1 FY26 | Q4 FY26 | Q1 FY27 | FY26):
 | — Owners of parent | 124.71 | 191.92 | 180.47 | 640.17 | 506 |
 | Operating EBITDA margin (/rev from ops) | 23.72% | 24.70% | 23.26% | 24.88% |
 | PAT (total) | 121.71 | 186.86 | 178.51 | 629.19 | 490 |
-Source: origin/main:runs/sona-q1fy27/work/review_sona_q1fy27.md §1B L108,L124,L127; §1C L143
+Source: origin/main:runs/sona-q1fy27/work/review_sona_q1fy27.md §1B L108,L126,L127; §1C L143
 | Revenue from operations | +52.38% YoY |  Source: same file §2 L173
 Q1 margin read: "EBITDA margin | ND | ND | ND | 23.1% (deck) / 23.26% (op) vs FY26 24.7% | Below FY26 baseline — adverse"  Source: same file §6A L302
 Q2 FY27 (Q2 FY26 | Q1 FY27 | Q2 FY27 | H1 FY26 | H1 FY27 | FY26):
@@ -59,7 +59,7 @@ Source: origin/claude/qr-dycl-q2fy27-766ddd:runs/sonacoms-q2fy27/work/review_son
 Q2: "continued margin pressure ... mainly driven by change in product mix" (call L055-057, ASR); "Mix first, inflation second (call L057, L063)"
 Source: Q2 review L832-833
 Q1: NOT FOUND for the margin. Press release: mgmt concedes "continued weakness in US EV market".
-Source: origin/main:runs/sona-q1fy27/work/review_sona_q1fy27.md §6B L320
+Source: origin/main:runs/sona-q1fy27/work/review_sona_q1fy27.md §6B L322
 
 ## Risk flags raised before the result, and any overruling
 Q1 (Notion, last edited 2026-07-13): "destination PE revised down to ~22.5x after FY26 AR flagged margin compression (24.7%), Novelic KAM impairment risk, stretched working capital."
@@ -75,7 +75,7 @@ Q2: "Pending operator rulings | (1) Does the margin gate include net forex? (2) 
 ## Verdicts and dates
 Notion "page last edited 2026-07-13"; Decision Status: WATCHLIST / AVOID at CMP Rs 609. Source: origin/main:runs/sona-q1fy27/work/run_log.md L27-28
 Q1 FY27 review 2026-07-23: "Protocol verdict: PROCEED WITH FLAGS". Source: review_sona_q1fy27.md L3,L471
-Q2 FY27 review 2026-10-28: "Verdict unchanged: PROCEED WITH FLAGS". Source: Q2 review L5,L19
+Q2 FY27 review 2026-10-28: "Verdict unchanged: PROCEED WITH FLAGS". Source: Q2 review L5,L21
 Archetype text: "Standard operating business (build-to-spec component maker)." Source: Q2 review L127
 
 ## Lessons archive mentions

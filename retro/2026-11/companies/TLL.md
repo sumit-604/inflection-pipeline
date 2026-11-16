@@ -4,7 +4,7 @@ Company file: companies/TLL.md (origin/run/tll-2026-09-26)
 
 ## Our base case
 NOT FOUND. Phase 1 lite, no valuation: "This file carries no valuation content: no BUY, WATCHLIST or AVOID, no entry range, no MoS price, no destination PE and no Hurdle verdict. Stage 11 has not run."
-Source: origin/run/tll-2026-09-26:runs/tll-2026-09-26/outputs/final/gate-recommendation.md L3
+Source: origin/run/tll-2026-09-26:runs/tll-2026-09-26/outputs/final/gate-recommendation.md L6
 "Decision Status and entry zone: None. Step-1 intake only (2026-09-26). No valuation has run."
 Source: origin/run/tll-2026-09-26:companies/TLL.md L13
 

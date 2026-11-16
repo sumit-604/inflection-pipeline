@@ -1,0 +1,802 @@
+# Gaps
+
+Laptop: LAPTOP-8LJ3MSL6. Built 2026-11-16. Facts only.
+
+## 1. No baseline (241 companies)
+
+- 526717 (526717): no base case for Q4 FY26
+- 530077 (530077): no base case for any period
+- 544332 (544332): no base case for any period
+- 544516 (544516): no base case for Q4 FY26, Q1 FY27
+- AARTISURF (aartisurf): no base case for Q4 FY26, Q1 FY27
+- ACCORD (accord): no base case for any period
+- ADFFOODS (adffoods): no base case for any period
+- ADOR (ador): no base case for any period
+- AEQUS (aequs): no base case for Q4 FY26, Q1 FY27
+- AEROFLEX (aeroflex): no base case for any period
+- AIMTRON (aimtron): no base case for Q4 FY26, Q1 FY27
+- AKUMS (akums): no base case for Q4 FY26
+- AMAGI (amagi): no base case for Q4 FY26
+- AMEENJI (ameenji): no base case for Q4 FY26, Q1 FY27
+- ANAWIL (anawil): no base case for any period
+- ANUP (anup): no base case for Q4 FY26
+- APEXECO (apexeco): no base case for Q4 FY26
+- ARIS (aris): no base case for any period
+- ASIANENE (asianene): no base case for Q4 FY26
+- ASTRAMICRO (astramicro): no base case for any period
+- ATLANTAELEC (atlantaelec): no base case for any period
+- AURUM (aurum): no base case for any period
+- AVANA (avana): no base case for any period
+- AVIENCE (avience): no base case for any period
+- AWFIS (awfis): no base case for any period
+- AYE (aye): no base case for any period
+- AZAD (azad): no base case for Q4 FY26
+- BALAJITELE (balajitele): no base case for any period
+- BALAMINES (balamines): no base case for any period
+- BALUFORGE (baluforge): no base case for any period
+- BANDHANBNK (bandhan): no base case for any period
+- BIRLACABLE (birlacable): no base case for Q4 FY26, Q1 FY27
+- BIRLANU (birlanu): no base case for any period
+- BLACKROSE (blackrose): no base case for any period
+- BORANA (borana): no base case for Q4 FY26, Q1 FY27
+- CAPILLARY (capillary): no base case for Q4 FY26, Q1 FY27
+- CEIGALL (ceigall): no base case for any period
+- CLEANMAX (cleanmax): no base case for Q4 FY26, Q1 FY27
+- CMSINFO (cmsinfo): no base case for Q4 FY26, Q1 FY27
+- CNL (cnl): no base case for any period
+- CREDENT (credent): no base case for any period
+- CREDO (credo): no base case for any period
+- CYBERTECH (cybertech): no base case for any period
+- CYIENTDLM (cyientdlm): no base case for any period
+- DATAPATTNS (datapattns): no base case for any period
+- DDEVPLSTIK (ddevplstik): no base case for Q4 FY26
+- DGML (deccangold): no base case for any period
+- DEEDEV (deedev): no base case for any period
+- DHANBANK (dhanbank): no base case for any period
+- DIFFNKG (diffnkg): no base case for any period
+- DIGITIDE (digitide): no base case for any period
+- DIVGIITTS (divgiitts): no base case for Q4 FY26, Q1 FY27
+- DPABHUSHAN (dpabhushan): no base case for any period
+- DSSL (dssl): no base case for Q4 FY26
+- DYCL (dycl): no base case for any period
+- E2E (e2e): no base case for Q4 FY26, Q2/H1 FY27
+- EBGNG (ebgng): no base case for Q4 FY26
+- ECOSMOBILITY (ecosmobility): no base case for Q2/H1 FY27
+- EIMCOELECO (eimcoeleco): no base case for any period
+- EMUDHRA (emudhra): no base case for any period
+- EMVDL (emvdl): no base case for any period
+- ENTERO (entero): no base case for Q4 FY26, Q1 FY27
+- ESCONET (esconet): no base case for any period
+- EXICOM (exicom): no base case for any period
+- FABTECH (fabtech): no base case for Q4 FY26, Q1 FY27
+- FAIRCHEMOR (fairchemor): no base case for any period
+- FEDFINA (fedfina): no base case for any period
+- FINCABLES (fincables): no base case for any period
+- FINKURVE (finkurve): no base case for any period
+- FLUIDOMAT (fluidomat): no base case for Q4 FY26
+- FRATELLI (fratelli): no base case for any period
+- GALLANTT (gallantt): no base case for any period
+- GANECOS (ganecos): no base case for Q4 FY26, Q1 FY27
+- GARGI (gargi): no base case for any period
+- GAUDIUMIVF (gaudiumivf): no base case for any period
+- GEE (gee): no base case for Q4 FY26, Q2/H1 FY27
+- GEMAROMA (gemaroma): no base case for any period
+- GHVINFRA (ghvinfra): no base case for any period
+- GMBREW (gmbrew): no base case for any period
+- GMDCLTD (gmdc): no base case for any period
+- GMMPFAUDLER (gmmpfaudler): no base case for any period
+- GOCLCORP (goclcorp): no base case for any period
+- GOLDIAM (goldium): no base case for any period
+- GOODLUCK (goodluck): no base case for any period
+- GRPLTD (grpltd): no base case for any period
+- GRWRHITECH (grwrhitech): no base case for Q4 FY26
+- GSMFOILS (gsmfoils): no base case for any period
+- GVPIL (gvpil): no base case for any period
+- HERITGFOOD (heritgfood): no base case for any period
+- HFCL (hfcl): no base case for Q4 FY26
+- IEX (iex): no base case for any period
+- IKS (iks): no base case for any period
+- INA (ina): no base case for any period
+- INDGN (indgn): no base case for Q4 FY26, Q1 FY27
+- INDIAGLYCO (indiaglyco): no base case for any period
+- INDIAMART (indiamart): no base case for Q4 FY26
+- INDIQUBE (indiqube): no base case for any period
+- INDNIPPON (indnippon): no base case for any period
+- INDOBORAX (indoborax): no base case for any period
+- INDORAMA (indorama): no base case for any period
+- INDOSOLAR (indosolar): no base case for any period
+- INOXINDIA (inoxindia): no base case for any period
+- INVPRECQ (invprecq): no base case for any period
+- IOLCP (iolcp): no base case for any period
+- IPCL (ipcl): no base case for any period
+- IVALUE (ivalue): no base case for Q4 FY26
+- JAYKAY (jaykay): no base case for any period
+- JITFINFRA (jitfinfra): no base case for any period
+- JLHL (jlhl): no base case for any period
+- JUBLCPL (jublcpl): no base case for Q4 FY26, Q1 FY27
+- KABRAEXTRU (kabraextru): no base case for any period
+- KARNIKA (karnika): no base case for any period
+- KCPSUGIND (kcpsugind): no base case for any period
+- KECL (kecl): no base case for Q4 FY26, Q1 FY27
+- KELTECH (keltech): no base case for any period
+- KERNEX (kernex): no base case for Q4 FY26
+- KISSHT (kissht): no base case for any period
+- KNACK (knack): no base case for any period
+- KOPRAN (kopran): no base case for any period
+- KPL (kpl): no base case for any period
+- KRN (krn): no base case for any period
+- KRONOX (kronox): no base case for any period
+- KROSS (kross): no base case for Q4 FY26, Q1 FY27
+- KSOLVES (ksolves): no base case for any period
+- KUSUMGAR (kusumgar): no base case for any period
+- KWICK (kwick): no base case for any period
+- LAXMIINDIA (laxmiindia): no base case for Q4 FY26
+- LT (lt): no base case for any period
+- LTELEVATOR (ltelevator): no base case for any period
+- MACPOWER (macpower): no base case for Q4 FY26, Q1 FY27
+- MANINDS (maninds): no base case for Q4 FY26, Q1 FY27
+- MAPMYINDIA (mapmyindia): no base case for any period
+- MAXIND (maxind): no base case for any period
+- MCFOS (mcfos): no base case for any period
+- MENONBE (menonbe): no base case for Q4 FY26, Q1 FY27
+- MIDEAST (mideast): no base case for any period
+- MILLWORKS (millworks): no base case for any period
+- MMP (mmp): no base case for any period
+- MODISONLTD (modisonltd): no base case for any period
+- MPSLTD (mpsltd): no base case for any period
+- MTAR (mtar): no base case for Q4 FY26
+- NEOCHEM (neochem): no base case for any period
+- NEPHROPLUS (nephroplus): no base case for any period
+- NETWEB (netweb): no base case for any period
+- NORTHARC (northarc): no base case for Q4 FY26
+- NRAIL (nrail): no base case for Q4 FY26
+- OBSCP (obscp): no base case for Q4 FY26
+- ONWARDTEC (onwardtec): no base case for any period
+- ORCHPHARMA (orchpharma): no base case for any period
+- OSWAL (oswal): no base case for any period
+- PACEDIGITK (pacedigitk): no base case for any period
+- PAISALO (paisalo): no base case for any period
+- PARACABLES (paracables): no base case for any period
+- PARKHOSPS (parkhosps): no base case for Q4 FY26, Q2/H1 FY27
+- PAUSHAK (paushak): no base case for any period
+- PERMAGNET (permagnet): no base case for Q4 FY26, Q1 FY27
+- PITTIENG (pittieng): no base case for any period
+- PNGS (pngs): no base case for any period
+- POONAWALLA (poonawalla): no base case for any period
+- PREMEXPLN (premexpln): no base case for any period
+- PREMIERPOL (premierpol): no base case for any period
+- PRIZOR (prizor): no base case for Q4 FY26
+- PVRINOX (pvrinox): no base case for any period
+- QLL (qll): no base case for any period
+- QMSMEDI (qmsmedi): no base case for any period
+- QUALITEK (qualitek): no base case for any period
+- RAMRAT (ramrat): no base case for Q4 FY26
+- RAPPID (rappid): no base case for Q4 FY26, Q1 FY27
+- RATEGAIN (rategain): no base case for any period
+- RATHIST (rathist): no base case for any period
+- RAYMONDREL (raymondrealty): no base case for Q4 FY26
+- RKFORGE (rkforge): no base case for any period
+- RPTECH (rptech): no base case for any period
+- RSYSTEMS (rsystems): no base case for any period
+- SAMBHV (sambhv): no base case for any period
+- SAMHI (samhi): no base case for any period
+- SAMMAANCAP (sammaancap): no base case for any period
+- SASKEN (sasken): no base case for any period
+- SATIN (satin): no base case for any period
+- SCODATUBES (scodatubes): no base case for any period
+- SEDEMAC (sedemac): no base case for any period
+- SFL (sfl): no base case for any period
+- SHAREINDIA (shareindia): no base case for any period
+- SHARIKA (sharika): no base case for any period
+- SHAWGELTIN (shawgeltin): no base case for any period
+- SHHARICH (shharich): no base case for any period
+- SHYAMMETL (shyammetl): no base case for Q4 FY26
+- SICALLOG (sicallog): no base case for Q4 FY26
+- SKYGOLD (skygold): no base case for any period
+- SMRUTHI (smruthi): no base case for Q4 FY26
+- SONACOMS (sonacoms): no base case for any period
+- SOUTHWEST (southwest): no base case for any period
+- SPAPPAREL (spapparel): no base case for any period
+- SPROP (sprop): no base case for any period
+- SRM (srm): no base case for any period
+- SSWL (sswl): no base case for any period
+- STALLION (stallion): no base case for any period
+- STLTECH (stltech): no base case for any period
+- STYL (styl): no base case for any period
+- SUDARCOLOR (sudarcolor): no base case for any period
+- SUGSLLOYD (sugslloyd): no base case for any period
+- SUPREMEPWR (supremepwr): no base case for Q4 FY26, Q1 FY27
+- SUSAN (susan): no base case for any period
+- SYNGENE (syngene): no base case for Q4 FY26, Q1 FY27
+- SYSTANGO (systango): no base case for Q4 FY26
+- TAALTECH (taaltech): no base case for Q4 FY26, Q1 FY27
+- TATACOMM (tatacomm): no base case for any period
+- TATAPOWER (tatapower): no base case for any period
+- TATVA (tatva): no base case for Q4 FY26
+- TDPOWERSYS (tdpowersys): no base case for any period
+- TEJASNET (tejasnet): no base case for any period
+- TINNARUBR (tinnarubr): no base case for any period
+- TIPCO (tipco): no base case for any period
+- TITANBIO (titanbio): no base case for Q4 FY26, Q1 FY27
+- TLL (tll): no base case for any period
+- TOTEM (totem): no base case for Q4 FY26, Q1 FY27
+- TRANSRAIL (transrail): no base case for Q4 FY26, Q2/H1 FY27
+- TRUALT (trualt): no base case for Q4 FY26, Q1 FY27
+- UFBL (ufbl): no base case for Q4 FY26, Q1 FY27
+- UNIABEX (uniabex): no base case for any period
+- UNIMECH (unimech): no base case for Q1 FY27, Q2/H1 FY27
+- UNIPARTS (uniparts): no base case for any period
+- URBANCO (urbanco): no base case for any period
+- UTLSOLAR (utlsolar): no base case for Q4 FY26
+- VAIBHAVGBL (vaibhavgbl): no base case for any period
+- VENUSPIPES (venuspipes): no base case for any period
+- VENUSREM (venusrem): no base case for Q4 FY26, Q1 FY27
+- VILAS (vilas): no base case for any period
+- VINYAS (vinyas): no base case for Q4 FY26, Q1 FY27
+- VISAKAIND (visakaind): no base case for any period
+- VIVIDEL (vividel): no base case for any period
+- VOEPL (voepl): no base case for Q4 FY26
+- VRLLOG (vrllog): no base case for any period
+- WALCHANNAG (walchannag): no base case for any period
+- WELCORP (welcorp): no base case for Q4 FY26
+- WEWORK (wework): no base case for any period
+- WORKMATES (workmates): no base case for Q4 FY26, Q1 FY27
+- YASHHV (yashhv): no base case for any period
+- YASHO (yasho): no base case for any period
+- ZAGGLE (zaggle): no base case for any period
+- ZEEL (zeel): no base case for any period
+
+## 2. No actuals in any file (141 companies)
+
+- 526717 (526717): no actuals for Q2/H1 FY27
+- 530077 (530077): no actuals for Q4 FY26
+- 544332 (544332): no actuals for Q2/H1 FY27
+- 544516 (544516): no actuals for Q2/H1 FY27
+- AARTISURF (aartisurf): no actuals for Q2/H1 FY27
+- ADFFOODS (adffoods): no actuals for Q2/H1 FY27
+- ADOR (ador): no actuals for Q4 FY26
+- AEROFLEX (aeroflex): no actuals for Q2/H1 FY27
+- ANUP (anup): no actuals for Q2/H1 FY27
+- ARIS (aris): no actuals for Q2/H1 FY27
+- ATLANTAELEC (atlantaelec): no actuals for Q2/H1 FY27
+- AVIENCE (avience): no actuals for Q2/H1 FY27
+- AYE (aye): no actuals for Q4 FY26
+- BALAJITELE (balajitele): no actuals for Q2/H1 FY27
+- BALUFORGE (baluforge): no actuals for Q1 FY27, Q2/H1 FY27
+- BANDHANBNK (bandhan): no actuals for Q2/H1 FY27
+- BIRLACABLE (birlacable): no actuals for Q2/H1 FY27
+- BIRLANU (birlanu): no actuals for Q2/H1 FY27
+- BLACKROSE (blackrose): no actuals for Q2/H1 FY27
+- CAPILLARY (capillary): no actuals for Q2/H1 FY27
+- CLEANMAX (cleanmax): no actuals for Q4 FY26, Q2/H1 FY27
+- CMSINFO (cmsinfo): no actuals for Q2/H1 FY27
+- CNL (cnl): no actuals for Q1 FY27
+- CREDO (credo): no actuals for Q2/H1 FY27
+- CYBERTECH (cybertech): no actuals for Q4 FY26
+- DDEVPLSTIK (ddevplstik): no actuals for Q1 FY27, Q2/H1 FY27
+- DGML (deccangold): no actuals for Q4 FY26, Q2/H1 FY27
+- DHANBANK (dhanbank): no actuals for Q2/H1 FY27
+- DIFFNKG (diffnkg): no actuals for Q4 FY26
+- DIGITIDE (digitide): no actuals for Q2/H1 FY27
+- DPABHUSHAN (dpabhushan): no actuals for Q2/H1 FY27
+- DYCL (dycl): no actuals for Q4 FY26
+- E2E (e2e): no actuals for Q2/H1 FY27
+- EBGNG (ebgng): no actuals for Q2/H1 FY27
+- ECOSMOBILITY (ecosmobility): no actuals for Q2/H1 FY27
+- EIMCOELECO (eimcoeleco): no actuals for Q4 FY26
+- EMVDL (emvdl): no actuals for Q2/H1 FY27
+- ENTERO (entero): no actuals for Q1 FY27
+- EXICOM (exicom): no actuals for Q2/H1 FY27
+- FAIRCHEMOR (fairchemor): no actuals for Q4 FY26
+- FINKURVE (finkurve): no actuals for Q2/H1 FY27
+- FLUIDOMAT (fluidomat): no actuals for Q1 FY27
+- FRATELLI (fratelli): no actuals for Q2/H1 FY27
+- GALLANTT (gallantt): no actuals for Q4 FY26
+- GANECOS (ganecos): no actuals for Q2/H1 FY27
+- GEE (gee): no actuals for Q2/H1 FY27
+- GEMAROMA (gemaroma): no actuals for Q2/H1 FY27
+- GHVINFRA (ghvinfra): no actuals for Q4 FY26
+- GMDCLTD (gmdc): no actuals for Q2/H1 FY27
+- GMMPFAUDLER (gmmpfaudler): no actuals for Q2/H1 FY27
+- GOLDIAM (goldium): no actuals for Q4 FY26, Q2/H1 FY27
+- GRPLTD (grpltd): no actuals for Q2/H1 FY27
+- GSMFOILS (gsmfoils): no actuals for Q4 FY26
+- HERITGFOOD (heritgfood): no actuals for Q4 FY26
+- IEX (iex): no actuals for Q4 FY26
+- IKS (iks): no actuals for Q2/H1 FY27
+- INA (ina): no actuals for Q2/H1 FY27
+- INDGN (indgn): no actuals for Q2/H1 FY27
+- INDIAGLYCO (indiaglyco): no actuals for Q2/H1 FY27
+- INDOBORAX (indoborax): no actuals for Q1 FY27, Q2/H1 FY27
+- INDORAMA (indorama): no actuals for Q4 FY26
+- INDOSOLAR (indosolar): no actuals for Q4 FY26
+- IPCL (ipcl): no actuals for Q2/H1 FY27
+- JAYKAY (jaykay): no actuals for Q4 FY26, Q2/H1 FY27
+- JITFINFRA (jitfinfra): no actuals for Q4 FY26, Q1 FY27
+- JLHL (jlhl): no actuals for Q1 FY27
+- JNKINDIA (jnkindia): no actuals for Q2/H1 FY27
+- JUBLCPL (jublcpl): no actuals for Q2/H1 FY27
+- KABRAEXTRU (kabraextru): no actuals for Q4 FY26, Q2/H1 FY27
+- KCPSUGIND (kcpsugind): no actuals for Q2/H1 FY27
+- KERNEX (kernex): no actuals for Q2/H1 FY27
+- KISSHT (kissht): no actuals for Q2/H1 FY27
+- KNACK (knack): no actuals for Q4 FY26
+- KOPRAN (kopran): no actuals for Q4 FY26, Q1 FY27, Q2/H1 FY27
+- KPL (kpl): no actuals for Q4 FY26
+- KRN (krn): no actuals for Q2/H1 FY27
+- KRONOX (kronox): no actuals for Q4 FY26
+- KSOLVES (ksolves): no actuals for Q4 FY26
+- LAXMIINDIA (laxmiindia): no actuals for Q2/H1 FY27
+- LT (lt): no actuals for Q4 FY26
+- LTELEVATOR (ltelevator): no actuals for Q1 FY27, Q2/H1 FY27
+- MANINDS (maninds): no actuals for Q2/H1 FY27
+- MAPMYINDIA (mapmyindia): no actuals for Q2/H1 FY27
+- MCFOS (mcfos): no actuals for Q2/H1 FY27
+- MENONBE (menonbe): no actuals for Q2/H1 FY27
+- MIDEAST (mideast): no actuals for Q4 FY26, Q1 FY27, Q2/H1 FY27
+- MILLWORKS (millworks): no actuals for Q2/H1 FY27
+- MMP (mmp): no actuals for Q2/H1 FY27
+- MODISONLTD (modisonltd): no actuals for Q2/H1 FY27
+- MTAR (mtar): no actuals for Q2/H1 FY27
+- NEPHROPLUS (nephroplus): no actuals for Q2/H1 FY27
+- NORTHARC (northarc): no actuals for Q1 FY27, Q2/H1 FY27
+- NRAIL (nrail): no actuals for Q2/H1 FY27
+- OBSCP (obscp): no actuals for Q1 FY27, Q2/H1 FY27
+- ORCHPHARMA (orchpharma): no actuals for Q2/H1 FY27
+- OSWAL (oswal): no actuals for Q2/H1 FY27
+- PACEDIGITK (pacedigitk): no actuals for Q2/H1 FY27
+- PARKHOSPS (parkhosps): no actuals for Q2/H1 FY27
+- PREMIERPOL (premierpol): no actuals for Q4 FY26
+- QPOWER (qpower): no actuals for Q2/H1 FY27
+- RAMRAT (ramrat): no actuals for Q2/H1 FY27
+- RATEGAIN (rategain): no actuals for Q2/H1 FY27
+- RATHIST (rathist): no actuals for Q2/H1 FY27
+- RPTECH (rptech): no actuals for Q2/H1 FY27
+- SAMBHV (sambhv): no actuals for Q2/H1 FY27
+- SAMMAANCAP (sammaancap): no actuals for Q2/H1 FY27
+- SASKEN (sasken): no actuals for Q2/H1 FY27
+- SATIN (satin): no actuals for Q2/H1 FY27
+- SCODATUBES (scodatubes): no actuals for Q2/H1 FY27
+- SFL (sfl): no actuals for Q2/H1 FY27
+- SHAREINDIA (shareindia): no actuals for Q2/H1 FY27
+- SHARIKA (sharika): no actuals for Q2/H1 FY27
+- SHAWGELTIN (shawgeltin): no actuals for Q2/H1 FY27
+- SICALLOG (sicallog): no actuals for Q1 FY27
+- SKYGOLD (skygold): no actuals for Q4 FY26
+- SPAPPAREL (spapparel): no actuals for Q2/H1 FY27
+- SPROP (sprop): no actuals for Q2/H1 FY27
+- SRM (srm): no actuals for Q2/H1 FY27
+- STALLION (stallion): no actuals for Q2/H1 FY27
+- STLTECH (stltech): no actuals for Q2/H1 FY27
+- STYL (styl): no actuals for Q2/H1 FY27
+- SUSAN (susan): no actuals for Q2/H1 FY27
+- TATACOMM (tatacomm): no actuals for Q4 FY26
+- TATAPOWER (tatapower): no actuals for Q2/H1 FY27
+- TINNARUBR (tinnarubr): no actuals for Q4 FY26
+- TOTEM (totem): no actuals for Q4 FY26, Q2/H1 FY27
+- TRANSRAIL (transrail): no actuals for Q2/H1 FY27
+- UFBL (ufbl): no actuals for Q2/H1 FY27
+- UNIABEX (uniabex): no actuals for Q2/H1 FY27
+- UNIPARTS (uniparts): no actuals for Q2/H1 FY27
+- URBANCO (urbanco): no actuals for Q2/H1 FY27
+- VAIBHAVGBL (vaibhavgbl): no actuals for Q2/H1 FY27
+- VENUSPIPES (venuspipes): no actuals for Q2/H1 FY27
+- VISAKAIND (visakaind): no actuals for Q1 FY27, Q2/H1 FY27
+- VIVIDEL (vividel): no actuals for Q2/H1 FY27
+- VOEPL (voepl): no actuals for Q2/H1 FY27
+- WELCORP (welcorp): no actuals for Q2/H1 FY27
+- WEWORK (wework): no actuals for Q4 FY26
+- YASHO (yasho): no actuals for Q2/H1 FY27
+- ZAGGLE (zaggle): no actuals for Q1 FY27
+- ZEEL (zeel): no actuals for Q2/H1 FY27
+
+## 3. Files on one branch only, or not on main (274 entries)
+
+- 526717 (526717): runs/526717-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-53w4to
+- 526717 (526717): companies/526717.md not on main; newest copy on origin/claude/pipeline-526717-n61a68 (1 branch(es), 1 version(s))
+- 530077 (530077): runs/530077-q2fy27 is on 2 branches, not on main: origin/claude/qr-puretrop-q2fy27-888061;origin/run/quarterly-q2fy27-2026-10-28
+- 544516 (544516): companies/544516.md not on main; newest copy on origin/claude/pipeline-544516-8t948a (1 branch(es), 1 version(s))
+- AARTISURF (aartisurf): companies/AARTISURF.md not on main; newest copy on origin/claude/aartisurf-pipeline-run-3wqmjl (1 branch(es), 1 version(s))
+- ACCORD (accord): runs/accord-2026-10-06 is on one branch only: origin/run/accord-2026-10-06
+- ACCORD (accord): companies/ACCORD.md not on main; newest copy on origin/run/accord-2026-10-06 (1 branch(es), 1 version(s))
+- ADFFOODS (adffoods): runs/adffoods-q1fy27 is on one branch only: origin/claude/adf-food-quarterly-analysis-b8cygp
+- ADOR (ador): runs/ador-q2fy27 is on one branch only: origin/claude/quarterly-ador-q2fy27-97aedb
+- AEQUS (aequs): runs/aequs-q2fy27 is on 10 branches, not on main: origin/claude/qr-aequs-q2fy27-f2613d;origin/claude/qr-dycl-q2fy27-766ddd;origin/claude/qr-knack-q2fy27-0febb1;origin/claude/qr-lt-q2fy27-6d55c1;origin/claude/qr-neochem-q2fy27-76041a;origin/claude/qr-puretrop-q2fy27-888061
+- AEROFLEX (aeroflex): runs/aeroflex-q1fy27 is on one branch only: origin/claude/aeroflex-results-analysis-x9xrqs
+- AMAGI (amagi): runs/amagi-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-rnbvw5
+- ANAWIL (anawil): runs/anawil-2026-11-12 is on one branch only: origin/run/anawil-2026-11-12
+- ANAWIL (anawil): companies/ANAWIL.md not on main; newest copy on origin/run/anawil-2026-11-12 (1 branch(es), 1 version(s))
+- ANUP (anup): runs/anup-q1fy27 is on one branch only: origin/claude/anoop-engineering-quarterly-8lr5l1
+- ARIS (aris): runs/aris-q1fy27 is on one branch only: origin/claude/spra-quarterly-results-analysis-ctlfwb
+- ASIANENE (asianene): runs/asianene-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-c8fsiv
+- ASTRAMICRO (astramicro): runs/astramicro-2026-11-15 is on one branch only: origin/run/astramicro-2026-11-15
+- ASTRAMICRO (astramicro): companies/ASTRAMICRO.md not on main; newest copy on origin/run/astramicro-2026-11-15 (1 branch(es), 1 version(s))
+- AURUM (aurum): runs/aurum-q1fy27 is on one branch only: origin/claude/aurob-proptech-investor-analysis-cqrz1p
+- AURUM (aurum): runs/aurum-q2fy27 is on one branch only: origin/run/quarterly-q2fy27-2026-10-17
+- AVANA (avana): runs/avana-2026-10-05 is on one branch only: origin/run/avana-2026-10-05
+- AVANA (avana): companies/AVANA.md not on main; newest copy on origin/run/avana-2026-10-05 (2 branch(es), 2 version(s))
+- AVIENCE (avience): runs/avience-2026-09-26 is on one branch only: origin/run/avience-2026-09-26
+- AVIENCE (avience): companies/AVIENCE.md not on main; newest copy on origin/run/avience-2026-09-26 (1 branch(es), 1 version(s))
+- AWFIS (awfis): runs/awfis-2026-09-19 is on one branch only: origin/run/awfis-2026-09-19
+- AWFIS (awfis): companies/AWFIS.md not on main; newest copy on origin/run/awfis-2026-09-19 (1 branch(es), 1 version(s))
+- AYE (aye): runs/aye-q1fy27 is on 2 branches, not on main: origin/claude/conference-call-analysis-a2myie;origin/claude/run-pipeline-aye-adnmeu
+- AYE (aye): runs/aye-q2fy27 is on one branch only: origin/claude/quarterly-ayefin-q2fy27-982ab0
+- AYE (aye): companies/AYE.md not on main; newest copy on origin/claude/run-pipeline-aye-adnmeu (1 branch(es), 1 version(s))
+- AZAD (azad): runs/azad-2026-11-15 is on one branch only: origin/run/azad-2026-11-15
+- BALAJITELE (balajitele): runs/balajitele-2026-09-15 is on one branch only: origin/claude/trusting-einstein-qap7vj
+- BALAJITELE (balajitele): companies/BALAJITELE.md not on main; newest copy on origin/claude/trusting-einstein-qap7vj (1 branch(es), 1 version(s))
+- BALAMINES (balamines): runs/balamines-q1fy27 is on one branch only: origin/claude/balaji-mines-quarterly-analysis-ygfira
+- BALUFORGE (baluforge): companies/BALUFORGE.md not on main; newest copy on origin/claude/baluforge-2026-09-06-runs-ah784w (1 branch(es), 1 version(s))
+- BANDHANBNK (bandhan): runs/bandhan-q1fy27 is on one branch only: origin/claude/bundan-bank-q1-fy27-lo837s
+- BIRLANU (birlanu): runs/birlanu-q1fy27 is on one branch only: origin/claude/birlanu-quarterly-results-2zbr6l
+- BLACKROSE (blackrose): runs/blackrose-q1fy27 is on one branch only: origin/claude/black-rose-quarterly-analysis-a9u9a4
+- CEIGALL (ceigall): companies/CEIGALL.md not on main; newest copy on origin/claude/baluforge-2026-09-06-runs-ah784w (2 branch(es), 2 version(s))
+- CNL (cnl): runs/cnl-2026-11-11 is on one branch only: origin/run/cnl-2026-11-11
+- CNL (cnl): companies/CNL.md not on main; newest copy on origin/run/cnl-2026-11-11 (1 branch(es), 1 version(s))
+- CREDENT (credent): runs/credent-2026-11-12 is on one branch only: origin/run/credent-2026-11-12
+- CREDENT (credent): companies/CREDENT.md not on main; newest copy on origin/run/credent-2026-11-12 (1 branch(es), 1 version(s))
+- CREDO (credo): runs/credo-q1fy27 is on one branch only: origin/claude/credo-quarterly-analysis-r7tbey
+- CYBERTECH (cybertech): runs/cybertech-q2fy27 is on 2 branches, not on main: origin/claude/quarterly-cybertech-q2fy27-0cb6fb;origin/claude/quarterly-cybertech-q2fy27-920b89
+- CYIENTDLM (cyientdlm): runs/cyientdlm-q2fy27 is on one branch only: origin/run/quarterly-q2fy27-2026-10-17
+- CYIENTDLM (cyientdlm): companies/CYIENTDLM.md not on main; newest copy on origin/claude/baluforge-2026-09-06-runs-ah784w (2 branch(es), 2 version(s))
+- DATAPATTNS (datapattns): runs/datapattns-q1fy27 is on one branch only: origin/claude/quarterly-data-pattern-analysis-7vzvt2
+- DDEVPLSTIK (ddevplstik): companies/DDEVPLSTIK.md not on main; newest copy on origin/claude/run-pipeline-ddevplstik-405lmq (1 branch(es), 1 version(s))
+- DGML (deccangold): runs/deccangold-q1fy27 is on one branch only: origin/claude/deccan-gold-concall-analysis-5eyww0
+- DEEDEV (deedev): runs/d-dev-q1fy27 is on one branch only: origin/claude/d-dev-quarterly-analysis-jnyqb1
+- DEEDEV (deedev): runs/deedev-2026-11-15 is on one branch only: origin/run/deedev-2026-11-15
+- DEEDEV (deedev): companies/DEEDEV.md not on main; newest copy on origin/run/deedev-2026-11-15 (1 branch(es), 1 version(s))
+- DHANBANK (dhanbank): runs/dhanbank-q1fy27 is on one branch only: origin/claude/dhanbank-pipeline-run-bi3wv6
+- DIFFNKG (diffnkg): companies/DIFFNKG.md not on main; newest copy on origin/claude/run-diffnkg-pipeline-8n6qp1 (1 branch(es), 1 version(s))
+- DIGITIDE (digitide): runs/digitide-q1fy27 is on one branch only: origin/claude/digitite-results-analysis-yek08v
+- DIVGIITTS (divgiitts): runs/divgi-q1fy27 is on one branch only: origin/claude/digvi-quarterly-analysis-o97k0v
+- DPABHUSHAN (dpabhushan): runs/dpabhushan-2026-09-19 is on 2 branches, not on main: origin/run/dpabhushan-2026-09-19;origin/wip/laptop-save-2026-10-04
+- DPABHUSHAN (dpabhushan): companies/DPABHUSHAN.md not on main; newest copy on origin/wip/laptop-save-2026-10-04 (2 branch(es), 1 version(s))
+- DSSL (dssl): runs/dssl-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-3y7lxn
+- DSSL (dssl): companies/DSSL.md not on main; newest copy on origin/claude/dssl-pipeline-run-onx7hd (1 branch(es), 1 version(s))
+- DYCL (dycl): runs/dycl-q2fy27 is on 2 branches, not on main: origin/claude/qr-dycl-q2fy27-766ddd;origin/run/quarterly-q2fy27-2026-10-28
+- E2E (e2e): runs/e2e-q1fy27 is on one branch only: origin/claude/e2e-quarterly-analysis-j6j65r
+- EBGNG (ebgng): runs/ebgng-q1fy27 is on one branch only: origin/claude/gmg-electronics-analysis-0owflj
+- EBGNG (ebgng): companies/EBGNG.md not on main; newest copy on origin/claude/ebgng-pipeline-run-e7jis5 (1 branch(es), 1 version(s))
+- ECOSMOBILITY (ecosmobility): runs/ecosmobility-q1fy27 is on one branch only: origin/claude/ecos-mobility-quarterly-analysis-1gxkan
+- EIMCOELECO (eimcoeleco): runs/eimcoeleco-q2fy27 is on one branch only: origin/run/quarterly-q2fy27-2026-10-17
+- EMUDHRA (emudhra): runs/emudhra-2026-09-15 is on one branch only: origin/claude/trusting-einstein-qap7vj
+- EMUDHRA (emudhra): runs/emudhra-2026-09-19 is on one branch only: origin/run/emudhra-2026-09-19
+- EMUDHRA (emudhra): companies/EMUDHRA.md not on main; newest copy on origin/run/emudhra-2026-09-19 (2 branch(es), 2 version(s))
+- EMVDL (emvdl): runs/emvdl-q1fy27 is on one branch only: origin/claude/emvdl-quarterly-analysis-1eikkc
+- ESCONET (esconet): runs/esconet-2026-10-05 is on one branch only: origin/run/esconet-2026-10-05
+- ESCONET (esconet): companies/ESCONET.md not on main; newest copy on origin/run/esconet-2026-10-05 (1 branch(es), 1 version(s))
+- EXICOM (exicom): runs/exicom-q1fy27 is on one branch only: origin/claude/exicom-q1-fy27-analysis-0bxvcc
+- FABTECH (fabtech): runs/fabtech-2026-09-26 is on one branch only: origin/run/fabtech-2026-09-26
+- FABTECH (fabtech): companies/FABTECH.md not on main; newest copy on origin/run/fabtech-2026-09-26 (2 branch(es), 2 version(s))
+- FAIRCHEMOR (fairchemor): runs/fairchemor-q2fy27 is on 2 branches, not on main: origin/claude/quarterly-fairchem-q2fy27-83430a;origin/claude/quarterly-fairchem-q2fy27-bcfbf0
+- FEDFINA (fedfina): runs/fedfina-q1fy27 is on one branch only: origin/claude/fedfina-call-analysis-ggpjgq
+- FEDFINA (fedfina): runs/fedfina-q2fy27 is on one branch only: origin/run/quarterly-q2fy27-2026-10-17
+- FEDFINA (fedfina): companies/FEDFINA.md not on main; newest copy on origin/claude/fedfina-pipeline-run-3mq2uj (1 branch(es), 1 version(s))
+- FINKURVE (finkurve): runs/finkurve-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-bjv3ft
+- GALLANTT (gallantt): runs/gallantt-q2fy27 is on 2 branches, not on main: origin/claude/quarterly-gallantt-call-q2fy27-7b3ed0;origin/run/quarterly-q2fy27-2026-10-19
+- GARGI (gargi): runs/gargi-q1fy27 is on one branch only: origin/claude/gargi-quarterly-analysis-11fbsc
+- GAUDIUMIVF (gaudiumivf): runs/gaudiumivf-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-7dqyyn
+- GAUDIUMIVF (gaudiumivf): companies/GAUDIUMIVF.md not on main; newest copy on origin/claude/gaudiumivf-pipeline-tvrgn0 (1 branch(es), 1 version(s))
+- GEE (gee): runs/gee-q1fy27 is on one branch only: origin/claude/g-limited-results-analysis-q4cm3w
+- GEMAROMA (gemaroma): runs/gemaroma-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-jz50z8
+- GHVINFRA (ghvinfra): runs/ghvinfra-q1fy27 is on one branch only: origin/claude/ghv-infra-quarterly-analysis-z6m8wn
+- GHVINFRA (ghvinfra): runs/ghvinfra-q2fy27 is on one branch only: origin/claude/quarterly-ghv-q2fy27-3cf5aa
+- GMBREW (gmbrew): runs/gmbrew-q2fy27 is on one branch only: origin/run/quarterly-q2fy27-2026-10-17
+- GMDCLTD (gmdc): runs/gmdc-q1fy27 is on one branch only: origin/claude/gmdc-quarterly-analysis-c3vej5
+- GMMPFAUDLER (gmmpfaudler): runs/gmmpfaudler-q1fy27 is on one branch only: origin/claude/gmm-pfaudler-quarterly-analysis-55jc3e
+- GOCLCORP (goclcorp): runs/gocl-q2fy27 is on one branch only: origin/run/quarterly-q2fy27-2026-10-19
+- GOCLCORP (goclcorp): runs/goclcorp-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-d723ow
+- GOLDIAM (goldium): runs/goldium-q1fy27 is on one branch only: origin/claude/goldium-q1-fy27-earnings-8csvi8
+- GOODLUCK (goodluck): runs/goodluck-2026-09-19 is on one branch only: origin/run/goodluck-2026-09-19
+- GOODLUCK (goodluck): companies/GOODLUCK.md not on main; newest copy on origin/run/goodluck-2026-09-19 (1 branch(es), 1 version(s))
+- GRPLTD (grpltd): runs/grpltd-2026-09-15 is on one branch only: origin/claude/trusting-einstein-qap7vj
+- GRPLTD (grpltd): companies/GRPLTD.md not on main; newest copy on origin/claude/trusting-einstein-qap7vj (1 branch(es), 1 version(s))
+- GRWRHITECH (grwrhitech): runs/grwrhitech-q2fy27 is on one branch only: origin/claude/quarterly-garware-q2fy27-1ec041
+- GVPIL (gvpil): runs/gvpil-2026-11-15 is on one branch only: origin/run/gvpil-2026-11-15
+- GVPIL (gvpil): runs/gvpil-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-qhuohq
+- GVPIL (gvpil): companies/GVPIL.md not on main; newest copy on origin/run/gvpil-2026-11-15 (1 branch(es), 1 version(s))
+- HERITGFOOD (heritgfood): runs/heritgfood-q2fy27 is on one branch only: origin/run/quarterly-q2fy27-2026-10-17
+- HFCL (hfcl): runs/hfcl-q2fy27 is on one branch only: origin/run/quarterly-q2fy27-2026-10-19
+- IEX (iex): runs/iex-2026-09-08 is on one branch only: origin/run/iex-2026-09-08
+- IEX (iex): companies/IEX.md not on main; newest copy on origin/run/iex-2026-09-08 (1 branch(es), 1 version(s))
+- IKS (iks): companies/IKS.md not on main; newest copy on origin/claude/quarterly-results-analysis-h4n2ul (1 branch(es), 1 version(s))
+- INA (ina): companies/INA.md not on main; newest copy on origin/claude/runs-ina-2026-09-06-kav2sw (2 branch(es), 2 version(s))
+- INDGN (indgn): runs/indgn-agm-2026-08-13 is on one branch only: origin/claude/transcript-indigene-analysis-5zmus0
+- INDGN (indgn): runs/indgn-q1fy27 is on one branch only: origin/claude/run-pipeline-indgn-6wej1t
+- INDIAGLYCO (indiaglyco): runs/indiaglyco-2026-09-02 is on one branch only: origin/claude/indiaglyco-docreview-run
+- INDIAGLYCO (indiaglyco): companies/INDIAGLYCO.md not on main; newest copy on origin/claude/indiaglyco-pipeline-run-nv2zsl (1 branch(es), 1 version(s))
+- INDIAMART (indiamart): runs/indiamart-q1fy27 is on one branch only: origin/claude/india-mart-quarterly-analysis-nujr2m
+- INDIAMART (indiamart): runs/indiamart-q2fy27 is on 10 branches, not on main: origin/claude/qr-dycl-q2fy27-766ddd;origin/claude/qr-indiamart-q2fy27-acb6b5;origin/claude/qr-knack-q2fy27-0febb1;origin/claude/qr-lt-q2fy27-6d55c1;origin/claude/qr-neochem-q2fy27-76041a;origin/claude/qr-puretrop-q2fy27-888061
+- INDIQUBE (indiqube): runs/indiqube-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-i1ji43
+- INDNIPPON (indnippon): runs/indnippon-2026-09-10 is on 2 branches, not on main: origin/run/indnippon-2026-09-10;origin/wip/laptop-save-2026-10-04
+- INDNIPPON (indnippon): companies/INDNIPPON.md not on main; newest copy on origin/run/indnippon-2026-09-10 (1 branch(es), 1 version(s))
+- INDORAMA (indorama): runs/indorama-q2fy27 is on one branch only: origin/run/quarterly-q2fy27-2026-10-17
+- INDOSOLAR (indosolar): runs/indosolar-q2fy27 is on one branch only: origin/claude/quarterly-indosolar-q2fy27-2614ff
+- INVPRECQ (invprecq): runs/invprecq-2026-11-15 is on one branch only: origin/run/invprecq-2026-11-15
+- INVPRECQ (invprecq): companies/INVPRECQ.md not on main; newest copy on origin/run/invprecq-2026-11-15 (1 branch(es), 1 version(s))
+- IOLCP (iolcp): runs/iolcp-2026-09-19 is on one branch only: origin/run/iolcp-2026-09-19
+- IOLCP (iolcp): companies/IOLCP.md not on main; newest copy on origin/run/iolcp-2026-09-19 (1 branch(es), 1 version(s))
+- IPCL (ipcl): runs/ipcl-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-dwprvc
+- IVALUE (ivalue): runs/ivalue-q1fy27 is on one branch only: origin/claude/aspara-quarterly-results-7k23p1
+- JAYKAY (jaykay): runs/jaykay-2026-08-26 is on one branch only: origin/claude/jaykay-corpus-extraction-vkjw6a
+- JLHL (jlhl): runs/jlhl-2026-11-12 is on one branch only: origin/run/jlhl-2026-11-12
+- JLHL (jlhl): companies/JLHL.md not on main; newest copy on origin/run/jlhl-2026-11-12 (1 branch(es), 1 version(s))
+- JNKINDIA (jnkindia): runs/jnkindia-q1fy27 is on one branch only: origin/claude/jk-india-quarterly-analysis-xulrvt
+- KARNIKA (karnika): runs/karnika-h1fy27 is on one branch only: origin/run/quarterly-q2fy27-2026-10-17
+- KCPSUGIND (kcpsugind): runs/kcpsugind-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-mk45d6
+- KECL (kecl): runs/kecl-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-oxt7o0
+- KECL (kecl): companies/KECL.md not on main; newest copy on origin/claude/baluforge-2026-09-06-runs-ah784w (1 branch(es), 1 version(s))
+- KELTECH (keltech): runs/keltech-2026-11-15 is on one branch only: origin/run/keltech-2026-11-15
+- KELTECH (keltech): companies/KELTECH.md not on main; newest copy on origin/run/keltech-2026-11-15 (1 branch(es), 1 version(s))
+- KERNEX (kernex): runs/kernex-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-ixhbmx
+- KNACK (knack): runs/knack-q2fy27 is on 4 branches, not on main: origin/claude/qr-dycl-q2fy27-766ddd;origin/claude/qr-knack-q2fy27-0febb1;origin/claude/qr-route-q2fy27-fb3514;origin/run/quarterly-q2fy27-2026-10-28
+- KPL (kpl): runs/kpl-2026-11-15 is on one branch only: origin/run/kpl-2026-11-15
+- KPL (kpl): companies/KPL.md not on main; newest copy on origin/run/kpl-2026-11-15 (1 branch(es), 1 version(s))
+- KRN (krn): runs/krn-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-0ffwkb
+- KROSS (kross): runs/kross-2026-09-27 is on one branch only: origin/run/kross-2026-09-27
+- KROSS (kross): runs/kross-q2fy27 is on one branch only: origin/run/quarterly-q2fy27-2026-10-19
+- KROSS (kross): companies/KROSS.md not on main; newest copy on origin/run/kross-2026-09-27 (1 branch(es), 1 version(s))
+- KSOLVES (ksolves): runs/ksolves-q1fy27 is on one branch only: origin/claude/k-solve-quarterly-analysis-23wdwl
+- KUSUMGAR (kusumgar): runs/kusumgar-2026-11-12 is on one branch only: origin/run/kusumgar-2026-11-12
+- KUSUMGAR (kusumgar): companies/KUSUMGAR.md not on main; newest copy on origin/run/kusumgar-2026-11-12 (1 branch(es), 1 version(s))
+- KWICK (kwick): runs/kwick-2026-10-04 is on one branch only: origin/run/kwick-2026-10-04
+- KWICK (kwick): companies/KWICK.md not on main; newest copy on origin/run/kwick-2026-10-04 (1 branch(es), 1 version(s))
+- LAXMIINDIA (laxmiindia): runs/laxmiindia-q1fy27 is on one branch only: origin/claude/laxmi-quarterly-results-nk7iej
+- LT (lt): runs/lt-q2fy27 is on 2 branches, not on main: origin/claude/qr-lt-q2fy27-6d55c1;origin/run/quarterly-q2fy27-2026-10-28
+- LTELEVATOR (ltelevator): runs/ltelevator-corppres-2026-09 is on one branch only: origin/wip/laptop-save-2026-10-04
+- MACPOWER (macpower): companies/MACPOWER.md not on main; newest copy on origin/claude/macpower-pipeline-g9ouq4 (1 branch(es), 1 version(s))
+- MAPMYINDIA (mapmyindia): runs/mapmyindia-q1fy27 is on one branch only: origin/claude/map-my-india-quarterly-analysis-43nbwc
+- MAXIND (maxind): runs/maxind-q1fy27 is on one branch only: origin/claude/max-india-earnings-analysis-2pm9im
+- MCFOS (mcfos): runs/mcfos-q1fy27 is on one branch only: origin/claude/mcfos-quarterly-analysis-n1t1pq
+- MENONBE (menonbe): companies/MENONBE.md not on main; newest copy on origin/claude/menonbe-pipeline-run-bs4dq5 (1 branch(es), 1 version(s))
+- MIDEAST (mideast): runs/mideast-2026-10-25 is on 2 branches, not on main: origin/run/mideast-2026-10-25;origin/video/mideast-2026-10-25
+- MMP (mmp): runs/mmp-2026-10-04 is on one branch only: origin/run/mmp-2026-10-04
+- MMP (mmp): companies/MMP.md not on main; newest copy on origin/run/mmp-2026-10-04 (1 branch(es), 1 version(s))
+- MODISONLTD (modisonltd): companies/MODISONLTD.md not on main; newest copy on origin/claude/modisonltd-pipeline-run-e5lytf (1 branch(es), 1 version(s))
+- MTAR (mtar): runs/mtar-q1fy27 is on one branch only: origin/claude/mtar-annual-reports-qo0c39
+- NEOCHEM (neochem): runs/neochem-q2fy27 is on 2 branches, not on main: origin/claude/qr-neochem-q2fy27-76041a;origin/run/quarterly-q2fy27-2026-10-28
+- NEPHROPLUS (nephroplus): runs/nephroplus-q1fy27 is on one branch only: origin/claude/nephro-plus-quarterly-analysis-vqj5xc
+- NETWEB (netweb): runs/netweb-q1fy27 is on one branch only: origin/claude/netweb-results-analysis-qb5mas
+- NETWEB (netweb): runs/netweb-q2fy27 is on 10 branches, not on main: origin/claude/qr-dycl-q2fy27-766ddd;origin/claude/qr-knack-q2fy27-0febb1;origin/claude/qr-lt-q2fy27-6d55c1;origin/claude/qr-neochem-q2fy27-76041a;origin/claude/qr-netweb-q2fy27-a60c5c;origin/claude/qr-puretrop-q2fy27-888061
+- ONWARDTEC (onwardtec): runs/onwardtec-2026-11-12 is on one branch only: origin/run/onwardtec-2026-11-12
+- ONWARDTEC (onwardtec): companies/ONWARDTEC.md not on main; newest copy on origin/run/onwardtec-2026-11-12 (1 branch(es), 1 version(s))
+- OSWAL (oswal): runs/oswal-q1fy27 is on one branch only: origin/claude/oswal-pumps-q1-analysis-si2lg8
+- PACEDIGITK (pacedigitk): runs/pacedigitk-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-vx8dc4
+- PAISALO (paisalo): runs/paisalo-q1fy27 is on one branch only: origin/claude/quarterly-results-protocol-dlltuf
+- PAISALO (paisalo): runs/paisalo-q2fy27 is on one branch only: origin/claude/quarterly-paisalo-q2fy27-095262
+- PARACABLES (paracables): runs/paracables-q2fy27 is on 10 branches, not on main: origin/claude/qr-dycl-q2fy27-766ddd;origin/claude/qr-knack-q2fy27-0febb1;origin/claude/qr-lt-q2fy27-6d55c1;origin/claude/qr-neochem-q2fy27-76041a;origin/claude/qr-paracables-q2fy27-a220cd;origin/claude/qr-puretrop-q2fy27-888061
+- PAUSHAK (paushak): runs/paushak-q1fy27 is on one branch only: origin/claude/paushak-quarterly-analysis-1lg8ur
+- PITTIENG (pittieng): runs/pittieng-q2fy27 is on one branch only: origin/claude/quarterly-pittieng-q2fy27-3fc1e6
+- PNGS (pngs): runs/pngs-q1fy27 is on one branch only: origin/claude/cool-euler-1on89m
+- POONAWALLA (poonawalla): runs/poonawalla-q2fy27 is on one branch only: origin/run/quarterly-q2fy27-2026-10-17
+- PREMEXPLN (premexpln): runs/premexpln-2026-11-15 is on one branch only: origin/run/premexpln-2026-11-15
+- PREMEXPLN (premexpln): companies/PREMEXPLN.md not on main; newest copy on origin/run/premexpln-2026-11-15 (1 branch(es), 1 version(s))
+- PREMIERPOL (premierpol): runs/premierpol-q2fy27 is on one branch only: origin/run/quarterly-q2fy27-2026-10-17
+- PVRINOX (pvrinox): runs/pvrinox-2026-11-12 is on one branch only: origin/run/pvrinox-2026-11-12
+- PVRINOX (pvrinox): companies/PVRINOX.md not on main; newest copy on origin/run/pvrinox-2026-11-12 (1 branch(es), 1 version(s))
+- QLL (qll): runs/qll-2026-11-15 is on one branch only: origin/run/qll-2026-11-15
+- QLL (qll): companies/QLL.md not on main; newest copy on origin/run/qll-2026-11-15 (1 branch(es), 1 version(s))
+- QMSMEDI (qmsmedi): runs/qmsmedi-2026-09-26 is on one branch only: origin/run/qmsmedi-2026-09-26
+- QMSMEDI (qmsmedi): companies/QMSMEDI.md not on main; newest copy on origin/run/qmsmedi-2026-09-26 (1 branch(es), 1 version(s))
+- QPOWER (qpower): runs/qpower-q1fy27 is on one branch only: origin/claude/qpower-q1-fy27-notion-6lgxlt
+- QPOWER (qpower): runs/qpower-q2fy27 is on one branch only: origin/run/quarterly-q2fy27-2026-10-19
+- QUALITEK (qualitek): runs/qualitek-2026-09-26 is on one branch only: origin/run/qualitek-2026-09-26
+- QUALITEK (qualitek): companies/QUALITEK.md not on main; newest copy on origin/run/qualitek-2026-09-26 (1 branch(es), 1 version(s))
+- RAMRAT (ramrat): runs/ramrat-q1fy27 is on one branch only: origin/claude/ram-ratna-quarterly-analysis-0161le
+- RAMRAT (ramrat): companies/RAMRAT.md not on main; newest copy on origin/claude/ramrat-pipeline-run-e5xukv (1 branch(es), 1 version(s))
+- RAPPID (rappid): runs/rappid-2026-09-19 is on one branch only: origin/run/rappid-2026-09-19
+- RAPPID (rappid): companies/RAPPID.md not on main; newest copy on origin/run/rappid-2026-09-19 (1 branch(es), 1 version(s))
+- RATEGAIN (rategain): runs/rategain-q1fy27 is on one branch only: origin/claude/red-grain-quarterly-results-1xrd0f
+- RATHIST (rathist): runs/rathist-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-lft8iz
+- RAYMONDREL (raymondrealty): runs/raymondrealty-q1fy27 is on one branch only: origin/claude/raymond-realty-q1-fy27-h5wmo2
+- RAYMONDREL (raymondrealty): runs/raymondrel-q2fy27 is on 10 branches, not on main: origin/claude/qr-dycl-q2fy27-766ddd;origin/claude/qr-knack-q2fy27-0febb1;origin/claude/qr-lt-q2fy27-6d55c1;origin/claude/qr-neochem-q2fy27-76041a;origin/claude/qr-puretrop-q2fy27-888061;origin/claude/qr-raymondrel-q2fy27-f76d61
+- RKFORGE (rkforge): runs/rkforge-2026-11-12 is on one branch only: origin/run/rkforge-2026-11-12
+- RKFORGE (rkforge): companies/RKFORGE.md not on main; newest copy on origin/run/rkforge-2026-11-12 (1 branch(es), 1 version(s))
+- ROUTE (route): runs/route-q1fy27 is on one branch only: origin/claude/route-mobile-quarterly-pkqpxv
+- ROUTE (route): runs/route-q2fy27 is on one branch only: origin/claude/qr-route-q2fy27-fb3514
+- RSYSTEMS (rsystems): runs/rsystems-q2cy26 is on one branch only: origin/claude/quarterly-results-analysis-j2wrxj
+- SAMMAANCAP (sammaancap): runs/sammaancap-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-b1d9jd
+- SASKEN (sasken): runs/sasken-q1fy27 is on one branch only: origin/claude/sasken-quarterly-analysis-xgjg0m
+- SATIN (satin): runs/satin-q1fy27 is on one branch only: origin/claude/quarterly-credit-care-analysis-pjrg9x
+- SCODATUBES (scodatubes): runs/scodatubes-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-91a9t7
+- SEDEMAC (sedemac): runs/sedemac-q1fy27 is on one branch only: origin/claude/sedemac-quarterly-analysis-4k2otx
+- SFL (sfl): runs/sfl-q1fy27 is on one branch only: origin/claude/sheela-quarterly-results-zxbbvj
+- SHAREINDIA (shareindia): runs/shareindia-2026-09-19 is on one branch only: origin/run/shareindia-2026-09-19
+- SHAREINDIA (shareindia): companies/SHAREINDIA.md not on main; newest copy on origin/run/shareindia-2026-09-19 (1 branch(es), 1 version(s))
+- SHARIKA (sharika): runs/sharika-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-01wssj
+- SHAWGELTIN (shawgeltin): runs/shawgeltin-2026-11-12 is on one branch only: origin/run/shawgeltin-2026-11-12
+- SHAWGELTIN (shawgeltin): companies/SHAWGELTIN.md not on main; newest copy on origin/run/shawgeltin-2026-11-12 (1 branch(es), 1 version(s))
+- SICALLOG (sicallog): companies/SICALLOG.md not on main; newest copy on origin/claude/sicallog-pipeline-pwftth (1 branch(es), 1 version(s))
+- SKYGOLD (skygold): runs/skygold-q2fy27 is on 2 branches, not on main: origin/claude/qr-skygold-q2fy27-7e1298;origin/run/quarterly-q2fy27-2026-10-28
+- SONACOMS (sonacoms): runs/sonacoms-q2fy27 is on 10 branches, not on main: origin/claude/qr-dycl-q2fy27-766ddd;origin/claude/qr-knack-q2fy27-0febb1;origin/claude/qr-lt-q2fy27-6d55c1;origin/claude/qr-neochem-q2fy27-76041a;origin/claude/qr-puretrop-q2fy27-888061;origin/claude/qr-route-q2fy27-fb3514
+- SOUTHWEST (southwest): runs/southwest-2026-11-09 is on one branch only: origin/run/southwest-2026-11-09
+- SOUTHWEST (southwest): runs/southwest-q1fy27 is on one branch only: origin/claude/southrest-quarterly-results-wo3ltt
+- SOUTHWEST (southwest): companies/SOUTHWEST.md not on main; newest copy on origin/run/southwest-2026-11-09 (1 branch(es), 1 version(s))
+- SPAPPAREL (spapparel): runs/spapparel-q1fy27 is on one branch only: origin/claude/sp-apparel-quarterly-analysis-q2eld6
+- SPROP (sprop): runs/sprop-q1fy27 is on one branch only: origin/claude/shriram-properties-quarterly-8swem6
+- SRM (srm): runs/srm-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-u9lgke
+- SSWL (sswl): runs/sswl-2026-09-19 is on one branch only: origin/run/sswl-2026-09-19
+- SSWL (sswl): companies/SSWL.md not on main; newest copy on origin/run/sswl-2026-09-19 (1 branch(es), 1 version(s))
+- STALLION (stallion): runs/stallion-q1fy27 is on one branch only: origin/claude/australian-india-quarterly-results-wiv2a8
+- STYL (styl): runs/styl-q1fy27 is on one branch only: origin/claude/sesha-sai-analysis-t7sqgg
+- SUDARCOLOR (sudarcolor): runs/sudarcolor-2026-11-12 is on one branch only: origin/run/sudarcolor-2026-11-12
+- SUDARCOLOR (sudarcolor): companies/SUDARCOLOR.md not on main; newest copy on origin/run/sudarcolor-2026-11-12 (1 branch(es), 1 version(s))
+- SUGSLLOYD (sugslloyd): runs/sugslloyd-q1fy27 is on one branch only: origin/claude/sugs-lyod-results-analysis-sa8wi5
+- SUPREMEPWR (supremepwr): runs/supremepwr-2026-10-06 is on 2 branches, not on main: origin/run/accord-2026-10-06;origin/run/supremepwr-2026-10-06
+- SUPREMEPWR (supremepwr): runs/supremepwr-h1fy27 is on 2 branches, not on main: origin/claude/quarterly-supremepower-q2fy27-7e9233;origin/run/quarterly-q2fy27-2026-10-17
+- SUPREMEPWR (supremepwr): companies/SUPREMEPWR.md not on main; newest copy on origin/run/supremepwr-2026-10-06 (2 branch(es), 1 version(s))
+- SUSAN (susan): runs/susan-2026-09-19 is on one branch only: origin/run/susan-2026-09-19
+- SUSAN (susan): companies/SUSAN.md not on main; newest copy on origin/run/susan-2026-09-19 (1 branch(es), 1 version(s))
+- SYNGENE (syngene): runs/syngene-q2fy27 is on 10 branches, not on main: origin/claude/qr-dycl-q2fy27-766ddd;origin/claude/qr-knack-q2fy27-0febb1;origin/claude/qr-lt-q2fy27-6d55c1;origin/claude/qr-neochem-q2fy27-76041a;origin/claude/qr-puretrop-q2fy27-888061;origin/claude/qr-route-q2fy27-fb3514
+- TATACOMM (tatacomm): runs/tatacomm-q2fy27 is on one branch only: origin/run/quarterly-q2fy27-2026-10-17
+- TATAPOWER (tatapower): runs/tatapower-q1fy27 is on one branch only: origin/claude/tata-power-analysis-2x2wx8
+- TATVA (tatva): runs/tatva-q1fy27 is on one branch only: origin/claude/quarterly-analysis-agent-z2p3ps
+- TATVA (tatva): runs/tatva-q2fy27 is on one branch only: origin/run/quarterly-q2fy27-2026-10-19
+- TDPOWERSYS (tdpowersys): runs/tdpowersys-2026-11-15 is on one branch only: origin/run/tdpowersys-2026-11-15
+- TDPOWERSYS (tdpowersys): companies/TDPOWERSYS.md not on main; newest copy on origin/run/tdpowersys-2026-11-15 (1 branch(es), 1 version(s))
+- TEJASNET (tejasnet): runs/tejasnet-q1fy27 is on one branch only: origin/claude/tejas-network-quarterly-analysis-4mzxz3
+- TEJASNET (tejasnet): runs/tejasnet-q2fy27 is on one branch only: origin/claude/quarterly-tejas-q2fy27-f91c3c
+- TINNARUBR (tinnarubr): runs/tinnarubr-q2fy27 is on one branch only: origin/claude/quarterly-tinna-q2fy27-d4fe1d
+- TLL (tll): runs/tll-2026-09-26 is on one branch only: origin/run/tll-2026-09-26
+- TLL (tll): companies/TLL.md not on main; newest copy on origin/run/tll-2026-09-26 (1 branch(es), 1 version(s))
+- TRANSRAIL (transrail): runs/transrail-q1fy27 is on one branch only: origin/claude/transrail-quarterly-analysis-f7kqqf
+- TRUALT (trualt): runs/trualt-2026-09-18 is on one branch only: origin/run/trualt-2026-09-18
+- TRUALT (trualt): runs/trualt-q1fy27 is on one branch only: origin/claude/truevault-quarterly-analysis-27abp5
+- TRUALT (trualt): companies/TRUALT.md not on main; newest copy on origin/run/trualt-2026-09-18 (1 branch(es), 1 version(s))
+- UNIABEX (uniabex): runs/uniabex-q1fy27 is on one branch only: origin/claude/unipart-quarterly-analysis-5ky0ug
+- UNIMECH (unimech): runs/unimech-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-ffii20
+- UNIMECH (unimech): runs/unimech-q2fy27 is on 2 branches, not on main: origin/claude/qr-unimech-q2fy27-1b1895;origin/run/quarterly-q2fy27-2026-10-28
+- UNIMECH (unimech): companies/UNIMECH.md not on main; newest copy on origin/claude/quarterly-results-analysis-ffii20 (1 branch(es), 1 version(s))
+- UNIPARTS (uniparts): runs/uniparts-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-9ef8ys
+- URBANCO (urbanco): runs/urbanco-q1fy27 is on one branch only: origin/claude/urban-company-quarterly-analysis-ib51ci
+- UTLSOLAR (utlsolar): runs/utlsolar-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-324riy
+- VAIBHAVGBL (vaibhavgbl): runs/vaibhavgbl-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-h2f1ss
+- VENUSPIPES (venuspipes): runs/venuspipes-q1fy27 is on one branch only: origin/claude/venus-pipes-q1-fy27-jtc505
+- VENUSREM (venusrem): runs/venusrem-2026-07-24 is on 120 branches, not on main: origin/claude/aartisurf-pipeline-run-3wqmjl;origin/claude/aartisurf-pipeline-run-811pku;origin/claude/adf-food-quarterly-analysis-b8cygp;origin/claude/aeroflex-results-analysis-x9xrqs;origin/claude/anoop-engineering-quarterly-8lr5l1;origin/claude/aspara-quarterly-results-7k23p1
+- VIVIDEL (vividel): runs/vividel-2026-09-07 is on one branch only: origin/claude/presentation-analysis-hw7bol
+- VOEPL (voepl): companies/VOEPL.md not on main; newest copy on origin/claude/baluforge-2026-09-06-runs-ah784w (2 branch(es), 2 version(s))
+- VRLLOG (vrllog): runs/vrllog-2026-11-12 is on one branch only: origin/run/vrllog-2026-11-12
+- VRLLOG (vrllog): companies/VRLLOG.md not on main; newest copy on origin/run/vrllog-2026-11-12 (1 branch(es), 1 version(s))
+- WALCHANNAG (walchannag): runs/walchannag-2026-11-12 is on one branch only: origin/run/walchannag-2026-11-12
+- WALCHANNAG (walchannag): companies/WALCHANNAG.md not on main; newest copy on origin/run/walchannag-2026-11-12 (1 branch(es), 1 version(s))
+- WELCORP (welcorp): runs/welcorp-q1fy27 is on one branch only: origin/claude/quarterly-results-analysis-06y8qn
+- WEWORK (wework): runs/wework-q2fy27 is on 10 branches, not on main: origin/claude/qr-dycl-q2fy27-766ddd;origin/claude/qr-knack-q2fy27-0febb1;origin/claude/qr-lt-q2fy27-6d55c1;origin/claude/qr-neochem-q2fy27-76041a;origin/claude/qr-puretrop-q2fy27-888061;origin/claude/qr-route-q2fy27-fb3514
+- WORKMATES (workmates): runs/workmates-2026-09-07-presentation is on one branch only: origin/claude/presentation-analysis-3onxgk
+- YASHHV (yashhv): runs/yashhv-2026-09-26 is on one branch only: origin/run/yashhv-2026-09-26
+- YASHHV (yashhv): companies/YASHHV.md not on main; newest copy on origin/run/yashhv-2026-09-26 (1 branch(es), 1 version(s))
+- YASHO (yasho): companies/YASHO.md not on main; newest copy on origin/claude/yasho-industries-step-one-iuo5ii (1 branch(es), 1 version(s))
+- ZEEL (zeel): runs/zeel-q1fy27 is on one branch only: origin/claude/zeel-quarterly-analysis-9i2r1v
+
+## 4. No company memory file (128 companies)
+
+- 530077 (530077): no companies/530077.md on any branch
+- 544332 (544332): no companies/544332.md on any branch
+- ADFFOODS (adffoods): no companies/ADFFOODS.md on any branch
+- ADOR (ador): no companies/ADOR.md on any branch
+- AEROFLEX (aeroflex): no companies/AEROFLEX.md on any branch
+- AKUMS (akums): no companies/AKUMS.md on any branch
+- AMEENJI (ameenji): no companies/AMEENJI.md on any branch
+- ANUP (anup): no companies/ANUP.md on any branch
+- APEXECO (apexeco): no companies/APEXECO.md on any branch
+- ARIS (aris): no companies/ARIS.md on any branch
+- ATLANTAELEC (atlantaelec): no companies/ATLANTAELEC.md on any branch
+- BALAMINES (balamines): no companies/BALAMINES.md on any branch
+- BANDHANBNK (bandhan): no companies/BANDHAN.md on any branch
+- BIRLACABLE (birlacable): no companies/BIRLACABLE.md on any branch
+- BIRLANU (birlanu): no companies/BIRLANU.md on any branch
+- BLACKROSE (blackrose): no companies/BLACKROSE.md on any branch
+- CREDO (credo): no companies/CREDO.md on any branch
+- CYBERTECH (cybertech): no companies/CYBERTECH.md on any branch
+- DATAPATTNS (datapattns): no companies/DATAPATTNS.md on any branch
+- DGML (deccangold): no companies/DECCANGOLD.md on any branch
+- DHANBANK (dhanbank): no companies/DHANBANK.md on any branch
+- DIGITIDE (digitide): no companies/DIGITIDE.md on any branch
+- DYCL (dycl): no companies/DYCL.md on any branch
+- E2E (e2e): no companies/E2E.md on any branch
+- ECOSMOBILITY (ecosmobility): no companies/ECOSMOBILITY.md on any branch
+- EIMCOELECO (eimcoeleco): no companies/EIMCOELECO.md on any branch
+- EMVDL (emvdl): no companies/EMVDL.md on any branch
+- EXICOM (exicom): no companies/EXICOM.md on any branch
+- FAIRCHEMOR (fairchemor): no companies/FAIRCHEMOR.md on any branch
+- FINCABLES (fincables): no companies/FINCABLES.md on any branch
+- FINKURVE (finkurve): no companies/FINKURVE.md on any branch
+- FLUIDOMAT (fluidomat): no companies/FLUIDOMAT.md on any branch
+- GALLANTT (gallantt): no companies/GALLANTT.md on any branch
+- GANECOS (ganecos): no companies/GANECOS.md on any branch
+- GARGI (gargi): no companies/GARGI.md on any branch
+- GEE (gee): no companies/GEE.md on any branch
+- GEMAROMA (gemaroma): no companies/GEMAROMA.md on any branch
+- GHVINFRA (ghvinfra): no companies/GHVINFRA.md on any branch
+- GMBREW (gmbrew): no companies/GMBREW.md on any branch
+- GMDCLTD (gmdc): no companies/GMDC.md on any branch
+- GMMPFAUDLER (gmmpfaudler): no companies/GMMPFAUDLER.md on any branch
+- GOCLCORP (goclcorp): no companies/GOCLCORP.md on any branch
+- GOLDIAM (goldium): no companies/GOLDIUM.md on any branch
+- GRWRHITECH (grwrhitech): no companies/GRWRHITECH.md on any branch
+- GSMFOILS (gsmfoils): no companies/GSMFOILS.md on any branch
+- HERITGFOOD (heritgfood): no companies/HERITGFOOD.md on any branch
+- HFCL (hfcl): no companies/HFCL.md on any branch
+- INDIAMART (indiamart): no companies/INDIAMART.md on any branch
+- INDIQUBE (indiqube): no companies/INDIQUBE.md on any branch
+- INDORAMA (indorama): no companies/INDORAMA.md on any branch
+- INDOSOLAR (indosolar): no companies/INDOSOLAR.md on any branch
+- INOXINDIA (inoxindia): no companies/INOXINDIA.md on any branch
+- IPCL (ipcl): no companies/IPCL.md on any branch
+- IVALUE (ivalue): no companies/IVALUE.md on any branch
+- JAYKAY (jaykay): no companies/JAYKAY.md on any branch
+- JITFINFRA (jitfinfra): no companies/JITFINFRA.md on any branch
+- JNKINDIA (jnkindia): no companies/JNKINDIA.md on any branch
+- KARNIKA (karnika): no companies/KARNIKA.md on any branch
+- KERNEX (kernex): no companies/KERNEX.md on any branch
+- KNACK (knack): no companies/KNACK.md on any branch
+- KOPRAN (kopran): no companies/KOPRAN.md on any branch
+- KRN (krn): no companies/KRN.md on any branch
+- KSOLVES (ksolves): no companies/KSOLVES.md on any branch
+- LAXMIINDIA (laxmiindia): no companies/LAXMIINDIA.md on any branch
+- LT (lt): no companies/LT.md on any branch
+- LTELEVATOR (ltelevator): no companies/LTELEVATOR.md on any branch
+- MAPMYINDIA (mapmyindia): no companies/MAPMYINDIA.md on any branch
+- MAXIND (maxind): no companies/MAXIND.md on any branch
+- MCFOS (mcfos): no companies/MCFOS.md on any branch
+- MIDEAST (mideast): no companies/MIDEAST.md on any branch
+- MTAR (mtar): no companies/MTAR.md on any branch
+- NEOCHEM (neochem): no companies/NEOCHEM.md on any branch
+- NEPHROPLUS (nephroplus): no companies/NEPHROPLUS.md on any branch
+- NETWEB (netweb): no companies/NETWEB.md on any branch
+- NRAIL (nrail): no companies/NRAIL.md on any branch
+- OSWAL (oswal): no companies/OSWAL.md on any branch
+- PACEDIGITK (pacedigitk): no companies/PACEDIGITK.md on any branch
+- PAISALO (paisalo): no companies/PAISALO.md on any branch
+- PARACABLES (paracables): no companies/PARACABLES.md on any branch
+- PARKHOSPS (parkhosps): no companies/PARKHOSPS.md on any branch
+- PAUSHAK (paushak): no companies/PAUSHAK.md on any branch
+- PNGS (pngs): no companies/PNGS.md on any branch
+- POONAWALLA (poonawalla): no companies/POONAWALLA.md on any branch
+- PREMIERPOL (premierpol): no companies/PREMIERPOL.md on any branch
+- QPOWER (qpower): no companies/QPOWER.md on any branch
+- RATEGAIN (rategain): no companies/RATEGAIN.md on any branch
+- RATHIST (rathist): no companies/RATHIST.md on any branch
+- RAYMONDREL (raymondrealty): no companies/RAYMONDREALTY.md on any branch
+- ROUTE (route): no companies/ROUTE.md on any branch
+- RPTECH (rptech): no companies/RPTECH.md on any branch
+- RSYSTEMS (rsystems): no companies/RSYSTEMS.md on any branch
+- SAMBHV (sambhv): no companies/SAMBHV.md on any branch
+- SAMHI (samhi): no companies/SAMHI.md on any branch
+- SAMMAANCAP (sammaancap): no companies/SAMMAANCAP.md on any branch
+- SASKEN (sasken): no companies/SASKEN.md on any branch
+- SATIN (satin): no companies/SATIN.md on any branch
+- SCODATUBES (scodatubes): no companies/SCODATUBES.md on any branch
+- SEDEMAC (sedemac): no companies/SEDEMAC.md on any branch
+- SHARIKA (sharika): no companies/SHARIKA.md on any branch
+- SKYGOLD (skygold): no companies/SKYGOLD.md on any branch
+- SMRUTHI (smruthi): no companies/SMRUTHI.md on any branch
+- SONACOMS (sonacoms): no companies/SONACOMS.md on any branch
+- SPAPPAREL (spapparel): no companies/SPAPPAREL.md on any branch
+- SPROP (sprop): no companies/SPROP.md on any branch
+- SRM (srm): no companies/SRM.md on any branch
+- STALLION (stallion): no companies/STALLION.md on any branch
+- STLTECH (stltech): no companies/STLTECH.md on any branch
+- STYL (styl): no companies/STYL.md on any branch
+- SUGSLLOYD (sugslloyd): no companies/SUGSLLOYD.md on any branch
+- TATACOMM (tatacomm): no companies/TATACOMM.md on any branch
+- TATAPOWER (tatapower): no companies/TATAPOWER.md on any branch
+- TEJASNET (tejasnet): no companies/TEJASNET.md on any branch
+- TINNARUBR (tinnarubr): no companies/TINNARUBR.md on any branch
+- TIPCO (tipco): no companies/TIPCO.md on any branch
+- TRANSRAIL (transrail): no companies/TRANSRAIL.md on any branch
+- UNIABEX (uniabex): no companies/UNIABEX.md on any branch
+- UNIPARTS (uniparts): no companies/UNIPARTS.md on any branch
+- URBANCO (urbanco): no companies/URBANCO.md on any branch
+- UTLSOLAR (utlsolar): no companies/UTLSOLAR.md on any branch
+- VAIBHAVGBL (vaibhavgbl): no companies/VAIBHAVGBL.md on any branch
+- VENUSPIPES (venuspipes): no companies/VENUSPIPES.md on any branch
+- VILAS (vilas): no companies/VILAS.md on any branch
+- VIVIDEL (vividel): no companies/VIVIDEL.md on any branch
+- WELCORP (welcorp): no companies/WELCORP.md on any branch
+- WEWORK (wework): no companies/WEWORK.md on any branch
+- WORKMATES (workmates): no companies/WORKMATES.md on any branch
+- ZAGGLE (zaggle): no companies/ZAGGLE.md on any branch
+- ZEEL (zeel): no companies/ZEEL.md on any branch
+
+## 5. Companies with a run folder but no census rows (0)
+

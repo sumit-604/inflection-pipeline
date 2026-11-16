@@ -23,7 +23,7 @@ IPCL and INVPRECQ are the same company and are merged under INVPRECQ.
 - Operating profit before tax = profit before exceptional items and tax, minus other income.
 - Where the filed PBT line already includes the share of associates or joint ventures, that share is removed.
 - Operating profit after tax = operating profit before tax x (1 - 25.17%). Growth is the same on both.
-- Lenders: PBT minus stated treasury or trading gains; where none is stated, reported PBT, marked LENDER-REPORTED.
+- Lenders: PBT minus the stated net gain on fair value changes (the treasury or trading gain); where none is stated, reported PBT, marked LENDER-REPORTED. Gains on derecognition of loans are not removed.
 - Quarterly reporters: the quarter against the same quarter last year. Half-yearly reporters: the half against the same half last year.
 - Consolidated where the filing has it, otherwise standalone. The column says which.
 - Figures are copied as printed. The crore figure sits beside the original lakh, million or crore figure.

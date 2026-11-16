@@ -81,12 +81,12 @@ None.
 - STLTECH (Sterlite Technologies Ltd): +4800.0% (Rs 5.00 Cr to Rs 245.00 Cr)
 - KERNEX (Kernex Microsystems (India) Ltd): +1506.6% (Rs 9.19 Cr to Rs 147.65 Cr)
 - KUSUMGAR (Kusumgar Ltd): +939.2% (Rs 5.44 Cr to Rs 56.48 Cr)
+- SATIN (Satin Creditcare Network Ltd): +758.1% (Rs 25.40 Cr to Rs 217.93 Cr) [LENDER: PBT less stated treasury/trading gains]
 - 526717 (HCP Plastene Bulkpack Ltd): +704.4% (Rs 3.18 Cr to Rs 25.55 Cr)
 - SOUTHWEST (South West Pinnacle Exploration Ltd): +494.8% (Rs 1.70 Cr to Rs 10.14 Cr)
 - SASKEN (Sasken Technologies): +351.4% (Rs 4.41 Cr to Rs 19.90 Cr)
 - MTARTECH (MTAR Technologies Ltd): +319.0% (Rs 14.20 Cr to Rs 59.52 Cr)
 - DIVGIITTS (Divgi Torqtransfer Systems Ltd): +317.0% (Rs 6.99 Cr to Rs 29.13 Cr)
-- SATIN (Satin Creditcare Network Ltd): +311.4% (Rs 25.40 Cr to Rs 104.47 Cr) [LENDER: PBT less stated treasury/trading gains]
 - GEE (GEE Limited): +301.4% (Rs 1.28 Cr to Rs 5.14 Cr)
 - ARIS (ArisInfra Solutions Ltd): +293.4% (Rs 5.66 Cr to Rs 22.28 Cr)
 - PNGSREVA (PNGS Reva Diamond Jewellery Ltd): +222.4% (Rs 9.56 Cr to Rs 30.82 Cr)
@@ -262,7 +262,7 @@ None.
 - SASKEN (Sasken Technologies): +450.9% (Rs 4.75 Cr to Rs 26.17 Cr)
 - HFCL (HFCL Limited): +447.0% (Rs 93.50 Cr to Rs 511.48 Cr)
 - BANDHANBNK (Bandhan Bank Ltd): +431.6% (Rs 157.79 Cr to Rs 838.87 Cr) [LENDER-REPORTED]
-- POONAWALLA (Poonawalla Fincorp Ltd): +407.3% (Rs 98.92 Cr to Rs 501.84 Cr) [LENDER: PBT less stated treasury/trading gains]
+- POONAWALLA (Poonawalla Fincorp Ltd): +406.5% (Rs 98.86 Cr to Rs 500.76 Cr) [LENDER: PBT less stated treasury/trading gains]
 - 543916 (Hemant Surgical Industries (HSIL)): +405.5% (Rs 4.96 Cr to Rs 25.08 Cr)
 - PREMEXPLN (Premier Explosives Ltd): +382.7% (Rs 2.84 Cr to Rs 13.69 Cr)
 - KUSUMGAR (Kusumgar Ltd): +341.9% (Rs 11.02 Cr to Rs 48.71 Cr)
@@ -375,6 +375,7 @@ None.
 - PAISALO (Paisalo Digital Ltd): +23.2% (Rs 69.46 Cr to Rs 85.58 Cr) [LENDER: PBT less stated treasury/trading gains]
 - 544434 (Neetu Yoshi Limited): +22.6% (Rs 12.37 Cr to Rs 15.17 Cr)
 - WELCORP (Welspun Corp Limited): +22.1% (Rs 457.52 Cr to Rs 558.84 Cr)
+- BBOX (Black Box Ltd): +22.0% (Rs 74.26 Cr to Rs 90.59 Cr)
 - QLL (Qualitek Labs Ltd (QLL / QUALITEK, BSE 544091)): +22.0% (Rs 6.35 Cr to Rs 7.74 Cr)
 - CYIENTDLM (Cyient DLM Ltd): +20.9% (Rs 13.82 Cr to Rs 16.70 Cr)
 - WOMANCART (Womancart Ltd): +20.0% (Rs 4.25 Cr to Rs 5.09 Cr)
@@ -384,7 +385,6 @@ None.
 - AVANA (Avana Electrosystems Ltd): +17.6% (Rs 6.80 Cr to Rs 8.00 Cr)
 - STYL (Seshaasai Technologies Ltd): +17.5% (Rs 74.92 Cr to Rs 88.06 Cr)
 - INDGN (Indegene Ltd): +16.8% (Rs 113.40 Cr to Rs 132.40 Cr)
-- BBOX (Black Box Ltd): +16.6% (Rs 74.26 Cr to Rs 86.59 Cr)
 - SEDEMAC (SEDEMAC Mechatronics Ltd): +14.0% (Rs 43.79 Cr to Rs 49.92 Cr)
 - DYCL (Dynamic Cables Ltd): +13.8% (Rs 25.15 Cr to Rs 28.63 Cr)
 - ARVINDFASN (Arvind Fashions Ltd): +13.4% (Rs 74.41 Cr to Rs 84.40 Cr)

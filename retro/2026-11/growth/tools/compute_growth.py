@@ -24,16 +24,31 @@ LABELS = ["ABOVE 25%", "0 TO 25%", "FELL", "LOSS", "TURNAROUND", "LOW BASE", "NO
 
 
 def num(v):
+    """Parse the figure at the START of a cell. Trailing remarks are ignored; a bare dash or nil is zero."""
     if v is None: return None
-    t = str(v).strip()
-    if not t or t.upper().startswith(("NOT FOUND", "NOT STATED", "NA", "N/A", "ND")): return None
-    t = t.replace(",", "").replace("−", "-").replace("–", "-").replace("Rs", "").strip()
-    if t in ("-", "--", "nil", "Nil", "NIL"): return 0.0
-    neg = t.startswith("(") and ")" in t
-    m = re.search(r"-?\d+(\.\d+)?", t)
+    t = str(v).strip().replace("−", "-").replace("–", "-").replace("—", "-")
+    if not t or t.upper().startswith(("NOT FOUND", "NOT STATED", "NA", "N/A", "ND", "NONE")): return None
+    t = re.sub(r"^(Rs\.?|INR|₹)\s*", "", t)
+    if re.match(r"^(-{1,2}|nil)(\s|$|\()", t, re.I): return 0.0
+    m = re.match(r"^(\()?\s*(-)?\s*(\d[\d,]*(?:\.\d+)?|\.\d+)\s*(\))?", t)
     if not m: return None
-    x = float(m.group(0))
-    return -abs(x) if neg else x
+    x = float(m.group(3).replace(",", ""))
+    return -x if (m.group(1) or m.group(2)) else x
+
+
+def tnum(v):
+    """Lender treasury/trading gain = the 'net gain on fair value changes' figure. Derecognition gains are not removed."""
+    if v is None: return None
+    tot, found = 0.0, False
+    for seg in str(v).split(";"):
+        if re.search(r"derecogn", seg, re.I) or re.match(r"\s*\(e\)", seg): continue
+        seg = re.sub(r"^\s*\([a-z]\)\s*", "", seg.strip())
+        x = num(seg)
+        if x is None:
+            m = re.search(r"(\()?\s*(-)?\s*(\d[\d,]*(?:\.\d+)?)\s*(\))?\s*$", seg.strip())
+            if m: x = float(m.group(3).replace(",", "")) * (-1 if (m.group(1) or m.group(2)) else 1)
+        if x is not None: tot += x; found = True
+    return tot if found else None
 
 
 def unit_factor(u):
@@ -80,7 +95,7 @@ def opvals(g):
     for yr in ("this", "last"):
         pbt = num(g.get(f"pbt_before_exceptional_{yr}")); oi = num(g.get(f"other_income_{yr}"))
         sh = num(g.get(f"share_of_associates_jv_{yr}")) or 0.0
-        tg = num(g.get(f"treasury_or_trading_gains_{yr}")) or 0.0
+        tg = tnum(g.get(f"treasury_or_trading_gains_{yr}")) or 0.0
         if pbt is None or f is None or (oi is None and not lender): out.append(None); continue
         out.append((pbt - (tg if lender else oi) - (sh if inc else 0.0)) * f)
     return out
@@ -133,7 +148,7 @@ def main():
         o["pbt_line_label"] = g.get("pbt_line_label", NF); o["share_included"] = str(g.get("share_included_in_pbt_line", "NA")).upper()
         lender = str(g.get("is_lender", "NO")).upper().startswith("Y")
         o["lender"] = "YES" if lender else "NO"
-        cr = {k: (num(v) * f if (num(v) is not None and f) else None) for k, v in raw.items()}
+        cr = {k: (((tnum(v) if k.startswith("treasury") else num(v)) * f) if ((tnum(v) if k.startswith("treasury") else num(v)) is not None and f) else None) for k, v in raw.items()}
         label, opb = None, {}
         if not g or status.startswith("NO FILING"):
             label = "NO FILING"

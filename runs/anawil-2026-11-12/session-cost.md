@@ -54,3 +54,9 @@ All 21 ledger rows were left out of these sums: this harness reports one total p
 Fresh tokens (cache write + output + uncached input): n/a
 Re-read tokens (cache read): n/a
 Re-read multiple (re-read / cache write): n/a
+
+## Phase 3 (finalize) ledger, 2026-11-17
+
+| # | stage | model | effort | in_tok | cache_read | cache_write | out_tok | total_tok | wall | run# |
+|---|-------|-------|--------|--------|------------|-------------|---------|-----------|------|------|
+| 10 | stage-10-assembly | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | pending | pending | 1 |

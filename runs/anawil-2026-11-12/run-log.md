@@ -17,3 +17,6 @@
 - Synthesis-lite (stage 13, phase 1 lite): PROCEED WITH CAVEATS, rule 3 (FLAG-CASH INDETERMINATE). It did not write verifier-disagreement-log.md (three files only in phase 1); the disagreement table sits inside outputs/final/verifier-summary.md.
 - Stage 09b dossier: mechanical check passed (six sections in order, one verdict line CORPUS GAPPED, draft marker present, annex questions 1 to 10, corpus hash line df0a745d).
 - Commits: per-stage commits were not made. The task asked for two commits (corpus, then Phase 1). All stage files were validated on disk as they landed.
+
+## Phase 3 (finalize), 2026-11-17
+- Live price for Role 1 Section 0, fetched by the orchestrator (stage 11 has no web tools): screener.in/company/ANAWIL/ at 2026-11-17 02:45 IST shows Current Price Rs 381, Market Cap Rs 952 Cr, 52-week High / Low Rs 540 / 313, Stock P/E 19.5. This is the last close before that time. Passed to stage 11 by message.

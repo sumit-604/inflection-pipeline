@@ -59,4 +59,5 @@ Re-read multiple (re-read / cache write): n/a
 
 | # | stage | model | effort | in_tok | cache_read | cache_write | out_tok | total_tok | wall | run# |
 |---|-------|-------|--------|--------|------------|-------------|---------|-----------|------|------|
-| 10 | stage-10-assembly | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | pending | pending | 1 |
+| 10 | stage-10-assembly | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 166303 | 4m02s | 1 |
+| 11 | stage-11-valuation | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | see note | see note | 1 |

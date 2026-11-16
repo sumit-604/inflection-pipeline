@@ -20,7 +20,7 @@ COLS = [
  ("base_period", "base-case period"),
  ("guidance_quote", "management guidance at the time"), ("catalysts", "promised catalysts with dates"),
  ("actual_revenue", "actual revenue"), ("actual_margin", "actual margin"), ("actual_profit", "actual profit"),
- ("result_vs_base", "result vs our base case"), ("result_basis", "basis of result call"),
+ ("result_vs_base", "result vs our base case"), ("base_comparison", "base comparison (PRO-RATED = full-year base scaled to the period)"), ("result_basis", "basis of result call"),
  ("mgmt_reason", "management's stated reason"),
  ("risk_flagged_before", "risk flagged before result"), ("risk_flag_ref", "risk flag file and line"),
  ("who_flagged", "who flagged it"), ("overruled", "overruled"), ("overruled_ref", "overruled reference"),
@@ -30,7 +30,37 @@ COLS = [
  ("actual_source", "source: actuals"), ("reason_source", "source: management reason"),
  ("branches_with_files", "branches with files"), ("on_main", "on main"), ("notes", "notes"),
 ]
-VALID = {"BEAT", "IN LINE", "MISS", "NO BASELINE"}
+VALID = {"BEAT", "IN LINE", "BELOW BASE", "MISS", "NO BASELINE"}
+ORDER = ("MISS", "BELOW BASE", "IN LINE", "BEAT", "NO BASELINE")
+# BELOW BASE rule (operator ruling on PR 245, 2026-11-17):
+#   MISS       = the file puts a key metric below bear (or below stress / red line / floor),
+#                or a pre-committed thesis test or tripwire failed and the file gives no bear/base placing.
+#   BELOW BASE = the file puts the result between bear and base, or below base, with no key metric below bear.
+# The rule was applied row by row to the audited basis lines. Rows moved to BELOW BASE:
+BELOW_BASE_ROWS = {
+    ("544657", "Q2/H1 FY27"), ("ASIANENE", "Q1 FY27"), ("BANDHANBNK", "Q2/H1 FY27"), ("DSSL", "Q2/H1 FY27"),
+    ("EXPLEOSOL", "Q2/H1 FY27"), ("FRACTAL", "Q1 FY27"), ("FRACTAL", "Q2/H1 FY27"), ("GVPIL", "Q2/H1 FY27"),
+    ("INDSWFTLAB", "Q2/H1 FY27"), ("JNKINDIA", "Q1 FY27"), ("ORCHPHARMA", "Q2/H1 FY27"), ("OSWAL", "Q1 FY27"),
+    ("RAYMONDREL", "Q1 FY27"), ("RAYMONDREL", "Q2/H1 FY27"), ("ROUTE", "Q2/H1 FY27"), ("SCODATUBES", "Q1 FY27"),
+    ("STYL", "Q2/H1 FY27"), ("WELCORP", "Q1 FY27"),
+    # labelled IN LINE at extraction; the file's own placing is between bear and base
+    ("SASKEN", "Q2/H1 FY27"), ("UNIHEALTH", "Q2/H1 FY27"),
+}
+# MISS rows that rest on a failed pre-committed test or tripwire, not on bear wording:
+MISS_ON_TEST_ROWS = {
+    ("ACCORD", "Q2/H1 FY27"), ("AEQUS", "Q2/H1 FY27"), ("APSISAERO", "Q2/H1 FY27"), ("AURUM", "Q1 FY27"),
+    ("AURUM", "Q2/H1 FY27"), ("GARGI", "Q1 FY27"), ("GMMPFAUDLER", "Q1 FY27"), ("KCPSUGIND", "Q1 FY27"),
+    ("MILLWORKS", "Q2/H1 FY27"), ("PAISALO", "Q2/H1 FY27"), ("PITTIENG", "Q2/H1 FY27"), ("ROUTE", "Q1 FY27"),
+    ("SOUTHWEST", "Q2/H1 FY27"), ("SPAPPAREL", "Q1 FY27"), ("SPROP", "Q1 FY27"), ("STYL", "Q1 FY27"),
+    ("UFBL", "Q2/H1 FY27"), ("VENUSPIPES", "Q1 FY27"), ("VALIANTLAB", "Q2/H1 FY27"), ("SEDEMAC", "Q2/H1 FY27"),
+}
+PRORATA = re.compile(r"pro-?rat|x ?[24]|annuali[sz]|half of|% of (the |notion's )?(full-year |fy27 |fy )?base|run-rate|h1 share|h1 pace|h1 alone|of base fy|h1 ?x ?2|q[12] ?x ?4|\bpace\b|full[- ]year|3[- ]y(ea)?r|fy2[789]e? (base|only)|cagr")
+
+
+def relabel(label, ticker, period):
+    if label in ("MISS", "IN LINE") and (ticker, period) in BELOW_BASE_ROWS:
+        return "BELOW BASE"
+    return label
 
 
 def s(v):
@@ -50,7 +80,7 @@ def norm_period(p):
 
 def norm_result(r):
     r = s(r).upper().replace("-", " ").replace("_", " ").replace("INLINE", "IN LINE")
-    for v in ("NO BASELINE", "IN LINE", "BEAT", "MISS"):
+    for v in ("NO BASELINE", "BELOW BASE", "IN LINE", "BEAT", "MISS"):
         if r.startswith(v): return v
     return "NO BASELINE"
 
@@ -88,7 +118,11 @@ def main():
         comp[t] = d
         for per in PERIODS:
             r = dict(byp.get(per, {})); r["period"] = per
-            r["result_vs_base"] = norm_result(r.get("result_vs_base"))
+            r["result_vs_base"] = relabel(norm_result(r.get("result_vs_base")), t, per)
+            txt = (s(r.get("base_period")) + " " + s(r.get("result_basis"))).lower()
+            if (t, per) in MISS_ON_TEST_ROWS and r["result_vs_base"] == "MISS":
+                r["result_basis"] = "[MISS on a failed pre-committed test or tripwire; the file gives no bear/base placing] " + s(r.get("result_basis"))
+            r["base_comparison"] = "PRO-RATED" if (r["result_vs_base"] != "NO BASELINE" and PRORATA.search(txt)) else ("NOT PRO-RATED" if r["result_vs_base"] != "NO BASELINE" else "NOT APPLICABLE")
             row = {}
             for key, _ in COLS:
                 row[key] = s(r.get(key)) if key in r else s(d.get(key))
@@ -110,7 +144,7 @@ def main():
     g_nobase, g_noact, g_onebranch, g_local = [], [], [], []
     tally_rows = collections.Counter(r["result_vs_base"] for r in rows)
     best = {}
-    rank = {"MISS": 3, "BEAT": 2, "IN LINE": 1, "NO BASELINE": 0}
+    
     percomp = collections.defaultdict(list)
     for r in rows: percomp[r["ticker"]].append(r)
     comp_any = collections.Counter()
@@ -173,9 +207,9 @@ def main():
         f.write("## Files cited by the per-company extraction (files_read lists)\n\n")
         for k, v in files_read.most_common(): f.write(f"- {k}: {v}\n")
         f.write(f"\n## Census size\n\n- Companies: {len(cm)}\n- Rows: {len(rows)} (three periods per company)\n")
-        f.write("- Rows by result: " + ", ".join(f"{k} {tally_rows[k]}" for k in ("MISS", "IN LINE", "BEAT", "NO BASELINE")) + "\n")
+        f.write("- Rows by result: " + ", ".join(f"{k} {tally_rows[k]}" for k in ORDER) + "\n")
         f.write("- Companies with at least one row of each result (NO BASELINE counts only companies with no other result): "
-                + ", ".join(f"{k} {comp_any[k]}" for k in ("MISS", "IN LINE", "BEAT", "NO BASELINE")) + "\n")
+                + ", ".join(f"{k} {comp_any[k]}" for k in ORDER) + "\n")
         extra = os.path.join(WORK, "sources_extra.md")
         if os.path.exists(extra): f.write("\n" + open(extra, encoding="utf-8").read())
     for fn in ("inventory.py", "export_corpus.py", "build_map.py", "extract_sessions.py", "assemble.py", "AGENT_BRIEF.md", "aliases.json"):

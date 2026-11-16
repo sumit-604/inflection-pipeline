@@ -5,7 +5,7 @@ named = json.load(open("keys_named.json")); qr = json.load(open("qr_dirs.json"))
 MERGE = {"544555":"AMEENJI","ameenji":"AMEENJI","d-dev":"DEEDEV","deedev":"DEEDEV","divgi":"DIVGIITTS","divgiitts":"DIVGIITTS",
  "gocl":"GOCLCORP","goclcorp":"GOCLCORP","raymondrealty":"RAYMONDREL","raymondrel":"RAYMONDREL","sona":"SONACOMS","sonacoms":"SONACOMS",
  "qualitek":"QLL","qll":"QLL","ecosmobility":"ECOSMOBLTY","bandhan":"BANDHANBNK","goldium":"GOLDIAM","mtar":"MTARTECH","pngs":"PNGSREVA",
- "utlsolar":"UTLSOLAR","totem":"TOTEM","540686":"SMRUTHI","543709":"GARGI","544091":"QLL","544518":"LTELEVATOR","544710":"ACCORD","544740":"TIPCO","544793":"SUSAN","544826":"MILLWORKS","544895":"KWICK","credo":"MUFTI","mufti":"MUFTI","_template":"_SKIP"}
+ "utlsolar":"UTLSOLAR","totem":"TOTEM","540686":"SMRUTHI","543709":"GARGI","544091":"QLL","544518":"LTELEVATOR","544710":"ACCORD","544740":"TIPCO","544793":"SUSAN","544826":"MILLWORKS","544895":"KWICK","544186":"TOTEM","credo":"MUFTI","mufti":"MUFTI","_template":"_SKIP"}
 NAMES = {"DEEDEV":"DEE Development Engineers Ltd","GOCLCORP":"GOCL Corporation Ltd","RAYMONDREL":"Raymond Realty Ltd","SONACOMS":"Sona BLW Precision Forgings Ltd",
  "ECOSMOBLTY":"Ecos (India) Mobility & Hospitality Ltd","BANDHANBNK":"Bandhan Bank Ltd","GOLDIAM":"Goldiam International Ltd","MTARTECH":"MTAR Technologies Ltd",
  "PNGSREVA":"PNGS Reva","530077":"Puretrop Fruits Ltd"}

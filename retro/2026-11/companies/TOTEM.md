@@ -25,3 +25,24 @@ FY27 to FY31 columns are EXPECTED and illustrative. They are built from the oper
 - 5 | Forbes Precision Tools (544186) | Q2 FY27 | No review. Log: STOPPED | none | n/a ; Forbes and Macfos: "no results filing found". Results PDFs were downloaded ... but the pipeline picked none of them.
 ### ConcallPipeline/Q2 FY27 Results/_batch-q2fy27-1030_DRAFT.md:21: Forbes Precision Tools | 544186 | 8p SCAN (pages 3-8 no text; OCR) ; :70 No call: Forbes, Kotyark, PNGS.
 ### corpus/LESSONS_ARCHIVE.md:472: 2026-09-09 - TOTEM (Forbes Precision Tools & Machine Parts) - /step1 intake, phase 1 to Halt 1 ; :823 DOWNSHIFT FAILURE: stage 0 ran inline on the orchestrator
+
+
+---
+
+## Merged record: BSE code 544186 (same company, Quarterly Reviewer folder)
+
+# 544186 - Forbes Precision Tools and Machine Parts Ltd
+
+## Identity & first analysis
+### QuarterlyReviewer/reviews/2026-10-29_1735/544186/log.txt
+544186 | price Rs ? | BSE 544186 | NSE -
+no Notion record found: this will be a PRE-THESIS READ
+STOPPED: no results filing, presentation or transcript found. Put the PDFs in inboxŤ186\ and run again
+### ConcallPipeline/Q2 FY27 Results/_CMP_snapshot_2026-10-30.md:9
+| 544186 | Forbes Precision Tools &amp; Machine Parts Ltd | Rs 135 | Rs 699 Cr. | 20.8 | Rs 30.8 | 21.0 % |
+## Actuals by period
+### ConcallPipeline/Q2 FY27 Results/_DOCS_2026-10-30_partA.md:11
+Forbes_Q2FY27_Results.pdf (8pp, text yes, 6pp no text) | none | none | 1 | none found in window
+## Session-history excerpts
+### session:2026-10-29|C--QuarterlyReviewer-QuarterlyReviewer-reviews-2026-10-29-1735\86987395-1971-4f7c-929a-ef947a510172.jsonl
+| 5 | **Forbes Precision Tools (544186)** | Q2 FY27 | **No review. Log: STOPPED** | none | n/a |

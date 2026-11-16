@@ -29,10 +29,10 @@
 
 ## Census size
 
-- Companies: 323
-- Rows: 969 (three periods per company)
-- Rows by result: MISS 67, IN LINE 29, BEAT 66, NO BASELINE 807
-- Companies with at least one row of each result (NO BASELINE counts only companies with no other result): MISS 56, IN LINE 25, BEAT 56, NO BASELINE 196
+- Companies: 322
+- Rows: 966 (three periods per company)
+- Rows by result: MISS 49, BELOW BASE 20, IN LINE 27, BEAT 66, NO BASELINE 804
+- Companies with at least one row of each result (NO BASELINE counts only companies with no other result): MISS 42, BELOW BASE 18, IN LINE 24, BEAT 56, NO BASELINE 195
 
 ## Method
 
@@ -43,14 +43,18 @@
 5. Per-company facts were extracted by reader agents (22 batches of about 15 companies) under `tools/AGENT_BRIEF.md`. Each wrote one JSON record and one excerpt file per company.
 6. `tools/assemble.py` builds census.csv, companies/, gaps.md and sources.md from those records.
 
-## Rules used for "result vs our base case"
+## Rules used for "result vs our base case" (operator rulings on PR 245, 2026-11-17)
 
 - A file's own statement against our base case, thesis line or pre-committed test is used first. The `basis of result call` column quotes it.
-- Else a like-for-like number comparison: profit (or revenue) more than 5% above base is BEAT, within 5% is IN LINE, more than 5% below is MISS. The 5% band is a census convention, not a framework rule.
-- Else NO BASELINE. This covers: no base case; a full-year base that no file compares to the period; a base case written after the result.
-- Many scored rows are mixed (for example profit above base, cash below bear). The label follows the file's headline wording. Read `basis of result call` before using a label.
-- Rows where the file says "between bear and base" are mostly labelled MISS; a few are labelled IN LINE where the file says profit was at base. The labels were not re-ruled at assembly.
+- Else a like-for-like number comparison: profit (or revenue) more than 5% above base is BEAT, within 5% is IN LINE, more than 5% below is BELOW BASE. The 5% band is kept by operator ruling.
+- MISS: the file puts a key metric below bear (or below stress, a red line or a floor). MISS is also kept where a pre-committed test or tripwire failed and the file gives no bear/base placing; those rows start with "[MISS on a failed pre-committed test or tripwire ...]" in `basis of result call`.
+- BELOW BASE: the file puts the result between bear and base, or below base, with no key metric below bear. Twenty rows carry this label; `tools/assemble.py` lists them.
+- NO BASELINE: no base case; a full-year base that no file compares to the period; or a base case written after the result.
+- PRO-RATED in the `base comparison` column: the scored row compares the period with a full-year or multi-year base scaled to the period (halved, annualised, pace, or percent of the base). The mark comes from a text match on the base-period and basis fields. NOT PRO-RATED rows rest on a same-period base, a pre-committed quarterly test, or a statement with no scaling words. Check the basis line where it matters.
+- Reviewer-only companies with no thesis stay in the census as NO BASELINE.
+- Many scored rows are mixed (for example profit above base, cash below bear). BEAT and IN LINE labels follow the file's headline wording and were not re-ruled.
 - Two labels were withdrawn at assembly because they rested on arithmetic no file contains: KMCSHIL Q1 FY27 and SUPREMEPWR Q2/H1 FY27.
+- 544186 and TOTEM (Forbes Precision Tools) are merged under TOTEM.
 
 ## Limits
 
@@ -63,5 +67,4 @@
 
 ## What is not in this folder
 
-- The raw per-company session-history excerpts (1,963 paragraphs) are not committed, because this repository is public. They are on this laptop in `retro/2026-11/_local_session_excerpts/` (git-ignored). The excerpts a row relies on are quoted in `companies/<TICKER>.md`.
-- Set `APPEND_RAW_SESSIONS=1` when running `tools/assemble.py` to append the raw excerpts to each company file.
+- The raw per-company session-history excerpts are not in this repository (operator ruling, 2026-11-17: keep them local). They are on the laptop in `retro/2026-11/_local_session_excerpts/` (git-ignored). The excerpts a row relies on are quoted in `companies/<TICKER>.md`.

@@ -1030,7 +1030,7 @@ date,marketcap,52_wk_high__pct,percentage_trading_above_40w__percentage
 2026-10-01,smallcap,1.3134,
 2026-10-05,largecap,0.8264,36.0882
 2026-10-05,midcap,2.8825,46.7849
-2026-10-05,smallcap,1.2162,31.5766
+2026-10-05,smallcap,1.2162,31.5624
 2026-10-06,largecap,2.2039,
 2026-10-06,midcap,3.5477,
 2026-10-06,smallcap,1.4467,
@@ -1045,7 +1045,7 @@ date,marketcap,52_wk_high__pct,percentage_trading_above_40w__percentage
 2026-10-09,smallcap,0.9511,
 2026-10-12,largecap,1.1019,41.8733
 2026-10-12,midcap,2.439,48.7805
-2026-10-12,smallcap,1.435,33.9013
+2026-10-12,smallcap,1.435,33.931
 2026-10-13,largecap,0.8287,
 2026-10-13,midcap,2.2173,
 2026-10-13,smallcap,1.3538,
@@ -1060,7 +1060,7 @@ date,marketcap,52_wk_high__pct,percentage_trading_above_40w__percentage
 2026-10-16,smallcap,1.2162,
 2026-10-19,largecap,1.1019,27.8237
 2026-10-19,midcap,1.5521,31.0421
-2026-10-19,smallcap,1.4792,19.3635
+2026-10-19,smallcap,1.4792,19.3548
 2026-10-21,largecap,0.551,
 2026-10-21,midcap,0.885,
 2026-10-21,smallcap,0.8126,
@@ -1072,7 +1072,7 @@ date,marketcap,52_wk_high__pct,percentage_trading_above_40w__percentage
 2026-10-23,smallcap,0.2249,
 2026-10-26,largecap,0.2747,34.3407
 2026-10-26,midcap,0.6593,34.5055
-2026-10-26,smallcap,0.2682,22.1726
+2026-10-26,smallcap,0.2682,22.1626
 2026-10-27,largecap,1.0989,
 2026-10-27,midcap,0.4396,
 2026-10-27,smallcap,0.5848,
@@ -1087,7 +1087,7 @@ date,marketcap,52_wk_high__pct,percentage_trading_above_40w__percentage
 2026-10-30,smallcap,1.1338,
 2026-11-02,largecap,3.8356,55.3425
 2026-11-02,midcap,1.5317,45.733
-2026-11-02,smallcap,0.8505,41.6294
+2026-11-02,smallcap,0.8505,41.6107
 2026-11-03,largecap,2.7322,
 2026-11-03,midcap,1.5317,
 2026-11-03,smallcap,0.762,
@@ -1105,7 +1105,7 @@ date,marketcap,52_wk_high__pct,percentage_trading_above_40w__percentage
 2026-11-08,smallcap,1.4376,
 2026-11-09,largecap,4.3716,57.9235
 2026-11-09,midcap,2.8446,50.9847
-2026-11-09,smallcap,0.9342,43.5943
+2026-11-09,smallcap,0.9342,43.6194
 2026-11-11,largecap,6.2842,
 2026-11-11,midcap,2.8446,
 2026-11-11,smallcap,1.3405,
@@ -1115,3 +1115,6 @@ date,marketcap,52_wk_high__pct,percentage_trading_above_40w__percentage
 2026-11-13,largecap,4.3716,
 2026-11-13,midcap,3.2823,
 2026-11-13,smallcap,1.6496,
+2026-11-16,largecap,4.3716,56.8306
+2026-11-16,midcap,2.407,45.733
+2026-11-16,smallcap,1.728,40.6832

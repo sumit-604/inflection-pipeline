@@ -58,4 +58,7 @@ Source: origin/run/avience-2026-09-26:companies/AVIENCE.md §HALT 1 GATE
 Source: origin/run/avience-2026-09-26:runs/avience-2026-09-26/outputs/final/gate-recommendation.md L82
 
 ## Lessons archive mentions
-NOT FOUND
+> ## 2026-09-26 — AVIENCE (Avience Biomedicals Ltd) — /step1 intake, phase 1 to Halt 1
+> - NSE-only SME (listed 25-Jun-2026, no BSE code): collector's BSE Reg 30 fetch cannot reach it.
+> - Verifier C caught a formula slip in B07 (capex_embedded_growth_pct 90 vs 190)
+Source: origin/run/avience-2026-09-26:LESSONS_ARCHIVE_offmain_lines.md L449-450 (offmain file lines; run-branch lessons)

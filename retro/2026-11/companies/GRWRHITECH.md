@@ -38,7 +38,7 @@ Source: RN L502
 Later (24-Sep-2026) entry-zone refresh, after Q1 FY27 print, not the base case:
 > | Guidance (Rs 2,500 Cr × 25%, FY26 PAT/EBITDA conversion 0.676) | Rs 182 | Rs 295 | Rs 8,850 | Rs 4,530 |
 > | Q1 run rate (Rs 57.10 × 4) | Rs 228 | Rs 370 | Rs 11,100 | Rs 5,680 |
-Source: RN §Entry zone refresh L537-L540
+Source: RN §Entry zone refresh L539-L540
 
 ## Management guidance and promised catalysts
 FY27 guidance carried in the Notion Key Notes (24-Sep-2026 note):
@@ -110,7 +110,7 @@ Flags in the 13-May-2026 Notion analysis:
 Source: RN L503-L504
 
 > ... Key risks: 34% customer concentration ... Thesis-Broken Conditions (1) ROCE below 15% for 2 consecutive quarters; (2) the 34% customer cuts volumes by more than 20%; (3) operating EBITDA margin below 18% for 2 quarters; (4) promoter verdict resolves to AVOID on re-run.
-Source: RN L496; RV L63
+Source: RN L496; RV L64
 
 Status after the result:
 > | 4 | TPU commissioning (Oct 2026) | Commissioned by Oct 2026 | ND | ... not commissioned at 22-Oct; MoU said Dec-2026 | AMBER | AMBER, moving toward RED: "line is yet to start commissioning" on 23-Oct (L0604-L0605) |

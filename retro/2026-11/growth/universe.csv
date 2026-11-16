@@ -1,0 +1,339 @@
+﻿ticker,name,period,where the review lives
+ACCORD,Accord Transformer & Switchgear Ltd,Q4 FY26,repo pipeline run runs/accord-2026-10-06 (this result was an input; actuals in census.csv)
+ASTRAMICRO,Astra Microwave Products Ltd,Q4 FY26,repo pipeline run runs/astramicro-2026-11-15 (this result was an input; actuals in census.csv)
+AVANA,Avana Electrosystems Ltd,Q4 FY26,repo pipeline run runs/avana-2026-10-05 (this result was an input; actuals in census.csv)
+AVIENCE,Avience Biomedicals Ltd,Q4 FY26,repo pipeline run runs/avience-2026-09-26 (this result was an input; actuals in census.csv)
+AWFIS,Awfis Space Solutions Ltd,Q4 FY26,repo pipeline run runs/awfis-2026-09-19 (this result was an input; actuals in census.csv)
+AZAD,Azad Engineering Ltd,Q4 FY26,repo pipeline run runs/azad-2026-11-15 (this result was an input; actuals in census.csv)
+BORANA,Borana Weaves Ltd,Q4 FY26,repo pipeline run runs/borana-2026-09-07 (this result was an input; actuals in census.csv)
+CAPILLARY,Capillary Technologies India Ltd,Q4 FY26,repo pipeline run runs/capillary-2026-09-19 (this result was an input; actuals in census.csv)
+CNL,Creative Newtech Ltd,Q4 FY26,repo pipeline run runs/cnl-2026-11-11 (this result was an input; actuals in census.csv)
+DEEDEV,DEE Development Engineers Ltd,Q4 FY26,repo pipeline run runs/deedev-2026-11-15 (this result was an input; actuals in census.csv)
+DPABHUSHAN,D. P. Abhushan Ltd,Q4 FY26,repo pipeline run runs/dpabhushan-2026-09-19 (this result was an input; actuals in census.csv)
+EMUDHRA,eMudhra Ltd,Q4 FY26,repo pipeline run runs/emudhra-2026-09-19 (this result was an input; actuals in census.csv)
+ESCONET,Esconet Technologies Ltd,Q4 FY26,repo pipeline run runs/esconet-2026-10-05 (this result was an input; actuals in census.csv)
+FABTECH,Fabtech Technologies Ltd,Q4 FY26,repo pipeline run runs/fabtech-2026-09-26 (this result was an input; actuals in census.csv)
+FINCABLES,Finolex Cables Ltd,Q4 FY26,local or session review note (see census.csv sources)
+FLUIDOMAT,Fluidomat Ltd,Q4 FY26,local or session review note (see census.csv sources)
+FRATELLI,Fratelli Vineyards Ltd,Q4 FY26,repo pipeline run runs/fratelli-2026-09-07 (this result was an input; actuals in census.csv)
+GANECOS,Ganesha Ecosphere Limited,Q4 FY26,repo quarterly folder runs/ganecos-q4fy26
+GMBREW,G M Breweries Ltd,Q4 FY26,local or session review note (see census.csv sources)
+GOODLUCK,Goodluck India Ltd,Q4 FY26,repo pipeline run runs/goodluck-2026-09-19 (this result was an input; actuals in census.csv)
+GVPIL,GE Power India Limited,Q4 FY26,repo pipeline run runs/gvpil-2026-11-15 (this result was an input; actuals in census.csv)
+INVPRECQ,Investment & Precision Castings Ltd,Q4 FY26,repo pipeline run runs/invprecq-2026-11-15 (this result was an input; actuals in census.csv)
+IOLCP,IOL Chemicals & Pharmaceuticals Ltd,Q4 FY26,repo pipeline run runs/iolcp-2026-09-19 (this result was an input; actuals in census.csv)
+JLHL,Jupiter Life Line Hospitals Ltd,Q4 FY26,repo pipeline run runs/jlhl-2026-11-12 (this result was an input; actuals in census.csv)
+JUBLCPL,Jubilant Agri & Consumer Products Ltd,Q4 FY26,local or session review note (see census.csv sources)
+KCPSUGIND,K.C.P. Sugar and Industries Corporation Ltd,Q4 FY26,repo pipeline run runs/kcpsugind-2026-07-21 (this result was an input; actuals in census.csv)
+KELTECH,Keltech Energies Ltd,Q4 FY26,repo pipeline run runs/keltech-2026-11-15 (this result was an input; actuals in census.csv)
+KISSHT,OnEMI Technology Solutions Ltd (Kissht),Q4 FY26,repo pipeline run runs/kissht-2026-09-19 (this result was an input; actuals in census.csv)
+KROSS,Kross Ltd,Q4 FY26,repo pipeline run runs/kross-2026-09-27 (this result was an input; actuals in census.csv)
+MMP,MMP Industries Ltd,Q4 FY26,repo pipeline run runs/mmp-2026-10-04 (this result was an input; actuals in census.csv)
+NORTHARC,Northern Arc Capital Ltd,Q4 FY26,repo pipeline run runs/northarc-2026-07-12 (this result was an input; actuals in census.csv)
+ONWARDTEC,Onward Technologies Ltd,Q4 FY26,repo pipeline run runs/onwardtec-2026-11-12 (this result was an input; actuals in census.csv)
+PREMEXPLN,Premier Explosives Ltd,Q4 FY26,repo pipeline run runs/premexpln-2026-11-15 (this result was an input; actuals in census.csv)
+PRIZOR,Prizor Viztech Ltd,Q4 FY26,local or session review note (see census.csv sources)
+PVRINOX,PVR Inox Ltd,Q4 FY26,repo pipeline run runs/pvrinox-2026-11-12 (this result was an input; actuals in census.csv)
+QLL,Qualitek Labs Ltd,Q4 FY26,repo pipeline run runs/qll-2026-11-15 (this result was an input; actuals in census.csv)
+QMSMEDI,QMS Medical Allied Services Ltd,Q4 FY26,repo pipeline run runs/qmsmedi-2026-09-26 (this result was an input; actuals in census.csv)
+QUALITEK,Qualitek Labs Ltd,Q4 FY26,repo pipeline run runs/qualitek-2026-09-26 (this result was an input; actuals in census.csv)
+RKFORGE,Ramkrishna Forgings Ltd,Q4 FY26,repo pipeline run runs/rkforge-2026-11-12 (this result was an input; actuals in census.csv)
+SHAREINDIA,Share India Securities Ltd,Q4 FY26,repo pipeline run runs/shareindia-2026-09-19 (this result was an input; actuals in census.csv)
+SHAWGELTIN,Narmada Gelatines Ltd,Q4 FY26,repo pipeline run runs/shawgeltin-2026-11-12 (this result was an input; actuals in census.csv)
+SHYAMMETL,Shyam Metalics and Energy Ltd,Q4 FY26,local or session review note (see census.csv sources)
+SMRUTHI,Smruthi Organics Ltd,Q4 FY26,local or session review note (see census.csv sources)
+SOUTHWEST,South West Pinnacle Exploration Ltd,Q4 FY26,local or session review note (see census.csv sources)
+SSWL,Steel Strips Wheels Ltd,Q4 FY26,repo pipeline run runs/sswl-2026-09-19 (this result was an input; actuals in census.csv)
+SUDARCOLOR,Sudarshan Colorants India Ltd (formerly Heubach Colorants India Ltd),Q4 FY26,repo pipeline run runs/sudarcolor-2026-11-12 (this result was an input; actuals in census.csv)
+SUPREMEPWR,Supreme Power Equipment Ltd,Q4 FY26,repo pipeline run runs/supremepwr-2026-10-06 (this result was an input; actuals in census.csv)
+SYNGENE,Syngene International Ltd,Q4 FY26,repo pipeline run runs/syngene-2026-09-15 (this result was an input; actuals in census.csv)
+TAALTECH,TAAL Tech Ltd,Q4 FY26,repo pipeline run runs/taaltech-2026-09-10 (this result was an input; actuals in census.csv)
+TDPOWERSYS,TD Power Systems Ltd,Q4 FY26,repo pipeline run runs/tdpowersys-2026-11-15 (this result was an input; actuals in census.csv)
+TITANBIO,Titan Biotech Ltd,Q4 FY26,repo pipeline run runs/titanbio-2026-09-10 (this result was an input; actuals in census.csv)
+TLL,Trident Lifeline Ltd,Q4 FY26,repo pipeline run runs/tll-2026-09-26 (this result was an input; actuals in census.csv)
+TRUALT,TruAlt Bioenergy Ltd,Q4 FY26,repo pipeline run runs/trualt-2026-09-18 (this result was an input; actuals in census.csv)
+VILAS,Vilas Transcore Ltd,Q4 FY26,repo pipeline run runs/vilas-2026-09-03 (this result was an input; actuals in census.csv)
+VRLLOG,VRL Logistics Ltd,Q4 FY26,repo pipeline run runs/vrllog-2026-11-12 (this result was an input; actuals in census.csv)
+WALCHANNAG,Walchandnagar Industries Ltd,Q4 FY26,repo pipeline run runs/walchannag-2026-11-12 (this result was an input; actuals in census.csv)
+YASHHV,Yash Highvoltage Ltd,Q4 FY26,repo pipeline run runs/yashhv-2026-09-26 (this result was an input; actuals in census.csv)
+526717,HCP Plastene Bulkpack Ltd,Q1 FY27,repo quarterly folder runs/526717-q1fy27
+544516,"Airfloa Rail Technology Ltd (BSE 544516, symbol AIRFLOA)",Q1 FY27,local or session review note (see census.csv sources)
+ADFFOODS,ADF Foods Limited (NSE: ADFFOODS / BSE: 519183),Q1 FY27,repo quarterly folder runs/adffoods-q1fy27
+AEROFLEX,Aeroflex Industries Limited (BSE 543972 / NSE AEROFLEX),Q1 FY27,repo quarterly folder runs/aeroflex-q1fy27
+AKUMS,Akums Drugs & Pharmaceuticals Ltd,Q1 FY27,local or session review note (see census.csv sources)
+AMAGI,Amagi Media Labs Ltd,Q1 FY27,repo quarterly folder runs/amagi-q1fy27 ; local or session review note (see census.csv sources)
+ANUP,"The Anup Engineering Limited (NSE/BSE: ANUP, 542460)",Q1 FY27,repo quarterly folder runs/anup-q1fy27
+ARIS,Arisinfra Solutions Limited (NSE: ARIS / BSE: 544419),Q1 FY27,repo quarterly folder runs/aris-q1fy27
+ASIANENE,Asian Energy Services Ltd,Q1 FY27,repo quarterly folder runs/asianene-q1fy27
+ASTRAMICRO,Astra Microwave Products Ltd,Q1 FY27,repo pipeline run runs/astramicro-2026-11-15 (this result was an input; actuals in census.csv)
+ATLANTAELEC,Atlanta Electricals Limited (NSE ATLANTAELE),Q1 FY27,repo quarterly folder runs/atlantaelec-q1fy27
+AURUM,Aurum Proptech Ltd,Q1 FY27,repo quarterly folder runs/aurum-q1fy27
+AWFIS,Awfis Space Solutions Ltd,Q1 FY27,repo pipeline run runs/awfis-2026-09-19 (this result was an input; actuals in census.csv)
+AYE,Aye Finance Ltd,Q1 FY27,repo quarterly folder runs/aye-q1fy27
+AZAD,Azad Engineering Ltd,Q1 FY27,repo pipeline run runs/azad-2026-11-15 (this result was an input; actuals in census.csv)
+BALAMINES,Balaji Amines Limited (NSE: BALAMINES / BSE: 530999),Q1 FY27,repo quarterly folder runs/balamines-q1fy27
+BANDHANBNK,Bandhan Bank Ltd,Q1 FY27,repo quarterly folder runs/bandhan-q1fy27
+BIRLANU,BirlaNu Limited (formerly HIL Limited),Q1 FY27,repo quarterly folder runs/birlanu-q1fy27
+BLACKROSE,Black Rose Industries Ltd,Q1 FY27,repo quarterly folder runs/blackrose-q1fy27
+BORANA,Borana Weaves Ltd,Q1 FY27,repo pipeline run runs/borana-2026-09-07 (this result was an input; actuals in census.csv)
+CAPILLARY,Capillary Technologies India Ltd,Q1 FY27,repo pipeline run runs/capillary-2026-09-19 (this result was an input; actuals in census.csv)
+CREDO,Credo Brands Marketing Ltd,Q1 FY27,repo quarterly folder runs/credo-q1fy27
+CYIENTDLM,Cyient DLM Ltd,Q1 FY27,local or session review note (see census.csv sources)
+DATAPATTNS,Data Patterns (India) Ltd,Q1 FY27,repo quarterly folder runs/datapattns-q1fy27
+DEEDEV,DEE Development Engineers Ltd,Q1 FY27,repo quarterly folder runs/d-dev-q1fy27
+DGML,Deccan Gold Mines Ltd,Q1 FY27,repo quarterly folder runs/deccangold-q1fy27
+DHANBANK,Dhanlaxmi Bank Ltd,Q1 FY27,repo quarterly folder runs/dhanbank-q1fy27
+DIFFNKG,Diffusion Engineers Ltd,Q1 FY27,local or session review note (see census.csv sources)
+DIGITIDE,Digitide Solutions Limited,Q1 FY27,repo quarterly folder runs/digitide-q1fy27
+DIVGIITTS,Divgi Torqtransfer Systems Ltd,Q1 FY27,repo quarterly folder runs/divgi-q1fy27
+DPABHUSHAN,D. P. Abhushan Ltd,Q1 FY27,repo pipeline run runs/dpabhushan-2026-09-19 (this result was an input; actuals in census.csv)
+DSSL,Dynacons Systems & Solutions Ltd,Q1 FY27,repo quarterly folder runs/dssl-q1fy27
+E2E,"E2E Networks Limited (E2E / E2ENETWORKS, scrip 544783)",Q1 FY27,repo quarterly folder runs/e2e-q1fy27
+EBGNG,GNG Electronics Ltd,Q1 FY27,repo quarterly folder runs/ebgng-q1fy27 ; local or session review note (see census.csv sources)
+ECOSMOBILITY,ECOS (India) Mobility & Hospitality Ltd (BSE 544239 / NSE ECOSMOBLTY),Q1 FY27,repo quarterly folder runs/ecosmobility-q1fy27
+EMUDHRA,eMudhra Ltd,Q1 FY27,repo pipeline run runs/emudhra-2026-09-19 (this result was an input; actuals in census.csv)
+EMVDL,"Embassy Developments Limited (formerly Equinox India Developments Limited; NSE EMBDL, BSE 532832)",Q1 FY27,repo quarterly folder runs/emvdl-q1fy27
+ESCONET,Esconet Technologies Ltd,Q1 FY27,local or session review note (see census.csv sources)
+EXICOM,Exicom Tele-Systems Limited,Q1 FY27,repo quarterly folder runs/exicom-q1fy27
+FABTECH,Fabtech Technologies Ltd,Q1 FY27,repo pipeline run runs/fabtech-2026-09-26 (this result was an input; actuals in census.csv)
+FEDFINA,Fedbank Financial Services Ltd,Q1 FY27,repo quarterly folder runs/fedfina-q1fy27
+FINCABLES,Finolex Cables Ltd,Q1 FY27,repo pipeline run runs/fincables-2026-08-12 (this result was an input; actuals in census.csv)
+FINKURVE,"Finkurve Financial Services Ltd (brand Arvog; NSE FINKURVE, BSE 508954)",Q1 FY27,repo quarterly folder runs/finkurve-q1fy27
+FRATELLI,Fratelli Vineyards Ltd,Q1 FY27,repo pipeline run runs/fratelli-2026-09-07 (this result was an input; actuals in census.csv)
+GANECOS,Ganesha Ecosphere Limited,Q1 FY27,repo quarterly folder runs/ganecos-q1fy27
+GARGI,PNGS Gargi Fashion Jewellery Ltd,Q1 FY27,repo quarterly folder runs/gargi-q1fy27
+GAUDIUMIVF,Gaudium IVF and Women Health Ltd,Q1 FY27,repo quarterly folder runs/gaudiumivf-q1fy27
+GEE,GEE Limited,Q1 FY27,repo quarterly folder runs/gee-q1fy27
+GEMAROMA,Gem Aromatics Limited,Q1 FY27,repo quarterly folder runs/gemaroma-q1fy27
+GHVINFRA,GHV Infra Projects Limited (formerly Sindu Valley Technologies Ltd),Q1 FY27,repo quarterly folder runs/ghvinfra-q1fy27 ; local or session review note (see census.csv sources)
+GMDCLTD,Gujarat Mineral Development Corporation Ltd,Q1 FY27,repo quarterly folder runs/gmdc-q1fy27
+GMMPFAUDLER,GMM Pfaudler Limited,Q1 FY27,repo quarterly folder runs/gmmpfaudler-q1fy27
+GOCLCORP,GOCL Corporation Limited (BSE 506480 / NSE GOCLCORP),Q1 FY27,repo quarterly folder runs/goclcorp-q1fy27
+GOLDIAM,Goldiam International Limited,Q1 FY27,repo quarterly folder runs/goldium-q1fy27
+GOODLUCK,Goodluck India Ltd,Q1 FY27,local or session review note (see census.csv sources)
+GVPIL,GE Power India Limited,Q1 FY27,repo quarterly folder runs/gvpil-q1fy27
+HFCL,HFCL Limited (BSE 500183 / NSE HFCL),Q1 FY27,repo quarterly folder runs/hfcl-q1fy27
+IEX,Indian Energy Exchange Ltd,Q1 FY27,repo pipeline run runs/iex-2026-09-08 (this result was an input; actuals in census.csv)
+IKS,Inventurus Knowledge Solutions Limited (IKS),Q1 FY27,repo quarterly folder runs/iks-q1fy27
+INA,Insolation Energy Ltd,Q1 FY27,local or session review note (see census.csv sources)
+INDGN,Indegene Ltd,Q1 FY27,repo quarterly folder runs/indgn-q1fy27
+INDIAMART,IndiaMART InterMESH Limited,Q1 FY27,repo quarterly folder runs/indiamart-q1fy27
+INDIQUBE,IndiQube Spaces Limited,Q1 FY27,repo quarterly folder runs/indiqube-q1fy27
+INDNIPPON,India Nippon Electricals Ltd,Q1 FY27,repo pipeline run runs/indnippon-2026-09-10 (this result was an input; actuals in census.csv)
+INOXINDIA,INOX India Limited (INOXCVA),Q1 FY27,repo quarterly folder runs/inoxindia-q1fy27
+INVPRECQ,Investment & Precision Castings Ltd,Q1 FY27,repo pipeline run runs/invprecq-2026-11-15 (this result was an input; actuals in census.csv)
+IOLCP,IOL Chemicals & Pharmaceuticals Ltd,Q1 FY27,repo pipeline run runs/iolcp-2026-09-19 (this result was an input; actuals in census.csv)
+IPCL,"Investment & Precision Castings Ltd (INVPRECQ, BSE 504786)",Q1 FY27,repo quarterly folder runs/ipcl-q1fy27
+IVALUE,iValue Infosolutions Limited,Q1 FY27,repo quarterly folder runs/ivalue-q1fy27
+JNKINDIA,JNK India Limited,Q1 FY27,repo quarterly folder runs/jnkindia-q1fy27
+JUBLCPL,Jubilant Agri & Consumer Products Ltd,Q1 FY27,local or session review note (see census.csv sources)
+KARNIKA,Karnika Industries Ltd,Q1 FY27,repo pipeline run runs/karnika-2026-07-11 (this result was an input; actuals in census.csv)
+KCPSUGIND,K.C.P. Sugar and Industries Corporation Ltd,Q1 FY27,repo quarterly folder runs/kcpsugind-q1fy27
+KECL,Kirloskar Electric Company Ltd,Q1 FY27,repo quarterly folder runs/kecl-q1fy27
+KELTECH,Keltech Energies Ltd,Q1 FY27,repo pipeline run runs/keltech-2026-11-15 (this result was an input; actuals in census.csv)
+KERNEX,Kernex Microsystems (India) Ltd,Q1 FY27,repo quarterly folder runs/kernex-q1fy27
+KISSHT,OnEMI Technology Solutions Ltd (Kissht),Q1 FY27,repo pipeline run runs/kissht-2026-09-19 (this result was an input; actuals in census.csv)
+KPL,Kwality Pharmaceuticals Ltd,Q1 FY27,repo pipeline run runs/kpl-2026-11-15 (this result was an input; actuals in census.csv)
+KRN,"KRN Heat Exchanger and Refrigeration Limited (NSE KRN, BSE 544263)",Q1 FY27,repo quarterly folder runs/krn-q1fy27
+KROSS,Kross Ltd,Q1 FY27,repo pipeline run runs/kross-2026-09-27 (this result was an input; actuals in census.csv)
+KSOLVES,"Ksolves India Limited (NSE KSOLVES, BSE 543599)",Q1 FY27,repo quarterly folder runs/ksolves-q1fy27
+KUSUMGAR,Kusumgar Ltd,Q1 FY27,repo pipeline run runs/kusumgar-2026-11-12 (this result was an input; actuals in census.csv)
+LAXMIINDIA,Laxmi India Finance Ltd,Q1 FY27,repo quarterly folder runs/laxmiindia-q1fy27
+MAPMYINDIA,C.E. Info Systems Ltd,Q1 FY27,repo quarterly folder runs/mapmyindia-q1fy27
+MAXIND,Max India Ltd,Q1 FY27,repo quarterly folder runs/maxind-q1fy27 ; local or session review note (see census.csv sources)
+MCFOS,"Macfos Limited (BSE: ROBU, 543787)",Q1 FY27,repo quarterly folder runs/mcfos-q1fy27
+MMP,MMP Industries Ltd,Q1 FY27,repo pipeline run runs/mmp-2026-10-04 (this result was an input; actuals in census.csv)
+MPSLTD,MPS Ltd (MPS Limited),Q1 FY27,local or session review note (see census.csv sources)
+MTAR,MTAR Technologies Limited,Q1 FY27,repo quarterly folder runs/mtar-q1fy27
+NEPHROPLUS,Nephrocare Health Services Limited (brand NephroPlus; NSE NEPHROPLUS / BSE 544647),Q1 FY27,repo quarterly folder runs/nephroplus-q1fy27
+NETWEB,Netweb Technologies India Ltd,Q1 FY27,repo quarterly folder runs/netweb-q1fy27
+ONWARDTEC,Onward Technologies Ltd,Q1 FY27,repo pipeline run runs/onwardtec-2026-11-12 (this result was an input; actuals in census.csv)
+OSWAL,Oswal Pumps Ltd,Q1 FY27,repo quarterly folder runs/oswal-q1fy27
+PACEDIGITK,Pace Digitek Limited (formerly Pace Digitek Private Limited / Pace Digitek Infra Private Limited),Q1 FY27,repo quarterly folder runs/pacedigitk-q1fy27
+PAISALO,Paisalo Digital Limited,Q1 FY27,repo quarterly folder runs/paisalo-q1fy27
+PARKHOSPS,Park Medi World Limited,Q1 FY27,repo quarterly folder runs/parkhosps-q1fy27
+PAUSHAK,Paushak Limited,Q1 FY27,repo quarterly folder runs/paushak-q1fy27
+PNGS,"PNGS Reva Diamond Jewellery Limited (key 'pngs'; NOT PNGS Gargi Fashion Jewellery, a different company)",Q1 FY27,repo quarterly folder runs/pngs-q1fy27
+PREMEXPLN,Premier Explosives Ltd,Q1 FY27,repo pipeline run runs/premexpln-2026-11-15 (this result was an input; actuals in census.csv)
+PVRINOX,PVR Inox Ltd,Q1 FY27,repo pipeline run runs/pvrinox-2026-11-12 (this result was an input; actuals in census.csv)
+QMSMEDI,QMS Medical Allied Services Ltd,Q1 FY27,repo pipeline run runs/qmsmedi-2026-09-26 (this result was an input; actuals in census.csv)
+QPOWER,Quality Power Electrical Equipments Limited (QPEL),Q1 FY27,repo quarterly folder runs/qpower-q1fy27
+RAMRAT,Ram Ratna Wires Ltd,Q1 FY27,repo quarterly folder runs/ramrat-q1fy27
+RATEGAIN,RateGain Travel Technologies Limited,Q1 FY27,repo quarterly folder runs/rategain-q1fy27
+RATHIST,Rathi Steel & Power Ltd,Q1 FY27,repo quarterly folder runs/rathist-q1fy27
+RAYMONDREL,Raymond Realty Limited (RAYMONDREL; packet key raymondrealty),Q1 FY27,repo quarterly folder runs/raymondrealty-q1fy27
+RKFORGE,Ramkrishna Forgings Ltd,Q1 FY27,local or session review note (see census.csv sources)
+ROUTE,Route Mobile Limited,Q1 FY27,repo quarterly folder runs/route-q1fy27
+RPTECH,Rashi Peripherals Limited (RP tech),Q1 FY27,repo quarterly folder runs/rptech-q1fy27
+RSYSTEMS,R Systems International Limited,Q1 FY27,repo quarterly folder runs/rsystems-q2cy26
+SAMBHV,Sambhv Steel Tubes Ltd,Q1 FY27,repo quarterly folder runs/sambhv-q1fy27
+SAMHI,SAMHI Hotels Limited,Q1 FY27,repo quarterly folder runs/samhi-q1fy27
+SAMMAANCAP,Sammaan Capital Limited,Q1 FY27,repo quarterly folder runs/sammaancap-q1fy27
+SASKEN,Sasken Technologies Limited,Q1 FY27,repo quarterly folder runs/sasken-q1fy27
+SATIN,Satin Creditcare Network Ltd,Q1 FY27,repo quarterly folder runs/satin-q1fy27
+SCODATUBES,Scoda Tubes Limited,Q1 FY27,repo quarterly folder runs/scodatubes-q1fy27
+SEDEMAC,SEDEMAC Mechatronics Ltd,Q1 FY27,repo quarterly folder runs/sedemac-q1fy27
+SFL,Sheela Foam Ltd,Q1 FY27,repo quarterly folder runs/sfl-q1fy27
+SHAREINDIA,Share India Securities Ltd,Q1 FY27,repo pipeline run runs/shareindia-2026-09-19 (this result was an input; actuals in census.csv)
+SHARIKA,Sharika Enterprises Limited,Q1 FY27,repo quarterly folder runs/sharika-q1fy27
+SHAWGELTIN,Narmada Gelatines Ltd,Q1 FY27,repo pipeline run runs/shawgeltin-2026-11-12 (this result was an input; actuals in census.csv)
+SHYAMMETL,Shyam Metalics and Energy Ltd,Q1 FY27,local or session review note (see census.csv sources)
+SMRUTHI,Smruthi Organics Ltd,Q1 FY27,local or session review note (see census.csv sources)
+SONACOMS,Sona BLW Precision Forgings Ltd (Sona Comstar),Q1 FY27,repo quarterly folder runs/sona-q1fy27
+SOUTHWEST,South West Pinnacle Exploration Ltd,Q1 FY27,repo quarterly folder runs/southwest-q1fy27
+SPAPPAREL,S.P. Apparels Limited (BSE 540048 / NSE SPAL),Q1 FY27,repo quarterly folder runs/spapparel-q1fy27
+SPROP,Shriram Properties Limited (NSE SHRIRAMPPS / BSE 543419),Q1 FY27,repo quarterly folder runs/sprop-q1fy27
+SRM,SRM Contractors Limited,Q1 FY27,repo quarterly folder runs/srm-q1fy27
+SSWL,Steel Strips Wheels Ltd,Q1 FY27,repo pipeline run runs/sswl-2026-09-19 (this result was an input; actuals in census.csv)
+STALLION,Stallion India Fluorochemicals Limited (NSE STALLION / BSE 544342),Q1 FY27,repo quarterly folder runs/stallion-q1fy27
+STLTECH,Sterlite Technologies Limited (STL),Q1 FY27,repo quarterly folder runs/stltech-q1fy27
+STYL,Seshaasai Technologies Limited (BSE 544533 / NSE STYL; formerly Seshaasai Business Forms),Q1 FY27,repo quarterly folder runs/styl-q1fy27
+SUDARCOLOR,Sudarshan Colorants India Ltd (formerly Heubach Colorants India Ltd),Q1 FY27,repo pipeline run runs/sudarcolor-2026-11-12 (this result was an input; actuals in census.csv)
+SUGSLLOYD,Sugs Lloyd Limited,Q1 FY27,repo quarterly folder runs/sugslloyd-q1fy27
+SUPREMEPWR,Supreme Power Equipment Ltd,Q1 FY27,repo pipeline run runs/supremepwr-2026-10-06 (this result was an input; actuals in census.csv)
+SUSAN,Susan Electricals India Ltd,Q1 FY27,repo pipeline run runs/susan-2026-09-19 (this result was an input; actuals in census.csv)
+SYNGENE,Syngene International Ltd,Q1 FY27,repo pipeline run runs/syngene-2026-09-15 (this result was an input; actuals in census.csv)
+TAALTECH,TAAL Tech Ltd,Q1 FY27,repo pipeline run runs/taaltech-2026-09-10 (this result was an input; actuals in census.csv)
+TATAPOWER,The Tata Power Company Limited,Q1 FY27,repo quarterly folder runs/tatapower-q1fy27
+TATVA,Tatva Chintan Pharma Chem Ltd,Q1 FY27,repo quarterly folder runs/tatva-q1fy27
+TDPOWERSYS,TD Power Systems Ltd,Q1 FY27,repo pipeline run runs/tdpowersys-2026-11-15 (this result was an input; actuals in census.csv)
+TEJASNET,Tejas Networks Limited,Q1 FY27,repo quarterly folder runs/tejasnet-q1fy27
+TITANBIO,Titan Biotech Ltd,Q1 FY27,repo pipeline run runs/titanbio-2026-09-10 (this result was an input; actuals in census.csv)
+TLL,Trident Lifeline Ltd,Q1 FY27,repo pipeline run runs/tll-2026-09-26 (this result was an input; actuals in census.csv)
+TOTEM,Forbes Precision Tools & Machine Parts Ltd,Q1 FY27,repo pipeline run runs/totem-2026-09-09 (this result was an input; actuals in census.csv)
+TRANSRAIL,Transrail Lighting Limited,Q1 FY27,repo quarterly folder runs/transrail-q1fy27
+TRUALT,TruAlt Bioenergy Ltd,Q1 FY27,repo quarterly folder runs/trualt-q1fy27
+UFBL,United Foodbrands Ltd (erstwhile Barbeque Nation Hospitality Ltd),Q1 FY27,repo quarterly folder runs/ufbl-q1fy27
+UNIABEX,Uni Abex Alloy Products Limited,Q1 FY27,repo quarterly folder runs/uniabex-q1fy27
+UNIMECH,Unimech Aerospace and Manufacturing Limited,Q1 FY27,repo quarterly folder runs/unimech-q1fy27
+UNIPARTS,Uniparts India Ltd,Q1 FY27,repo quarterly folder runs/uniparts-q1fy27
+URBANCO,Urban Company Limited,Q1 FY27,repo quarterly folder runs/urbanco-q1fy27
+UTLSOLAR,Fujiyama Power Systems Ltd (UTL Solar),Q1 FY27,repo quarterly folder runs/utlsolar-q1fy27
+VAIBHAVGBL,Vaibhav Global Ltd,Q1 FY27,repo quarterly folder runs/vaibhavgbl-q1fy27
+VENUSPIPES,Venus Pipes & Tubes Ltd,Q1 FY27,repo quarterly folder runs/venuspipes-q1fy27
+VIVIDEL,Vivid Electromech Limited,Q1 FY27,local or session review note (see census.csv sources)
+VRLLOG,VRL Logistics Ltd,Q1 FY27,repo pipeline run runs/vrllog-2026-11-12 (this result was an input; actuals in census.csv)
+WALCHANNAG,Walchandnagar Industries Ltd,Q1 FY27,repo pipeline run runs/walchannag-2026-11-12 (this result was an input; actuals in census.csv)
+WELCORP,Welspun Corp Limited,Q1 FY27,repo quarterly folder runs/welcorp-q1fy27
+ZEEL,Zee Entertainment Enterprises Ltd,Q1 FY27,repo quarterly folder runs/zeel-q1fy27
+530077,"Puretrop Fruits Limited (formerly Freshtrop Fruits Limited), BSE 530077 / scrip ID PURETROP",Q2/H1 FY27,repo quarterly folder runs/530077-q2fy27 ; local folder Q2 FY27 Results/33 Puretrop Fruits
+ADOR,Ador Welding Limited (BSE scrip 517041),Q2/H1 FY27,repo quarterly folder runs/ador-q2fy27 ; local folder Q2 FY27 Results/33 Ador Welding
+AEQUS,Aequs Ltd,Q2/H1 FY27,repo quarterly folder runs/aequs-q2fy27 ; local folder Q2 FY27 Results/21 Aequs
+AIMTRON,Aimtron Electronics Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+AKUMS,Akums Drugs & Pharmaceuticals Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+AMAGI,Amagi Media Labs Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+AMEENJI,Ameenji Rubber Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+ANAWIL,Anawil Wire and Engineering Ltd,Q2/H1 FY27,repo pipeline run runs/anawil-2026-11-12 (this result was an input; actuals in census.csv)
+APEXECO,Apex Ecotech Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+ASIANENE,Asian Energy Services Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+ASTRAMICRO,Astra Microwave Products Ltd,Q2/H1 FY27,repo pipeline run runs/astramicro-2026-11-15 (this result was an input; actuals in census.csv)
+AURUM,Aurum Proptech Ltd,Q2/H1 FY27,repo quarterly folder runs/aurum-q2fy27 ; local folder Q2 FY27 Results/04 Aurum Proptech
+AYE,Aye Finance Ltd,Q2/H1 FY27,repo quarterly folder runs/aye-q2fy27 ; local folder Q2 FY27 Results/30 Aye Finance
+AZAD,Azad Engineering Ltd,Q2/H1 FY27,repo pipeline run runs/azad-2026-11-15 (this result was an input; actuals in census.csv)
+BALAMINES,Balaji Amines Limited (NSE: BALAMINES / BSE: 530999),Q2/H1 FY27,local or session review note (see census.csv sources)
+BORANA,Borana Weaves Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+CEIGALL,Ceigall India Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+CNL,Creative Newtech Ltd,Q2/H1 FY27,repo pipeline run runs/cnl-2026-11-11 (this result was an input; actuals in census.csv)
+CREDENT,Credent Connect N Care Ltd,Q2/H1 FY27,repo pipeline run runs/credent-2026-11-12 (this result was an input; actuals in census.csv)
+CYBERTECH,Cybertech Systems and Software Limited,Q2/H1 FY27,repo quarterly folder runs/cybertech-q2fy27 ; local folder Q2 FY27 Results/29 Cybertech Systems
+CYIENTDLM,Cyient DLM Ltd,Q2/H1 FY27,repo quarterly folder runs/cyientdlm-q2fy27 ; local folder Q2 FY27 Results/06 Cyient DLM
+DATAPATTNS,Data Patterns (India) Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+DEEDEV,DEE Development Engineers Ltd,Q2/H1 FY27,repo pipeline run runs/deedev-2026-11-15 (this result was an input; actuals in census.csv)
+DIFFNKG,Diffusion Engineers Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+DIVGIITTS,Divgi Torqtransfer Systems Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+DSSL,Dynacons Systems & Solutions Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+DYCL,"Dynamic Cables Limited (BSE 540795, NSE DYCL)",Q2/H1 FY27,repo quarterly folder runs/dycl-q2fy27 ; local folder Q2 FY27 Results/32 Dynamic Cables
+E2E,"E2E Networks Limited (E2E / E2ENETWORKS, scrip 544783)",Q2/H1 FY27,local folder Q2 FY27 Results/05 E2E Networks
+EIMCOELECO,Eimco Elecon (India) Limited (BSE 523708),Q2/H1 FY27,repo quarterly folder runs/eimcoeleco-q2fy27 ; local folder Q2 FY27 Results/13 Eimco Elecon
+EMUDHRA,eMudhra Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+ENTERO,Entero Healthcare Solutions Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+ESCONET,Esconet Technologies Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+FABTECH,Fabtech Technologies Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+FAIRCHEMOR,Fairchem Organics Limited (BSE 543252),Q2/H1 FY27,repo quarterly folder runs/fairchemor-q2fy27 ; local folder Q2 FY27 Results/27 Fairchem Organics
+FEDFINA,Fedbank Financial Services Ltd,Q2/H1 FY27,repo quarterly folder runs/fedfina-q2fy27 ; local folder Q2 FY27 Results/07 Fedbank Financial
+FINCABLES,Finolex Cables Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+FLUIDOMAT,Fluidomat Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+GALLANTT,Gallantt Ispat Limited,Q2/H1 FY27,repo quarterly folder runs/gallantt-q2fy27 ; local folder Q2 FY27 Results/21 Gallantt Ispat
+GARGI,PNGS Gargi Fashion Jewellery Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+GAUDIUMIVF,Gaudium IVF and Women Health Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+GHVINFRA,GHV Infra Projects Limited (formerly Sindu Valley Technologies Ltd),Q2/H1 FY27,repo quarterly folder runs/ghvinfra-q2fy27 ; local folder Q2 FY27 Results/26 GHV Infra
+GMBREW,G M Breweries Ltd,Q2/H1 FY27,repo quarterly folder runs/gmbrew-q2fy27 ; local folder Q2 FY27 Results/15 G M Breweries
+GOCLCORP,GOCL Corporation Limited (BSE 506480 / NSE GOCLCORP),Q2/H1 FY27,repo quarterly folder runs/gocl-q2fy27 ; local folder Q2 FY27 Results/20 GOCL Corporation
+GOODLUCK,Goodluck India Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+GRWRHITECH,Garware Hi-Tech Films Limited,Q2/H1 FY27,repo quarterly folder runs/grwrhitech-q2fy27 ; local folder Q2 FY27 Results/23 Garware Hi-Tech
+GSMFOILS,GSM Foils Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+GVPIL,GE Power India Limited,Q2/H1 FY27,repo pipeline run runs/gvpil-2026-11-15 (this result was an input; actuals in census.csv)
+HERITGFOOD,Heritage Foods Limited,Q2/H1 FY27,repo quarterly folder runs/heritgfood-q2fy27 ; local folder Q2 FY27 Results/09 Heritage Foods
+HFCL,HFCL Limited (BSE 500183 / NSE HFCL),Q2/H1 FY27,repo quarterly folder runs/hfcl-q2fy27 ; local folder Q2 FY27 Results/18 HFCL
+INDIAMART,IndiaMART InterMESH Limited,Q2/H1 FY27,repo quarterly folder runs/indiamart-q2fy27 ; local folder Q2 FY27 Results/25 Indiamart
+INDIQUBE,IndiQube Spaces Limited,Q2/H1 FY27,local or session review note (see census.csv sources)
+INDNIPPON,India Nippon Electricals Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+INDORAMA,Indo Rama Synthetics (India) Ltd,Q2/H1 FY27,repo quarterly folder runs/indorama-q2fy27 ; local folder Q2 FY27 Results/10 Indo Rama
+INDOSOLAR,Indosolar Limited,Q2/H1 FY27,repo quarterly folder runs/indosolar-q2fy27 ; local folder Q2 FY27 Results/32 Indosolar
+INVPRECQ,Investment & Precision Castings Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+IOLCP,IOL Chemicals & Pharmaceuticals Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+JLHL,Jupiter Life Line Hospitals Ltd,Q2/H1 FY27,repo pipeline run runs/jlhl-2026-11-12 (this result was an input; actuals in census.csv)
+KARNIKA,Karnika Industries Ltd,Q2/H1 FY27,repo quarterly folder runs/karnika-h1fy27 ; local folder Q2 FY27 Results/12 Karnika Industries
+KECL,Kirloskar Electric Company Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+KELTECH,Keltech Energies Ltd,Q2/H1 FY27,repo pipeline run runs/keltech-2026-11-15 (this result was an input; actuals in census.csv)
+KNACK,"Knack Packaging Limited (BSE 544814, NSE KNACK)",Q2/H1 FY27,repo quarterly folder runs/knack-q2fy27 ; local folder Q2 FY27 Results/31 Knack Packaging
+KPL,Kwality Pharmaceuticals Ltd,Q2/H1 FY27,repo pipeline run runs/kpl-2026-11-15 (this result was an input; actuals in census.csv)
+KROSS,Kross Ltd,Q2/H1 FY27,repo quarterly folder runs/kross-q2fy27 ; local folder Q2 FY27 Results/17 Kross
+KSOLVES,"Ksolves India Limited (NSE KSOLVES, BSE 543599)",Q2/H1 FY27,local or session review note (see census.csv sources)
+KUSUMGAR,Kusumgar Ltd,Q2/H1 FY27,repo pipeline run runs/kusumgar-2026-11-12 (this result was an input; actuals in census.csv)
+LT,Larsen & Toubro Limited (LT),Q2/H1 FY27,repo quarterly folder runs/lt-q2fy27 ; local folder Q2 FY27 Results/29 Larsen and Toubro
+MACPOWER,Macpower CNC Machines Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+MAXIND,Max India Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+NEOCHEM,Neochem Bio Solutions Limited (formerly Neochem Technologies Private Limited),Q2/H1 FY27,repo quarterly folder runs/neochem-q2fy27 ; local folder Q2 FY27 Results/34 Neochem Bio
+NETWEB,Netweb Technologies India Ltd,Q2/H1 FY27,repo quarterly folder runs/netweb-q2fy27 ; local folder Q2 FY27 Results/20 Netweb Technologies
+ONWARDTEC,Onward Technologies Ltd,Q2/H1 FY27,repo pipeline run runs/onwardtec-2026-11-12 (this result was an input; actuals in census.csv)
+PAISALO,Paisalo Digital Limited,Q2/H1 FY27,repo quarterly folder runs/paisalo-q2fy27 ; local folder Q2 FY27 Results/25 Paisalo Digital
+PARACABLES,Paramount Communications Limited,Q2/H1 FY27,repo quarterly folder runs/paracables-q2fy27 ; local folder Q2 FY27 Results/22 Paramount Communications
+PAUSHAK,Paushak Limited,Q2/H1 FY27,local or session review note (see census.csv sources) ; local folder Q2 FY27 Results/01 Paushak
+PERMAGNET,Permanent Magnets Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+PITTIENG,Pitti Engineering Ltd,Q2/H1 FY27,repo quarterly folder runs/pittieng-q2fy27 ; local folder Q2 FY27 Results/24 Pitti Engineering
+PNGS,"PNGS Reva Diamond Jewellery Limited (key 'pngs'; NOT PNGS Gargi Fashion Jewellery, a different company)",Q2/H1 FY27,local or session review note (see census.csv sources)
+POONAWALLA,Poonawalla Fincorp Limited,Q2/H1 FY27,repo quarterly folder runs/poonawalla-q2fy27 ; local folder Q2 FY27 Results/16 Poonawalla Fincorp
+PREMEXPLN,Premier Explosives Ltd,Q2/H1 FY27,repo pipeline run runs/premexpln-2026-11-15 (this result was an input; actuals in census.csv)
+PREMIERPOL,Premier Polyfilm Limited,Q2/H1 FY27,repo quarterly folder runs/premierpol-q2fy27 ; local folder Q2 FY27 Results/14 Premier Polyfilm
+PRIZOR,Prizor Viztech Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+PVRINOX,PVR Inox Ltd,Q2/H1 FY27,repo pipeline run runs/pvrinox-2026-11-12 (this result was an input; actuals in census.csv)
+QLL,Qualitek Labs Ltd,Q2/H1 FY27,repo pipeline run runs/qll-2026-11-15 (this result was an input; actuals in census.csv)
+QPOWER,Quality Power Electrical Equipments Limited (QPEL),Q2/H1 FY27,repo quarterly folder runs/qpower-q2fy27 ; local folder Q2 FY27 Results/22 Quality Power (EGM)
+QUALITEK,Qualitek Labs Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+RAYMONDREL,Raymond Realty Limited (RAYMONDREL; packet key raymondrealty),Q2/H1 FY27,repo quarterly folder runs/raymondrel-q2fy27 ; local folder Q2 FY27 Results/27 Raymond Realty
+RKFORGE,Ramkrishna Forgings Ltd,Q2/H1 FY27,repo pipeline run runs/rkforge-2026-11-12 (this result was an input; actuals in census.csv)
+ROUTE,Route Mobile Limited,Q2/H1 FY27,repo quarterly folder runs/route-q2fy27 ; local folder Q2 FY27 Results/35 Route Mobile
+RSYSTEMS,R Systems International Limited,Q2/H1 FY27,local or session review note (see census.csv sources)
+SHHARICH,Shree Hari Chemicals Export Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+SHYAMMETL,Shyam Metalics and Energy Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+SICALLOG,Sical Logistics Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+SKYGOLD,"Sky Gold & Diamonds Ltd (Sky Gold and Diamonds Ltd; BSE 541967, NSE SKYGOLD)",Q2/H1 FY27,repo quarterly folder runs/skygold-q2fy27 ; local folder Q2 FY27 Results/30 Sky Gold
+SMRUTHI,Smruthi Organics Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+SONACOMS,Sona BLW Precision Forgings Ltd (Sona Comstar),Q2/H1 FY27,repo quarterly folder runs/sonacoms-q2fy27 ; local folder Q2 FY27 Results/23 Sona BLW
+SOUTHWEST,South West Pinnacle Exploration Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+SSWL,Steel Strips Wheels Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+SUDARCOLOR,Sudarshan Colorants India Ltd (formerly Heubach Colorants India Ltd),Q2/H1 FY27,repo pipeline run runs/sudarcolor-2026-11-12 (this result was an input; actuals in census.csv)
+SUPREMEPWR,Supreme Power Equipment Ltd,Q2/H1 FY27,repo quarterly folder runs/supremepwr-h1fy27 ; local folder Q2 FY27 Results/11 Supreme Power
+SYNGENE,Syngene International Ltd,Q2/H1 FY27,repo quarterly folder runs/syngene-q2fy27 ; local folder Q2 FY27 Results/26 Syngene
+SYSTANGO,Systango Technologies Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+TAALTECH,TAAL Tech Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+TATACOMM,Tata Communications Limited,Q2/H1 FY27,repo quarterly folder runs/tatacomm-q2fy27 ; local folder Q2 FY27 Results/08 Tata Communications
+TATVA,Tatva Chintan Pharma Chem Ltd,Q2/H1 FY27,repo quarterly folder runs/tatva-q2fy27 ; local folder Q2 FY27 Results/19 Tatva Chintan
+TDPOWERSYS,TD Power Systems Ltd,Q2/H1 FY27,repo pipeline run runs/tdpowersys-2026-11-15 (this result was an input; actuals in census.csv)
+TEJASNET,Tejas Networks Limited,Q2/H1 FY27,repo quarterly folder runs/tejasnet-q2fy27 ; local folder Q2 FY27 Results/02 Tejas Networks
+TINNARUBR,Tinna Rubber and Infrastructure Limited,Q2/H1 FY27,repo quarterly folder runs/tinnarubr-q2fy27 ; local folder Q2 FY27 Results/28 Tinna Rubber
+TITANBIO,Titan Biotech Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+TLL,Trident Lifeline Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+TRUALT,TruAlt Bioenergy Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+UNIMECH,Unimech Aerospace and Manufacturing Limited,Q2/H1 FY27,repo quarterly folder runs/unimech-q2fy27 ; local folder Q2 FY27 Results/28 Unimech Aerospace
+URBANCO,Urban Company Limited,Q2/H1 FY27,local folder Q2 FY27 Results/03 Urban Company
+VENUSREM,Venus Remedies Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+VILAS,Vilas Transcore Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+VINYAS,Vinyas Innovative Technologies Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)
+VRLLOG,VRL Logistics Ltd,Q2/H1 FY27,repo pipeline run runs/vrllog-2026-11-12 (this result was an input; actuals in census.csv)
+WALCHANNAG,Walchandnagar Industries Ltd,Q2/H1 FY27,repo pipeline run runs/walchannag-2026-11-12 (this result was an input; actuals in census.csv)
+WEWORK,WeWork India Management Ltd,Q2/H1 FY27,repo quarterly folder runs/wework-q2fy27 ; local folder Q2 FY27 Results/24 WeWork India
+WORKMATES,Workmates Core2Cloud Solution Limited,Q2/H1 FY27,local or session review note (see census.csv sources)
+YASHHV,Yash Highvoltage Ltd,Q2/H1 FY27,local or session review note (see census.csv sources) ; local folder Q2 FY27 Results/31 Yash Highvoltage
+ZAGGLE,Zaggle Prepaid Ocean Services Ltd,Q2/H1 FY27,local or session review note (see census.csv sources)

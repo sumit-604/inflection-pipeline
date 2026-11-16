@@ -61,21 +61,25 @@ Source: origin/claude/qpower-q1-fy27-notion-6lgxlt:runs/qpower-q1fy27/work/notio
 > - Promoter background re-verification reveals red flags (re-verification PENDING).
 Source: origin/claude/qpower-q1-fy27-notion-6lgxlt:runs/qpower-q1fy27/work/notion_thesis_seed_qpower.md §4. Thesis-broken conditions L28-33
 
-> <td>Not framed</td>
-> <td>New explicit guidance</td>
+> <td>Guidance</td>
+> <td>vs Earlier Assumption</td>
+> <td>Direction</td>
 > </tr>
 > <tr>
-> <td>BESS order intake FY27</td>
-> <td>\$60-80M</td>
-> <td>\$30M earlier</td>
-> <td>Upgraded</td>
+> <td>FY27 Revenue Growth</td>
+> <td>**15-20%** (\~₹1,150 Cr)</td>
+> <td>Earlier implied 30-40%</td>
+> <td>**LOWERED — material derating**</td>
 > </tr>
 > <tr>
-> <td>FY27 Order book target</td>
-> <td>₹1,500-1,800 Cr</td>
-> <td>Not stated</td>
-> <td>New</td>
-Source: origin/run/quarterly-q2fy27-2026-10-19:runs/qpower-q2fy27/work/notion-thesis.md §Q4 FY26 guidance table L1031-1044
+Source: origin/run/quarterly-q2fy27-2026-10-19:runs/qpower-q2fy27/work/notion-thesis.md §Q4 FY26 guidance table L1000-1010
+
+> <tr>
+> <td>FY27 EBITDA margin</td>
+> <td>Couple of % pts from 23.5%</td>
+> <td>\~22%+</td>
+> <td>Maintained</td>
+Source: origin/run/quarterly-q2fy27-2026-10-19:runs/qpower-q2fy27/work/notion-thesis.md §Q4 FY26 guidance table (FY27 EBITDA margin) L1022-1026
 
 > | Metric | This Quarter's Guidance (concall) | Last Quarter (Notion prior) | Two Q Ago | Trajectory | Confidence |
 > |---|---|---|---|---|---|
@@ -109,12 +113,15 @@ Source: origin/run/quarterly-q2fy27-2026-10-19:runs/qpower-q2fy27/work/review_qp
 
 ## Reported results (Q4 FY26 / Q1 FY27 / Q2 or H1 FY27)
 Q4 FY26 / FY26 (from the Notion page content, Q4 FY26 review and Sep-26 AR deep dive):
-> </tr>
-> </table>
-> ### Step 2: Q4 FY26 vs Q4 FY25 Key YoY Findings
 > Revenue: +159.2% YoY (₹108.32 → ₹280.81 Cr). Inflated by Mehru full-quarter vs 25 days. Organic \~105%. Strong.
 > Operating EBITDA Margin: 15.0% → 10.8% = -420 bps reported. MISLEADING. Normalised (add back ₹25.74 Cr IND AS 29 + \~₹10 Cr Labour Codes): \~23.0% → +800 bps expansion. Both Q4 FY25 and Q4 FY26 had IND AS 29 effects in opposite directions.
-Source: origin/run/quarterly-q2fy27-2026-10-19:runs/qpower-q2fy27/work/notion-thesis.md §Step 2 Q4 FY26 vs Q4 FY25 L842-846
+> Core Operating PBT: +70.2% YoY (₹14.40 → ₹24.51 Cr). Normalised for one-offs: +316% growth. Underlying engine is real.
+> FY26 Annual Core PBT: ₹156.68 Cr (vs ₹58.60 Cr FY25 = +167% YoY). Strong.
+Source: origin/run/quarterly-q2fy27-2026-10-19:runs/qpower-q2fy27/work/notion-thesis.md §Step 2 Q4 FY26 vs Q4 FY25 L845-848
+
+> Revenue: ₹947 Cr (+180% YoY; organic \~105%) \| PAT Owners: ₹121.34 Cr (+83.4%) \| EPS: ₹15.67 (vs ₹9.10 FY25)
+> Op EBITDA Margin: 18.6% FY26 (Q4 10.8% reported; \~23% normalised for one-offs)
+Source: origin/run/quarterly-q2fy27-2026-10-19:runs/qpower-q2fy27/work/notion-thesis.md §FY26 summary L1224-1225
 
 > FY26 delivery vs commitments: Revenue OVERDELIVERED (+12% vs revised guidance). EBITDA margin OVERDELIVERED. Mehru margin DELIVERED. Sangli DELAYED (June → August trial / Dec-Jan commercial). Veeral DELAYED.
 Source: origin/run/quarterly-q2fy27-2026-10-19:runs/qpower-q2fy27/work/notion-thesis.md §Management Credibility L1055-1055

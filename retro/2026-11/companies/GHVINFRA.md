@@ -33,7 +33,7 @@ Q2 / H1 FY27 and FY26 comparators (standalone, Rs Cr):
 Source: origin/claude/quarterly-ghv-q2fy27-3cf5aa:runs/ghvinfra-q2fy27/work/review_ghvinfra_q2fy27.md §Step 1 L145, L162, L172
 | Revenue from Operations | 183.77 | 300.08 | +63.30% | ; | Finance Costs | 6.43 | 13.24 | +105.78% | ; | PAT | 11.22 | 18.38 | +63.82% | Inflated by a lower ETR |
 Source: origin/claude/quarterly-ghv-q2fy27-3cf5aa:runs/ghvinfra-q2fy27/work/review_ghvinfra_q2fy27.md §Step 2 L250-265
-"In six months the business used Rs 244 crore of cash, against Rs 30 crore of profit." Source: origin/claude/quarterly-ghv-q2fy27-3cf5aa:runs/ghvinfra-q2fy27/operator_brief_ghvinfra_q2fy27.md L15
+"In six months the business used Rs 244 crore of cash, against Rs 30 crore of profit." Source: origin/claude/quarterly-ghv-q2fy27-3cf5aa:runs/ghvinfra-q2fy27/operator_brief_ghvinfra_q2fy27.md L14
 Q4 FY26 alone: Q1 review column "Q4 FY26" is ND for every line. Source: origin/claude/ghv-infra-quarterly-analysis-z6m8wn:runs/ghvinfra-q1fy27/work/review_ghvinfra_q1fy27.md L123-146
 
 ## Management's stated reasons

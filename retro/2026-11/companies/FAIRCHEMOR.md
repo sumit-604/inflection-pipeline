@@ -57,11 +57,11 @@ Source: same L530
 Source: same L236
 
 ## Risk flags raised before the result, and any overruling
-NOT FOUND (first analysis is the Q2 FY27 review itself; no earlier file). A5 loop cap: "LOOP CAP REACHED ... N1 stands as an OPEN ITEM for the operator" (run-log; A5 audit after the result, not a pre-result flag). Source: run-log.md (fairchemor) L18 region of 'LOOP CAP REACHED'.
+NOT FOUND (first analysis is the Q2 FY27 review itself; no earlier file). A5 loop cap: "LOOP CAP REACHED ... N1 stands as an OPEN ITEM for the operator" (run-log; A5 audit after the result, not a pre-result flag). Source: work/run-log.md L22.
 
 ## Verdicts and dates
 > A4: complete, PROCEED WITH FLAGS, branch 8A-W, PRE-THESIS READ.
-Source: work/run-log.md L16 region (2026-10-23 run)
+Source: work/run-log.md L17
 > Review status: PROCEED WITH FLAGS. PRE-THESIS READ (no Notion page, no spear on record). A5 COMPLETE after loop iteration 2
 Source: operator_brief_fairchemor_q2fy27.md L6
 > Net: no decision changes. No thesis exists. /step1 comes before any pipeline run on this name.

@@ -55,8 +55,8 @@ NOT FOUND before the results. All files are dated 2026-09-19, after the Q4 FY26 
 Flags raised in the run (after results):
 > "HIGH: FY27 EBITDA margin guided to 6-6.5% (Q4 FY26 call), Q1 FY27 delivered 11.01% two months later with no guidance revision offered"
 Source: origin/wip/laptop-save-2026-10-04:runs/dpabhushan-2026-09-19/outputs/blocks/B05-concall.yaml §red_flags L71
-> "operator: Verifier B's strict rate ... 50%, below the 60 line ... The orchestrator did not apply REWORK."
-Source: same branch:.../outputs/final/gate-recommendation.md L20 (orchestrator, not operator)
+> "Verifier B's strict rate, counting full catches only, is 50%, below the 60 line... The orchestrator did not apply REWORK."
+Source: same branch:.../outputs/final/gate-recommendation.md L20
 
 ## Verdicts and dates
 > "PROCEED WITH CAVEATS" (2026-09-19; FLAG-CASH INDETERMINATE cap) Source: .../gate-recommendation.md L1, L18

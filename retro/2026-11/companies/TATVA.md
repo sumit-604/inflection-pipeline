@@ -37,13 +37,13 @@ Source: origin/claude/tatva-pipeline-run-kl58kw:runs/tatva-2026-07-12/outputs/re
 Source: origin/claude/tatva-pipeline-run-kl58kw:runs/tatva-2026-07-12/outputs/reports/10-valinputs.md §catalysts L197
 
 | Revenue growth (FY27) | **25-30%** (L70; "that's what we stick to", FC13) | ND ... | Maintained (reaffirmed) | MEDIUM-HIGH |
-Source: origin/claude/quarterly-analysis-agent-z2p3ps:runs/tatva-q1fy27/work/review_tatva_q1fy27.md §2 L615
+Source: origin/claude/quarterly-analysis-agent-z2p3ps:runs/tatva-q1fy27/work/review_tatva_q1fy27.md §2 L614
 
 | EBITDA margin band (FY27) | **20-22%** (L72; "I would still stick to", FC14) — hedged "unfortunately we have lost one quarter with a little lesser margin" | ... | Maintained (off a 19.3% Q1 base) | MEDIUM |
 Source: origin/claude/quarterly-analysis-agent-z2p3ps:runs/tatva-q1fy27/work/review_tatva_q1fy27.md §2 L616
 
 Export / segment guidance | Pharma **Rs 70-80 Cr FY27** ... ESS **Rs 40-50 Cr FY27** (L51, N30); ... hybrid-battery commercialization **Oct/Nov CY2026** (L99, N39), full-scale **late CY2027**
-Source: origin/claude/quarterly-analysis-agent-z2p3ps:runs/tatva-q1fy27/work/review_tatva_q1fy27.md §2 L623-625 (rows)
+Source: origin/claude/quarterly-analysis-agent-z2p3ps:runs/tatva-q1fy27/work/review_tatva_q1fy27.md §2 L623-624
 
 - Ledger items whose confirm-by dates fall in the next window: hybrid battery initial supply (Oct-Nov CY2026), two pharma molecules (by 31-Dec-2026), ESS FY27 Rs 40-50 Cr, FY27 EBITDA margin 20-22%.
 Source: origin/run/quarterly-q2fy27-2026-10-19:runs/tatva-q2fy27/work/review_tatva_q2fy27.md §Step 7 L504
@@ -120,22 +120,22 @@ As of 2026-07-12 (first workup, valuation refreshed under Section 1B Amendment 4
 Source: origin/claude/tatva-pipeline-run-kl58kw:companies/TATVA.md §DECISION STATUS L9
 
 Decision Status (VERIFIED ...): WATCHLIST / AVOID (on-valuation; Hurdle STOP). Entry zone Rs 97-121 ... CMP ~Rs 1,194  (Q1 review, Notion fetched 2026-07-21)
-Source: origin/claude/quarterly-analysis-agent-z2p3ps:runs/tatva-q1fy27/work/review_tatva_q1fy27.md §0A L~37
+Source: origin/claude/quarterly-analysis-agent-z2p3ps:runs/tatva-q1fy27/work/review_tatva_q1fy27.md §0A L27
 
 - 2026-07-20: stock re-rated to Rs 1,714 (52-week high, upper circuit, +20% day) on strong Q1 FY27 results + an ICICI Securities note
 Source: origin/claude/tatva-pipeline-run-kl58kw:companies/TATVA.md §POST-RUN NOTES L34
 
 Q2 FY27: Verdict PROCEED WITH FLAGS, branch 8A-W (WATCHLIST / AVOID). Cash INDETERMINATE-WITH-DIRECTION (run date 2026-10-20).
-Source: origin/run/quarterly-q2fy27-2026-10-19:runs/tatva-q2fy27/work/run-log.md §A4 L22
+Source: origin/run/quarterly-q2fy27-2026-10-19:runs/tatva-q2fy27/work/run-log.md §A4 L20
 
 
 ## Lessons archive mentions
 - [2026-07-12] TATVA phase 2 (fttcp): verdict DEEP WATCH, composite +3/8 (revenue FIRING, margin STARTING, ROCE RECOVERING, cash DECLINING), Kernex cap engaged on cash. Sector cap corrected to Specialty chemicals 35x ...
-Source: origin/main(export):LESSONS_ARCHIVE.md L100
+Source: origin/main:LESSONS_ARCHIVE.md L100
 
 - [2026-07-12] TATVA phase 1: verdict PROCEED WITH CAVEATS, confidence 86. FLAG-CASH determined INDETERMINATE ...
-Source: origin/main(export):LESSONS_ARCHIVE.md L101
+Source: origin/main:LESSONS_ARCHIVE.md L101
 
 Further TATVA phase 1 items at L102-L105 (stage 6 API limit, collector defects, Gate 0 false AVOID, Stage 8 flag).
-Source: origin/main(export):LESSONS_ARCHIVE.md L102-L105
+Source: origin/main:LESSONS_ARCHIVE.md L102-L105
 

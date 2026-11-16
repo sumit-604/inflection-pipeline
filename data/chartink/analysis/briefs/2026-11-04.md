@@ -1,13 +1,13 @@
 ---
 title: "Market Breadth Brief"
-subtitle: "Wednesday, 2026-11-04 trade date · written 2026-11-04 · for Sumit Sharma"
+subtitle: "Wednesday, 2026-11-04 trade date · written 2026-11-06 · for Sumit Sharma"
 ---
 
 # Market read, 4 November 2026
 
-All 34 table files from the two public Chartink dashboards are present for Wednesday 4 November. The last brief covered Tuesday 3 November. The full figures for Wednesday sit in the data appendix, `2026-11-04-appendix.html`. Turnover, gold funds, the Nifty 500 trend share, the daily count of new yearly highs and lows, and the history of every trend count come from the daily breadth record.
+Same trade date as the previous brief: 2026-11-04. No new Chartink folder arrived for Thursday 5 November. The newest folder is still Wednesday 4 November, and the daily breadth record also ends there. This run cannot tell whether the market was shut on Thursday or the download did not advance. All 34 table files are present for Wednesday. The full figures sit in the data appendix, `2026-11-04-appendix.html`. Turnover, gold funds, the Nifty 500 trend share, the daily count of new yearly highs and lows, and the history of every trend count come from the daily breadth record.
 
-The record changed again, and the reader needs a plain warning. Last night Chartink restated its trend counts onto a market of about 2,310 stocks. Tonight the record sits on a market of about 2,250 stocks again. So Tuesday's short count reads 874 tonight, where the last brief said 897. The 23 October low reads 581, where the last brief said 602. This brief uses tonight's record for every date, so its older numbers differ from the last brief. Claude Code has no web access. This brief checks no news and gives no reason for any move. It describes what the market did. It is not advice to buy or sell anything. The operator decides.
+The numbers did not change, so this brief repeats the reading of Wednesday's brief. Each history figure was checked again against the daily record tonight, and each still holds. The record counts a market of about 2,250 stocks. Briefs written before 4 November used a market of about 2,310 for one night, so some older numbers differ from those briefs. Claude Code has no web access. This brief checks no news and gives no reason for any move. It describes what the market did. It is not advice to buy or sell anything. The operator decides.
 
 ## The picture in one paragraph
 
@@ -125,7 +125,7 @@ Retail is everywhere, and promoters are steadier. Retail holding rose in all 996
 
 **17. The long count passed the early October lows.** On 8 and 9 October the long count read about 840 and 860. Wednesday's 872 sits above both. The 16 October repair high of 942 is the next level the long count has to clear.
 
-**18. Two of last night's four repair tests passed.** The small indices outran the Nifty. The long count passed the early October lows of tonight's record, though it sits a hair under the 875 named on last night's restated record. New highs reached 45, just short of 50. Turnover did not beat the selling days. Last night's rule turns a bounce into a repair on two passes, so the read moves to repair with the money still missing.
+**18. Two of the four repair tests from the 3 November brief passed.** The small indices outran the Nifty. The long count passed the early October lows of the current record, though it sits a hair under the 875 named on that night's restated record. New highs reached 45, just short of 50. Turnover did not beat the selling days. That brief's rule turns a bounce into a repair on two passes, so the read moves to repair with the money still missing.
 
 **19. The middle clock has repaired the most.** 835 stocks hold the 50 day line, the most since 25 September. It has now undone the whole October break.
 

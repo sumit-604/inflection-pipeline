@@ -69,7 +69,7 @@ Q2 FY27 / H1 FY27: NOT FOUND (review states "The master decision gate is pushed 
 Source: origin/claude/gmg-electronics-analysis-0owflj:runs/ebgng-q1fy27/work/review_ebgng_q1fy27.md §2A L197
 > | Why is finance cost higher than guided ... | CFO gave exact miss figure (Rs4-4.5cr) and rationale (inventory strategy) | Satisfactory, transparent |
 Source: origin/claude/ebgng-pipeline-run-e7jis5:runs/ebgng-2026-07-12/outputs/reports/05-concall.md L143
-> Debtor days "30-35 days... within this range in the foreseeable future" (Q2 FY26) ... ~40-45 days actual by Q4 FY26
+> Promised to hold at 30-35 days "in the foreseeable future" (Q2 FY26); actual ~40-45 days by Q4 FY26
 Source: same file L74 (promise), L214 (drift)
 > MD "refrain from giving exact contribution" (distributor revenue) ; CFO: "refrain from giving any specific guidance... on margin from India penetration."
 Source: origin/claude/gmg-electronics-analysis-0owflj:runs/ebgng-q1fy27/work/review_ebgng_q1fy27.md §6B L373; L651

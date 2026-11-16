@@ -53,9 +53,9 @@ Variance table (Step 6A):
 | Operating EBITDA margin | 12.3% | 13.0% | 14.0% | H1 12.71%; Q2 13.02% | ... | H1: between Bear and Base. Q2: at Base, 20 bps short of the ~13.2% the page needs |
 | PAT (Rs Cr) | 56 | 65 | 76 | H1 33.16; Q2 19.69 | 28.0 / 32.5 / 38.0 | ... | At Base (slightly above Base pro-rata) |
 "Reading 1 (reported figures): 0 metrics below Bear. 1 metric between Bear and Base (H1 margin). 3 metrics at or above Base (revenue, PAT, EPS)."
-Source: origin/run/quarterly-q2fy27-2026-10-19:runs/kross-q2fy27/work/review_kross_q2fy27.md §6A L360-364, L369-370
+Source: origin/run/quarterly-q2fy27-2026-10-19:runs/kross-q2fy27/work/review_kross_q2fy27.md §6A L360-364, L371
 Reading 2: "H1 PAT ex that OI = 331.63 - 10.65 = 320.98 Mn = 32.10 Cr. That is below the Base pro-rata (32.5 Cr) and above Bear (28.0 Cr)."
-Source: origin/run/quarterly-q2fy27-2026-10-19:runs/kross-q2fy27/work/review_kross_q2fy27.md L373-374
+Source: origin/run/quarterly-q2fy27-2026-10-19:runs/kross-q2fy27/work/review_kross_q2fy27.md L374
 Margin detail: "13.02% ex-OI ... 13.94% incl OI"; Gross margin 43.90%; H1 CFO Rs 4.73 Cr = 14.3% of PAT.
 Source: origin/run/quarterly-q2fy27-2026-10-19:runs/kross-q2fy27/notion-payload.md L14; work/review_kross_q2fy27.md L391
 Protocol verdict: "PROCEED WITH FLAGS."

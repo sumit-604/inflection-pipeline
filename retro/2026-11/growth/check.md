@@ -6,7 +6,13 @@ An independent checker read 20 random scored rows from the PDF page images. It d
 
 The one mismatch was BBOX Q2/H1 FY27. The figures copied from the filing were the same in both reads. The script was wrong: it read the cell `- (line 4 prints "-")` for share of associates as 4, and subtracted it. The parser now reads only the figure at the start of a cell, and a bare dash is zero.
 
-The same fix changed four lender rows, where the treasury cell held two figures (fair value changes and derecognition gains). The rule is now: remove net gain on fair value changes only. Rows changed: AYE Q2, SATIN Q1, SATIN Q2, POONAWALLA Q2. No other row changed.
+The fix also changed how a lender's treasury cell is read when it holds two figures (fair value changes and derecognition gains). The rule is now: remove net gain on fair value changes only. All rows the fix changed:
+
+- BBOX Q2/H1 FY27: 0 TO 25% +16.6% to 0 TO 25% +22.0%
+- POONAWALLA Q2/H1 FY27: ABOVE 25% +407.3% to ABOVE 25% +406.5%
+- SATIN Q1 FY27: ABOVE 25% +311.4% to ABOVE 25% +758.1%
+
+No label changed.
 
 Sample: random draw (seed 20261117) from scored rows that have a PDF on this machine.
 

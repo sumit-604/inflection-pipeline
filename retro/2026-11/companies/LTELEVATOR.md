@@ -30,7 +30,7 @@ Source: origin/wip/laptop-save-2026-10-04:runs/ltelevator-corppres-2026-09/docum
 Source: origin/wip/laptop-save-2026-10-04:runs/ltelevator-corppres-2026-09/document-review.md §7 L106
 
 | Ricardo merger fails to close by mid-2026 | deck silent on legal closure | UNRESOLVED — tripwire open |
-Source: origin/wip/laptop-save-2026-10-04:runs/ltelevator-corppres-2026-09/document-review.md §6 L~76
+Source: origin/wip/laptop-save-2026-10-04:runs/ltelevator-corppres-2026-09/document-review.md §6 L77
 
 
 ## Reported results (Q4 FY26 / Q1 FY27 / Q2 or H1 FY27)
@@ -44,7 +44,7 @@ Source: origin/wip/laptop-save-2026-10-04:runs/ltelevator-corppres-2026-09/docum
 Source: origin/wip/laptop-save-2026-10-04:runs/ltelevator-corppres-2026-09/document-review.md §2 L26
 
 Cash flow from operations **ND**; thesis records FY26 consolidated CFO/PAT at -0.98x
-Source: origin/wip/laptop-save-2026-10-04:runs/ltelevator-corppres-2026-09/document-review.md §5 L~58-62
+Source: origin/wip/laptop-save-2026-10-04:runs/ltelevator-corppres-2026-09/document-review.md §5 L62, 76
 
 Q1 FY27 / H1 FY27: NOT FOUND ("deck gives annual only; no quarterly")
 Source: origin/wip/laptop-save-2026-10-04:runs/ltelevator-corppres-2026-09/document-review.md §3 L45
@@ -57,7 +57,7 @@ Source: origin/wip/laptop-save-2026-10-04:runs/ltelevator-corppres-2026-09/docum
 
 ## Risk flags raised before the result, and any overruling
 "CFO/PAT negative through FY27" is a named thesis-broken condition. (thesis dated 8-May-2026)
-Source: origin/wip/laptop-save-2026-10-04:runs/ltelevator-corppres-2026-09/document-review.md §5 L~58-62
+Source: origin/wip/laptop-save-2026-10-04:runs/ltelevator-corppres-2026-09/document-review.md §5 L62, 76
 
 No result shortfall recorded in the files, so no overruling.
 Source: n/a
@@ -68,7 +68,7 @@ Decision Status **WATCHLIST** (starter 1.5-2% acceptable) 8 May 2026
 Source: origin/wip/laptop-save-2026-10-04:runs/ltelevator-corppres-2026-09/document-review.md §header L9-12
 
 ## PROCESS VERDICT: PROCEED WITH CAVEATS (document review of 6-Sep-2026 deck; Decision Status stays WATCHLIST)
-Source: origin/wip/laptop-save-2026-10-04:runs/ltelevator-corppres-2026-09/document-review.md §PROCESS VERDICT L~219
+Source: origin/wip/laptop-save-2026-10-04:runs/ltelevator-corppres-2026-09/document-review.md §PROCESS VERDICT L217
 
 Company: L.T. Elevator Limited. BSE 544518 (SME).
 Source: origin/wip/laptop-save-2026-10-04:runs/ltelevator-corppres-2026-09/document-review.md §header L8

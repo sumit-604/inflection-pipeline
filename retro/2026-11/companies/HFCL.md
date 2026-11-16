@@ -64,7 +64,7 @@ Source: origin/claude/hfca-quarterly-analysis-4a6fod:runs/hfcl-q1fy27/work/revie
 Source: origin/claude/hfca-quarterly-analysis-4a6fod:runs/hfcl-q1fy27/work/review_hfcl_q1fy27.md §1C L134-135
 
 Note 6: **Q4FY26 (Mar-26) figures are balancing figures** between audited FY and 9M limited-review.
-Source: origin/claude/hfca-quarterly-analysis-4a6fod:runs/hfcl-q1fy27/work/review_hfcl_q1fy27.md §0D L53 (table row 6)
+Source: origin/claude/hfca-quarterly-analysis-4a6fod:runs/hfcl-q1fy27/work/review_hfcl_q1fy27.md §0D L50 (table row 6)
 
 | Revenue from Operations (R-L804) | 1,043.34 | 1,914.98 | 2,541.79 | 4,949.27 | ND | 1,914.36 | 4,456.77 |  (Q2FY26, Q1FY27, Q2FY27, FY26, ND, H1FY26, H1FY27)
 Source: origin/run/quarterly-q2fy27-2026-10-19:runs/hfcl-q2fy27/work/review_hfcl_q2fy27.md §1B L199

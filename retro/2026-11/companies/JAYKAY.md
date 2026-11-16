@@ -7,7 +7,7 @@ NOT FOUND (run_type: refresh; "monitoring-grade re-open of an AVOID name; NOT a 
 Source: origin/claude/jaykay-corpus-extraction-vkjw6a:runs/jaykay-2026-08-26/jaykay-corpus-extraction-halt1-draft.md §header L2
 
 NO valuation produced.
-Source: origin/claude/jaykay-corpus-extraction-vkjw6a:runs/jaykay-2026-08-26/manifest.yaml §notes L~14
+Source: origin/claude/jaykay-corpus-extraction-vkjw6a:runs/jaykay-2026-08-26/manifest.yaml §notes L14
 
 
 ## Management guidance and promised catalysts
@@ -15,7 +15,7 @@ Source: origin/claude/jaykay-corpus-extraction-vkjw6a:runs/jaykay-2026-08-26/man
 Source: origin/claude/jaykay-corpus-extraction-vkjw6a:runs/jaykay-2026-08-26/jaykay-corpus-extraction-halt1-draft.md §F.2 L365
 
 > "All-important certifications in place for Medical Implants. CDSO approvals in process."
-Source: origin/claude/jaykay-corpus-extraction-vkjw6a:runs/jaykay-2026-08-26/jaykay-corpus-extraction-halt1-draft.md §F.1 L~347
+Source: origin/claude/jaykay-corpus-extraction-vkjw6a:runs/jaykay-2026-08-26/jaykay-corpus-extraction-halt1-draft.md §F.1 L348
 
 Instrument: partly paid-up equity shares ... Size: up to Rs 154,28,73,150 (Rs 154.28 Cr) ... Ratio: 3 for every 19 held. Record date: 28 Aug 2026. Opens 7 Sep 2026, closes 18 Sep 2026.
 Source: origin/claude/jaykay-corpus-extraction-vkjw6a:runs/jaykay-2026-08-26/jaykay-corpus-extraction-halt1-draft.md §D.2 L193-198
@@ -52,7 +52,7 @@ Source: n/a
 
 ## Management's stated reasons
 NOT FOUND (no concall; "company hosts no earnings calls"; investor release framing only)
-Source: origin/claude/jaykay-corpus-extraction-vkjw6a:runs/jaykay-2026-08-26/manifest.yaml §header L~13
+Source: origin/claude/jaykay-corpus-extraction-vkjw6a:runs/jaykay-2026-08-26/manifest.yaml §header L10 (concalls_available: false)
 
 
 ## Risk flags raised before the result, and any overruling
@@ -65,7 +65,7 @@ Run: runs/jaykay-2026-08-26 | Prior verdict: AVOID | Date: 2026-08-26
 Source: origin/claude/jaykay-corpus-extraction-vkjw6a:runs/jaykay-2026-08-26/jaykay-corpus-extraction-halt1-draft.md §header L3
 
 The AVOID read weakens if, across two clean quarters, consolidated operating PBT (before exceptional and share of associates) both funds the group's cash needs without a fresh raise AND the Neumesh / balance-reconciliation qualifications resolve without a write-off.
-Source: origin/claude/jaykay-corpus-extraction-vkjw6a:runs/jaykay-2026-08-26/jaykay-corpus-extraction-halt1-draft.md §G.5 L~441-446
+Source: origin/claude/jaykay-corpus-extraction-vkjw6a:runs/jaykay-2026-08-26/jaykay-corpus-extraction-halt1-draft.md §G.5 L443-446
 
 1. Archetype per business line. - Digital Service ...: Outsourcing partner / IT services. - Defence & Aerospace ...: Build-to-spec component maker plus Order-book business. ... Parent: Holding company / capital allocator.
 Source: origin/claude/jaykay-corpus-extraction-vkjw6a:runs/jaykay-2026-08-26/jaykay-corpus-extraction-halt1-draft.md §G L405-417

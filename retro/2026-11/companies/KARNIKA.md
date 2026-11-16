@@ -77,7 +77,7 @@ Source: 07-11 fttcp-deliberation.md §Transition 1 catalyst table L152
 Source: fttcp-deliberation.md L71
 > | Guidance discipline | Poor | Kidcity FY28 revenue target escalated ~2x within two quarters despite a FY26 base-year miss; the 20-25% peak-margin target was quietly replaced ...
 Source: 05-concall.md L295
-> Kernex cap check: ... It is close, and it is the single thing most likely to force a downgrade at the next print. (cash conversion)
+> Kernex cap check: cash is STAGNANT, not DECLINING, and the catalyst is Weak rather than strictly NONE ... The hard Kernex cap does not engage. It is close, and it is the single thing most likely to force a downgrade at the next
 Source: fttcp-deliberation.md L216
 No overruling found. Verdict "DEEP WATCH leaning AVOID" stands; operator "every judgment call yours" delegation (fttcp-deliberation.md L9-L11) is not an override.
 

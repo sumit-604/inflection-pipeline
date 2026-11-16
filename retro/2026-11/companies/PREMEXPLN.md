@@ -33,11 +33,11 @@ Source: origin/run/premexpln-2026-11-15:runs/premexpln-2026-11-15/
 ## Risk flags raised before the result, and any overruling
 All our files are dated 2026-11-15, after the Q2 FY27 results/call (13 Nov 2026). Nothing predates a result. Overruling: NOT FOUND.
 - "FY27 revenue guide raised to Rs 600-700 Cr (Q4 FY26 call) after FY26 delivered Rs 388.3 Cr vs Rs 500 Cr guide; H1 FY27 Rs 247.84 Cr = 41% of 600." (B05 L17)
-- "Q1 FY27 call states Rs 150-200 Cr exports 'in this quarter' while total Q2 FY27 revenue was Rs 145.3 Cr; statement unreliable." (B05 L22)
+- "Q1 FY27 call states Rs 150-200 Cr exports 'in this quarter' while total Q2 FY27 revenue was Rs 145.3 Cr; statement unreliable." (B05 L23)
 Source: origin/run/premexpln-2026-11-15:runs/premexpln-2026-11-15/outputs/blocks/B05-concall.yaml §flags
 
 ## Verdicts and dates
-- "PROCEED WITH CAVEATS" (gate-recommendation.md L1); credibility "D" (B05 L82); "Spear: OVERRIDE 2026-11-15" (company file L10)
+- "PROCEED WITH CAVEATS" (gate-recommendation.md L3); credibility "D" (B05 L82); "Spear: OVERRIDE 2026-11-15" (company file L10)
 - "Phase 1 result 2026-11-15 (memory, not a ruling): gate recommendation PROCEED WITH CAVEATS; corpus CORPUS GAPPED-FRESHNESS ... fragility FRAGILE; phase-1 confidence 73 set by redflag_coverage." (company file L21)
 Source: origin/run/premexpln-2026-11-15
 

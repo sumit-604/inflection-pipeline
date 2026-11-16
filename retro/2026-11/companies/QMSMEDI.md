@@ -6,7 +6,7 @@ Company file: companies/QMSMEDI.md (origin/run/qmsmedi-2026-09-26)
 NOT FOUND. "Phase 1 lite mode. This is the FTTCP go/no-go on evidence alone. It carries no valuation decision, no entry range, no MoS price, no destination PE and no Hurdle verdict."
 Source: origin/run/qmsmedi-2026-09-26:runs/qmsmedi-2026-09-26/outputs/final/gate-recommendation.md L3
 "None. Step-1 intake 2026-09-26; no valuation has run."  Source: origin/run/qmsmedi-2026-09-26:companies/QMSMEDI.md §DECISION STATUS AND ENTRY ZONE
-Archetype: NOT FOUND. Brief engine: "A mix shift from device trading to pharma-commercialisation services." Source: origin/run/qmsmedi-2026-09-26:runs/qmsmedi-2026-09-26/step1-business-brief.md L56-57
+Archetype: NOT FOUND. Brief engine: "A mix shift from device trading to pharma-commercialisation services." Source: origin/run/qmsmedi-2026-09-26:runs/qmsmedi-2026-09-26/step1-business-brief.md L59
 Board: "Listed on NSE Emerge (SME) Sep-2022 at Rs 121; migrated to the NSE Mainboard 18-Jun-2026." Source: origin/run/qmsmedi-2026-09-26:runs/qmsmedi-2026-09-26/step1-business-brief.md L7-8
 
 ## Management guidance and promised catalysts

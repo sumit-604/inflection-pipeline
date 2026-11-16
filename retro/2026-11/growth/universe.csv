@@ -1,400 +1,775 @@
-﻿ticker,name,period,where the review lives
-3IINFOLTD,3i Infotech Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/3IINFOLTD
-526717,HCP Plastene Bulkpack Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-53w4to:runs/526717-q1fy27
-530077,Puretrop Fruits Limited (formerly Freshtrop Fruits Limited),Q2/H1 FY27,repo origin/claude/qr-puretrop-q2fy27-888061:runs/530077-q2fy27
-543916,Hemant Surgical Industries (HSIL),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/543916
-543920,CFF Fluid Control,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/543920
-544272,Shiv Texchem,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/544272
-544291,Rajesh Power Services Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/544291
-544434,Neetu Yoshi Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/544434
-544452,Swastika Castal Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/544452
-544453,Monarch Surveyors and Engineering Consultants,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/544453
-544516,Airfloa Rail Technology Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/544516
-544657,Pajson Agro India Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/544657
-AARTIDRUGS,Aarti Drugs Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/AARTIDRUGS ; QuarterlyReviewer/reviews/2026-11-12_0629/AARTIDRUGS
-AARTIPHARM,Aarti PharmaLabs (Aarti Pharmalabs Ltd),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/AARTIPHARM ; ConcallPipeline/Q2 FY27 Results/36 Aarti Pharmalabs
-AARTISURF,Aarti Surfactants Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/AARTISURF
-ABB,ABB India Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/ABB
-ACCORD,"Accord Transformer & Switchgear Ltd (BSE 544710, ACCORDTS)",Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/544710
-ACCORD,"Accord Transformer & Switchgear Ltd (BSE 544710, ACCORDTS)",Q4 FY26,repo origin/run/accord-2026-10-06:runs/accord-2026-10-06 (pipeline run; results filing in inputs)
-ADFFOODS,ADF Foods Limited,Q1 FY27,repo origin/claude/adf-food-quarterly-analysis-b8cygp:runs/adffoods-q1fy27
-ADISOFT,Adisoft Technologies Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/ADISOFT
-ADOR,Ador Welding Ltd,Q2/H1 FY27,repo origin/claude/quarterly-ador-q2fy27-97aedb:runs/ador-q2fy27
-AEQUS,Aequs Ltd,Q2/H1 FY27,repo origin/claude/qr-aequs-q2fy27-f2613d:runs/aequs-q2fy27
-AEROFLEX,Aeroflex Industries Ltd,Q1 FY27,repo origin/claude/aeroflex-results-analysis-x9xrqs:runs/aeroflex-q1fy27
-AEROFLEX,Aeroflex Industries Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/AEROFLEX ; ConcallPipeline/Q2 FY27 Results/37 Aeroflex Industries
-AIMTRON,Aimtron Electronics Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/AIMTRON
-AKUMS,Akums Drugs & Pharmaceuticals Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/AKUMS
-ALUFLUOR,Alufluoride Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/ALUFLUOR
-AMAGI,Amagi Media Labs Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-rnbvw5:runs/amagi-q1fy27
-AMANTA,Amanta Healthcare,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/AMANTA
-ANAWIL,Anawil Wire and Engineering Ltd,Q2/H1 FY27,repo origin/run/anawil-2026-11-12:runs/anawil-2026-11-12 (pipeline run; results filing in inputs)
-ANUP,The Anup Engineering Limited,Q1 FY27,repo origin/claude/anoop-engineering-quarterly-8lr5l1:runs/anup-q1fy27
-APEXECO,Apex Ecotech Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/APEXECO
-APSISAERO,Apsis Aerocom Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-10_1512/APSISAERO
-ARIS,ArisInfra Solutions Ltd,Q1 FY27,repo origin/claude/spra-quarterly-results-analysis-ctlfwb:runs/aris-q1fy27
-ARIS,ArisInfra Solutions Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/ARIS
-ARVINDFASN,Arvind Fashions Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/ARVINDFASN
-ASIANENE,Asian Energy Services Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-c8fsiv:runs/asianene-q1fy27
-ASTRAMICRO,Astra Microwave Products Ltd,Q1 FY27,repo origin/run/astramicro-2026-11-15:runs/astramicro-2026-11-15 (pipeline run; results filing in inputs)
-ASTRAMICRO,Astra Microwave Products Ltd,Q2/H1 FY27,repo origin/run/astramicro-2026-11-15:runs/astramicro-2026-11-15 (pipeline run; results filing in inputs) ; QuarterlyReviewer/reviews/2026-11-13_0631/ASTRAMICRO
-ASTRAMICRO,Astra Microwave Products Ltd,Q4 FY26,repo origin/run/astramicro-2026-11-15:runs/astramicro-2026-11-15 (pipeline run; results filing in inputs)
-ATLANTAELEC,Atlanta Electricals Ltd,Q1 FY27,repo origin/claude/aartisurf-pipeline-run-3wqmjl:runs/atlantaelec-q1fy27
-AURUM,Aurum Proptech Ltd,Q1 FY27,repo origin/claude/aurob-proptech-investor-analysis-cqrz1p:runs/aurum-q1fy27
-AURUM,Aurum Proptech Ltd,Q2/H1 FY27,repo origin/run/quarterly-q2fy27-2026-10-17:runs/aurum-q2fy27
-AVANA,Avana Electrosystems Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-10_1512/AVANA
-AVANA,Avana Electrosystems Ltd,Q4 FY26,repo origin/run/avana-2026-10-05:runs/avana-2026-10-05 (pipeline run; results filing in inputs)
-AVTNPL,AVT Natural Products,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/AVTNPL
-AWFIS,Awfis Space Solutions Ltd,Q1 FY27,repo origin/run/awfis-2026-09-19:runs/awfis-2026-09-19 (pipeline run; results filing in inputs)
-AWFIS,Awfis Space Solutions Ltd,Q4 FY26,repo origin/run/awfis-2026-09-19:runs/awfis-2026-09-19 (pipeline run; results filing in inputs)
-AYE,Aye Finance Ltd,Q1 FY27,repo origin/claude/run-pipeline-aye-adnmeu:runs/aye-q1fy27
-AYE,Aye Finance Ltd,Q2/H1 FY27,repo origin/claude/quarterly-ayefin-q2fy27-982ab0:runs/aye-q2fy27
-AZAD,Azad Engineering Ltd,Q1 FY27,repo origin/run/azad-2026-11-15:runs/azad-2026-11-15 (pipeline run; results filing in inputs)
-AZAD,Azad Engineering Ltd,Q2/H1 FY27,repo origin/run/azad-2026-11-15:runs/azad-2026-11-15 (pipeline run; results filing in inputs) ; QuarterlyReviewer/reviews/2026-11-15_0337/AZAD
-AZAD,Azad Engineering Ltd,Q4 FY26,repo origin/run/azad-2026-11-15:runs/azad-2026-11-15 (pipeline run; results filing in inputs)
-BALAMINES,Balaji Amines Limited,Q1 FY27,repo origin/claude/balaji-mines-quarterly-analysis-ygfira:runs/balamines-q1fy27
-BANDHANBNK,Bandhan Bank Ltd,Q1 FY27,repo origin/claude/bundan-bank-q1-fy27-lo837s:runs/bandhan-q1fy27
-BANDHANBNK,Bandhan Bank Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/BANDHANBNK ; ConcallPipeline/Q2 FY27 Results/38 Bandhan Bank
-BBOX,Black Box Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/BBOX
-BIRLANU,BirlaNu Limited (formerly HIL Limited),Q1 FY27,repo origin/claude/birlanu-quarterly-results-2zbr6l:runs/birlanu-q1fy27
-BLACKROSE,Black Rose Industries Ltd,Q1 FY27,repo origin/claude/black-rose-quarterly-analysis-a9u9a4:runs/blackrose-q1fy27
-BORANA,Borana Weaves Ltd,Q1 FY27,repo origin/claude/borana-2026-09-07-vpvzja:runs/borana-2026-09-07 (pipeline run; results filing in inputs)
-BORANA,Borana Weaves Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/BORANA
-BORANA,Borana Weaves Ltd,Q4 FY26,repo origin/claude/borana-2026-09-07-vpvzja:runs/borana-2026-09-07 (pipeline run; results filing in inputs)
-CAPACITE,Capacit'e Infraprojects Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/CAPACITE
-CAPILLARY,Capillary Technologies India Ltd,Q1 FY27,repo origin/main:runs/capillary-2026-09-19 (pipeline run; results filing in inputs)
-CAPILLARY,Capillary Technologies India Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/CAPILLARY
-CAPILLARY,Capillary Technologies India Ltd,Q4 FY26,repo origin/main:runs/capillary-2026-09-19 (pipeline run; results filing in inputs)
-CCCL,Consolidated Construction Consortium Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/CCCL
-CGRAPHICS,Creative Graphics Solutions India Ltd (Creative Graphics / Wahren),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/CGRAPHICS
-CHEMPLASTS,Chemplast Sanmar Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/CHEMPLASTS
-CLEANMAX,Clean Max Enviro Energy Solutions Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/CLEANMAX
-CNL,Creative Newtech Ltd,Q1 FY27,repo origin/run/cnl-2026-11-11:runs/cnl-2026-11-11 (pipeline run; results filing in inputs)
-CNL,Creative Newtech Ltd,Q2/H1 FY27,repo origin/run/cnl-2026-11-11:runs/cnl-2026-11-11 (pipeline run; results filing in inputs)
-CNL,Creative Newtech Ltd,Q4 FY26,repo origin/run/cnl-2026-11-11:runs/cnl-2026-11-11 (pipeline run; results filing in inputs)
-CREDENT,Credent Connect N Care Ltd,Q2/H1 FY27,repo origin/run/credent-2026-11-12:runs/credent-2026-11-12 (pipeline run; results filing in inputs)
-CYBERTECH,Cybertech Systems and Software Limited,Q2/H1 FY27,repo origin/claude/quarterly-cybertech-q2fy27-920b89:runs/cybertech-q2fy27
-CYIENTDLM,Cyient DLM Ltd,Q2/H1 FY27,repo origin/run/quarterly-q2fy27-2026-10-17:runs/cyientdlm-q2fy27
-DATAPATTNS,Data Patterns (India) Ltd,Q1 FY27,repo origin/claude/quarterly-data-pattern-analysis-7vzvt2:runs/datapattns-q1fy27
-DECCANGOLD,DGML (Deccan Gold Mines Ltd),Q1 FY27,repo origin/claude/deccan-gold-concall-analysis-5eyww0:runs/deccangold-q1fy27
-DEEDEV,DEE Development Engineers Ltd,Q1 FY27,repo origin/claude/d-dev-quarterly-analysis-jnyqb1:runs/d-dev-q1fy27 ; repo origin/run/deedev-2026-11-15:runs/deedev-2026-11-15 (pipeline run; results filing in inputs)
-DEEDEV,DEE Development Engineers Ltd,Q2/H1 FY27,repo origin/run/deedev-2026-11-15:runs/deedev-2026-11-15 (pipeline run; results filing in inputs) ; QuarterlyReviewer/reviews/2026-11-15_0337/DEEDEV
-DEEDEV,DEE Development Engineers Ltd,Q4 FY26,repo origin/run/deedev-2026-11-15:runs/deedev-2026-11-15 (pipeline run; results filing in inputs)
-DHANBANK,Dhanlaxmi Bank Ltd,Q1 FY27,repo origin/claude/dhanbank-pipeline-run-bi3wv6:runs/dhanbank-q1fy27
-DIGITIDE,Digitide Solutions Limited,Q1 FY27,repo origin/claude/digitite-results-analysis-yek08v:runs/digitide-q1fy27
-DIVGIITTS,Divgi Torqtransfer Systems Ltd,Q1 FY27,repo origin/claude/digvi-quarterly-analysis-o97k0v:runs/divgi-q1fy27
-DIVGIITTS,Divgi Torqtransfer Systems Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/DIVGIITTS
-DPABHUSHAN,D. P. Abhushan Ltd,Q1 FY27,repo origin/run/dpabhushan-2026-09-19:runs/dpabhushan-2026-09-19 (pipeline run; results filing in inputs)
-DPABHUSHAN,D. P. Abhushan Ltd,Q4 FY26,repo origin/run/dpabhushan-2026-09-19:runs/dpabhushan-2026-09-19 (pipeline run; results filing in inputs)
-DSSL,Dynacons Systems & Solutions Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-3y7lxn:runs/dssl-q1fy27
-DSSL,Dynacons Systems & Solutions Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/DSSL
-DYCL,Dynamic Cables Ltd,Q2/H1 FY27,repo origin/claude/qr-dycl-q2fy27-766ddd:runs/dycl-q2fy27
-E2E,E2E Networks Limited,Q1 FY27,repo origin/claude/e2e-quarterly-analysis-j6j65r:runs/e2e-q1fy27
-EBGNG,GNG Electronics Ltd,Q1 FY27,repo origin/claude/gmg-electronics-analysis-0owflj:runs/ebgng-q1fy27
-ECOSMOBLTY,Ecos (India) Mobility & Hospitality Ltd,Q1 FY27,repo origin/claude/ecos-mobility-quarterly-analysis-1gxkan:runs/ecosmobility-q1fy27
-ECOSMOBLTY,Ecos (India) Mobility & Hospitality Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/ECOSMOBLTY
-EIMCOELECO,Eimco Elecon (India) Ltd,Q2/H1 FY27,repo origin/run/quarterly-q2fy27-2026-10-17:runs/eimcoeleco-q2fy27
-EMBDL,Embassy Developments (EMBDL),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/EMBDL
-EMVDL,Embassy Developments Limited (formerly Equinox India Developments; Notion label EMBDL),Q1 FY27,repo origin/claude/emvdl-quarterly-analysis-1eikkc:runs/emvdl-q1fy27
-ENTERO,Entero Healthcare Solutions Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/ENTERO
-ESCONET,Esconet Technologies Ltd,Q1 FY27,repo origin/run/esconet-2026-10-05:runs/esconet-2026-10-05 (pipeline run; results filing in inputs)
-ESCONET,Esconet Technologies Ltd,Q4 FY26,repo origin/run/esconet-2026-10-05:runs/esconet-2026-10-05 (pipeline run; results filing in inputs)
-ETHOSLTD,Ethos Ltd (luxury watch retail),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/ETHOSLTD
-EXICOM,Exicom Tele-Systems,Q1 FY27,repo origin/claude/exicom-q1-fy27-analysis-0bxvcc:runs/exicom-q1fy27
-EXICOM,Exicom Tele-Systems,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/EXICOM
-EXPLEOSOL,Expleo Solutions Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/EXPLEOSOL
-FABTECH,Fabtech Technologies Ltd,Q1 FY27,repo origin/run/fabtech-2026-09-26:runs/fabtech-2026-09-26 (pipeline run; results filing in inputs)
-FABTECH,Fabtech Technologies Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/FABTECH ; ConcallPipeline/Q2 FY27 Results/39 Fabtech Technologies
-FABTECH,Fabtech Technologies Ltd,Q4 FY26,repo origin/run/fabtech-2026-09-26:runs/fabtech-2026-09-26 (pipeline run; results filing in inputs)
-FAIRCHEMOR,Fairchem Organics Ltd,Q2/H1 FY27,repo origin/claude/quarterly-fairchem-q2fy27-bcfbf0:runs/fairchemor-q2fy27
-FEDFINA,Fedbank Financial Services Ltd,Q1 FY27,repo origin/claude/fedfina-call-analysis-ggpjgq:runs/fedfina-q1fy27
-FEDFINA,Fedbank Financial Services Ltd,Q2/H1 FY27,repo origin/run/quarterly-q2fy27-2026-10-17:runs/fedfina-q2fy27
-FINCABLES,Finolex Cables Ltd,Q1 FY27,repo origin/claude/fincables-pipeline-9mrge1:runs/fincables-2026-08-12 (pipeline run; results filing in inputs)
-FINCABLES,Finolex Cables Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-10_1512/FINCABLES
-FINCABLES,Finolex Cables Ltd,Q4 FY26,repo origin/claude/fincables-pipeline-9mrge1:runs/fincables-2026-08-12 (pipeline run; results filing in inputs)
-FINKURVE,Finkurve Financial Services Ltd (brand Arvog),Q1 FY27,repo origin/claude/quarterly-results-analysis-bjv3ft:runs/finkurve-q1fy27
-FLYSBS,FlySBS Aviation Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/FLYSBS ; QuarterlyReviewer/reviews/2026-11-13_0631/FLYSBS
-FRACTAL,Fractal Analytics Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/FRACTAL
-FRATELLI,Fratelli Vineyards Ltd,Q1 FY27,repo origin/claude/fratelli-2026-09-07-71euee:runs/fratelli-2026-09-07 (pipeline run; results filing in inputs)
-FRATELLI,Fratelli Vineyards Ltd,Q4 FY26,repo origin/claude/fratelli-2026-09-07-71euee:runs/fratelli-2026-09-07 (pipeline run; results filing in inputs)
-FROG,Frog Innovations Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/FROG
-FSL,Firstsource Solutions Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/FSL
-GALLANTT,Gallantt Ispat Ltd,Q2/H1 FY27,repo origin/claude/quarterly-gallantt-call-q2fy27-7b3ed0:runs/gallantt-q2fy27
-GANECOS,Ganesha Ecosphere Limited,Q1 FY27,repo origin/claude/quarterly-results-analysis-ag4rkl:runs/ganecos-q1fy27
-GANECOS,Ganesha Ecosphere Limited,Q4 FY26,repo origin/claude/ganesha-quarterly-analysis-rsgtf3:runs/ganecos-q4fy26
-GARGI,PNGS Gargi Fashion Jewellery Ltd (BSE 543709),Q1 FY27,repo origin/claude/gargi-quarterly-analysis-11fbsc:runs/gargi-q1fy27
-GARGI,PNGS Gargi Fashion Jewellery Ltd (BSE 543709),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/543709 ; ConcallPipeline/Q2 FY27 Results/46 PNGS Gargi
-GAUDIUMIVF,Gaudium IVF and Women Health Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-7dqyyn:runs/gaudiumivf-q1fy27
-GAUDIUMIVF,Gaudium IVF and Women Health Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/GAUDIUMIVF
-GEE,GEE Limited,Q1 FY27,repo origin/claude/g-limited-results-analysis-q4cm3w:runs/gee-q1fy27
-GEMAROMA,Gem Aromatics Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-jz50z8:runs/gemaroma-q1fy27
-GHVINFRA,GHV Infra Projects Limited (formerly Sindu Valley Technologies Ltd),Q1 FY27,repo origin/claude/ghv-infra-quarterly-analysis-z6m8wn:runs/ghvinfra-q1fy27
-GHVINFRA,GHV Infra Projects Limited (formerly Sindu Valley Technologies Ltd),Q2/H1 FY27,repo origin/claude/quarterly-ghv-q2fy27-3cf5aa:runs/ghvinfra-q2fy27
-GMBREW,G M Breweries Ltd,Q2/H1 FY27,repo origin/run/quarterly-q2fy27-2026-10-17:runs/gmbrew-q2fy27
-GMDC,Gujarat Mineral Development Corporation Ltd,Q1 FY27,repo origin/claude/gmdc-quarterly-analysis-c3vej5:runs/gmdc-q1fy27
-GMMPFAUDLER,GMM Pfaudler Limited,Q1 FY27,repo origin/claude/gmm-pfaudler-quarterly-analysis-55jc3e:runs/gmmpfaudler-q1fy27
-GOCLCORP,GOCL Corporation Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-d723ow:runs/goclcorp-q1fy27
-GOCLCORP,GOCL Corporation Ltd,Q2/H1 FY27,repo origin/run/quarterly-q2fy27-2026-10-19:runs/gocl-q2fy27
-GOLDIAM,Goldiam International Ltd,Q1 FY27,repo origin/claude/goldium-q1-fy27-earnings-8csvi8:runs/goldium-q1fy27
-GOLDIAM,Goldiam International Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-10_1512/GOLDIAM
-GOODLUCK,Goodluck India Ltd,Q1 FY27,repo origin/run/goodluck-2026-09-19:runs/goodluck-2026-09-19 (pipeline run; results filing in inputs)
-GOODLUCK,Goodluck India Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/GOODLUCK ; ConcallPipeline/Q2 FY27 Results/41 Goodluck India
-GOODLUCK,Goodluck India Ltd,Q4 FY26,repo origin/run/goodluck-2026-09-19:runs/goodluck-2026-09-19 (pipeline run; results filing in inputs)
-GRWRHITECH,Garware Hi-Tech Films Limited,Q2/H1 FY27,repo origin/claude/quarterly-garware-q2fy27-1ec041:runs/grwrhitech-q2fy27
-GUFICBIO,Gufic Biosciences Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/GUFICBIO
-GVPIL,GE Power India Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-qhuohq:runs/gvpil-q1fy27 ; repo origin/run/gvpil-2026-11-15:runs/gvpil-2026-11-15 (pipeline run; results filing in inputs)
-GVPIL,GE Power India Ltd,Q2/H1 FY27,repo origin/run/gvpil-2026-11-15:runs/gvpil-2026-11-15 (pipeline run; results filing in inputs) ; QuarterlyReviewer/reviews/2026-11-15_0337/GVPIL
-GVPIL,GE Power India Ltd,Q4 FY26,repo origin/run/gvpil-2026-11-15:runs/gvpil-2026-11-15 (pipeline run; results filing in inputs)
-HEALTHX,Health X Platform (BSE 533259),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/HEALTHX
-HERANBA,Heranba Industries Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-10_1512/HERANBA
-HERITGFOOD,Heritage Foods Ltd,Q2/H1 FY27,repo origin/run/quarterly-q2fy27-2026-10-17:runs/heritgfood-q2fy27
-HEXT,Hexaware Technologies,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/HEXT ; ConcallPipeline/Q2 FY27 Results/42 Hexaware Technologies
-HFCL,HFCL Limited,Q1 FY27,repo origin/claude/hfca-quarterly-analysis-4a6fod:runs/hfcl-q1fy27
-HFCL,HFCL Limited,Q2/H1 FY27,repo origin/run/quarterly-q2fy27-2026-10-19:runs/hfcl-q2fy27
-IEX,Indian Energy Exchange Ltd,Q1 FY27,repo origin/run/iex-2026-09-08:runs/iex-2026-09-08 (pipeline run; results filing in inputs)
-IEX,Indian Energy Exchange Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/IEX
-IEX,Indian Energy Exchange Ltd,Q4 FY26,repo origin/run/iex-2026-09-08:runs/iex-2026-09-08 (pipeline run; results filing in inputs)
-IKS,Inventurus Knowledge Solutions Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-h4n2ul:runs/iks-q1fy27
-INA,Insolation Energy Ltd,Q1 FY27,repo origin/claude/runs-ina-2026-09-06-kav2sw:runs/ina-2026-09-06 (pipeline run; results filing in inputs)
-INDGN,Indegene Ltd,Q1 FY27,repo origin/claude/run-pipeline-indgn-6wej1t:runs/indgn-q1fy27
-INDGN,Indegene Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/INDGN
-INDIAMART,Indiamart Intermesh Ltd,Q1 FY27,repo origin/claude/india-mart-quarterly-analysis-nujr2m:runs/indiamart-q1fy27
-INDIAMART,Indiamart Intermesh Ltd,Q2/H1 FY27,repo origin/claude/qr-dycl-q2fy27-766ddd:runs/indiamart-q2fy27
-INDIQUBE,"IndiQube Spaces Limited (NSE INDIQUBE, BSE 544454)",Q1 FY27,repo origin/claude/quarterly-results-analysis-i1ji43:runs/indiqube-q1fy27
-INDNIPPON,"India Nippon Electricals Ltd (NSE INDNIPPON, BSE 532240)",Q1 FY27,repo origin/run/indnippon-2026-09-10:runs/indnippon-2026-09-10 (pipeline run; results filing in inputs)
-INDORAMA,"Indo Rama Synthetics (India) Ltd (NSE INDORAMA, BSE 500207)",Q2/H1 FY27,repo origin/run/quarterly-q2fy27-2026-10-17:runs/indorama-q2fy27
-INDOSOLAR,Indosolar Limited (NSE symbol WAAREEINDO; subsidiary of Waaree Energies),Q2/H1 FY27,repo origin/claude/quarterly-indosolar-q2fy27-2614ff:runs/indosolar-q2fy27
-INDSWFTLAB,Ind-Swift Laboratories Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/INDSWFTLAB
-INOXINDIA,"INOX India Limited (INOXCVA, Scrip 544046)",Q1 FY27,repo origin/claude/aartisurf-pipeline-run-3wqmjl:runs/inoxindia-q1fy27
-INVPRECQ,Investment & Precision Castings Ltd,Q1 FY27,repo origin/run/invprecq-2026-11-15:runs/invprecq-2026-11-15 (pipeline run; results filing in inputs) ; repo origin/claude/quarterly-results-analysis-dwprvc:runs/ipcl-q1fy27
-INVPRECQ,Investment & Precision Castings Ltd,Q2/H1 FY27,repo origin/run/invprecq-2026-11-15:runs/invprecq-2026-11-15 (pipeline run; results filing in inputs) ; QuarterlyReviewer/reviews/2026-11-15_0337/INVPRECQ
-INVPRECQ,Investment & Precision Castings Ltd,Q4 FY26,repo origin/run/invprecq-2026-11-15:runs/invprecq-2026-11-15 (pipeline run; results filing in inputs)
-IOLCP,IOL Chemicals & Pharmaceuticals Ltd,Q1 FY27,repo origin/run/iolcp-2026-09-19:runs/iolcp-2026-09-19 (pipeline run; results filing in inputs)
-IOLCP,IOL Chemicals & Pharmaceuticals Ltd,Q4 FY26,repo origin/run/iolcp-2026-09-19:runs/iolcp-2026-09-19 (pipeline run; results filing in inputs)
-IVALUE,"iValue Infosolutions Limited (NSE IVALUE, BSE 544523)",Q1 FY27,repo origin/claude/aspara-quarterly-results-7k23p1:runs/ivalue-q1fy27
-JAYKAY,Jaykay Enterprises Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/JAYKAY
-JNKINDIA,JNK India Ltd,Q1 FY27,repo origin/claude/jk-india-quarterly-analysis-xulrvt:runs/jnkindia-q1fy27
-KANOHAR,Kanohar Electricals Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/KANOHAR
-KARNIKA,Karnika Industries Ltd,Q2/H1 FY27,repo origin/run/quarterly-q2fy27-2026-10-17:runs/karnika-h1fy27
-KCEIL,Kay Cee Energy & Infra Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/KCEIL
-KCPSUGIND,K.C.P. Sugar and Industries Corporation Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-mk45d6:runs/kcpsugind-q1fy27
-KECL,Kirloskar Electric Company Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-oxt7o0:runs/kecl-q1fy27
-KELTECH,Keltech Energies Ltd,Q1 FY27,repo origin/run/keltech-2026-11-15:runs/keltech-2026-11-15 (pipeline run; results filing in inputs)
-KELTECH,Keltech Energies Ltd,Q2/H1 FY27,repo origin/run/keltech-2026-11-15:runs/keltech-2026-11-15 (pipeline run; results filing in inputs)
-KELTECH,Keltech Energies Ltd,Q4 FY26,repo origin/run/keltech-2026-11-15:runs/keltech-2026-11-15 (pipeline run; results filing in inputs)
-KERNEX,Kernex Microsystems (India) Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-ixhbmx:runs/kernex-q1fy27
-KERNEX,Kernex Microsystems (India) Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/KERNEX
-KISSHT,OnEMI Technology Solutions Ltd (Kissht),Q1 FY27,repo origin/main:runs/kissht-2026-09-19 (pipeline run; results filing in inputs)
-KISSHT,OnEMI Technology Solutions Ltd (Kissht),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/KISSHT ; ConcallPipeline/Q2 FY27 Results/45 Onemi Technology Solutions (Kissht)
-KISSHT,OnEMI Technology Solutions Ltd (Kissht),Q4 FY26,repo origin/main:runs/kissht-2026-09-19 (pipeline run; results filing in inputs)
-KMCSHIL,KMC Speciality Hospitals (India) Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/KMCSHIL
-KNACK,"Knack Packaging Ltd (BSE 544814, NSE KNACK)",Q2/H1 FY27,repo origin/claude/qr-dycl-q2fy27-766ddd:runs/knack-q2fy27 ; QuarterlyReviewer/reviews/2026-11-03_0551/KNACK
-KOTYARK,Kotyark Industries Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/KOTYARK ; ConcallPipeline/Q2 FY27 Results/43 Kotyark Industries
-KPL,Kwality Pharmaceuticals Ltd,Q1 FY27,repo origin/run/kpl-2026-11-15:runs/kpl-2026-11-15 (pipeline run; results filing in inputs)
-KPL,Kwality Pharmaceuticals Ltd,Q2/H1 FY27,repo origin/run/kpl-2026-11-15:runs/kpl-2026-11-15 (pipeline run; results filing in inputs) ; QuarterlyReviewer/reviews/2026-11-13_0631/KPL
-KPL,Kwality Pharmaceuticals Ltd,Q4 FY26,repo origin/run/kpl-2026-11-15:runs/kpl-2026-11-15 (pipeline run; results filing in inputs)
-KRN,KRN Heat Exchanger and Refrigeration Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-0ffwkb:runs/krn-q1fy27
-KRN,KRN Heat Exchanger and Refrigeration Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/KRN
-KROSS,Kross Ltd (Kross Limited),Q1 FY27,repo origin/run/kross-2026-09-27:runs/kross-2026-09-27 (pipeline run; results filing in inputs)
-KROSS,Kross Ltd (Kross Limited),Q2/H1 FY27,repo origin/run/kross-2026-09-27:runs/kross-2026-09-27 (pipeline run; results filing in inputs) ; repo origin/run/quarterly-q2fy27-2026-10-19:runs/kross-q2fy27
-KROSS,Kross Ltd (Kross Limited),Q4 FY26,repo origin/run/kross-2026-09-27:runs/kross-2026-09-27 (pipeline run; results filing in inputs)
-KSOLVES,Ksolves India Ltd,Q1 FY27,repo origin/claude/k-solve-quarterly-analysis-23wdwl:runs/ksolves-q1fy27
-KUSUMGAR,Kusumgar Ltd,Q1 FY27,repo origin/run/kusumgar-2026-11-12:runs/kusumgar-2026-11-12 (pipeline run; results filing in inputs)
-KUSUMGAR,Kusumgar Ltd,Q2/H1 FY27,repo origin/run/kusumgar-2026-11-12:runs/kusumgar-2026-11-12 (pipeline run; results filing in inputs)
-KWICK,Kwick Forensic Solutions Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/544895
-LAXMIINDIA,Laxmi India Finance Ltd,Q1 FY27,repo origin/claude/laxmi-quarterly-results-nk7iej:runs/laxmiindia-q1fy27
-LT,Larsen & Toubro Ltd,Q2/H1 FY27,repo origin/claude/qr-lt-q2fy27-6d55c1:runs/lt-q2fy27
-LTELEVATOR,L. T. Elevator Limited (BSE 544518),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/544518
-MANAKSTEEL,Manaksia Steels,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/MANAKSTEEL
-MANINDS,Man Industries (India) Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/MANINDS
-MANORAMA,Manorama Industries,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/MANORAMA
-MAPMYINDIA,C.E. Info Systems Ltd (MapmyIndia),Q1 FY27,repo origin/claude/map-my-india-quarterly-analysis-43nbwc:runs/mapmyindia-q1fy27
-MARUSHIKA,Marushika Technology Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/MARUSHIKA
-MAXIND,Max India Ltd,Q1 FY27,repo origin/claude/max-india-earnings-analysis-2pm9im:runs/maxind-q1fy27
-MCFOS,"Macfos Limited (BSE: ROBU, 543787)",Q1 FY27,repo origin/claude/mcfos-quarterly-analysis-n1t1pq:runs/mcfos-q1fy27
-MCFOS,"Macfos Limited (BSE: ROBU, 543787)",Q2/H1 FY27,ConcallPipeline/Q2 FY27 Results/44 Macfos
-MENONBE,Menon Bearings Ltd (BSE 523828),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/MENONBE ; QuarterlyReviewer/reviews/2026-10-30_1549/MENONBE
-MIDHANI,Mishra Dhatu Nigam Ltd (government-owned 74%),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/MIDHANI
-MILLWORKS,Millworks Technologies Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/544826
-MOLDTKPAC,Mold-Tek Packaging Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/MOLDTKPAC
-MSTCLTD,MSTC Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/MSTCLTD
-MTARTECH,MTAR Technologies Ltd,Q1 FY27,repo origin/claude/mtar-annual-reports-qo0c39:runs/mtar-q1fy27
-MTARTECH,MTAR Technologies Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/MTARTECH
-MUFTI,Credo Brands Marketing Ltd,Q1 FY27,repo origin/claude/credo-quarterly-analysis-r7tbey:runs/credo-q1fy27
-MUFTI,Credo Brands Marketing Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/MUFTI
-NEOCHEM,Neochem Bio Solutions Ltd,Q2/H1 FY27,repo origin/claude/qr-neochem-q2fy27-76041a:runs/neochem-q2fy27
-NEPHROPLUS,Nephrocare Health Services Ltd (NephroPlus),Q1 FY27,repo origin/claude/nephro-plus-quarterly-analysis-vqj5xc:runs/nephroplus-q1fy27
-NEPHROPLUS,Nephrocare Health Services Ltd (NephroPlus),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/NEPHROPLUS
-NETWEB,Netweb Technologies India Ltd,Q1 FY27,repo origin/claude/netweb-results-analysis-qb5mas:runs/netweb-q1fy27
-NETWEB,Netweb Technologies India Ltd,Q2/H1 FY27,repo origin/claude/qr-dycl-q2fy27-766ddd:runs/netweb-q2fy27
-NRAIL,N R Agarwal Industries Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/NRAIL
-ONWARDTEC,Onward Technologies Ltd,Q1 FY27,repo origin/run/onwardtec-2026-11-12:runs/onwardtec-2026-11-12 (pipeline run; results filing in inputs)
-ONWARDTEC,Onward Technologies Ltd,Q2/H1 FY27,repo origin/run/onwardtec-2026-11-12:runs/onwardtec-2026-11-12 (pipeline run; results filing in inputs)
-ONWARDTEC,Onward Technologies Ltd,Q4 FY26,repo origin/run/onwardtec-2026-11-12:runs/onwardtec-2026-11-12 (pipeline run; results filing in inputs)
-ORCHPHARMA,Orchid Pharma Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/ORCHPHARMA
-OSWAL,Oswal Pumps Ltd,Q1 FY27,repo origin/claude/oswal-pumps-q1-analysis-si2lg8:runs/oswal-q1fy27
-PACEDIGITK,Pace Digitek Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-vx8dc4:runs/pacedigitk-q1fy27
-PAISALO,Paisalo Digital Ltd,Q1 FY27,repo origin/claude/quarterly-results-protocol-dlltuf:runs/paisalo-q1fy27
-PAISALO,Paisalo Digital Ltd,Q2/H1 FY27,repo origin/claude/quarterly-paisalo-q2fy27-095262:runs/paisalo-q2fy27
-PARACABLES,Paramount Communications Ltd,Q2/H1 FY27,repo origin/claude/qr-dycl-q2fy27-766ddd:runs/paracables-q2fy27
-PARKHOSPS,Park Medi World Limited,Q1 FY27,repo origin/claude/quarterly-results-analysis-qj2kqr:runs/parkhosps-q1fy27
-PARTH,Parth Electricals & Engineering Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/PARTH
-PAUSHAK,Paushak Limited,Q1 FY27,repo origin/claude/paushak-quarterly-analysis-1lg8ur:runs/paushak-q1fy27
-PINELABS,Pine Labs,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/PINELABS
-PITTIENG,Pitti Engineering Ltd,Q2/H1 FY27,repo origin/claude/quarterly-pittieng-q2fy27-3fc1e6:runs/pittieng-q2fy27
-PNGJL,P N Gadgil Jewellers,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/PNGJL
-PNGSREVA,PNGS Reva Diamond Jewellery Ltd,Q1 FY27,repo origin/claude/cool-euler-1on89m:runs/pngs-q1fy27
-POONAWALLA,Poonawalla Fincorp Ltd,Q2/H1 FY27,repo origin/run/quarterly-q2fy27-2026-10-17:runs/poonawalla-q2fy27
-PREMEXPLN,Premier Explosives Ltd,Q1 FY27,repo origin/run/premexpln-2026-11-15:runs/premexpln-2026-11-15 (pipeline run; results filing in inputs)
-PREMEXPLN,Premier Explosives Ltd,Q2/H1 FY27,repo origin/run/premexpln-2026-11-15:runs/premexpln-2026-11-15 (pipeline run; results filing in inputs) ; QuarterlyReviewer/reviews/2026-11-13_0631/PREMEXPLN
-PREMEXPLN,Premier Explosives Ltd,Q4 FY26,repo origin/run/premexpln-2026-11-15:runs/premexpln-2026-11-15 (pipeline run; results filing in inputs)
-PREMIERPOL,Premier Polyfilm Limited,Q2/H1 FY27,repo origin/run/quarterly-q2fy27-2026-10-17:runs/premierpol-q2fy27
-PRIZOR,Prizor Viztech Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/PRIZOR
-PVRINOX,PVR Inox Ltd,Q1 FY27,repo origin/run/pvrinox-2026-11-12:runs/pvrinox-2026-11-12 (pipeline run; results filing in inputs)
-PVRINOX,PVR Inox Ltd,Q2/H1 FY27,repo origin/run/pvrinox-2026-11-12:runs/pvrinox-2026-11-12 (pipeline run; results filing in inputs) ; QuarterlyReviewer/reviews/2026-10-29_1735/PVRINOX ; ConcallPipeline/Q2 FY27 Results/47 PVR Inox
-PVRINOX,PVR Inox Ltd,Q4 FY26,repo origin/run/pvrinox-2026-11-12:runs/pvrinox-2026-11-12 (pipeline run; results filing in inputs)
-QLINE,Q-Line Biotech Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/QLINE
-QLL,"Qualitek Labs Ltd (QLL / QUALITEK, BSE 544091)",Q2/H1 FY27,repo origin/run/qll-2026-11-15:runs/qll-2026-11-15 (pipeline run; results filing in inputs) ; QuarterlyReviewer/reviews/2026-11-15_0337/544091
-QLL,"Qualitek Labs Ltd (QLL / QUALITEK, BSE 544091)",Q4 FY26,repo origin/run/qll-2026-11-15:runs/qll-2026-11-15 (pipeline run; results filing in inputs) ; repo origin/run/qualitek-2026-09-26:runs/qualitek-2026-09-26 (pipeline run; results filing in inputs)
-QMSMEDI,QMS Medical Allied Services Ltd,Q1 FY27,repo origin/run/qmsmedi-2026-09-26:runs/qmsmedi-2026-09-26 (pipeline run; results filing in inputs)
-QMSMEDI,QMS Medical Allied Services Ltd,Q4 FY26,repo origin/run/qmsmedi-2026-09-26:runs/qmsmedi-2026-09-26 (pipeline run; results filing in inputs)
-QPOWER,Quality Power Electrical Equipments Ltd,Q1 FY27,repo origin/claude/qpower-q1-fy27-notion-6lgxlt:runs/qpower-q1fy27
-QPOWER,Quality Power Electrical Equipments Ltd,Q2/H1 FY27,repo origin/run/quarterly-q2fy27-2026-10-19:runs/qpower-q2fy27
-RAMRAT,Ram Ratna Wires Ltd,Q1 FY27,repo origin/claude/ram-ratna-quarterly-analysis-0161le:runs/ramrat-q1fy27
-RAMRAT,Ram Ratna Wires Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/RAMRAT
-RATEGAIN,RateGain Travel Technologies Limited,Q1 FY27,repo origin/claude/red-grain-quarterly-results-1xrd0f:runs/rategain-q1fy27
-RATHIST,Rathi Steel & Power Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-lft8iz:runs/rathist-q1fy27
-RAYMONDLSL,Raymond Lifestyle Ltd (BSE 544240),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/RAYMONDLSL ; QuarterlyReviewer/reviews/2026-11-05_0536/RAYMONDLSL ; ConcallPipeline/Q2 FY27 Results/48 Raymond Lifestyle
-RAYMONDREL,Raymond Realty Ltd,Q1 FY27,repo origin/claude/raymond-realty-q1-fy27-h5wmo2:runs/raymondrealty-q1fy27
-RAYMONDREL,Raymond Realty Ltd,Q2/H1 FY27,repo origin/claude/qr-dycl-q2fy27-766ddd:runs/raymondrel-q2fy27
-RBA,Restaurant Brands Asia Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/RBA ; QuarterlyReviewer/reviews/2026-10-30_1549/RBA
-REFEX,"Refex Industries Ltd (BSE 532884, NSE REFEX)",Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/REFEX ; ConcallPipeline/Q2 FY27 Results/49 Refex Industries
-RKFORGE,Ramkrishna Forgings Ltd,Q1 FY27,repo origin/run/rkforge-2026-11-12:runs/rkforge-2026-11-12 (pipeline run; results filing in inputs)
-RKFORGE,Ramkrishna Forgings Ltd,Q2/H1 FY27,repo origin/run/rkforge-2026-11-12:runs/rkforge-2026-11-12 (pipeline run; results filing in inputs)
-RKFORGE,Ramkrishna Forgings Ltd,Q4 FY26,repo origin/run/rkforge-2026-11-12:runs/rkforge-2026-11-12 (pipeline run; results filing in inputs)
-ROUTE,Route Mobile Limited,Q1 FY27,repo origin/claude/route-mobile-quarterly-pkqpxv:runs/route-q1fy27
-ROUTE,Route Mobile Limited,Q2/H1 FY27,repo origin/claude/qr-route-q2fy27-fb3514:runs/route-q2fy27
-ROXHITECH,ROX Hi-Tech Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/ROXHITECH
-RPTECH,Rashi Peripherals Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-o83a25:runs/rptech-q1fy27
-RPTECH,Rashi Peripherals Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/RPTECH
-RSYSTEMS,R Systems International Limited,Q1 FY27,repo origin/claude/quarterly-results-analysis-j2wrxj:runs/rsystems-q2cy26
-RUBYMILLS,The Ruby Mills Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/RUBYMILLS
-SAHASRA,Sahasra Electronic Solutions Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/SAHASRA
-SAKAR,Sakar Healthcare Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/SAKAR
-SAMBHV,Sambhv Steel Tubes Ltd,Q1 FY27,repo origin/claude/availability-check-oyrf2l:runs/sambhv-q1fy27
-SAMBHV,Sambhv Steel Tubes Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/SAMBHV
-SAMHI,SAMHI Hotels,Q1 FY27,repo origin/claude/quarterly-results-analysis-b66fgh:runs/samhi-q1fy27
-SAMHI,SAMHI Hotels,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/SAMHI
-SAMMAANCAP,Sammaan Capital Limited,Q1 FY27,repo origin/claude/quarterly-results-analysis-b1d9jd:runs/sammaancap-q1fy27
-SANATHAN,Sanathan Textiles Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/SANATHAN
-SASKEN,Sasken Technologies,Q1 FY27,repo origin/claude/sasken-quarterly-analysis-xgjg0m:runs/sasken-q1fy27
-SASKEN,Sasken Technologies,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/SASKEN ; ConcallPipeline/Q2 FY27 Results/50 Sasken Technologies
-SATIN,Satin Creditcare Network Ltd,Q1 FY27,repo origin/claude/quarterly-credit-care-analysis-pjrg9x:runs/satin-q1fy27
-SATIN,Satin Creditcare Network Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/SATIN ; ConcallPipeline/Q2 FY27 Results/51 Satin Creditcare
-SCODATUBES,Scoda Tubes Limited,Q1 FY27,repo origin/claude/quarterly-results-analysis-91a9t7:runs/scodatubes-q1fy27
-SEDEMAC,SEDEMAC Mechatronics Ltd,Q1 FY27,repo origin/claude/sedemac-quarterly-analysis-4k2otx:runs/sedemac-q1fy27
-SEDEMAC,SEDEMAC Mechatronics Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/SEDEMAC
-SFL,Sheela Foam Ltd,Q1 FY27,repo origin/claude/sheela-quarterly-results-zxbbvj:runs/sfl-q1fy27
-SHADOWFAX,Shadowfax Technologies Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/SHADOWFAX
-SHAREINDIA,Share India Securities Ltd,Q1 FY27,repo origin/run/shareindia-2026-09-19:runs/shareindia-2026-09-19 (pipeline run; results filing in inputs)
-SHAREINDIA,Share India Securities Ltd,Q4 FY26,repo origin/run/shareindia-2026-09-19:runs/shareindia-2026-09-19 (pipeline run; results filing in inputs)
-SHARIKA,Sharika Enterprises Limited,Q1 FY27,repo origin/claude/quarterly-results-analysis-01wssj:runs/sharika-q1fy27
-SHAWGELTIN,Narmada Gelatines Ltd,Q1 FY27,repo origin/run/shawgeltin-2026-11-12:runs/shawgeltin-2026-11-12 (pipeline run; results filing in inputs)
-SHAWGELTIN,Narmada Gelatines Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/SHAWGELTIN
-SHAWGELTIN,Narmada Gelatines Ltd,Q4 FY26,repo origin/run/shawgeltin-2026-11-12:runs/shawgeltin-2026-11-12 (pipeline run; results filing in inputs)
-SHILCTECH,Shilchar Technologies Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/SHILCTECH ; ConcallPipeline/Q2 FY27 Results/52 Shilchar Technologies
-SHILPAMED,Shilpa Medicare Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/SHILPAMED
-SHK,S H Kelkar and Company Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/SHK
-SILVERTUC,Silver Touch Technologies Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/SILVERTUC
-SJLOGISTIC,S J Logistics (India) Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/SJLOGISTIC
-SKYGOLD,Sky Gold and Diamonds Ltd,Q2/H1 FY27,repo origin/claude/qr-skygold-q2fy27-7e1298:runs/skygold-q2fy27
-SMRUTHI,Smruthi Organics Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/540686
-SONACOMS,Sona BLW Precision Forgings Ltd (Sona Comstar),Q1 FY27,repo origin/claude/aartisurf-pipeline-run-3wqmjl:runs/sona-q1fy27
-SONACOMS,Sona BLW Precision Forgings Ltd (Sona Comstar),Q2/H1 FY27,repo origin/claude/qr-dycl-q2fy27-766ddd:runs/sonacoms-q2fy27
-SOUTHWEST,South West Pinnacle Exploration Ltd,Q1 FY27,repo origin/claude/southrest-quarterly-results-wo3ltt:runs/southwest-q1fy27 ; repo origin/run/southwest-2026-11-09:runs/southwest-2026-11-09 (pipeline run; results filing in inputs)
-SOUTHWEST,South West Pinnacle Exploration Ltd,Q2/H1 FY27,repo origin/run/southwest-2026-11-09:runs/southwest-2026-11-09 (pipeline run; results filing in inputs)
-SOUTHWEST,South West Pinnacle Exploration Ltd,Q4 FY26,repo origin/run/southwest-2026-11-09:runs/southwest-2026-11-09 (pipeline run; results filing in inputs)
-SPAPPAREL,S.P. Apparels Ltd,Q1 FY27,repo origin/claude/sp-apparel-quarterly-analysis-q2eld6:runs/spapparel-q1fy27
-SPECTRUM,Spectrum Electrical Industries Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-10_1512/SPECTRUM
-SPROP,Shriram Properties Limited,Q1 FY27,repo origin/claude/shriram-properties-quarterly-8swem6:runs/sprop-q1fy27
-SRM,SRM Contractors Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-u9lgke:runs/srm-q1fy27
-SRM,SRM Contractors Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/SRM
-SSWL,Steel Strips Wheels Ltd,Q1 FY27,repo origin/run/sswl-2026-09-19:runs/sswl-2026-09-19 (pipeline run; results filing in inputs)
-SSWL,Steel Strips Wheels Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/SSWL
-SSWL,Steel Strips Wheels Ltd,Q4 FY26,repo origin/run/sswl-2026-09-19:runs/sswl-2026-09-19 (pipeline run; results filing in inputs)
-STALLION,Stallion India Fluorochemicals Limited,Q1 FY27,repo origin/claude/australian-india-quarterly-results-wiv2a8:runs/stallion-q1fy27
-STEAMHOUSE,Steamhouse India Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/STEAMHOUSE
-STLTECH,Sterlite Technologies Ltd,Q1 FY27,repo origin/claude/extra-light-quarterly-analysis-befw6c:runs/stltech-q1fy27
-STYL,Seshaasai Technologies Ltd,Q1 FY27,repo origin/claude/sesha-sai-analysis-t7sqgg:runs/styl-q1fy27
-STYL,Seshaasai Technologies Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/STYL
-SUDARCOLOR,Sudarshan Colorants India Ltd (formerly Heubach Colorants India Ltd; earlier Clariant Chemicals (India) Ltd),Q1 FY27,repo origin/run/sudarcolor-2026-11-12:runs/sudarcolor-2026-11-12 (pipeline run; results filing in inputs)
-SUDARCOLOR,Sudarshan Colorants India Ltd (formerly Heubach Colorants India Ltd; earlier Clariant Chemicals (India) Ltd),Q2/H1 FY27,repo origin/run/sudarcolor-2026-11-12:runs/sudarcolor-2026-11-12 (pipeline run; results filing in inputs)
-SUDARCOLOR,Sudarshan Colorants India Ltd (formerly Heubach Colorants India Ltd; earlier Clariant Chemicals (India) Ltd),Q4 FY26,repo origin/run/sudarcolor-2026-11-12:runs/sudarcolor-2026-11-12 (pipeline run; results filing in inputs)
-SUGSLLOYD,Sugs Lloyd Limited,Q1 FY27,repo origin/claude/sugs-lyod-results-analysis-sa8wi5:runs/sugslloyd-q1fy27
-SUPREMEPWR,Supreme Power Equipment Ltd,Q1 FY27,repo origin/run/accord-2026-10-06:runs/supremepwr-2026-10-06 (pipeline run; results filing in inputs)
-SUPREMEPWR,Supreme Power Equipment Ltd,Q2/H1 FY27,repo origin/claude/quarterly-supremepower-q2fy27-7e9233:runs/supremepwr-h1fy27
-SUSAN,Susan Electricals India Ltd,Q1 FY27,repo origin/run/susan-2026-09-19:runs/susan-2026-09-19 (pipeline run; results filing in inputs)
-SUSAN,Susan Electricals India Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/544793
-SYNGENE,Syngene International Ltd,Q1 FY27,repo origin/main:runs/syngene-2026-09-15 (pipeline run; results filing in inputs)
-SYNGENE,Syngene International Ltd,Q2/H1 FY27,repo origin/claude/qr-dycl-q2fy27-766ddd:runs/syngene-q2fy27
-SYNGENE,Syngene International Ltd,Q4 FY26,repo origin/main:runs/syngene-2026-09-15 (pipeline run; results filing in inputs)
-TAALTECH,TAAL Tech Ltd,Q1 FY27,repo origin/run/taaltech-2026-09-10:runs/taaltech-2026-09-10 (pipeline run; results filing in inputs)
-TAALTECH,TAAL Tech Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/TAALTECH
-TAALTECH,TAAL Tech Ltd,Q4 FY26,repo origin/run/taaltech-2026-09-10:runs/taaltech-2026-09-10 (pipeline run; results filing in inputs)
-TATACOMM,Tata Communications Limited,Q2/H1 FY27,repo origin/run/quarterly-q2fy27-2026-10-17:runs/tatacomm-q2fy27
-TATAPOWER,Tata Power Co Ltd,Q1 FY27,repo origin/claude/tata-power-analysis-2x2wx8:runs/tatapower-q1fy27
-TATVA,Tatva Chintan Pharma Chem Ltd,Q1 FY27,repo origin/claude/quarterly-analysis-agent-z2p3ps:runs/tatva-q1fy27
-TATVA,Tatva Chintan Pharma Chem Ltd,Q2/H1 FY27,repo origin/run/quarterly-q2fy27-2026-10-19:runs/tatva-q2fy27
-TAURIAN,Taurian MPS Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/TAURIAN
-TCPLPACK,TCPL Packaging Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/TCPLPACK
-TDPOWERSYS,TD Power Systems Ltd,Q1 FY27,repo origin/run/tdpowersys-2026-11-15:runs/tdpowersys-2026-11-15 (pipeline run; results filing in inputs)
-TDPOWERSYS,TD Power Systems Ltd,Q2/H1 FY27,repo origin/run/tdpowersys-2026-11-15:runs/tdpowersys-2026-11-15 (pipeline run; results filing in inputs) ; QuarterlyReviewer/reviews/2026-11-13_0631/TDPOWERSYS
-TDPOWERSYS,TD Power Systems Ltd,Q4 FY26,repo origin/run/tdpowersys-2026-11-15:runs/tdpowersys-2026-11-15 (pipeline run; results filing in inputs)
-TEJASNET,Tejas Networks Ltd,Q1 FY27,repo origin/claude/tejas-network-quarterly-analysis-4mzxz3:runs/tejasnet-q1fy27
-TEJASNET,Tejas Networks Ltd,Q2/H1 FY27,repo origin/claude/quarterly-tejas-q2fy27-f91c3c:runs/tejasnet-q2fy27
-TEMBO,Tembo Global Industries Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/TEMBO
-TERASOFT,Tera Software Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/TERASOFT
-TINNARUBR,Tinna Rubber and Infrastructure Ltd,Q2/H1 FY27,repo origin/claude/quarterly-tinna-q2fy27-d4fe1d:runs/tinnarubr-q2fy27
-TIPCO,TIPCO Engineering India (BSE 544740),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/544740
-TITANBIO,Titan Biotech Ltd,Q1 FY27,repo origin/run/titanbio-phase1-2026-09-16:runs/titanbio-2026-09-10 (pipeline run; results filing in inputs)
-TITANBIO,Titan Biotech Ltd,Q4 FY26,repo origin/run/titanbio-phase1-2026-09-16:runs/titanbio-2026-09-10 (pipeline run; results filing in inputs)
-TLL,Trident Lifeline Ltd,Q1 FY27,repo origin/run/tll-2026-09-26:runs/tll-2026-09-26 (pipeline run; results filing in inputs)
-TLL,Trident Lifeline Ltd,Q4 FY26,repo origin/run/tll-2026-09-26:runs/tll-2026-09-26 (pipeline run; results filing in inputs)
-TOTEM,Forbes Precision Tools & Machine Parts Ltd,Q2/H1 FY27,ConcallPipeline/Q2 FY27 Results/40 Forbes Precision Tools and Machine Parts
-TRANSRAIL,Transrail Lighting Ltd,Q1 FY27,repo origin/claude/transrail-quarterly-analysis-f7kqqf:runs/transrail-q1fy27
-TRUALT,TruAlt Bioenergy Ltd,Q1 FY27,repo origin/claude/truevault-quarterly-analysis-27abp5:runs/trualt-q1fy27 ; repo origin/run/trualt-2026-09-18:runs/trualt-2026-09-18 (pipeline run; results filing in inputs)
-TRUALT,TruAlt Bioenergy Ltd,Q4 FY26,repo origin/run/trualt-2026-09-18:runs/trualt-2026-09-18 (pipeline run; results filing in inputs)
-TURTLEMINT,Turtlemint Fintech Solutions,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/TURTLEMINT
-UFBL,United Foodbrands Ltd (erstwhile Barbeque Nation Hospitality Ltd),Q1 FY27,repo origin/claude/united-food-investor-analysis-fdzhmr:runs/ufbl-q1fy27
-UFBL,United Foodbrands Ltd (erstwhile Barbeque Nation Hospitality Ltd),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/UFBL
-UNIABEX,Uni Abex Alloy Products Limited,Q1 FY27,repo origin/claude/unipart-quarterly-analysis-5ky0ug:runs/uniabex-q1fy27
-UNIHEALTH,Unihealth Hospitals Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/UNIHEALTH
-UNIMECH,Unimech Aerospace and Manufacturing Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-ffii20:runs/unimech-q1fy27
-UNIMECH,Unimech Aerospace and Manufacturing Ltd,Q2/H1 FY27,repo origin/claude/qr-unimech-q2fy27-1b1895:runs/unimech-q2fy27
-UNIPARTS,Uniparts India Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-9ef8ys:runs/uniparts-q1fy27
-UNIPARTS,Uniparts India Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/UNIPARTS
-URBANCO,Urban Company Limited,Q1 FY27,repo origin/claude/urban-company-quarterly-analysis-ib51ci:runs/urbanco-q1fy27
-UTLSOLAR,Fujiyama Power Systems Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-324riy:runs/utlsolar-q1fy27
-VAIBHAVGBL,Vaibhav Global Ltd,Q1 FY27,repo origin/claude/quarterly-results-analysis-h2f1ss:runs/vaibhavgbl-q1fy27
-VAIBHAVGBL,Vaibhav Global Ltd,Q2/H1 FY27,ConcallPipeline/Q2 FY27 Results/53 Vaibhav Global
-VALIANTLAB,Valiant Laboratories Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/VALIANTLAB
-VENUSPIPES,Venus Pipes & Tubes,Q1 FY27,repo origin/claude/venus-pipes-q1-fy27-jtc505:runs/venuspipes-q1fy27
-VENUSPIPES,Venus Pipes & Tubes,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/VENUSPIPES
-VINCOFE,Vintage Coffee and Beverages Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/VINCOFE
-VINYAS,Vinyas Innovative Technologies Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/VINYAS
-VRLLOG,VRL Logistics Ltd,Q1 FY27,repo origin/run/vrllog-2026-11-12:runs/vrllog-2026-11-12 (pipeline run; results filing in inputs)
-VRLLOG,VRL Logistics Ltd,Q2/H1 FY27,repo origin/run/vrllog-2026-11-12:runs/vrllog-2026-11-12 (pipeline run; results filing in inputs)
-VRLLOG,VRL Logistics Ltd,Q4 FY26,repo origin/run/vrllog-2026-11-12:runs/vrllog-2026-11-12 (pipeline run; results filing in inputs)
-WALCHANNAG,Walchandnagar Industries Ltd,Q1 FY27,repo origin/run/walchannag-2026-11-12:runs/walchannag-2026-11-12 (pipeline run; results filing in inputs)
-WALCHANNAG,Walchandnagar Industries Ltd,Q2/H1 FY27,repo origin/run/walchannag-2026-11-12:runs/walchannag-2026-11-12 (pipeline run; results filing in inputs)
-WALCHANNAG,Walchandnagar Industries Ltd,Q4 FY26,repo origin/run/walchannag-2026-11-12:runs/walchannag-2026-11-12 (pipeline run; results filing in inputs)
-WANBURY,Wanbury Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/WANBURY
-WELCORP,Welspun Corp Limited,Q1 FY27,repo origin/claude/quarterly-results-analysis-06y8qn:runs/welcorp-q1fy27
-WELCORP,Welspun Corp Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/WELCORP
-WEWORK,WeWork India Management Ltd,Q2/H1 FY27,repo origin/claude/qr-dycl-q2fy27-766ddd:runs/wework-q2fy27
-WOMANCART,Womancart Ltd,Q2/H1 FY27,ConcallPipeline/Q2 FY27 Results/54 Womancart
-WORKMATES,Workmates Core2Cloud Solution Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/WORKMATES
-WTICAB,Wise Travel India Ltd (WTI Cabs),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/WTICAB
-YASHHV,Yash Highvoltage Ltd,Q4 FY26,repo origin/run/yashhv-2026-09-26:runs/yashhv-2026-09-26 (pipeline run; results filing in inputs)
-ZEEL,Zee Entertainment Enterprises Ltd,Q1 FY27,repo origin/claude/zeel-quarterly-analysis-9i2r1v:runs/zeel-q1fy27
-ZOTA,Zota Health Care Ltd,Q2/H1 FY27,ConcallPipeline/Q2 FY27 Results/55 Zota Health Care
+ticker,name,period,where the review lives
+3IINFOLTD,3i Infotech Limited,Q1 FY27,retro/2026-11/census.csv
+3IINFOLTD,3i Infotech Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/3IINFOLTD | retro/2026-11/census.csv
+3IINFOLTD,3i Infotech Limited,Q4 FY26,retro/2026-11/census.csv
+526717,HCP Plastene Bulkpack Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-53w4to:runs/526717-q1fy27 | retro/2026-11/census.csv
+526717,HCP Plastene Bulkpack Ltd,Q4 FY26,retro/2026-11/census.csv
+530077,Puretrop Fruits Limited (formerly Freshtrop Fruits Limited),Q1 FY27,retro/2026-11/census.csv
+530077,Puretrop Fruits Limited (formerly Freshtrop Fruits Limited),Q2/H1 FY27,origin/claude/qr-puretrop-q2fy27-888061:runs/530077-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27_2026-10-28.md | retro/2026-11/census.csv
+530077,Puretrop Fruits Limited (formerly Freshtrop Fruits Limited),Q4 FY26,retro/2026-11/census.csv
+543916,Hemant Surgical Industries (HSIL),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/543916 | retro/2026-11/census.csv
+543916,Hemant Surgical Industries (HSIL),Q4 FY26,retro/2026-11/census.csv
+543920,CFF Fluid Control,Q1 FY27,retro/2026-11/census.csv
+543920,CFF Fluid Control,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/543920 | retro/2026-11/census.csv
+543920,CFF Fluid Control,Q4 FY26,retro/2026-11/census.csv
+544272,Shiv Texchem,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/544272 | retro/2026-11/census.csv
+544272,Shiv Texchem,Q4 FY26,retro/2026-11/census.csv
+544291,Rajesh Power Services Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/544291 | retro/2026-11/census.csv
+544291,Rajesh Power Services Ltd,Q4 FY26,retro/2026-11/census.csv
+544332,Fabtech Technologies Cleanrooms Ltd (FABCLEAN),Q4 FY26,retro/2026-11/census.csv
+544434,Neetu Yoshi Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/544434 | retro/2026-11/census.csv
+544434,Neetu Yoshi Limited,Q4 FY26,retro/2026-11/census.csv
+544452,Swastika Castal Ltd,Q1 FY27,retro/2026-11/census.csv
+544452,Swastika Castal Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/544452 | retro/2026-11/census.csv
+544452,Swastika Castal Ltd,Q4 FY26,retro/2026-11/census.csv
+544453,Monarch Surveyors and Engineering Consultants,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/544453 | retro/2026-11/census.csv
+544453,Monarch Surveyors and Engineering Consultants,Q4 FY26,retro/2026-11/census.csv
+544516,Airfloa Rail Technology Ltd,Q1 FY27,retro/2026-11/census.csv
+544516,Airfloa Rail Technology Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/544516 | retro/2026-11/census.csv
+544516,Airfloa Rail Technology Ltd,Q4 FY26,retro/2026-11/census.csv
+544657,Pajson Agro India Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/544657 | retro/2026-11/census.csv
+544657,Pajson Agro India Ltd,Q4 FY26,retro/2026-11/census.csv
+AARTIDRUGS,Aarti Drugs Ltd,Q1 FY27,retro/2026-11/census.csv
+AARTIDRUGS,Aarti Drugs Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/AARTIDRUGS | QuarterlyReviewer/reviews/2026-11-12_0629/AARTIDRUGS | retro/2026-11/census.csv
+AARTIDRUGS,Aarti Drugs Ltd,Q4 FY26,retro/2026-11/census.csv
+AARTIPHARM,Aarti PharmaLabs (Aarti Pharmalabs Ltd),Q1 FY27,retro/2026-11/census.csv
+AARTIPHARM,Aarti PharmaLabs (Aarti Pharmalabs Ltd),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/AARTIPHARM | retro/2026-11/census.csv
+AARTIPHARM,Aarti PharmaLabs (Aarti Pharmalabs Ltd),Q4 FY26,retro/2026-11/census.csv
+AARTISURF,Aarti Surfactants Ltd,Q1 FY27,retro/2026-11/census.csv
+AARTISURF,Aarti Surfactants Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/AARTISURF | retro/2026-11/census.csv
+AARTISURF,Aarti Surfactants Ltd,Q4 FY26,retro/2026-11/census.csv
+ABB,ABB India Ltd,Q1 FY27,retro/2026-11/census.csv
+ABB,ABB India Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/ABB | retro/2026-11/census.csv
+ABB,ABB India Ltd,Q4 FY26,retro/2026-11/census.csv
+ACCORD,"Accord Transformer & Switchgear Ltd (BSE 544710, ACCORDTS)",Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/544710 | retro/2026-11/census.csv
+ACCORD,"Accord Transformer & Switchgear Ltd (BSE 544710, ACCORDTS)",Q4 FY26,retro/2026-11/census.csv
+ADFFOODS,ADF Foods Limited,Q1 FY27,origin/claude/adf-food-quarterly-analysis-b8cygp:runs/adffoods-q1fy27 | retro/2026-11/census.csv
+ADFFOODS,ADF Foods Limited,Q4 FY26,retro/2026-11/census.csv
+ADISOFT,Adisoft Technologies Ltd,Q1 FY27,retro/2026-11/census.csv
+ADISOFT,Adisoft Technologies Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/ADISOFT | retro/2026-11/census.csv
+ADISOFT,Adisoft Technologies Ltd,Q4 FY26,retro/2026-11/census.csv
+ADOR,Ador Welding Ltd,Q1 FY27,retro/2026-11/census.csv
+ADOR,Ador Welding Ltd,Q2/H1 FY27,origin/claude/quarterly-ador-q2fy27-97aedb:runs/ador-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27.md | retro/2026-11/census.csv
+ADOR,Ador Welding Ltd,Q4 FY26,retro/2026-11/census.csv
+AEQUS,Aequs Ltd,Q1 FY27,retro/2026-11/census.csv
+AEQUS,Aequs Ltd,Q2/H1 FY27,origin/claude/qr-aequs-q2fy27-f2613d:runs/aequs-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27_2026-10-28.md | retro/2026-11/census.csv
+AEQUS,Aequs Ltd,Q4 FY26,retro/2026-11/census.csv
+AEROFLEX,Aeroflex Industries Ltd,Q1 FY27,origin/claude/aeroflex-results-analysis-x9xrqs:runs/aeroflex-q1fy27 | retro/2026-11/census.csv
+AEROFLEX,Aeroflex Industries Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/AEROFLEX | retro/2026-11/census.csv
+AEROFLEX,Aeroflex Industries Ltd,Q4 FY26,retro/2026-11/census.csv
+AIMTRON,Aimtron Electronics Ltd,Q1 FY27,retro/2026-11/census.csv
+AIMTRON,Aimtron Electronics Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/AIMTRON | retro/2026-11/census.csv
+AIMTRON,Aimtron Electronics Ltd,Q4 FY26,retro/2026-11/census.csv
+AKUMS,Akums Drugs & Pharmaceuticals Ltd,Q1 FY27,retro/2026-11/census.csv
+AKUMS,Akums Drugs & Pharmaceuticals Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/AKUMS | retro/2026-11/census.csv
+AKUMS,Akums Drugs & Pharmaceuticals Ltd,Q4 FY26,retro/2026-11/census.csv
+ALUFLUOR,Alufluoride Limited,Q1 FY27,retro/2026-11/census.csv
+ALUFLUOR,Alufluoride Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/ALUFLUOR | retro/2026-11/census.csv
+ALUFLUOR,Alufluoride Limited,Q4 FY26,retro/2026-11/census.csv
+AMAGI,Amagi Media Labs Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-rnbvw5:runs/amagi-q1fy27 | retro/2026-11/census.csv
+AMAGI,Amagi Media Labs Ltd,Q4 FY26,retro/2026-11/census.csv
+AMANTA,Amanta Healthcare,Q1 FY27,retro/2026-11/census.csv
+AMANTA,Amanta Healthcare,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/AMANTA | retro/2026-11/census.csv
+AMANTA,Amanta Healthcare,Q4 FY26,retro/2026-11/census.csv
+AMEENJI,Ameenji Rubber Ltd,Q4 FY26,retro/2026-11/census.csv
+ANAWIL,Anawil Wire and Engineering Ltd,Q2/H1 FY27,retro/2026-11/census.csv
+ANAWIL,Anawil Wire and Engineering Ltd,Q4 FY26,retro/2026-11/census.csv
+ANUP,The Anup Engineering Limited,Q1 FY27,origin/claude/anoop-engineering-quarterly-8lr5l1:runs/anup-q1fy27 | retro/2026-11/census.csv
+ANUP,The Anup Engineering Limited,Q4 FY26,retro/2026-11/census.csv
+APEXECO,Apex Ecotech Ltd,Q1 FY27,retro/2026-11/census.csv
+APEXECO,Apex Ecotech Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/APEXECO | retro/2026-11/census.csv
+APEXECO,Apex Ecotech Ltd,Q4 FY26,retro/2026-11/census.csv
+APSISAERO,Apsis Aerocom Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-10_1512/APSISAERO | retro/2026-11/census.csv
+APSISAERO,Apsis Aerocom Ltd,Q4 FY26,retro/2026-11/census.csv
+ARIS,ArisInfra Solutions Ltd,Q1 FY27,origin/claude/spra-quarterly-results-analysis-ctlfwb:runs/aris-q1fy27 | retro/2026-11/census.csv
+ARIS,ArisInfra Solutions Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/ARIS | retro/2026-11/census.csv
+ARIS,ArisInfra Solutions Ltd,Q4 FY26,retro/2026-11/census.csv
+ARVINDFASN,Arvind Fashions Ltd,Q1 FY27,retro/2026-11/census.csv
+ARVINDFASN,Arvind Fashions Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/ARVINDFASN | retro/2026-11/census.csv
+ARVINDFASN,Arvind Fashions Ltd,Q4 FY26,retro/2026-11/census.csv
+ASIANENE,Asian Energy Services Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-c8fsiv:runs/asianene-q1fy27 | retro/2026-11/census.csv
+ASIANENE,Asian Energy Services Ltd,Q4 FY26,retro/2026-11/census.csv
+ASTRAMICRO,Astra Microwave Products Ltd,Q1 FY27,retro/2026-11/census.csv
+ASTRAMICRO,Astra Microwave Products Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/ASTRAMICRO | retro/2026-11/census.csv
+ASTRAMICRO,Astra Microwave Products Ltd,Q4 FY26,retro/2026-11/census.csv
+ATLANTAELEC,Atlanta Electricals Ltd,Q1 FY27,claude/step1-anawil-158c6b:runs/atlantaelec-q1fy27 | retro/2026-11/census.csv
+ATLANTAELEC,Atlanta Electricals Ltd,Q4 FY26,retro/2026-11/census.csv
+AURUM,Aurum Proptech Ltd,Q1 FY27,origin/claude/aurob-proptech-investor-analysis-cqrz1p:runs/aurum-q1fy27 | retro/2026-11/census.csv
+AURUM,Aurum Proptech Ltd,Q2/H1 FY27,origin/run/quarterly-q2fy27-2026-10-17:runs/aurum-q2fy27 | retro/2026-11/census.csv
+AURUM,Aurum Proptech Ltd,Q4 FY26,retro/2026-11/census.csv
+AVANA,Avana Electrosystems Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-10_1512/AVANA | retro/2026-11/census.csv
+AVANA,Avana Electrosystems Ltd,Q4 FY26,retro/2026-11/census.csv
+AVIENCE,Avience Biomedicals Ltd,Q4 FY26,retro/2026-11/census.csv
+AVTNPL,AVT Natural Products,Q1 FY27,retro/2026-11/census.csv
+AVTNPL,AVT Natural Products,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/AVTNPL | retro/2026-11/census.csv
+AVTNPL,AVT Natural Products,Q4 FY26,retro/2026-11/census.csv
+AWFIS,Awfis Space Solutions Ltd,Q1 FY27,retro/2026-11/census.csv
+AWFIS,Awfis Space Solutions Ltd,Q4 FY26,retro/2026-11/census.csv
+AYE,Aye Finance Ltd,Q1 FY27,origin/claude/run-pipeline-aye-adnmeu:runs/aye-q1fy27 | retro/2026-11/census.csv
+AYE,Aye Finance Ltd,Q2/H1 FY27,origin/claude/quarterly-ayefin-q2fy27-982ab0:runs/aye-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27.md | retro/2026-11/census.csv
+AYE,Aye Finance Ltd,Q4 FY26,retro/2026-11/census.csv
+AZAD,Azad Engineering Ltd,Q1 FY27,retro/2026-11/census.csv
+AZAD,Azad Engineering Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/AZAD | retro/2026-11/census.csv
+AZAD,Azad Engineering Ltd,Q4 FY26,retro/2026-11/census.csv
+BALAJITELE,Balaji Telefilms Ltd,Q1 FY27,retro/2026-11/census.csv
+BALAJITELE,Balaji Telefilms Ltd,Q4 FY26,retro/2026-11/census.csv
+BALAMINES,Balaji Amines Limited,Q1 FY27,origin/claude/balaji-mines-quarterly-analysis-ygfira:runs/balamines-q1fy27 | retro/2026-11/census.csv
+BALAMINES,Balaji Amines Limited,Q4 FY26,retro/2026-11/census.csv
+BANDHANBNK,Bandhan Bank Ltd,Q1 FY27,origin/claude/bundan-bank-q1-fy27-lo837s:runs/bandhan-q1fy27 | retro/2026-11/census.csv
+BANDHANBNK,Bandhan Bank Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/BANDHANBNK | retro/2026-11/census.csv
+BANDHANBNK,Bandhan Bank Ltd,Q4 FY26,retro/2026-11/census.csv
+BBOX,Black Box Ltd,Q1 FY27,retro/2026-11/census.csv
+BBOX,Black Box Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/BBOX | retro/2026-11/census.csv
+BBOX,Black Box Ltd,Q4 FY26,retro/2026-11/census.csv
+BIRLACABLE,Birla Cable Ltd,Q1 FY27,retro/2026-11/census.csv
+BIRLACABLE,Birla Cable Ltd,Q4 FY26,retro/2026-11/census.csv
+BIRLANU,BirlaNu Limited (formerly HIL Limited),Q1 FY27,origin/claude/birlanu-quarterly-results-2zbr6l:runs/birlanu-q1fy27 | retro/2026-11/census.csv
+BIRLANU,BirlaNu Limited (formerly HIL Limited),Q4 FY26,retro/2026-11/census.csv
+BLACKROSE,Black Rose Industries Ltd,Q1 FY27,origin/claude/black-rose-quarterly-analysis-a9u9a4:runs/blackrose-q1fy27 | retro/2026-11/census.csv
+BLACKROSE,Black Rose Industries Ltd,Q4 FY26,retro/2026-11/census.csv
+BORANA,Borana Weaves Ltd,Q1 FY27,retro/2026-11/census.csv
+BORANA,Borana Weaves Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/BORANA | retro/2026-11/census.csv
+BORANA,Borana Weaves Ltd,Q4 FY26,retro/2026-11/census.csv
+CAPACITE,Capacit'e Infraprojects Ltd,Q1 FY27,retro/2026-11/census.csv
+CAPACITE,Capacit'e Infraprojects Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/CAPACITE | retro/2026-11/census.csv
+CAPACITE,Capacit'e Infraprojects Ltd,Q4 FY26,retro/2026-11/census.csv
+CAPILLARY,Capillary Technologies India Ltd,Q1 FY27,retro/2026-11/census.csv
+CAPILLARY,Capillary Technologies India Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/CAPILLARY | retro/2026-11/census.csv
+CAPILLARY,Capillary Technologies India Ltd,Q4 FY26,retro/2026-11/census.csv
+CCCL,Consolidated Construction Consortium Ltd,Q1 FY27,retro/2026-11/census.csv
+CCCL,Consolidated Construction Consortium Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/CCCL | retro/2026-11/census.csv
+CCCL,Consolidated Construction Consortium Ltd,Q4 FY26,retro/2026-11/census.csv
+CEIGALL,Ceigall India Ltd,Q1 FY27,retro/2026-11/census.csv
+CEIGALL,Ceigall India Ltd,Q4 FY26,retro/2026-11/census.csv
+CGRAPHICS,Creative Graphics Solutions India Ltd (Creative Graphics / Wahren),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/CGRAPHICS | retro/2026-11/census.csv
+CGRAPHICS,Creative Graphics Solutions India Ltd (Creative Graphics / Wahren),Q4 FY26,retro/2026-11/census.csv
+CHEMPLASTS,Chemplast Sanmar Ltd,Q1 FY27,retro/2026-11/census.csv
+CHEMPLASTS,Chemplast Sanmar Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/CHEMPLASTS | retro/2026-11/census.csv
+CLEANMAX,Clean Max Enviro Energy Solutions Ltd,Q1 FY27,retro/2026-11/census.csv
+CLEANMAX,Clean Max Enviro Energy Solutions Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/CLEANMAX | retro/2026-11/census.csv
+CLEANMAX,Clean Max Enviro Energy Solutions Ltd,Q4 FY26,retro/2026-11/census.csv
+CMSINFO,CMS Info Systems Ltd,Q1 FY27,retro/2026-11/census.csv
+CMSINFO,CMS Info Systems Ltd,Q4 FY26,retro/2026-11/census.csv
+CNL,Creative Newtech Ltd,Q2/H1 FY27,retro/2026-11/census.csv
+CNL,Creative Newtech Ltd,Q4 FY26,retro/2026-11/census.csv
+CREDENT,Credent Connect N Care Ltd,Q2/H1 FY27,retro/2026-11/census.csv
+CREDENT,Credent Connect N Care Ltd,Q4 FY26,retro/2026-11/census.csv
+CYBERTECH,Cybertech Systems and Software Limited,Q1 FY27,retro/2026-11/census.csv
+CYBERTECH,Cybertech Systems and Software Limited,Q2/H1 FY27,origin/claude/quarterly-cybertech-q2fy27-920b89:runs/cybertech-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27.md | retro/2026-11/census.csv
+CYBERTECH,Cybertech Systems and Software Limited,Q4 FY26,retro/2026-11/census.csv
+CYIENTDLM,Cyient DLM Ltd,Q1 FY27,retro/2026-11/census.csv
+CYIENTDLM,Cyient DLM Ltd,Q2/H1 FY27,origin/run/quarterly-q2fy27-2026-10-17:runs/cyientdlm-q2fy27 | retro/2026-11/census.csv
+CYIENTDLM,Cyient DLM Ltd,Q4 FY26,retro/2026-11/census.csv
+DATAPATTNS,Data Patterns (India) Ltd,Q1 FY27,origin/claude/quarterly-data-pattern-analysis-7vzvt2:runs/datapattns-q1fy27 | retro/2026-11/census.csv
+DATAPATTNS,Data Patterns (India) Ltd,Q4 FY26,retro/2026-11/census.csv
+DDEVPLSTIK,DDev Plastiks Industries Ltd,Q4 FY26,retro/2026-11/census.csv
+DECCANGOLD,DGML (Deccan Gold Mines Ltd),Q1 FY27,origin/claude/deccan-gold-concall-analysis-5eyww0:runs/deccangold-q1fy27 | retro/2026-11/census.csv
+DEEDEV,DEE Development Engineers Ltd,Q1 FY27,origin/claude/d-dev-quarterly-analysis-jnyqb1:runs/d-dev-q1fy27 | retro/2026-11/census.csv
+DEEDEV,DEE Development Engineers Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/DEEDEV | retro/2026-11/census.csv
+DEEDEV,DEE Development Engineers Ltd,Q4 FY26,retro/2026-11/census.csv
+DHANBANK,Dhanlaxmi Bank Ltd,Q1 FY27,origin/claude/dhanbank-pipeline-run-bi3wv6:runs/dhanbank-q1fy27 | retro/2026-11/census.csv
+DHANBANK,Dhanlaxmi Bank Ltd,Q4 FY26,retro/2026-11/census.csv
+DIFFNKG,Diffusion Engineers Ltd,Q1 FY27,retro/2026-11/census.csv
+DIFFNKG,Diffusion Engineers Ltd,Q4 FY26,retro/2026-11/census.csv
+DIGITIDE,Digitide Solutions Limited,Q1 FY27,origin/claude/digitite-results-analysis-yek08v:runs/digitide-q1fy27 | retro/2026-11/census.csv
+DIGITIDE,Digitide Solutions Limited,Q4 FY26,retro/2026-11/census.csv
+DIVGIITTS,Divgi Torqtransfer Systems Ltd,Q1 FY27,origin/claude/digvi-quarterly-analysis-o97k0v:runs/divgi-q1fy27 | retro/2026-11/census.csv
+DIVGIITTS,Divgi Torqtransfer Systems Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/DIVGIITTS | retro/2026-11/census.csv
+DIVGIITTS,Divgi Torqtransfer Systems Ltd,Q4 FY26,retro/2026-11/census.csv
+DPABHUSHAN,D. P. Abhushan Ltd,Q1 FY27,retro/2026-11/census.csv
+DPABHUSHAN,D. P. Abhushan Ltd,Q4 FY26,retro/2026-11/census.csv
+DSSL,Dynacons Systems & Solutions Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-3y7lxn:runs/dssl-q1fy27 | retro/2026-11/census.csv
+DSSL,Dynacons Systems & Solutions Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/DSSL | retro/2026-11/census.csv
+DSSL,Dynacons Systems & Solutions Ltd,Q4 FY26,retro/2026-11/census.csv
+DYCL,Dynamic Cables Ltd,Q1 FY27,retro/2026-11/census.csv
+DYCL,Dynamic Cables Ltd,Q2/H1 FY27,origin/claude/qr-dycl-q2fy27-766ddd:runs/dycl-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27_2026-10-28.md | retro/2026-11/census.csv
+DYCL,Dynamic Cables Ltd,Q4 FY26,retro/2026-11/census.csv
+E2E,E2E Networks Limited,Q1 FY27,origin/claude/e2e-quarterly-analysis-j6j65r:runs/e2e-q1fy27 | retro/2026-11/census.csv
+E2E,E2E Networks Limited,Q4 FY26,retro/2026-11/census.csv
+EBGNG,GNG Electronics Ltd,Q1 FY27,origin/claude/gmg-electronics-analysis-0owflj:runs/ebgng-q1fy27 | retro/2026-11/census.csv
+EBGNG,GNG Electronics Ltd,Q4 FY26,retro/2026-11/census.csv
+ECOSMOBLTY,Ecos (India) Mobility & Hospitality Ltd,Q1 FY27,origin/claude/ecos-mobility-quarterly-analysis-1gxkan:runs/ecosmobility-q1fy27 | retro/2026-11/census.csv
+ECOSMOBLTY,Ecos (India) Mobility & Hospitality Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/ECOSMOBLTY | retro/2026-11/census.csv
+ECOSMOBLTY,Ecos (India) Mobility & Hospitality Ltd,Q4 FY26,retro/2026-11/census.csv
+EIMCOELECO,Eimco Elecon (India) Ltd,Q1 FY27,retro/2026-11/census.csv
+EIMCOELECO,Eimco Elecon (India) Ltd,Q2/H1 FY27,origin/run/quarterly-q2fy27-2026-10-17:runs/eimcoeleco-q2fy27 | retro/2026-11/census.csv
+EIMCOELECO,Eimco Elecon (India) Ltd,Q4 FY26,retro/2026-11/census.csv
+EMBDL,Embassy Developments (EMBDL),Q1 FY27,retro/2026-11/census.csv
+EMBDL,Embassy Developments (EMBDL),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/EMBDL | retro/2026-11/census.csv
+EMBDL,Embassy Developments (EMBDL),Q4 FY26,retro/2026-11/census.csv
+EMUDHRA,eMudhra Ltd,Q1 FY27,retro/2026-11/census.csv
+EMUDHRA,eMudhra Ltd,Q4 FY26,retro/2026-11/census.csv
+EMVDL,Embassy Developments Limited (formerly Equinox India Developments; Notion label EMBDL),Q1 FY27,origin/claude/emvdl-quarterly-analysis-1eikkc:runs/emvdl-q1fy27 | retro/2026-11/census.csv
+EMVDL,Embassy Developments Limited (formerly Equinox India Developments; Notion label EMBDL),Q4 FY26,retro/2026-11/census.csv
+ENTERO,Entero Healthcare Solutions Ltd,Q1 FY27,retro/2026-11/census.csv
+ENTERO,Entero Healthcare Solutions Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/ENTERO | retro/2026-11/census.csv
+ENTERO,Entero Healthcare Solutions Ltd,Q4 FY26,retro/2026-11/census.csv
+ESCONET,Esconet Technologies Ltd,Q1 FY27,retro/2026-11/census.csv
+ESCONET,Esconet Technologies Ltd,Q4 FY26,retro/2026-11/census.csv
+ETHOSLTD,Ethos Ltd (luxury watch retail),Q1 FY27,retro/2026-11/census.csv
+ETHOSLTD,Ethos Ltd (luxury watch retail),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/ETHOSLTD | retro/2026-11/census.csv
+ETHOSLTD,Ethos Ltd (luxury watch retail),Q4 FY26,retro/2026-11/census.csv
+EXICOM,Exicom Tele-Systems,Q1 FY27,origin/claude/exicom-q1-fy27-analysis-0bxvcc:runs/exicom-q1fy27 | retro/2026-11/census.csv
+EXICOM,Exicom Tele-Systems,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/EXICOM | retro/2026-11/census.csv
+EXICOM,Exicom Tele-Systems,Q4 FY26,retro/2026-11/census.csv
+EXPLEOSOL,Expleo Solutions Limited,Q1 FY27,retro/2026-11/census.csv
+EXPLEOSOL,Expleo Solutions Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/EXPLEOSOL | retro/2026-11/census.csv
+EXPLEOSOL,Expleo Solutions Limited,Q4 FY26,retro/2026-11/census.csv
+FABTECH,Fabtech Technologies Ltd,Q1 FY27,retro/2026-11/census.csv
+FABTECH,Fabtech Technologies Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/FABTECH | retro/2026-11/census.csv
+FABTECH,Fabtech Technologies Ltd,Q4 FY26,retro/2026-11/census.csv
+FAIRCHEMOR,Fairchem Organics Ltd,Q1 FY27,retro/2026-11/census.csv
+FAIRCHEMOR,Fairchem Organics Ltd,Q2/H1 FY27,origin/claude/quarterly-fairchem-q2fy27-bcfbf0:runs/fairchemor-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27.md | retro/2026-11/census.csv
+FAIRCHEMOR,Fairchem Organics Ltd,Q4 FY26,retro/2026-11/census.csv
+FEDFINA,Fedbank Financial Services Ltd,Q1 FY27,origin/claude/fedfina-call-analysis-ggpjgq:runs/fedfina-q1fy27 | retro/2026-11/census.csv
+FEDFINA,Fedbank Financial Services Ltd,Q2/H1 FY27,origin/run/quarterly-q2fy27-2026-10-17:runs/fedfina-q2fy27 | retro/2026-11/census.csv
+FEDFINA,Fedbank Financial Services Ltd,Q4 FY26,retro/2026-11/census.csv
+FINCABLES,Finolex Cables Ltd,Q1 FY27,retro/2026-11/census.csv
+FINCABLES,Finolex Cables Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-10_1512/FINCABLES | retro/2026-11/census.csv
+FINCABLES,Finolex Cables Ltd,Q4 FY26,retro/2026-11/census.csv
+FINKURVE,Finkurve Financial Services Ltd (brand Arvog),Q1 FY27,origin/claude/quarterly-results-analysis-bjv3ft:runs/finkurve-q1fy27 | retro/2026-11/census.csv
+FINKURVE,Finkurve Financial Services Ltd (brand Arvog),Q4 FY26,retro/2026-11/census.csv
+FLUIDOMAT,Fluidomat Ltd,Q4 FY26,retro/2026-11/census.csv
+FLYSBS,FlySBS Aviation Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/FLYSBS | QuarterlyReviewer/reviews/2026-11-13_0631/FLYSBS | retro/2026-11/census.csv
+FLYSBS,FlySBS Aviation Ltd,Q4 FY26,retro/2026-11/census.csv
+FRACTAL,Fractal Analytics Limited,Q1 FY27,retro/2026-11/census.csv
+FRACTAL,Fractal Analytics Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/FRACTAL | retro/2026-11/census.csv
+FRACTAL,Fractal Analytics Limited,Q4 FY26,retro/2026-11/census.csv
+FRATELLI,Fratelli Vineyards Ltd,Q1 FY27,retro/2026-11/census.csv
+FRATELLI,Fratelli Vineyards Ltd,Q4 FY26,retro/2026-11/census.csv
+FROG,Frog Innovations Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/FROG | retro/2026-11/census.csv
+FROG,Frog Innovations Ltd,Q4 FY26,retro/2026-11/census.csv
+FSL,Firstsource Solutions Ltd,Q1 FY27,retro/2026-11/census.csv
+FSL,Firstsource Solutions Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/FSL | retro/2026-11/census.csv
+FSL,Firstsource Solutions Ltd,Q4 FY26,retro/2026-11/census.csv
+GALLANTT,Gallantt Ispat Ltd,Q1 FY27,retro/2026-11/census.csv
+GALLANTT,Gallantt Ispat Ltd,Q2/H1 FY27,origin/claude/quarterly-gallantt-call-q2fy27-7b3ed0:runs/gallantt-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27.md | ConcallPipeline/Q2 FY27 Results/_Overnight_Review_2026-10-20.md | retro/2026-11/census.csv
+GANECOS,Ganesha Ecosphere Limited,Q1 FY27,origin/claude/quarterly-results-analysis-ag4rkl:runs/ganecos-q1fy27 | retro/2026-11/census.csv
+GANECOS,Ganesha Ecosphere Limited,Q4 FY26,origin/claude/ganesha-quarterly-analysis-rsgtf3:runs/ganecos-q4fy26 | retro/2026-11/census.csv
+GARGI,PNGS Gargi Fashion Jewellery Ltd (BSE 543709),Q1 FY27,origin/claude/gargi-quarterly-analysis-11fbsc:runs/gargi-q1fy27 | retro/2026-11/census.csv
+GARGI,PNGS Gargi Fashion Jewellery Ltd (BSE 543709),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/543709 | retro/2026-11/census.csv
+GARGI,PNGS Gargi Fashion Jewellery Ltd (BSE 543709),Q4 FY26,retro/2026-11/census.csv
+GAUDIUMIVF,Gaudium IVF and Women Health Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-7dqyyn:runs/gaudiumivf-q1fy27 | retro/2026-11/census.csv
+GAUDIUMIVF,Gaudium IVF and Women Health Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/GAUDIUMIVF | retro/2026-11/census.csv
+GAUDIUMIVF,Gaudium IVF and Women Health Ltd,Q4 FY26,retro/2026-11/census.csv
+GEE,GEE Limited,Q1 FY27,origin/claude/g-limited-results-analysis-q4cm3w:runs/gee-q1fy27 | retro/2026-11/census.csv
+GEE,GEE Limited,Q4 FY26,retro/2026-11/census.csv
+GEMAROMA,Gem Aromatics Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-jz50z8:runs/gemaroma-q1fy27 | retro/2026-11/census.csv
+GEMAROMA,Gem Aromatics Ltd,Q4 FY26,retro/2026-11/census.csv
+GHVINFRA,GHV Infra Projects Limited (formerly Sindu Valley Technologies Ltd),Q1 FY27,origin/claude/ghv-infra-quarterly-analysis-z6m8wn:runs/ghvinfra-q1fy27 | retro/2026-11/census.csv
+GHVINFRA,GHV Infra Projects Limited (formerly Sindu Valley Technologies Ltd),Q2/H1 FY27,origin/claude/quarterly-ghv-q2fy27-3cf5aa:runs/ghvinfra-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27.md | retro/2026-11/census.csv
+GHVINFRA,GHV Infra Projects Limited (formerly Sindu Valley Technologies Ltd),Q4 FY26,retro/2026-11/census.csv
+GMBREW,G M Breweries Ltd,Q1 FY27,retro/2026-11/census.csv
+GMBREW,G M Breweries Ltd,Q2/H1 FY27,origin/run/quarterly-q2fy27-2026-10-17:runs/gmbrew-q2fy27 | retro/2026-11/census.csv
+GMBREW,G M Breweries Ltd,Q4 FY26,retro/2026-11/census.csv
+GMDC,Gujarat Mineral Development Corporation Ltd,Q1 FY27,origin/claude/gmdc-quarterly-analysis-c3vej5:runs/gmdc-q1fy27 | retro/2026-11/census.csv
+GMDC,Gujarat Mineral Development Corporation Ltd,Q4 FY26,retro/2026-11/census.csv
+GMMPFAUDLER,GMM Pfaudler Limited,Q1 FY27,origin/claude/gmm-pfaudler-quarterly-analysis-55jc3e:runs/gmmpfaudler-q1fy27 | retro/2026-11/census.csv
+GMMPFAUDLER,GMM Pfaudler Limited,Q4 FY26,retro/2026-11/census.csv
+GOCLCORP,GOCL Corporation Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-d723ow:runs/goclcorp-q1fy27 | retro/2026-11/census.csv
+GOCLCORP,GOCL Corporation Ltd,Q2/H1 FY27,origin/run/quarterly-q2fy27-2026-10-19:runs/gocl-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Overnight_Review_2026-10-20.md | retro/2026-11/census.csv
+GOCLCORP,GOCL Corporation Ltd,Q4 FY26,retro/2026-11/census.csv
+GOLDIAM,Goldiam International Ltd,Q1 FY27,origin/claude/goldium-q1-fy27-earnings-8csvi8:runs/goldium-q1fy27 | retro/2026-11/census.csv
+GOLDIAM,Goldiam International Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-10_1512/GOLDIAM | retro/2026-11/census.csv
+GOLDIAM,Goldiam International Ltd,Q4 FY26,retro/2026-11/census.csv
+GOODLUCK,Goodluck India Ltd,Q1 FY27,retro/2026-11/census.csv
+GOODLUCK,Goodluck India Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/GOODLUCK | retro/2026-11/census.csv
+GOODLUCK,Goodluck India Ltd,Q4 FY26,retro/2026-11/census.csv
+GRPLTD,GRP Ltd,Q1 FY27,retro/2026-11/census.csv
+GRPLTD,GRP Ltd,Q4 FY26,retro/2026-11/census.csv
+GRWRHITECH,Garware Hi-Tech Films Limited,Q1 FY27,retro/2026-11/census.csv
+GRWRHITECH,Garware Hi-Tech Films Limited,Q2/H1 FY27,origin/claude/quarterly-garware-q2fy27-1ec041:runs/grwrhitech-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27.md | retro/2026-11/census.csv
+GRWRHITECH,Garware Hi-Tech Films Limited,Q4 FY26,retro/2026-11/census.csv
+GSMFOILS,GSM Foils Ltd,Q1 FY27,retro/2026-11/census.csv
+GSMFOILS,GSM Foils Ltd,Q4 FY26,retro/2026-11/census.csv
+GUFICBIO,Gufic Biosciences Ltd,Q1 FY27,retro/2026-11/census.csv
+GUFICBIO,Gufic Biosciences Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/GUFICBIO | retro/2026-11/census.csv
+GUFICBIO,Gufic Biosciences Ltd,Q4 FY26,retro/2026-11/census.csv
+GVPIL,GE Power India Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-qhuohq:runs/gvpil-q1fy27 | retro/2026-11/census.csv
+GVPIL,GE Power India Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/GVPIL | retro/2026-11/census.csv
+GVPIL,GE Power India Ltd,Q4 FY26,retro/2026-11/census.csv
+HEALTHX,Health X Platform (BSE 533259),Q1 FY27,retro/2026-11/census.csv
+HEALTHX,Health X Platform (BSE 533259),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/HEALTHX | retro/2026-11/census.csv
+HEALTHX,Health X Platform (BSE 533259),Q4 FY26,retro/2026-11/census.csv
+HERANBA,Heranba Industries Ltd,Q1 FY27,retro/2026-11/census.csv
+HERANBA,Heranba Industries Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-10_1512/HERANBA | retro/2026-11/census.csv
+HERANBA,Heranba Industries Ltd,Q4 FY26,retro/2026-11/census.csv
+HERITGFOOD,Heritage Foods Ltd,Q1 FY27,retro/2026-11/census.csv
+HERITGFOOD,Heritage Foods Ltd,Q2/H1 FY27,origin/run/quarterly-q2fy27-2026-10-17:runs/heritgfood-q2fy27 | retro/2026-11/census.csv
+HERITGFOOD,Heritage Foods Ltd,Q4 FY26,retro/2026-11/census.csv
+HEXT,Hexaware Technologies,Q1 FY27,retro/2026-11/census.csv
+HEXT,Hexaware Technologies,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/HEXT | retro/2026-11/census.csv
+HEXT,Hexaware Technologies,Q4 FY26,retro/2026-11/census.csv
+HFCL,HFCL Limited,Q1 FY27,origin/claude/hfca-quarterly-analysis-4a6fod:runs/hfcl-q1fy27 | retro/2026-11/census.csv
+HFCL,HFCL Limited,Q2/H1 FY27,origin/run/quarterly-q2fy27-2026-10-19:runs/hfcl-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Overnight_Review_2026-10-20.md | retro/2026-11/census.csv
+HFCL,HFCL Limited,Q4 FY26,retro/2026-11/census.csv
+IEX,Indian Energy Exchange Ltd,Q1 FY27,retro/2026-11/census.csv
+IEX,Indian Energy Exchange Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/IEX | retro/2026-11/census.csv
+IKS,Inventurus Knowledge Solutions Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-h4n2ul:runs/iks-q1fy27 | retro/2026-11/census.csv
+IKS,Inventurus Knowledge Solutions Ltd,Q4 FY26,retro/2026-11/census.csv
+INA,Insolation Energy Ltd,Q1 FY27,retro/2026-11/census.csv
+INA,Insolation Energy Ltd,Q4 FY26,retro/2026-11/census.csv
+INDGN,Indegene Ltd,Q1 FY27,origin/claude/run-pipeline-indgn-6wej1t:runs/indgn-q1fy27 | retro/2026-11/census.csv
+INDGN,Indegene Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/INDGN | retro/2026-11/census.csv
+INDGN,Indegene Ltd,Q4 FY26,retro/2026-11/census.csv
+INDIAGLYCO,India Glycols Ltd,Q1 FY27,retro/2026-11/census.csv
+INDIAGLYCO,India Glycols Ltd,Q4 FY26,retro/2026-11/census.csv
+INDIAMART,Indiamart Intermesh Ltd,Q1 FY27,origin/claude/india-mart-quarterly-analysis-nujr2m:runs/indiamart-q1fy27 | retro/2026-11/census.csv
+INDIAMART,Indiamart Intermesh Ltd,Q2/H1 FY27,origin/claude/qr-dycl-q2fy27-766ddd:runs/indiamart-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27_2026-10-28.md | retro/2026-11/census.csv
+INDIAMART,Indiamart Intermesh Ltd,Q4 FY26,retro/2026-11/census.csv
+INDIQUBE,"IndiQube Spaces Limited (NSE INDIQUBE, BSE 544454)",Q1 FY27,origin/claude/quarterly-results-analysis-i1ji43:runs/indiqube-q1fy27 | retro/2026-11/census.csv
+INDIQUBE,"IndiQube Spaces Limited (NSE INDIQUBE, BSE 544454)",Q4 FY26,retro/2026-11/census.csv
+INDNIPPON,"India Nippon Electricals Ltd (NSE INDNIPPON, BSE 532240)",Q1 FY27,retro/2026-11/census.csv
+INDNIPPON,"India Nippon Electricals Ltd (NSE INDNIPPON, BSE 532240)",Q4 FY26,retro/2026-11/census.csv
+INDOBORAX,Indo Borax & Chemicals Ltd,Q1 FY27,retro/2026-11/census.csv
+INDOBORAX,Indo Borax & Chemicals Ltd,Q4 FY26,retro/2026-11/census.csv
+INDORAMA,"Indo Rama Synthetics (India) Ltd (NSE INDORAMA, BSE 500207)",Q1 FY27,retro/2026-11/census.csv
+INDORAMA,"Indo Rama Synthetics (India) Ltd (NSE INDORAMA, BSE 500207)",Q2/H1 FY27,origin/run/quarterly-q2fy27-2026-10-17:runs/indorama-q2fy27 | retro/2026-11/census.csv
+INDORAMA,"Indo Rama Synthetics (India) Ltd (NSE INDORAMA, BSE 500207)",Q4 FY26,retro/2026-11/census.csv
+INDOSOLAR,Indosolar Limited (NSE symbol WAAREEINDO; subsidiary of Waaree Energies),Q1 FY27,retro/2026-11/census.csv
+INDOSOLAR,Indosolar Limited (NSE symbol WAAREEINDO; subsidiary of Waaree Energies),Q2/H1 FY27,origin/claude/quarterly-indosolar-q2fy27-2614ff:runs/indosolar-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27.md | retro/2026-11/census.csv
+INDOSOLAR,Indosolar Limited (NSE symbol WAAREEINDO; subsidiary of Waaree Energies),Q4 FY26,retro/2026-11/census.csv
+INDSWFTLAB,Ind-Swift Laboratories Ltd,Q1 FY27,retro/2026-11/census.csv
+INDSWFTLAB,Ind-Swift Laboratories Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/INDSWFTLAB | retro/2026-11/census.csv
+INDSWFTLAB,Ind-Swift Laboratories Ltd,Q4 FY26,retro/2026-11/census.csv
+INOXINDIA,"INOX India Limited (INOXCVA, Scrip 544046)",Q1 FY27,claude/step1-anawil-158c6b:runs/inoxindia-q1fy27 | retro/2026-11/census.csv
+INOXINDIA,"INOX India Limited (INOXCVA, Scrip 544046)",Q4 FY26,retro/2026-11/census.csv
+INVPRECQ,Investment & Precision Castings Ltd,Q1 FY27,retro/2026-11/census.csv
+INVPRECQ,Investment & Precision Castings Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/INVPRECQ | retro/2026-11/census.csv
+INVPRECQ,Investment & Precision Castings Ltd,Q4 FY26,retro/2026-11/census.csv
+IOLCP,IOL Chemicals & Pharmaceuticals Ltd,Q1 FY27,retro/2026-11/census.csv
+IOLCP,IOL Chemicals & Pharmaceuticals Ltd,Q4 FY26,retro/2026-11/census.csv
+IPCL,Investment & Precision Castings Ltd (INVPRECQ / BSE 504786),Q1 FY27,origin/claude/quarterly-results-analysis-dwprvc:runs/ipcl-q1fy27 | retro/2026-11/census.csv
+IPCL,Investment & Precision Castings Ltd (INVPRECQ / BSE 504786),Q2/H1 FY27,retro/2026-11/census.csv
+IPCL,Investment & Precision Castings Ltd (INVPRECQ / BSE 504786),Q4 FY26,retro/2026-11/census.csv
+IVALUE,"iValue Infosolutions Limited (NSE IVALUE, BSE 544523)",Q1 FY27,origin/claude/aspara-quarterly-results-7k23p1:runs/ivalue-q1fy27 | retro/2026-11/census.csv
+IVALUE,"iValue Infosolutions Limited (NSE IVALUE, BSE 544523)",Q4 FY26,retro/2026-11/census.csv
+JAYKAY,Jaykay Enterprises Limited,Q1 FY27,retro/2026-11/census.csv
+JAYKAY,Jaykay Enterprises Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/JAYKAY | retro/2026-11/census.csv
+JAYKAY,Jaykay Enterprises Limited,Q4 FY26,retro/2026-11/census.csv
+JITFINFRA,JITF Infra Logistics Ltd,Q4 FY26,retro/2026-11/census.csv
+JLHL,Jupiter Life Line Hospitals Ltd,Q2/H1 FY27,retro/2026-11/census.csv
+JLHL,Jupiter Life Line Hospitals Ltd,Q4 FY26,retro/2026-11/census.csv
+JNKINDIA,JNK India Ltd,Q1 FY27,origin/claude/jk-india-quarterly-analysis-xulrvt:runs/jnkindia-q1fy27 | retro/2026-11/census.csv
+JNKINDIA,JNK India Ltd,Q4 FY26,retro/2026-11/census.csv
+JUBLCPL,Jubilant Agri & Consumer Products Ltd (JACPL),Q1 FY27,retro/2026-11/census.csv
+JUBLCPL,Jubilant Agri & Consumer Products Ltd (JACPL),Q4 FY26,retro/2026-11/census.csv
+KABRAEXTRU,Kabra Extrusion Technik Ltd,Q4 FY26,retro/2026-11/census.csv
+KANOHAR,Kanohar Electricals Ltd,Q1 FY27,retro/2026-11/census.csv
+KANOHAR,Kanohar Electricals Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/KANOHAR | retro/2026-11/census.csv
+KANOHAR,Kanohar Electricals Ltd,Q4 FY26,retro/2026-11/census.csv
+KARNIKA,Karnika Industries Ltd,Q1 FY27,retro/2026-11/census.csv
+KARNIKA,Karnika Industries Ltd,Q2/H1 FY27,origin/run/quarterly-q2fy27-2026-10-17:runs/karnika-h1fy27 | retro/2026-11/census.csv
+KARNIKA,Karnika Industries Ltd,Q4 FY26,retro/2026-11/census.csv
+KCEIL,Kay Cee Energy & Infra Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/KCEIL | retro/2026-11/census.csv
+KCEIL,Kay Cee Energy & Infra Ltd,Q4 FY26,retro/2026-11/census.csv
+KCPSUGIND,K.C.P. Sugar and Industries Corporation Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-mk45d6:runs/kcpsugind-q1fy27 | retro/2026-11/census.csv
+KCPSUGIND,K.C.P. Sugar and Industries Corporation Ltd,Q4 FY26,retro/2026-11/census.csv
+KECL,Kirloskar Electric Company Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-oxt7o0:runs/kecl-q1fy27 | retro/2026-11/census.csv
+KECL,Kirloskar Electric Company Ltd,Q4 FY26,retro/2026-11/census.csv
+KELTECH,Keltech Energies Ltd,Q1 FY27,retro/2026-11/census.csv
+KELTECH,Keltech Energies Ltd,Q2/H1 FY27,retro/2026-11/census.csv
+KELTECH,Keltech Energies Ltd,Q4 FY26,retro/2026-11/census.csv
+KERNEX,Kernex Microsystems (India) Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-ixhbmx:runs/kernex-q1fy27 | retro/2026-11/census.csv
+KERNEX,Kernex Microsystems (India) Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/KERNEX | retro/2026-11/census.csv
+KERNEX,Kernex Microsystems (India) Ltd,Q4 FY26,retro/2026-11/census.csv
+KISSHT,OnEMI Technology Solutions Ltd (Kissht),Q1 FY27,retro/2026-11/census.csv
+KISSHT,OnEMI Technology Solutions Ltd (Kissht),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/KISSHT | retro/2026-11/census.csv
+KMCSHIL,KMC Speciality Hospitals (India) Ltd,Q1 FY27,retro/2026-11/census.csv
+KMCSHIL,KMC Speciality Hospitals (India) Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/KMCSHIL | retro/2026-11/census.csv
+KMCSHIL,KMC Speciality Hospitals (India) Ltd,Q4 FY26,retro/2026-11/census.csv
+KNACK,"Knack Packaging Ltd (BSE 544814, NSE KNACK)",Q1 FY27,retro/2026-11/census.csv
+KNACK,"Knack Packaging Ltd (BSE 544814, NSE KNACK)",Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/KNACK | origin/claude/qr-dycl-q2fy27-766ddd:runs/knack-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27_2026-10-28.md | retro/2026-11/census.csv
+KNACK,"Knack Packaging Ltd (BSE 544814, NSE KNACK)",Q4 FY26,retro/2026-11/census.csv
+KOTYARK,Kotyark Industries Ltd,Q1 FY27,retro/2026-11/census.csv
+KOTYARK,Kotyark Industries Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/KOTYARK | retro/2026-11/census.csv
+KPL,Kwality Pharmaceuticals Ltd,Q1 FY27,retro/2026-11/census.csv
+KPL,Kwality Pharmaceuticals Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/KPL | retro/2026-11/census.csv
+KPL,Kwality Pharmaceuticals Ltd,Q4 FY26,retro/2026-11/census.csv
+KRN,KRN Heat Exchanger and Refrigeration Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-0ffwkb:runs/krn-q1fy27 | retro/2026-11/census.csv
+KRN,KRN Heat Exchanger and Refrigeration Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/KRN | retro/2026-11/census.csv
+KRN,KRN Heat Exchanger and Refrigeration Ltd,Q4 FY26,retro/2026-11/census.csv
+KRONOX,Kronox Lab Sciences Ltd,Q1 FY27,retro/2026-11/census.csv
+KRONOX,Kronox Lab Sciences Ltd,Q4 FY26,retro/2026-11/census.csv
+KROSS,Kross Ltd (Kross Limited),Q1 FY27,retro/2026-11/census.csv
+KROSS,Kross Ltd (Kross Limited),Q2/H1 FY27,origin/run/quarterly-q2fy27-2026-10-19:runs/kross-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Overnight_Review_2026-10-20.md | retro/2026-11/census.csv
+KROSS,Kross Ltd (Kross Limited),Q4 FY26,retro/2026-11/census.csv
+KSOLVES,Ksolves India Ltd,Q1 FY27,origin/claude/k-solve-quarterly-analysis-23wdwl:runs/ksolves-q1fy27 | retro/2026-11/census.csv
+KSOLVES,Ksolves India Ltd,Q4 FY26,retro/2026-11/census.csv
+KUSUMGAR,Kusumgar Ltd,Q2/H1 FY27,retro/2026-11/census.csv
+KUSUMGAR,Kusumgar Ltd,Q4 FY26,retro/2026-11/census.csv
+KWICK,Kwick Forensic Solutions Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/544895 | retro/2026-11/census.csv
+KWICK,Kwick Forensic Solutions Ltd,Q4 FY26,retro/2026-11/census.csv
+LAXMIINDIA,Laxmi India Finance Ltd,Q1 FY27,origin/claude/laxmi-quarterly-results-nk7iej:runs/laxmiindia-q1fy27 | retro/2026-11/census.csv
+LAXMIINDIA,Laxmi India Finance Ltd,Q4 FY26,retro/2026-11/census.csv
+LTELEVATOR,L. T. Elevator Limited (BSE 544518),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/544518 | retro/2026-11/census.csv
+LTELEVATOR,L. T. Elevator Limited (BSE 544518),Q4 FY26,retro/2026-11/census.csv
+LT,Larsen & Toubro Ltd,Q1 FY27,retro/2026-11/census.csv
+LT,Larsen & Toubro Ltd,Q2/H1 FY27,origin/claude/qr-lt-q2fy27-6d55c1:runs/lt-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27.md | retro/2026-11/census.csv
+LT,Larsen & Toubro Ltd,Q4 FY26,retro/2026-11/census.csv
+MACPOWER,Macpower CNC Machines Ltd,Q1 FY27,retro/2026-11/census.csv
+MACPOWER,Macpower CNC Machines Ltd,Q4 FY26,retro/2026-11/census.csv
+MANAKSTEEL,Manaksia Steels,Q1 FY27,retro/2026-11/census.csv
+MANAKSTEEL,Manaksia Steels,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/MANAKSTEEL | retro/2026-11/census.csv
+MANAKSTEEL,Manaksia Steels,Q4 FY26,retro/2026-11/census.csv
+MANINDS,Man Industries (India) Ltd,Q1 FY27,retro/2026-11/census.csv
+MANINDS,Man Industries (India) Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/MANINDS | retro/2026-11/census.csv
+MANINDS,Man Industries (India) Ltd,Q4 FY26,retro/2026-11/census.csv
+MANORAMA,Manorama Industries,Q1 FY27,retro/2026-11/census.csv
+MANORAMA,Manorama Industries,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/MANORAMA | retro/2026-11/census.csv
+MANORAMA,Manorama Industries,Q4 FY26,retro/2026-11/census.csv
+MAPMYINDIA,C.E. Info Systems Ltd (MapmyIndia),Q1 FY27,origin/claude/map-my-india-quarterly-analysis-43nbwc:runs/mapmyindia-q1fy27 | retro/2026-11/census.csv
+MAPMYINDIA,C.E. Info Systems Ltd (MapmyIndia),Q4 FY26,retro/2026-11/census.csv
+MARUSHIKA,Marushika Technology Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/MARUSHIKA | retro/2026-11/census.csv
+MARUSHIKA,Marushika Technology Ltd,Q4 FY26,retro/2026-11/census.csv
+MAXIND,Max India Ltd,Q1 FY27,origin/claude/max-india-earnings-analysis-2pm9im:runs/maxind-q1fy27
+MAXIND,Max India Ltd,Q4 FY26,retro/2026-11/census.csv
+MCFOS,"Macfos Limited (BSE: ROBU, 543787)",Q1 FY27,origin/claude/mcfos-quarterly-analysis-n1t1pq:runs/mcfos-q1fy27 | retro/2026-11/census.csv
+MCFOS,"Macfos Limited (BSE: ROBU, 543787)",Q4 FY26,retro/2026-11/census.csv
+MENONBE,Menon Bearings Ltd (BSE 523828),Q1 FY27,retro/2026-11/census.csv
+MENONBE,Menon Bearings Ltd (BSE 523828),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/MENONBE | QuarterlyReviewer/reviews/2026-10-30_1549/MENONBE | retro/2026-11/census.csv
+MENONBE,Menon Bearings Ltd (BSE 523828),Q4 FY26,retro/2026-11/census.csv
+MIDHANI,Mishra Dhatu Nigam Ltd (government-owned 74%),Q1 FY27,retro/2026-11/census.csv
+MIDHANI,Mishra Dhatu Nigam Ltd (government-owned 74%),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/MIDHANI | retro/2026-11/census.csv
+MIDHANI,Mishra Dhatu Nigam Ltd (government-owned 74%),Q4 FY26,retro/2026-11/census.csv
+MILLWORKS,Millworks Technologies Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/544826 | retro/2026-11/census.csv
+MILLWORKS,Millworks Technologies Limited,Q4 FY26,retro/2026-11/census.csv
+MMP,MMP Industries Ltd,Q1 FY27,retro/2026-11/census.csv
+MMP,MMP Industries Ltd,Q4 FY26,retro/2026-11/census.csv
+MODISONLTD,Modison Ltd,Q1 FY27,retro/2026-11/census.csv
+MODISONLTD,Modison Ltd,Q4 FY26,retro/2026-11/census.csv
+MOLDTKPAC,Mold-Tek Packaging Ltd,Q1 FY27,retro/2026-11/census.csv
+MOLDTKPAC,Mold-Tek Packaging Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/MOLDTKPAC | retro/2026-11/census.csv
+MOLDTKPAC,Mold-Tek Packaging Ltd,Q4 FY26,retro/2026-11/census.csv
+MPSLTD,MPS Ltd,Q1 FY27,retro/2026-11/census.csv
+MPSLTD,MPS Ltd,Q4 FY26,retro/2026-11/census.csv
+MSTCLTD,MSTC Limited,Q1 FY27,retro/2026-11/census.csv
+MSTCLTD,MSTC Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/MSTCLTD | retro/2026-11/census.csv
+MSTCLTD,MSTC Limited,Q4 FY26,retro/2026-11/census.csv
+MTARTECH,MTAR Technologies Ltd,Q1 FY27,origin/claude/mtar-annual-reports-qo0c39:runs/mtar-q1fy27 | retro/2026-11/census.csv
+MTARTECH,MTAR Technologies Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/MTARTECH | retro/2026-11/census.csv
+MTARTECH,MTAR Technologies Ltd,Q4 FY26,retro/2026-11/census.csv
+MUFTI,Credo Brands Marketing Ltd,Q1 FY27,origin/claude/credo-quarterly-analysis-r7tbey:runs/credo-q1fy27 | retro/2026-11/census.csv
+MUFTI,Credo Brands Marketing Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/MUFTI | retro/2026-11/census.csv
+MUFTI,Credo Brands Marketing Ltd,Q4 FY26,retro/2026-11/census.csv
+NEOCHEM,Neochem Bio Solutions Ltd,Q2/H1 FY27,origin/claude/qr-neochem-q2fy27-76041a:runs/neochem-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27_2026-10-28.md | retro/2026-11/census.csv
+NEOCHEM,Neochem Bio Solutions Ltd,Q4 FY26,retro/2026-11/census.csv
+NEPHROPLUS,Nephrocare Health Services Ltd (NephroPlus),Q1 FY27,origin/claude/nephro-plus-quarterly-analysis-vqj5xc:runs/nephroplus-q1fy27 | retro/2026-11/census.csv
+NEPHROPLUS,Nephrocare Health Services Ltd (NephroPlus),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/NEPHROPLUS | retro/2026-11/census.csv
+NEPHROPLUS,Nephrocare Health Services Ltd (NephroPlus),Q4 FY26,retro/2026-11/census.csv
+NETWEB,Netweb Technologies India Ltd,Q1 FY27,origin/claude/netweb-results-analysis-qb5mas:runs/netweb-q1fy27 | retro/2026-11/census.csv
+NETWEB,Netweb Technologies India Ltd,Q2/H1 FY27,origin/claude/qr-dycl-q2fy27-766ddd:runs/netweb-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27_2026-10-28.md | retro/2026-11/census.csv
+NETWEB,Netweb Technologies India Ltd,Q4 FY26,retro/2026-11/census.csv
+NINSYS,NINtec Systems Limited,Q1 FY27,retro/2026-11/census.csv
+NINSYS,NINtec Systems Limited,Q2/H1 FY27,retro/2026-11/census.csv
+NORTHARC,Northern Arc Capital Ltd,Q4 FY26,retro/2026-11/census.csv
+NRAIL,N R Agarwal Industries Ltd,Q1 FY27,retro/2026-11/census.csv
+NRAIL,N R Agarwal Industries Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/NRAIL | retro/2026-11/census.csv
+NRAIL,N R Agarwal Industries Ltd,Q4 FY26,retro/2026-11/census.csv
+OBSCP,OBSC Perfection Ltd,Q4 FY26,retro/2026-11/census.csv
+ONWARDTEC,Onward Technologies Ltd,Q1 FY27,retro/2026-11/census.csv
+ONWARDTEC,Onward Technologies Ltd,Q2/H1 FY27,retro/2026-11/census.csv
+ONWARDTEC,Onward Technologies Ltd,Q4 FY26,retro/2026-11/census.csv
+ORCHPHARMA,Orchid Pharma Ltd,Q1 FY27,retro/2026-11/census.csv
+ORCHPHARMA,Orchid Pharma Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/ORCHPHARMA | retro/2026-11/census.csv
+ORCHPHARMA,Orchid Pharma Ltd,Q4 FY26,retro/2026-11/census.csv
+OSWAL,Oswal Pumps Ltd,Q1 FY27,origin/claude/oswal-pumps-q1-analysis-si2lg8:runs/oswal-q1fy27 | retro/2026-11/census.csv
+OSWAL,Oswal Pumps Ltd,Q4 FY26,retro/2026-11/census.csv
+PACEDIGITK,Pace Digitek Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-vx8dc4:runs/pacedigitk-q1fy27 | retro/2026-11/census.csv
+PACEDIGITK,Pace Digitek Ltd,Q4 FY26,retro/2026-11/census.csv
+PAISALO,Paisalo Digital Ltd,Q1 FY27,origin/claude/quarterly-results-protocol-dlltuf:runs/paisalo-q1fy27 | retro/2026-11/census.csv
+PAISALO,Paisalo Digital Ltd,Q2/H1 FY27,origin/claude/quarterly-paisalo-q2fy27-095262:runs/paisalo-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27.md | retro/2026-11/census.csv
+PAISALO,Paisalo Digital Ltd,Q4 FY26,retro/2026-11/census.csv
+PARACABLES,Paramount Communications Ltd,Q1 FY27,retro/2026-11/census.csv
+PARACABLES,Paramount Communications Ltd,Q2/H1 FY27,origin/claude/qr-dycl-q2fy27-766ddd:runs/paracables-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27_2026-10-28.md | retro/2026-11/census.csv
+PARACABLES,Paramount Communications Ltd,Q4 FY26,retro/2026-11/census.csv
+PARKHOSPS,Park Medi World Limited,Q1 FY27,origin/claude/quarterly-results-analysis-qj2kqr:runs/parkhosps-q1fy27 | retro/2026-11/census.csv
+PARKHOSPS,Park Medi World Limited,Q4 FY26,retro/2026-11/census.csv
+PARTH,Parth Electricals & Engineering Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/PARTH | retro/2026-11/census.csv
+PARTH,Parth Electricals & Engineering Ltd,Q4 FY26,retro/2026-11/census.csv
+PAUSHAK,Paushak Limited,Q1 FY27,origin/claude/paushak-quarterly-analysis-1lg8ur:runs/paushak-q1fy27 | retro/2026-11/census.csv
+PAUSHAK,Paushak Limited,Q4 FY26,retro/2026-11/census.csv
+PERMAGNET,Permagnet (Permanent Magnets Ltd),Q1 FY27,retro/2026-11/census.csv
+PERMAGNET,Permagnet (Permanent Magnets Ltd),Q4 FY26,retro/2026-11/census.csv
+PINELABS,Pine Labs,Q1 FY27,retro/2026-11/census.csv
+PINELABS,Pine Labs,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/PINELABS | retro/2026-11/census.csv
+PINELABS,Pine Labs,Q4 FY26,retro/2026-11/census.csv
+PITTIENG,Pitti Engineering Ltd,Q1 FY27,retro/2026-11/census.csv
+PITTIENG,Pitti Engineering Ltd,Q2/H1 FY27,origin/claude/quarterly-pittieng-q2fy27-3fc1e6:runs/pittieng-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27.md | retro/2026-11/census.csv
+PITTIENG,Pitti Engineering Ltd,Q4 FY26,retro/2026-11/census.csv
+PNGJL,P N Gadgil Jewellers,Q1 FY27,retro/2026-11/census.csv
+PNGJL,P N Gadgil Jewellers,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/PNGJL | retro/2026-11/census.csv
+PNGSREVA,PNGS Reva Diamond Jewellery Ltd,Q1 FY27,origin/claude/cool-euler-1on89m:runs/pngs-q1fy27 | retro/2026-11/census.csv
+PNGSREVA,PNGS Reva Diamond Jewellery Ltd,Q4 FY26,retro/2026-11/census.csv
+POONAWALLA,Poonawalla Fincorp Ltd,Q1 FY27,retro/2026-11/census.csv
+POONAWALLA,Poonawalla Fincorp Ltd,Q2/H1 FY27,origin/run/quarterly-q2fy27-2026-10-17:runs/poonawalla-q2fy27 | retro/2026-11/census.csv
+POONAWALLA,Poonawalla Fincorp Ltd,Q4 FY26,retro/2026-11/census.csv
+PREMEXPLN,Premier Explosives Ltd,Q1 FY27,retro/2026-11/census.csv
+PREMEXPLN,Premier Explosives Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/PREMEXPLN | retro/2026-11/census.csv
+PREMEXPLN,Premier Explosives Ltd,Q4 FY26,retro/2026-11/census.csv
+PREMIERPOL,Premier Polyfilm Limited,Q1 FY27,retro/2026-11/census.csv
+PREMIERPOL,Premier Polyfilm Limited,Q2/H1 FY27,origin/run/quarterly-q2fy27-2026-10-17:runs/premierpol-q2fy27 | retro/2026-11/census.csv
+PREMIERPOL,Premier Polyfilm Limited,Q4 FY26,retro/2026-11/census.csv
+PRIZOR,Prizor Viztech Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/PRIZOR | retro/2026-11/census.csv
+PRIZOR,Prizor Viztech Ltd,Q4 FY26,retro/2026-11/census.csv
+PVRINOX,PVR Inox Ltd,Q1 FY27,retro/2026-11/census.csv
+PVRINOX,PVR Inox Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/PVRINOX | retro/2026-11/census.csv
+PVRINOX,PVR Inox Ltd,Q4 FY26,retro/2026-11/census.csv
+QLINE,Q-Line Biotech Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/QLINE | retro/2026-11/census.csv
+QLINE,Q-Line Biotech Ltd,Q4 FY26,retro/2026-11/census.csv
+QLL,"Qualitek Labs Ltd (QLL / QUALITEK, BSE 544091)",Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/544091 | retro/2026-11/census.csv
+QLL,"Qualitek Labs Ltd (QLL / QUALITEK, BSE 544091)",Q4 FY26,retro/2026-11/census.csv
+QMSMEDI,QMS Medical Allied Services Ltd,Q1 FY27,retro/2026-11/census.csv
+QMSMEDI,QMS Medical Allied Services Ltd,Q4 FY26,retro/2026-11/census.csv
+QPOWER,Quality Power Electrical Equipments Ltd,Q1 FY27,origin/claude/qpower-q1-fy27-notion-6lgxlt:runs/qpower-q1fy27 | retro/2026-11/census.csv
+QPOWER,Quality Power Electrical Equipments Ltd,Q2/H1 FY27,origin/run/quarterly-q2fy27-2026-10-19:runs/qpower-q2fy27
+QPOWER,Quality Power Electrical Equipments Ltd,Q4 FY26,retro/2026-11/census.csv
+RAMRAT,Ram Ratna Wires Ltd,Q1 FY27,origin/claude/ram-ratna-quarterly-analysis-0161le:runs/ramrat-q1fy27 | retro/2026-11/census.csv
+RAMRAT,Ram Ratna Wires Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/RAMRAT | retro/2026-11/census.csv
+RAMRAT,Ram Ratna Wires Ltd,Q4 FY26,retro/2026-11/census.csv
+RAPPID,Rappid Valves (India) Ltd,Q1 FY27,retro/2026-11/census.csv
+RAPPID,Rappid Valves (India) Ltd,Q4 FY26,retro/2026-11/census.csv
+RATEGAIN,RateGain Travel Technologies Limited,Q1 FY27,origin/claude/red-grain-quarterly-results-1xrd0f:runs/rategain-q1fy27 | retro/2026-11/census.csv
+RATEGAIN,RateGain Travel Technologies Limited,Q4 FY26,retro/2026-11/census.csv
+RATHIST,Rathi Steel & Power Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-lft8iz:runs/rathist-q1fy27 | retro/2026-11/census.csv
+RATHIST,Rathi Steel & Power Ltd,Q4 FY26,retro/2026-11/census.csv
+RAYMONDLSL,Raymond Lifestyle Ltd (BSE 544240),Q1 FY27,retro/2026-11/census.csv
+RAYMONDLSL,Raymond Lifestyle Ltd (BSE 544240),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/RAYMONDLSL | QuarterlyReviewer/reviews/2026-11-05_0536/RAYMONDLSL | retro/2026-11/census.csv
+RAYMONDLSL,Raymond Lifestyle Ltd (BSE 544240),Q4 FY26,retro/2026-11/census.csv
+RAYMONDREL,Raymond Realty Ltd,Q1 FY27,origin/claude/raymond-realty-q1-fy27-h5wmo2:runs/raymondrealty-q1fy27 | retro/2026-11/census.csv
+RAYMONDREL,Raymond Realty Ltd,Q2/H1 FY27,origin/claude/qr-dycl-q2fy27-766ddd:runs/raymondrel-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27_2026-10-28.md | retro/2026-11/census.csv
+RAYMONDREL,Raymond Realty Ltd,Q4 FY26,retro/2026-11/census.csv
+RBA,Restaurant Brands Asia Ltd,Q1 FY27,retro/2026-11/census.csv
+RBA,Restaurant Brands Asia Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/RBA | QuarterlyReviewer/reviews/2026-10-30_1549/RBA | retro/2026-11/census.csv
+RBA,Restaurant Brands Asia Ltd,Q4 FY26,retro/2026-11/census.csv
+REFEX,"Refex Industries Ltd (BSE 532884, NSE REFEX)",Q1 FY27,retro/2026-11/census.csv
+REFEX,"Refex Industries Ltd (BSE 532884, NSE REFEX)",Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/REFEX | retro/2026-11/census.csv
+REFEX,"Refex Industries Ltd (BSE 532884, NSE REFEX)",Q4 FY26,retro/2026-11/census.csv
+RKFORGE,Ramkrishna Forgings Ltd,Q1 FY27,retro/2026-11/census.csv
+RKFORGE,Ramkrishna Forgings Ltd,Q2/H1 FY27,retro/2026-11/census.csv
+RKFORGE,Ramkrishna Forgings Ltd,Q4 FY26,retro/2026-11/census.csv
+ROUTE,Route Mobile Limited,Q1 FY27,origin/claude/route-mobile-quarterly-pkqpxv:runs/route-q1fy27 | retro/2026-11/census.csv
+ROUTE,Route Mobile Limited,Q2/H1 FY27,origin/claude/qr-route-q2fy27-fb3514:runs/route-q2fy27 | retro/2026-11/census.csv
+ROUTE,Route Mobile Limited,Q4 FY26,retro/2026-11/census.csv
+ROXHITECH,ROX Hi-Tech Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/ROXHITECH | retro/2026-11/census.csv
+ROXHITECH,ROX Hi-Tech Ltd,Q4 FY26,retro/2026-11/census.csv
+RPTECH,Rashi Peripherals Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-o83a25:runs/rptech-q1fy27 | retro/2026-11/census.csv
+RPTECH,Rashi Peripherals Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/RPTECH | retro/2026-11/census.csv
+RPTECH,Rashi Peripherals Ltd,Q4 FY26,retro/2026-11/census.csv
+RSYSTEMS,R Systems International Limited,Q1 FY27,origin/claude/quarterly-results-analysis-j2wrxj:runs/rsystems-q2cy26 | retro/2026-11/census.csv
+RSYSTEMS,R Systems International Limited,Q4 FY26,retro/2026-11/census.csv
+RUBYMILLS,The Ruby Mills Ltd,Q1 FY27,retro/2026-11/census.csv
+RUBYMILLS,The Ruby Mills Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/RUBYMILLS | retro/2026-11/census.csv
+RUBYMILLS,The Ruby Mills Ltd,Q4 FY26,retro/2026-11/census.csv
+SAHASRA,Sahasra Electronic Solutions Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/SAHASRA | retro/2026-11/census.csv
+SAHASRA,Sahasra Electronic Solutions Ltd,Q4 FY26,retro/2026-11/census.csv
+SAKAR,Sakar Healthcare Ltd,Q1 FY27,retro/2026-11/census.csv
+SAKAR,Sakar Healthcare Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/SAKAR | retro/2026-11/census.csv
+SAKAR,Sakar Healthcare Ltd,Q4 FY26,retro/2026-11/census.csv
+SAMBHV,Sambhv Steel Tubes Ltd,Q1 FY27,origin/claude/availability-check-oyrf2l:runs/sambhv-q1fy27 | retro/2026-11/census.csv
+SAMBHV,Sambhv Steel Tubes Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/SAMBHV | retro/2026-11/census.csv
+SAMBHV,Sambhv Steel Tubes Ltd,Q4 FY26,retro/2026-11/census.csv
+SAMHI,SAMHI Hotels,Q1 FY27,origin/claude/quarterly-results-analysis-b66fgh:runs/samhi-q1fy27 | retro/2026-11/census.csv
+SAMHI,SAMHI Hotels,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/SAMHI | retro/2026-11/census.csv
+SAMHI,SAMHI Hotels,Q4 FY26,retro/2026-11/census.csv
+SAMMAANCAP,Sammaan Capital Limited,Q1 FY27,origin/claude/quarterly-results-analysis-b1d9jd:runs/sammaancap-q1fy27 | retro/2026-11/census.csv
+SAMMAANCAP,Sammaan Capital Limited,Q4 FY26,retro/2026-11/census.csv
+SANATHAN,Sanathan Textiles Ltd,Q1 FY27,retro/2026-11/census.csv
+SANATHAN,Sanathan Textiles Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/SANATHAN | retro/2026-11/census.csv
+SANATHAN,Sanathan Textiles Ltd,Q4 FY26,retro/2026-11/census.csv
+SASKEN,Sasken Technologies,Q1 FY27,origin/claude/sasken-quarterly-analysis-xgjg0m:runs/sasken-q1fy27 | retro/2026-11/census.csv
+SASKEN,Sasken Technologies,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/SASKEN | retro/2026-11/census.csv
+SASKEN,Sasken Technologies,Q4 FY26,retro/2026-11/census.csv
+SATIN,Satin Creditcare Network Ltd,Q1 FY27,origin/claude/quarterly-credit-care-analysis-pjrg9x:runs/satin-q1fy27 | retro/2026-11/census.csv
+SATIN,Satin Creditcare Network Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/SATIN | retro/2026-11/census.csv
+SATIN,Satin Creditcare Network Ltd,Q4 FY26,retro/2026-11/census.csv
+SCODATUBES,Scoda Tubes Limited,Q1 FY27,origin/claude/quarterly-results-analysis-91a9t7:runs/scodatubes-q1fy27 | retro/2026-11/census.csv
+SCODATUBES,Scoda Tubes Limited,Q4 FY26,retro/2026-11/census.csv
+SEDEMAC,SEDEMAC Mechatronics Ltd,Q1 FY27,origin/claude/sedemac-quarterly-analysis-4k2otx:runs/sedemac-q1fy27 | retro/2026-11/census.csv
+SEDEMAC,SEDEMAC Mechatronics Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/SEDEMAC | retro/2026-11/census.csv
+SEDEMAC,SEDEMAC Mechatronics Ltd,Q4 FY26,retro/2026-11/census.csv
+SFL,Sheela Foam Ltd,Q1 FY27,origin/claude/sheela-quarterly-results-zxbbvj:runs/sfl-q1fy27 | retro/2026-11/census.csv
+SFL,Sheela Foam Ltd,Q4 FY26,retro/2026-11/census.csv
+SHADOWFAX,Shadowfax Technologies Ltd,Q1 FY27,retro/2026-11/census.csv
+SHADOWFAX,Shadowfax Technologies Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/SHADOWFAX | retro/2026-11/census.csv
+SHADOWFAX,Shadowfax Technologies Ltd,Q4 FY26,retro/2026-11/census.csv
+SHAREINDIA,Share India Securities Ltd,Q1 FY27,retro/2026-11/census.csv
+SHAREINDIA,Share India Securities Ltd,Q4 FY26,retro/2026-11/census.csv
+SHARIKA,Sharika Enterprises Limited,Q1 FY27,origin/claude/quarterly-results-analysis-01wssj:runs/sharika-q1fy27 | retro/2026-11/census.csv
+SHARIKA,Sharika Enterprises Limited,Q4 FY26,retro/2026-11/census.csv
+SHAWGELTIN,Narmada Gelatines Ltd,Q1 FY27,retro/2026-11/census.csv
+SHAWGELTIN,Narmada Gelatines Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/SHAWGELTIN | retro/2026-11/census.csv
+SHAWGELTIN,Narmada Gelatines Ltd,Q4 FY26,retro/2026-11/census.csv
+SHHARICH,Shree Hari Chemicals Export Ltd,Q1 FY27,retro/2026-11/census.csv
+SHHARICH,Shree Hari Chemicals Export Ltd,Q4 FY26,retro/2026-11/census.csv
+SHILCTECH,Shilchar Technologies Ltd,Q1 FY27,retro/2026-11/census.csv
+SHILCTECH,Shilchar Technologies Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-29_1735/SHILCTECH | retro/2026-11/census.csv
+SHILCTECH,Shilchar Technologies Ltd,Q4 FY26,retro/2026-11/census.csv
+SHILPAMED,Shilpa Medicare Ltd,Q1 FY27,retro/2026-11/census.csv
+SHILPAMED,Shilpa Medicare Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/SHILPAMED | retro/2026-11/census.csv
+SHILPAMED,Shilpa Medicare Ltd,Q4 FY26,retro/2026-11/census.csv
+SHK,S H Kelkar and Company Ltd,Q1 FY27,retro/2026-11/census.csv
+SHK,S H Kelkar and Company Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/SHK | retro/2026-11/census.csv
+SHK,S H Kelkar and Company Ltd,Q4 FY26,retro/2026-11/census.csv
+SHYAMMETL,Shyam Metalics and Energy Ltd,Q4 FY26,retro/2026-11/census.csv
+SICALLOG,Sical Logistics Ltd,Q4 FY26,retro/2026-11/census.csv
+SILVERTUC,Silver Touch Technologies Ltd,Q1 FY27,retro/2026-11/census.csv
+SILVERTUC,Silver Touch Technologies Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/SILVERTUC | retro/2026-11/census.csv
+SJLOGISTIC,S J Logistics (India) Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/SJLOGISTIC | retro/2026-11/census.csv
+SJLOGISTIC,S J Logistics (India) Ltd,Q4 FY26,retro/2026-11/census.csv
+SKYGOLD,Sky Gold and Diamonds Ltd,Q1 FY27,retro/2026-11/census.csv
+SKYGOLD,Sky Gold and Diamonds Ltd,Q2/H1 FY27,origin/claude/qr-skygold-q2fy27-7e1298:runs/skygold-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27_2026-10-28.md | retro/2026-11/census.csv
+SKYGOLD,Sky Gold and Diamonds Ltd,Q4 FY26,retro/2026-11/census.csv
+SMRUTHI,Smruthi Organics Ltd,Q1 FY27,retro/2026-11/census.csv
+SMRUTHI,Smruthi Organics Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/540686 | retro/2026-11/census.csv
+SMRUTHI,Smruthi Organics Ltd,Q4 FY26,retro/2026-11/census.csv
+SONACOMS,Sona BLW Precision Forgings Ltd (Sona Comstar),Q1 FY27,claude/step1-anawil-158c6b:runs/sona-q1fy27 | retro/2026-11/census.csv
+SONACOMS,Sona BLW Precision Forgings Ltd (Sona Comstar),Q2/H1 FY27,origin/claude/qr-dycl-q2fy27-766ddd:runs/sonacoms-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27_2026-10-28.md | retro/2026-11/census.csv
+SONACOMS,Sona BLW Precision Forgings Ltd (Sona Comstar),Q4 FY26,retro/2026-11/census.csv
+SOUTHWEST,South West Pinnacle Exploration Ltd,Q1 FY27,origin/claude/southrest-quarterly-results-wo3ltt:runs/southwest-q1fy27 | retro/2026-11/census.csv
+SOUTHWEST,South West Pinnacle Exploration Ltd,Q2/H1 FY27,run/southwest-q2fy27:runs/southwest-q2fy27 | retro/2026-11/census.csv
+SOUTHWEST,South West Pinnacle Exploration Ltd,Q4 FY26,retro/2026-11/census.csv
+SPAPPAREL,S.P. Apparels Ltd,Q1 FY27,origin/claude/sp-apparel-quarterly-analysis-q2eld6:runs/spapparel-q1fy27 | retro/2026-11/census.csv
+SPAPPAREL,S.P. Apparels Ltd,Q4 FY26,retro/2026-11/census.csv
+SPECTRUM,Spectrum Electrical Industries Ltd,Q1 FY27,retro/2026-11/census.csv
+SPECTRUM,Spectrum Electrical Industries Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-10_1512/SPECTRUM | retro/2026-11/census.csv
+SPECTRUM,Spectrum Electrical Industries Ltd,Q4 FY26,retro/2026-11/census.csv
+SPROP,Shriram Properties Limited,Q1 FY27,origin/claude/shriram-properties-quarterly-8swem6:runs/sprop-q1fy27 | retro/2026-11/census.csv
+SPROP,Shriram Properties Limited,Q4 FY26,retro/2026-11/census.csv
+SRM,SRM Contractors Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-u9lgke:runs/srm-q1fy27 | retro/2026-11/census.csv
+SRM,SRM Contractors Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/SRM | retro/2026-11/census.csv
+SRM,SRM Contractors Ltd,Q4 FY26,retro/2026-11/census.csv
+SSWL,Steel Strips Wheels Ltd,Q1 FY27,retro/2026-11/census.csv
+SSWL,Steel Strips Wheels Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/SSWL | retro/2026-11/census.csv
+SSWL,Steel Strips Wheels Ltd,Q4 FY26,retro/2026-11/census.csv
+STALLION,Stallion India Fluorochemicals Limited,Q1 FY27,origin/claude/australian-india-quarterly-results-wiv2a8:runs/stallion-q1fy27 | retro/2026-11/census.csv
+STALLION,Stallion India Fluorochemicals Limited,Q4 FY26,retro/2026-11/census.csv
+STEAMHOUSE,Steamhouse India Ltd,Q1 FY27,retro/2026-11/census.csv
+STEAMHOUSE,Steamhouse India Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/STEAMHOUSE | retro/2026-11/census.csv
+STLTECH,Sterlite Technologies Ltd,Q1 FY27,origin/claude/extra-light-quarterly-analysis-befw6c:runs/stltech-q1fy27 | retro/2026-11/census.csv
+STLTECH,Sterlite Technologies Ltd,Q4 FY26,retro/2026-11/census.csv
+STYL,Seshaasai Technologies Ltd,Q1 FY27,origin/claude/sesha-sai-analysis-t7sqgg:runs/styl-q1fy27 | retro/2026-11/census.csv
+STYL,Seshaasai Technologies Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/STYL | retro/2026-11/census.csv
+STYL,Seshaasai Technologies Ltd,Q4 FY26,retro/2026-11/census.csv
+SUDARCOLOR,Sudarshan Colorants India Ltd (formerly Heubach Colorants India Ltd; earlier Clariant Chemicals (India) Ltd),Q2/H1 FY27,retro/2026-11/census.csv
+SUDARCOLOR,Sudarshan Colorants India Ltd (formerly Heubach Colorants India Ltd; earlier Clariant Chemicals (India) Ltd),Q4 FY26,retro/2026-11/census.csv
+SUGSLLOYD,Sugs Lloyd Limited,Q1 FY27,origin/claude/sugs-lyod-results-analysis-sa8wi5:runs/sugslloyd-q1fy27 | retro/2026-11/census.csv
+SUGSLLOYD,Sugs Lloyd Limited,Q4 FY26,retro/2026-11/census.csv
+SUPREMEPWR,Supreme Power Equipment Ltd,Q1 FY27,retro/2026-11/census.csv
+SUPREMEPWR,Supreme Power Equipment Ltd,Q2/H1 FY27,origin/claude/quarterly-supremepower-q2fy27-7e9233:runs/supremepwr-h1fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27.md | retro/2026-11/census.csv
+SUPREMEPWR,Supreme Power Equipment Ltd,Q4 FY26,retro/2026-11/census.csv
+SUSAN,Susan Electricals India Ltd,Q1 FY27,retro/2026-11/census.csv
+SUSAN,Susan Electricals India Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/544793 | retro/2026-11/census.csv
+SUSAN,Susan Electricals India Ltd,Q4 FY26,retro/2026-11/census.csv
+SYNGENE,Syngene International Ltd,Q1 FY27,retro/2026-11/census.csv
+SYNGENE,Syngene International Ltd,Q2/H1 FY27,origin/claude/qr-dycl-q2fy27-766ddd:runs/syngene-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27_2026-10-28.md | retro/2026-11/census.csv
+SYNGENE,Syngene International Ltd,Q4 FY26,retro/2026-11/census.csv
+SYSTANGO,Systango Technologies Ltd,Q4 FY26,retro/2026-11/census.csv
+TAALTECH,TAAL Tech Ltd,Q1 FY27,retro/2026-11/census.csv
+TAALTECH,TAAL Tech Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/TAALTECH | retro/2026-11/census.csv
+TAALTECH,TAAL Tech Ltd,Q4 FY26,retro/2026-11/census.csv
+TATACOMM,Tata Communications Limited,Q1 FY27,retro/2026-11/census.csv
+TATACOMM,Tata Communications Limited,Q2/H1 FY27,origin/run/quarterly-q2fy27-2026-10-17:runs/tatacomm-q2fy27 | retro/2026-11/census.csv
+TATACOMM,Tata Communications Limited,Q4 FY26,retro/2026-11/census.csv
+TATAPOWER,Tata Power Co Ltd,Q1 FY27,origin/claude/tata-power-analysis-2x2wx8:runs/tatapower-q1fy27 | retro/2026-11/census.csv
+TATAPOWER,Tata Power Co Ltd,Q4 FY26,retro/2026-11/census.csv
+TATVA,Tatva Chintan Pharma Chem Ltd,Q1 FY27,origin/claude/quarterly-analysis-agent-z2p3ps:runs/tatva-q1fy27 | retro/2026-11/census.csv
+TATVA,Tatva Chintan Pharma Chem Ltd,Q2/H1 FY27,origin/run/quarterly-q2fy27-2026-10-19:runs/tatva-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Overnight_Review_2026-10-20.md | retro/2026-11/census.csv
+TATVA,Tatva Chintan Pharma Chem Ltd,Q4 FY26,retro/2026-11/census.csv
+TAURIAN,Taurian MPS Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-04_1003/TAURIAN | retro/2026-11/census.csv
+TAURIAN,Taurian MPS Ltd,Q4 FY26,retro/2026-11/census.csv
+TCPLPACK,TCPL Packaging Ltd,Q1 FY27,retro/2026-11/census.csv
+TCPLPACK,TCPL Packaging Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/TCPLPACK | retro/2026-11/census.csv
+TCPLPACK,TCPL Packaging Ltd,Q4 FY26,retro/2026-11/census.csv
+TDPOWERSYS,TD Power Systems Ltd,Q1 FY27,retro/2026-11/census.csv
+TDPOWERSYS,TD Power Systems Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/TDPOWERSYS | retro/2026-11/census.csv
+TDPOWERSYS,TD Power Systems Ltd,Q4 FY26,retro/2026-11/census.csv
+TEJASNET,Tejas Networks Ltd,Q1 FY27,origin/claude/tejas-network-quarterly-analysis-4mzxz3:runs/tejasnet-q1fy27 | retro/2026-11/census.csv
+TEJASNET,Tejas Networks Ltd,Q2/H1 FY27,origin/claude/quarterly-tejas-q2fy27-f91c3c:runs/tejasnet-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27.md | retro/2026-11/census.csv
+TEJASNET,Tejas Networks Ltd,Q4 FY26,retro/2026-11/census.csv
+TEMBO,Tembo Global Industries Ltd,Q1 FY27,retro/2026-11/census.csv
+TEMBO,Tembo Global Industries Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/TEMBO | retro/2026-11/census.csv
+TEMBO,Tembo Global Industries Ltd,Q4 FY26,retro/2026-11/census.csv
+TERASOFT,Tera Software Ltd,Q1 FY27,retro/2026-11/census.csv
+TERASOFT,Tera Software Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/TERASOFT | retro/2026-11/census.csv
+TERASOFT,Tera Software Ltd,Q4 FY26,retro/2026-11/census.csv
+TINNARUBR,Tinna Rubber and Infrastructure Ltd,Q1 FY27,retro/2026-11/census.csv
+TINNARUBR,Tinna Rubber and Infrastructure Ltd,Q2/H1 FY27,origin/claude/quarterly-tinna-q2fy27-d4fe1d:runs/tinnarubr-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27.md | retro/2026-11/census.csv
+TINNARUBR,Tinna Rubber and Infrastructure Ltd,Q4 FY26,retro/2026-11/census.csv
+TIPCO,TIPCO Engineering India (BSE 544740),Q1 FY27,retro/2026-11/census.csv
+TIPCO,TIPCO Engineering India (BSE 544740),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/544740 | retro/2026-11/census.csv
+TIPCO,TIPCO Engineering India (BSE 544740),Q4 FY26,retro/2026-11/census.csv
+TITANBIO,Titan Biotech Ltd,Q1 FY27,retro/2026-11/census.csv
+TITANBIO,Titan Biotech Ltd,Q4 FY26,retro/2026-11/census.csv
+TLL,Trident Lifeline Ltd,Q1 FY27,retro/2026-11/census.csv
+TLL,Trident Lifeline Ltd,Q4 FY26,retro/2026-11/census.csv
+TOTEM,Forbes Precision Tools & Machine Parts Ltd,Q1 FY27,retro/2026-11/census.csv
+TOTEM,Forbes Precision Tools & Machine Parts Ltd,Q4 FY26,retro/2026-11/census.csv
+TRANSRAIL,Transrail Lighting Ltd,Q1 FY27,origin/claude/transrail-quarterly-analysis-f7kqqf:runs/transrail-q1fy27 | retro/2026-11/census.csv
+TRANSRAIL,Transrail Lighting Ltd,Q4 FY26,retro/2026-11/census.csv
+TRUALT,TruAlt Bioenergy Ltd,Q1 FY27,origin/claude/truevault-quarterly-analysis-27abp5:runs/trualt-q1fy27 | retro/2026-11/census.csv
+TRUALT,TruAlt Bioenergy Ltd,Q4 FY26,retro/2026-11/census.csv
+TURTLEMINT,Turtlemint Fintech Solutions,Q1 FY27,retro/2026-11/census.csv
+TURTLEMINT,Turtlemint Fintech Solutions,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-13_0631/TURTLEMINT | retro/2026-11/census.csv
+TURTLEMINT,Turtlemint Fintech Solutions,Q4 FY26,retro/2026-11/census.csv
+UFBL,United Foodbrands Ltd (erstwhile Barbeque Nation Hospitality Ltd),Q1 FY27,origin/claude/united-food-investor-analysis-fdzhmr:runs/ufbl-q1fy27 | retro/2026-11/census.csv
+UFBL,United Foodbrands Ltd (erstwhile Barbeque Nation Hospitality Ltd),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/UFBL | retro/2026-11/census.csv
+UFBL,United Foodbrands Ltd (erstwhile Barbeque Nation Hospitality Ltd),Q4 FY26,retro/2026-11/census.csv
+UNIABEX,Uni Abex Alloy Products Limited,Q1 FY27,origin/claude/unipart-quarterly-analysis-5ky0ug:runs/uniabex-q1fy27 | retro/2026-11/census.csv
+UNIABEX,Uni Abex Alloy Products Limited,Q4 FY26,retro/2026-11/census.csv
+UNIHEALTH,Unihealth Hospitals Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/UNIHEALTH | retro/2026-11/census.csv
+UNIHEALTH,Unihealth Hospitals Ltd,Q4 FY26,retro/2026-11/census.csv
+UNIMECH,Unimech Aerospace and Manufacturing Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-ffii20:runs/unimech-q1fy27 | retro/2026-11/census.csv
+UNIMECH,Unimech Aerospace and Manufacturing Ltd,Q2/H1 FY27,origin/claude/qr-unimech-q2fy27-1b1895:runs/unimech-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27_2026-10-28.md | retro/2026-11/census.csv
+UNIMECH,Unimech Aerospace and Manufacturing Ltd,Q4 FY26,retro/2026-11/census.csv
+UNIPARTS,Uniparts India Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-9ef8ys:runs/uniparts-q1fy27 | retro/2026-11/census.csv
+UNIPARTS,Uniparts India Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/UNIPARTS | retro/2026-11/census.csv
+UNIPARTS,Uniparts India Ltd,Q4 FY26,retro/2026-11/census.csv
+URBANCO,Urban Company Limited,Q1 FY27,origin/claude/urban-company-quarterly-analysis-ib51ci:runs/urbanco-q1fy27 | retro/2026-11/census.csv
+URBANCO,Urban Company Limited,Q4 FY26,retro/2026-11/census.csv
+UTLSOLAR,Fujiyama Power Systems Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-324riy:runs/utlsolar-q1fy27 | retro/2026-11/census.csv
+UTLSOLAR,Fujiyama Power Systems Ltd,Q4 FY26,retro/2026-11/census.csv
+VAIBHAVGBL,Vaibhav Global Ltd,Q1 FY27,origin/claude/quarterly-results-analysis-h2f1ss:runs/vaibhavgbl-q1fy27 | retro/2026-11/census.csv
+VAIBHAVGBL,Vaibhav Global Ltd,Q4 FY26,retro/2026-11/census.csv
+VALIANTLAB,Valiant Laboratories Ltd,Q1 FY27,retro/2026-11/census.csv
+VALIANTLAB,Valiant Laboratories Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-03_0551/VALIANTLAB | retro/2026-11/census.csv
+VALIANTLAB,Valiant Laboratories Ltd,Q4 FY26,retro/2026-11/census.csv
+VENUSPIPES,Venus Pipes & Tubes,Q1 FY27,origin/claude/venus-pipes-q1-fy27-jtc505:runs/venuspipes-q1fy27 | retro/2026-11/census.csv
+VENUSPIPES,Venus Pipes & Tubes,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-15_0337/VENUSPIPES | retro/2026-11/census.csv
+VENUSPIPES,Venus Pipes & Tubes,Q4 FY26,retro/2026-11/census.csv
+VENUSREM,Venus Remedies Ltd,Q1 FY27,retro/2026-11/census.csv
+VENUSREM,Venus Remedies Ltd,Q4 FY26,retro/2026-11/census.csv
+VILAS,Vilas Transcore Ltd,Q4 FY26,retro/2026-11/census.csv
+VINCOFE,Vintage Coffee and Beverages Ltd,Q1 FY27,retro/2026-11/census.csv
+VINCOFE,Vintage Coffee and Beverages Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/VINCOFE | retro/2026-11/census.csv
+VINCOFE,Vintage Coffee and Beverages Ltd,Q4 FY26,retro/2026-11/census.csv
+VINYAS,Vinyas Innovative Technologies Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-12_0629/VINYAS | retro/2026-11/census.csv
+VINYAS,Vinyas Innovative Technologies Ltd,Q4 FY26,retro/2026-11/census.csv
+VIVIDEL,Vivid Electromech Limited,Q4 FY26,retro/2026-11/census.csv
+VOEPL,Virtuoso Optoelectronics Ltd,Q4 FY26,retro/2026-11/census.csv
+VRLLOG,VRL Logistics Ltd,Q1 FY27,retro/2026-11/census.csv
+VRLLOG,VRL Logistics Ltd,Q2/H1 FY27,retro/2026-11/census.csv
+VRLLOG,VRL Logistics Ltd,Q4 FY26,retro/2026-11/census.csv
+WALCHANNAG,Walchandnagar Industries Ltd,Q1 FY27,retro/2026-11/census.csv
+WALCHANNAG,Walchandnagar Industries Ltd,Q2/H1 FY27,retro/2026-11/census.csv
+WALCHANNAG,Walchandnagar Industries Ltd,Q4 FY26,retro/2026-11/census.csv
+WANBURY,Wanbury Ltd,Q1 FY27,retro/2026-11/census.csv
+WANBURY,Wanbury Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/WANBURY | retro/2026-11/census.csv
+WANBURY,Wanbury Ltd,Q4 FY26,retro/2026-11/census.csv
+WELCORP,Welspun Corp Limited,Q1 FY27,origin/claude/quarterly-results-analysis-06y8qn:runs/welcorp-q1fy27 | retro/2026-11/census.csv
+WELCORP,Welspun Corp Limited,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-10-30_1025/WELCORP | retro/2026-11/census.csv
+WELCORP,Welspun Corp Limited,Q4 FY26,retro/2026-11/census.csv
+WEWORK,WeWork India Management Ltd,Q1 FY27,retro/2026-11/census.csv
+WEWORK,WeWork India Management Ltd,Q2/H1 FY27,origin/claude/qr-dycl-q2fy27-766ddd:runs/wework-q2fy27 | ConcallPipeline/Q2 FY27 Results/_Operator_Briefs_Q2FY27_2026-10-28.md | retro/2026-11/census.csv
+WEWORK,WeWork India Management Ltd,Q4 FY26,retro/2026-11/census.csv
+WORKMATES,Workmates Core2Cloud Solution Ltd,Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-05_0536/WORKMATES | retro/2026-11/census.csv
+WORKMATES,Workmates Core2Cloud Solution Ltd,Q4 FY26,retro/2026-11/census.csv
+WTICAB,Wise Travel India Ltd (WTI Cabs),Q2/H1 FY27,QuarterlyReviewer/reviews/2026-11-16_0552/WTICAB | retro/2026-11/census.csv
+WTICAB,Wise Travel India Ltd (WTI Cabs),Q4 FY26,retro/2026-11/census.csv
+YASHHV,Yash Highvoltage Ltd,Q4 FY26,retro/2026-11/census.csv
+YASHO,Yasho Industries Ltd,Q1 FY27,retro/2026-11/census.csv
+YASHO,Yasho Industries Ltd,Q4 FY26,retro/2026-11/census.csv
+ZAGGLE,Zaggle Prepaid Ocean Services Ltd,Q4 FY26,retro/2026-11/census.csv
+ZEEL,Zee Entertainment Enterprises Ltd,Q1 FY27,origin/claude/zeel-quarterly-analysis-9i2r1v:runs/zeel-q1fy27 | retro/2026-11/census.csv
+ZEEL,Zee Entertainment Enterprises Ltd,Q4 FY26,retro/2026-11/census.csv
+ZOTA,Zota Health Care Ltd,Q4 FY26,retro/2026-11/census.csv

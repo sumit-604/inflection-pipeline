@@ -1,51 +1,38 @@
-# Operating profit growth test (laptop: ETERNALLAPTOP)
+# Operating profit growth test, 2026-11 (laptop: ETERNALLAPTOP)
 
-Facts only. No web. No estimates. Periods: Q4 FY26, Q1 FY27, Q2/H1 FY27.
+Facts only. No web. Nothing estimated.
 
-## Files
-- `universe.csv`: every analysed result, one row per company per period, and where the review lives.
-- `growth.csv`: the filed figures, operating profit for both years, growth, label, file name and page.
-- `names.md`: for each period, the companies under each label, sorted by growth.
-- `missing.md`: rows with no readable results filing on this machine.
-- `check.md`: the 20-row check.
-- `tools/`: the scripts and the two reader briefs.
+- `universe.csv`: one row per company per period where a review exists (774 rows, 316 companies).
+- `growth.csv`: the figures, operating profit both years, growth, label, source file and page or table.
+- `names.md`: companies under each label, per period, sorted by growth.
+- `missing.md`: every NO FILING row.
+- `tools/`: the scripts.
 
-## Universe rule
-A row is in the universe when a review exists for that period in one of these places:
-- a Quarterly Reviewer review folder (Q2/H1 FY27);
-- a repo quarterly folder (`-q4fy26`, `-q1fy27`, `-q2fy27`, `-h1fy27`, and calendar-year equivalents);
-- a full pipeline run whose `inputs/results/` holds the filing for that period;
-- a company folder in the Concall pipeline `Q2 FY27 Results`.
-A census row alone does not count. 398 census rows quote actuals for a period with no review folder; they are not in the universe.
-IPCL and INVPRECQ are the same company and are merged under INVPRECQ.
+## Where the numbers come from (operator ruling during the run, 2026-11-17)
 
-## Method
-- Operating profit before tax = profit before exceptional items and tax, minus other income.
-- Where the filed PBT line already includes the share of associates or joint ventures, that share is removed.
-- Operating profit after tax = operating profit before tax x (1 - 25.17%). Growth is the same on both.
-- Lenders: PBT minus the stated net gain on fair value changes (the treasury or trading gain); where none is stated, reported PBT, marked LENDER-REPORTED. Gains on derecognition of loans are not removed.
-- Quarterly reporters: the quarter against the same quarter last year. Half-yearly reporters: the half against the same half last year.
-- Consolidated where the filing has it, otherwise standalone. The column says which.
-- Figures are copied as printed. The crore figure sits beside the original lakh, million or crore figure.
+The operator chose speed over opening every results PDF. So figures were copied from our own files, not re-read from the filings:
 
-## How the figures were read
-- First read: from the extracted text of each filing (399 rows, less those with no filing).
-- Second read: an independent reader took the figures from the PDF page images for every row whose text was image-only, garbled or flagged. It did not see the first read.
-- `read check` column in `growth.csv`:
-  - two independent reads agree: 163 rows
-  - single read from extracted text: 154 rows
-  - page-image read only (text unusable): 41 rows
-  - two reads differ; page-image read used: 22 rows
-  - no usable read: 17 rows
-  - single read from extracted text; page-image reader could not confirm: 2 rows
-- Where the two reads differ, the page-image read is used and the first read is kept in the notes.
-- Rows marked "single read from extracted text" had clean text and were read once.
+1. Review ledgers (251 rows): the P&L tables in the Quarterly Reviewer `1-ledger-forensics-*.md` files and the repo `ledger_results_*`, `extract_results_*` and `*-results-*-structured.md` files. These are our transcriptions of the filing and carry its page number. Copied by reader agents; nothing computed by them.
+2. Screener quarter tables saved in repo run folders (163 rows), used where no ledger exists (mostly Q4 FY26 and Q1 FY27 rows from full runs). Screener puts exceptional items inside other income, so PBT minus other income leaves both out. These files do not say consolidated or standalone.
+3. Neither available: NO FILING. The results filing was not opened for these rows.
 
-## Labels
-ABOVE 25%, 0 TO 25%, FELL, LOSS (operating loss this year), TURNAROUND (loss last year, profit this year), LOW BASE (last year's operating profit before tax under Rs 1 Cr), NO FILING, NOT COMPARABLE (the filing has no same-period comparative, or says the comparative is not comparable).
+## Rules
+
+- Operating profit before tax = profit before exceptional items and tax, minus other income. Share of associates and joint ventures is removed where the PBT line includes it. After tax = x (1 - 25.17%); growth is the same before and after tax.
+- Lenders: PBT minus treasury gains where the file states them, else reported PBT, marked LENDER-REPORTED.
+- Labels: ABOVE 25%, 0 TO 25%, FELL, LOSS, TURNAROUND, LOW BASE (last year under Rs 1 Cr), NOT COMPARABLE, NO FILING.
+- A census row counts as analysed when it holds an actual figure for that period.
+- Half-yearly reporters: half year against the same half last year; their Q4 FY26 row is H2 FY26.
+- Calendar-year companies are matched by quarter end date.
+- Original lakh or million figures are kept beside the crore figures.
+
+## Check
+
+20 random rows with a results PDF on this machine were compared with the PDF's P&L page (four figures each: PBT and other income, both years). 10 matched by text search, 10 were read from the page by eye (scanned pages). 20 of 20 matched.
+
+Separately, 13 ledger rows also had a screener table: 12 agreed within 5%; GVPIL Q2 FY27 differs (ledger is continuing operations only).
 
 ## Limits
-- Some first-time consolidated filings print the holding company's standalone figures as the comparative (for example DIVGIITTS Q2, E2E Q1, UTLSOLAR Q1, FLYSBS H1). The filing does not call them non-comparable, so they are scored. The notes say so.
-- Other income is the line the filing prints. Gains that a company books inside other income are removed with it; gains booked elsewhere are not.
-- A full pipeline run is counted for each period whose filing sits in its inputs. The run may not have reviewed that quarter on its own.
-- No holdings, prices or position sizes are in these files.
+
+- Not every row was checked against its PDF. Rows whose source is a presentation, press release or OCR-damaged text say so in the note column.
+- NOT COMPARABLE was set by hand on seven rows from the reader notes; other rows with acquisitions or restated comparatives keep their label and carry a note.

@@ -139,3 +139,14 @@ Source: origin/run/quarterly-q2fy27-2026-10-17:runs/eimcoeleco-q2fy27/work/run-l
 
 ## Lessons archive mentions
 NOT FOUND for Eimco Elecon (India) Ltd. The only 'Eimco' hits (LESSONS_ARCHIVE.md L158-164, offmain L1263) concern KCPSUGIND's own Eimco-KCP engineering unit, a different entity (the run's notion-thesis.md L4 makes the same distinction).
+
+Additional Reported-results excerpt (quarterly series, incl. H2 FY26 derived):
+> | Quarter | Revenue (Rs cr) | Op EBITDA margin | Core PBT ex-OI (Rs cr) | One-offs flagged | QoQ run-rate | Anchor |
+> |---|---|---|---|---|---|---|
+> | Q1 FY26 [d: H1 FY26 - Q2 FY26] | 67.57 | 18.22% | 10.32 | None disclosed | ND (Q4 FY25 not in files) | [d] res L154-168 |
+> | Q2 FY26 | 33.24 | 15.71% | 2.62 | None disclosed | -50.8% vs Q1 FY26 | res L154-168 |
+> | H2 FY26 [d: FY26 - H1 FY26; Q3/Q4 split ND] | 129.94 (64.97 per quarter average) | 19.58% | 20.41 (10.21 per quarter average) | FY26 earlier-period tax credit 0.11; annual OCI (0.26) | ND per quarter | [d] res L154-171 |
+> | Q1 FY27 | 77.52 | 18.38% | 11.86 | Deferred tax credit 0.94 (res L172) | +19.3% vs H2 FY26 quarterly average; +14.7% YoY vs Q1 FY26 | res L154-172 |
+> | Q2 FY27 | 56.80 | 18.92% | 8.55 | No exceptional; distributor comp at 5.57% of revenue vs 11.2-11.9% (FN11) | -26.7% QoQ; +70.9% YoY | res L154-168 |
+Source: origin/run/quarterly-q2fy27-2026-10-17:runs/eimcoeleco-q2fy27/work/review_eimcoeleco_q2fy27.md §STEP 3 quarterly series L158-164
+

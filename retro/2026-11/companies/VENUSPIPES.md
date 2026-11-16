@@ -49,7 +49,7 @@ Source: review_venuspipes_q1fy27.md L344 (concall opening statement, line 28)
 > management disclosed >7% blended volume growth (concall line 164) against +16% revenue — roughly half the top line is steel-price/realization
 Source: same file L172
 > Volume/price split, seamless/welded mix, fittings quantity — all three explicitly withheld (L92/122/164)
-Source: same file L384 region (guidance pressed and refused list, "Guidance analysts pressed for and were refused?")
+Source: same file L385 (guidance pressed and refused list, "Guidance analysts pressed for and were refused?")
 > "EU reduced the safeguard quota... 50% duty beyond quota. Is the export decline attributable to that?" (analyst question, not management's answer)
 Source: same file L473
 No management reason for the PAT or margin miss in the files: NOT FOUND (capex absorption D&A +38.3% is the reviewer's finding).

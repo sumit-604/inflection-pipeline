@@ -63,4 +63,30 @@ Re-read multiple (re-read / cache write): n/a
 | 11 | stage-11-valuation | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 429669 | 33m46s | 1 |
 | 14 | stage-14-thesis | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 311520 | 12m20s | 1 |
 | 15 | stage-15-devil | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 364906 | 21m07s | 1 |
-| 12c | verifier-c-framework (phase 3 valuation) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | pending | pending | 1 |
+| 12c | verifier-c-framework (phase 3 valuation) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 429523 | 26m09s | 1 |
+| 13 | stage-13-synthesis (phase 3 finalize) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 366909 | 14m38s | 1 |
+
+### Phase 3 close-out summary
+
+Phase 3 ledger rows: 6. Phase 3 subagent total: 2,068,830 tokens.
+
+(a) TOP FIVE BY TOKENS (phase 3)
+- stage-11-valuation: 429,669 (20.8% of the phase 3 total)
+- verifier-c-framework (phase 3 valuation): 429,523 (20.8% of the phase 3 total)
+- stage-13-synthesis (phase 3 finalize): 366,909 (17.7% of the phase 3 total)
+- stage-15-devil: 364,906 (17.6% of the phase 3 total)
+- stage-14-thesis: 311,520 (15.1% of the phase 3 total)
+
+(b) DOWNSHIFT FAILURES: none. Stage 10 ran on claude-sonnet-5-5 per its frontmatter.
+
+(c) COST SPIKES: none. No prior ANAWIL run exists.
+
+(d) OPERATOR SNAPSHOT
+SESSION TOTAL (/cost), phase 3
+
+
+(e) FRESH VS RE-READ (phase 3 subagents only)
+All 6 phase 3 rows were left out: the harness reports one total per subagent and no split.
+Fresh tokens (cache write + output + uncached input): n/a
+Re-read tokens (cache read): n/a
+Re-read multiple (re-read / cache write): n/a

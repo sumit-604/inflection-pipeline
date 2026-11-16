@@ -1131,3 +1131,15 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
 - Draft ran on the intake model by operator ruling; review and sign-off on Opus 5.5 after a mid-session model change.
 - Operator ruled ROCE FIRING (+2) but asked for the RECOVERING midpoint method in Pillar 1; recorded as an override with both numbers (Track 1 16.1x against 16.9x). Chunk 01 has no rule for this pairing.
 - Handover dossier pre-ruling "trailing-four-half" is ambiguous for a half-yearly filer; operator chose FORWARD FY27.
+
+## 2026-11-17 — ANAWIL /finalize (runs/anawil-2026-11-12)
+| # | What went wrong or was corrected | Stage | File or rule | Status |
+|---|---|---|---|---|
+| 1 | Operator override: ROCE scored FIRING but Pillar 1 used the RECOVERING midpoint; chunk 01 has no rule for the pairing | 11 valuation | chunk 01; deliberation Ruling 4 | CLOSED |
+| 2 | 4G check fails (Year-3 ROCE 17.72% against the 21.61% input); approved 16.1x kept, 14.4x shown; Verifier C CRITICAL P1 | 11 valuation | Master 4G l.897 | OPEN |
+| 3 | Pillar 3a credits the order book already in base revenue; Verifier C CRITICAL P2 (Track 2 18.3x) | 11 valuation | Master l.617; v3.10 l.79 | OPEN |
+| 4 | Stage 11 wrote WATCHLIST where Master Role 2 Section 7 gives AVOID; stage 14 and Verifier C apply AVOID | 11 / 14 | Master l.1129 | OPEN |
+| 5 | Downside ledger probabilities D1-D3 are orchestrator proposals; A22 needs operator values; they decide the A25 starter | 11 valuation | v3.9 A22 | OPEN |
+| 6 | Chunk 06 l.92 drops "downward" from Master l.897; Master l.296 still carries the banned hybrid label | Verifier C check 15 | chunk 06; Master l.296 | OPEN |
+| 7 | prompts/12-verifiers-pipeline.md l.379 template defect (narrative field replaced by proposal text), reported twice | 12c verifier C | prompts/12 l.379 | OPEN |
+| 8 | Stage 11 has no web tools; the orchestrator fetched the live price (Rs 381) and messaged it in | 11 valuation | .claude/agents/stage-11-valuation.md | CLOSED |

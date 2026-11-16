@@ -3,10 +3,10 @@
 Company memory. Memory to weigh, never anchored evidence.
 
 ## THESIS (one line)
-Not yet formed. Step-1 intake only; no valuation has run. Working read: a tubular wind tower maker ramping volume on built capacity (612 towers a year against 210 made in FY26) while its contract mix moves to integrated supply.
+2026-11-17 (runs/anawil-2026-11-12, B11/B14): not buying at Rs 381. Base EPS grows from Rs 17.33 (FY27) to Rs 26.16 (FY30) on order-book then industry-paced tower volume, at a Track 1 destination PE of 16.1x, giving a Rs 443 Year-3 target, about 5.2% a year; the price already sits above the destination. Key risk: no order book beyond Q1 FY28 and towers lost to turbine makers that build their own. Cash quality INDETERMINATE.
 
 ## DECISION STATUS AND ENTRY ZONE
-None. Halt 1 pending (run 2026-11-12). No entry zone exists until Role 1 runs. Phase 1 gate recommendation (evidence only, not a decision): PROCEED WITH CAVEATS, cash conversion INDETERMINATE (runs/anawil-2026-11-12/outputs/final/gate-recommendation.md).
+As of 2026-11-17 (run 2026-11-12, phase 3): decision of record AVOID (B14; Master Role 2 Section 7: Gate 0 AVERAGE and upside/downside 0.26x; Verifier C concurs). Stage 11's WATCHLIST (hard watch) is open operator ruling 7. Position zero. FTTCP gate: PROCEED WITH CAVEATS. Track 1 entry zone Rs 202 to 227 (16.1x), not actionable under AVOID; MARKET-UNLIKELY (27.5% below the Rs 313 low since listing). Framework-as-written 4G reading: about Rs 181 to 204. CMP Rs 381 (17-Nov-2026). Decision Status in Notion is the operator's; this file never sets it.
 
 ## SPEAR
 Spear: OVERRIDE 2026-11-12 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)
@@ -42,11 +42,31 @@ Rulings of 2026-11-15 (operator, in claude.ai: "I approve all the 12 tracker row
 - 2026-11-15: Option probabilities: second EN-182 order by 30-Jun-2027 p = 0.5; Kutch approved and over 30% utilised by end FY28 p = 0.4; JSW Q3 wind over 300 MW p = 0.4; CleanMax phase with Anawil towers by FY28 p = 0.25.
 - 2026-11-15: /fttcp for this run is to run "on the same model" as the /step1 session (operator, in Claude Code chat: "Please run the FTTCP on the same model"). This sets aside the Opus 5.5 xhigh session default for this run only.
 
+Rulings of 2026-11-17 at the /fttcp gate (operator; full text in runs/anawil-2026-11-12/outputs/final/fttcp-deliberation.md):
+- 2026-11-17: Earnings basis FORWARD, FY27. Reason: "FY27 is the first full year with the integrated mix; the trailing base includes an H2 FY26 margin of 50.1% that may be timing."
+- 2026-11-17: FTTCP composite 4 of 8; ROCE forward FIRING (probability above 60%). Reason: "Price discounts the future; evidence will lag price." Falsifier: no Kutch customer approval by 31-Mar-2027 reverts ROCE to STAGNANT and the composite to 2 of 8.
+- 2026-11-17: Proof gate thresholds unchanged; Feb-2027 interim read deleted (half-yearly filer); interim read = Kutch audit (about 15-Dec-2026) plus NSE order intimations; closing test = H2 FY27 results, about May 2027.
+- 2026-11-17: Exit base approved on the operator's midpoint method: Pillar 1 ROCE 21.61%, base 18.3x; Track 2 20.3x; Track 1 16.1x on r 14.5% (17.2x on r 14.0%); Track 1 sets the entry zone. Overrides the chunk 01 FIRING rule (19.2x / 21.2x / 16.9x).
+- 2026-11-17: FTTCP disposition accepted; cash INDETERMINATE caveat stays; proceed to Role 1.
+- 2026-11-17: Role 1 instructions (live price; Tier A 25%; grade C bull cap; Model 3 converter; Rule B base with A14 fade sensitivity; A25 sizing; Kutch counted once; Step 1C pending).
+- OPEN at 2026-11-17 (raised by stages 11, 14, 15 and Verifier C phase 3, not yet ruled): AVOID or WATCHLIST; 4G revision to 14.4x; A18.0 exit haircut; Pillar 3a single credit (Track 2 18.3x); JSW pull counted as a level in FY28 ROCE; downside ledger probabilities D1-D3; 2x rule against the A25 starter (OR-9); Darpan r check; steel clause and plate cycle; cash ugliness STRUCTURAL or ARTIFACT.
+
 ## ACTIVE TRIPWIRES
-None set. Tripwires are set at /finalize.
+Set 2026-11-17 (B14 thesis_broken_if; FTTCP proof gate):
+- H2 FY27 results (about May 2027): reported EBITDA per tower below Rs 29 lakh on a stated tower count with Model 3 above 50% of revenue.
+- FY27 audited operating cash flow below 50% of EBITDA.
+- No Kutch customer approval by 31-Mar-2027.
+- Proof gate: H2 FY27 towers at or above 206 and EBITDA per tower at or above Rs 33 lakh fires the transition; fewer than 148 towers breaks the volume case.
+- Watch: 182 towers dated 31-Dec-2026 still open after that date moves grade C toward D.
 
 ## OPTIONALITY REGISTER (summary)
-None recorded yet.
+From B07 and the handover dossier Section 7 (operator probabilities):
+- Second Envision EN-182 order, converts on an NSE order intimation, by 30-Jun-2027, p 0.5.
+- Kutch approved and over 30% utilised, converts on a customer approval filing and Gujarat revenue above Rs 8.78 Cr a half, by end FY28, p 0.4.
+- JSW pulls Sany towers, converts on JSW wind commissioning above 300 MW by Q3 FY27, late Jan-2027, p 0.4.
+- CleanMax phase with Anawil towers, converts on a definitive agreement naming Karnataka sites, by FY28, p 0.25.
+- Koppal internals plant lifts EBITDA per tower, converts on disclosed capex and capacity, 2 to 4 quarters (B07).
+- Model 3 working capital normalises, converts on WC days toward 68 and CFO/PAT above 0.8, 2 to 4 quarters (B07).
 
 ## RUN FOLDERS
 - runs/anawil-2026-11-12/

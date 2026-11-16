@@ -1,7 +1,7 @@
 stage: confidence
 company: "ANAWIL"
 run_date: "2026-11-12"
-phase: 1
+phase: 3
 computed_by: orchestrator (prompts/00-orchestrator.md Section 5), from the verifier block files as written
 confidence_delta:
   numerical_acceptance: 97          # B12a.acceptance_rate; numbers_checked 418; mandatory tier 183 of 183
@@ -19,7 +19,7 @@ rework_test:
   any_acceptance_below_60_on_denominator_4_or_more: false
   result: "REWORK not triggered on the block values as written"
 open_ruling:
-  - "REDFLAG COVERAGE READING (operator ruling needed, carried to Halt 1): Verifier B wrote acceptance_rate 100, counting 3 PARTIALLY CAUGHT material items as caught (4 caught + 3 partly caught of 7). It states that a strict caught-only reading is 4 of 7 = 57%, which is below the OR-29 line of 60% on a denominator of 4 or more and would set overall to 57 and force REWORK. The orchestrator used the block value and did not substitute a number. The 3 partly-caught items (Kutch promise scoring, IPO proceeds scoring, order-book slippage) went into the one remediation cycle on stage 5."
+  - "REDFLAG COVERAGE READING: RULED 2026-11-15 by the operator, 100 as written (handover dossier Section 7 ruling 1). Original note: Verifier B wrote acceptance_rate 100, counting 3 PARTIALLY CAUGHT material items as caught (4 caught + 3 partly caught of 7). It states that a strict caught-only reading is 4 of 7 = 57%, which is below the OR-29 line of 60% on a denominator of 4 or more and would set overall to 57 and force REWORK. The orchestrator used the block value and did not substitute a number. The 3 partly-caught items (Kutch promise scoring, IPO proceeds scoring, order-book slippage) went into the one remediation cycle on stage 5."
 remediation:
   cycles_used: 1
   stages_rerun: ["stage 1 (Verifier A C1, C4, E1; Verifier C F1-F5)", "stage 4 (Verifier A unit-economics cell; Verifier B EBITDA per tower tie)", "stage 5 (Verifier B F1, F2, F3 and minors)"]

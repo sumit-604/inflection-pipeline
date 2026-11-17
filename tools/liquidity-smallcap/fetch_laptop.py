@@ -123,6 +123,7 @@ def fetch_indices(start: str, end: str) -> None:
 NSE_IDX = "https://nsearchives.nseindia.com/content/indices/ind_close_all_{d:%d%m%Y}.csv"
 NSE_NAMES = {"Nifty 50": "nifty_50", "Nifty Smallcap 250": "nifty_smallcap_250",
              "Nifty Microcap 250": "nifty_microcap_250"}
+NSE_UA = "Mozilla/5.0"   # nsearchives drops connections with a longer custom UA
 FBIL_CD = "https://www.fbil.org.in/wasdm/cd/fetchfiltered"
 RBI_PR = "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx"
 MMO_ROW = r"Net liquidity injected \(outstanding including today'?s\s*\|?\s*operations\)"
@@ -135,13 +136,25 @@ def fetch_indices_nse(start: str, end: str) -> None:
     import io
     import requests
     s = requests.Session()
-    s.headers["User-Agent"] = UA
+    s.headers["User-Agent"] = NSE_UA
     rows, missing = [], []
     d, d1 = dt.date.fromisoformat(start), dt.date.fromisoformat(end)
     while d <= d1:
         if d.weekday() < 5:
             url = NSE_IDX.format(d=d)
-            r = s.get(url, timeout=60)
+            r = None
+            for attempt in range(4):              # NSE drops idle/bursty connections
+                try:
+                    r = s.get(url, timeout=60)
+                    break
+                except requests.exceptions.ConnectionError:
+                    time.sleep(2 ** (attempt + 1))
+                    s = requests.Session()
+                    s.headers["User-Agent"] = NSE_UA
+            if r is None:
+                missing.append(f"{d.isoformat()} connection failed after 4 tries")
+                d += dt.timedelta(days=1)
+                continue
             if r.status_code == 200:
                 for rec in csv.DictReader(io.StringIO(r.text)):
                     if rec.get("Index Name", "").strip() in NSE_NAMES:

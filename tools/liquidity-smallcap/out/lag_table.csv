@@ -1,0 +1,17 @@
+measure,label,lag,n,pearson,spearman,bar95,expected,right_sign,clears_bar
+net_laf,"Net LAF, change in monthly mean (Rs cr)",0,45,0.2452,0.2419,0.2981,1,True,False
+net_laf,"Net LAF, change in monthly mean (Rs cr)",1,44,-0.0054,0.0548,0.3015,1,False,False
+net_laf,"Net LAF, change in monthly mean (Rs cr)",2,43,0.1067,0.0217,0.3050,1,True,False
+net_laf,"Net LAF, change in monthly mean (Rs cr)",3,42,-0.0891,-0.1137,0.3086,1,False,False
+cd_3m,"3M CD rate, change in monthly mean (pp)",0,45,-0.4341,-0.3758,0.2981,-1,True,True
+cd_3m,"3M CD rate, change in monthly mean (pp)",1,44,-0.0826,-0.0746,0.3015,-1,True,False
+cd_3m,"3M CD rate, change in monthly mean (pp)",2,43,-0.0679,0.0871,0.3050,-1,True,False
+cd_3m,"3M CD rate, change in monthly mean (pp)",3,42,0.2312,0.2390,0.3086,-1,False,False
+mtf_combined,"MTF book NSE+BSE, month-end % change",0,45,0.6409,0.6298,0.2981,1,True,True
+mtf_combined,"MTF book NSE+BSE, month-end % change",1,44,-0.1204,-0.0819,0.3015,1,False,False
+mtf_combined,"MTF book NSE+BSE, month-end % change",2,43,-0.1652,-0.1839,0.3050,1,False,False
+mtf_combined,"MTF book NSE+BSE, month-end % change",3,42,-0.0007,-0.0468,0.3086,1,False,False
+mtf_nse,"MTF book NSE only (cross-check), % change",0,45,0.6498,0.6403,0.2981,1,True,True
+mtf_nse,"MTF book NSE only (cross-check), % change",1,44,-0.1241,-0.0971,0.3015,1,False,False
+mtf_nse,"MTF book NSE only (cross-check), % change",2,43,-0.1523,-0.1886,0.3050,1,False,False
+mtf_nse,"MTF book NSE only (cross-check), % change",3,42,-0.0188,-0.0704,0.3086,1,False,False

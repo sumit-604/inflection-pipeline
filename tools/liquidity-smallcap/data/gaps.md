@@ -1,14 +1,62 @@
 # Data gaps, liquidity vs small caps
 
-Status 2026-11-05: no raw file downloaded yet. Every series is NOT FOUND.
-build_data.py rewrites this file with day-level gaps once the laptop fetch
-in README.md has run.
+Built 2026-11-17. Window 2023-01-01 to 2026-11-17.
+Calendar = Nifty 50 trading days from the NSE daily index files. A gap is a trading day the source did not publish. Gaps stay blank; nothing is filled.
 
-| Series | Source tried | Result in the cloud shell, 2026-11-05 |
-|---|---|---|
-| Net LAF, Rs crore | data.rbi.org.in, www.rbi.org.in | NOT FOUND. Policy 403 on direct fetch. Needs a DBIE browser export. |
-| FBIL 3M CD rate | www.fbil.org.in | NOT FOUND. Page renders via Firecrawl, but history sits behind the site's date picker. Needs a browser csv export. |
-| MTF book NSE+BSE | indiamtf.com/history/snapshots.json | NOT FOUND. Policy 403 direct; CSV blocked by the site's bot check; JSON call denied by the session's auto-mode classifier. |
-| Nifty Smallcap 250 | niftyindices.com | NOT FOUND. Policy 403. Yahoo has only ETFs for this index; ETF prices are not index closes, so not used. |
-| Nifty Microcap 250 | niftyindices.com | NOT FOUND. Policy 403. No Yahoo symbol. |
-| Nifty 50 | niftyindices.com | NOT FOUND. Policy 403. |
+## net_laf_cr
+
+951 of 953 trading days filled; 2 blank. 429 source dates fall outside the trading calendar (kept in the series CSV, dropped from the panel).
+
+- 2023-05-05
+- 2026-11-16
+
+## cd_3m_pct
+
+931 of 953 trading days filled; 22 blank. 0 source dates fall outside the trading calendar (kept in the series CSV, dropped from the panel).
+
+- 2023-03-22
+- 2023-05-05
+- 2023-08-16
+- 2024-02-19
+- 2024-04-01
+- 2024-04-09
+- 2024-05-23
+- 2024-09-18
+- 2024-11-01
+- 2025-02-19
+- 2025-04-01
+- 2025-05-12
+- 2025-09-08
+- 2025-10-21
+- 2026-02-19
+- 2026-03-19
+- 2026-04-01
+- 2026-08-26
+- 2026-11-11 to 2026-11-16 (4 days)
+
+## mtf_combined_cr
+
+950 of 953 trading days filled; 3 blank. 7 source dates fall outside the trading calendar (kept in the series CSV, dropped from the panel).
+
+- 2023-08-02 to 2023-08-03 (2 days)
+- 2026-11-16
+
+## mtf_nse_cr
+
+950 of 953 trading days filled; 3 blank. 7 source dates fall outside the trading calendar (kept in the series CSV, dropped from the panel).
+
+- 2023-08-02 to 2023-08-03 (2 days)
+- 2026-11-16
+
+## nifty_smallcap_250
+
+953 of 953 trading days filled; 0 blank. 0 source dates fall outside the trading calendar (kept in the series CSV, dropped from the panel).
+
+## nifty_microcap_250
+
+953 of 953 trading days filled; 0 blank. 0 source dates fall outside the trading calendar (kept in the series CSV, dropped from the panel).
+
+## nifty_50
+
+953 of 953 trading days filled; 0 blank. 0 source dates fall outside the trading calendar (kept in the series CSV, dropped from the panel).
+

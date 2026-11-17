@@ -1,0 +1,26 @@
+{
+  "fbil_cd_curve_2026-11-16.json": {
+    "downloaded_on": "2026-11-16",
+    "note": "FBIL CD curve, all tenors; build keeps 3 Months",
+    "series": "cd3m",
+    "source_url": "https://www.fbil.org.in/wasdm/cd/fetchfiltered?fromDate=YYYY-MM-DD&toDate=YYYY-MM-DD&authenticated=false"
+  },
+  "indiamtf_snapshots_2026-11-16.json": {
+    "downloaded_on": "2026-11-16",
+    "note": "whole-book daily net, INR crore; BSE disclosures start about 2025-10-15 (indiamtf openapi.json)",
+    "series": "mtf",
+    "source_url": "https://indiamtf.com/history/snapshots.json"
+  },
+  "nse_ind_close_all_2026-11-17.csv": {
+    "downloaded_on": "2026-11-17",
+    "note": "NSE ind_close_all daily files; weekday 404s listed in *_missing.txt",
+    "series": "indices",
+    "source_url": "https://nsearchives.nseindia.com/content/indices/ind_close_all_DDMMYYYY.csv"
+  },
+  "rbi_mmo_net_liquidity_2026-11-17.csv": {
+    "downloaded_on": "2026-11-17",
+    "note": "Row F, net liquidity injected incl. today's operations, injection +",
+    "series": "laf",
+    "source_url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx (Money Market Operations releases; per-row URL in release_url)"
+  }
+}

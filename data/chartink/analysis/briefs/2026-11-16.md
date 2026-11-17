@@ -1,13 +1,13 @@
 ---
 title: "Market Breadth Brief"
-subtitle: "Monday, 2026-11-16 trade date · written 2026-11-16 · for Sumit Sharma"
+subtitle: "Monday, 2026-11-16 trade date · written 2026-11-18 · for Sumit Sharma"
 ---
 
 # Market read, 16 November 2026
 
-This brief covers Monday 16 November. The 21:00 download brought all 34 of 34 table files from the two public Chartink dashboards, and every file carries Monday as its latest date. The previous brief covered Friday 13 November, so this one compares Monday with Friday. The full figures sit in the data appendix, `2026-11-16-appendix.html`. Tonight's sheet restates Friday's three trend counts a little lower than Friday's brief gave them, by two to seven stocks. This brief uses tonight's figures.
+Same trade date as the previous brief: 2026-11-16. The download for Tuesday 17 November did not advance. The newest folder is still Monday's, and the facts sheet matches the one behind Monday night's brief line for line. The 21:00 download brought all 34 of 34 table files from the two public Chartink dashboards, and every file carries Monday as its latest date. So this brief describes the same session again. Every number below was checked against that same sheet and the history file. The full figures sit in the data appendix, `2026-11-16-appendix.html`.
 
-The record counts a market of about 2,340 stocks. Claude Code has no web access. This brief checks no news and gives no reason for any move. It describes what the market did. It is not advice to buy or sell anything. The operator decides.
+Nothing in tonight's data can say what Tuesday did. The read below is Monday's read, and it stands until a new folder lands. Comparisons in the text are Monday against Friday 13 November. The record counts a market of about 2,340 stocks. Claude Code has no web access. This brief checks no news and gives no reason for any move. It describes what the market did. It is not advice to buy or sell anything. The operator decides.
 
 ## The picture in one paragraph
 

@@ -19,8 +19,8 @@ DATA = Path(os.environ.get("LSC_DATA", HERE / "data"))
 OUT = Path(os.environ.get("LSC_OUT", HERE / "out"))
 WORDS = {"net_laf": "net LAF (banking-system cash with the RBI)",
          "cd_3m": "the 3-month CD rate (what banks pay for 3-month money)",
-         "mtf_nse": "the NSE MTF book (broker loans to buy shares)",
-         "mtf_combined": "the NSE + BSE MTF book"}
+         "mtf_nse": "the NSE-only MTF book",
+         "mtf_combined": "the NSE + BSE MTF book (broker loans to buy shares)"}
 
 
 def main() -> None:

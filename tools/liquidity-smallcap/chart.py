@@ -3,7 +3,7 @@
 
 1 net LAF, bars (surplus green, deficit red)
 2 FBIL 3-month CD rate
-3 MTF book, NSE + BSE (dotted line at the BSE coverage start)
+3 MTF book, NSE + BSE
 4 Nifty Smallcap 250 / Nifty 50, rebased to 100
 
 Shading on all panels marks trading days with net LAF below zero.
@@ -21,7 +21,6 @@ import pandas as pd
 HERE = Path(__file__).resolve().parent
 DATA = Path(os.environ.get("LSC_DATA", HERE / "data"))
 OUT = Path(os.environ.get("LSC_OUT", HERE / "out"))
-BSE_START = pd.Timestamp("2025-10-15")   # indiamtf openapi.json
 GREEN, RED, SHADE = "#2e7d32", "#c62828", "#c6282822"
 LINE, LINE2 = "#1f4e79", "#6a3d9a"
 
@@ -72,9 +71,6 @@ def png(p: pd.DataFrame, spans) -> Path:
     ax[1].set_ylabel("3M CD rate\n% (FBIL)")
     mtf = pd.to_numeric(p["mtf_combined_cr"], errors="coerce") / 1e3
     ax[2].plot(p.index, mtf, color=LINE2, lw=1.2)
-    ax[2].axvline(BSE_START, color="#555", ls=":", lw=1)
-    ax[2].text(BSE_START, 0.95, " BSE added", transform=ax[2].get_xaxis_transform(),
-               fontsize=8, va="top", color="#555")
     ax[2].set_ylabel("MTF book\nRs '000 crore")
     ax[3].plot(p.index, pd.to_numeric(p["rel_sc250_n50"], errors="coerce"), color=LINE, lw=1.2)
     ax[3].axhline(100, color="#444", lw=0.6)
@@ -91,8 +87,9 @@ def png(p: pd.DataFrame, spans) -> Path:
     last = p.index.max()
     fig.suptitle(f"Money conditions and small caps, {first:%b %Y} to {last:%b %Y}. "
                  "Red shade = net LAF in deficit", fontsize=12, x=0.01, ha="left")
-    fig.text(0.01, 0.005, "Sources: RBI DBIE (net LAF), FBIL (CD curve), indiamtf.com "
-             "(NSE+BSE MTF disclosures), niftyindices.com. Blank = not published.",
+    fig.text(0.01, 0.005, "Sources: RBI Money Market Operations releases (net LAF), FBIL CD "
+             "curve, indiamtf.com (NSE+BSE MTF disclosures), NSE index close files. "
+             "Blank = not published.",
              fontsize=7, color="#555")
     fig.tight_layout(rect=(0, 0.015, 1, 0.97))
     out = OUT / "liquidity_smallcap.png"
@@ -123,7 +120,6 @@ def html(p: pd.DataFrame, spans) -> Path:
     for s, e in spans:
         fig.add_vrect(x0=s, x1=e, fillcolor=RED, opacity=0.10, line_width=0,
                       row="all", col=1)
-    fig.add_vline(x=BSE_START, line_dash="dot", line_color="#555", row=3, col=1)
     fig.update_layout(height=1000, showlegend=False, bargap=0, hovermode="x unified",
                       plot_bgcolor="white", paper_bgcolor="white",
                       margin=dict(l=60, r=20, t=60, b=40),

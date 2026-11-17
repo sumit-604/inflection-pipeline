@@ -116,9 +116,9 @@ def build_mtf(m: dict) -> pd.DataFrame | None:
     df.index.name = "date"
     df = _stamp(df.reset_index(), meta)
     _save(df, "mtf_book", "mtf_combined_cr", [meta],
-          "INR crore. BSE disclosures begin about 2025-10-15 (indiamtf "
-          "openapi.json); before that the combined book is NSE only. "
-          "This is a level break, not market growth.")
+          "INR crore, whole-book daily net. BSE values run daily from "
+          "2017-07-03 in this file, so no coverage break in the window "
+          "(indiamtf openapi.json says about 2025-10-15; the data disagrees).")
     return df
 
 
@@ -132,7 +132,9 @@ def build_indices(m: dict) -> dict[str, pd.DataFrame]:
             raw = pd.read_csv(p)
             for nm, key in nse_names.items():
                 r = raw[raw["index_name"] == nm]
-                df = pd.DataFrame({"date": _to_dt(r["index_date"]),
+                # file_date comes from the URL requested; some NSE files write
+                # Index Date month-first (04-06-2023 = 6 Apr), so it is not used
+                df = pd.DataFrame({"date": pd.to_datetime(r["file_date"], format="%Y-%m-%d"),
                                    "close": pd.to_numeric(r["close"], errors="coerce"),
                                    "source_url": r["source_url"].values,
                                    "downloaded_on": meta["downloaded_on"]})
@@ -251,7 +253,7 @@ def panel_and_gaps(series: dict[str, pd.Series], end: pd.Timestamp) -> None:
     lines = ["# Data gaps, liquidity vs small caps", "",
              f"Built {pd.Timestamp.today():%Y-%m-%d}. Window {START:%Y-%m-%d} "
              f"to {end:%Y-%m-%d}.",
-             "Calendar = Nifty 50 trading days from niftyindices.com. A gap is "
+             "Calendar = Nifty 50 trading days from the NSE daily index files. A gap is "
              "a trading day the source did not publish. Gaps stay blank; "
              "nothing is filled.", ""]
     if cal is None:

@@ -1,30 +1,22 @@
 #!/usr/bin/env python3
-"""Fetch raw files for the liquidity vs small-cap study. RUN ON THE LAPTOP.
+"""Fetch raw files for the liquidity vs small-cap study.
 
-The cloud shell cannot reach RBI, FBIL, NSE, niftyindices.com or
-indiamtf.com (policy 403 on every host, 2026-11-05). Run this on the
-operator's laptop, then push data/raw/ to the repo.
+Runs in a cloud session whose environment allows the source hosts
+(the "inflection-pipeline" environment, 2026-11-16), or on the laptop.
 
-Two series download automatically:
-  mtf      indiamtf.com /history/snapshots.json (NSE, BSE, combined book)
-  indices  niftyindices.com historical close API (Smallcap 250,
-           Microcap 250, Nifty 50), in 360-day windows
-
-Two series need a browser download, because both sites serve their history
-through a JavaScript app with no documented file URL:
-  laf      RBI DBIE, net LAF daily (Rs crore)
-  cd3m     FBIL CD curve, 3-month tenor
-
-For a browser download, save the file in data/raw/ and record where it came
-from:
-  python fetch_laptop.py register data/raw/<file> --series laf --url "<page URL>"
+  mtf          indiamtf.com /history/snapshots.json (NSE, BSE, combined book)
+  indices-nse  NSE ind_close_all daily files (Nifty 50, Smallcap 250, Microcap 250)
+  cd3m         FBIL CD curve public endpoint, all tenors
+  laf-mmo      RBI Money Market Operations releases, net liquidity row
+  indices      niftyindices.com history API (needs liveindexsa.niftyindices.com;
+               superseded by indices-nse)
+  register     record a file saved by hand (for example a DBIE export)
 
 Every raw file gets a line in data/raw/manifest.json: series, source URL,
 download date. build_data.py refuses a raw file with no manifest line.
 
 Usage:
-  python fetch_laptop.py mtf
-  python fetch_laptop.py indices [--start 2023-01-01] [--end YYYY-MM-DD]
+  python fetch_laptop.py {mtf|indices-nse|cd3m|laf-mmo} [--start 2023-01-01] [--end YYYY-MM-DD]
   python fetch_laptop.py register FILE --series {laf,cd3m,mtf,indices} --url URL
 """
 from __future__ import annotations

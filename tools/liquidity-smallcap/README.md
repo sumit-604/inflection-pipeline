@@ -7,75 +7,64 @@ measures against the Nifty Smallcap 250, January 2023 to today:
 - FBIL 3-month CD (certificate of deposit) rate, %.
 - MTF (Margin Trading Facility) book, NSE + BSE, Rs crore.
 
-## Status, 2026-11-05
+## Status, 2026-11-17
 
-Code is built and tested end to end on a synthetic fixture (kept out of the
-repo). **No real data is in data/ yet.** The cloud shell got a policy 403 on
-every source host (RBI, FBIL, NSE, BSE, niftyindices.com, indiamtf.com).
-Firecrawl reached indiamtf.com and FBIL pages, but the session's auto-mode
-classifier denied the bulk-download calls. So the fetch runs on the laptop,
-the same route as tools/macro-regime. data/gaps.md lists every series as
-NOT FOUND until then.
+Done. Data Jan 2023 to Nov 2026 is in data/; results are in SUMMARY.md and
+out/. Headline: no measure leads the Smallcap 250 by 1 to 3 months. The
+3M CD rate moves with it in the same month (r -0.43); the MTF book follows
+it (r +0.64 same month, +0.44 one month later).
+
+Data routes used (the session environment allows these hosts):
+
+| Series | Route |
+|---|---|
+| Net LAF | RBI daily Money Market Operations releases, row F "net liquidity injected (outstanding including today's operations)" = Repo+MSF+SLF-Reverse Repo-SDF. DBIE encrypts its API calls, so it is not scripted. |
+| 3M CD | FBIL public endpoint www.fbil.org.in/wasdm/cd/fetchfiltered (the call the FBIL site makes) |
+| MTF book | indiamtf.com /history/snapshots.json (NSE, BSE, combined) |
+| Indices | NSE ind_close_all daily files on nsearchives.nseindia.com. NSE Indices publishes niftyindices.com; its own history API needs a further host. |
 
 ## Files
 
 | File | Does |
 |---|---|
-| fetch_laptop.py | Laptop only. Downloads MTF and index history; registers browser downloads in data/raw/manifest.json |
+| fetch_laptop.py | Downloads every series (subcommands mtf, indices-nse, cd3m, laf-mmo); `register` records a manual download in data/raw/manifest.json |
 | build_data.py | data/raw/ to one CSV per series (each row carries source_url and downloaded_on), panel_daily.csv, sources.md, gaps.md |
 | chart.py | out/liquidity_smallcap.png and .html: four panels, one date axis, deficit days shaded |
 | lag_test.py | Monthly correlation table, lags 0 to 3; rolling 12-month check for failure periods |
 | summary_draft.py | Fills the numbers into out/SUMMARY_DRAFT.md; a person then writes SUMMARY.md |
 
-## Laptop runbook
+## Refresh
 
 ```
 pip install -r requirements.txt
 python fetch_laptop.py mtf
-python fetch_laptop.py indices --start 2023-01-01
-```
-
-Two series need a browser download. Save each file in data/raw/, then
-register it with the page URL you used:
-
-1. **Net LAF.** RBI DBIE (https://data.rbi.org.in), search "Liquidity
-   Adjustment Facility", daily frequency, 01-Jan-2023 to today, export.
-   Backup: the daily RBI "Money Market Operations" press releases.
-   ```
-   python fetch_laptop.py register data/raw/<file> --series laf --url "<DBIE page URL>"
-   ```
-2. **3M CD rate.** https://www.fbil.org.in, Money Market, CD CURVE tab,
-   Choose Date From 01-Jan-2023 To today, Fetch, then csv. If the site caps
-   the range, download year by year and register each file.
-   ```
-   python fetch_laptop.py register data/raw/<file> --series cd3m --url "https://www.fbil.org.in/#/home (CD CURVE)"
-   ```
-
-Then build and push:
-
-```
+python fetch_laptop.py indices-nse
+python fetch_laptop.py cd3m
+python fetch_laptop.py laf-mmo
 python build_data.py
 python chart.py
 python lag_test.py
 python summary_draft.py
 ```
 
-build_data.py stops with a message if it cannot tell which LAF column is the
-net figure, or which sign it uses. Pass `--laf-col "<name>"` and
-`--laf-sign injection_positive` (RBI's convention: injection +, so a deficit
-system shows +) or `surplus_positive`. It never guesses a sign.
+laf-mmo pulls about 1,400 RBI pages and indices-nse about 1,000 NSE files;
+each takes 15 to 30 minutes. Older raw files with the same series stay in the
+manifest; delete a superseded file and its manifest line before a rebuild.
+SUMMARY.md is written by a person from out/SUMMARY_DRAFT.md.
 
 ## Rules
 
 - No estimates. A day a source does not publish stays blank. Nothing is
   filled forward or interpolated. data/gaps.md lists every blank trading day.
-- Trading calendar = Nifty 50 dates from niftyindices.com.
+- Trading calendar = Nifty 50 dates from the NSE daily index files.
 - Monthly: LAF and CD use the monthly mean (daily LAF jumps on tax and
   month-end dates); MTF and indices use month-end. A month needs 10 daily
   LAF or CD values. The running month is dropped.
-- MTF break: BSE disclosures start about 2025-10-15 (indiamtf openapi.json).
-  Before that, "combined" is NSE only. The test uses the NSE book for the
-  whole window; the combined book is tested with the break month blanked.
+- MTF: indiamtf's openapi.json says BSE starts about 2025-10-15, but its
+  file has daily BSE values from 2017-07-03 with no 2025 jump. The test uses
+  NSE + BSE; NSE alone is a cross-check.
+- NSE index files: some write Index Date month-first (6 to 11 Apr 2023), so
+  the date comes from the file name requested, not that column.
 - Lag k pairs the money change in month t with the Smallcap 250 return in
   month t+k. Lag 0 is coincident. Only lags 1 to 3 count as a lead.
 - Expected sign if money leads: LAF +, CD rate -, MTF +.

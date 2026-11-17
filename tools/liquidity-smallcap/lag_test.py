@@ -6,10 +6,10 @@ Monthly rules (fixed before any result was seen):
             Daily LAF swings with tax dates and month-end flows, so the mean
             is the level. A month with fewer than 10 daily values is blank.
   3M CD     monthly MEAN (%); change = difference in percentage points.
-  MTF book  month-end level, NSE book only; change = % change.
-            NSE only because BSE enters the combined book about 2025-10-15,
-            a coverage jump that is not a flow. The combined book is also
-            tested with the break month blanked.
+  MTF book  month-end level, NSE + BSE; change = % change. NSE alone is a
+            cross-check. indiamtf's API note says BSE starts about
+            2025-10-15, but its own file has daily BSE values from
+            2017-07-03 with no jump in 2025, so no break is applied.
   SC250     month-end close; return = % change.
   A month counts only if its last observation falls on or after the 20th
   (drops the running month).
@@ -36,13 +36,12 @@ import pandas as pd
 HERE = Path(__file__).resolve().parent
 DATA = Path(os.environ.get("LSC_DATA", HERE / "data"))
 OUT = Path(os.environ.get("LSC_OUT", HERE / "out"))
-BSE_START = pd.Timestamp("2025-10-15")
 LAGS = [0, 1, 2, 3]
 MEASURES = {   # name: (column, expected sign, label)
     "net_laf": ("d_laf", +1, "Net LAF, change in monthly mean (Rs cr)"),
     "cd_3m": ("d_cd", -1, "3M CD rate, change in monthly mean (pp)"),
-    "mtf_nse": ("d_mtf_nse", +1, "MTF book NSE, month-end % change"),
-    "mtf_combined": ("d_mtf_comb", +1, "MTF book NSE+BSE, % change, break month blank"),
+    "mtf_combined": ("d_mtf_comb", +1, "MTF book NSE+BSE, month-end % change"),
+    "mtf_nse": ("d_mtf_nse", +1, "MTF book NSE only (cross-check), % change"),
 }
 
 
@@ -64,7 +63,6 @@ def monthly(p: pd.DataFrame) -> pd.DataFrame:
     m["d_cd"] = m["cd_mean"].diff()
     m["d_mtf_nse"] = m["mtf_nse"].pct_change(fill_method=None) * 100
     m["d_mtf_comb"] = m["mtf_comb"].pct_change(fill_method=None) * 100
-    m.loc[m.index == BSE_START.to_period("M"), "d_mtf_comb"] = np.nan
     m["ret_sc250"] = m["sc250"].pct_change(fill_method=None) * 100
     return m
 
@@ -118,6 +116,28 @@ def failures(m: pd.DataFrame, best: pd.DataFrame, window: int = 12) -> dict:
     return out
 
 
+def extras(m: pd.DataFrame) -> dict:
+    """Checks added after the first run (2026-11-17), stated as such:
+    reverse lags (does the index move first?), lag-0 rolling 12-month
+    correlation (the only lag with a link), and SC250 returns by LAF regime."""
+    y = m["ret_sc250"]
+    rev = {name: {k: round(float(m[col].corr(y.shift(k))), 3) for k in (1, 2, 3)}
+           for name, (col, _, _) in MEASURES.items()}
+    roll = {}
+    for name, (col, sign, _) in MEASURES.items():
+        rc = m[col].rolling(12, min_periods=10).corr(y)
+        roll[name] = {"min": round(float(rc.min()), 3), "min_window_end": str(rc.idxmin()),
+                      "max": round(float(rc.max()), 3), "max_window_end": str(rc.idxmax()),
+                      "wrong_sign_window_ends": [str(p) for p in rc.index[(rc * sign) < 0]]}
+    reg = m.assign(regime=np.where(m["laf_mean"] < 0, "deficit", "surplus"))
+    reg = reg.dropna(subset=["ret_sc250", "laf_mean"])
+    by = reg.groupby("regime")["ret_sc250"].agg(["count", "mean", "median"]).round(2)
+    months = {str(p): round(float(r), 2) for p, r in
+              reg.loc[reg["regime"] == "deficit", "ret_sc250"].items()}
+    return {"reverse_lag_r": rev, "rolling12_lag0": roll,
+            "sc250_by_laf_regime": by.to_dict("index"), "deficit_month_returns": months}
+
+
 def fmt(t: pd.DataFrame) -> str:
     L = ["| Measure | Lag 0 | Lag 1 | Lag 2 | Lag 3 | n (lag 0) | 95% bar | Expected sign |",
          "|---|---|---|---|---|---|---|---|"]
@@ -155,9 +175,20 @@ def main() -> None:
     res = dict(months=f"{span.min()} to {span.max()}" if len(span) else "none",
                table=t.replace({np.nan: None}).to_dict("records"),
                best=best.replace({np.nan: None}).to_dict("records"),
-               failures=fail)
+               failures=fail, extras=extras(m))
     (OUT / "results.json").write_text(json.dumps(res, indent=2, default=str) + "\n")
     print(md)
+    print()
+    ex = res["extras"]
+    print("Reverse lags (SC250 return month t-k vs money change month t):")
+    for k, v in ex["reverse_lag_r"].items():
+        print(f"  {k}: " + ", ".join(f"k={a} {b:+.2f}" for a, b in v.items()))
+    print("Lag-0 rolling 12m r:")
+    for k, v in ex["rolling12_lag0"].items():
+        print(f"  {k}: {v['min']:+.2f} (window to {v['min_window_end']}) .. "
+              f"{v['max']:+.2f} (to {v['max_window_end']}); wrong sign: "
+              f"{', '.join(v['wrong_sign_window_ends']) or 'none'}")
+    print("SC250 monthly return by net LAF regime:", ex["sc250_by_laf_regime"])
     print()
     for _, b in best.iterrows():
         f = fail[b["measure"]]

@@ -1,0 +1,22 @@
+stage: confidence
+company: PREMEXPLN
+run_date: 2026-11-15
+phase: 1
+confidence_delta:
+  numerical_acceptance: 96        # B12a.acceptance_rate; 272 numbers checked, mandatory tier 142 of 142; 0 CRITICAL, 1 MAJOR (source_fidelity true), 4 MINOR
+  redflag_coverage: 73            # B12b.acceptance_rate; material_caught 11 of material_found 15 (CAUGHT only)
+  framework_adherence: 90.1       # B12c phase-1 portion (Gate 0 + Emerging Moat): 82 of 91 rules passed; valuation component PENDING PHASE 3
+  peer_utilisation: null          # NOT APPLICABLE: 2 of 3 peers used substantively (BDL has no transcripts); denominator 3 is below the floor of 4
+  overall: 73
+  overall_set_by: redflag_coverage
+  band: "60-74: PROCEED verdicts downgrade one level"
+  not_applicable:
+    - {component: peer_utilisation, counts: "2 peers substantive of 3 provided (SOLARINDS 4 transcripts, ASTRAMICRO 4, BDL 0)", reason: "denominator below 4"}
+  pending_phase_3: ["framework_adherence valuation component (B10/B11 audit)"]
+identity_check: "No CRITICAL rows in B12a; nothing to test and nothing struck."
+rework_triggers: "none: no CONFIRMED Verifier A CRITICAL; no verifier acceptance rate below 60% on a denominator of 4 or more (A 96, B 73 on 15, C 90.1 on 91; D 100 on 2 substantive peers, not applicable)."
+source_fidelity_open:
+  - "B12a MAJOR, source_fidelity true: 02-notes.md body and B02 YAML carry receivables over one year FY26 as 888.35 L; the source prints 1,186.73 L (AR FY26 Note 11(c)). Gate held: the figure is corrected at source in the orchestrator correction appended to 02-notes.md, 02-notes-pass2.md and B02-notes.yaml (orchestrator_corrections) and in B03. Downstream uses 1,186.73 L. The stage 2 body text was not rewritten (stage agents cannot edit their reports)."
+verifier_c_open_items:
+  - "C-E12 and C-E13 (MAJOR): em_classification MODEST does not hold under the framework as written (score 11.4, 10.2 or 9.3, class NONE); alternative reading 14.1 keeps MODEST. No remediation cycle run: the finding does not trigger REWORK. Goes to the gate recommendation and Halt 1 as an open item; phase 3 must use the reading that survives."
+  - "C-G03 and C-G06 (MAJOR): Gate 0 ROCE and capex proxies; core 45 to 57 across readings, AVERAGE in every reading."

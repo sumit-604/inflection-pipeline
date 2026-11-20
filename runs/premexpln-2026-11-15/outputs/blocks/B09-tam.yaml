@@ -1,0 +1,108 @@
+stage: B09-tam
+company: "PREMEXPLN"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "Q2 FY27 concall transcript ABSENT (B00 freshness FAIL); order book bridge, licence receipts, guidance change NOT FOUND"
+  - "Screener export sheets empty (only Data_Sheet populated); BDL peer transcripts absent; research folder empty; results are OCR scans; 9 open-offer zips unopened; one Reg 29(1) acquirer name illegible"
+  - "Segment result NOT FOUND (single Ind AS 108 segment); export share of order book and rupee licence cover NOT FOUND; named competitors and market share NOT FOUND in AR and deck"
+  - "Energetics content share of vendor ammunition and rocket-missile containers NOT FOUND; solid-propellant and countermeasure market sizes NOT FOUND; per-tonne price and unit economics NOT FOUND (bottom-up Method 2 not buildable)"
+  - "Commercial explosives SAM (state, product, grade split) and unorganised share NOT FOUND; DPSU in-house energetics and other private suppliers NOT FOUND"
+flags:
+  - "Management gives no numeric TAM; industry statistics are whole-of-defence aggregates (BROAD)"
+  - "Premier share of qualified-private defence energetics pool fell from about 19.9% (FY25) to 10.7% (FY26): Solar defence +94% to Rs 2,634 Cr vs Premier D&S -6.5% to Rs 315.4 Cr (derived)"
+  - "TAM figures are vendor containers (MarketsandMarkets, Ken Research); both defence figures contain non-energetic content; rocket-missile figure is STALE (2024 base)"
+  - "SOM central uses Solar FY27 guide (Rs 4,500 Cr defence) as SAM input: guidance, not delivery; Reading A (budget-linked) gives 17.0% / 17.3%"
+  - "Capacity gap: SOM FY29 Rs 772.9 Cr vs committed capacity Rs 518.5 Cr = Rs 254.4 Cr; FY27 guide Rs 600 Cr already exceeds capacity by Rs 81.5 Cr"
+  - "Premier 'only qualified Indian company for countermeasures' claim: Solar opened a chaff plant at Nagpur in 2024; Solar MoD qualification NOT FOUND"
+  - "Valuation line uses open-offer price Rs 705.65 over reported FY26 EPS Rs 8.5 (83.0x); EPS includes 64.8% one-off other income; CMP NOT FOUND"
+market_definition: "India (plus export) defence and space energetics (propellants, igniters, rocket motors, countermeasures, HE, O&M) and domestic commercial explosives (bulk, cast boosters, detonating fuse), serviceable by a licence-gated, spec-qualified supplier"
+tam_cr: {conservative: 37637, realistic: 66263}
+sam_cr: 2949
+sam_pct_of_tam: 7.8
+som_3yr_cr: 773
+som_5yr_cr: 1089
+som_implied_revenue_cagr: {yr3: 25.8, yr5: 22.9}
+current_sam_share_pct: 10.7
+revenue_headroom_x: 9.4
+tam_growth_pct: 9.7
+runway_class: "STRONG"
+mgmt_claim_cr: 0
+mgmt_claim_ratio: 0
+mgmt_claim_read: "no numeric claim (NOT FOUND); framing broad, whole-of-defence statistics only"
+capacity_check: "gap of Rs 254 Cr at FY29 (SOM 772.9 vs committed capacity 518.5 at 2.17x turnover; Rs 269 Cr at 1.93x); committed capex is the optimistic side of the plan unless asset turns rise above 2.17x or new capex is evidenced"
+methods_used:
+  - "Method 1 top-down (vendor containers: ammunition, rocket-missile, industrial explosives)"
+  - "Method 3 peer revenue aggregation (Solar plus Premier realised defence floor)"
+  - "Method 4 import substitution (direction only, NOT FOUND for energetics)"
+  - "Method 2 bottom-up and Method 5 global benchmark: NOT FOUND, not built"
+stale_data_flags:
+  - {datapoint: "India rocket and missile market USD 5,636.6 Mn", source: "MarketsandMarkets", year: 2024}
+  - {datapoint: "Solar 28% overall and 70% bulk share", source: "Tijori Finance", year: 2022}
+  - {datapoint: "Solar, Premier two-major-player market description", source: "Outlook Business", year: 2019}
+searches_performed:
+  - "India commercial explosives market size demand tonnes coal mining FY25 FY26"
+  - "India ammunition and energetics market size defence budget FY27"
+  - "India missile solid propellant market size air defence procurement 2026"
+  - "WebFetch Ken Research India industrial explosives market (Sep 2026)"
+  - "India chaff flare countermeasure domestic supply IAF order"
+  - "Solar Industries share of industrial explosives market, Coal India, IDL, Gulf Oil"
+  - "USD INR rate November 2026"
+searches_skipped:
+  - "PESO primary annual tonnage data (not reached)"
+  - "CRISIL/ICRA industry reports (paywalled; Ken cites CRISIL secondhand)"
+  - "Solid-propellant and countermeasure market-size reports (none found)"
+  - "Ministry of Coal primary production series (not reached)"
+  - "Per-capita global benchmark for energetics (not searched)"
+downstream_candidates:
+  - signal: "MoD/IAF Rs 430 Cr chaff and flare order execution and LD claim"
+    entity_type: "end-customer"
+    demand_link: "Largest single order; execution gates FY27 revenue"
+    likely_source: "Premier NSE/BSE announcements; MoD and PIB releases"
+    cadence: "quarterly"
+    shared: true
+  - signal: "BDL and DRDO missile production (Akash, MRSAM, LRSAM, Astra)"
+    entity_type: "counterparty"
+    demand_link: "Premier supplies propellant and igniters on these programmes"
+    likely_source: "BDL exchange filings and results"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Export authorisation and buyer import licences"
+    entity_type: "regulatory"
+    demand_link: "Rs 350.23 Cr order and about Rs 400 Cr book convert only after licence"
+    likely_source: "MoD Department of Defence Production export authorisations; DGFT notifications"
+    cadence: "event-driven"
+    shared: true
+  - signal: "PESO licences for Katepally and Peddakandukur"
+    entity_type: "regulatory"
+    demand_link: "Plant availability gates conversion of the order book"
+    likely_source: "PESO licence register and orders"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Solar Industries defence revenue vs Rs 4,500 Cr FY27 target"
+    entity_type: "counterparty"
+    demand_link: "Sets SAM growth; separates Reading A from Reading B"
+    likely_source: "Solar Industries results and concall"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Coal output and Coal India/Singareni explosives tenders"
+    entity_type: "macro"
+    demand_link: "Drives commercial explosives volume and price"
+    likely_source: "Ministry of Coal monthly production; CIL tender portal"
+    cadence: "monthly"
+    shared: false
+  - signal: "ISRO SHAR solid-propellant O&M renewal"
+    entity_type: "end-customer"
+    demand_link: "Recurring fee line, about Rs 18 Cr a year, 2.5 years left"
+    likely_source: "ISRO and NSIL releases; Premier filings"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Defence budget, DAC approvals, Positive Indigenisation Lists"
+    entity_type: "macro"
+    demand_link: "Domestic capital acquisition Rs 1.39 lakh Cr drives order flow"
+    likely_source: "PIB and DAC releases"
+    cadence: "event-driven"
+    shared: true
+demand_externally_verifiable: true
+analyst_note: "SOM central is Reading B: Solar's Rs 4,500 Cr FY27 defence guide sets the SAM, Premier share starts at its FY27 run-rate 9.15%, then +1.5pp (3-yr) and +2.5pp (5-yr). Reading A (budget-linked 15.2% SAM growth, FY26 share 10.7%) gives 17.0% and 17.3%. The observation that separates them is Solar's delivered FY27 defence revenue against Rs 4,500 Cr (May 2027). Both exceed committed capacity of Rs 518 Cr after FY27. Premier lost about 9pp of pool share in FY26; the share-gain rules were applied at the normal band for that reason. Commercial held flat at Rs 72.9 Cr with SAM NOT FOUND."

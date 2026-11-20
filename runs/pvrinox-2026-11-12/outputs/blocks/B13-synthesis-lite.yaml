@@ -1,0 +1,31 @@
+stage: B13-synthesis
+company: "PVRINOX"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+mode: "phase-1-lite"   # three files only; no valuation-dependent content; fttcp-handoff, disagreement log and Notion payload not produced in this mode
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 4   # verifier MAJORs worth carrying (A 3, B 3, C 1) and overall 69 in the 60-74 band; rules 1-3 did not fire
+flags_active: ["FLAG-GATE0"]   # FLAG-PROMOTER not active (B08 CAUTION); FLAG-CASH not active (CFO rising, no deterioration)
+confidence_delta: {numerical: 97, redflag: 69, framework: 87.2, peer: 87.5, overall: 69}
+overall_set_by: "redflag_coverage"
+partial_stages: ["B08 (web searches skipped)", "B09 (web searches skipped)"]
+transition_posture: "NOT CLASSIFIABLE IN PHASE 1 (Mental Model unsigned; recognition gap resolves at stage 11)"
+source_fidelity_findings_held: 5   # all B12a findings shown corrected or relabelled; none used as filed
+valuation_decision: ""         # NOT RUN: phase 1 lite; valuation is phase 3
+entry_range: {low: null, high: null}   # NOT RUN: phase 1 lite
+sector_cap_row: "NOT FOUND (phase 3 open item; no multiple proposed)"
+headline: "Cinema cash repaired, footfall and screens lag"
+falsification_metric: "Q3 FY27 print (Feb 2027): admissions growth near +4% while ATP grows above +10% and industry gross box office grows above 20% (price-led share loss, not content mix)"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - "runs/pvrinox-2026-11-12/outputs/final/business-narrative.md"
+  - "runs/pvrinox-2026-11-12/outputs/final/gate-recommendation.md"
+  - "runs/pvrinox-2026-11-12/outputs/final/verifier-summary.md"
+notion_save:
+  page_title: ""     # not produced in phase 1 lite
+  summary: ""
+  drive_link: ""     # none supplied
+  mode: append-never-overwrite-status

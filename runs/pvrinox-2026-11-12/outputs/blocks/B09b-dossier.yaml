@@ -1,0 +1,80 @@
+stage: B09b-dossier
+company: "PVRINOX"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "FY2023-24 annual report (third year of annual reports; only FY2024-25 and FY2025-26 held)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Q1 FY27 investor presentation"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Q3 FY26 results filing and presentation (Dec 2025 quarter)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "India Ratings rating rationale (pages need a browser)"
+    expected_source: "rating agency site"
+    kind: "findable-missing"
+  - document: "Screener P&L, Balance Sheet, Cash Flow and Quarters exports for PVRINOX and CINELINE (empty export)"
+    expected_source: "screener.in export, operator re-run of collect_to_repo.py --push-again"
+    kind: "findable-missing"
+  - document: "Broker or research notes (research/ empty)"
+    expected_source: "operator upload; the company does not publish them"
+    kind: "findable-missing"
+  - document: "SEBI show-cause notice of 22 Nov 2016 to Ajay Bijli, outcome; SEBI orders database search"
+    expected_source: "SEBI orders database"
+    kind: "findable-missing"
+  - document: "PVR-INOX merger scheme documents and tribunal order (FY23)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "CINELINE (Cinelinx India) results and annual report"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "CINELINE concall transcripts"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Consolidated Ind AS 116 bridge from audited to company adjusted profit (3,328 / 1,761 to 3,868 / 2,306 Rs million)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Unit economics and fee terms of asset-light, FOCO and SMART screens; basis of Chairman brand licence fee"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Movie exhibition (tickets, F&B, advertising, convenience fees)"
+    archetype: "Brand/franchise consumer"
+  - line: "Film production and distribution"
+    archetype: "fits no known archetype"
+transition:
+  - line: "Movie exhibition"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R2 COST-ADVANTAGED CONVERTER"
+    engine: "Occupancy against a fixed cost base (26.2% FY26 to 30.4% Q2 FY27; ex-Ind AS 116 margin 14.4% to 22.3%) and a capital-light screen mix (77% of H1 FY27 openings) whose P&L economics are not disclosed"
+    proof_gate: "Admissions up year on year in Q3 and Q4 FY27 with ATP growth at or below admissions growth plus 5 points, and FY27 ex-Ind AS 116 EBITDA margin at or above 17% on occupancy at or above 27%, with FY27 gross openings at or above 90"
+    recognition_gap: "Open question: does the TO state (R2, durable mid-teens ROCE) already look reflected in market pricing? No market data in corpus; Stage 11 resolves via the PE gap"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Q3 FY27 admissions growth near +4% to +8% with ATP above +10% while industry box office grows above +20%; or FY27 gross openings below 85 or another cut; or margin under the 17-18% band at occupancy of 27% or more"
+dominant_variables:
+  - "Admissions growth against ATP and SPH growth"
+  - "Fixed-cost leverage: rent and CAM growth, film hire share, ex-Ind AS 116 margin"
+  - "Gross screen openings net of exits, and capital-light unit economics"
+  - "Cash after leases and the net cash definition"
+business_falsifier: "Admissions below the fixed-cost break-even near 139 million for two consecutive years, or admissions per screen below 80 thousand with price growth capped; or capital-light screens becoming a majority of new revenue booked as management fees only, which re-declares the business as a fee and franchise platform"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 5
+  verifiability_ratio: "3 of 5 externally observable"
+  single_point_failure: "Admissions volume: 1% of admissions is about 13.5% of adjusted PBT, break-even near 139 million against 150 million, and FY25 shows a loss when admissions fell 10%"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 14
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "495275190a97df9f2f99acde6f9c4ab722fdcffd"

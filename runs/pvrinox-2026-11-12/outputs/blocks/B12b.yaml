@@ -1,0 +1,35 @@
+stage: B12b
+company: "PVRINOX"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 37
+caught: 24
+partially_caught: 7
+missed:
+  - {severity: "MAJOR", item: "ROCE benchmark moved: FY19 18% accepted by CFO ('Correct') in Feb; Jul target 'come back to pre-COVID levels of ROCE'; Oct '16.5% ... above the pre-COVID benchmark of around 13%'; never reconciled; B05 D8 scores ROCE Delivered", anchor: "Feb p.18 (Sujit Jain, Gaurav Sharma); Jul p.12 (Sharma); Nov p.4 (Bijli)"}
+  - {severity: "MAJOR", item: "FY26 FCF 'all-time high of INR790 crores' likely includes Rs 226.8 Cr 4700BC proceeds; analyst 'about INR570 crores, excluding the sale' undisputed; company surplus definition adds 'any disposal proceeds'; derived operating FCF about Rs 563 Cr", anchor: "May p.4 (Bijli); Jul p.12 (Kavish Parekh); Feb p.5 (Bijli); Pres p.21 footnote"}
+  - {severity: "MINOR", item: "MD dropped off Feb call ('You do not need to connect Mr. Bijli back') and disconnected again on Jul call", anchor: "Feb p.10 (Gautam Dutta); Jul p.8 (Bijli)"}
+  - {severity: "MINOR", item: "Analyst insistence: 'the first question remains unanswered' on why online penetration rose", anchor: "Jul p.13 (Jinesh Joshi)"}
+  - {severity: "MINOR", item: "FOCO count 22 vs 'close to 18 or 19' in one call; 'company operated' with 'not capex, not opex'", anchor: "May p.9, p.17 (Sharma, Bijli)"}
+  - {severity: "MINOR", item: "Peer contradiction: UFO (30 Jan) consistent advertisers 'have embraced cinema' vs PVR (5 Feb) advertisers 'pick films rather than the category'", anchor: "UFO-Feb p.8 (Bhardwaj); Feb p.18 (Dutta)"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "lower: to the B/C boundary; the financial-delivery leg rests partly on a ROCE benchmark moved from 18% (Feb p.18) to about 13% (Nov p.4) and an FY26 FCF headline that likely includes Rs 226.8 Cr of divestment proceeds, plus three calls of silence on the developer-kickback assessment (20260907 p.1)"
+findings:
+  - {severity: "MAJOR", type: "MISSED", item: "ROCE pre-COVID benchmark shift 18% to about 13% not caught; Section 1B ROCE pillar and rung read affected", anchor: "Feb p.18; Jul p.12; Nov p.4", fix: "carry both benchmarks; separating observation = filed FY19/FY20 ROCE on company definition"}
+  - {severity: "MAJOR", type: "MISSED", item: "FY26 FCF Rs 790 Cr headline likely includes 4700BC proceeds; operating about Rs 563 Cr derived", anchor: "May p.4; Jul p.12; Feb p.5; Pres p.21", fix: "use operating FCF as cross-check; resolve from AR FY26 cash flow statement"}
+  - {severity: "MAJOR", type: "PARTIALLY CAUGHT", item: "Governance silence: B05 has both resignations but misses April anonymous allegations, external third-party assessment, 7 Sep 'internal probe into alleged Rs 200-crore kickbacks' clarification (8% share fall) and Oct-call silence; developer counterparty link to capital-light pipeline", anchor: "20260907 clarification p.1; 20260525 p.1, p.3; 20260723 p.1-2; May, Jul, Nov transcripts (absence)", fix: "Halt 1 open item and Pillar 3 reader; tripwire = final assessment outcome and re-published signed pipeline vs 138 (May p.9)"}
+  - {severity: "MINOR", type: "PARTIALLY CAUGHT", item: "May ad excuse (Toxic, Jana Nayagan moved = 7-8% growth lost) tested by both films releasing in Q2; Oct 'no tentpole films' vs same-call 'landmark quarter', Spider-Man Rs 608 Cr; B05 holds D15 and D18 unjoined", anchor: "May p.6; Nov p.3-4, p.9", fix: "dated test: Q3 FY27 ad growth on the four films named at Nov p.9"}
+  - {severity: "MINOR", type: "SCORING LABEL", item: "D15 and D19 scored Missed while FY27 is open; direction confirmed, label should be 'tracking to miss'", anchor: "B05 2A D15, D19; Jul p.8; Nov p.5", fix: "relabel at FY27 close"}
+  - {severity: "MINOR", type: "ONE-SIDED", item: "Depreciation 'does not reconcile' omits Ind AS 8 effective-date reading (Rs 21.1 Cr for H1 = about Rs 42 Cr/yr, near CFO Rs 35-40 Cr)", anchor: "Pres p.28 note (1); Nov p.10", fix: "state both readings; Q3 FY27 note separates"}
+  - {severity: "MINOR", type: "PARTIALLY CAUGHT / MISSED", item: "Peer contrasts not drawn: UFO ad share gain (P2), UFO 'southern regional subdued' vs PVR 'multifold' (P4), Toxic/Batwara under-performance vs PVR distribution silence (P5), Wonderla F&B inflation vs PVR COGS down (P7); UFO advertiser read vs PVR (P3) missed", anchor: "UFO-May p.8; UFO-Aug p.3; UFO-Nov p.3; WON-Aug p.11; UFO-Feb p.8; Jul p.3, p.15; Nov p.4; Feb p.18", fix: "synthesis cites P2, P3 with the UFO +33% ad divergence"}
+  - {severity: "MINOR", type: "MISSED / PARTIALLY CAUGHT", item: "Tone items: Karnataka 'No conversations at all' vs Feb litigation answer; MD drop-offs; analyst insistence; FOCO count and 'no opex' claim", anchor: "Feb p.13; Nov p.14; Feb p.10; Jul p.8, p.13; May p.9, p.17", fix: "record only"}
+  - {severity: "MINOR", type: "OVERSTATED", item: "Promoter buyback participation bundled into governance red flag though no promise existed (B05's own words)", anchor: "May p.14; Jul p.15; B05 2D, red flag 7", fix: "split from resignation and probe silence; weight that silence up"}
+critical_count: 0
+major_count: 3
+minor_count: 6
+material_found: 13
+material_caught: 9
+acceptance_rate: 69
+coverage_basis: "13 material (1 CRITICAL, 12 MAJOR) of 37 listed (28 main, 9 peer); 9 caught, 2 partially caught, 2 missed; 69% strict (85% counting partials); denominator >= 4 so rate applies"

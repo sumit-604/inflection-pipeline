@@ -1,0 +1,53 @@
+stage: B01-gate0
+company: "PVRINOX"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "screener P&L, Balance Sheet, Cash Flow, Quarters CSVs absent (empty export); only Data Sheet used"
+  - "screener ROCE not provided; ROCE computed (proxy capital employed = equity + reserves + borrowings incl. leases; current liabilities NOT FOUND for FY17-FY24)"
+  - "capex line NOT FOUND for FY17-FY23 (annual reports give FY24-FY26 only); B2/B3 scored on FY24-FY26"
+  - "trade payables NOT FOUND for FY17-FY23; B4 and M12 scored on FY24-FY26"
+  - "peer data NOT PROVIDED (CINELINE has no concall transcripts); M2, M5, M6, M7, M9 scored 0 PEER DATA NEEDED"
+  - "prospectus not held (long-listed company, not a gap); research/ empty"
+  - "sector_cap_row NOT FOUND in Section 1B cap table (HIGH gap for phase 3, no effect on this stage)"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID (core 37 under 40) on Ind AS 116 reported basis. Depressors are FY21-FY25 losses (Covid FY21-22, INOX merger FY23, post-merger ROU depreciation and lease interest) and the lease-inclusive balance sheet. Block D is 5 on reported basis and 12 on ex-lease basis; ex-lease core is 44 = AVERAGE. FY26 PAT 334.1 Cr includes a one-time Zea Maize gain (continuing PAT 176.1 Cr). Deal-breakers 1, 3, 4, 8 apply. Verdict flag only, no halt."
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 0, B: 11, C: 12, D: 5, E: 9}
+core_score: 37
+moat_score: 20
+grand_total: 57
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "AVOID"
+deal_breakers:
+  - "1: Block A 0 under 8 -> max GOOD (drivers: ROCE negative FY21-FY22, 2.4-7.9% FY23-FY26)"
+  - "3: median ROCE 6.3% under 10% -> max AVERAGE"
+  - "4: cumulative CFO/PAT N/M (cumulative 10-year PAT -1,111.0 Cr, negative denominator; CFO +9,107.4 Cr) -> treated as under 0.50 -> max AVERAGE"
+  - "8: PAT negative in FY24 (-32.0 Cr) and FY25 (-279.6 Cr) within last 3 years -> max AVERAGE"
+  - "6 not triggered: ND/EBITDA 2.95x (lease-inclusive, FY26) is under 3x; IC 1.52x; margin of 0.05x"
+history_downgrade: false
+data_notes:
+  - "Data available: 10 years (FY17 to FY26). Scoring adapted to 10-year history; B2, B3, B4, M12 adapted to 3-year window FY24-FY26 (capex and payables exist only there)."
+  - "Basis: screener Data Sheet is consolidated, Ind AS 116 reported, Rs Cr. Screener Borrowings FY26 6,779.1 Cr = AR borrowings 7,586 mn + lease liabilities 60,205 mn (AR p.239) so it INCLUDES leases. FY20 onward is Ind AS 116 (depreciation step-up); FY17-FY19 pre-Ind AS 116 and standalone PVR, so ROCE, margin and leverage are not like-for-like across FY19/FY20."
+  - "FY20 borrowings 1,294.69 exclude leases (leases sit in Other Liabilities 4,652.86) while FY20 interest 481.79 includes lease interest, so FY20 ROCE 20.6% is overstated."
+  - "FY22 interest 497.84 equals FY21 interest 497.84 exactly; possible screener duplicate, FY22 ROCE uncertain."
+  - "Loss-to-profit: PAT negative FY21-FY25, positive FY26. Endpoints FY17 95.79 and FY26 334.1 both positive so CAGR 14.9% computed; it hides five loss years. No synthetic CAGR between loss years."
+  - "FY26 PAT 334.1 Cr (owners, AR p.240) = continuing 176.1 Cr + discontinued 156.7 Cr incl. Zea Maize disposal gain 195.2 Cr (1,952 mn). Ex-gain C2 CAGR 7.0% (score 1, not 3)."
+  - "Company Ind AS 116 adjusted PAT FY26 3,868 mn (386.8 Cr) and ex-gain continuing 2,306 mn (230.6 Cr) (AR p.26, p.35); reported continuing 1,761 mn (176.1 Cr). Three different PAT bases."
+  - "ROCE computed EBIT = PBT + interest; capital employed proxy equity+reserves+borrowings. FY26 exact (TA-CL) 8.4% vs proxy 7.9%; company-stated FY26 ROCE 10.2% (AR p.29); company LTM Sep-26 16.5% (Q2 FY27 press release p.3). Not used for scoring."
+  - "A4 on proxy: 7.88% vs 13.08% = -5.2pp -> 0; on exact FY26 8.4% it would be -4.7pp -> 1."
+  - "D1 basis: lease-inclusive net debt 6,187.5 Cr / EBITDA 2,095.2 Cr = 2.95x -> 1. Ex-lease net debt 167.0 Cr (BS-derived, AR p.239; company-stated 161.9 Cr AR p.29) / 2,095.2 = 0.08x -> 4. D2 reported 1.52x -> 1; continuing ex-gain 1.38x -> 0; ex-lease interest paid 145.6 Cr basis 7.7x -> 4. D3 reported 0.92 -> 3; ex-lease 0.10 -> 4. D4 0.47 -> 0 (ex-lease current liabilities 0.70, still 0)."
+  - "Net cash 30-Sep-26: BS-derived 132.4 Cr (cash 5,833 + bank 500 - borrowings 3,164 - 1,845 mn, Q2 FY27 results p.12) vs company-stated 140.7 Cr (1,407 mn, press release p.2); 8.3 Cr unreconciled. Buyback cash outflow 3,034 mn standalone (Q2 results p.3 note 2; CF p.2), 3,014 mn consolidated text per OCR."
+  - "B1: cumulative PAT FY17-FY26 is negative so ratio N/M, score 0. B3 on FY24-FY26: cumulative PAT only 22.5 Cr so ratio 217x is not meaningful; literal score 5 flagged. Block B without B3 = 6 (deal-breaker 2 would then trigger)."
+  - "CFO is on Ind AS 116 basis: lease repayments (incl. interest) sit in financing: FY26 1,184.7 Cr, FY25 1,124.3 Cr (AR p.241). Lease-adjusted FCF FY24-FY26 still positive each year."
+  - "E1: promoter 27.02% at 30-Sep-26 (XBRL; 27.60% on 01-Oct-26 after buyback, same filing) -> 0. FII 19.12% + DII 33.56% = 52.68% would give 3 only if professionally managed; promoter group exists, not applied. E3 pledge 2,944,444 shares = 11.10% of promoter holding (3.0% of total) -> 1. E4 contingent 2,555 mn (255.5 Cr, AR p.292) / net worth 73,787 mn = 3.5% -> 5; other legal cases not ascertainable."
+  - "M1 scored like-for-like: FY26 company pre-Ind AS 116 EBITDA margin 14.4% (AR p.26) vs FY17 15.1% (screener) = -0.7pp, stable, rev CAGR 13.5% -> 3. Literal screener margin 15.1% -> 31.5% would score 5 but is an Ind AS 116 artifact."
+  - "M11 literal 5: FY23-FY26 rev CAGR 21.0% vs FY20-FY23 3.2%, selling % 6.65 -> 5.51. Latest window is INOX-merger driven (FY24 +62.8%); FY24-FY26 revenue CAGR 4.3%. M12: WC days FY24 -20.6, FY25 -18.1, FY26 -14.0 (3 of 3 negative, drifting toward zero) -> 5 on 3-year window; FY17-FY23 NOT FOUND."
+  - "PEER DATA NEEDED: M2, M5, M9 (and M6 branch, M7 listed-player count). R&D not applicable to a cinema operator, M6 0."
+  - "Load-bearing facts: (1) net cash confirmed positive 132-141 Cr at Sep-26, net debt 162-167 Cr at Mar-26 ex-leases; (2) FY26 PAT bases 386.8 / 332.8 / 176.1 Cr, one-time gain 195.2 Cr (reported) or 156.2 Cr (adjusted basis); (3) H1 FY27 24 opened, 25 exited, 90-100 FY27 plan confirmed (press release p.4), prior 150 guidance NOT verified in this stage's files; (4) Q2 FY27 patrons +4%, ATP +14% confirmed (press release p.2)."
+block_b_trend: "improving: CFO 2,160.3 Cr FY26 vs 1,967.5 Cr FY25 (Ind AS 116 basis, before 1,184.7 Cr lease repayments); capex 258.7 Cr vs 330.7 Cr"
+analyst_note: "Core 37 is AVOID only on the lease-inclusive reported basis. Block D drives it: 5 reported versus 12 ex-lease, which lifts core to 44 and AVERAGE. The 10-year ROCE and ROE history is Covid, merger and Ind AS 116 transition, not a current run-rate; FY26 ROCE 7.9% proxy (company 10.2%), Q2 FY27 LTM 16.5% company-stated. Block B 11 leans on a 3-year window and a near-zero PAT denominator; treat as soft. Moat STRONG rests on mechanical M8, M11, M12 and a basis-adjusted M1, with peer tests unscored."

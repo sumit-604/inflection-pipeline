@@ -1,0 +1,73 @@
+stage: B04-bizmodel
+company: "CNL"
+run_date: "2026-11-11"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "shareholding pattern absent (B00)"
+  - "only FY2025-26 AR held: no FY24 balance sheet or prior-year AR, no 3-year trends"
+  - "screener formula sheets blank (B00)"
+  - "peer CSVs absent (B00): healthy ranges are company-history based, peer range NOT FOUND"
+  - "competitors, market share, top-customer share, Honeywell licence term, Solutions revenue, per-brand revenue and unit volumes NOT FOUND in AR or Q2 deck"
+  - "BSNL BharatNet and Zicom absent from AR and Q2 deck; BSNL only in Q2 FY27 transcript (outside this stage's source set)"
+flags:
+  - {type: FLAG-CASH, reason: "FY26 CFO (27,188.34) lakh vs PAT 7,029.29; receivable days 76.3 vs 48.7; H1 FY27 CFO +351.24 Cr (slide 7, 9) turn not decomposed in deck"}
+  - {type: FLAG-OFFSHORE-PROFIT, reason: "HK subsidiaries 51.1% of FY26 CON PAT at nil tax (B03; AOC-1 AR p.63); Q2 FY27 tax 4.19 Cr in both standalone and consolidated, PAT gap 13.29 Cr (51.2%); H1 FY27 gap 17.81 of 39.47 Cr (45.1%) (slide 31-32; calc)"}
+  - {type: FLAG-MARGIN-CLAIM, reason: "Brand segment gross margin 33.16% FY26 (AR p.112), not the 40-42% in memory; opex grew as fast as gross profit in FY26 and H1 FY27, so EBITDA margin gain is gross-margin driven"}
+  - {type: FLAG-BSNL, reason: "BharatNet order not in AR or deck; capex 1,700 + opex 1,200 = 2,900 Cr vs 3,194.83 Cr headline; management gave two different FY27 billing ranges in one answer; entity, guarantees NOT FOUND"}
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Market Entry Specialist (distribution)", type: "transactional pass-through trading", pct_of_revenue: 85.89, predictability: "M"}
+  - {name: "Brand Business (Honeywell licence, CyberPowerPC, WOZOYO)", type: "licensed and owned brand product sales", pct_of_revenue: 14.11, predictability: "M"}
+asset_intensity: "light"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - "Honeywell exclusive territorial licence: partial, medium durability, term NOT FOUND (AR p.15-16)"
+  - "Distribution reach 10,000+ partners, 300+ cities: medium durability (AR p.15; slide 4)"
+  - "Customs/AEO-T2 and bonded warehouse: minor, low to medium (AR p.13)"
+  - "Principal exclusivity relationships 5+ years: low to medium (AR p.45)"
+valuation_methods:
+  primary: {method: "P/E on cash-checked, normalised owners' earnings", why: "Positive growing PAT, asset-light; normalise for HK tax, NCI and a haircut until CFO/PAT recovers above 0.7"}
+  secondary: {method: "EV/EBITDA", why: "Rs 324.26 Cr working-capital debt moved sharply; EV captures funding cost that P/E hides"}
+  tertiary: {method: "Sum-of-the-parts on segment gross profit (rough check)", why: "Brand 59.1% of segment gross profit vs MES, but segment note stops at gross profit"}
+  not_applicable: ["DCF (negative, WC-driven FY26 CFO)", "P/B or ROE-based", "EV/Sales and P/S (gross margin 3.76% vs 33.16% by segment)", "dividend yield (Re 0.50)", "NAV (PPE 1.3% of assets)"]
+irrelevant_ratios:
+  - "Fixed asset turnover and capex ratios: PPE is 1.3% of assets with intangibles"
+  - "Headline debt-to-equity: working-capital debt tied to receivables and TReDS, not capacity debt"
+  - "Current ratio: inflated by receivables that are the risk"
+  - "Management ROCE and return on net worth: exclude borrowings and mix NCI profit with owners' equity"
+  - "Headline gross margin: blends 3.76% MES and 33.16% Brand, so moves with mix"
+  - "EV/Sales and P/S: a rupee of sales carries 3.76 to 33 paise of gross profit"
+  - "PAT growth and tax rate: offshore profit at nil tax"
+must_track_metrics:
+  - {metric: "Closing receivable days (CON)", healthy: "below 65 (48.7 FY25, 76.3 FY26)", red_flag: "above 80"}
+  - {metric: "CFO / PAT (half-year, ex advances and related-party swings)", healthy: "above 0.7", red_flag: "below 0.4 for a full year"}
+  - {metric: "Brand segment gross margin and share", healthy: "33% or higher; share rising from 14.11% FY26, 17.37% H1 FY27", red_flag: "margin below 30% or share below 14%"}
+  - {metric: "Net debt / equity and interest cover", healthy: "at or below 0.6 and above 6x (0.84, 6.09x now)", red_flag: "above 1.0 or cover below 4x"}
+  - {metric: "Consolidated minus standalone PAT and HK tax", healthy: "gap shrinking or HK tax and remittance disclosed", red_flag: "nil HK tax continuing with the gap above 45% of consolidated PAT"}
+unit_economics:
+  unit: "Rs 100 of product sales (per-product units NOT FOUND)"
+  revenue_per_unit: "100"
+  margin_per_unit: "MES 3.76 and Brand 33.16 gross; group gross 7.91, unallocated cost 4.12, finance cost 0.77, PBT 3.03 (AR p.112, p.97; calc)"
+  key_lever: "Brand share of sales (14.11% FY26, 17.37% H1 FY27) and receivable days; no operating leverage visible, opex +44.5% vs gross profit +43.7% in FY26"
+first_deterioration_signals:
+  - {risk: "Principal or licence loss", first_signal: "Brand segment revenue share, then outside-India revenue"}
+  - {risk: "Credit-fuelled growth", first_signal: "Closing receivable days, then allowance and >6-month bucket"}
+  - {risk: "Brand margin claim does not hold", first_signal: "Brand segment gross margin (AR p.112)"}
+  - {risk: "No operating leverage", first_signal: "Opex / gross profit"}
+  - {risk: "Working-capital debt stress", first_signal: "Short-term borrowings vs rated limits; interest cover"}
+  - {risk: "Cash conversion relapse", first_signal: "CFO / PAT and supplier advances"}
+  - {risk: "Offshore profit and tax", first_signal: "Consolidated minus standalone PAT gap and the tax line"}
+  - {risk: "Related-party scale", first_signal: "SCL transactions vs Rs 750 Cr limit; Click Retail balance"}
+  - {risk: "BSNL execution", first_signal: "Bank guarantees, advances, CWIP in the next balance sheet"}
+mgmt_questions:
+  - "Decompose the CFO swing from -Rs 271.88 Cr to +Rs 351.24 Cr: collections, payables stretch, TReDS, discounting or advances"
+  - "Honeywell licence term, renewal, royalty rate, and share of Secure Connection sales to group vs third parties"
+  - "Why no HK tax, who audits the HK subsidiaries, and the cash remittance path"
+  - "Why brand gross margin is 33.16% in the segment note against 40-42% cited"
+  - "Top 10 customers and principals by share, and related-party share"
+  - "BSNL BharatNet: contracting entity, CNL share, guarantees, funding need, revenue recognition basis"
+one_line_verdict: "Hybrid distributor (85.9% of sales at 3.76% gross margin) shifting to a licensed brand (14.1% of sales at 33.16%) with weak pricing power, a narrow licence-and-channel moat, no visible operating leverage, receivable-funded growth and half of profit offshore at nil tax; value on cash-checked P/E with EV/EBITDA as the check."
+analyst_note: "Corrections to memory: segment note shows brand gross margin 33.16%, not 40-42%; brand 14.11% of FY26 and 19.03% of Q2 FY27 revenue. New this stage (derived): (1) no operating leverage: FY26 unallocated cost +44.5% vs gross profit +43.7%; H1 FY27 opex +57.6% vs gross +56.7%, so the EBITDA margin gain is gross margin; mix explains about 1.8 of the 3.4-point Q2 gain at FY26 segment margins. (2) H1 FY27 standalone-to-consolidated PAT gap 17.81 of 39.47 Cr (45.1%), tax identical 7.35 Cr. (3) TReDS borrowings of Rs 171.19 Cr (Q4 deck slide 14) explain part of the debt rise, softening the leverage read but not the working-capital build. (4) BSNL order components sum to Rs 2,900 Cr vs 3,194.83 Cr headline; the deck's FY26 CFO is 271.88 on slide 7 and 273.10 on slide 8. (5) Deck slide numbers differ from memory's citations."

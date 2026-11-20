@@ -1,0 +1,65 @@
+stage: B06-peers
+company: "CNL"
+run_date: "2026-11-11"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Peer screener CSVs absent; shareholding absent (per B00)"
+  - "12 of 12 expected peer transcripts present; no RPTECH or CPPLUS call covers Jul-Sep 2026 (Q2 FY27), only REDINGTON; limits Q9 Diwali test"
+  - "No peer licenses a third-party brand or builds government telecom projects, so Q5 and Q6 are weakly mapped"
+flags:
+  - "Q2 split: cost rise and pass-through VERIFIED; 'without demand loss' CONTRADICTED"
+  - "Q1: 30,000 Cr surveillance market not corroborated; derived CPPLUS brand revenue ~3,630 Cr over 45.4% share implies ~8,000 Cr on that definition; basis unreconcilable from transcripts"
+  - "Q6: CPPLUS gross margin 30.8-31.8%, EBITDA 14-15% 'new normal', Q4 FY26 18% called a one-off; complicates CNL brand GP 40-42% and EBIT 18-19% bridge"
+  - "Q7: CPPLUS (only scaled surveillance peer) is capex-heavy, guide raised 100-150 to 200-300 Cr; complicates 'no capex needed'"
+  - "CPPLUS Q3 FY26 guided flat working capital; Q4 FY26 reported higher CCC (creditors down, prepayments): same reversal risk as CNL payables-led NWC"
+  - "Honeywell named once by CPPLUS (Q2 FY26); relevance to CNL's licensed category not established in transcripts"
+peers_provided: 12
+verified:
+  - {claim: "Q2a: memory/storage/CPU cost up 30-40% and passed through by distributors (REDINGTON 30-50%, RPTECH RAM 2-3x and notebooks 20-30%, CPPLUS cumulative 15-20%)", peers: ["REDINGTON", "RPTECH", "CPPLUS"], anchor_count: 8}
+  - {claim: "Q10a: AI-server/data-centre demand converting to revenue for distributors (REDINGTON TSG +91%, large deals >3,800 Cr mostly neo cloud; RPTECH largest AI DC project FY25, 20,000 Cr funnel)", peers: ["REDINGTON", "RPTECH"], anchor_count: 5}
+partially_verified:
+  - {claim: "Q1: surveillance growth 17-18% CAGR / STQC shifts share (CPPLUS 15-16% unit CAGR, share 25% to 45.4%); 30,000 Cr market not corroborated", peers: ["CPPLUS"]}
+  - {claim: "Q3: market-entry margin expansion structural (peers show tens of bps from mix and operating leverage, call distributor margins narrow-band)", peers: ["RPTECH", "REDINGTON"]}
+  - {claim: "Q4: NWC 45 days via payables (benchmarks 32-64 days; peers improved via collections/vendor terms; CPPLUS creditor days fell in shortage; TReDS not mentioned)", peers: ["RPTECH", "REDINGTON", "CPPLUS"]}
+  - {claim: "Q7: brand-led asset-light model (CPPLUS uses EMS/JV for low-end but invests heavily in own plants)", peers: ["CPPLUS"]}
+  - {claim: "Q8: Middle East freight/insurance shock and stock build (REDINGTON ~$3M/qtr extra cost, sea-to-air, Hormuz); 'normalised' not supported", peers: ["REDINGTON", "CPPLUS", "RPTECH"]}
+  - {claim: "Q9: Diwali shift moved sales (REDINGTON: partly for inventory, mainly Middle East; its Q2 revenue +48% accelerated)", peers: ["REDINGTON"]}
+contradicted:
+  - {claim: "Q2b: distributors pass on component costs without demand loss", contradicting_peer: "REDINGTON", quote_anchor: "REDINGTON Q2 FY27, Hariharan: 'consumer volumes are declining... Microsoft activation data is negative 20%, 30%'; 'at some point, these price increases will slacken the actual unit consumption'. Also RPTECH Q4 FY26, Goenka: unit market 'could degrow by 5% to 10%', consumer 'softness in the H2'"}
+unverifiable:
+  - {claim: "Q5: receivable terms, billing lag and guarantee needs on government/enterprise project orders", peers_checked: ["CPPLUS", "REDINGTON", "RPTECH"]}
+  - {claim: "Q6: brand A&P and manpower as % of sales, licensed-brand GP 40-42% and EBIT 18-19% bridge (CPPLUS benchmark GP 31-32%, EBITDA 14-15% complicates)", peers_checked: ["CPPLUS"]}
+  - {claim: "Q10b: Super Micro and passive cabling revenue for distributors", peers_checked: ["REDINGTON", "RPTECH", "CPPLUS"]}
+peer_coverage_map:
+  - {peer: "RPTECH", quarter: "Q2 FY26", usage: "substantive", contribution: "Yotta project lower margin and ROCE-first stance; PAT 1.5% long run; bad debt 0.01-0.02%; Diwali seasonality quote"}
+  - {peer: "RPTECH", quarter: "Q3 FY26", usage: "substantive", contribution: "RAM 2-3x and notebooks 20-30%; WC 60 days (debtors 47, creditors 43); 'margins normally fixed'"}
+  - {peer: "RPTECH", quarter: "Q4 FY26", usage: "substantive", contribution: "IDC unit -5 to -10%; consumer H2 softness; margins intact; ST Finserv non-recourse; ME routing unaffected"}
+  - {peer: "RPTECH", quarter: "Q1 FY27", usage: "substantive", contribution: "62% growth split 30-35 pts price/20-25 pts units; laptops 2x; channel inventory build; NWC 56 days"}
+  - {peer: "CPPLUS", quarter: "Q2 FY26", usage: "substantive", contribution: "STQC rollout and backlog; capacity 1.8M; government ~15%; Honeywell mention; marketing 29 Cr"}
+  - {peer: "CPPLUS", quarter: "Q3 FY26", usage: "substantive", contribution: "40% share; 6-8% hike; chip prepayments; capex 100-150 Cr; flat WC guide later reversed"}
+  - {peer: "CPPLUS", quarter: "Q4 FY26", usage: "substantive", contribution: "15-16% unit CAGR; 45.4% share; GM 31.8%; EBITDA 14-15% new normal; capex 200-300 Cr; creditors down"}
+  - {peer: "CPPLUS", quarter: "Q1 FY27", usage: "substantive", contribution: "CCC 64 days; 40+ certified brands; 10-20% hikes; ME no supply impact; capacity 2.5M at 85-90%"}
+  - {peer: "REDINGTON", quarter: "Q3 FY26", usage: "substantive", contribution: "Price pass-through with no extra gross margin; unit volumes under pressure; data-centre ROCE discipline"}
+  - {peer: "REDINGTON", quarter: "Q4 FY26", usage: "substantive", contribution: "West Asia war, ME ~30-35% of business, war insurance withdrawn, EBITDA 2.2-2.4%, ROCE >18%"}
+  - {peer: "REDINGTON", quarter: "Q1 FY27", usage: "substantive", contribution: "Sea-to-air shift ~$3M/qtr, WC 32 days with extra vendor credit, large deals ~1,000 Cr"}
+  - {peer: "REDINGTON", quarter: "Q2 FY27", usage: "substantive", contribution: "Prices +30-50%, consumer units falling, Diwali/inventory answer, WC 35 days, AR provisions 213 Cr, TSG +91%"}
+industry_cross_read:
+  demand: "Price-driven boom with weakening units: value up 40-60% at peers, consumer units falling and commercial holding; forward buying and channel inventory build at all three (RPTECH Q1 FY27, REDINGTON Q2 FY27, CPPLUS Q4 FY26)"
+  pricing_inputs: "Memory/CPU/SSD shortage lifts ASPs 20-50% and persists to 2027-28 per peers; absolute margin rises, percentage margin flat; no peer reports extra gross margin"
+  capex_cycle: "Lone heavy expander in surveillance (CPPLUS capex 200-300 Cr, capacity to double by 2028); distributors capital-light but funding-stretched (REDINGTON flags capital raise); not an industry capacity race"
+peer_mentions_of_company:
+  - "No peer mentions CNL. Indirect only: CPPLUS Q2 FY26 (Khemka): 'I believe Honeywell has some certification already there but we don't see any products out'; relevance to CNL licence category unconfirmed"
+risks_peers_raise:
+  - "Component allocation shortage forcing prepayments and shrinking creditor days (CPPLUS Q3-Q4 FY26)"
+  - "Consumer affordability and unit elasticity (REDINGTON Q2 FY27; RPTECH Q4 FY26)"
+  - "War-risk insurance withdrawal and receivable delays in conflict regions (REDINGTON Q4 FY26)"
+  - "AR provisioning 213 Cr in one quarter (REDINGTON Q2 FY27)"
+  - "Large-deal / neo-cloud concentration and lumpy orders (REDINGTON Q2 FY27; RPTECH Q2 FY26 Yotta)"
+  - "Funding capacity of growth, possible capital raise (REDINGTON Q2 FY27)"
+  - "Tier-2 channel inventory build (RPTECH Q1 FY27)"
+  - "Competitor STQC catch-up from 2028 (CPPLUS Q4 FY26)"
+  - "Forex hedging policy 85-100% (CPPLUS Q1 FY27); no equivalent disclosed by CNL"
+net_narrative_effect: "complicates"
+analyst_note: "Peers confirm the cost shock and pass-through, but not the quality of what CNL builds on it. Distributor margins are narrow-band (RPTECH 'normally fixed', REDINGTON EBITDA 2.2-2.4% ex Arena), so the 5.94-6.66% market-entry segment result needs a CNL-specific explanation (Make-in-India mix) that no peer can test. The 30,000 Cr surveillance market does not reconcile with CPPLUS's own share arithmetic (derived ~8,000 Cr) and basis may differ. CPPLUS is the best analogue for the brand side and shows creditor days falling and capex rising in a shortage, the opposite of CNL's asset-light and payables-led story. Peer set is adjacent, not like-for-like, for Q5 and Q6."
+cross_peer_hypothesis: "Vendor credit in the component shortage is allocation-linked and splits peers by chain position: finished-goods distributors (RPTECH, REDINGTON) held or lowered working capital, while CPPLUS, the component-buying brand-owner, saw creditor days fall and CCC rise to 64 days. If CNL behaves like the brand-owner, its payables-driven NWC fall (75 to 45 days) is its least durable cash source. Testable: NWC reverts toward 52-55 days by FY27 year end; falsified if NWC stays at or below 50 days through FY27 with the shortage persisting."

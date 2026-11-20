@@ -1,0 +1,64 @@
+stage: B09-tam
+company: "CNL"
+run_date: "2026-11-11"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "shareholding absent (B00)"
+  - "peer CSVs absent (B00)"
+  - "B07 capex-embedded growth NOT FOUND (fabless)"
+  - "market sizes for memory, storage, networking, imaging, cybersecurity software, drones NOT FOUND"
+  - "organised vs unorganised share, top-3 concentration, import share NOT FOUND"
+flags:
+  - "SAM channel filter 50% is an unsourced analyst assumption (30% gives 12,049; 70% gives 28,113)"
+  - "surveillance market sources diverge 4.3x (USD 1.74 bn to 7.5 bn); conservative carried, realistic run as sensitivity"
+  - "mgmt market claims are inflated: 9.27x conservative TAM; deck slides 23-24 carry copy errors"
+  - "CNL India share of SAM overstated: numerator includes categories not sized, wholesale vs retail basis"
+  - "SOM cagr is India-basis; company-level (outside India held flat) is 15.3% yr3 and 12.8% yr5"
+  - "mgmt FY29 Rs 6,000 Cr needs 20.4% of conservative SAM (+11.4pp) or 9.4% of realistic SAM"
+market_definition: "India sales of laptop accessories, PC-gaming peripherals, video surveillance hardware and structured cabling through partner channels; excludes memory, storage, networking, software, drones (not sized) and BSNL project work"
+tam_cr: {conservative: 41675, realistic: 70745}
+sam_cr: 20081
+sam_pct_of_tam: 48.2
+som_3yr_cr: 3237
+som_5yr_cr: 4035
+som_implied_revenue_cagr: {yr3: 21.7, yr5: 17.6}
+current_sam_share_pct: 8.95
+revenue_headroom_x: 11.2
+tam_growth_pct: 7.5
+runway_class: "GOOD"
+mgmt_claim_cr: 386175
+mgmt_claim_ratio: 9.27
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient physically (fabless, B07 NOT FOUND); funding is the constraint. Gap of Rs 1,860 Cr between mgmt FY29 target 6,000 and company-level SOM 4,140; management plan is the optimistic side"
+methods_used: ["top-down ceiling (Mordor IT hardware)", "bottom-up category sum", "peer revenue aggregation with 30-60% gross-up"]
+stale_data_flags:
+  - {datapoint: "computer accessories CAGR 11.6% (2020-26)", source: "DataQuest", year: 2021}
+  - {datapoint: "India CCTV above Rs 27,000 Cr by 2027-28", source: "Bonafide Research", year: 2023}
+searches_performed:
+  - "IDC India PC market 2025"
+  - "India video surveillance market size 2025"
+  - "Redington Rashi Aditya Infotech FY26 revenue"
+  - "India computer peripherals accessories market size"
+  - "Aditya Infotech CP Plus FY26 results"
+  - "India IT hardware distribution unorganised share"
+  - "USD INR exchange rate November 2026"
+  - "India structured cabling market size 2025"
+searches_skipped:
+  - "memory/storage, networking, imaging, cybersecurity, drone market sizes"
+  - "organised vs unorganised distribution share (one search, not found)"
+  - "global per-capita benchmark"
+  - "import-substitution data"
+  - "Redington India revenue split"
+  - "paywalled reports (Euromonitor, Ken, IMARC full text)"
+downstream_candidates:
+  - {signal: "BSNL BharatNet Odisha billing and guarantees", entity_type: "counterparty", demand_link: "Largest new management revenue line; outside distribution SAM", likely_source: "PIB, BSNL website, Parliament Q&A", cadence: "event-driven", shared: false}
+  - {signal: "Honeywell licence renewal", entity_type: "counterparty", demand_link: "Brand segment is 59% of segment result", likely_source: "CNL BSE/NSE announcements", cadence: "event-driven", shared: false}
+  - {signal: "Rashi Peripherals and Redington quarterly results", entity_type: "end-customer", demand_link: "Channel read on peripherals, memory and networking demand", likely_source: "BSE/NSE results and concall transcripts", cadence: "quarterly", shared: true}
+  - {signal: "Aditya Infotech (CP Plus) quarterly results", entity_type: "counterparty", demand_link: "Surveillance market growth and STQC supply read", likely_source: "BSE/NSE results and concall transcripts", cadence: "quarterly", shared: false}
+  - {signal: "STQC / MeitY CCTV testing rules", entity_type: "regulatory", demand_link: "Gates which cameras can be sold across surveillance lines", likely_source: "STQC and MeitY notifications", cadence: "event-driven", shared: true}
+  - {signal: "IDC India PC tracker", entity_type: "macro", demand_link: "PC units and prices drive peripherals attach", likely_source: "IDC India press releases", cadence: "quarterly", shared: false}
+  - {signal: "India data-centre capacity additions", entity_type: "end-customer", demand_link: "Cabling demand for data-centre lines", likely_source: "Hyperscaler and colocation BSE filings; IBEF sector notes", cadence: "quarterly", shared: false}
+  - {signal: "INR/USD rate and memory prices", entity_type: "macro", demand_link: "Import cost and pass-through across all streams", likely_source: "RBI reference rate; DRAM price indices", cadence: "monthly", shared: true}
+demand_externally_verifiable: true
+analyst_note: "SOM CAGRs are India-basis (base 1,797.13 Cr). Company-level with outside India (902.64 Cr) held flat: 15.3% yr3, 12.8% yr5; stage 11 should compare these to total revenue growth. Realistic-surveillance sensitivity (SAM 34,616, growth 16%): India CAGR 40.4% yr3. Central uses conservative surveillance because 20.6% is uncorroborated, though CP Plus grew 35.6% in FY26. SAM channel filter 50% is an assumption. P/E not in inputs, so the valuation line is untested."

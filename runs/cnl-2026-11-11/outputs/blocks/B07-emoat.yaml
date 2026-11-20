@@ -1,0 +1,52 @@
+stage: B07-emoat
+company: "CNL"
+run_date: "2026-11-11"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "BSNL BharatNet AWO (~Rs 3,194.83 Cr) not in inputs/announcements; only Q1 FY27 presentation, Q2 FY27 call and CRISIL (06-Aug-2026) mention it; entity, consortium share, guarantees, funding NOT FOUND, so treated as claim"
+  - "Infinova India acquisition: no filing in inputs; Q1 FY27 presentation says 'acquisition', Q2 FY27 call says close before 15-Nov-2026; treated as claim"
+  - "Customer concentration (C2) rests on a single CRISIL sentence (top customer ~25% vs 50-60% historical); AR discloses no concentration figure"
+  - "Honeywell licence agreement, term and royalty not in inputs; renewal date comes from Q4 FY26 call only"
+  - "Only FY26 AR; shareholding, peer CSVs and screener formula sheets absent (per B00)"
+flags:
+  - "KNIFE-EDGE: em_score 12.8 vs 12.0 floor of the MODEST band. Re-grading C2 from documented (3.0) to claim (2.1) gives 11.9 and NONE. Classification is MODEST at the low end"
+  - "Zicom filings inconsistent: Reg 30 and media release say 100% for Rs 50.50 Cr; EGM notice resolves approx 82.44% held by Onyx SaaS (1,64,88,926 of 2,00,00,000 shares); Annexure A item 2 names 'Infinova India' in a Zicom disclosure (apparent drafting error)"
+  - "Honeywell licence expires March 2027 (5 years from mid-2021, Q4 FY26 call p.16); renewal unsigned; brand segment is 59% of FY26 segment result (B05)"
+  - "Emerging-moat score is almost entirely forward optionality: 5 of 8 scoring categories are Weak"
+em_score: 12.8
+em_classification: "MODEST"
+active_categories:
+  - {id: "C2", name: "Customer concentration improving", strength: "Moderate", evidence_type: "documented (third-party CRISIL, single point)", time_to_materialise: "already visible; durability 12-24m"}
+  - {id: "H2", name: "Strategic partnerships (Honeywell exclusive licence, CyberPowerPC JV)", strength: "Moderate", evidence_type: "documented (licence in force) with claim on renewal", time_to_materialise: "renewal test Mar-Aug 2027"}
+  - {id: "H1", name: "Consolidation / bolt-on acquisitions (Zicom SaaS; Infinova pending)", strength: "Moderate", evidence_type: "documented (Zicom Board approval and EGM notice) plus claim (Infinova)", time_to_materialise: "12-24m"}
+evidence_mix: {documented: 10, claim: 9, inference: 2}
+completionist_recount: "📄 recount performed: 10 documented items across 8 categories (H2, H1, C1, C2, F1, R1, A4, G2); no category reaches Strong; 3 Moderate, 5 Weak; 8 of 22+R1 active, below the 12-category guard"
+catalysts_12m:
+  - {catalyst: "Infinova India share transfer closes (promised before 15-Nov-2026, plus ~15 days FEMA)", window: "Nov-Dec 2026", evidence_type: "claim", anchor: "Q2 FY27 call p.8"}
+  - {catalyst: "EGM approves preferential issue of 2,25,000 shares at Rs 1,133.33 for Zicom SaaS", window: "28-Nov-2026", evidence_type: "documented", anchor: "EGM notice 06-Nov-2026 p.1-3; Reg 30 04-Nov-2026"}
+  - {catalyst: "WOZOYO Black Friday ramp (AMS spend about 50% of sales; target Rs 45-50 Cr FY27)", window: "27-Nov-2026 to Dec 2026", evidence_type: "claim", anchor: "Q2 FY27 call p.7, p.10"}
+  - {catalyst: "Zicom SaaS completion (indicative within 3 months of 04-Nov-2026)", window: "by Feb 2027", evidence_type: "documented", anchor: "Reg 30 04-Nov-2026 Annexure A item 6 p.4"}
+  - {catalyst: "Infinova STQC-certified sales visible (Rs 75-80 Cr year 1)", window: "Jan-Mar 2027", evidence_type: "claim", anchor: "Q2 FY27 call p.8, p.16"}
+  - {catalyst: "BSNL BharatNet first QC-certified billing Rs 150-200 Cr (speakers also said 100-150 Cr) and funding/guarantee disclosure", window: "Q4 FY27 (Jan-Mar 2027)", evidence_type: "claim", anchor: "Q2 FY27 call p.13-14"}
+  - {catalyst: "Honeywell licence renewal (expiry March 2027; renewal to follow Honeywell's separation of its units)", window: "Mar-Aug 2027", evidence_type: "claim", anchor: "Q4 FY26 call p.16, p.27"}
+  - {catalyst: "Q3 FY27 and Q4 FY27 results: receivables, CFO and NWC days after payables unwind (mgmt says 52-55 days normal)", window: "Feb 2027 and May 2027", evidence_type: "claim", anchor: "Q2 FY27 call p.13, p.20-21"}
+capex_embedded_growth_pct: "NOT FOUND"
+optionality_register:
+  - {optionality: "BSNL BharatNet Odisha middle-mile (~Rs 3,194.83 Cr; FY28 billing Rs 500-600 Cr at 6-7% net)", converting_evidence: "Exchange filing of the work order with contracting entity, consortium share, bank guarantees and funding plan; first QC-certified invoice", first_appears: "Reg 30 order filing, Q3/Q4 FY27 results segment note, Q4 FY27 call", window: "3-9 months"}
+  - {optionality: "Infinova India: STQC-certified Make-in-India camera brand (Rs 75-80 Cr yr 1, Rs 200 Cr yr 2)", converting_evidence: "Closing filing (SPA, price), STQC certificate in Infinova/CNL name, first invoices", first_appears: "Reg 30 acquisition filing; Q3 FY27 call", window: "3-9 months"}
+  - {optionality: "WOZOYO own brand as a second Honeywell-type brand (Rs 100-150 Cr FY28; 37-40% gross margin hurdle)", converting_evidence: "Disclosed WOZOYO revenue and segment margin, returns rate, sell-through beyond AMS-funded Amazon US", first_appears: "Q3/Q4 FY27 presentation brand split, results segment note", window: "6-12 months"}
+  - {optionality: "Zicom SaaS recurring monitoring revenue attached to the surveillance install base", converting_evidence: "Completion filing, post-deal recurring-revenue and contract-count disclosure, cross-sell orders", first_appears: "Completion Reg 30 filing; Q4 FY27 presentation", window: "6-18 months"}
+  - {optionality: "Data centre / AI servers (Super Micro tie-up, Honeywell passive cabling, Rs 50 Cr govt data-centre PQ)", converting_evidence: "Signed order or disclosed revenue line for data-centre products", first_appears: "Order announcement or segment split in results", window: "12-24 months"}
+  - {optionality: "Singapore sourcing subsidiary to diversify suppliers and lower cost", converting_evidence: "Incorporation completed, disclosed gross margin or procurement saving in market-entry segment", first_appears: "Reg 30 incorporation intimation; Q3-Q4 FY27 call", window: "6-12 months"}
+  - {optionality: "Brand segment margin reaching 40-42% gross and 18% EBIT at Rs 500-600 Cr", converting_evidence: "Segment result above 36% sustained over 3+ quarters (currently 32.7-34.2%)", first_appears: "Quarterly consolidated segment note", window: "4-8 quarters"}
+  - {optionality: "Further brand licence or acquisition (management 'looking at one more')", converting_evidence: "Signed licence or SPA filed under Reg 30", first_appears: "Exchange filing", window: "6-18 months"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (core 49, 3 moats MODERATE) with a MODEST, knife-edge emerging score of 12.8 resting on one third-party concentration data point, an unrenewed licence and two small bolt-ons; not a transition setup yet"
+top_moat_risks:
+  - "Honeywell licence not renewed or renewed on worse terms in March 2027 (brand segment 59% of FY26 segment result)"
+  - "H1 FY27 CFO +351.24 Cr is payables-funded (+281.90 Cr), management calls 45 NWC days unsustainable; reversal would erase the cash-conversion improvement and expose BSNL working-capital needs"
+  - "BSNL BharatNet execution: ~1,700 Cr capex phase with no disclosed funding, guarantee or entity; speakers gave different FY27 billing figures"
+  - "Execution credibility: B05 grade C (8 of 19 promises missed); own-brand launch late twice, brand growth guide cut from 50-60% to ~29-35%"
+  - "Acquisition integration and disclosure quality: Infinova unclosed, Zicom stake 100% vs 82.44% inconsistency"
+analyst_note: "Scored sparsely on purpose. The central forward story (brand mix 14.11% FY26 to 19.03% Q2 FY27, segment result about 33% vs 3-6% for market entry) is largely the existing Honeywell moat, so it sits in H2 at 2.0 and not as new emerging evidence. WOZOYO traction, BSNL, Infinova, STQC readiness and the 40-42% brand gross margin are claims (0.7x or register). Brand segment result in the filing is 32.7-34.2%, not 40-42%. I1 and I2 score 0 (no talent-economics leg; no named competitor sacrifice). Capex-embedded growth is NOT FOUND (fabless, own capex Rs 3.30 Cr FY26); the management-claim cross-check of FY28 BSNL+Infinova+WOZOYO is 29-35% of FY26 revenue and is not capex-derived."

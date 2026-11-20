@@ -1,0 +1,24 @@
+# Results filings to fetch (18 rows)
+
+A review exists for each row, but the results filing for that period is not on this machine, or it could not be read.
+
+| ticker | name | period | what was found | review location |
+|---|---|---|---|---|
+| 3IINFOLTD | 3i Infotech Limited | Q2/H1 FY27 | Filing found but a needed figure cannot be read (PBT or other income). Consolidated statement is on PDF page 8 (low-resolution scan). Last-year PBT (both rows V and VII) has an unreadable middle digit even at 8x zoom (lo | QuarterlyReviewer/reviews/2026-10-30_1025/3IINFOLTD |
+| AURUM | Aurum Proptech Ltd | Q1 FY27 | No results filing for this period on this machine (review used a concall or other document). | repo origin/claude/aurob-proptech-investor-analysis-cqrz1p:runs/aurum-q1fy27 |
+| AYE | Aye Finance Ltd | Q1 FY27 | No results filing for this period on this machine (review used a concall or other document). | repo origin/claude/run-pipeline-aye-adnmeu:runs/aye-q1fy27 |
+| CGRAPHICS | Creative Graphics Solutions India Ltd (Creative Graphics / Wahren) | Q2/H1 FY27 | Candidate file is an ABRIDGED SAVE: only narrative pages (board outcome cover, auditor review reports, notes). Its header says the numeric statements (pp.4,5,6,9,10,11) are held in a different document (1-ledger-forensic | QuarterlyReviewer/reviews/2026-11-16_0552/CGRAPHICS |
+| DECCANGOLD | DGML (Deccan Gold Mines Ltd) | Q1 FY27 | No results filing for this period on this machine (review used a concall or other document). | repo origin/claude/deccan-gold-concall-analysis-5eyww0:runs/deccangold-q1fy27 |
+| FEDFINA | Fedbank Financial Services Ltd | Q1 FY27 | No results filing for this period on this machine (review used a concall or other document). | repo origin/claude/fedfina-call-analysis-ggpjgq:runs/fedfina-q1fy27 |
+| GHVINFRA | GHV Infra Projects Limited (formerly Sindu Valley Technologies Ltd) | Q1 FY27 | The only candidate is a 3-page Regulation 30 media release (ghvinfra_media_release_q1fy27.pdf, dated Aug 11 2026), not the Regulation 33 statement of profit and loss. It quotes standalone Q1FY27 vs Q1FY26 revenue Rs 218. | repo origin/claude/ghv-infra-quarterly-analysis-z6m8wn:runs/ghvinfra-q1fy27 |
+| GMMPFAUDLER | GMM Pfaudler Limited | Q1 FY27 | The only candidate is a 3-page press release / Quarterly Earnings Release dated August 5 2026 (consolidated revenue Rs 925 crore, EBITDA 94, PAT 22, with only summary KPIs), not the Regulation 33 statement of profit and  | repo origin/claude/gmm-pfaudler-quarterly-analysis-55jc3e:runs/gmmpfaudler-q1fy27 |
+| GOLDIAM | Goldiam International Ltd | Q1 FY27 | No results filing for this period on this machine (review used a concall or other document). | repo origin/claude/goldium-q1-fy27-earnings-8csvi8:runs/goldium-q1fy27 |
+| KCEIL | Kay Cee Energy & Infra Ltd | Q2/H1 FY27 | The only candidate is a CRISIL rating rationale dated 06 Feb 2026 for Kay Cee Energy & Infra Ltd (about 9,000 characters, one line). It is not a results filing and not for the Q2/H1 FY27 period. | QuarterlyReviewer/reviews/2026-11-03_0551/KCEIL |
+| KSOLVES | Ksolves India Ltd | Q1 FY27 | No results filing for this period on this machine (review used a concall or other document). | repo origin/claude/k-solve-quarterly-analysis-23wdwl:runs/ksolves-q1fy27 |
+| MAXIND | Max India Ltd | Q1 FY27 | No results filing for this period on this machine (review used a concall or other document). | repo origin/claude/max-india-earnings-analysis-2pm9im:runs/maxind-q1fy27 |
+| OSWAL | Oswal Pumps Ltd | Q1 FY27 | No results filing for this period on this machine (review used a concall or other document). | repo origin/claude/oswal-pumps-q1-analysis-si2lg8:runs/oswal-q1fy27 |
+| PAISALO | Paisalo Digital Ltd | Q1 FY27 | Candidate is the Reg 30 board outcome intimation dated August 05, 2026 (AGM date, book closure, director re-appointment). Extract header states it has no monetary or financial figures. No results statement in the candida | repo origin/claude/quarterly-results-protocol-dlltuf:runs/paisalo-q1fy27 |
+| PARTH | Parth Electricals & Engineering Ltd | Q2/H1 FY27 | No results filing for this period on this machine (review used a concall or other document). | QuarterlyReviewer/reviews/2026-11-03_0551/PARTH |
+| QPOWER | Quality Power Electrical Equipments Ltd | Q1 FY27 | No results filing for this period on this machine (review used a concall or other document). | repo origin/claude/qpower-q1-fy27-notion-6lgxlt:runs/qpower-q1fy27 |
+| QPOWER | Quality Power Electrical Equipments Ltd | Q2/H1 FY27 | No results filing for this period on this machine (review used a concall or other document). | repo origin/run/quarterly-q2fy27-2026-10-19:runs/qpower-q2fy27 |
+| RAYMONDREL | Raymond Realty Ltd | Q1 FY27 | No results filing for this period on this machine (review used a concall or other document). | repo origin/claude/raymond-realty-q1-fy27-h5wmo2:runs/raymondrealty-q1fy27 |

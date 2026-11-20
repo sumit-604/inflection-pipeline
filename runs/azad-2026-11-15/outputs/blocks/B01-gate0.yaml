@@ -1,0 +1,45 @@
+stage: B01-gate0
+company: "AZAD"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "screener Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization sheets are EMPTY (ABSENT documents); screener-Data_Sheet.csv carries the raw values. screener ROCE is not in the Data Sheet: ROCE computed from filings."
+  - "Capex per year is not in screener-Data_Sheet.csv; taken from cash flow statements in the prospectus (FY21-FY23) and ARs (FY24-FY26)."
+  - "Peer financials not in inputs (only peer concalls): M2, M5, M6 third tier, M9 scored 0, PEER DATA NEEDED."
+  - "Promoter holding at Sep 2023 (exact 3 years back) NOT FOUND; post-Offer Dec 2023 promoter-only holding used as earliest comparable."
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE (core 53). Depressors: Block B = 0 (cumulative CFO -56.75 Cr vs cumulative PAT 328.21 Cr, FCF negative in all 6 years, capex-led: FY26 capex 572.48 Cr); ROCE diluted from FY24 18.3% to FY25 8.7% and FY26 11.5% by the Rs 700 Cr QIP (Mar 2025) and CWIP 256.68 Cr not yet earning; promoter holding 64.84% post-IPO to 55.84% (-9.0pp). Drivers are FY25-FY26 (QIP and capex build) for ROCE and every year for FCF."}
+  - {type: FLAG-CASH, reason: "H1 FY27 consolidated OCF is NEGATIVE Rs -43.62 Cr (Rs -436.24 Mn) (results Q2 FY27 p.11), the July falsifier is not cleared. Working-capital days 369 annualised at Sep 2026 on the Gate 0 basis versus 336 at FY26."}
+data_years: 6
+fy_range: "FY21 to FY26"
+blocks: {A: 3, B: 0, C: 20, D: 16, E: 14}
+core_score: 53
+moat_score: 11
+grand_total: 64
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers:
+  - "DB1 Block A = 3 (<8): max GOOD (FY25-FY26 ROCE 8.7% and 11.5% drive it)"
+  - "DB2 Block B = 0 (<8): max GOOD (negative FCF every year FY21-FY26)"
+  - "DB4 cumulative CFO / cumulative PAT = -0.17 (<0.50): max AVERAGE (CFO negative in FY23, FY24, FY26)"
+history_downgrade: false
+data_notes:
+  - "Units: screener Cr; filings INR million. Rs Cr = Rs Mn / 10. Consolidated figures used throughout (screener totals tie to consolidated balance sheets: FY26 2,200.04 Cr = 22,000.42 Mn)."
+  - "Data confidence: 6 years = 'lower', may not have seen full cycle. Pre-FY24 is restated pre-IPO (listed 2023-12-28). No downgrade tier (needs 3-4 years)."
+  - "ROCE computed (screener Data Sheet has none) = (PBT + Interest) / (Total assets - Total current liabilities): FY21 15.04, FY22 20.96, FY23 14.86, FY24 18.32, FY25 8.73, FY26 11.50. Median 14.95 sits 0.05pp under the 15 band edge; scored 1 on the written threshold (would be 3 on a one-decimal round)."
+  - "ROE FY21 uses closing net worth (opening unavailable): FY21 12.65, FY22 27.94, FY23 5.23, FY24 13.80, FY25 8.57, FY26 9.09. Median 10.87."
+  - "Capex (Rs Mn, consolidated): FY21 203.84, FY22 1,171.47, FY23 856.22 (prospectus p.73), FY24 753.40 (AR2025), FY25 2,932.52, FY26 5,724.80 (AR2026). CFO from screener ties to filings (FY26 -118.97 Cr = -1,189.66 Mn)."
+  - "WC days on revenue basis for receivables, inventory and payables (no COGS basis): FY21 147.4, FY22 167.9, FY23 228.0, FY24 270.9, FY25 265.6, FY26 336.3. H1 FY27 annualised (H1 revenue x2) 369.3. July tripwire cited 344; that figure's basis is not in these inputs."
+  - "Sector rows: D1 net debt uses screener borrowings (includes lease liabilities) less cash and bank: 474.32 - 184.59 = 289.73 Cr. Net debt / EBITDA 1.29x on EBITDA 225.32 Cr (ties to sum of 4 quarterly operating profits). H1 FY27 borrowings rose (consolidated Rs 5,616.25 Mn vs Rs 4,566.39 Mn at Mar 2026)."
+  - "Revenue growth delivered: Q1 FY27 +25.9% (172.60 vs 137.09 Cr), Q2 FY27 +31.1% (190.94 vs 145.63 Cr), H1 FY27 +28.6% (363.54 vs 282.72 Cr) on screener quarters. Concall states Q2 187.8 Cr and H1 358.3 Cr (+29.3%), a different revenue basis; both shown, discrepancy for stage 4."
+  - "Customer concentration FY26 (AR2026 p.242 consolidated): top customer Rs 1,123.97 Mn = 18.6% of revenue 6,029.8 Mn (tripwire ~20%: not breached, 1.4pp room); top-5 = Rs 1,711.10 Mn = 28.4% if inclusive of top customer, or Rs 2,835.07 Mn = 47.0% if the standalone note wording 'top 5 other than above' applies. Both below the 65% tripwire. The two AR notes disagree on wording; verifier to resolve. FY25 top customer 648.81 Mn (consolidated) vs 631.30 Mn (standalone)."
+  - "QIP (Rs 7,000 Mn raised, Mar 2025): utilised by Sep 30 2026 Rs 6,217.60 Mn, unutilised Rs 782.40 Mn; capex object Rs 4,494.60 of 5,250.00 Mn used, Rs 755.40 Mn left (results Q2 FY27 p.6). CWIP 2,124.90 Mn at Sep 2026 vs 2,566.82 Mn at Mar 2026; consolidated PPE 9,747.98 vs 7,632.31 Mn. H1 FY27 capex Rs 1,397.51 Mn. Monitoring agency reports: announcements/AZAD_2026-11-06_Monitoring_Agency_Report__69e0e356 (not read line by line at Gate 0)."
+  - "Peer data needed: M2, M5, M9 (all scored 0), M6 (R&D expenditure stated NIL, AR2026 line 2456, so M6 = 0 irrespective of peers)."
+  - "M4 scored 3: zero revenue-decline years, but receivable days rose 156.4 to 188.7 (+32.3), so the 5-point tier fails; the 3-point tier has no receivable condition. M10 scored 0: every year grew but receivable-days rise exceeds 10 and the 3-point tier requires 'stable'."
+  - "M11: only FY21-FY26 exists, two-window test impossible; scored on overall trend (revenue CAGR 37.5% >=20%, selling and admin % of revenue 6.26% FY21 to 3.71% FY26, a proxy for selling expense)."
+  - "No loss-to-profit swing; PAT positive all 6 years. PAT dipped FY23 (8.47 Cr, interest 52.38 Cr pre-IPO debt)."
+  - "Deal-breaker 3, 5, 6, 7, 8, 9 not triggered. Pledge: promoter shares pledged = false (shareholding Sep 2026)."
+block_b_trend: "deteriorating: FY26 CFO -118.97 Cr after +53.67 Cr in FY25; H1 FY27 CFO -43.62 Cr; WC days 147 (FY21) to 336 (FY26) to 369 (H1 FY27 annualised)"
+analyst_note: "Growth block is full marks (revenue CAGR 37.5%, PAT CAGR 63.1%) and balance sheet scores 16, so the 53 core is held down by cash and returns only. Block B is zero because every year ate cash into receivables and inventory plus capex; the QIP funded it, not operations. Falsifier 1 (July) is not cleared: H1 FY27 OCF is -43.62 Cr, and receivables rose Rs 837.45 Mn in the half. No factoring disclosure was found in the cash flow statement. ROCE is low because QIP cash and CWIP sit in the denominator; the H1 FY27 CWIP fall of 442 Mn shows commissioning has begun. Top-1 customer at 18.6% is close to the 20% tripwire."

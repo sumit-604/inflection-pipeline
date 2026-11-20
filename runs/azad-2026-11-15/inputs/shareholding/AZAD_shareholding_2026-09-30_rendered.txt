@@ -1,0 +1,1087 @@
+AZAD Engineering Limited - Shareholding pattern as on 30-Sep-2026 (Reg 31 filing, NSE XBRL SHP_1737385_14102026110317_WEB.xml, broadcast 14-Oct-2026)
+Plain-text rendering of the XBRL facts; no values added or changed.
+
+## context MainD: 
+  ScripCode: 544061
+  Symbol: AZAD
+  MSEISymbol: NOTLISTED
+  ISIN: INE02IJ01035
+  NameOfTheCompany: AZAD ENGINEERING LIMITED
+
+## context MainI: 
+  DateOfReport: 2026-09-30
+  WhetherTheListedEntityIsPublicSectorUndertaking: false
+  WhetherTheListedEntityHasIssuedAnyPartlyPaidUpShares: false
+  WhetherTheListedEntityHasIssuedAnyPartlyPaidUpSharesForPromoterAndPromoterGroup: false
+  WhetherTheListedEntityHasIssuedAnyPartlyPaidUpSharesForPublicShareholder: false
+  WhetherTheListedEntityHasIssuedAnyPartlyPaidUpSharesForNonPromoterNonPublic: false
+  WhetherTheListedEntityHasIssuedAnyConvertibleSecurities: false
+  WhetherTheListedEntityHasIssuedAnyConvertibleSecuritiesForPromoterAndPromoterGroup: false
+  WhetherTheListedEntityHasIssuedAnyConvertibleSecuritiesForPublicShareholder: false
+  WhetherTheListedEntityHasIssuedAnyConvertibleSecuritiesForNonPromoterNonPublic: false
+  WhetherTheListedEntityHasIssuedAnyWarrants: false
+  WhetherTheListedEntityHasIssuedAnyWarrantsForPromoterAndPromoterGroup: false
+  WhetherTheListedEntityHasIssuedAnyWarrantsForPublicShareholder: false
+  WhetherTheListedEntityHasIssuedAnyWarrantsForNonPromoterNonPublic: false
+  WhetherTheListedEntityHasGrantedAnyESOPWhichAreOutstanding: true
+  WhetherTheListedEntityHasGrantedAnyESOPWhichAreOutstandingForPromoterAndPromoterGroup: false
+  WhetherTheListedEntityHasGrantedAnyESOPWhichAreOutstandingForPublicShareholder: true
+  WhetherTheListedEntityHasGrantedAnyESOPWhichAreOutstandingForNonPromoterNonPublic: false
+  WhetherTheListedEntityHasAnySharesAgainstWhichDepositoryReceiptsAreIssued: false
+  WhetherTheListedEntityHasAnySharesAgainstWhichDepositoryReceiptsAreIssuedForPromoterAndPromoterGroup: false
+  WhetherTheListedEntityHasAnySharesAgainstWhichDepositoryReceiptsAreIssuedForPublicShareholder: false
+  WhetherTheListedEntityHasAnySharesAgainstWhichDepositoryReceiptsAreIssuedForNonPromoterNonPublic: false
+  WhetherTheListedEntityHasAnySharesInLockedIn: true
+  WhetherTheListedEntityHasAnySharesInLockedInForPromoterAndPromoterGroup: true
+  WhetherTheListedEntityHasAnySharesInLockedInForPublicShareholder: false
+  WhetherTheListedEntityHasAnySharesInLockedInForNonPromoterNonPublic: false
+  WhetherAnySharesHeldByPromotersAreEncumberedUnderPledged: false
+  WhetherAnySharesHeldByPromotersAreEncumberedUnderPledgedForPromoterAndPromoterGroup: false
+  WhetherAnySharesHeldByPromotersAreEncumberedUnderNonDisposalUndertaking: false
+  WhetherAnySharesHeldByPromotersAreEncumberedUnderNonDisposalUndertakingForPromoterAndPromoterGroup: false
+  WhetherAnySharesHeldByPromotersAreEncumberedOtherThanByWayOfPledgeOrNDU: false
+  WhetherAnySharesHeldByPromotersAreEncumberedOtherThanByWayOfPledgeOrNDUForPromoterAndPromoterGroup: false
+  WhetherCompanyHasEquitySharesWithDifferentialVotingRights: false
+  WhetherCompanyHasEquitySharesWithDifferentialVotingRightsForPromoterAndPromoterGroup: false
+  WhetherCompanyHasEquitySharesWithDifferentialVotingRightsForPublicShareholder: false
+  WhetherCompanyHasEquitySharesWithDifferentialVotingRightsForNonPromoterNonPublic: false
+  WhetherTheListedEntityHasAnySignificantBeneficialOwner: false
+  DisclosureOfNotesOnShareholdingPatternExplanatoryTextBlock: NRI (Non-Repartriable) - 1630 Shareholders holding 2,39,633 shares and NRI (Repartriable) - 1500 Shareholders holding 2,61,047 shares.
+  PercentageOfBoardApprovedLimits: 1
+  PercentageOfLimitsUtilized: 0.131
+
+## context IndividualsOrHinduUndividedFamily_ContextI: CategoryOfShareholdersAxis=IndividualsOrHinduUndividedFamilyMember
+  NumberOfShareholders: 8
+  NumberOfFullyPaidUpEquityShares: 36064240
+  NumberOfShares: 36064240
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.5584
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 36064240
+  NumberOfVotingRights: 36064240
+  PercentageOfTotalVotingRights: 0.5584
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 36064240
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.5577
+  NumberOfTheLockedInShares: 11827600
+  LockedInSharesAsAPercentageOfTotalNumberOfShares: 0.328
+  NumberOfEquitySharesHeldInDematerializedForm: 36064240
+
+## context Indian_ContextI: CategoryOfShareholdersAxis=IndianMember
+  NumberOfShareholders: 8
+  NumberOfFullyPaidUpEquityShares: 36064240
+  NumberOfShares: 36064240
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.5584
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 36064240
+  NumberOfVotingRights: 36064240
+  PercentageOfTotalVotingRights: 0.5584
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 36064240
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.5577
+  NumberOfTheLockedInShares: 11827600
+  LockedInSharesAsAPercentageOfTotalNumberOfShares: 0.328
+  NumberOfEquitySharesHeldInDematerializedForm: 36064240
+
+## context ShareholdingOfPromoterAndPromoterGroup_ContextI: CategoryOfShareholdersAxis=ShareholdingOfPromoterAndPromoterGroupMember
+  NumberOfShareholders: 8
+  NumberOfFullyPaidUpEquityShares: 36064240
+  NumberOfShares: 36064240
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.5584
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 36064240
+  NumberOfVotingRights: 36064240
+  PercentageOfTotalVotingRights: 0.5584
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 36064240
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.5577
+  NumberOfTheLockedInShares: 11827600
+  LockedInSharesAsAPercentageOfTotalNumberOfShares: 0.328
+  NumberOfEquitySharesHeldInDematerializedForm: 36064240
+
+## context MutualFundsOrUTI_ContextI: CategoryOfShareholdersAxis=MutualFundsOrUTIMember
+  NumberOfShareholders: 21
+  NumberOfFullyPaidUpEquityShares: 5691156
+  NumberOfShares: 5691156
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0881
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 5691156
+  NumberOfVotingRights: 5691156
+  PercentageOfTotalVotingRights: 0.0881
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 5691156
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.088
+  NumberOfEquitySharesHeldInDematerializedForm: 5691156
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context VentureCapitalFunds_ContextI: CategoryOfShareholdersAxis=VentureCapitalFundsMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context AlternativeInvestmentFunds_ContextI: CategoryOfShareholdersAxis=AlternativeInvestmentFundsMember
+  NumberOfShareholders: 17
+  NumberOfFullyPaidUpEquityShares: 205973
+  NumberOfShares: 205973
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0032
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 205973
+  NumberOfVotingRights: 205973
+  PercentageOfTotalVotingRights: 0.0032
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 205973
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0032
+  NumberOfEquitySharesHeldInDematerializedForm: 205973
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context Banks_ContextI: CategoryOfShareholdersAxis=BanksMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context InsuranceCompanies_ContextI: CategoryOfShareholdersAxis=InsuranceCompaniesMember
+  NumberOfShareholders: 4
+  NumberOfFullyPaidUpEquityShares: 820479
+  NumberOfShares: 820479
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0127
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 820479
+  NumberOfVotingRights: 820479
+  PercentageOfTotalVotingRights: 0.0127
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 820479
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0127
+  NumberOfEquitySharesHeldInDematerializedForm: 820479
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context ProvidentFundsOrPensionFunds_ContextI: CategoryOfShareholdersAxis=ProvidentFundsOrPensionFundsMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context AssetReconstructionCompanies_ContextI: CategoryOfShareholdersAxis=AssetReconstructionCompaniesMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context SovereignWealthFundsDomestic_ContextI: CategoryOfShareholdersAxis=SovereignWealthFundsDomesticMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context NBFCsRegisteredWithRBI_ContextI: CategoryOfShareholdersAxis=NBFCsRegisteredWithRBIMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context OtherFinancialInstitutions_ContextI: CategoryOfShareholdersAxis=OtherFinancialInstitutionsMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context OtherInstitutionsDomestic_ContextI: CategoryOfShareholdersAxis=OtherInstitutionsDomesticMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context InstitutionsDomestic_ContextI: CategoryOfShareholdersAxis=InstitutionsDomesticMember
+  NumberOfShareholders: 42
+  NumberOfFullyPaidUpEquityShares: 6717608
+  NumberOfShares: 6717608
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.104
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 6717608
+  NumberOfVotingRights: 6717608
+  PercentageOfTotalVotingRights: 0.104
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 6717608
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.1039
+  NumberOfEquitySharesHeldInDematerializedForm: 6717608
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context ForeignDirectInvestment_ContextI: CategoryOfShareholdersAxis=ForeignDirectInvestmentMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context ForeignVentureCapitalInvestors_ContextI: CategoryOfShareholdersAxis=ForeignVentureCapitalInvestorsMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context SovereignWealthFundsForeign_ContextI: CategoryOfShareholdersAxis=SovereignWealthFundsForeignMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context InstitutionsForeignPortfolioInvestorCategoryOne_ContextI: CategoryOfShareholdersAxis=InstitutionsForeignPortfolioInvestorCategoryOneMember
+  NumberOfShareholders: 100
+  NumberOfFullyPaidUpEquityShares: 6356137
+  NumberOfShares: 6356137
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0984
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 6356137
+  NumberOfVotingRights: 6356137
+  PercentageOfTotalVotingRights: 0.0984
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 6356137
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0983
+  NumberOfEquitySharesHeldInDematerializedForm: 6356137
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context InstitutionsForeignPortfolioInvestorCategoryTwo_ContextI: CategoryOfShareholdersAxis=InstitutionsForeignPortfolioInvestorCategoryTwoMember
+  NumberOfShareholders: 21
+  NumberOfFullyPaidUpEquityShares: 1846974
+  NumberOfShares: 1846974
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0286
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 1846974
+  NumberOfVotingRights: 1846974
+  PercentageOfTotalVotingRights: 0.0286
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 1846974
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0286
+  NumberOfEquitySharesHeldInDematerializedForm: 1846974
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context OverseasDepositories_ContextI: CategoryOfShareholdersAxis=OverseasDepositoriesMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context OtherInstitutionsForeign_ContextI: CategoryOfShareholdersAxis=OtherInstitutionsForeignMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context InstitutionsForeign_ContextI: CategoryOfShareholdersAxis=InstitutionsForeignMember
+  NumberOfShareholders: 121
+  NumberOfFullyPaidUpEquityShares: 8203111
+  NumberOfShares: 8203111
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.127
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 8203111
+  NumberOfVotingRights: 8203111
+  PercentageOfTotalVotingRights: 0.127
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 8203111
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.1269
+  NumberOfEquitySharesHeldInDematerializedForm: 8203111
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context CentralGovernmentOrPresidentOfIndia_ContextI: CategoryOfShareholdersAxis=CentralGovernmentOrPresidentOfIndiaMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context StateGovernmentsOrGovernors_ContextI: CategoryOfShareholdersAxis=StateGovernmentsOrGovernorsMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context ShareholdingByCompaniesOrBodiesCorporateWhereCentralOrStateGovernmentIsPromoter_ContextI: CategoryOfShareholdersAxis=ShareholdingByCompaniesOrBodiesCorporateWhereCentralOrStateGovernmentIsPromoterMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context Governments_ContextI: CategoryOfShareholdersAxis=GovernmentsMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context AssociateCompaniesOrSubsidiaries_ContextI: CategoryOfShareholdersAxis=AssociateCompaniesOrSubsidiariesMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context DirectorsAndDirectorsRelatives_ContextI: CategoryOfShareholdersAxis=DirectorsAndDirectorsRelativesMember
+  NumberOfShareholders: 1
+  NumberOfFullyPaidUpEquityShares: 99103
+  NumberOfShares: 99103
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0015
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 99103
+  NumberOfVotingRights: 99103
+  PercentageOfTotalVotingRights: 0.0015
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 99103
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0015
+  NumberOfEquitySharesHeldInDematerializedForm: 99103
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context KeyManagerialPersonnel_ContextI: CategoryOfShareholdersAxis=KeyManagerialPersonnelMember
+  NumberOfShareholders: 1
+  NumberOfFullyPaidUpEquityShares: 84943
+  NumberOfShares: 84943
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0013
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 84943
+  NumberOfVotingRights: 84943
+  PercentageOfTotalVotingRights: 0.0013
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 84943
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0013
+  NumberOfEquitySharesHeldInDematerializedForm: 84943
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context RelativesOfPromotersOtherThanPromoterGroup_ContextI: CategoryOfShareholdersAxis=RelativesOfPromotersOtherThanPromoterGroupMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context TrustsWhereAnyPersonBelongingToPromoterAndPromoterGroupIsTrusteeOrBeneficiaryOrAuthorOfTrust_ContextI: CategoryOfShareholdersAxis=TrustsWhereAnyPersonBelongingToPromoterAndPromoterGroupIsTrusteeOrBeneficiaryOrAuthorOfTrustMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context InvestorEducationAndProtectionFund_ContextI: CategoryOfShareholdersAxis=InvestorEducationAndProtectionFundMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context ResidentIndividualShareholdersHoldingNominalShareCapitalUpToRsTwoLakh_ContextI: CategoryOfShareholdersAxis=ResidentIndividualShareholdersHoldingNominalShareCapitalUpToRsTwoLakhMember
+  NumberOfShareholders: 141948
+  NumberOfFullyPaidUpEquityShares: 9649087
+  NumberOfShares: 9649087
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.1494
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 9649087
+  NumberOfVotingRights: 9649087
+  PercentageOfTotalVotingRights: 0.1494
+  NumberOfSharesOutstandingESOPGranted: 80000
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 80000
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 9729087
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.1505
+  NumberOfEquitySharesHeldInDematerializedForm: 9649087
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context ResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_ContextI: CategoryOfShareholdersAxis=ResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhMember
+  NumberOfShareholders: 9
+  NumberOfFullyPaidUpEquityShares: 1480179
+  NumberOfShares: 1480179
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0229
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 1480179
+  NumberOfVotingRights: 1480179
+  PercentageOfTotalVotingRights: 0.0229
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 1480179
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0229
+  NumberOfEquitySharesHeldInDematerializedForm: 1480179
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context NonResidentIndians_ContextI: CategoryOfShareholdersAxis=NonResidentIndiansMember
+  NumberOfShareholders: 3130
+  NumberOfFullyPaidUpEquityShares: 500680
+  NumberOfShares: 500680
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0078
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 500680
+  NumberOfVotingRights: 500680
+  PercentageOfTotalVotingRights: 0.0078
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 500680
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0077
+  NumberOfEquitySharesHeldInDematerializedForm: 500680
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context ForeignNationals_ContextI: CategoryOfShareholdersAxis=ForeignNationalsMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context ForeignCompanies_ContextI: CategoryOfShareholdersAxis=ForeignCompaniesMember
+  NumberOfShareholders: 0
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context BodiesCorporate_ContextI: CategoryOfShareholdersAxis=BodiesCorporateMember
+  NumberOfShareholders: 808
+  NumberOfFullyPaidUpEquityShares: 1366168
+  NumberOfShares: 1366168
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0212
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 1366168
+  NumberOfVotingRights: 1366168
+  PercentageOfTotalVotingRights: 0.0212
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 1366168
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0211
+  NumberOfEquitySharesHeldInDematerializedForm: 1366168
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context OtherNonInstitutions_ContextI: CategoryOfShareholdersAxis=OtherNonInstitutionsMember
+  NumberOfShareholders: 3066
+  NumberOfFullyPaidUpEquityShares: 416624
+  NumberOfShares: 416624
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0065
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 416624
+  NumberOfVotingRights: 416624
+  PercentageOfTotalVotingRights: 0.0065
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 416624
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0064
+  NumberOfEquitySharesHeldInDematerializedForm: 416624
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context NonInstitutions_ContextI: CategoryOfShareholdersAxis=NonInstitutionsMember
+  NumberOfShareholders: 148963
+  NumberOfFullyPaidUpEquityShares: 13596784
+  NumberOfShares: 13596784
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.2105
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 13596784
+  NumberOfVotingRights: 13596784
+  PercentageOfTotalVotingRights: 0.2105
+  NumberOfSharesOutstandingESOPGranted: 80000
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 80000
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 13676784
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.2115
+  NumberOfEquitySharesHeldInDematerializedForm: 13596784
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context PublicShareholding_ContextI: CategoryOfShareholdersAxis=PublicShareholdingMember
+  NumberOfShareholders: 149126
+  NumberOfFullyPaidUpEquityShares: 28517503
+  NumberOfShares: 28517503
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.4416
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 28517503
+  NumberOfVotingRights: 28517503
+  PercentageOfTotalVotingRights: 0.4416
+  NumberOfSharesOutstandingESOPGranted: 80000
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 80000
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 28597503
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.4423
+  NumberOfEquitySharesHeldInDematerializedForm: 28517503
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context ShareholdingPattern_ContextI: CategoryOfShareholdersAxis=ShareholdingPatternMember
+  NumberOfShareholders: 149134
+  NumberOfFullyPaidUpEquityShares: 64581743
+  NumberOfShares: 64581743
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 1
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 64581743
+  NumberOfVotingRights: 64581743
+  PercentageOfTotalVotingRights: 1
+  NumberOfSharesOutstandingESOPGranted: 80000
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 80000
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 64661743
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 1
+  NumberOfTheLockedInShares: 11827600
+  LockedInSharesAsAPercentageOfTotalNumberOfShares: 0.1831
+  NumberOfEquitySharesHeldInDematerializedForm: 64581743
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context D_IndividualsOrHUF_Context15: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context15
+  NameOfTheShareholder: RAKESH CHOPDAR
+
+## context IndividualsOrHUF_Context15: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context15
+  NumberOfFullyPaidUpEquityShares: 35444988
+  NumberOfShares: 35444988
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.5488
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 35444988
+  NumberOfVotingRights: 35444988
+  PercentageOfTotalVotingRights: 0.5488
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 35444988
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.5482
+  NumberOfTheLockedInShares: 11827600
+  LockedInSharesAsAPercentageOfTotalNumberOfShares: 0.3337
+  NumberOfEquitySharesHeldInDematerializedForm: 35444988
+  NumberOfShareholders: 1
+
+## context D_IndividualsOrHUF_Context16: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context16
+  NameOfTheShareholder: JYOTI CHOPDAR
+
+## context IndividualsOrHUF_Context16: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context16
+  NumberOfFullyPaidUpEquityShares: 441300
+  NumberOfShares: 441300
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0068
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 441300
+  NumberOfVotingRights: 441300
+  PercentageOfTotalVotingRights: 0.0068
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 441300
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0068
+  NumberOfTheLockedInShares: 0
+  LockedInSharesAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 441300
+  NumberOfShareholders: 1
+
+## context D_IndividualsOrHUF_Context17: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context17
+  NameOfTheShareholder: SATWIK CHOPDAR
+
+## context IndividualsOrHUF_Context17: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context17
+  NumberOfFullyPaidUpEquityShares: 148650
+  NumberOfShares: 148650
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0023
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 148650
+  NumberOfVotingRights: 148650
+  PercentageOfTotalVotingRights: 0.0023
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 148650
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0023
+  NumberOfTheLockedInShares: 0
+  LockedInSharesAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 148650
+  NumberOfShareholders: 1
+
+## context D_IndividualsOrHUF_Context18: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context18
+  NameOfTheShareholder: BABITA SHRIPALSINGH SULHYAN
+
+## context IndividualsOrHUF_Context18: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context18
+  NumberOfFullyPaidUpEquityShares: 12000
+  NumberOfShares: 12000
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0002
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 12000
+  NumberOfVotingRights: 12000
+  PercentageOfTotalVotingRights: 0.0002
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 12000
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0002
+  NumberOfTheLockedInShares: 0
+  LockedInSharesAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 12000
+  NumberOfShareholders: 1
+
+## context D_IndividualsOrHUF_Context19: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context19
+  NameOfTheShareholder: ELLA WALIA
+
+## context IndividualsOrHUF_Context19: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context19
+  NumberOfFullyPaidUpEquityShares: 6000
+  NumberOfShares: 6000
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0001
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 6000
+  NumberOfVotingRights: 6000
+  PercentageOfTotalVotingRights: 0.0001
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 6000
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0001
+  NumberOfTheLockedInShares: 0
+  LockedInSharesAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 6000
+  NumberOfShareholders: 1
+
+## context D_IndividualsOrHUF_Context20: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context20
+  NameOfTheShareholder: AMIT WALIA
+
+## context IndividualsOrHUF_Context20: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context20
+  NumberOfFullyPaidUpEquityShares: 5332
+  NumberOfShares: 5332
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0001
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 5332
+  NumberOfVotingRights: 5332
+  PercentageOfTotalVotingRights: 0.0001
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 5332
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0001
+  NumberOfTheLockedInShares: 0
+  LockedInSharesAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 5332
+  NumberOfShareholders: 1
+
+## context D_IndividualsOrHUF_Context21: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context21
+  NameOfTheShareholder: DEEPAK CHOPDAR
+
+## context IndividualsOrHUF_Context21: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context21
+  NumberOfFullyPaidUpEquityShares: 3720
+  NumberOfShares: 3720
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0001
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 3720
+  NumberOfVotingRights: 3720
+  PercentageOfTotalVotingRights: 0.0001
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 3720
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0001
+  NumberOfTheLockedInShares: 0
+  LockedInSharesAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 3720
+  NumberOfShareholders: 1
+
+## context D_IndividualsOrHUF_Context22: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context22
+  NameOfTheShareholder: SUNITA WALIA
+
+## context IndividualsOrHUF_Context22: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context22
+  NumberOfFullyPaidUpEquityShares: 2250
+  NumberOfShares: 2250
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 2250
+  NumberOfVotingRights: 2250
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 2250
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfTheLockedInShares: 0
+  LockedInSharesAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 2250
+  NumberOfShareholders: 1
+
+## context D_IndividualsOrHUF_Context23: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context23
+  NameOfTheShareholder: CHOPDAR KARTIK
+
+## context IndividualsOrHUF_Context23: DetailsSharesHeldByIndividualsOrHUFAxis=IndividualsOrHUF_Context23
+  NumberOfFullyPaidUpEquityShares: 0
+  NumberOfShares: 0
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 0
+  NumberOfVotingRights: 0
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 0
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfTheLockedInShares: 0
+  LockedInSharesAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 0
+  NumberOfShareholders: 0
+
+## context D_MutualFundsOrUTI_Context15: DetailsOfSharesHeldByMutualFundsOrUTIAxis=MutualFundsOrUTI_Context15
+  NameOfTheShareholder: ICICI PRUDENTIAL FLEXI CAP FUND
+
+## context MutualFundsOrUTI_Context15: DetailsOfSharesHeldByMutualFundsOrUTIAxis=MutualFundsOrUTI_Context15
+  NumberOfFullyPaidUpEquityShares: 1748052
+  NumberOfShares: 1748052
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0271
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 1748052
+  NumberOfVotingRights: 1748052
+  PercentageOfTotalVotingRights: 0.0271
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 1748052
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.027
+  NumberOfEquitySharesHeldInDematerializedForm: 1748052
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+  NumberOfShareholders: 1
+
+## context D_MutualFundsOrUTI_Context16: DetailsOfSharesHeldByMutualFundsOrUTIAxis=MutualFundsOrUTI_Context16
+  NameOfTheShareholder: WHITEOAK CAPITAL FLEXI CAP FUND
+
+## context MutualFundsOrUTI_Context16: DetailsOfSharesHeldByMutualFundsOrUTIAxis=MutualFundsOrUTI_Context16
+  NumberOfFullyPaidUpEquityShares: 702020
+  NumberOfShares: 702020
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0109
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 702020
+  NumberOfVotingRights: 702020
+  PercentageOfTotalVotingRights: 0.0109
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 702020
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0109
+  NumberOfEquitySharesHeldInDematerializedForm: 702020
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+  NumberOfShareholders: 1
+
+## context D_MutualFundsOrUTI_Context17: DetailsOfSharesHeldByMutualFundsOrUTIAxis=MutualFundsOrUTI_Context17
+  NameOfTheShareholder: AXIS MUTUAL FUND TRUSTEE LIMITED A/C AXIS MUTUAL F
+
+## context MutualFundsOrUTI_Context17: DetailsOfSharesHeldByMutualFundsOrUTIAxis=MutualFundsOrUTI_Context17
+  NumberOfFullyPaidUpEquityShares: 1425638
+  NumberOfShares: 1425638
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0221
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 1425638
+  NumberOfVotingRights: 1425638
+  PercentageOfTotalVotingRights: 0.0221
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 1425638
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.022
+  NumberOfEquitySharesHeldInDematerializedForm: 1425638
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+  NumberOfShareholders: 1
+
+## context D_DetailsOfSharesHeldByInstitutionsForeignPortfolioInvestorOne_Context15: DetailsOfSharesHeldByInstitutionsForeignPortfolioInvestorOneAxis=DetailsOfSharesHeldByInstitutionsForeignPortfolioInvestorOne_Context15
+  NameOfTheShareholder: ABU DHABI INVESTMENT AUTHORITY - MONSOON
+
+## context DetailsOfSharesHeldByInstitutionsForeignPortfolioInvestorOne_Context15: DetailsOfSharesHeldByInstitutionsForeignPortfolioInvestorOneAxis=DetailsOfSharesHeldByInstitutionsForeignPortfolioInvestorOne_Context15
+  NumberOfFullyPaidUpEquityShares: 945139
+  NumberOfShares: 945139
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0146
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 945139
+  NumberOfVotingRights: 945139
+  PercentageOfTotalVotingRights: 0.0146
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 945139
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0146
+  NumberOfEquitySharesHeldInDematerializedForm: 945139
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+  NumberOfShareholders: 1
+
+## context D_OtherNonInstitutions_Context15: DetailsOfSharesHeldByOtherNonInstitutionsAxis=OtherNonInstitutions_Context15
+  CategoryOfOtherNonInstitutions: Clearing Members
+  WhetherACategoryOrMoreThan1PercentageOfShareholding: Category
+
+## context OtherNonInstitutions_Context15: DetailsOfSharesHeldByOtherNonInstitutionsAxis=OtherNonInstitutions_Context15
+  NumberOfShareholders: 1
+  NumberOfFullyPaidUpEquityShares: 71
+  NumberOfShares: 71
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 71
+  NumberOfVotingRights: 71
+  PercentageOfTotalVotingRights: 0
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 71
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfEquitySharesHeldInDematerializedForm: 71
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context D_OtherNonInstitutions_Context16: DetailsOfSharesHeldByOtherNonInstitutionsAxis=OtherNonInstitutions_Context16
+  CategoryOfOtherNonInstitutions: HUF
+  WhetherACategoryOrMoreThan1PercentageOfShareholding: Category
+
+## context OtherNonInstitutions_Context16: DetailsOfSharesHeldByOtherNonInstitutionsAxis=OtherNonInstitutions_Context16
+  NumberOfShareholders: 3062
+  NumberOfFullyPaidUpEquityShares: 402313
+  NumberOfShares: 402313
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0062
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 402313
+  NumberOfVotingRights: 402313
+  PercentageOfTotalVotingRights: 0.0062
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 402313
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0062
+  NumberOfEquitySharesHeldInDematerializedForm: 402313
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context D_OtherNonInstitutions_Context17: DetailsOfSharesHeldByOtherNonInstitutionsAxis=OtherNonInstitutions_Context17
+  CategoryOfOtherNonInstitutions: Trusts
+  WhetherACategoryOrMoreThan1PercentageOfShareholding: Category
+
+## context OtherNonInstitutions_Context17: DetailsOfSharesHeldByOtherNonInstitutionsAxis=OtherNonInstitutions_Context17
+  NumberOfShareholders: 3
+  NumberOfFullyPaidUpEquityShares: 14240
+  NumberOfShares: 14240
+  ShareholdingAsAPercentageOfTotalNumberOfShares: 0.0002
+  NumberOfVotingRightsHeldBySameClassOfSecurities: 14240
+  NumberOfVotingRights: 14240
+  PercentageOfTotalVotingRights: 0.0002
+  NumberOfSharesOutstandingESOPGranted: 0
+  NumberOfSharesUnderlyingOutstandingConvertibleSecuritiesWarrantsAndESOP: 0
+  NumberOfSharesOnFullyDilutedBasisIncludingWarrantsESOPAndConvertibleSecurities: 14240
+  ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesWarrantsAndESOP: 0.0002
+  NumberOfEquitySharesHeldInDematerializedForm: 14240
+  NumberOfSharesUnderSubCategoryOne: 0
+  NumberOfSharesUnderSubCategoryTwo: 0
+  NumberOfSharesUnderSubCategoryThree: 0
+
+## context MainPYI: 
+  PercentageOfBoardApprovedLimits: 1
+  PercentageOfLimitsUtilized: 0.1366
+
+## context MainPPYI: 
+  PercentageOfBoardApprovedLimits: 1
+  PercentageOfLimitsUtilized: 0.1506
+
+## context MainPPPYI: 
+  PercentageOfBoardApprovedLimits: 1
+  PercentageOfLimitsUtilized: 0.1562
+
+## context MainPPPPYI: 
+  PercentageOfBoardApprovedLimits: 1
+  PercentageOfLimitsUtilized: 0.1606

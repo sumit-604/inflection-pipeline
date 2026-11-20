@@ -1,0 +1,56 @@
+stage: B08-promoter
+company: "AZAD"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "Reason for the 2025-06-06 block sale of 31,67,702 shares by Rakesh Chopdar: NOT FOUND."
+  - "Names of the block-deal buyers and of the other sellers in the 48 lakh share block: NOT FOUND (Trendlyne 405, Tradebrains 403, articles name no parties)."
+  - "Mode, date and price of the 2,82,435 shares the promoter added between 2025-06-30 and 2026-03-31: NOT FOUND."
+  - "Promoter encumbrance at 2025-09-30, 2025-12-31 and 2026-03-31, and earlier than 2025-06-30: NOT FOUND (patterns not collected)."
+  - "Company memory's open SEBI PIT Code of Conduct matter: NOT FOUND in any corpus file or web result; origin of the memory line unknown."
+  - "Outcome of the MCA cost-records show-cause notice of 2023-03-17, and status of Writ Petition 18735 of 2024: NOT FOUND."
+  - "Prior-five-year CXO turnover (CFO, internal audit head) before FY26: NOT FOUND."
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 5, caution: 5, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Promoter sold 31,67,702 shares in a block on 2025-06-06 at about Rs 1,623.78 (about Rs 514.4 Cr calc) with no stated reason; net FY26 sale 28,85,267 shares after a later 2,82,435 share re-purchase of unknown mode; holding 64.84% (2024-03-31) to 54.88%; IPO offer for sale added 39,11,545 shares at Rs 524", evidence_tier: "VERIFIED (share counts: AR26 [page 152]; shareholding 30-Jun-2025 and 30-Sep-2026) and MEDIA (price and block size)", source: "AR26 [page 152]; JUNSHP2025_Q1.pdf p.11; Business Today and Outlook Business 2025-06-06; Trendlyne via search", date: "2025-06-06"}
+  - {finding: "Spouse director Jyoti Chopdar attended 2 of 11 board meetings and was reappointed for five years from 2026-09-13; MD Murali Krishna Bhupatiraju attended 7 of 11; two sons draw Rs 6.67 Mn pay", evidence_tier: "VERIFIED", source: "AR26 [page 61], [page 165]; announcement 2026-09-30", date: "2026-03-31"}
+  - {finding: "Promoter remuneration raised 10% (Rs 480 lakh to Rs 528 lakh) from 2026-04-01 while consolidated OCF was negative and ROCE 10.7%", evidence_tier: "VERIFIED", source: "AGM Notice 2026-09-07 Item 3; B03", date: "2026-09-29"}
+  - {finding: "KMP and senior exits in six weeks: CS resigned 2025-11-28 (personal reasons); two Executive GMs resigned 2025-10-10 and 2025-11-08; no anti-bribery policy yet; audit-trail gaps (B03)", evidence_tier: "VERIFIED", source: "AR26 [page 41], [page 69], [page 91 via B03]; announcement 2025-11-28", date: "2025-11-28"}
+  - {finding: "IiAS and SES recommended AGAINST the ESOP extension to group and subsidiary employees at the 2025-01-28 EGM", evidence_tier: "MEDIA (search reading of proxy reports hosted on azad.in; reports not opened)", source: "azad.in SES PAReport EGM 28 Jan 2025; IiAS recommendations Jan 2025", date: "2025-01-28"}
+  - {finding: "Company-level tax matters: GST penalties Rs 10,38,280 and Rs 1,10,582 (order 2026-03-24, FY2019-20 and FY2020-21); 53 customs notices Rs 63.04 Mn; MCA cost-records notice 2023; core-campus land on promoter-owned leased plots and allotted land under a High Court writ", evidence_tier: "VERIFIED", source: "announcement 2026-03-25; Prospectus [page 364], [page 365]; AR26 property note", date: "2026-03-25"}
+transition_evidence:
+  - {item: "Professional MD from outside the family: Murali Krishna Bhupatiraju (ex President and CFO Bharat Forge America, CFO Dyson), five-year term from 2025-01-03", anchor: "AR25 [page 45], [page 46]; AR26 [page 60]"}
+  - {item: "Institutional holders at 2026-03-31: ICICI Prudential Flexicap 4.94%, Nomura Mother Fund 2.23%, ADIA 2.15%, Axis MF 1.49%, Whiteoak Flexi Cap 1.18%, Kotak MF 1.08%, GPFG 0.77%; FPI 12.70% and DII 10.40% at Sep 2026", anchor: "AR26 [page 72]; shareholding 2026-09-30"}
+  - {item: "Encumbrance fell from 2,97,363 shares (0.83% of promoter group holding; NDU on son's shares plus 63 pledged) at 2025-06-30 to nil at 2026-09-30", anchor: "JUNSHP2025_Q1.pdf p.5; shareholding 2026-09-30 MainI flags"}
+  - {item: "Fourth independent director added 2025-01-03 (Deepak Kabra, ICAI fellow); new CS and Chief Business Officer Nov 2025; no independent director exit; no auditor change", anchor: "AR25 [page 45]; AR26 [page 42], [page 60], [page 69]"}
+pledge_pct_latest: 0
+pledge_trend: "falling: 2025-06-30 pledged 63 shares plus NDU 2,97,300 (total 2,97,363 = 0.83% of promoter group holding, 0.46% of equity; Rakesh Chopdar nil); 2026-09-30 nil on all three encumbrance flags; 2026-03-31 and earlier dates NOT FOUND"
+searches_performed:
+  - "WebSearch: Azad Engineering promoter Rakesh Chopdar sells shares block deal 2025 2026"
+  - "WebSearch: Azad Engineering SEBI order insider trading Code of Conduct PIT"
+  - "WebSearch: Azad Engineering Limited SEBI settlement OR show cause OR adjudication insider trading code of conduct disclosure"
+  - "WebSearch: Azad Engineering promoter stake sale 2025 reason Rakesh Chopdar buyer"
+  - "WebFetch: businesstoday.in block deal article 2025-06-06"
+  - "WebFetch: outlookbusiness.com block deal article"
+  - "WebFetch: azad.in/wp-content/uploads/2026/04/JUNSHP2025_Q1.pdf (shareholding pattern 30-Jun-2025, read as PDF)"
+  - "WebSearch: Murali Krishna Bhupatiraju Managing Director background"
+  - "WebSearch: Rakesh Chopdar founder interview media"
+  - "WebSearch: Azad Engineering short seller OR IiAS OR proxy advisor OR SES"
+  - "WebSearch: Azad Engineering AmbitionBox OR Glassdoor reviews"
+  - "WebSearch: Azad Engineering Rakesh Chopdar FIR OR income tax OR ED OR NCLT OR High Court"
+  - "WebSearch: Azad Engineering Mangampet land writ OR Tunikibollaram TGIIC"
+  - "Corpus: AR26, AR25 MD profile, Prospectus, shareholding Sep 2026, 25 announcements (targeted reads), CARE rationale, B00, B03"
+searches_skipped:
+  - "WebFetch trendlyne.com bulk-block-deals AZAD: HTTP 405. PENDING LIVE VERIFICATION."
+  - "WebFetch trendlyne.com insider-trading-sast AZAD: HTTP 405. PENDING LIVE VERIFICATION."
+  - "WebFetch tradebrains.in/?p=79417: HTTP 403. PENDING LIVE VERIFICATION."
+  - "BSE insider trading disclosures page scrip 544061 (bseindia.com/stock-share-price/debt-other/scripcode/544061/disclosures-insider-trading-1992): not fetched. PENDING LIVE VERIFICATION."
+  - "SEBI orders database; MCA21 master data; NSE bulk-deal archive: not reachable. PENDING LIVE VERIFICATION."
+  - "Shareholding patterns Dec 2025 and Mar 2026 (pledge status at those dates): not collected."
+  - "Full text of YourStory, ChannelIAM, CEO Magazine, DNA profiles and the company response to proxy advisers: not read."
+verdict_basis: "No integrity breach, no pledge, no SEBI or criminal record; CAUTION because the promoter sold 31,67,702 shares (about Rs 514 Cr calc) on 2025-06-06 with no stated reason, the board and payroll are family-heavy (spouse director at 2 of 11 meetings), and CS plus two EGM exits fell in six weeks."
+analyst_note: "FLAG-PROMOTER-PRELIM from B03 is resolved. The 28,85,267 net share sale is 31,67,702 sold on 2025-06-06 (exact match of 3,83,30,255 less 3,51,62,553 filed at 30-Jun-2025) less 2,82,435 added later (mode NOT FOUND). The pledge question is closed: nil at Sep 2026; June 2025 showed only an NDU on the son's 2,97,300 shares, which moved to Jyoti Chopdar. B03 listed the aero engines head as an exit; the AR says he died on 2026-02-14. Memory's SEBI PIT matter was not evidenced anywhere; I read the Whalesbook penalty snippet as the March 2026 GST order. Promoter lock-in of 1,18,27,600 shares ends about Dec 2026: the sale test that matters comes after that date. Verdict CAUTION is a texture call on soft items, with no integrity evidence."

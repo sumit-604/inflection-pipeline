@@ -1,0 +1,48 @@
+stage: B07-emoat
+company: "AZAD"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Carried from B00: five screener formula sheets absent; research/ empty; QIP placement document not collected; PTC Industries transcript June 2023 and stale; peer financials absent."
+  - "NOT FOUND: segment margins, per-plant utilisation, take-or-pay or minimum-volume terms in dedicated plants, order values for MHI, P&WC, Baker Hughes Amendment 3 and ATGG, civil vs defence split of A&D, FY27 total capex, count of global qualified suppliers per part."
+  - "Page markers absent for AR26 certificate and ESOP text; cited by .txt line number."
+flags:
+  - {type: FLAG-EM-THRESHOLD-EDGE, reason: "EM score 12.0 sits on the 12 floor of MODEST; reading C1 as impact Low gives 11 and class NONE."}
+  - {type: FLAG-CASH, reason: "July falsifier not cleared: H1 FY27 consolidated OCF Rs -43.62 Cr (Rs -436.24 Mn); cash sources promised are bill discounting from Q4 FY27 and a USD 4.5 Mn OEM advance (Q2R p.11)."}
+  - {type: FLAG-CONCENTRATION, reason: "Top-1 18.64% vs 20% tripwire; GE Vernova holds 50.9% of dedicated plant area (calc); dedicated plants may be customer-captured capacity."}
+  - {type: FLAG-NO-EXECUTION-MOAT, reason: "F2 scored 0: B05 grade C, 8 missed promises, ramp slipped Q3 to Q4 FY27."}
+em_score: 12
+em_classification: "MODEST"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24 months"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "documented", time_to_materialise: "now to 24 months"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24 months"}
+evidence_mix: {documented: 9, claim: 9, inference: 4}
+completionist_recount: "📄 recount performed: 9 documented items across 4 scored categories (A1, B2, C1, R1); 4 active categories, below the 12 trigger."
+catalysts_12m:
+  - {catalyst: "Q3 FY27 standalone revenue above Rs 187.8 Cr with throughput start in dedicated plants", window: "Q3 FY27 results, about Feb 2027", evidence_type: "claim", anchor: "Q2C p.9; B05 trigger 1"}
+  - {catalyst: "Revenue ramp, Rs 72 Cr WIP invoiced, first oil and gas revenue line", window: "Q4 FY27, results about May 2027", evidence_type: "claim", anchor: "Q2C p.9; Q2P p.8"}
+  - {catalyst: "Rolls-Royce first qualification batch delivered and accepted", window: "H2 FY27", evidence_type: "claim", anchor: "Q2C p.16; B05 promise_delivery"}
+  - {catalyst: "QIP capex object Rs 75.54 Cr spent before deadline", window: "by 2027-03-31", evidence_type: "documented", anchor: "AR26 p.74; Q2R p.6"}
+  - {catalyst: "MHI hot-section facility built and qualified", window: "about Mar-Apr 2027", evidence_type: "claim", anchor: "Q1C via B05; ANN 2026-03-26"}
+  - {catalyst: "Bill discounting lines usable and Q4 OCF split by source", window: "Q4 FY27", evidence_type: "claim", anchor: "Q2C p.9; B05 trigger 2"}
+capex_embedded_growth_pct: 27.8
+optionality_register:
+  - {optionality: "Baker Hughes Saudi Arabia facility (MoU on deck, silent on Aug and Nov calls)", converting_evidence: "Signed definitive agreement with committed capex", first_appears: "Exchange filing or concall", window: "FY28+ (slipped, July status SLIPPED then SILENT)"}
+  - {optionality: "Safran Aircraft Engines (third behind RR and P&WC; MOU only)", converting_evidence: "Signed contract with disclosed value", first_appears: "Exchange filing or concall", window: "FY27-FY28"}
+  - {optionality: "GTRE ATGG engine follow-on (first engine delivered 2026-07-22)", converting_evidence: "Production order with count and value", first_appears: "Exchange filing or concall", window: "uncertain; test and engine dates slipped"}
+  - {optionality: "Phase 2 capacity, 67,267 sq m (pushed to FY29)", converting_evidence: "Civil work start with committed capex", first_appears: "Exchange filing or AR note", window: "FY29+"}
+  - {optionality: "Landing gear and other higher-value lines (deck only)", converting_evidence: "Signed contract or committed capex", first_appears: "Exchange filing", window: "FY28+"}
+  - {optionality: "MHI hot-section revenue (LTCPA signed, facility unbuilt, value confidential)", converting_evidence: "Facility capitalised, qualification passed, first invoice with value", first_appears: "Concall, results CWIP/PPE lines", window: "FY27 H2 to FY28"}
+  - {optionality: "Rolls-Royce production (two engines in qualification, batch not delivered)", converting_evidence: "Qualification acceptance and production order", first_appears: "Exchange filing or concall", window: "FY28"}
+  - {optionality: "Arabelle nuclear turbine airfoils USD 40 Mn (deck only)", converting_evidence: "Exchange filing of the agreement or first deliveries", first_appears: "Exchange filing or concall", window: "FY28+"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (core 53, moat 11) with a MODEST emerging score of 12.0 at the band floor; the lock-in is real but already visible, and the emerging hot-section and aero lines are unbuilt, unquantified and cash-negative."
+top_moat_risks:
+  - "Qualification-to-revenue slip: ramp already moved Q3 to Q4 FY27; Q3 revenue flat on Q2 would confirm."
+  - "Customer power: GE Vernova 50.9% of dedicated area, top-1 18.64% vs 20% line."
+  - "Funding: OCF negative, QIP hint, bill discounting recourse NOT STATED."
+  - "Undisclosed terms of dedicated plants (take-or-pay, termination)."
+  - "Land title: Mangampet writ and Tunikibollaram conditional allotment."
+analyst_note: "Two readings of the moat. A: six OEM-specific plants and 8-year single-source terms lock in volume and the slip is delta qualification timing. B: Azad funds customer-captured capacity, and part of the 37.5% margin sits in WIP. The separating observation is the Q3 and Q4 FY27 print: revenue step, Rs 72 Cr WIP invoiced, margin held while inventory falls, OCF positive with source and recourse stated. The score of 12.0 is at the floor; reading C1 as impact Low gives 11 and NONE. B2 holds the contracts, so H2 is scored 0 to avoid crediting one improvement twice. July optionality: Saudi slipped then silent, Safran not fired, ATGG part fired, Phase 2 slipped, higher-value lines unchanged since the March MHI signing. I1 and I2 add 0."

@@ -1,0 +1,44 @@
+stage: B12b
+company: "AZAD"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 36
+caught: 22
+partially_caught: 9
+missed:
+  - {severity: "MAJOR", item: "Management refused to say how many customers remain in delta qualification, the stated gate on the Q4 FY27 revenue ramp", anchor: "AZAD_Q2FY27_concall_transcript_2026-11-14.pdf, Alisha and Chopdar, [page 15]-[page 16]; Malpani [page 8]"}
+  - {severity: "MINOR", item: "Other operating income sharp rise in H1 FY27 left unanswered; CFO confused it with other income; taken offline", anchor: "AZAD_Q2FY27_concall_transcript_2026-11-14.pdf, Nagori and Jajoo, [page 12]-[page 13]"}
+  - {severity: "MINOR", item: "Ageing disclosure basis changed: 96% of inventory under 1 year (May) to 72% of ageable inventory under six months and 69% of regular receivables not yet due (Nov); terms undefined", anchor: "AZAD_Q4FY26_concall_transcript_2026-05-22.pdf, Jajoo, [page 7]; AZAD_Q2FY27_concall_transcript_2026-11-14.pdf, Jajoo, [page 7]"}
+  - {severity: "MINOR", item: "H1 capex funding bridge as spoken does not close: Rs 139.3 Cr vs Rs 80.8 Cr QIP plus Rs 28.6 Cr named (Rs 109.4 Cr)", anchor: "AZAD_Q2FY27_concall_transcript_2026-11-14.pdf, Jajoo, [page 7]"}
+  - {severity: "MINOR", item: "Peer order-book framing (MTAR 12-18 months executable; Unimech firm POs vs Rs 589 Cr forecast-based LTAs) not used against Azad's unsplit Rs 6,500 Cr", anchor: "MTARTECH_Concall_Transcript_2026-11-06.pdf [page 19]; UNIMECH_Concall_Transcript_2026-10-31.pdf [page 7], [page 10]"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 3, wrong: 2}
+credibility_grade_concur: "concur: C holds; D4 and M7 corrections give 5 delivered / 6 partial / 7 missed, but unweighted items (Aug 'full throttle' vs Nov 'spindles just started', three-way FX answer, refused delta-qualification count) all point the same way"
+findings:
+  - {severity: "MAJOR", finding: "MISSED: refused count of customers still in delta qualification, the gate on B05 priority-1 trigger", anchor: "Q2 [page 15]-[page 16]; Q2 Malpani [page 8]", fix: "Name as Halt 1 open question; separating observation is delta qualifications cleared by the Q3 FY27 call"}
+  - {severity: "MAJOR", finding: "PARTIALLY CAUGHT: FX answers contradict in one call (CFO below EBITDA; Chopdar few percent; Malpani 5-6% revenue help); D1 '25% plus DELIVERED' carries no currency adjustment; [INFERENCE] H1 constant-currency growth about 23-24%", anchor: "Q1 Jajoo [page 10]; Chopdar [page 15]; Malpani [page 15]; Bagmar [page 16]", fix: "Carry two readings into Role 1; separating observation is a constant-currency or USD revenue figure; rupee rates NOT FOUND"}
+  - {severity: "MAJOR", finding: "PARTIALLY CAUGHT: revenue-ramp date moved on all three calls and the plant state reversed (Aug 'full throttle' vs Nov 'spindles just started ... not seeing revenue today'); RF3 holds it as one slip at Medium; B06 calls it mild", anchor: "Q1 [page 5], [page 9], [page 14]; Q2 [page 10], [page 17]-[page 18]", fix: "Raise RF3 to High; cite the reversal; change D4 to PARTIAL"}
+  - {severity: "MINOR", finding: "MISSED: other operating income question unanswered", anchor: "Q2 [page 12]-[page 13]", fix: "Read the results line; upgrade if material"}
+  - {severity: "MINOR", finding: "MISSED: inventory and receivable ageing bases changed between May and Nov", anchor: "Q4 [page 7]; Q2 [page 7]", fix: "Add to FLAG-MARGIN-WIP watch"}
+  - {severity: "MINOR", finding: "MISSED: peer order-book framing contrast", anchor: "MT-Q2 [page 19]; UN-Q2 [page 7], [page 10]", fix: "Context for RF5 in the A26.1 basis hierarchy"}
+  - {severity: "MINOR", finding: "MISSED: call capex funding bridge does not close as spoken", anchor: "Q2 [page 7]", fix: "Note only; cash flow statement governs"}
+  - {severity: "MINOR", finding: "PARTIALLY CAUGHT: Chopdar 'we started the bill discounting' vs Malpani 'in reserve' in the same call", anchor: "Q2 [page 11]; Q2 [page 9]", fix: "Add to RF2"}
+  - {severity: "MINOR", finding: "OVERSTATED: Rolls-Royce 'slipped three times'; one missed date, H2 window still open", anchor: "Q4 [page 10]; Q1 [page 13]; Q2 [page 12]", fix: "Correct optionality tracker and 4A kill wording"}
+  - {severity: "MINOR", finding: "OVERSTATED: M7 guidance revisit counted MISSED though hedged and conditional", anchor: "Q4 [page 8]; Q1 [page 14]; Q1 [page 5]", fix: "Reclassify PENDING"}
+  - {severity: "MINOR", finding: "Spot check WRONG: D4 DELIVERED; later-call Q&A supports PARTIAL with full closure PENDING", anchor: "Q1 [page 5]; Q2 [page 3], [page 10], [page 11], [page 18]", fix: "Correct to PARTIAL; tally 5/6/7"}
+  - {severity: "MINOR", finding: "OVERSTATED: B06 cites MTAR 15-month Phase 3 slip; same transcript also says June of next year (June 2027)", anchor: "MT-Q2 [page 4]; MT-Q2 [page 8]", fix: "Note both readings"}
+  - {severity: "MINOR", finding: "PARTIALLY CAUGHT: Unimech Saudi JV on schedule while Azad deferred its Saudi plant", anchor: "UN-Q2 [page 6]-[page 7]; Q4 [page 15]", fix: "Reweight M8 toward bandwidth choice"}
+  - {severity: "MINOR", finding: "PARTIALLY CAUGHT: capitalised development cost answer rated satisfactory but was partial", anchor: "Q4 [page 18]", fix: "Check FY25 AR policy and intangible/CWIP note"}
+  - {severity: "MINOR", finding: "PARTIALLY CAUGHT: asset-turn contrast uncomputed for Azad (about 1.1x calc vs peers 2-3x)", anchor: "Q2 [page 7]; MT-Q2 [page 11]; UN-Q2 [page 12]", fix: "Stage 11 uses filed gross block"}
+  - {severity: "MINOR", finding: "B05 quote anchors at Q2 [page 3] belong at Q2 [page 4] (PAT 'speak plainly', H1 consolidated)", anchor: "Q2 [page 4]", fix: "Correct anchor"}
+  - {severity: "MINOR", finding: "PARTIALLY CAUGHT: ARR Rs 1,300 Cr scope and Rs 1,800-1,900 Cr full-potential framing unreconciled", anchor: "Q2 [page 5], [page 11]; Q1 [page 14]", fix: "Halt 1 open question"}
+  - {severity: "MINOR", finding: "PARTIALLY CAUGHT: FY26 other income Rs 46 Cr (FX plus treasury) in the FY26 PAT base", anchor: "Q4 [page 7]; Q1 [page 6]", fix: "Stage 11 builds entry earnings ex other income (A18)"}
+  - {severity: "MINOR", finding: "PARTIALLY CAUGHT: Dheya small-turbojet progress not read against ATGG positioning", anchor: "UN-Q2 [page 7]", fix: "Context for ATGG optionality slice"}
+critical_count: 0
+major_count: 3
+minor_count: 16
+material_found: 12
+material_caught: 9
+acceptance_rate: 75.0
+coverage_basis: "12 material (1 CRITICAL, 11 MAJOR) of 36 listed; 9 fully caught, 2 partially caught, 1 missed (75.0% on full catches; 91.7% counting partials). Read in full: 3 Azad calls, MTAR Q2 FY27, Unimech Q2 FY27; other 7 peer files read by keyword passages only."

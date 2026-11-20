@@ -1,0 +1,15 @@
+stage: B13-synthesis-lite
+company: "AZAD"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"
+status: complete
+gate_verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3          # FLAG-CASH active with INDETERMINATE determination, capped at PROCEED WITH CAVEATS; rule 4 (verifier MAJORs) lands on the same verdict
+flags_active: [FLAG-CASH, FLAG-GATE0]   # FLAG-PROMOTER not active: B08 verdict CAUTION
+cash_determination: INDETERMINATE
+confidence_overall: 75.0
+partial_stages: [B08-promoter, B09-tam]   # web searches skipped or blocked; named in gate-recommendation.md
+files:
+  - runs/azad-2026-11-15/outputs/final/business-narrative.md
+  - runs/azad-2026-11-15/outputs/final/gate-recommendation.md
+  - runs/azad-2026-11-15/outputs/final/verifier-summary.md

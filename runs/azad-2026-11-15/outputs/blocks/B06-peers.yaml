@@ -1,0 +1,64 @@
+stage: B06-peers
+company: "AZAD"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Peer transcripts: 9 of 12 held. MTARTECH 4 of 4 (calls 30 Jan, 13 May, 30 Jul, 30 Oct 2026; files dated by filing). UNIMECH 4 of 4 (acquisition call 28 Apr, Q4 FY26 29 May, Q1 FY27 4 Aug, Q2 FY27 28 Oct 2026). PTCIL 1 (investor meet 9 Jun 2023, STALE, no transcripts on BSE/NSE). Three transcripts are missing, all PTCIL."
+  - "PTCIL coverage graded WEAK: one 2023 document, pre-dates every Azad claim period by 3 years; used for qualification and economics colour only, never for current-period verdicts."
+  - "No peer is an OEM-supplier of gas turbine parts (GE Vernova, Siemens Energy, Mitsubishi, Baker Hughes turbines). Gas turbine demand cannot be tested from this set."
+  - "Peer working-capital days: basis (revenue or COGS, average or closing, net of advances or payables) NOT STATED by MTAR or Unimech."
+  - "Carried from B00: five screener formula sheets absent; research/ empty; QIP placement document not collected."
+  - "B04 and conflicts.yaml were not re-read in the resumed run; peer questions taken from B05.peer_questions only."
+flags:
+  - {type: FLAG-PEER-WC-CONTRAST, reason: "MTAR working capital fell 260 days (Q3 FY26) to 172 (Mar 2026) to 59 (Q1 FY27) to 50 (Sep 2026) while revenue rose 200% YoY, with H1 FY27 OCF Rs +350 Cr; Azad is at 344 (CARE basis) with OCF Rs -436.24 Mn on +26 to 31% growth. MTAR basis unstated and not comparable to CARE basis."}
+  - {type: FLAG-PEER-LEVER, reason: "MTAR's improvement came from customer credit terms and advances (20% typical, 30-40% in nuclear tenders), with only about USD 1 Mn bill discounted. Azad's promised improvement rests on bill discounting (recourse NOT STATED) and one 50% advance."}
+  - {type: FLAG-PEER-SLIPS, reason: "Commissioning dates slip at both active peers: MTAR Phase 3 hot box capacity Mar 2027 (Jul) to Jun 2028 (Oct); O&G plant Sep to Oct to end Nov 2026; Unimech FTWZ end May to fully operational by Aug. Azad's one-quarter ramp slip is mild against this."}
+  - {type: FLAG-NO-GAS-TURBINE-PEER, reason: "No peer speaks to gas turbine OEM demand or qualification. Load-bearing fact 2 is confirmed only for nuclear and aero engine, not gas turbine."}
+  - {type: FLAG-MTAR-CRED, reason: "MTAR own record: WC guidance 175 days then 59 achieved; FY27 growth guide 50% then 80%; order book 2,800 guided vs 2,580 delivered; May said 'not about advances', Oct said advances from all sectors; Rs 60 Cr segment misclassification admitted. Peer evidence from MTAR is management claim, not audited."}
+peers_provided: 9
+verified:
+  - {claim: "Peers raise debt or equity for capacity; utilisation quoted at commissioning (Q11)", peers: ["MTARTECH", "UNIMECH"], anchor_count: 6}
+partially_verified:
+  - {claim: "Q1 Peer working-capital days and basis: figures reported, basis unstated", peers: ["MTARTECH", "UNIMECH"]}
+  - {claim: "Q2 Commissioning to full-rate invoicing and re-qualification lag: slips and long qualification confirmed, no like-for-like number", peers: ["MTARTECH", "UNIMECH", "PTCIL"]}
+  - {claim: "Q3 Bill discounting on export receivables: MTAR only, about USD 1 Mn, recourse and cash flow presentation NOT STATED", peers: ["MTARTECH"]}
+  - {claim: "Q4 OEM advances: MTAR 20% typical and 30-40% nuclear, no discount rate stated", peers: ["MTARTECH"]}
+  - {claim: "Q6 Margins and WIP: Unimech EBITDA 36.5 to 40% corroborates band; no peer shows consumption near 4.2% of revenue; WIP content not disclosed", peers: ["UNIMECH", "MTARTECH"]}
+  - {claim: "Q7 Customer concentration: peers more concentrated than Azad (Hobel 93% two OEM groups; MTAR fuel cell about 70% of FY27 revenue)", peers: ["UNIMECH", "MTARTECH"]}
+  - {claim: "Q8 Hot-section and engine economics: PTCIL 2023 only, no margins by component", peers: ["PTCIL"]}
+  - {claim: "Q9 Industry growth: direction yes (nuclear, aero engine, energy), no peer cites a 25-26% airfoil, gas turbine or nuclear dollar growth rate", peers: ["MTARTECH", "UNIMECH", "PTCIL"]}
+  - {claim: "Q12 Wallet share: Hobel 'small proportion' of Cummins; MTAR nuclear 60-70% share; no peer gives a figure under 2%", peers: ["UNIMECH", "MTARTECH"]}
+  - {claim: "Q13 Currency lift: MTAR books FX gain in other income (Rs 25 Cr FY26), not revenue lift; no peer quantifies revenue lift", peers: ["MTARTECH"]}
+  - {claim: "Q14 Domestic defence engines: AMCA, Tejas actuator, Kaveri parts, Dheya micro turbines at small scale; GTRE ATGG named by no peer", peers: ["MTARTECH", "PTCIL", "UNIMECH"]}
+contradicted: []
+unverifiable:
+  - {claim: "Q5 Dedicated facilities with take-or-pay or minimum volume terms", peers_checked: ["MTARTECH", "UNIMECH", "PTCIL"]}
+  - {claim: "Q10 Move to domestic steel suppliers (Sunflag, Star Wire) and saving", peers_checked: ["MTARTECH", "UNIMECH", "PTCIL"]}
+peer_coverage_map:
+  - {peer: "MTARTECH", quarter: "Q3 FY26 (call 30 Jan 2026)", usage: "SUBSTANTIVE", contribution: "WC 260 days, OCF Rs -22 Cr, advances sought, hot box 8,000 to 12,000/20,000/30,000 plan, Rs 50-60 Cr capex, 100% utilisation"}
+  - {peer: "MTARTECH", quarter: "Q4 FY26 (call 13 May 2026)", usage: "SUBSTANTIVE", contribution: "WC 172 days, OCF Rs 196.9 Cr, better payment terms not advances, capex Rs 250-300 Cr, debt/equity 0.5, nuclear order book Rs 650 Cr+, input cost rise"}
+  - {peer: "MTARTECH", quarter: "Q1 FY27 (call 30 Jul 2026)", usage: "SUBSTANTIVE", contribution: "WC 59 days, inventory 208 to 145, receivables 140 to 82, OCF Rs 247.69 Cr, capex Rs 500 Cr 70:30, GST refund Rs 70 Cr, nuclear wallet share 60-70%"}
+  - {peer: "MTARTECH", quarter: "Q2 FY27 (call 30 Oct 2026)", usage: "SUBSTANTIVE", contribution: "WC 50 days, H1 OCF Rs 350 Cr, advances by sector, USD 1 Mn discounted, Phase 3 slipped to Jun 2028, 75% debt funded capex, nuclear revenue from FY28"}
+  - {peer: "UNIMECH", quarter: "Acquisition update (call 28 Apr 2026, not an earnings call)", usage: "SUBSTANTIVE", contribution: "Hobel two OEM groups 93%, Cummins QSK95, 70% single-source products, NPCIL qualification about 1 year, qualification 18-24 months to build, EBITDA >50%"}
+  - {peer: "UNIMECH", quarter: "Q4 FY26 (call 29 May 2026)", usage: "SUBSTANTIVE", contribution: "WC 120-125 days rising to 150-160, tariff concession 5%, aero qualification 2-3 years, utilisation 50%, order book Rs 314 Cr"}
+  - {peer: "UNIMECH", quarter: "Q1 FY27 (call 4 Aug 2026)", usage: "SUBSTANTIVE", contribution: "WC 130 days, 80% of PCA qualified parts to serial production, QIP resolution up to Rs 750 Cr, FACC USD 7.5 Mn, asset turn 2-2.5x"}
+  - {peer: "UNIMECH", quarter: "Q2 FY27 (call 28 Oct 2026)", usage: "SUBSTANTIVE", contribution: "WC 110 days to 150-160, equity raise early CY2027, LTAs Rs 589 Cr (FACC, Honeywell 10 yr, French Tier 1 USD 43 Mn), 60-70% of 250 parts to serial, 'qualification year, harvest next year'"}
+  - {peer: "PTCIL", quarter: "Investor meet 9 Jun 2023 (STALE)", usage: "CITED-ONLY", contribution: "Aero casting capacity 30-40 t vs 600 t planned, Safran approval years, rotating parts qualification longest, ROE sub-10% from capability phase; 3 years old"}
+industry_cross_read:
+  demand: "Strong and consistent across MTAR (H1 FY27 orders Rs 4,102 Cr; fuel cell, nuclear) and Unimech (order book Rs 855 Cr, LTAs); nuclear and aero engine corroborated; gas turbine not discussed by any peer; AI capex slowdown fear raised by analysts and dismissed by MTAR as noise."
+  pricing_inputs: "Gross margin pressure from consumables, freight and tariffs at both peers (MTAR 49.4 to 47.7% FY26; Unimech 5% tariff sharing); customers drive BOM reduction (Inconel to SS). No peer cites domestic steel savings."
+  capex_cycle: "Industry-wide capacity race within the small-cap precision exporter cohort, not a lone expander: MTAR Rs 500 Cr (75% debt), Unimech gross block doubling plus equity raise, PTCIL 2023 10x capacity; commissioning dates slip at all."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Single-customer concentration and dependence on one OEM's capacity plan (MTAR/Bloom; Hobel/Cummins) (MTAR Jul 2026 [page 16]; Unimech 28 Apr 2026 [page 10])"
+  - "AI capex slowdown risk raised by analysts (MTARTECH_Concall_Transcript_2026-11-06.pdf [page 19])"
+  - "US tariffs on exports and customer inventory rationalisation (UNIMECH_Concall_Transcript_2026-06-03.pdf [page 3], [page 6])"
+  - "Working capital rising with long-cycle aero and nuclear programs: first articles, inventory commitments, customer acceptance (UNIMECH_Concall_Transcript_2026-08-08.pdf [page 7])"
+  - "Commissioning slippage and qualification time as the binding constraint (MTAR Oct 2026 [page 4]; Unimech Oct 2026 [page 17])"
+  - "Government order timing for domestic defence (Tejas actuator order awaited since Q4 FY26) (MTARTECH_Concall_Transcript_2026-11-06.pdf [page 14])"
+  - "Segment misreporting (Rs 60 Cr) and rapid WC swings with unstated basis (MTARTECH_Concall_Transcript_2026-11-06.pdf [page 12])"
+  - "Raw material and freight cost inflation (MTARTECH_Concall_Transcript_2026-05-20.pdf [page 6])"
+net_narrative_effect: "complicates"
+analyst_note: "Strongest independent read: MTAR was at WC 260-282 days and OCF -Rs 22 Cr in Q3 FY26, then reported 59 and 50 days with OCF +Rs 350 Cr in H1 FY27. It credits customer credit terms and advances, not discounting. That is a precedent for Azad's cash falsifier, but MTAR's basis is unstated, its largest customer is supply-constrained, and its numbers are management claims (analyst notes inventory Rs 680 Cr, about 5 months of guided revenue). Peers do not mention Azad. Gas turbine is untested. [INFERENCE] separating observation for Azad: customer terms or advances stated by customer and percent, plus WC on a defined basis in Q3 FY27."
+cross_peer_hypothesis: "Both active peers moved from sample to volume in 15 to 24 months, and both now say the binding constraint is capacity and qualification time, not orders. Their reported working capital falls when a single dominant OEM grants advances or short credit terms to secure capacity (MTAR 260 to 50 days), and rises when the customer base shifts to long-cycle first-article programs (Unimech 110 to 150-160 days). So the working-capital outcome tracks customer bargaining position and program stage, not management discipline. Testable: Azad's days should fall only if its dedicated-plant OEMs (GE Vernova 3 of 6 plants) pay advances or shorten terms, and should rise during delta qualification."

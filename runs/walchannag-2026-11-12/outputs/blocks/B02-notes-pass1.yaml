@@ -1,0 +1,21 @@
+stage: B02-notes-pass1
+company: "WALCHANNAG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+pass: 1
+report: runs/walchannag-2026-11-12/outputs/reports/02-notes-pass1.md
+unit: "INR Lakhs (source unit; nothing converted)"
+input_gaps:
+  - "Standalone only; no consolidated statements exist (no subsidiaries, associates or JVs)."
+  - "Shareholding filing absent; pledge read from AR Note 21 (15.63% of paid-up capital, 49.5% of 31.59% promoter holding, derived)."
+  - "No concall transcripts (no-concall mode)."
+  - "FY24 balances not in this AR; receivable and inventory days give two points, not three."
+  - "NOT FOUND in notes: order book, unsatisfied performance obligations, top customer, ECL provision matrix, impairment test inputs, Ind AS 116 detail, inventory write-downs, nature of FY25 exceptional gain 412, home of 1,050 trust loans, Nov 2026 CFO change, any post-FY26 warrant issue."
+going_concern_language: "NONE in Notes 1 to 62"
+top_findings:
+  - {rank: 1, finding: "Borrowings 21,891 (84.7% current), 17.5% NCD secured by promoter pledge, finance cost 18.6% of avg debt (derived)", note_ref: "Notes 21, 24, 35", rating: RED}
+  - {rank: 2, finding: "56.2% of gross receivables over 3 years; ECL matrix not printed; unbilled revenue 12,050 unaged", note_ref: "Notes 9, 13, 16, 44", rating: RED}
+  - {rank: 3, finding: "TNEB loss provision balance 3,886 after 1,545 used; customer-driven delays", note_ref: "Note 26", rating: RED}
+  - {rank: 4, finding: "Related party loans 1,981 in Note 50 vs 931 in borrowings notes; Janta interest 128 not traceable", note_ref: "Notes 50, 21, 35", rating: RED}
+  - {rank: 5, finding: "Other income 2,107 carries one-offs; FY25 exceptional gain 412 unexplained", note_ref: "Notes 30, 38", rating: YELLOW}

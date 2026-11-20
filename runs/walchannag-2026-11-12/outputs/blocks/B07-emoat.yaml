@@ -1,0 +1,60 @@
+stage: B07-emoat
+company: "WALCHANNAG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "COLLECTOR: consolidated page had no price, standalone page used: this company files no consolidated statements. Every stage reads standalone."
+  - "COLLECTOR: screener export sheets (Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization) came out EMPTY for WALCHANNAG, MTARTECH and ISGEC; Data_Sheet CSV carries the same raw series and is the Gate 0 source."
+  - "SHAREHOLDING: exchange shareholding pattern filing ABSENT; screener table capture only. Promoter pledge read from AR 2026 p.109 (NCD security 15.63% of paid-up capital)."
+  - "NO-CONCALL MODE: no transcript after May 2019; F2 tested on capex-completion evidence across AR 2025, AR 2026 and ICRA monitoring reports."
+  - "PRESENTATION: only investor presentation is dated 2025-05-03 (Q4 FY25); claims in it are 1.5 years old."
+  - "OCR TEXT LAYER: Q2 FY27 results segment table, balance sheet and cash flow checked on the PDF pages 3-5 and agree with the text layer."
+  - "ORDER BOOK UNRECONCILED: AR 2026 p.21 orders on hand 871.77 Cr at 31 Mar 2026 against Acuite unexecuted order book 374.56 Cr at 30 Jun 2026 (rating filing p.3). No filing bridges the two definitions. Closing order book at 30 Sep 2026 NOT FOUND."
+  - "ORDER INFLOW: only Q2 FY27 (99.46 Cr) and FY25 (248.50 Cr) are filed. Q3 FY26, Q4 FY26, Q1 FY27 and H2 FY26 inflow NOT FOUND. FY26 inflow 238.0 Cr is derived (closing minus opening plus revenue), running about 18 Cr low on the FY25 calibration."
+  - "FY27 revenue target of 600 Cr: NOT FOUND in any corpus filing (web lead only)."
+  - "CAPACITY: installed capacity and utilisation by facility NOT FOUND in AR 2025 or AR 2026."
+  - "MARGIN SPLIT: DNA against Product margin NOT FOUND; Heavy Engineering segment mixes both."
+  - "STRATEGIC SHARE: order-book strategic share at 31 Mar 2026 and 30 Sep 2026 NOT FOUND (52% at 31 Mar 2025). Revenue DNAM share is 39% FY25 (AR 2025) against 31% FY26 (Acuite), different definitions."
+  - "SHANTI Act text and rule status: PENDING LIVE VERIFICATION (the company filing of 2025-12-22 is the only corpus source)."
+flags:
+  - {type: FLAG-EM, reason: "Emerging Moat NONE (5.2 of ceiling 92); one Moderate category (A1). Reading B bound 14.2 would be MODEST and needs a double credit of A1 and B2 plus a credit on F2."}
+  - {type: FLAG-ORDERBOOK, reason: "Order book 871.77 Cr (AR 2026 p.21, 31 Mar 2026) against 374.56 Cr (Acuite p.3, 30 Jun 2026) is unreconciled; book-to-bill 0.87x FY26 (derived) and 1.06x Q2 FY27; trailing four-quarter ratio cannot be built."}
+  - {type: FLAG-MARGIN-SOURCE, reason: "Q2 FY27 EBITDA 13.42 Cr includes other income 4.62 Cr (operating 8.80 Cr, 9.4%). Q1 FY27 PBT 1.18 Cr includes 3.34 Cr profit on asset sale (results p.3); PBT ex that gain is -2.16 Cr. Finance cost 9.78 Cr is 89% of Q2 segment result 11.00 Cr."}
+  - {type: FLAG-REVENUE-MIX, reason: "Foundry rebound supplied 40% of the Q2 FY27 year-on-year revenue increase (16.70 of 41.75 Cr); DNAM share of revenue 31% FY26 (Acuite) against 39% FY25 (AR 2025)."}
+  - {type: FLAG-CAPEX-SLIP, reason: "Capex plan 105 Cr cut to 84 Cr; AR 2025 timeline Q1-Q3 FY26 slipped, completion now 31 Mar 2027 (ICRA Sep 2026 p.8); 82.19 of 84 Cr used at 30 Sep 2026. About 2 quarters late."}
+  - {type: FLAG-GOVERNANCE, reason: "CFO resigned 30 Jul 2026 (effective 19 Oct), interim CFO 2 Nov 2026; promoter pledge 15.63% of paid-up capital to 17.5% NCD; Aicitta 60.3% stake abandoned Mar 2026; JUD Cements CIRP 12 Oct 2026; H1 FY27 CFO -5.92 Cr with unbilled-type assets +44.11 Cr."}
+em_score: 5.2
+em_classification: "NONE"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "mixed: rarity count claim, awards documented", time_to_materialise: "in place; margin proof 12-36 months"}
+evidence_mix: {documented: 8, claim: 9, inference: 3}
+completionist_recount: "📄 recount performed: 7 documented items across 4 scored categories (A1 x3, A3 x1, E2 x2, R1 x1); 1 further documented item in unscored F2; 4 of 23 rows scored, far below the 12 trigger"
+catalysts_12m:
+  - {catalyst: "Nuclear End Shield tender award", window: "next 12 months", evidence_type: "claim", anchor: "press release 20261102-98ab38d3 p.2"}
+  - {catalyst: "SHANTI Act rules and first private nuclear orders", window: "12-24 months, first signal within 12", evidence_type: "claim", anchor: "press release 20261102-98ab38d3 p.3; filing 20251222-5fb5dbf0 p.1-2"}
+  - {catalyst: "Order inflow and closing order book on one definition (Q3 and Q4 FY27 results)", window: "Feb 2027 and May 2027 results", evidence_type: "documented when filed", anchor: "Q2 FY27 press release gives inflow 99.46 Cr only; AR 2026 p.21 and Acuite p.3 conflict"}
+  - {catalyst: "Capex programme completion (82.19 of 84 Cr used)", window: "by 31 Mar 2027", evidence_type: "documented", anchor: "ICRA monitoring report 20261103-8ad93aa8 p.7-8"}
+  - {catalyst: "Non-core asset sale to repay NCD instalments, and preferential raise expected by FY2027", window: "FY27 H2", evidence_type: "claim", anchor: "Acuite rating filing 20260807-ddc3874d p.3-4; AR 2026 p.109"}
+  - {catalyst: "Permanent CFO appointment", window: "next 12 months", evidence_type: "documented when filed", anchor: "20261102-8f51d0d9 p.1"}
+capex_embedded_growth_pct: 11.7
+optionality_register:
+  - {optionality: "Nuclear End Shield and Calandria order flow (qualifies 700-1,000 Cr per plant, claimed)", converting_evidence: "NPCIL or BARC letter of award with value and schedule", first_appears: "Reg 30 order filing; AR orders-on-hand note", window: "6-18 months"}
+  - {optionality: "Private-sector nuclear orders under the SHANTI Act", converting_evidence: "Signed private-developer order; published Act rules", first_appears: "Reg 30 filing; gazette (PENDING LIVE VERIFICATION)", window: "12-24 months"}
+  - {optionality: "Missile programmes entering production (4 stated)", converting_evidence: "Production order with value", first_appears: "Reg 30 order filing", window: "6-24 months"}
+  - {optionality: "NAL wind tunnel follow-on (400 Cr claimed May 2025, window missed)", converting_evidence: "Signed NAL order", first_appears: "Reg 30 order filing", window: "6-18 months, credibility dented"}
+  - {optionality: "Launch-vehicle privatisation consortium (SSLV with Agnikul, Alpha Design)", converting_evidence: "Consortium agreement or SSLV contract naming WIL", first_appears: "Reg 30 filing; AR note", window: "12-36 months"}
+  - {optionality: "Advanced composites (entered 2022)", converting_evidence: "Composites order or revenue line in a segment note", first_appears: "AR segment or revenue note", window: "12-24 months"}
+  - {optionality: "Pricing power on DNA work", converting_evidence: "Segment or order-level margin split of DNA against Product", first_appears: "AR FY27 segment note; presentation", window: "next AR or presentation"}
+  - {optionality: "Export margin (395.42 Cr export orders on hand, segment result 0.04 Cr FY26)", converting_evidence: "Export segment result above 5% of export revenue", first_appears: "AR FY27 secondary segment note", window: "12 months"}
+  - {optionality: "Spares and AMC on installed base (4,500+ centrifugals, 6,500+ gearboxes)", converting_evidence: "Disclosed spares revenue figure", first_appears: "AR note; presentation", window: "12-24 months"}
+  - {optionality: "H2 storage tanks and EIL-certified process equipment", converting_evidence: "EIL certification and first tank order", first_appears: "Reg 30 filing", window: "12-36 months"}
+combined_assessment: "AVOID"
+combined_reasoning: "Gate 0 AVOID (core 10, moat 0) and Emerging Moat NONE (5.2); the FY27 step-up is operating leverage on a fixed base, not a documented moat, and it carries 9.78 Cr a quarter of interest."
+top_moat_risks:
+  - "Free-issue, no-tooling contract terms cap margin on the qualified aerospace position, and L&T and Godrej already compete in nuclear and defence"
+  - "Order book definition gap (871.77 Cr against 374.56 Cr) may hide legacy TNEB and stalled work; 38.86 Cr TNEB provision balance remains"
+  - "SHANTI Act benefit is shared with larger competitors and rules are not yet issued"
+  - "Finance cost 9.78 Cr a quarter, 17.5% NCD, Acuite BB, pledge 15.63% of paid-up capital, CFO exit"
+  - "Unbilled-type assets +44.11 Cr in H1 FY27 with operating cash flow -5.92 Cr"
+analyst_note: "The scan is sparse by evidence, not by effort. The only qualified-supplier proof is a run of Aerospace awards (42 Cr FY25, 38.13 Cr Q2 FY27, HS200 30.53 Cr) on terms with no tooling money and free-issue material. Two readings: A (adopted) the position earns fabricator returns, EM 5.2; B it earns scarcity returns, EM 14.2. One observation separates them: a filed DNA against Product margin split. Q2 FY27 EBITDA 13.42 Cr carries 4.62 Cr other income; Q1 FY27 PBT carries a 3.34 Cr asset-sale gain. 40% of the Q2 revenue rise is the Foundry rebound. The order book conflict (871.77 vs 374.56 Cr) is a definition gap no filing closes, so the brief's burn-against-new-run-rate question stays open. Conservatism belongs in position size."

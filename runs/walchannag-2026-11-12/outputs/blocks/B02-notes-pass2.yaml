@@ -1,0 +1,34 @@
+stage: B02-notes-pass2
+company: "WALCHANNAG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+pass: 2
+report: runs/walchannag-2026-11-12/outputs/reports/02-notes-pass2.md
+unit: "INR Lakhs (source unit; nothing converted)"
+pass_2_empty: false
+input_gaps:
+  - "Standalone only; no consolidated statements exist."
+  - "Shareholding filing absent; no concall transcripts; FY24 balances absent from this AR."
+  - "NOT FOUND in notes: content of accrued salaries 3,152; composition of government balances 4,203; TNEB 1,545 usage route; Trimax Sands escrow role; nature of 1,050 trust-loan home; contents and customer of goods in transit 2,154; foundry lockout settlement cost."
+going_concern_language: "NONE in Notes 1 to 62 (unchanged from Pass 1)"
+corrections_to_pass1:
+  - "FY25 exceptional gain 412 = ACRE standstill liability write-back (AR2025 Note 38); no longer NOT FOUND."
+  - "Janta interest 128 reconciles to 28 notional + about 100 coupon inside Note 35 line 979; downgraded RED to YELLOW. Trust loans 1,050 gap stands."
+  - "Interest cover 0.64x includes other income 2,107; EBIT before other income 339, cover 0.09x."
+  - "Goods in transit 2,154 not explained by import raw materials (555 CIF for the year); EUR forward 3,089 more likely tied to capital imports 1,864."
+new_findings:
+  - {rank: 1, finding: "Segment result and operating profit 2,446 include all other income 2,107; EBIT before other income 339; cover 0.09x", note_ref: "Notes 53, 30; policy 2.18", rating: RED}
+  - {rank: 2, finding: "TNEB provision usage 1,545: route (cost lines vs direct to provision) not stated; up to 5.6 pts of revenue inside the 9.7-pt cost-ratio gain", note_ref: "Notes 26, 31-33, 37", rating: RED}
+  - {rank: 3, finding: "Accrued salaries and benefits 3,152 = 5.1 months of pay; content undisclosed", note_ref: "Notes 26, 34, 58", rating: RED}
+  - {rank: 4, finding: "Old receivables net of allowance 6,554 = 18.3% of net worth (derived)", note_ref: "Notes 9, 13, 44", rating: RED}
+  - {rank: 5, finding: "Government balances 4,203 (11.7% of net worth), no composition", note_ref: "Notes 11, 17", rating: YELLOW}
+  - {rank: 6, finding: "Compensated absence remeasurement 59 (FY25 196) in OCI against own policy (P&L); conservative direction", note_ref: "Notes 2.13, 52", rating: YELLOW}
+  - {rank: 7, finding: "Credit exposure 27,777 excludes 7,510 cash and bank despite text", note_ref: "Notes 44, 51", rating: YELLOW}
+  - {rank: 8, finding: "Land advances 3,175 refundable if sale fails; cash flow ties 451 rise to investment property / HFS", note_ref: "Notes 28, 6, 18", rating: YELLOW}
+  - {rank: 9, finding: "Eight loss years in nine, cumulative (31,127) FY18-FY26", note_ref: "Statistical sheet p.145-146", rating: RED}
+  - {rank: 10, finding: "Service tax penalty under Section 78 (suppression) 667.33 equal to demand", note_ref: "Note 54(a)(v)", rating: YELLOW}
+hand_off_to_pass3:
+  - "Check P&L employee cost 8,256 vs Note 34 total 8,392 (explained by 136; no reconciling line)."
+  - "Check Note 44 liquidity table omits NCD 2,407 (Pass 1) and wage accruals 3,152."
+  - "Check Note 55 vs Note 38 on Aicitta timing; Note 54(e) vs Note 44 on EUR unhedged."

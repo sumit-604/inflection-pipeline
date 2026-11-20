@@ -1,0 +1,79 @@
+stage: B03-ardeep
+company: "WALCHANNAG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Standalone only: no consolidated statements exist (CARO ix(e), PDF p.63)."
+  - "No concall transcripts (no-concall mode): management explanations for TNEB, receivables, other income, related-party loans and the order book cannot be checked."
+  - "Shareholding exchange filing absent (screener table only); pledge taken from AR Note 21 (15.63% of paid-up capital = 49.5% of promoter holding, derived)."
+  - "Screener export sheets empty; FY24 balances absent, so receivable and inventory days are two points."
+  - "SEBI 2015 adjudication order text not in corpus (B00 freshness pair FAIL)."
+  - "Order book unreconciled: AR orders on hand 871.77 Cr (31 Mar 2026, Directors' Report PDF p.21) against Acuite unexecuted 374.56 Cr (30 Jun 2026); definition of either NOT FOUND IN DOCUMENT."
+  - "Order inflow, book-to-bill, defence/nuclear/aerospace share, customer names, ECL matrix, TNEB completion date, placement of 1,050 trust loans, IBC Section 9 petition status after 20 May 2026, numeric FY27 target: NOT FOUND IN DOCUMENT."
+flags:
+  - {type: FLAG-CASH, reason: "CFO (1,108) INR Lakhs on EBITDA 3,549; free cash about 680 after 1,329 unspent warrant money; payable days 186 vs 155; 56.2% of gross receivables over 3 years; unbilled 12,050 unaged; short-term borrowing net +2,785 contradicts CARO ix(d) wording (CFS PDF p.69-70; Notes 9, 13, 16, 25; CARO PDF p.63)."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Pledge of 15.63% of paid-up capital (49.5% of promoter holding, derived) secures 17.5% NCD (Note 21 PDF p.109); 31.59 Cr promoter-group loan swapped into warrants (CG PDF p.45); promoter share count unchanged; promoter cash purchases NOT FOUND. Full verdict from B08."}
+phase_verdicts: {p1: "YELLOW", p2: "RED", p3: "RED", p4: "RED", p5: "YELLOW", p6: "RED", p7_best_fit: "Turnaround (WATCHLIST)"}
+overall_quality: 3.5
+quality_components: {governance: 4, accounting: 5, balance_sheet: 2, earnings: 3}
+kill_switch_notes:
+  - "P1: reviewer would not stop; unmodified opinion, no fraud or default, no going-concern paragraph; thin KAM list and unlisted IBC petition are flags."
+  - "P2: reviewer would look hard but not stop; 1,050 related-party loans unplaced and ECL matrix missing are questions for management."
+  - "P3: reviewer would have reason to stop and ask before sizing; CFO (1,108), 84.7% of debt current, EBIT cover 0.09x ex-other-income."
+  - "P4: reviewer would read MD&A as marketing and anchor on statements; 11 missing risks, 4 internal inconsistencies."
+  - "P5: reviewer would not stop on governance alone; pledge 49.5% and CFO gap carry into sizing."
+  - "P6: reviewer would discount the narrative; DNA share and order composition silently dropped."
+triple_pass_verification:
+  verified: 14
+  discrepancies:
+    - {finding_rank: 10, triple_pass_value: "ESOP outstanding 3,98,388 (0.59%)", ar_value: "4,98,388 = 1,04,076 + 1,61,812 + 1,20,000 + 1,12,500 (0.73% of 6,78,42,060)", note_ref: "Note 20, PDF p.101-108"}
+missing_risks:
+  - {risk: "Liquidity and refinancing: 84.7% of debt current, 1,900 NCD due FY27, 17.5% NCD cost", evidence: "Notes 21, 24, 14; CG PDF p.45; MD&A PDF p.30 lists no such risk"}
+  - {risk: "Promoter pledge 15.63% of paid-up capital as NCD security", evidence: "Note 21 PDF p.109"}
+  - {risk: "Related-party funding 1,981 with 1,050 unplaced", evidence: "Note 50 PDF p.130 vs Note 21 PDF p.108-110"}
+  - {risk: "Receivable concentration and age (TNEB); MD&A claims customer diversification", evidence: "Notes 9, 13 PDF p.92-95; Note 29 PDF p.113 (Heavy Engineering 86.5%)"}
+  - {risk: "Labour unrest: Foundry lockout Mar-Nov 2025, restart dates conflict (17 vs 24 Nov)", evidence: "Note 58 PDF p.140; Directors' Report PDF p.23"}
+  - {risk: "IBC Section 9 petition Rs 7.95 Cr pending, absent from notes and payables 'disputed dues'", evidence: "Directors' Report s.38 PDF p.28; Note 25 PDF p.111-112; Note 54 PDF p.137-138"}
+  - {risk: "Growth is export-led (India revenue -13.5%, exports 973 to 5,936)", evidence: "Note 29 PDF p.114"}
+  - {risk: "Unhedged FX; CG says no hedging while Notes 44 and 54(e) show EUR forwards", evidence: "CG PDF p.43; Note 44 PDF p.122; Note 54(e) PDF p.138"}
+  - {risk: "Land monetisation dependency; 3,175 advances refundable; held for sale past 12 months", evidence: "Notes 18, 28 PDF p.96-97, 113"}
+  - {risk: "Unfunded gratuity (assets 99 against DBO 2,090)", evidence: "Note 52 PDF p.133"}
+  - {risk: "Order book undefined and unreconciled (871.77 Cr vs 374.56 Cr)", evidence: "Directors' Report PDF p.21; Acuite rating filing PDF p.3"}
+guidance_table:
+  - {claim: "DNA share of revenue: trend will continue (39% in FY25)", number: "39% FY25", timeframe: "FY26 onward", credibility: "LOW: Acuite ~31% FY26; FY26 AR drops the metric"}
+  - {claim: "Topmost priority to grow order book even further", number: "908.96 Cr at 31 Mar 2025", timeframe: "FY26", credibility: "LOW: 871.77 Cr at 31 Mar 2026 (-4.0%); derived inflow ~238 Cr vs 248.50 Cr"}
+  - {claim: "Capex 84 Cr: machines capitalised and running Q1-Q3 FY26", number: "84 Cr", timeframe: "Q1-Q3 FY26", credibility: "MEDIUM: gear hobbing 1,622 Lakhs still CWIP at 31 Mar 2026; 82.19 Cr used by 30 Sep 2026"}
+  - {claim: "Five senior hires incl. CFO to drive transformation", number: "5 hires", timeframe: "FY25-26", credibility: "MEDIUM-LOW: CFO resigned 30 Jul 2026 after 15 months"}
+  - {claim: "Turnaround is structural; PBT positive Q3 and Q4", number: "602 and 226 Lakhs", timeframe: "FY26", credibility: "MEDIUM-LOW: Q4 ex-other-income loss 794; Q1 FY27 118; Q2 FY27 47"}
+  - {claim: "Capex to significantly improve productivity and throughput", number: "none", timeframe: "forward", credibility: "LOW: Annexure C benefits 'Nil'"}
+  - {claim: "FY27 revenue target (web Rs 600 Cr)", number: "NOT FOUND IN AR", timeframe: "FY27", credibility: "N/A: H1 FY27 revenue from operations 18,436 Lakhs"}
+monitorables:
+  - {metric: "EBITDA excluding other income", threshold: ">= 800 Lakhs per quarter (Q2 FY27 880, Q1 734)", where: "Quarterly results, other income line", why: "Other income is 59.4% of FY26 EBITDA"}
+  - {metric: "EBIT excluding other income / finance cost", threshold: ">= 1.0x (finance cost ~978 per quarter)", where: "Results", why: "Cover 0.09x in FY26"}
+  - {metric: "NCD instalments 31 Dec 26 and 31 Mar 27 (500 each)", threshold: "paid on time, no Reg 30 default notice", where: "Reg 30 filings, results notes", why: "17.5% NCD secured on promoter pledge"}
+  - {metric: "Order inflow, book-to-bill, one stated order-book definition", threshold: "book-to-bill >= 1.0 (Q2 FY27 1.06x derived); reconcile 871.77 vs 374.56 Cr", where: "Press release, concall", why: "Order book unreconciled"}
+  - {metric: "DNA share of revenue and order book", threshold: "disclosed; >= 39% / 52%", where: "Presentation, annual report", why: "Thesis KPI silently dropped"}
+  - {metric: "Half-year CFO and receivables over 3 years", threshold: "CFO positive at H1 FY27; over-3-year balance < 9,000 Lakhs", where: "Half-year balance sheet and cash flow", why: "Proof gate should be cash"}
+  - {metric: "TNEB provision 3,886 and completion date", threshold: "usage through cost lines and timetable disclosed", where: "Notes in results", why: "Margin may include provision usage"}
+  - {metric: "Promoter pledge", threshold: "no rise above 15.63% of paid-up capital", where: "Shareholding pattern filing", why: "49.5% of holding pledged"}
+  - {metric: "Land sale proceeds and 3,175 advances", threshold: "closure by 31 Mar 2027", where: "Reg 30 filings", why: "Funds NCD instalments"}
+  - {metric: "JUD Cements exposure and IBC Section 9 petition (7.95 Cr)", threshold: "status disclosed", where: "Reg 30 filings", why: "Customer insolvency; omitted claim"}
+ar_new_downstream_entities:
+  - name: "Walchand Advanced Composites Private Limited"
+    where_in_ar: "Note 50 related-party table (services 129 Lakhs; advance receivable 48 Lakhs), PDF p.127-130; absent from FY25 AR"
+    entity_type: "RPT counterparty (enterprise under significant influence)"
+  - name: "Unnamed operational creditor (IBC Section 9 petition, Rs 7,95,49,674 plus 12% interest)"
+    where_in_ar: "Directors' Report s.38, PDF p.28; absent from FY25 AR"
+    entity_type: "Litigation counterparty"
+strengths_top3:
+  - "Revenue +6.2% and orders on hand 871.77 Cr (3.2x revenue) or 374.56 Cr (1.35x, Acuite); either covers more than a year"
+  - "Clean statutory record: unmodified opinion and IFC, no fraud, no default, full board attendance"
+  - "Asset and tax cushions: investment property fair value 3,157 vs carrying 153, assets held for sale 2,648, tax shield from about 9,914 losses and 10,482 depreciation (derived)"
+red_flags_top3:
+  - "Debt 21,891 Lakhs, 84.7% current, 17.5% NCD with 49.5% of promoter holding pledged, 1,900 due FY27, free cash about 680"
+  - "EBITDA 3,549 includes other income 2,107 (59.4%); like-for-like swing 3,138 not 7,110; Q4 FY26 PBT ex-other-income (794)"
+  - "CFO (1,108); 56.2% of gross receivables over 3 years; unbilled 12,050 unaged; ECL matrix unpublished; 1,050 related-party loans unplaced"
+best_fit_strategy: "Turnaround (WATCHLIST)"
+one_line_verdict: "Revenue is growing, but FY26 profit rests on other income and a lapsed provision charge, debt is mostly due within a year, and cash flow stays negative: a turnaround to watch, not yet one to underwrite."
+analyst_note: "Four points a later stage cannot rebuild. First, MD&A EBITDA 3,549 includes the 390 FX gain and 2,107 of other income; EBITDA excluding other income is 1,442 and EBIT excluding it is 339. The 7,110 headline swing is 3,138 like-for-like (FY25 base adds back the 5,431 TNEB charge and removes other income). Second, Q4 FY26 PBT 226 rests on derived other income of 1,020; ex-other-income Q4 was (794). Third, orders on hand 871.77 Cr (AR) vs unexecuted 374.56 Cr (Acuite) is unreconciled, and the AR dropped the DNA share (39% in FY25) and order composition (52% strategic). Fourth, FY26 growth was export and product led (India revenue -13.5%, exports 973 to 5,936). One triple-pass slip: ESOP outstanding is 4,98,388, not 3,98,388. Units INR Lakhs; stage 10 converts once."

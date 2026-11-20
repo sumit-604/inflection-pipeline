@@ -1112,3 +1112,15 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+
+## 2026-11-12 · WALCHANNAG /step1 Phase 1 (runs/walchannag-2026-11-12)
+- Collector: fetch_bse_announcements reads only corpfiling/AttachLive; filings older than about two months sit at corpfiling/AttachHis and return 404, so no results or rating PDF landed. Fetched 39 filings by trying both paths. Closes the "untested on the live BSE API" check (PR #167) with a defect found.
+- Collector: took three concall transcripts dated 2018-19 and set concalls_available true; set false by hand, files moved to inputs/other.
+- Collector: REPO_ROOT hardcoded to a path absent on this machine; bundled Chromium would not launch (ran through a wrapper and a Chrome-channel shim, no tools/ edit); one peer staged empty after a screener 429 and was re-collected.
+- Acuite rating page blocked (Cloudflare 403) by script and browser; the BSE Reg 30 credit-rating filing carried the rationale.
+- Stage 4 block file carried a stray code fence (stripped); stage 8 report lacked its YAML block (appended from the block file); stages 1, 2 and 7 had no Edit tool and reported their own errata.
+- Sector cap row moved from the /step1 web pick (Defence / strategic) to Cables / Industrial products after B04; operator ruling needed at /fttcp.
+- Stage 5 no-call run: 128k tokens against the 100k target.
+- Verifier A shadow not run: ten parallel sessions, one armed switch; slot claimed by runs/kusumgar-2026-11-12.
+- Session-cost token split not exposed for async subagents; totals only.

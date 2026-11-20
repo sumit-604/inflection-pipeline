@@ -1,0 +1,62 @@
+stage: B09b-dossier
+company: "WALCHANNAG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "SEBI Adjudicating Officer order of 22 Dec 2015 (BCMA promoter entities), order text; Supreme Court case record"
+    expected_source: "sebi.gov.in; Supreme Court of India case status"
+    kind: "freshness-pair"
+  - document: "Concall transcripts after May 2019 (none filed Nov 2025 to Nov 2026)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Exchange shareholding pattern filings and SAST Reg 31 pledge filings"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Nov 2023 warrant allotment outcome with allottee list and promoter part"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Investor presentation for FY26 and FY27"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Broker or research notes"
+    expected_source: "rating agency site"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "DNAM (defence, nuclear, aerospace, missiles)"
+    archetype: "Build-to-spec component maker"
+  - line: "Product lines (gearboxes, centrifugals, crushing and grinding, process equipment)"
+    archetype: "Order-book business (EPC/defence/capital goods)"
+transition:
+  - line: "DNAM (defence, nuclear, aerospace, missiles)"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER"
+    engine: "DNAM order conversion (aerospace, nuclear End Shield) on 84 Cr capex plant due by 31 Mar 2027; operating leverage on a fixed plant"
+    proof_gate: "Four consecutive quarters of EBITDA before other income >= 800 Lakhs, PBT excluding other income and asset-sale gains positive, half-year operating cash flow positive, book-to-bill >= 1.0 on one order-book definition with DNAM share of inflow disclosed >= 39%. Status: not fired"
+    recognition_gap: "Open question for Stage 11: does the market already treat WIL as a DNAM (R3) business or a legacy heavy-engineering business; resolved via the PE gap"
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "DNAM share stays below 30% or undisclosed through FY27 with book-to-bill under 1.0 for two quarters; EBITDA before other income below 500 Lakhs; End Shield lost or SHANTI rules not notified by mid 2027"
+dominant_variables:
+  - "Order inflow, book-to-bill and DNAM share on one order-book definition"
+  - "EBITDA before other income and other-income share"
+  - "Cash conversion and debt servicing (NCD instalments)"
+  - "Nuclear order flow and the policy that opens it"
+business_falsifier: "A missed NCD instalment, default notice or pledge invocation, or an order book that reconciles to the lower definition with legacy TNEB or stalled work inside the larger number"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "4 of 7 externally observable"
+  single_point_failure: "Debt servicing: the 17.5% NCD with 84.7% of borrowings current and a pledge of 15.63% of paid-up capital"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+second_order:
+  chains_drafted: 2
+  pending_live_links: 4
+  confirm_by_observations: 2
+research_brief_items: 18
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "410a4effa44536d0efab1621b213ba4192adb19e"

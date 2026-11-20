@@ -1112,3 +1112,15 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+
+## 2026-11-15 · ASTRAMICRO (Astra Microwave Products) · /step1 intake, phase 1 to Halt 1 (runs/astramicro-2026-11-15; closed 2026-11-16)
+- Collector: hard-coded REPO_ROOT and headed Playwright failed again; scratch wrapper and headless sitecustomize worked. It delivered no results, rating, shareholding, APOLLO or PARAS files and 15 mostly irrelevant announcements; all repaired by direct BSE / CRISIL / company-site HTTP. Chrome fallback not needed.
+- Corpus: Q2 FY27 transcript not yet filed (call 2026-11-13), so freshness pair 1 fails and the gate caps at PROCEED WITH CAVEATS. PARAS has no transcripts anywhere; the peer set is two, so peer_utilisation is NOT APPLICABLE.
+- Session stalled overnight after notes pass 2 (report on disk, usage metadata lost); resumed from disk per orchestrator 7A with nothing re-run.
+- Seven stages and verifiers wrote the block file wrapped in code fences (B05 first; it failed to parse). Orchestrator stripped fences mechanically; later task messages said "plain YAML, no code fences" and the problem stopped.
+- Every stage needed late corrections it could not apply to its own report; orchestrator appended ERRATA sections (stages 2, 3, 4, 6, 7, 8, 9). Stage 5 ended its report with a pointer in place of the inline block.
+- Stage 4 inferred the Q2 order inflow wrongly (2,036 vs 2,156); settled at source under FLAG-DISAGREEMENT.
+- Verifier B: acceptance 91.7 with PARTIALLY CAUGHT counted as found; caught-only reading 58.3 sits below the 60% REWORK line. The prompt's definition decides REWORK here; operator ruling wanted on which reading binds.
+- Verifier C (phase 1): six framework gaps in prompts/01 and prompts/07 (per-metric minimum window, Strong/Moderate/Weak cut-offs, combined-matrix mapping, "active" in the completionist guard, mixed-evidence multiplier, 2C asset-turnover basis). em_score 16.5 vs recomputed 19.2, band unchanged.
+- session-cost.md: this desktop harness exposes only total tokens per subagent, so the fresh vs re-read lines are n/a. No downshift failure, no cost spike. Verifier A shadow not run (TD Power session owns it).

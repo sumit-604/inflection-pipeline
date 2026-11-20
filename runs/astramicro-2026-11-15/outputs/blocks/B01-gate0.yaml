@@ -1,0 +1,45 @@
+stage: B01-gate0
+company: "ASTRAMICRO"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Q2 FY27 concall transcript absent (call held 2026-11-13, not yet filed)"
+  - "screener sheets P&L / Quarters / Balance Sheet / Cash Flow empty (Data Sheet populated)"
+  - "PARAS peer concalls absent"
+  - "prospectus and research folders empty (not expected)"
+  - "No capex row in screener Data Sheet; capex found for FY25-FY26 only (Q4 p.18)"
+  - "Current liabilities and trade payables found for FY25-FY26 only (Q4 p.17); FY17-FY24 NOT FOUND"
+  - "Promoter holding history for the 3-year window NOT FOUND (only Mar-25, Mar-26, Sep-26)"
+  - "Consolidated ROCE FY17-FY22 NOT FOUND (AR gives FY23-FY26 only)"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE (core 53). Depressors: cumulative CFO/PAT 0.47 driven by negative CFO in FY23, FY24, FY25 as receivables and inventory built; Block B scored 0 partly from NOT FOUND capex/payables history. H1 FY27 CFO -147.85 Cr with inventory +190.50 Cr and current borrowings 412.09 Cr at Sep-26."}
+  - {type: FLAG-CASH, reason: "10-year cumulative CFO/PAT 0.47; FY26 CFO +386.73 Cr reversed in H1 FY27 to -147.85 Cr"}
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 16, B: 0, C: 12, D: 17, E: 8}
+core_score: 53
+moat_score: 15
+grand_total: 68
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers:
+  - "DB2 Block B 0 (<8): max GOOD; B1 0.47 real, B2-B4 NOT FOUND (capex FY17-24, trade payables FY17-24)"
+  - "DB4 cumulative CFO/PAT 0.47 (<0.50): max AVERAGE; driven by FY23 -25.47, FY24 -181.52, FY25 -90.15 Cr CFO"
+history_downgrade: false
+data_notes:
+  - "Units: screener Rs Cr; filings and AR Rs Lakh, converted /100 once where used"
+  - "ROCE scored from AR p.11 consolidated series FY23-FY26 (18.52, 19.34, 22.78, 22.94); computed formula cross-check FY25 21.65%, FY26 21.55%; AR p.35 figures are standalone, not used"
+  - "ROE computed from screener net profit and average net worth; FY17 uses closing"
+  - "EBITDA = screener Sales less expenses; reconciles to screener PBT every year"
+  - "B2, B3, B4 scored 0 NOT FOUND; two-year partial FY25-FY26: FCF positive 1 of 2, FCF/PAT 0.39, WC days 460.23 to 373.69"
+  - "E2 scored 0 NOT FOUND; observed no change Mar-25 to Sep-26 (6.53 to 6.54)"
+  - "E4 includes Rs 80 Cr corporate guarantee for ARC JV (6.23% of net worth); 0.14% without it"
+  - "M2, M5, M9 PEER DATA NEEDED; M7 player count NOT FOUND; M8 no evidence"
+  - "M6 R&D ratio from 2 years only (4.79% FY26, 3.81% FY25 revenue expense)"
+  - "M1 scored on endpoints (+2.20pp) although margin path is non-monotone (FY19 10.43%, FY22 11.63%)"
+  - "Block D unchanged on Sep-26 data (ND/EBITDA 0.77x TTM, IC 6.69x, D/E 0.36, CR 2.55)"
+  - "No loss-to-profit swing in window"
+block_b_trend: "deteriorating: FY26 CFO +386.73 Cr reversed to H1 FY27 CFO -147.85 Cr (Q2 p.12), 10-yr cum CFO/PAT 0.47"
+analyst_note: "AVERAGE is robust: even with every NOT FOUND item given its best partial value, core reaches 64 and deal-breaker 4 still caps at AVERAGE. The score is low because of cash conversion, not returns: ROCE 22.94% (FY26) and net debt/EBITDA 0.10x are strong, but working capital absorbed cash FY23-FY25 and again in H1 FY27 (inventory +190.50 Cr). Block B of 0 overstates the damage because capex and payables history are missing, so read B1 (0.47) as the real signal. FY26 WC days fell 86.5 to 373.69, still far above any norm. Sep-26 current borrowings of 412.09 Cr fund the build."

@@ -1,0 +1,64 @@
+stage: B06-peers
+company: "ASTRAMICRO"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "PARAS peer concalls absent (8 peer transcripts provided, not 12); PARAS is a peer with no coverage, not silence on any topic"
+  - "Q2 FY27 main-company concall transcript absent (call held 2026-11-13, not yet filed); peer Q2 FY27 evidence exists only for APOLLO (2026-10-26)"
+  - "screener sheets other than Data Sheet empty; prospectus and research folders empty (not expected)"
+  - "Astra receivable and inventory days not in B05 inputs: NOT FOUND, so no days-for-days comparison was made"
+  - "DATAPATTNS H1 FY27 operating cash flow not stated in any transcript: NOT FOUND"
+  - "No peer states HAL or BEL subcontract advance terms, component lead times, MOQs or forex margin effect: NOT FOUND"
+flags:
+  - "FLAG-PEER-CAPEX: both peers step capex up ahead of orders (DP Rs 150-200 Cr minimum over 2 years, DP Q1 FY27 p.16; Apollo capacity about 12x, Apollo Q2 FY27 p.7) against Astra Rs 40-50 Cr a year; AR26 shows Rs 75 Cr FY27. Reconcile in Role 1"
+  - "FLAG-PEER-CFO: Apollo H1 FY27 consolidated CFO +Rs 22 Cr (Apollo Q2 FY27 p.3) against Astra H1 standalone -14,612.63 Rs Lakhs; Apollo says positive CFO in all quarters only from FY29 (p.14); DP H1 CFO NOT FOUND. Peers do not settle the seasonal-versus-structural question; Astra FY27 year-end CFO and inventory still the separating observation"
+  - "FLAG-PEER-COMPETE: DP is building a Hawk-based Su-30 radar in parallel to the DRDO path and says Astra is DcPP partner for the MCA variant, not the Su-30 variant, as DP understands (DP Q1 FY27 p.18). Bears on Astra trigger 6 (Su-30 Virupaksha)"
+  - "FLAG-PEER-QRSAM: Apollo reports MoD plans to split the first 1,000 QRSAM missiles 50% BDL and 50% private industry, a cause of delay (Apollo Q2 FY27 p.7); Apollo also says QRSAM execution starts next financial year (Apollo Q1 FY27 p.8). Astra QRSAM timing risk not named in B05"
+  - "FLAG-PEER-ADVANCE: DP says advances sit in all of its contracts and expects more (DP Q2 FY26 p.10-11); Apollo's MIGM sanction carries 20% advance (Apollo Q1 FY27 p.8). Astra says PSU production carries none (Q3 FY26 Astra p.11). Channel differs (direct MoD/DRDO/Navy versus HAL/BEL subcontract), so untested; Uttam advance stays NOT FOUND"
+  - "FLAG-PARAS: no PARAS transcripts exist; peer set is two, not three"
+peers_provided: 8
+verified:
+  - {claim: "P3 Customer approval, inspection and project delays cause quarterly revenue misses (cause only; in-year recovery mixed: DP recovered, Apollo cut its guide twice)", peers: ["DATAPATTNS", "APOLLO"], anchor_count: 3}
+  - {claim: "P5 Margin on indigenous radar/EW: peers at or around Astra level (Apollo standalone EBITDA 34-35%, DP 40% FY26) and mix is the driver", peers: ["DATAPATTNS", "APOLLO"], anchor_count: 4}
+partially_verified:
+  - {claim: "P2 Back-ended year with inventory build is industry-normal; H1 outflow of Astra size not shown (Apollo H1 CFO positive Rs 22 Cr)", peers: ["DATAPATTNS", "APOLLO"]}
+  - {claim: "P4 Industry claims: budget direction supported by DP only; 75% domestic, Rs 38,000 Cr exports, +15%, FY30-31 market timing not stated by any peer", peers: ["DATAPATTNS"]}
+  - {claim: "P8 BEL/HAL programme timing: QRSAM slip seen at Apollo; Su-30 and AMCA lag seen at DP; Uttam AAAU share no evidence", peers: ["APOLLO", "DATAPATTNS"]}
+  - {claim: "P9 Market share: DP says Astra is DcPP partner for the MCA variant, not Su-30, as DP understands (hedged); 25% Mk1A share and L1/L2 unconfirmed", peers: ["DATAPATTNS"]}
+contradicted:
+  - {claim: "P6 Rs 40-50 Cr a year capex suffices for a tripling, no additional capex", contradicting_peer: "DATAPATTNS and APOLLO (weighted: peers describe their own scale-up and different business models)", quote_anchor: "DP Q1 FY27 Rangarajan p.16: 'INR200 crores plus, we should be able to be spending more than that in the next 2 years'; CFO: 'INR150 crores to INR200 crores minimum'. Apollo Q2 FY27 Reddy p.7: 'almost 12 times bigger than the present facility'"}
+unverifiable:
+  - {claim: "P1 PSU-routed production orders carry no advance; development 20-25%", peers_checked: ["DATAPATTNS", "APOLLO"]}
+  - {claim: "P7 High foreign content, MOQs, forex and global restocking", peers_checked: ["DATAPATTNS", "APOLLO"]}
+peer_coverage_map:
+  - {peer: "DATAPATTNS", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Advances on all contracts, 345-day cycle (310-315 ex advances), Rs 180 Cr low-margin project cut margin (DP Q2 FY26 p.4, p.10-11)"}
+  - {peer: "DATAPATTNS", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Production collects faster than development, budget, margin drivers, HAL content difficulty, Uttam remark (DP Q3 FY26 p.4, p.6, p.10, p.19, p.20)"}
+  - {peer: "DATAPATTNS", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "365-day cycle, Q4 share of year 37% vs 55%, government approval delays, Astra named by analyst (DP Q4 FY26 p.6, p.11, p.13, p.19)"}
+  - {peer: "DATAPATTNS", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Inspection delays, order stretch 1.5 years, capex Rs 150-200 Cr, parallel Su-30 radar and Astra DcPP remark (DP Q1 FY27 p.5, p.6, p.16, p.18)"}
+  - {peer: "APOLLO", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "COGS falls only with production orders, QRSAM MoU timing, Unit 3 capex (Apollo Q3 FY26 p.6, p.10, p.16)"}
+  - {peer: "APOLLO", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Inventory gestation industry-normal, 8-9% guide miss on customer approvals, supply chain normal as of May (Apollo Q4 FY26 p.9, p.14, p.17)"}
+  - {peer: "APOLLO", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "MIGM 20% advance, QRSAM execution from next FY, Uttam order remark by analyst, guide cut to 40-45% (Apollo Q1 FY27 p.5, p.6, p.8, p.9)"}
+  - {peer: "APOLLO", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "H1 CFO +Rs 22 Cr, positive CFO in all quarters from FY29, QRSAM 50/50 split, DRDO test queue, standalone EBITDA 34-35% (Apollo Q2 FY27 p.3, p.7, p.14, p.18)"}
+  - {peer: "PARAS", quarter: "none", usage: "NO COVERAGE", contribution: "No transcripts exist in the corpus; not scored"}
+industry_cross_read:
+  demand: "Order books and pipelines at records (DP Rs 2,654 Cr incl negotiated, Apollo Rs 1,765 Cr) but order signing and customer acceptance slip at both peers; Apollo guide cut 45-50% to 35-45%; Astra FY26 growth 10.67% is the slowest of the three"
+  pricing_inputs: "No peer discusses price realisation or input cost pass-through; margins move with mix (in-house design, production versus development, integration content); Apollo names semiconductors as the main input and reports no disruption in May 2026"
+  capex_cycle: "Capacity race among private peers (DP Rs 150-200 Cr minimum over 2 years, Apollo about 12x capacity) with Astra the lightest planned spender: a lone light spender in an expanding set, not a lone expander in a cautious set; DP and Apollo both add caution on overspending before contracts land"
+peer_mentions_of_company:
+  - "DP Q4 FY26 p.19 (analyst Aditya, Rangarajan declines): 'Astra Microwave is also like in line with providing more on complete system like similar to us'; reply 'I wouldn't like to comment on specific competition on open line'"
+  - "DP Q1 FY27 p.18 (Rangarajan): 'Astra is a DcPP partner for MCA variant, not the Su30 variant as I understand. Maybe they are one part of the antenna being supplied by them and BEL also the second customer, a supplier'; 'We are doing it in parallel ... they qualify it and they get a contract'"
+  - "DP Q3 FY26 p.20 (Rangarajan, programme mention, not Astra by name): 'we don't have a role to play in that ... working with our radar as against working only Uttam as a second alternative'"
+  - "Apollo Q1 FY27 p.5 (analyst Amit Dixit, not Apollo management): 'they have given orders for Uttam AESA components of Uttam radar to Astra Microwave'"
+risks_peers_raise:
+  - "MoD plan to split QRSAM first-lot missiles 50% BDL, 50% private (Apollo Q2 FY27 p.7)"
+  - "Test and qualification queues at DRDO facilities, weeks to months (Apollo Q2 FY27 p.18)"
+  - "Customer inspection team availability (DP Q1 FY27 p.5)"
+  - "Programme-level stretch of 1.5 years delaying negotiated orders (DP Q1 FY27 p.6)"
+  - "Operating cash flow weak until production orders dominate, Apollo FY29 (Apollo Q2 FY27 p.14); development collections delayed (DP Q3 FY26 p.10)"
+  - "Foreign OEM tie-ups competing for Indian orders (DP Q2 FY26 p.13)"
+  - "Private entry and ToT programmes widening competition (Apollo Q2 FY27 p.15; DP Q3 FY26 p.17)"
+  - "Parallel Hawk-based Su-30 radar at DP competing with the DRDO/Astra path (DP Q1 FY27 p.18)"
+net_narrative_effect: "complicates"
+cross_peer_hypothesis: "[INFERENCE] Private defence electronics peers are splitting on who pre-funds qualification, test and production capacity ahead of orders: DP and Apollo do and carry 350-365 day working capital cycles; Astra plans Rs 40-50 Cr a year and funds growth from the order and banks. Testable: Astra customer-side slippage repeats in Q3 and Q4 FY27 unless capex rises above the Rs 40-50 Cr guide. Confounders: DP FY26 growth includes a one-off Rs 180 Cr project; Apollo consolidated growth includes acquisitions; two peers only."
+analyst_note: "Three points a later stage cannot rebuild. (1) P1 is UNVERIFIABLE on the PSU subcontract term, but DP says advances sit in all its contracts and Apollo's MIGM carries 20%; a reader who wants a CONTRADICTED call on Astra's no-advance claim should note the channels differ (direct MoD/DRDO/Navy versus HAL/BEL subcontract), so I did not upgrade. (2) P6 CONTRADICTED is weighted: peers describe their own scale-up. Treat it as a reconcile item against AR26 Rs 75 Cr, not proof of error. (3) Several numbers are analyst statements on peer calls (Apollo standalone +36%, Apollo gross 40-odd, Astra Uttam order); they carry less weight. Apollo R&D share was stated 4%, 18%, then 9.5% on one call; unused. PARAS has no coverage, so the peer set is two."

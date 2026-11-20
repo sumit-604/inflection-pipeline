@@ -1,0 +1,40 @@
+stage: B13-synthesis
+mode: phase-1-lite
+company: "ASTRAMICRO"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"
+status: complete
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3   # FLAG-CASH INDETERMINATE caps at PROCEED WITH CAVEATS; freshness cap (CORPUS GAPPED-FRESHNESS) binds at the same level; rule 4 concurs (6 verifier MAJORs)
+freshness_cap: "CORPUS GAPPED-FRESHNESS: missing mate Q2 FY27 earnings call transcript (call 2026-11-13); source BSE announcements scrip 532493 or screener documents page"
+flags_active: ["FLAG-CASH (INDETERMINATE)", "FLAG-GATE0", "FLAG-FRESHNESS"]
+flags_not_active: ["FLAG-PROMOTER (stage 8 verdict CAUTION; fires on CONCERN or AVOID only)"]
+cash_determination: "INDETERMINATE"
+cash_missing_evidence: "Q2 FY27 call transcript; Uttam advance and payment terms; ARC credit terms and ageing; receivable ageing basis and 30 Sep 2026 ageing; legacy inventory share and provision; capex and payables history FY17-FY24"
+cash_separating_metric: "FY27 standalone CFO and 31 Mar 2027 inventory vs Rs 793 Cr (Q4 FY27 results, May 2027)"
+transition_posture: "NOT CLASSIFIED (Mental Model unsigned; FTTCP and stage 11 not run)"
+confidence_delta: {numerical: 97.3, redflag: 91.7, framework: 87.0, peer: null, overall: 87.0}
+confidence_notes: "framework is phase 1 portion only (valuation component pending phase 3); peer NOT APPLICABLE (2 of 2 peers); Verifier B caught-only sensitivity 58.3 reported, not applied"
+em_score: {stage: 16.5, verifier_c_recomputed: 19.2, band: "MODEST under both"}
+partial_stages: ["08-promoter", "09-tam"]
+valuation_decision: "NOT IN SCOPE (phase 1 lite; stage 11 not run)"
+entry_range: {low: "NOT IN SCOPE", high: "NOT IN SCOPE"}
+headline: "Uttam order lands, cash still lags"
+falsification_metric: "Q3 FY27 standalone revenue below Q3 FY26 Rs 258.2 Cr (Feb 2027 results) with no Q3 call statement that Q3/Q4 material has arrived"
+monitorables_count: 8
+contradicted_claims_count: 7
+open_items_count: 6
+publish_candidate: false
+publish_candidate_summary: ""
+mental_model_signed: false
+files_written:
+  - runs/astramicro-2026-11-15/outputs/final/business-narrative.md
+  - runs/astramicro-2026-11-15/outputs/final/gate-recommendation.md
+  - runs/astramicro-2026-11-15/outputs/final/verifier-summary.md
+  - runs/astramicro-2026-11-15/outputs/final/verifier-disagreement-log.md
+verifier_disagreements: "none"
+notion_save:
+  page_title: ""
+  summary: ""
+  drive_link: "none"
+  mode: "not emitted in phase 1 lite"

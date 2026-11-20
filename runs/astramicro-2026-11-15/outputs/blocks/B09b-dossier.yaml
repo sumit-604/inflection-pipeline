@@ -1,0 +1,74 @@
+stage: B09b-dossier
+company: "ASTRAMICRO"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "Q2 FY27 concall transcript (call held 2026-11-13)"
+    expected_source: "BSE scrip 532493 or screener documents page"
+    kind: "freshness-pair"
+  - document: "Screener sheets Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization (exported empty)"
+    expected_source: "operator re-export of Financials.xlsx, then collector --push-again"
+    kind: "findable-missing"
+  - document: "Filing on successor MD appointment (Oct 2026)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Warrant / preferential allotment filing (outside 12-month BSE window)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "SEBI inquiry email 2 Mar 2026 and company reply 6 Mar 2026 (Reg 30 text; web-sourced)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "SEBI Adjudication Order SD/AO/65/2010 against M/s Suresh Kumar Somani (identity not confirmed; web-sourced)"
+    expected_source: "sebi.gov.in"
+    kind: "findable-missing"
+  - document: "SEBI order on Skanda Aerospace, Dec 2017 (shareholder; web-sourced)"
+    expected_source: "sebi.gov.in"
+    kind: "findable-missing"
+  - document: "FY24 annual report (only FY25 and FY26 held; raised by the 09b three-year test, not in B00.input_gaps)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Demerger scheme text with Appointed Date and ASTPL Information Memorandum"
+    expected_source: "BSE and NSE scheme filings, company IR page"
+    kind: "findable-missing"
+  - document: "PARAS peer concalls (none exist in 90 BSE filings for scrip 543367)"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Defence and strategic electronics: radar, EW, missile electronics, MMIC subsystems, plus exports incl. deemed (72.5% and 14.0% of FY26 standalone revenue, B04)"
+    archetype: "Order-book business (EPC/defence/capital goods)"
+  - line: "Space, meteorology and hydrology (9.5% and 4.0% of revenue, B04; leaves at demerger, B05)"
+    archetype: "Build-to-spec component maker"
+transition:
+  - line: "Defence and strategic electronics (listed remainder)"
+    from_tier: "R3 Value-added / spec'd supplier"
+    to_tier: "R4 Franchise / share-of-wallet leader"
+    engine: "(1) Mix shift to production orders and complete systems: gross margin 43.87% to 49.18%, EBITDA before other income 25.51% to 28.07% (B03). (2) HAL Uttam AAAU production ramp: 122 AAAU + 121 interface frames within 5 years, Phase 1 of 12 units by Sep 2027 (B05, B04)."
+    proof_gate: "FY27 standalone EBITDA margin before other income at or above 28.07% AND FY27 standalone CFO positive with year-end inventory at or below Rs 793 Cr (B03, B04, B05); second stage Uttam Phase 1 delivered by Sep 2027 with margin and advance terms disclosed. NOT FIRED today (H1 FY27 CFO minus Rs 146 Cr)."
+    recognition_gap: "Open question: does the TO state (R4 supplier with durable cash) already look reflected in market pricing? Not answered here. Stage 11 resolves it via the PE gap."
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "FY27 CFO negative again with inventory above Rs 793 Cr; or Uttam Phase 1 slip past Sep 2027 / DRDO bulk clearance delay / no advance with rising working-capital borrowings; or Q3-Q4 FY27 EBITDA margin below 27% / Uttam booked at lower initial margin; or ex-HAL book falling below Rs 2,058 Cr while revenue is booked (B04, B05)."
+dominant_variables:
+  - "HAL Uttam AAAU execution and terms (47.7% of Rs 3,937 Cr book; margin and advance NOT FOUND) (B04, B05)"
+  - "Cash conversion and working capital (H1 FY27 CFO minus Rs 146 Cr; inventory Rs 793 Cr; current borrowings Rs 411 Cr) (B01, B04)"
+  - "Margin held through mix (gross margin 49.18%, EBITDA before other income 28.07% in FY26) (B03)"
+  - "Order book ex-HAL and book-to-bill (Rs 2,058 Cr vs Rs 2,141 Cr at Mar-26; QRSAM slipped three calls) (B04, B05)"
+business_falsifier: "Listed remainder shown to be flat or shrinking (FY26 listed remainder +5.1%, defence sales -0.5%, B03; a repeat in FY27 as Space and Met leave), or the exports/deemed-export line shown to be mostly related-party ARC sales with an unaged Rs 195.79 Cr receivable and ARC capitalised intangibles at 114.7% of its net assets (B02, B03), or qualification lock-in shown thin on a named programme (B06 Data Patterns parallel Su-30 radar)."
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "5 of 7 externally observable in principle; 2 of 7 company-narrated only (Uttam margin and advance terms; customer acceptance timing); 0 of 7 verified at Halt 1"
+  single_point_failure: "Cash conversion on the HAL Uttam order (47.7% of book, production order with no stated advance, B04, B05)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 17
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "d9e3931d1ffa0460d8ca74535201c7d801c5d7b8"

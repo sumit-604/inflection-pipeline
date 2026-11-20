@@ -1,0 +1,73 @@
+stage: B04-bizmodel
+company: "ASTRAMICRO"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Q2 FY27 concall transcript absent (call held 2026-11-13, not yet filed)"
+  - "screener sheets other than Data Sheet empty"
+  - "PARAS peer concalls absent"
+  - "prospectus and research folders empty (not expected)"
+  - "Named competitors, import share of materials, contract pricing terms, segment margins, names of the three customers above 10%, FY27 revenue guidance number (Rs 1,350 Cr) and HAL order date NOT FOUND in AR or deck"
+flags:
+  - "FLAG-CASH: H1 FY27 standalone CFO -Rs 146 Cr (IP p.12) after FY26 CFO positive; inventory Rs 793 Cr vs Rs 609 Cr; current borrowings Rs 411 Cr vs Rs 224 Cr (IP p.11)"
+  - "FLAG-CONC: HAL Uttam order Rs 1,878.8 Cr = 47.7% of Rs 3,937 Cr book; ex-HAL book Rs 2,058 Cr vs Rs 2,141 Cr at Mar-26 (calc); three customers 52.84% of FY26 revenue (AR p.251)"
+  - "FLAG-DATA: deck says IMD 18.0% and exports 11.9% of FY26 revenue (IP p.8) vs AR Hydro-Met 4.0% and exports incl. deemed 14.0% (AR p.191); press release says Q2 orders received Rs 2,036 Cr (PR p.1) vs deck waterfall 2,156 (IP p.5); not reconciled"
+  - "FLAG-GUIDE: FY27 Rs 1,350 Cr not in any document; deck states 15-20% growth target (IP p.17); H2 needs about Rs 913 Cr (calc)"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Defence", type: "project / order-book contract", pct_of_revenue: 72.5, predictability: "M"}
+  - {name: "Space (ISRO/SAC)", type: "project / order-book contract", pct_of_revenue: 9.5, predictability: "M"}
+  - {name: "Metrology / Civil / Others (Hydro-Met, IMD)", type: "project / order-book contract", pct_of_revenue: 4.0, predictability: "M-L"}
+  - {name: "Exports incl. deemed exports (largely ARC, inference)", type: "related-party-linked contract", pct_of_revenue: 14.0, predictability: "L-M"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - "Intangible assets: MMIC design, DcPP status, 35 radars/25 satellites delivered (medium-high)"
+  - "Government qualification and indigenisation policy (high while policy holds)"
+  - "Switching costs on multi-year programmes such as Uttam AAAU (medium, programme-bound)"
+  - "Cost advantage from in-house components and test (medium; material-cost drop unexplained)"
+valuation_methods:
+  primary: {method: "P/E on forward order-book-anchored earnings", why: "Order-book business with visible conversion of orders to PAT; normalise other income, FX gain and ECL swings"}
+  secondary: {method: "EV/EBITDA cross-check", why: "Financing and working capital swing year to year; ARC receivable and guarantee treated as debt-like"}
+  tertiary: {method: "SOTP, only after demerger carve-out figures are filed", why: "Space/Hydro-Met demerger and JV stakes (ARC 50%, Navictronics 50%); carve-out figures NOT FOUND"}
+  not_applicable: ["DCF as primary: operating cash flow negative in two of three years and swings with receivable timing", "P/B and ROE-based: book is not the earning base", "EV/Sales and P/S: EBITDA margin ranged 11.8% to 28.0% over FY22-FY26", "Replacement cost: qualification, not plant, is the asset"]
+irrelevant_ratios:
+  - "Year-end receivable days: misleading, Q4 about 41.5% of revenue"
+  - "Quarterly or H1 EBITDA margin alone: mix of production vs development swings it (Q2 33.2%, H1 27.4%, FY26 28.0%)"
+  - "Year-end debt to equity: includes a Rs 16,000.00 Lakhs deposit; borrowings Rs 287 Cr to Rs 484 Cr by Sep-26"
+  - "Consolidated EBITDA: JV profit sits below EBITDA"
+  - "EV/Sales and P/B: margin and capital intensity vary by programme"
+must_track_metrics:
+  - {metric: "Order book and book-to-bill ex-HAL Uttam", healthy: "At or above Rs 2,058 Cr (Sep-26 ex-HAL); book-to-bill above 1.0", red_flag: "Falling book while revenue is booked; below 1.0"}
+  - {metric: "Gross margin and incremental EBITDA margin", healthy: "Gross margin at or above 49%; EBITDA ex-other-income 27-33%", red_flag: "Gross margin back toward 44%; EBITDA below 24%"}
+  - {metric: "CFO / EBITDA and inventory", healthy: "CFO positive for FY27; inventory converting in H2", red_flag: "H1 outflow of Rs 146 Cr repeated; inventory above Rs 793 Cr"}
+  - {metric: "Receivable ageing, over-2-year bucket and ECL cover", healthy: "Bucket at or below 8,158.33 Lakhs; cover at or above 14.9%", red_flag: "Bucket rising, cover falling"}
+  - {metric: "ARC receivable and guarantee", healthy: "At or below Rs 19,579.28 Lakhs; guarantee Rs 8,000.00 Lakhs", red_flag: "Growing faster than ARC sales; credit terms still undisclosed"}
+unit_economics:
+  unit: "Rs 100 of revenue from delivered production orders (programme business, no physical unit)"
+  revenue_per_unit: "Rs 100"
+  margin_per_unit: "FY26 standalone: material 50.9, staff 13.3, other 7.8, EBITDA 28.0, PAT 15.4 (IP p.38, calc)"
+  key_lever: "Mix toward production and system orders (gross margin 43.9% to 49.1%) and acceptance timing; incremental EBITDA margin 52% FY26 (calc)"
+first_deterioration_signals:
+  - {risk: "HAL concentration / order book depth", first_signal: "Order book ex-HAL and book-to-bill ex-HAL"}
+  - {risk: "Quarter skew and acceptance timing", first_signal: "Q3 and Q4 revenue vs prior year"}
+  - {risk: "Margin rests on mix with unexplained flat material cost", first_signal: "Gross margin falls back toward 44%"}
+  - {risk: "Long receivable tail", first_signal: "Over-2-year receivables bucket and ECL provision"}
+  - {risk: "Cash conversion reversal", first_signal: "CFO and inventory; short-term borrowings"}
+  - {risk: "ARC related-party exposure", first_signal: "ARC receivable in the quarterly RPT table"}
+  - {risk: "Demerger and governance transition", first_signal: "Carve-out filings and auditor remarks / lender returns"}
+mgmt_questions:
+  - "FY27 revenue and margin guide, and the HAL Uttam slice this year?"
+  - "When does H1 CFO of -Rs 146 Cr reverse, and which receivables and inventory release?"
+  - "ARC credit terms and how much of Rs 19,579.28 Lakhs is overdue?"
+  - "Who are the three customers above 10%, and how do they map to IMD 18% and exports 11.9% in the deck?"
+  - "What drove gross margin to 49.1% and 55.7% in Q2, and is it repeatable on Uttam production?"
+  - "How much of the Rs 3,937 Cr book executes in 12-30 months and what is HAL timing?"
+  - "How are Space and Hydro-Met carved out: costs, receivables, people, stranded overhead?"
+one_line_verdict: "Government-customer defence electronics maker, 72.5% defence, mix-driven margins, high working capital, with a single HAL order now 47.7% of the book; fits the Defence / strategic cap row."
+analyst_note: "Sector cap row fits: Defence 72.5%, Space 9.5%, Met 4.0%, Exports incl. deemed 14.0% of Rs 1,15,567 Lakhs (AR p.191); strategic buyers 96.0%. Three non-reconciling bases to carry: (1) deck IMD 18.0% and exports 11.9% (IP p.8) vs AR Hydro-Met 4.0% and exports 14.0%; (2) press release 'orders received Rs 2,036 Cr' vs deck waterfall 2,036 opening + 2,156 received - 256 executed = 3,937 (INFERENCE: PR figure is the opening book); (3) HAL Rs 1,878.8 Cr (deck) vs Rs 2,205.23 Cr incl. taxes (AR). Ex-HAL book Rs 2,058 Cr is below Rs 2,141 Cr (March), calc. FY27 Rs 1,350 Cr guide not in the documents; deck states 15-20% growth. H2 FY27 needs about Rs 913 Cr vs about Rs 746 Cr in H2 FY26 (calc). Concall (13 Nov) is the key missing source."
+conflicts_settled:
+  - "Q2 FY27 order inflow: SETTLED AT SOURCE by the orchestrator (FLAG-DISAGREEMENT rule). The Q1 FY27 results filing states the order book was Rs 2,156.44 crores as at June 30, 2026 (inputs/results/2026-08-10_Q1FY27_results_c4386b87.pdf, notes, text line 247). So Rs 2,156 Cr is the OPENING book of Q2 FY27 and Rs 2,036 Cr is orders received in Q2, as the press release prints (inputs/presentation/2026-11-12_Q2FY27_press_release_4b8f4126.pdf, 'Orders received during the quarter stood at Rs. 2,036 crores'). Stage 4's INFERENCE that the press release figure is the opening book is withdrawn; there is no conflict between the deck and the press release."

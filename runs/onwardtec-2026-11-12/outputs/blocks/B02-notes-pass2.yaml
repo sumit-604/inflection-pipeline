@@ -1,0 +1,41 @@
+stage: B02-notes-pass2
+company: "ONWARDTEC"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+pass: 2
+pass_2_empty: false
+input_gaps:
+  - "inputs/prospectus/ empty: long-listed company, not expected"
+  - "inputs/research/ empty"
+  - "screening: only Data_Sheet CSVs populated; screener P&L, Quarters, Balance Sheet, Cash Flow exports EMPTY and absent"
+  - "collector BSE announcements fetch FAILED; announcements hand-filled with 3 quarterly press releases and 3 buyback filings; NOT the full Reg 30 record"
+  - "rating: ICRA withdrew 2023-11-13; last rationale 2023-03-27 stale; no live rating"
+  - "shareholding: only the Sep 2026 pattern held"
+  - "Q1 FY27 results PDF is scanned, no OCR"
+  - "empty-folder question suppressed under /step1 standing default"
+  - "notes give no ageing by customer, no onshore/offshore split of sub-contracting, no functional currency for the US subsidiary, no split of unbilled between third-party and intra-group"
+flags:
+  - {type: FLAG-CONCENTRATION, reason: "carried from Pass 1: one customer 18.3% of FY26 revenue (9,965.52 of 54,385.24 lakhs); customer receivable share NOT FOUND"}
+  - {type: FLAG-CASH, reason: "carried from Pass 1 (unbilled 3,429.35 lakhs +13.2% vs revenue +10.7%); NEW in Pass 2: derived subsidiary-level billed days 70.1 to 81.3 while parent fell 52.6 to 43.4; standalone receivable fall is 93.5% intra-group settlement; RPT receivable balances exceed standalone Note 8 by 345.60 lakhs"}
+  - {type: FLAG-COSTMIX, reason: "sub-contracting cost 3,407.42 lakhs +36.6% vs revenue +10.7% and payroll +4.1%; implied subsidiary sub-contracting +76.7% against flat subsidiary payroll; no reason in notes"}
+  - {type: FLAG-FX, reason: "forward sell book 2,673.14 lakhs vs parent net exposure 891.69 lakhs; MTM liability 129.78 lakhs through P&L; GBP net 766.47 unhedged; sensitivity table omits derivatives"}
+new_findings_count: 10
+corrections_to_pass1:
+  - "C1 anchors: standalone Note 5(a) p.114, Note 34 p.131"
+  - "C2 forward cover: forwards are parent-held; parent net USD 59.91 lakhs, not 3,508.98"
+  - "C3 91.5 is forward contract rate, not year-end rate"
+  - "C4 USD sensitivity 179.05 is pre-tax, pre-forward, mostly OCI translation"
+  - "C5 software capitalisation new spend 99.34 lakhs, not 264.57"
+  - "C6 ESOP Trust loan eliminated inside standalone (auditor opinion p.96); not an RPT omission"
+  - "C7 accrued-pay stretch 994.95 lakhs net of labour code provision, not 1,310.45"
+  - "C8 Infinity Direct 195.00 has an inter-se transfer reading (27 Sep 2024)"
+  - "C9 28.04 tax line is a benefit (loss utilisation), not an unrecognised-loss cost"
+receivables_trend: "consolidated billed stable (days 56.9, 58.8, 57.5); NEW split (derived): parent billed days 52.6 to 43.4, subsidiary billed days 70.1 to 81.3 (translation effect part unquantified); past due >6m 12.41 of 8,588.79 lakhs; unbilled drifting up"
+restatements_found: []
+going_concern_language: "NONE"
+load_bearing_facts_checked:
+  - "fact 1 R&D credit: 135.94 lakhs in both consolidated and standalone employee cost; Q2 FY27 2.9 Cr outside AR"
+  - "fact 3 concentration/receivables: customer 9,965.52 lakhs; subsidiary-level days deterioration found; customer receivable share NOT FOUND"
+  - "fact 4 promoter fall: no new data in notes; Infinity entities inter-se transfer 27 Sep 2024 is the only structural item"
+analyst_note: "Pass 2 had real finds. Largest: sub-contracting +36.6% vs payroll +4.1%, and the parent vs subsidiary receivable split (parent days down, subsidiary days up; part of the subsidiary rise is currency translation, unquantified). Pass 1 readings of forward cover and FX sensitivity were wrong in basis: forwards sit in the parent against forecast sales, not against the consolidated USD balance. Reported standalone ROCE 23.48% includes other income and excludes the exceptional; rebuild before any use. ESOP 2024 adds 454.68 lakhs of grant cost over four years."

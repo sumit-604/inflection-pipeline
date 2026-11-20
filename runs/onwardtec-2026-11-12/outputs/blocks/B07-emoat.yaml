@@ -1,0 +1,52 @@
+stage: B07-emoat
+company: "ONWARDTEC"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Rs 33 Cr ODC and Rs 44.5 Cr renewal: contract documents and customer names NOT FOUND (NDA; company-stated in deck and calls only)"
+  - "Price versus scope split of the Rs 44.5 Cr renewal NOT FOUND (carried from B04)"
+  - "Seat counts, billable utilisation by centre, Bengaluru utilisation NOT FOUND"
+  - "Amount of the Worli office purchase and funding of the Rs 25 Cr lab capex NOT FOUND"
+  - "UK R&D credit scheme rules and whether the Q2 FY27 note names the UK: only management names it; competitor patent and pay data not read (peer calls not in this stage scope)"
+  - "announcements/ is hand-filled, not the full Reg 30 record; absence of an order-win filing is NOT FOUND, not proven absent"
+  - "Q1 FY27 scanned results PDF not read at this stage"
+flags:
+  - {type: FLAG-EM-THIN, reason: "12.4 is 0.4 above the 12.0 line; without G1 (existing cushion) and R1 (shared policy credit) the total is 8.4 and the class is NONE"}
+  - {type: FLAG-CAPEX-METHOD, reason: "2C method output 52.3% uses PPE turnover 11.37x on a headcount-driven business; not informative, FY27 guide 15-18% is the better ceiling"}
+  - {type: FLAG-CONCENTRATION, reason: "wallet-share evidence (C1, B2) is the same fact as concentration: top client 18.3%, top 25 87%, via B03"}
+  - {type: FLAG-DISCLOSURE-CONFLICT, reason: "SDV: Q4 FY26 call p.18 'not present' vs AR26 p.13 SDV OTA validation case; attrition 14.85% vs 37.93%; geography 70/30 vs India 47% (via B03, B05)"}
+  - {type: FLAG-POLICY-CONTRADICTION, reason: "offshore share 72% to 69% (Inv. Pres. p.11) contradicts the stated work-permit offshore tailwind (Q2 FY27 call p.6)"}
+em_score: 12.4
+em_classification: "MODEST"
+active_categories:
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "documented", time_to_materialise: "0-12 months"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-36 months"}
+evidence_mix: {documented: 11, claim: 16, inference: 5}
+completionist_recount: "📄 recount performed: 11 documented items across 6 categories (C1, B2, F2, G1, F1, R1); 2 Moderate, 4 Weak; no claim credited as documented"
+catalysts_12m:
+  - {catalyst: "ODC for power-management leader reaches full revenue", window: "Q3 FY27 (Oct-Dec 2026)", evidence_type: "documented contract, claim on timing", anchor: "Inv. Pres. p.14; Q1 FY27 call p.13"}
+  - {catalyst: "Fourth Pune design centre full and net hiring of a few hundred in Q4 FY27 and Q1 FY28", window: "Nov 2026 to Q1 FY28", evidence_type: "claim", anchor: "Q2 FY27 call p.7"}
+  - {catalyst: "Chennai digital AI lab operational", window: "Q4 FY27 or early 2027 (slipped once)", evidence_type: "claim", anchor: "Q2 FY27 call p.6-7; Q4 FY26 call p.4"}
+  - {catalyst: "Second data-centre or power-management ODC or named RFP win", window: "next 2 to 4 quarters", evidence_type: "claim", anchor: "Q2 FY27 call p.4; Inv. Pres. p.14"}
+  - {catalyst: "USD 1 mn clients from 18 to 19-20", window: "quarterly deck", evidence_type: "documented metric", anchor: "Inv. Pres. p.12"}
+  - {catalyst: "DSO back to 65-70 days", window: "Q3 to Q4 FY27 results", evidence_type: "claim", anchor: "Q2 FY27 call p.13"}
+capex_embedded_growth_pct: 52.3
+optionality_register:
+  - {optionality: "Data-centre power and cooling engineering becomes a repeat revenue line", converting_evidence: "second ODC-size contract or named RFP win with revenue stated", first_appears: "quarterly deck order-wins slide; press release; concall", window: "2-4 quarters"}
+  - {optionality: "Chennai AI lab and reusable accelerators become a non-hours asset", converting_evidence: "lab opened plus priced AI engagement or accelerator with disclosed revenue", first_appears: "concall Q4 FY27 or Q1 FY28; deck", window: "3-6 quarters"}
+  - {optionality: "USD 10 mn per client aspiration", converting_evidence: "disclosed count of clients above USD 5 mn with top-5 share flat or falling", first_appears: "deck client slide; AR27 Note 34", window: "3-5 years"}
+  - {optionality: "Revenue per employee Rs 30-40 lakh", converting_evidence: "revenue per head up 10% or more a year with T&M share held and ex-credit margin intact", first_appears: "deck headcount and revenue slides", window: "3+ years"}
+  - {optionality: "US work-permit change lifts offshore mix and margin", converting_evidence: "offshore share at 72% or more for two quarters with ex-credit margin 14% or more", first_appears: "deck revenue-mix slide", window: "2-3 quarters"}
+  - {optionality: "Healthcare vertical grows past 3% of revenue", converting_evidence: "first HCLS client above USD 1 mn or a disclosed large programme", first_appears: "deck vertical slide; concall", window: "4-8 quarters"}
+  - {optionality: "SDV and embedded work reaches 18-30% of revenue", converting_evidence: "embedded share disclosed in the deck or AR27 MD&A", first_appears: "deck; AR27", window: "about 2 years"}
+  - {optionality: "Fixed price rise (11% to 15%) becomes outcome-based pricing power", converting_evidence: "disclosed fixed-price margin and outcome-priced renewals", first_appears: "concall; AR27", window: "4+ quarters"}
+combined_assessment: "GOOD+"
+combined_reasoning: "Backward GOOD+ (core 74, moat 16/60) with a MODEST 12.4 forward score from wallet share and 3-year contract tenor only; not HIGH POTENTIAL, and the margin turnaround is already in the numbers."
+top_moat_risks:
+  - "One customer at 18.3% and top 25 at 87%: every forward item deepens the dependence"
+  - "AI productivity pressure on an 84-85% time-and-material book"
+  - "Hiring ahead of revenue (432 net hires) with DSO at 80 and H1 CFO down about 47%"
+  - "Offshore share falling (72% to 69%) against a margin story built on offshore leverage"
+  - "Audit-trail limit on the billing system, second year (via B03)"
+analyst_note: "Score 12.4 sits 0.4 above the MODEST line. Two readings: (1) most evidenced path, six filed-item categories, MODEST; (2) G1 is an existing cushion already in Gate 0 and R1 is a credit every UK operator can claim, so strip both and the score is 8.4, NONE. Separator: a second multi-year contract of Rs 30 Cr or more with the top-5 share not rising. Credit split: contract tenor to B2, USD 1 mn client count and revenue per client to C1, so one improvement is not paid twice. Capex 2C figure is mechanical; the guide of 15-18% is the real ceiling. Peers not read here, so I1/I2 score 0 on absence of any test, not on a failed test."

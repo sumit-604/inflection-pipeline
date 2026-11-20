@@ -1112,3 +1112,13 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+## 2026-11-12 · ONWARDTEC /step1 Phase 1 (runs/onwardtec-2026-11-12)
+- Collector: REPO_ROOT is hardcoded to a path absent on this machine, and Playwright's bundled Chromium will not launch. Ran it through a scratch wrapper and a Chrome-channel shim; tools/ not edited.
+- Collector: BSE announcements fetch failed, shareholding and results are not automated, screener P&L/BS/CF/Quarters sheets exported empty. Results, shareholding, press releases, buyback filings and the ICRA withdrawal were fetched by hand from the company website.
+- Q1 FY27 results PDF is scanned and tesseract is absent, so tools/ocr_repair.py could not run; stages read the PDF pages.
+- Verifier A CRITICAL confirmed (Gate 0 E4 read contingent liabilities as Nil; AR26 p.87 Note 26(a)(ii) prints Rs 394.68 lakhs). REWORK fired; the one remediation cycle cleared it. Verifier C has not audited B01 run 2.
+- Gate 0 class swings AVERAGE to EXCELLENT on corpus gaps alone (Data_Sheet has no current liabilities, capex or payables rows; the prompt formulas need them for ten years).
+- Confidence overall 63.6 was set by peer_utilisation (7 of 11): two collected Cyient files are event calls, not results calls, and count against the ratio.
+- Verifier A shadow skipped: ten parallel /step1 sessions shared one armed switch; this run left .claude/shadow.yaml untouched.
+- Subagent token split is not exposed in this harness; session-cost fresh and re-read lines are n/a.

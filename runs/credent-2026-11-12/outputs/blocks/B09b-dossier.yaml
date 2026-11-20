@@ -1,0 +1,68 @@
+stage: B09b-dossier
+company: "CREDENT"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Final prospectus (issue price, final objects amounts)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "13 of 22 NSE filings since listing (IPO monitoring agency report, SAST and PIT disclosures)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Screener Profit and Loss, Quarters, Balance Sheet, Cash Flow sheets (exported empty)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Pre-IPO investor calls referred to by an analyst (call p.8)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Peer annual reports and presentations"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Credit rating rationale (bank facilities); rating/ folder empty"
+    expected_source: "rating agency site"
+    kind: "plausibly-nonexistent"
+  - document: "Broker or research notes; research/ folder empty"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Earlier annual reports, earlier post-listing results, earlier shareholding patterns (listed 2026-08-20)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Healthcare Services and Operations and Supply Chain Management (deployed people, about 68% of FY26 revenue)"
+    archetype: "Outsourcing partner (CDMO/EMS/IT services)"
+  - line: "Logistics Services (25.26% of FY26 revenue)"
+    archetype: "Outsourcing partner (nearest fit; library holds no logistics entry)"
+transition:
+  - line: "Healthcare Services and Operations and Supply Chain Management"
+    from_tier: "R1 to R2 boundary (outsourced labour at cost plus; weak pricing power; EBITDA margin 13.29% FY26)"
+    to_tier: "R3 claimed (value-added supplier, 15 to 16% EBITDA margin in three years; management language reaches toward R4)"
+    engine: "Mix shift to healthcare services, wellness and On-Demand with Alltrak technology; IPO money (72.25 INR Cr unutilised at 2026-09-30) replacing borrowings as the float so receivable days fall from about 100 toward 60"
+    proof_gate: "H2 FY27 results filing, both at once: consolidated EBITDA margin above 13.3% with segment margin by line disclosed, and consolidated CFO positive with CFO/PAT at or above 0.7 and receivable days including unbilled at or below 80"
+    recognition_gap: "OPEN QUESTION: whether the TO state already looks reflected in market pricing; resolved at Stage 11 through the PE gap; no conclusion here"
+    ugliness: "STRUCTURAL-FEATURE (provisional; cash drag continued in H1 FY27 with no new acquisition; separating observation is H2 FY27 CFO and receivable days)"
+    transition_falsifier: "At H2 FY27: receivable days above 100 with CFO still negative; or EBITDA margin flat or lower while resources rise from 6,789 toward 15,000; or H2 revenue below about 165 INR Cr or growth only from acquired entities"
+dominant_variables:
+  - "Cash conversion: consolidated CFO/PAT and receivable days including unbilled"
+  - "Customer concentration and retention: top-1 and top-10 share"
+  - "Organic versus acquired revenue: H2 FY27 revenue with Alltrak and Healthcare shown separately"
+  - "EBITDA margin by line and price per collection"
+business_falsifier: "Evidence that top-customer revenue is group or related-party revenue or that top customers insource the work (FY24 top-customer revenue equals FY24 Alltrak services to the paisa; Thyrocare runs its own fleet), or evidence that chains purchase only a small share of collection and logistics from outside vendors"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "4 of 7 externally observable"
+  single_point_failure: "Loss or insourcing of one top customer (top 1 = 15.76%, top 10 = 81.76% of FY26 revenue; contracts terminable with no firm commitment)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 17
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "b911be66ba9b4942296587394babe2a59c4f03c0"

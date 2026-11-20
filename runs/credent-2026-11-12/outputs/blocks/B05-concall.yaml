@@ -1,0 +1,85 @@
+stage: B05-concall
+company: "CREDENT"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "one transcript only (H1 FY27 call 2026-10-29), scanned PDF with OCR text; numbers read from page images; no multi-call history, so no cross-quarter 2E or 1C trend"
+  - "pre-IPO calls referred to by an analyst (call p.8) are NOT PROVIDED; the MD also calls this the first interaction with the investor community (call p.3)"
+  - "rating/ and research/ empty; one results filing; RHP only (final prospectus absent); one annual report; FY24 and FY25 standalone restated, FY26 consolidated"
+  - "H1 FY27 top-1 customer share, Alltrak H1 revenue and profit, Kartavya Healtheon owners and business, source of funds for the 4.50 Cr loan, loan agreement date, On-Demand revenue and rate, order book number: NOT FOUND"
+  - "promise_delivery rows are built from stated intent in RHP, listing deck and AR against H1 FY27 results, not from an earlier call"
+flags:
+  - {type: FLAG-CONCENTRATION, reason: "Call p.5 says no single customer above 10%. RHP p.25-26 and AR MD&A p.14 (INR Lakhs, FY26): top 1 = 3,374.48 = 15.76%, top 10 = 81.76%. Press release 2026-10-28 p.3: top 10 = 80.60% at 30 Sep 2026; H1 top-1 NOT FOUND. Two readings: H1-only claim, or wrong basis. Separator: H1 FY27 top-1 share."}
+  - {type: FLAG-ORGANIC-CLAIM, reason: "Call p.13-14: 45% CAGR is organic only, 'We have not seen any inorganic'. AR MD&A p.13-14: FY26 step-up largely consolidation of three acquired subsidiaries; standalone grew moderately. Listing deck p.15: FY24 7,573.32 to FY25 7,794.26 lakhs is +2.9%. H1 FY27 +53.4% includes Alltrak and Team absent from H1 FY26; Alltrak H1 revenue NOT FOUND."}
+  - {type: FLAG-CASH, reason: "Call p.14: debtor ageing 60 days; p.16: new clients 30 days, target under 45, cash positive 'Maybe by next year, H2'. Deck p.22-23 (INR Mn): receivables 588 to 788 (+34% in six months), CFO (66) FY26 and (39) H1 FY27; derived days 100 and 104. RHP p.91-92 (INR Lakhs) assumes 95 debtor days FY27 and FY28 with credit flexibility and a receivable build funded by IPO money."}
+  - {type: FLAG-IPO-USE, reason: "Spoken 21.65 Cr (CFO, p.7) and 4 to 5 Cr (MD, p.13) reconcile on results Annexure A (PDF p.19, INR Crore): WC 5.31 + repayment 6.00 + issue costs 10.34 = 21.65; unutilised 72.25. Annexure also prints 21.13 in the end-of-period total. Board approved Rs 4.50 Cr unsecured loan to Kartavya Healtheon on 2026-11-04, six days after the call; not an RHP object; nil interest to 2026-11-25, then 12% compounded monthly; lender may take up to 26% equity; company says unrelated; funding source NOT FOUND; cash outside IPO funds is about 1.95 Cr (74.20 less 72.25, derived)."}
+  - {type: FLAG-CALL-CONSISTENCY, reason: "CFO: margin stable at 13%; MD in next breath: 15 to 16% in three years (p.8). 'As such no risk into the business' (p.18) against AR p.14 risk list. ROE and ROCE 42% and 50% (p.7) against AR 61.81% and 40.00%. Own TAM arithmetic: 20% x 50,000 Cr = 10,000 Cr against stated TAM 1,000 Cr that equals the FY30 target."}
+  - {type: FLAG-GOVERNANCE-FINANCE-FUNCTION, reason: "CFO Sachin Sharma was appointed 2026-09-18 when Karan Sharma resigned as CFO (NSE filing); 41 days before the call; change not mentioned on the call."}
+quarters_analysed: ["H1 FY27 (call 2026-10-29)"]
+triggers:
+  - {priority: 1, name: "FY27 revenue INR 320+ Cr; H2 needs 181.91 Cr", type: "VOLUME", timeframe: "H2 FY27", conviction: "M", confirm_signal: "H2 FY27 revenue at or above 181.91 Cr with Alltrak shown separately", kill_signal: "H2 below about 165 Cr, or growth only from acquired entities"}
+  - {priority: 2, name: "EBITDA margin 13% to 15-16% via healthcare and wellness mix", type: "PRICE-MIX", timeframe: "3 years", conviction: "L", confirm_signal: "EBITDA margin above 13.3% in H2 FY27 with segment margins disclosed", kill_signal: "margin flat or lower while resources rise from 6,789 toward 15,000"}
+  - {priority: 3, name: "Cash conversion: debtor days under 45, CFO positive by H2 FY28", type: "COST", timeframe: "FY28", conviction: "L", confirm_signal: "consolidated CFO positive, CFO/PAT at or above 0.7, receivable days at or below 80", kill_signal: "days above 100 and CFO negative in H2 FY27"}
+  - {priority: 4, name: "Two enterprise clients (12-18 Cr each) and 5-10 mid-size clients (4-6 Cr each)", type: "VOLUME", timeframe: "FY27 to FY28", conviction: "M-L", confirm_signal: "named wins and revenue contribution in H2 results", kill_signal: "no new-client revenue; top-10 share rising from 80.60%"}
+  - {priority: 5, name: "On-Demand prepaid wallet platform (Wockhardt, Thyrocare)", type: "VOLUME and PRICE-MIX", timeframe: "FY27 to FY28", conviction: "L", confirm_signal: "revenue line and wallet balances disclosed", kill_signal: "no revenue disclosed by FY27 AR"}
+  - {priority: 6, name: "Tier 3 and 4 expansion on client minimum guarantees", type: "VOLUME", timeframe: "FY28 to FY30", conviction: "L", confirm_signal: "new cities with contracted minimums and no launch losses", kill_signal: "launch losses or states of operation staying at 26"}
+  - {priority: 7, name: "Selective M&A, revenue under 100 Cr at 10-12x", type: "INORGANIC", timeframe: "open", conviction: "L", confirm_signal: "disclosed target, price, arm's-length seller", kill_signal: "further promoter-side purchases or loans to outside firms like Kartavya"}
+  - {priority: 8, name: "Middle East expansion", type: "SECTORAL", timeframe: "FY28 and later", conviction: "L", confirm_signal: "signed contract with a named counterparty", kill_signal: "deferred again"}
+guidance:
+  - {item: "Revenue CAGR", number: "~45%; minimum 45% to 50%; 5x from FY26", timeframe: "to FY30", stated_in: "H1 FY27 call p.6, p.10"}
+  - {item: "Revenue FY27", number: "INR 320 Cr plus; H1 40-45%, H2 55-60%", timeframe: "FY27", stated_in: "H1 FY27 call p.10; press release p.4"}
+  - {item: "Revenue FY30", number: "about INR 1,000 Cr, plus or minus 10-15%", timeframe: "FY30", stated_in: "H1 FY27 call p.10-11"}
+  - {item: "PAT FY30", number: "INR 100 Cr plus; 10% of revenue", timeframe: "FY30", stated_in: "H1 FY27 call p.10-11"}
+  - {item: "PAT FY27", number: "INR 28.00 Cr; margin about 8.75% (not on the call)", timeframe: "FY27", stated_in: "press release 2026-10-28 p.4"}
+  - {item: "EBITDA margin", number: "15% to 16% (MD); stable 13% with slight improvement (CFO)", timeframe: "3 years", stated_in: "H1 FY27 call p.8, p.11"}
+  - {item: "Enterprise and mid-size clients", number: "2 enterprise at 12-18 Cr each; 5-10 mid-size at 4-6 Cr each", timeframe: "FY27 to FY28", stated_in: "H1 FY27 call p.9"}
+  - {item: "Debtor ageing", number: "60 days now; new clients 30 days; target under 45 days", timeframe: "undated", stated_in: "H1 FY27 call p.14, p.16"}
+  - {item: "Cash flow positive", number: "Maybe by next year, H2", timeframe: "H2 FY28 (reading)", stated_in: "H1 FY27 call p.16"}
+  - {item: "Resources", number: "7,000 now; 15,000-16,000 at INR 1,000 Cr; 20,000 if leverage fails", timeframe: "FY30", stated_in: "H1 FY27 call p.11"}
+  - {item: "Capex and external funds", number: "no material capex; no external funds for organic growth; main board in FY30", timeframe: "to FY30", stated_in: "H1 FY27 call p.11, p.14"}
+  - {item: "M&A criteria", number: "revenue under INR 100 Cr; 10 to 12 multiple; no finalisation", timeframe: "open", stated_in: "H1 FY27 call p.12"}
+  - {item: "Overseas", number: "not this year; update by next-year H1 call", timeframe: "FY28", stated_in: "H1 FY27 call p.17-18"}
+promise_delivery:
+  delivered: 2
+  partial: 5
+  missed: 0
+  rows:
+    - {promised_in: "RHP p.88-89", promise: "Repay INR 6.00 Cr of borrowings in FY27", outcome: "delivered", explanation: "6.00 Cr repaid by 30 Sep 2026 (results Annexure A PDF p.19); gross borrowings 219 Mn to 216 Mn as short-term rose 167 to 196 Mn (deck p.22); call silent on why"}
+    - {promised_in: "RHP p.124", promise: "No specific acquisition target identified", outcome: "delivered", explanation: "call p.12 says no finalisations; Kartavya loan with 26% equity election approved 2026-11-04 is outside the test"}
+    - {promised_in: "RHP p.88-89", promise: "Deploy INR 29.50 Cr to working capital in FY27", outcome: "partial", explanation: "5.31 Cr in 41 days after listing (18%); early, not a miss"}
+    - {promised_in: "RHP p.89-90", promise: "Spend INR 3.00 Cr on 14 sonography and 4 X-ray machines in FY27", outcome: "partial", explanation: "nil utilised; no machinery orders placed per RHP risk factor 18; call says low capex and omits it"}
+    - {promised_in: "Listing deck p.18 (2026-08-20)", promise: "~45% revenue CAGR through FY30", outcome: "partial", explanation: "H1 FY27 +53.4% but includes Alltrak and Team absent from H1 FY26; call says organic, AR says largely acquired; Alltrak share NOT FOUND"}
+    - {promised_in: "RHP p.123-124", promise: "Pay-per-order models for smaller providers", outcome: "partial", explanation: "On-Demand prepaid platform launching, two clients named, revenue and rate not disclosed (call p.14-16)"}
+    - {promised_in: "Press release 2026-10-28 p.3", promise: "EBITDA margin to improve in H2 as deployments mature", outcome: "partial", explanation: "not yet testable; CFO on the call said stable 13% with slight improvement"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "Basis H1 FY27 call plus RHP/deck/AR stated intent (one call, no earlier call): 2 of 7 dated items delivered, 5 partial, 0 missed, but 6 spoken claims contradict or fail to reconcile with filings (10% customer, organic growth, 60-day ageing, ROE/ROCE, no risk, market size). Grade C; B needs delivery over several periods."
+peer_questions:
+  - {question: "What share of revenue do diagnostics and healthcare companies spend on sample collection, phlebotomy and sample logistics (pre-analytics), and how much of it is outsourced to third parties?", why: "MD claims listed chains spend about 20% of revenue on pre-analytics (INR 500 Cr of Dr Lal's INR 2,500 Cr) and that outsourcing is a INR 1,000 Cr TAM; own arithmetic gives 10,000 Cr. Thyrocare is also named as a Credent customer.", check_peers: ["THYROCARE"]}
+  - {question: "What growth rate do peers cite for organised diagnostics volumes and for home collection, and in what period?", why: "Call cites USD 11.8 Bn to 20.1 Bn at 11.1%; AR and listing deck cite USD 16.5 Bn to 31.5 Bn by FY30E; Credent grows 45% against this.", check_peers: ["THYROCARE", "TCIEXP"]}
+  - {question: "Does Thyrocare use third-party sample logistics or phlebotomy vendors, what payment terms and payables days does it give them, and has it moved any volume to prepaid or on-demand platforms?", why: "Thyrocare is named both as a long-standing customer and as a newly onboarded prepaid client; tests whether customers pay vendors in 30 to 45 days against Credent's 60-day claim and 100-day derived days.", check_peers: ["THYROCARE"]}
+  - {question: "What EBITDA margin does an asset-light time-definite express business earn, what is the yield or price trend per consignment, and does margin rise with network density?", why: "MD says logistics (24.81% of H1 revenue) is competitive and low margin and expects 15-16% group EBITDA margin; tests the logistics slice margin.", check_peers: ["TCIEXP"]}
+  - {question: "What are receivable days and CFO to EBITDA for outsourced-manpower businesses serving healthcare clients during 40%+ growth, and do they hold days under 45?", why: "Credent claims 60 days, targets under 45, and cash positive by H2 FY28; filings show about 100 days and negative CFO.", check_peers: ["KRYSTAL", "TCIEXP"]}
+  - {question: "How do manpower-heavy peers pass wage inflation and labour-code costs to clients, and what contract tenure and price-reset terms do they hold?", why: "Employee cost is 38.8% of H1 revenue (deck p.18, derived); margin path to 15-16% depends on pass-through; AR p.14 flags wage inflation and labour codes.", check_peers: ["KRYSTAL", "TCIEXP"]}
+  - {question: "How concentrated are peers' largest clients (top-1 and top-10 share), and do they disclose it?", why: "Credent top 1 at 15.76% and top 10 at 81.76% (FY26) against a call claim of none above 10%; tests what is normal for outsourced service providers.", check_peers: ["KRYSTAL", "TCIEXP", "THYROCARE"]}
+  - {question: "Do peers claim capex-light growth to a 4 to 5x revenue increase, and what fleet, hub and warehouse capex per rupee of revenue did they actually need?", why: "MD claims no capex until INR 1,000 Cr and 15,000 to 16,000 resources; the IPO has a INR 3.00 Cr machinery object and the deck plans a healthcare warehouse by FY28.", check_peers: ["TCIEXP", "KRYSTAL"]}
+  - {question: "Do peers enter new cities only against client minimum-revenue guarantees, and what launch losses did they report?", why: "MD says Tier 3 and 4 launches carry no losses because clients give minimum guarantees (call p.11).", check_peers: ["TCIEXP", "KRYSTAL"]}
+red_flags:
+  - "HIGH: no single customer above 10% (call p.5) against 15.76% top customer FY26 (RHP p.25-26, AR p.14) and 80.60% top-10 in H1 FY27 (press release p.3)"
+  - "HIGH: 45% CAGR called organic (call p.13-14); AR p.13-14 attributes FY26 growth largely to three acquired entities bought from promoter-side sellers"
+  - "HIGH: debtor ageing 60 days (call p.14) against 100 to 104 derived days, a 95-day RHP plan, negative CFO (66 Mn FY26, 39 Mn H1 FY27) and receivables +34% in six months"
+  - "HIGH: Rs 4.50 Cr unsecured loan to Kartavya Healtheon approved 2026-11-04, six days after 'no finalizations', outside the IPO objects, with equity election up to 26%; funding source NOT FOUND"
+  - "MEDIUM: 'as such no risk into the business' (call p.18) against AR p.14 risk list"
+  - "MEDIUM: CFO says margin stable at 13%, MD says 15 to 16% in three years, press release says margin improves in H2"
+  - "MEDIUM: TAM stated at INR 1,000 Cr equals the FY30 revenue target; MD's own 20% x 50,000 Cr gives 10,000 Cr"
+  - "MEDIUM: ROE and ROCE 42% and 50% on the call and in the H1 deck against 61.81% and 40.00% in the AR"
+  - "MEDIUM: CFO on the call appointed 2026-09-18 when the previous CFO resigned; change not mentioned"
+  - "LOW: IPO utilisation annexure prints 21.65 and 21.13 in two total columns; debt-to-equity spoken 0.2x against 0.15x computed from the deck"
+dropped_triggers: []
+timeline_slippages:
+  - "Overseas expansion: deck p.19 placed it at FY30 as evaluate; call p.17-18 says 'surely' next year or after, then defers this year for the Middle East war"
+  - "Healthcare warehouse: deck p.19 fully operational FY28; call p.12 says no warehouse expansion this year"
+  - "Imaging machinery capex of INR 3.00 Cr scheduled FY27 (RHP): nil utilised at 30 Sep 2026"
+analyst_note: "One call, so the grade rests on filed intent versus filed results plus six checkable claims on the call. The tally (2 delivered, 5 partial, 0 missed) counts dated promises only; claims the filings contradict are red flags, not misses. Concentration: FY26 15.76% top customer is filed twice; the call may refer to H1 FY27. Separator: H1 top-1 share, NOT FOUND. Organic: the base FY26 consolidated 214.16 Cr contains acquired revenue, so a 45% CAGR on it is not organic by the AR's own words. Cash: RHP planned 95 debtor days; the call says under 45. IPO: 21.65 Cr is correct and includes 6.00 debt repayment and 10.34 issue costs; only 5.31 went to working capital. Kartavya: two readings, financial loan or live talks on the call date; separator is the agreement date and the H2 utilisation report. Call numbers were read from page images; OCR misreads noted in the report."

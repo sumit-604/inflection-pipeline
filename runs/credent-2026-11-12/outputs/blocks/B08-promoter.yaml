@@ -1,0 +1,79 @@
+stage: B08-promoter
+company: "CREDENT"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "rating/ folder empty"
+  - "research/ folder empty"
+  - "RHP only; final prospectus absent"
+  - "one annual report (FY2025-26)"
+  - "shareholding: two data points since listing (2026-08-19, 2026-09-30); three-year pledge trend NOT FOUND"
+  - "announcements: 9 of 22 NSE filings read; CEO designation of Karan Sharma (2026-10-28) not found in the nine, carried from B03"
+  - "Kartavya Healtheon shareholders and OCPS holders: NOT FOUND (MCA data paywalled or blocked)"
+  - "Tanveen relation to Sharma family, Credent Foundation and Vsanskriti LLP transactions, compounding order outcomes: NOT FOUND"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "All three FY26 acquisitions bought from promoters, a director or the COO: Healthcare 1,145.20 Lakhs from Ashok Kumar Sharma and Dimple Sharma; Team 6.00 from Karan and Dimple Sharma; Alltrak 1.00 from COO Amit Gupta and CMD Tarun Sharma; prices rest on one buyer-engaged valuer or none (RHP p.149-150)"
+      - "Auditor Aakash Kumar & Co resigned 2025-09-08 on management request; re-audit by R K Jagetiya cut FY25 PAT 553.23 to 224.67 (-59.4%) (RHP p.68, Annexure V p.193)"
+      - "Call says no customer above 10% (transcript p.5); AR p.14 and RHP p.25-26 show top customer 15.76%, top ten 81.76% of FY26 revenue; call gives no period"
+      - "Ashok Kumar Sharma on ROC Delhi disqualified list 2016-11-01 to 2021-10-31 over the predecessor of Credent Healthcare; s.73, s.185, s.77 breaches, compounding outcome NOT FOUND (RHP p.31-32, p.37)"
+      - "Rs 450.00 Lakhs unsecured ICD to Kartavya Healtheon with equity option up to 26%, proceeds to repay its OCPS; company says unrelated; no public link found, owners not verified (NSE 2026-11-04)"
+verdict: "CONCERN"
+scorecard: {clean: 3, caution: 5, red: 2}
+deal_breakers:
+  - "Auditor resignation within 3 years (TRIGGERED, recorded): 'Aakash Kumar & Co., Chartered Accountants ... September 08, 2025 ... On request of Management'; stated reason: earlier auditor was not a peer review auditor, mutual consent (RHP p.68)"
+  - "Restatement cutting past profits above 10% (TRIGGERED, recorded): FY25 PAT 553.23 restated to 224.67 (-59.4%); FY24 340.86 to 266.44 (-21.8%) (RHP Annexure V p.193 via B02)"
+adverse_findings:
+  - {finding: "Three FY26 acquisitions from promoters, a director and the COO; Healthcare 1,145.20 Lakhs on Adjusted NAV Rs 11,440 a share by buyer-engaged registered valuer; Team 6.00 at Rs 12 a share; Alltrak 1.00 at face value with no valuation, net worth (147.40)", evidence_tier: VERIFIED, source: "RHP p.149-150 (lines 10065-10118); AR Note 29 p.117 via B02", date: "2026-08 (RHP); SPAs 2025-04-02 and 2025-10-10"}
+  - {finding: "Statutory auditor resigned at management request 2025-09-08, same day it signed the FY25 report; successor re-audited FY25 and cut PAT from 553.23 to 224.67 and revenue from 8,182.32 to 7,794.26", evidence_tier: VERIFIED, source: "RHP p.68 and p.174; Annexure V p.193", date: "2025-09-08; re-audit report 2026-03-12"}
+  - {finding: "Call states no customer above 10%; filed top customer 15.76% and top ten 81.76% of FY26 revenue (83.31% FY25, 87.92% FY24); call names no period", evidence_tier: VERIFIED, source: "H1 FY27 transcript p.5 (text lines 165-168); AR MD&A p.14; RHP p.25-26", date: "2026-10-29 call"}
+  - {finding: "Ashok Kumar Sharma appeared on ROC Delhi disqualified directors list 2016-11-01 to 2021-10-31 (s.164(2)(a)) for non-filing at Credent Managements Consultants (now Credent Healthcare); DIN reapproved 2019-12-01, dates not reconciled in RHP; the entity was later sold to Credent by him and Dimple Sharma", evidence_tier: VERIFIED, source: "RHP risk factor 23, p.37 (lines 2579-2593)", date: "2026-08 RHP"}
+  - {finding: "Companies Act breaches: s.73 deposits from non-permitted persons, s.185 loans to related parties, s.77 CHG-1 not filed; compounding applications filed, outcome NOT FOUND; wrong forms and dates in statutory filings", evidence_tier: VERIFIED, source: "RHP p.31-32 (lines 1995-2044)", date: "2026-08 RHP"}
+  - {finding: "Rs 450.00 Lakhs unsecured ICD to Kartavya Healtheon Pvt Ltd (Mumbai, CIN per aggregator U74999MH2008PTC184213, directors Anil Nayak and Bikram Binay Srivastava per Tofler); nil interest to 2026-11-25, then 12%; equity option up to 26%; funds repay OCPS; company states not related; owners and OCPS holders unverified", evidence_tier: VERIFIED, source: "NSE filing 2026-11-04 Annexure 1 (loan terms, unrelated statement); directors and address UNVERIFIED aggregators EMIS, Tofler", date: "2026-11-04"}
+  - {finding: "Promoter CFO resigned the CFO post 2026-09-18 for personal reasons, 29 days after listing; family holds 4 of 6 board seats; CMD pay of 24.00 in FY26 paid by Alltrak, a former related-party customer and borrower", evidence_tier: VERIFIED, source: "NSE 2026-09-18 Annexure I; RHP p.155-158; RHP p.158 remuneration table", date: "2026-09-18"}
+  - {finding: "Third Alltrak director listed as Ajay Kumar on an aggregator; an Ajay Kumar is named as Tanveen's spouse's brother in the RHP promoter-group table; common name, no link claimed", evidence_tier: UNVERIFIED, source: "companydetails.in; RHP p.171", date: "2026-11-12 search"}
+transition_evidence:
+  - "Outside professional CFO CA Sachin Sharma from 2026-09-18, 14+ years, prior roles Dr Lal PathLabs, Pathkind, Metropolis, HCAH, LifeCell (NSE 2026-09-18 Annexure II; People Matters, MEDIA); former employers are Credent customers"
+  - "Two independent directors seated 2025-09-30 and 2025-12-19; Vanita Yadav sits on Gateway Distriparks and Snowman Logistics (RHP p.156-157)"
+  - "Institutional entry: about Rs 26.5 crore from 10 anchors (Abakkus named, MEDIA); XBRL 2026-09-30 AIF 5.41%, domestic institutions 5.71%, FII 2.13%"
+  - "Peer-review statutory auditor appointed for 5 years (NSE 2026-10-01); one-proprietor firm, not a big-4 upgrade (weak)"
+pledge_pct_latest: 0
+pledge_trend: "stable at nil: XBRL pledge and other encumbrance fields false on both 2026-08-19 and 2026-09-30; promoter holding 11,616,300 shares, 63.75% on both dates; three-year trend NOT FOUND (listed 2026-08-20)"
+searches_performed:
+  - "WebSearch: Kartavya Healtheon Private Limited directors CIN"
+  - "WebSearch: Credent Connect N Care Kartavya Healtheon inter-corporate loan"
+  - "WebSearch: Ashok Kumar Sharma Tarun Sharma Credent SEBI order OR litigation OR NCLT"
+  - "WebFetch: emis.cn Kartavya Healtheon profile (incorporation 2008, Goregaon East, directors hidden)"
+  - "WebFetch: mtec-sc.org Kartavya Healtheon (business, no owners)"
+  - "WebSearch: Kartavya Healtheon Mumbai Goregaon OCPS investors"
+  - "WebFetch: tofler.in Kartavya Healtheon (directors Anil Nayak, Bikram Binay Srivastava; charges)"
+  - "WebSearch: Anil Nayak Bikram Srivastava Kartavya founders (no result)"
+  - "WebSearch: Credent Connect Tarun Sharma Alltrak Amit Gupta Credent Healthcare Ashok Kumar Sharma (no result)"
+  - "WebSearch: Credent Connect IPO promoters Tarun Sharma background"
+  - "WebSearch: Credent Connect AmbitionBox OR Glassdoor (no company match)"
+  - "WebSearch: Credent Connect IPO lead manager anchor investors market maker"
+  - "WebSearch: Credent CFO Sachin Sharma appointed"
+  - "WebFetch: peoplematters.in Sachin Sharma appointment"
+  - "WebSearch: Credent governance receivables criticism analyst short seller proxy advisor (no company result)"
+  - "WebFetch: qorpiq.com Ashok Kumar Sharma DIN 05176778 directorships"
+  - "WebFetch: qorpiq.com Credent Healthcare Private Limited"
+  - "WebSearch: Vsanskriti LLP Delhi Karan Sharma Dimple Sharma"
+  - "WebSearch: Alltrak Technologies CIN U72200DL2021PTC389951 directors"
+  - "WebSearch: Credent Connect SEBI OR NSE surveillance OR ASM OR show cause 2026"
+  - "File reads: RHP lines 1995-2044, 2555-2614, 4700-4789, 10060-10129, 10325-10700, 11250-11560, 15414-15563; B02, B03, step1 brief; XBRL pledge and holding fields both dates; nine NSE filings; transcript p.5"
+searches_skipped:
+  - "WebFetch zaubacorp.com Kartavya Healtheon: HTTP 403"
+  - "WebFetch scrip.pharmaintelligence.informa.com Kartavya article: redirect, not followed (paywalled trade source)"
+  - "MCA portal master data and shareholder list for Kartavya Healtheon, Credent Healthcare, Alltrak (login or paywall)"
+  - "SEBI orders page and NSE surveillance and regulatory-actions page queried directly: not run; only general web search"
+  - "eCourts, NCLT and MCA compounding order search: not run"
+  - "SAST and PIT promoter trade disclosures on BSE/NSE: not run"
+  - "IiAS, SES, InGovern proxy advice: not searched"
+  - "X, forum and blog sentiment: not searched"
+  - "ET, Mint, Business Standard, Moneycontrol news archive searches on promoter names: not run beyond the general searches above"
+  - "AmbitionBox direct company page: not fetched"
+verdict_basis: "Three promoter-side acquisitions at buyer-engaged valuation, an auditor exit on management request followed by a 59.4% cut to FY25 profit, and a call claim (no customer above 10%) that the filings contradict; offset by no regulator order, no litigation and nil pledge."
+analyst_note: "CONCERN is a disclosure-quality and related-party finding. No SEBI or regulator order, criminal case or pledge exists in any source read. Kartavya: no name or address overlap with the Sharma family, Amit Gupta or Sachin Sharma, but owners and OCPS holders (who receive the cash) are unknown; separator is the MCA shareholder list. Customer claim: the call gave no period; separator is the company stating the basis. Report errata: in 08-promoter.md the Tanveen row should read 'relation to Sharma family NOT FOUND (own parents and spouse listed)' and board composition per RHP text (3 executive) conflicts with its table (2 executive); Karan Sharma CEO date comes from B03, not re-found."

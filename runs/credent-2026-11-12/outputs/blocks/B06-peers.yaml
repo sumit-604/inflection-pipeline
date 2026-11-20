@@ -1,0 +1,57 @@
+stage: B06-peers
+company: "CREDENT"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "peer transcripts only; no peer annual reports or presentations, so peer payables, vendor terms, customer concentration and capex per rupee are limited to what was said on calls"
+  - "main company has one concall (B05); no pure-play listed peer; each peer maps to one revenue engine only (Thyrocare diagnostics customer side, TCIEXP logistics, KRYSTAL manpower)"
+  - "Thyrocare never discusses outsourced pre-analytics spend, vendor payables or Credent; claims 1 and 3 have no peer evidence"
+  - "Krystal top-client share, core-business capex and CFO NOT FOUND in the four calls"
+flags:
+  - {type: FLAG-PEER-CASH-CONTRADICTION, reason: "Krystal, the only manpower peer growing 28 to 46%, reports trade receivable days of about 118 (KRYSTAL Q2 FY27, p.7) and negative operating cash flow in FY25 (KRYSTAL Q4 FY25, p.18). TCIEXP, the best-run peer, holds 58 to 60 days (TCIEXP Q3 FY26 p.6; Q2 FY27 p.5). No peer holds under 45. Credent target of under 45 days and cash positive H2 FY28 has no peer precedent."}
+  - {type: FLAG-MARGIN-BAND, reason: "Krystal (91% manpower) guides EBITDA 6.25 to 7.5% (KRYSTAL Q2 FY27, p.9); TCIEXP is at 11.3 to 12.7% with a stated path back to 15% by FY28/29 (TCIEXP Q3 FY26 p.16; Q2 FY27 p.13). Group 15 to 16% for a 13% base needs mix change; neither peer shows 15 to 16% in either engine today."}
+  - {type: FLAG-LAUNCH-LOSSES, reason: "Both TCIEXP and KRYSTAL report start-up margin dips on new lines and contracts; no peer mentions client minimum guarantees. Call claim of no launch losses is not supported by any peer."}
+  - {type: FLAG-SILENCE, reason: "Thyrocare, a named Credent customer, describes a dedicated in-house fleet of 2,000 to 2,100 phlebotomists plus network partners and never mentions outsourced pre-analytics vendors, Credent, or the 20% spend ratio."}
+peers_provided: 12
+verified: []
+partially_verified:
+  - {claim: "Q2 growth of organised diagnostics volumes and home collection (call 11.1% CAGR)", peers: ["THYROCARE"]}
+  - {claim: "Q4 EBITDA margin and density effect for asset-light time-definite express (logistics slice, group 15-16%)", peers: ["TCIEXP"]}
+  - {claim: "Q6 wage inflation and labour-code pass-through, contract tenure and reset terms", peers: ["KRYSTAL", "TCIEXP"]}
+  - {claim: "Q7 customer concentration norm (no single customer above 10%)", peers: ["TCIEXP", "THYROCARE"]}
+  - {claim: "Q8 capex-light growth to 4-5x revenue (no material capex until INR 1,000 Cr)", peers: ["TCIEXP", "KRYSTAL"]}
+contradicted:
+  - {claim: "Q5 receivable days 60 now, target under 45, cash positive by H2 FY28 during 40%+ growth", contradicting_peer: "KRYSTAL", quote_anchor: "KRYSTAL Q2 FY27 call p.7: 'trade receivable days were about 118 days, in line with March 26, despite increase in business' (Q2 revenue +46.25%); KRYSTAL Q2 FY26 call p.16 analyst: debtor days 'above 110', not disputed; TCIEXP Q2 FY27 call p.5: 'receivable days were 59 and payable days remained stable at 32'"}
+  - {claim: "Q9 Tier 3 and 4 launches carry no losses because clients give minimum guarantees", contradicting_peer: "KRYSTAL and TCIEXP", quote_anchor: "KRYSTAL Q2 FY27 call p.7: 'every quarter that you see that we sign up a new contract, you see a little dip in the margin'; TCIEXP Q3 FY26 call p.16: 'we have to spend the money on creating the network like for the rail, for Air Express'; no peer mentions minimum guarantees"}
+unverifiable:
+  - {claim: "Q1 listed chains spend about 20% of revenue on pre-analytics and outsource it (INR 1,000 Cr TAM)", peers_checked: ["THYROCARE", "TCIEXP", "KRYSTAL"]}
+  - {claim: "Q3 Thyrocare vendor payment terms and payables days; shift to prepaid or on-demand platforms", peers_checked: ["THYROCARE"]}
+peer_coverage_map:
+  - {peer: "THYROCARE", quarter: "Q3 FY26 (call 2026-01-28)", usage: "SUBSTANTIVE", contribution: "market growth 10-11% (p.16); B2B partnership credit 60-90 days and Vimta credit tightening (p.9, p.17); dedicated in-house fleet of about 2,000 phlebotomists (p.8)"}
+  - {peer: "THYROCARE", quarter: "Q4 FY26 (call 2026-05-12)", usage: "CITED-ONLY", contribution: "pathology market INR 50,000-60,000 Cr (p.19); partnership growth 23% with one-off normalisation (p.5-6)"}
+  - {peer: "THYROCARE", quarter: "Q1 FY27 (call 2026-07-23)", usage: "CITED-ONLY", contribution: "partnership growth 26% (p.6); no vendor, payables or outsourcing discussion"}
+  - {peer: "THYROCARE", quarter: "Q2 FY27 (call 2026-10-29)", usage: "SUBSTANTIVE", contribution: "PharmEasy about 11% of partnership business (p.11); 2,100 phlebotomists incl. network partners (p.4, p.9); pathology +27%, EBITDA 33%, H1 capex INR 30 Cr (p.8)"}
+  - {peer: "TCIEXP", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "top 25 customers under 15% (p.8); 60/39 receivable/payable days (p.6); peak EBITDA 16%, path to 15% by FY28/29 (p.16); outsourced fleet (p.16)"}
+  - {peer: "TCIEXP", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "FY26 EBITDA 11.7%, labour cost up 15-20% costing about 100 bps (p.6, p.10); capex INR 500 Cr plan revised to 400 Cr; EBITDA per kg INR 1.25 vs 1.8-2 historical (p.16)"}
+  - {peer: "TCIEXP", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "58/32 days (p.6); D2C EBITDA 16-18% on a very small base (p.8); FY27 capex INR 125-140 Cr (p.11)"}
+  - {peer: "TCIEXP", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "EBITDA 12.7% on higher utilisation (p.3, p.5); 59/32 days; capex INR 100 Cr plus per year to 2030-31 (p.9-10); target 15-16% in two to three years (p.13)"}
+  - {peer: "KRYSTAL", quarter: "Q4 FY25", usage: "SUBSTANTIVE", contribution: "staffing on management fee percent of CTC, 2-3 year contracts (p.17); negative operating cash flow on new-business working capital (p.18); EBITDA 6.41% (p.7)"}
+  - {peer: "KRYSTAL", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "contracts inflation-linked (p.9); debtor days above 110, management says cyclical (p.16); tender delays (p.12)"}
+  - {peer: "KRYSTAL", quarter: "Q4 FY26", usage: "CITED-ONLY", contribution: "FY26 EBITDA 6.54%; receivables and loans and advances INR 146.45 Cr rose with new customers (p.8)"}
+  - {peer: "KRYSTAL", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "118 receivable days at +46% growth (p.7); EBITDA 6.0% and band 6.25-7.5% (p.6, p.9); start-up margin dip (p.7); labour-code recovery partly paid (p.11)"}
+industry_cross_read:
+  demand: "Split: Thyrocare pathology +20 to 27% and Krystal H1 FY27 +27.8% (lumpy, FY26 only +5.3%), but TCIEXP revenue +6 to 9% after two to three flat years and market growth cited at 10-11%; nobody shows 45% organic growth."
+  pricing_inputs: "Weak pricing power in B2B diagnostics (Thyrocare revenue per test about INR 36, down about 2% YoY) and tender-priced manpower (Krystal EBITDA 6.25-7.5%); TCIEXP passes fuel through (85-90%) and nets 1.5-3% price, but labour cost took about 100 bps."
+  capex_cycle: "Peers are expanding, not cautious: TCIEXP INR 100 Cr plus per year, Thyrocare INR 30 Cr in H1 FY27 with similar H2, Krystal INR 100 Cr planned for Citelum; Credent is the lone no-capex grower in an expanding peer set."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Government and tender payment delay and slippage: KRYSTAL Q2 FY26 p.12; 65% of Krystal revenue is government (Q2 FY27 p.9)"
+  - "Working capital absorbs cash at high growth: KRYSTAL Q4 FY25 p.18, Q4 FY26 p.8"
+  - "Labour code and minimum wage cost with partial and lagged recovery: KRYSTAL Q2 FY27 p.11; TCIEXP Q4 FY26 p.10"
+  - "Customer credit risk and deliberate revenue loss to tighten credit: THYROCARE Q3 FY26 p.5, p.9"
+  - "Platform and aggregator entry taking B2B share, and large corporate entering adjacent testing: THYROCARE Q3 FY26 p.12; TCIEXP Q2 FY27 p.5-7"
+  - "Partner platform dependence and loss-making parent group (PharmEasy about 11% of Thyrocare partnership business; API group ex-Thyrocare still loss-making): THYROCARE Q2 FY27 p.11-12"
+  - "Labour retention and election/SIR migration: TCIEXP Q4 FY26 p.10"
+net_narrative_effect: "complicates"
+analyst_note: "Nine questions: none verified, five partial, two contradicted, two unverifiable. The peers neither confirm the TAM chain (20% of revenue on pre-analytics) nor name Credent, so the central demand claim stays on management word alone. The sharpest peer evidence is cash: the manpower peer that grew 46% sat at 118 receivable days and the cleaner logistics peer at 58 to 60, so under 45 days has no precedent. Margin: Krystal 6 to 7.5% and TCIEXP 11 to 13% with 15% as a two to three year goal. Q7 is a benchmark only; TCIEXP top 25 under 15% does not test Credent's own filed 15.76% top-1. Peer roles differ (TCIEXP owns hubs and outsources fleet; Thyrocare is a customer, not a competitor), so weight is moderate. Cross-peer hypothesis in report Part 5: payment timing, not growth, separates high-margin from low-margin outsourced services in this set."

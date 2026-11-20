@@ -1,0 +1,16 @@
+company: GE Power India Limited
+ticker: GVPIL
+cmp: 617.0
+market_cap_cr: 4149.0
+run_date: 2026-11-15
+run_type: full
+concalls_available: true
+sector_cap_row: "EPC / Civil construction"   # Step D choice (Step 1 intake)
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, BHEL:Profit & Loss, BHEL:Quarters, BHEL:Balance Sheet, BHEL:Cash Flow, BHEL:Customization, POWERMECH:Profit & Loss, POWERMECH:Quarters, POWERMECH:Balance Sheet, POWERMECH:Cash Flow, POWERMECH:Customization, ISGEC:Profit & Loss, ISGEC:Quarters, ISGEC:Balance Sheet, ISGEC:Cash Flow, ISGEC:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."
+remediation_cycles: 0
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}

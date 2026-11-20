@@ -1,0 +1,23 @@
+stage: confidence-delta
+company: GVPIL
+run_date: 2026-11-15
+phase: 1
+confidence_delta:
+  numerical_acceptance: 98        # B12a acceptance_rate; 429 numbers checked; mandatory 139 of 139; 0 CRITICAL, 4 MAJOR, 4 MINOR
+  redflag_coverage: 86            # B12b acceptance_rate; material_found 14, material_caught 12 (9 caught + 3 partially caught); strict caught-only 64
+  framework_adherence: 89.3       # B12c Gate 0 + Emerging Moat only: 67 of 75 rules passed; valuation half PENDING PHASE 3
+  peer_utilisation: 83.3          # B12d: 10 of 12 peer transcripts used substantively (substantive_confirmed 10, peers_audited 12)
+  overall: 83.3
+  overall_set_by: peer_utilisation
+  not_applicable: []
+band: "75-89 normal, note specifics"
+pending_phase_3: ["framework_adherence valuation component (B10, B11)"]
+verifier_a_identity_check: "No CRITICAL rows in B12a; nothing to test, nothing struck by the orchestrator. Verifier A itself struck 4 draft rows under its rule 5b."
+rework_triggers: "none. No CONFIRMED Verifier A CRITICAL; no acceptance rate below 60 on a denominator of 4 or more (OR-29)."
+source_fidelity_rows:   # B12a source_fidelity true; corrected by appended errata, anchors shown
+  - "08-promoter.md group materials purchases 697.6 -> 699.1 (AR26 Note 36 p.181); erratum appended"
+  - "03-ardeep.md 3B other assets FY26 1,432.7 -> 1,601.4 (AR26 p.131); erratum appended"
+  - "04-bizmodel.md Q2 FY27 material cost 67.6% gross basis -> 64.4% net of WIP (Results Q2 FY27 p.3); erratum appended"
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+remediation_cycles: 0
+verifier_a_shadow: "not run in this session (operator batch instruction)"

@@ -1,0 +1,56 @@
+stage: B07-emoat
+company: "GVPIL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "concalls: FRESHNESS FAIL. No Q2 FY27 transcript (call 16 Nov 2026, after run date); no Q1 FY27 call was held. Latest earnings call is Q4 FY26 (12 May 2026)"
+  - "shareholding: screener-derived table only; filed pattern and pledge detail absent"
+  - "presentation: no Q2 FY27 deck yet"
+  - "announcements: no FGD termination filing in the 12-month list"
+  - "research: none. prospectus: not expected"
+  - "ar: absolute core services revenue, core vs upgrade vs FGD revenue split, segment margins, Noida utilisation, repair facility capacity NOT FOUND"
+  - "orders: Shoaiba treatment in backlog NOT FOUND; no contract (only NOA) in corpus"
+flags:
+  - "BORDERLINE_CLASSIFICATION: adjusted EM 11.6 sits 0.4 below the 12 band edge. Shoaiba E1 moving from 1.0 to 3.0 on a signed contract and backlog entry would give 13.6 (MODEST)"
+  - "THIRD_PARTY_SHARE_BELOW_KILL_LINE: FY26 full-year oOEM share of core orders is 43.6% (calc 320/734, deck p.10) against the ~50% B05 kill line; the 53% figure is the Q3 FY26 quarter only (Q3 FY26 call p.4)"
+  - "CAPEX_GROWTH_NOT_MEANINGFUL: mechanical 2C arithmetic gives 73.0% (INR M 180 x 51.5x net PPE turnover) but the repair facility replaces outsourced repair and carries no stated capacity; reported as 0 in the field, arithmetic in report"
+  - "TASK_FACT_CORRECTION: the 8 Sep 2026 announcement is a GST demand order (Odisha, FY2020-21, tax INR 21.1 lakh plus equal penalty), not an order receipt. The only order receipt in the 12-month list is Shoaiba (12 Aug 2026)"
+  - "DURGAPUR_LOSS_GAP: Jul 2026 deck p.7 says ~INR 27 cr average annual loss (2023-25); filed discontinued pre-tax loss is INR M 548.0 in FY26 and INR M 304.2 in H1 FY27 (Q2 FY27 results)"
+  - "SUPPLY_DEPENDENCE: five-year JSW manufacturing agreement replaces owned boiler fabrication; alternate supply chain target moved from ~18 months (May 2026) to 'very soon' (Jul 2026)"
+  - "EXPORT_SHARE_FALLING: outside India revenue INR M 349.5 (2.75%) in FY26 vs 361.7 (3.45%) in FY25 (AR26 p.176); Shoaiba is the only counter-evidence"
+em_score: 11.6
+em_classification: "NONE"
+active_categories:
+  - {id: "A4", name: "Product platform / NPI engine for third-party fleets", strength: "Moderate", evidence_type: "claim", time_to_materialise: "now to 24 months"}
+  - {id: "C1", name: "Customer ecosystem / OEM installed-base pull", strength: "Moderate", evidence_type: "claim", time_to_materialise: "now to 12 months"}
+  - {id: "G1", name: "War chest / rating upgrade", strength: "Moderate", evidence_type: "documented", time_to_materialise: "now"}
+evidence_mix: {documented: 6, claim: 8, inference: 2}
+completionist_recount: "📄 recount performed: 6 documented items across 5 categories (A1, E1, G1, G2, F2); 8 categories carry any score; 3 Strong/Moderate; 0 Strong. Scan stays well under the 12-category guard."
+catalysts_12m:
+  - {catalyst: "Q2 FY27 earnings call, first management explanation of the 9.8% margin and Shoaiba booking", window: "16 Nov 2026", evidence_type: "claim", anchor: "announcements/20261106 (call scheduled 16 Nov 2026, 3:30 pm IST)"}
+  - {catalyst: "Durgapur scheme effective: certified order filed with RoC, discontinued loss stops", window: "Nov 2026 to Mar 2027", evidence_type: "documented", anchor: "NCLT order 1 Oct 2026 (Q2 FY27 results note 2); certified copy filing 14 Oct 2026; Q4 FY26 call p.14 target within 12 months of 31 Mar 2026"}
+  - {catalyst: "Q3 FY27 results: ex-other-income margin above or below 11% (separating observation from B05)", window: "Feb 2027", evidence_type: "documented", anchor: "B05 trigger 2; Q1 FY27 14.5% and Q2 FY27 9.8% (calc, Results_Q2FY27 standalone)"}
+  - {catalyst: "Shoaiba contract signature, backlog entry and first revenue (~INR 550 cr, ~2.5 years)", window: "Q3 FY27 to Q1 FY28", evidence_type: "documented", anchor: "Reg 30, 12 Aug 2026 (NOA)"}
+  - {catalyst: "Vadodara repair facility ready: 53-week licence-fee-free setup period ends ~25 May 2027 (calc from 20 May 2026)", window: "May 2027", evidence_type: "documented", anchor: "Reg 30, 20 May 2026, Annexure A(e)"}
+  - {catalyst: "Independent supply chain post-JSW (target ~18 months from May 2026)", window: "to ~Nov 2027", evidence_type: "claim", anchor: "Q4 FY26 call p.14-15; Jul 2026 meet p.5 ('very soon')"}
+  - {catalyst: "Large turbine upgrade RFQs (~1 GW) and any award", window: "12 to 24 months", evidence_type: "claim", anchor: "Q3 FY26 call p.18"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "Shoaiba converts GVPIL into an export boiler fuel-conversion supplier beyond spares (~INR 550 cr, 2.5 years)", converting_evidence: "Signed contract, backlog entry, revenue booked, second overseas award", first_appears: "Reg 30 filing; Q3 FY27 results press release backlog line", window: "3 to 12 months"}
+  - {optionality: "Large turbine upgrades from CEA list of 200+ units (~70 GW); 1 GW ordered, ~1 GW RFQs in prep", converting_evidence: "New upgrade orders of INR 300 cr or more to GVPIL", first_appears: "Reg 30 order filing or results press release", window: "6 to 24 months (3 to 4 years to commissioning)"}
+  - {optionality: "Third-party fleet (oOEM) scale: Chinese and Indian-OEM units with similar geometry", converting_evidence: "Disclosed oOEM order value above INR 320 cr for FY27 and share of core orders at or above 50%", first_appears: "Quarterly deck core-orders slide; Q3 FY27 and Q4 FY27 calls", window: "3 to 15 months"}
+  - {optionality: "Deployment of INR 880 cr net cash into services capability or inorganic growth", converting_evidence: "Board-approved allocation plan, committed capex or acquisition filing", first_appears: "Reg 30 filing; call answer", window: "6 to 18 months (deflected on two calls)"}
+  - {optionality: "FGD revival for Category A plants (~8 GW, ~2 GW in tender prep)", converting_evidence: "FGD EP award to GVPIL", first_appears: "Reg 30 order filing", window: "12 to 24 months"}
+  - {optionality: "Emergency generator repair as a niche with pricing power (13 units, 7% availability gain)", converting_evidence: "Repair revenue and margin disclosed, repeat orders, price realisation vs peers", first_appears: "AR27 MD&A or a segment disclosure; call", window: "12 to 24 months"}
+  - {optionality: "Automation and control retrofits (Mark VIe smart retrofit, GHM) as annuity-like lifecycle revenue", converting_evidence: "Disclosed control-system order book or recurring spares revenue", first_appears: "AR27 Directors' Report; call", window: "12 to 24 months"}
+combined_assessment: "AVOID"
+combined_reasoning: "Gate 0 AVOID (core 33, moat 11) plus EM NONE (11.6, borderline) gives AVOID on the matrix; the turnaround is operational and financial, not moat-building, so it is flagged as a TURNAROUND character that the matrix does not lift."
+top_moat_risks:
+  - "Margin base: Q2 FY27 ex-other-income margin 9.8% vs 11% guided base, with no call to explain it"
+  - "Supply dependence: five-year JSW supply agreement replaces owned fabrication; independence date slipping"
+  - "Parent perimeter and IP: India-region mandate, royalty to GE group, bank lines and guarantees (INR M 16,000) depend on GE Vernova majority ownership"
+  - "oOEM share: FY26 full-year share 43.6% (calc), below the 50% B05 kill line; competitors in this segment include established local players and global majors (ICRA)"
+  - "Order book: backlog INR M 15,273 at Q2 FY27, down 16.3% YoY; Shoaiba not visible in backlog"
+  - "Guider left: CFO who gave all FY26 guidance ceased 13 May 2026; talent churn (BRSR permanent-employee turnover 71.11% vs 28.05%)"
+analyst_note: "Sparse scan by design. Three Moderate rows (A4, C1, G1) and five Weak rows give 11.6 against a 12 band edge, so NONE is a borderline call, not a firm negative. The real engine is a services-led order mix: core orders INR 734 cr vs 548 cr (+33.9%, calc) and oOEM 162 to 320 cr. These are deck claims, scored at 0.7x. Only six items are documented, mostly commitments (QPPL INR 18 cr + 25 cr, Shoaiba NOA) not outcomes. Credit is taken once: oOEM growth sits in A4 only, OEM-fleet pull in C1, never both. No row depends on the FY26 one-offs or the receivable release. I1 and I2 score 0: no named talent asymmetry, and no sacrifice a competitor must make to copy GVPIL was found in filed documents. Re-score E1 and A4 after Q2 FY27 call and Shoaiba contract."

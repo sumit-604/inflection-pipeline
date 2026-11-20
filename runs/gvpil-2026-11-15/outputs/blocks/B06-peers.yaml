@@ -1,0 +1,57 @@
+stage: B06-peers
+company: "GVPIL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "peer-concalls: BHEL transcripts stale (latest Q4 FY24, May 2024); no BHEL transcript on BSE in the last 12 months"
+  - "concalls: no Q1 FY27 or Q2 FY27 GVPIL earnings-call transcript"
+  - "research: none"
+  - "reading: eight of twelve peer files read through opening remarks and keyword-located passages, not line by line"
+flags:
+  - "BHEL_STALE: every BHEL citation is 2021-2024 dated evidence; no BHEL current view"
+  - "NO_PEER_MENTION_OF_GVPIL: no peer names GE Power, GE Vernova, GEPIL or GVPIL in any of the 12 files"
+  - "MARGIN_BASIS_MISMATCH: Power Mech EBITDA includes other income, GVPIL 10-12% is ex other income; Power Mech O&M-only 15-18% sits above it"
+  - "Q2_FY27_MARGIN_NOT_SECTOR_WIDE: ISGEC Jul-Sep 2026 margins rose (mfg EBIT 13.7%, projects 5.7%) while GVPIL fell 4.7 points"
+  - "FGD_RUNOFF_CONFIRMED_NO_NEW_AWARDS_NAMED: Power Mech and ISGEC describe FGD ending; no peer names a post-Jul 2025 award"
+peers_provided: 12
+verified: []
+partially_verified:
+  - {claim: "Margin of thermal services and spares; 10-12% ex other income normal for services-led mix", peers: ["POWERMECH"]}
+  - {claim: "FGD ordering restarted after Jul 2025 notification (GVPIL says none)", peers: ["POWERMECH", "ISGEC", "BHEL (dated 2021-2024)"]}
+  - {claim: "Industry demand growth: consumption +3.2%, thermal 55%+, coal +2.5% (direction only)", peers: ["POWERMECH", "BHEL (dated May 2024)"]}
+  - {claim: "Raw material and input cost trend behind Q2 FY27 margin fall (direction only, not 4.7 point magnitude)", peers: ["POWERMECH", "ISGEC"]}
+contradicted: []
+unverifiable:
+  - {claim: "Third-party OEM and fleet services share and growth (1.9x, 53% of Q3 FY26 core orders)", peers_checked: ["POWERMECH", "BHEL", "ISGEC"]}
+  - {claim: "Thermal R&M and upgrade ordering (CEA 200+ units, ~70 GW) and conversion speed", peers_checked: ["BHEL", "ISGEC", "POWERMECH"]}
+  - {claim: "Thermal services addressable market Rs 2,500 Cr or Rs 3,500-4,000 Cr and share leader share", peers_checked: ["BHEL", "POWERMECH", "ISGEC"]}
+  - {claim: "Overseas boiler retrofit and fuel conversion awards in Gulf/Saudi (Shoaiba ~Rs 550 Cr)", peers_checked: ["ISGEC", "BHEL", "POWERMECH"]}
+peer_coverage_map:
+  - {peer: "BHEL", quarter: "Q1 FY22 (30 Jul 2021)", usage: "CITED-ONLY", contribution: "Dated: spares and services revamp for non-BHEL equipment p.3; FGD ~15% of executable book p.14"}
+  - {peer: "BHEL", quarter: "Q4 FY22 (21 May 2022)", usage: "CITED-ONLY", contribution: "Dated: FGD 110 of 167 GW finalised, 30% share p.4; PVC index lag p.7"}
+  - {peer: "BHEL", quarter: "Q4 FY23 (26 May 2023)", usage: "SUBSTANTIVE", contribution: "Dated: spares and services bookings over Rs 3,800 Cr p.3; R&M Ukai p.4"}
+  - {peer: "BHEL", quarter: "Q4 FY24 (21 May 2024)", usage: "SUBSTANTIVE", contribution: "Dated: FGD 130 GW tendered p.5; spares and services Rs 3,500 Cr p.3; 10-12 GW a year ordering p.9"}
+  - {peer: "ISGEC", quarter: "Q3 FY26 (10 Feb 2026)", usage: "SUBSTANTIVE", contribution: "FGD 99% complete, retention to collect p.11-12; commodity view p.10"}
+  - {peer: "ISGEC", quarter: "Q4 FY26 (29 May 2026)", usage: "SUBSTANTIVE", contribution: "FGD retention Rs 165 Cr left p.9-10; input-cost rises p.5"}
+  - {peer: "ISGEC", quarter: "Q1 FY27 (12 Aug 2026)", usage: "SUBSTANTIVE", contribution: "New services division incl retrofit and spares p.5, p.16; commodity stabilised p.4"}
+  - {peer: "ISGEC", quarter: "Q2 FY27 (5 Nov 2026)", usage: "SUBSTANTIVE", contribution: "Same quarter as GVPIL Q2 FY27: margins up; steel, copper, nickel up to 10% p.3-4, p.13"}
+  - {peer: "POWERMECH", quarter: "Q2 FY26 (13 Nov 2025)", usage: "SUBSTANTIVE", contribution: "CEA 45,000 MW plan p.12; PVC pass-through p.15; Udupi FGD p.16"}
+  - {peer: "POWERMECH", quarter: "Q3 FY26 (12 Feb 2026)", usage: "SUBSTANTIVE", contribution: "FGD Rs 4,260 Cr removed from backlog, ex-FGD book Rs 17,000 Cr p.9"}
+  - {peer: "POWERMECH", quarter: "Q4 FY26 (22 May 2026)", usage: "SUBSTANTIVE", contribution: "O&M margin 15-16%, construction below 10% p.18; Middle East effects p.7, p.16"}
+  - {peer: "POWERMECH", quarter: "Q1 FY27 (10 Aug 2026)", usage: "SUBSTANTIVE", contribution: "O&M margin 18%, blended 12-13% p.16-17; input cost and PVC lag p.14; R&M finishing p.14"}
+industry_cross_read:
+  demand: "Thermal build-out consensus (Power Mech 8-10 GW a year, BHEL dated 10-12 GW a year) but order pace uneven (Power Mech missed FY26 order target, BHEL tendering delayed); no peer describes a services or R&M boom"
+  pricing_inputs: "Middle East driven steel, base metal, gas and diesel inflation Apr-Sep 2026 confirmed by Power Mech and ISGEC, small in size; PVC clauses lag a quarter; ISGEC margins rose in Jul-Sep 2026"
+  capex_cycle: "Not a thermal-services capacity race; ISGEC (Rs 502 Cr) and Power Mech (mining, washery) expand outside thermal services; lone-expander situation does not arise"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Labour shortage and labour-code provision (Power Mech 22 May 2026 p.9, p.15)"
+  - "State-funded receivable and certification delay (Power Mech water division, 22 May 2026 p.13)"
+  - "Large order cancellation (Power Mech BESS Rs 1,563 Cr p.4; ISGEC ~Rs 550 Cr, 29 May 2026 p.5)"
+  - "Customer packaging and tender delays at BHEL (Power Mech 10 Aug 2026 p.13); BHEL BoP vendor exits (BHEL 21 May 2024, dated, p.8-11)"
+  - "Retention money stuck in completed projects (ISGEC FGD Rs 165 Cr, 29 May 2026 p.10)"
+  - "Middle East conflict: freight, materials, halted installation investment (Power Mech May and Aug 2026; ISGEC Nov 2026)"
+  - "Provision and write-back accounting (BHEL ECL Rs 1,093 Cr FY24, 21 May 2024, dated, p.6)"
+net_narrative_effect: "complicates"
+analyst_note: "Peers cannot test the GVPIL-specific services claims (third-party share, R&M ordering, market size, Saudi order); four of eight are unverifiable and none verified. The one contradiction-in-spirit is Q7: ISGEC and Power Mech standalone margins rose in Jul-Sep 2026 while GVPIL ex-other-income margin fell 4.7 points, so sector input cost explains direction, not size. Power Mech O&M margin 15-18% sits above GVPIL 10-12%, but bases differ (Power Mech includes other income, O&M is manpower-based). BHEL spares and services bookings of Rs 3,500-3,800 Cr (FY23-FY24, dated, wider scope) suggest the GVPIL market figures are a narrow slice [INFERENCE]. Cross-peer hypothesis: project-led firms (ISGEC, Power Mech, BHEL dated) are converging on thermal services as the FGD cycle ends, contesting GVPIL's third-party lane [INFERENCE]. Eight files were read by keyword passages, not line by line."

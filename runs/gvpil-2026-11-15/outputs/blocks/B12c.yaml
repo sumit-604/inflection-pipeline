@@ -1,0 +1,31 @@
+stage: B12c
+company: "GVPIL"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+# PHASE 1 SCOPE: gate0 + emoat only. valuation, expectation_ledger, business_understanding_narrative,
+# recomputed_destination_pe and recomputed_decision are PENDING (B10/B11 and stage 13 do not exist yet).
+# null = not evaluated in this phase, not a finding.
+gate0: {rules_checked: 45, fails: ["G03 ROCE formula substituted (proxy capital employed = equity + reserves + borrowings); formal TA-CL recompute leaves A1-A4 unchanged; MINOR", "G10 B2 scored on 6 determinable years; as written 3/10 = 30% gives 0; Block B 2 to 0, core 33 to 31, grand total 44 to 42; MAJOR", "G36 M11 two-window test not performed (prior FY20-FY23 window and selling-expense trend absent); outcome 0 or 5 cannot be decided from stated inputs; MINOR", "G42 DB4 not recorded; cumulative CFO/PAT -1.92 is below 0.50 and fires max AVERAGE; does not bind (DB8 same cap, class AVOID); MINOR"]}
+emoat: {rules_checked: 30, fails: ["E03 anchors: 3 evidence items without page or note (A2, A4 NPI oversight, H3); 4 items anchored to upstream blocks B02/B03 instead of a source (G1, G2 x2, F1); MINOR", "E16 I2 question answered for A4, C1, G1 only; A1, E1, F2, G2, R1 unanswered; I2 likely stays 0; MINOR", "E17 FY26 receivable release credited twice (G1 cash, G2 receivable days); G2 to 0, EM 11.6 to 10.6, NONE unchanged; MAJOR", "E20 capex_embedded_growth_pct holds 0, not the 2C result 73.0 (the flag keeps 73.0); MINOR"]}
+valuation: {rules_checked: 0, fails: []}  # PENDING PHASE 3: B10/B11 do not exist yet
+expectation_ledger: {present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}  # rules 13-14; any fail = REWORK stage 11 | PENDING PHASE 3
+business_understanding_narrative: {present: null, five_questions_answered: null, prose_only: null, section6_candidates_named: null, valuation_vocab_leak: null, fails: []}  # rule 9; any fail = REWORK stage 13 | PENDING /finalize
+recomputed_destination_pe: ""  # blank if concur; else both values | PENDING PHASE 3
+recomputed_decision: ""        # blank if concur | PENDING PHASE 3
+findings:
+  - {id: "F-G10", framework: "gate0", severity: "MAJOR", rule: "B2 FCF-positive proportion; NOT FOUND scores 0 on the 10-year window (P01 l.19-22, l.64)", stated: "3/6 determinable years = 50% = 2 (B01 l.44)", recomputed: "3/10 = 30% = 0; Block B 0; core 31; grand total 42", decision_impact: "none; classification AVOID holds; deal-breaker 2 unchanged"}
+  - {id: "F-E17", framework: "emoat", severity: "MAJOR", rule: "one improvement credited through one mechanism (CLAUDE.md NEVER list; B07 applies it at H2, B07 l.133)", stated: "G1 2.0 (cash from the BHEL receivable release, B07 l.125) and G2 1.0 (receivable days 409 to 219, B07 l.127); note says no row depends on the release (B07 l.343)", recomputed: "G2 0; EM 10.6", decision_impact: "none; NONE holds; gap to the 12 band widens from 0.4 to 1.4; Shoaiba upside case still MODEST at 12.6"}
+  - {id: "F-G03", framework: "gate0", severity: "MINOR", rule: "fixed ROCE formula, no substitutes (P01 l.27-31)", stated: "proxy capital employed all years (B01 l.17)", recomputed: "formal TA-CL for FY25/FY26 leaves A1 1, A2 0, A4 5; strict NOT FOUND reading gives Block A 0, core 27", decision_impact: "none; AVOID under both readings"}
+  - {id: "F-G36", framework: "gate0", severity: "MINOR", rule: "M11 two-window test binds at 6 or more years (P01 l.129-133)", stated: "0 on the latest 3-year CAGR -10.9% only (B01 l.81)", recomputed: "cannot be decided from stated inputs; 0, or 5 if FY20 revenue exceeded 2,540.5 Cr (calc) and selling % declined", decision_impact: "none on class; a score of 5 makes 3 moats (still MODERATE) and moat score 16"}
+  - {id: "F-G42", framework: "gate0", severity: "MINOR", rule: "deal-breaker 4, cumulative CFO/PAT below 0.50 (P01 l.156-157)", stated: "not triggered, not <0.50 by calculation (B01 l.89)", recomputed: "-1.92 is below 0.50; DB4 fires, max AVERAGE", decision_impact: "none; DB8 sets the same cap and the class is AVOID"}
+  - {id: "F-E03", framework: "emoat", severity: "MINOR", rule: "source anchor on every evidence item (P07 l.35-36)", stated: "A2, A4 NPI, H3 without page or note (B07 l.87, l.91, l.135); G1, G2, F1 anchored to B02/B03 (B07 l.119, l.125, l.127)", recomputed: "anchor format fix only", decision_impact: "none on score; existence of numbers is Verifier A's"}
+  - {id: "F-E16", framework: "emoat", severity: "MINOR", rule: "I2 question for each moat claimed anywhere in the scan (P07 l.140-142)", stated: "answered for A4, C1, G1 only (B07 l.141)", recomputed: "I2 most likely stays 0", decision_impact: "none"}
+  - {id: "F-E20", framework: "emoat", severity: "MINOR", rule: "capex_embedded_growth_pct from 2C (P07 l.233)", stated: "0 (block l.38); 2C arithmetic 73.0% in flag CAPEX_GROWTH_NOT_MEANINGFUL (B07 l.73)", recomputed: "73.0 with the flag", decision_impact: "none on EM score; field-only readers see 0"}
+# Observations (not findings, not counted): O-01 Gate 0 moat class MODERATE rests on FY26 spot ROCE 48.4% in M3;
+# on the window-median reading (11.5%) M3 is 0, 1 moat, THIN, moat score 6. O-13 for phase 3: catalysts_12m marks
+# pending events as documented (Shoaiba contract signature, Q3 FY27 margin). Full list in report section 4.
+critical_count: 0
+major_count: 2
+minor_count: 6
+acceptance_rate: 89.3             # rules passed / rules checked, % (67 / 75)

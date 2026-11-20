@@ -1,0 +1,87 @@
+stage: B03-ardeep
+company: "GVPIL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "concalls: no Q1 FY27 or Q2 FY27 earnings-call transcript"
+  - "shareholding: screener-derived table only; filed pattern and pledge detail absent (AR26 CG p.114 has no pledge column; pledge NOT FOUND IN DOCUMENT)"
+  - "screening: only Data_Sheet CSVs populated"
+  - "research: none; prospectus not expected (long-listed)"
+  - "notes: FY24 comparatives from AR25 as first reported; not like-for-like with continuing FY25/FY26"
+  - "notes: continuing-basis FY25 related-party table NOT FOUND (Note 36 FY25 column not re-presented)"
+  - "notes: contingent liability stage/forum, customer names, Durgapur demerger consideration value, MAT credit, loss expiry schedule NOT FOUND IN DOCUMENT"
+  - "notes: royalty booking location for INR M 310.0 gap NOT STATED; P&L effect of Note 26 slump-sale deductions NOT STATED; post-demerger Durgapur supply price NOT FOUND"
+  - "ar: no numeric FY27 guidance, no core services backlog split, no order inflow in AR26; brief's 85-90% / 11% guidance NOT FOUND IN DOCUMENT"
+  - "ar: outcome of AGM 14 Aug 2026 votes on Items 8, 9, 10 not in corpus"
+  - "ar: reconciliation of CARO vii(b) INR M 8,022.1 to Note 39 INR M 4,575.9 NOT STATED"
+flags:
+  - {type: FLAG-CASH, reason: "FY26 CFO INR M 4,692.5 is a one-time receivable release (+5,136.0) with customer advances and billing in excess down 2,106.6; 95.9% (4,500.0) moved to an unsecured group deposit; FY25 CFO re-presented upward by INR M 593.9 (3,196.5 to 3,790.4) with Durgapur drain INR M 349.5 now in financing"}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "No pledge or selling pattern found (promoter 68.58% unchanged; pledge detail NOT FOUND IN DOCUMENT). Preliminary note only: INR M 4,500.0 unsecured demand deposit with promoter-group cash-pool header; ceiling to rise to INR M 10,000; bank lines depend on GEV majority ownership; promoter exit plan withdrawn 25 Jul 2024. Full promoter verdict from B08"}
+  - {type: FLAG-EARNINGS, reason: "ECL reversal 1,016.6 plus other income increase 433.5 = 55.2% of the 3,174.4 profit step-up; group-sourced other income 851.9 = 25.1% of PBT before exceptional; core margin 12.4% vs reported 27.0%"}
+  - {type: FLAG-ORDERS, reason: "RPO INR M 16,278 vs 26,623 (-38.9%); derived FY26 additions INR M 2,347.7; AR calls it healthy; NGSL inflow 6,182 vs 15,344 (-59.7%)"}
+  - {type: FLAG-CARO-RECON, reason: "CARO vii(b) disputed dues gross INR M 8,022.1 (net of deposits 7,658.3) vs Note 39 contingent liabilities INR M 4,575.9; gap INR M 3,446.2 unreconciled; CARO ii(b) says no working capital facility sanctioned vs Notice INR M 610 fund-based sanctioned"}
+  - {type: FLAG-DISCLOSURE, reason: "MD&A omits JSW demerger, ICD, profit step-up and customer names; MD&A attrition 8.7% vs BRSR turnover 71.11%; MD&A RoNW 0.69 vs Note 44 ROE 0.73; Directors' Report says no guarantee provided vs Note 36 'Corporate Guarantee issued' 7,977.6"}
+phase_verdicts: {p1: "YELLOW", p2: "YELLOW", p3: "YELLOW", p4: "RED (disclosure quality only)", p5: "YELLOW", p6: "YELLOW", p7_best_fit: "Turnaround"}
+overall_quality: 5.8
+quality_components: {governance: 6, accounting: 6, balance_sheet: 7, earnings: 4}
+kill_switch_notes:
+  - "p1: informational only. Reviewer would not stop: unmodified opinion, CARO clean on fraud/default/arrears. Open: CARO vii(b) INR M 8,022.1 vs Note 39 INR M 4,575.9; CARO ii(b) vs Notice; single unchanged KAM"
+  - "p2: informational only. No impairment/covenant/default signal. Open: unsecured INR M 4,500.0 group loan; Note 26 slump-sale label; contingent-liability gap"
+  - "p3: informational only. Reviewer would ask whether FY27 can repeat margin and cash without the INR M 1,016.6 reversal and the INR M 5,136.0 receivable release"
+  - "p4: informational only. Omissions are filled by the Notice and notes; do not rely on the MD&A"
+  - "p5: informational only. Procedural governance flags; no pledge or selling pattern found"
+triple_pass_verification:
+  verified: 15
+  discrepancies:
+    - {finding_rank: 2, triple_pass_value: "55.3% of profit step-up", ar_value: "55.2% (1,753.5 / 3,174.4 = 55.24%, calc)", note_ref: "Notes 28, 33; P&L p.132; rounding only"}
+    - {finding_rank: 9, triple_pass_value: "84.2% of net worth (equity 5,437.7)", ar_value: "94.8% on the AR 5-year-chart net worth INR M 4,829 (equity less capital reserve 609.0); base difference, not an error", note_ref: "Note 39 p.185; chart p.13"}
+missing_risks:
+  - {risk: "Unsecured INR M 4,500.0 demand deposit with group cash-pool header (21.4% of assets, 106% of cash)", evidence: "Note 16 p.158; CARO iii(a) p.128; balance sheet p.131"}
+  - {risk: "Single-guarantor dependence; banks require GEV majority ownership; INR M 16,000 guarantees needed", evidence: "Notice p.320, p.324"}
+  - {risk: "Order-book contraction RPO -38.9%", evidence: "Note 27 p.166"}
+  - {risk: "Customer concentration, top two 38.6%", evidence: "Note 35 p.176"}
+  - {risk: "Durgapur demerger execution and post-demerger cost of INR M 247.0 internal supply; MD&A silent", evidence: "Note 47(iii), (vi) p.194-198; Directors' Report p.28"}
+  - {risk: "One-off earnings (reversal 1,016.6; write-backs 240.9; insurance 184.2; JPVL 250)", evidence: "Notes 28, 33, 53, 54 p.167-168, p.202"}
+  - {risk: "Disputed taxes CARO INR M 8,022.1 vs Note 39 INR M 4,575.9", evidence: "CARO p.129; Note 39 p.185"}
+  - {risk: "KMP continuity: CFO/WTD and CS resigned", evidence: "Directors' Report p.25"}
+  - {risk: "Working-capital reversal: inventory +69.9%, customer advances down", evidence: "Balance sheet p.131; Note 25 p.164"}
+  - {risk: "Amount held in trust INR M 1,607.0, Supreme Court pending", evidence: "Note 24 p.163; Note 43 p.190"}
+guidance_table:
+  - {claim: "healthy order backlog", number: "RPO INR M 16,278 (1.28x revenue, calc)", timeframe: "Mar-26", credibility: "LOW-MEDIUM: -38.9% YoY"}
+  - {claim: "improving margins", number: "none stated; core 12.4% (calc) vs 1.9% FY25 same basis; reported 27.0%", timeframe: "FY26", credibility: "MEDIUM: direction true, magnitude overstated by one-offs"}
+  - {claim: "continued growth in core services; measured FGD EP not EPC", number: "none", timeframe: "FY27 onward", credibility: "NOT TESTABLE; brief's 85-90% execution and 11% margin NOT FOUND IN DOCUMENT"}
+  - {claim: "approximately 50% growth in other OEM market segment", number: "50%, base not given", timeframe: "FY26", credibility: "UNVERIFIABLE; product sales +18.9% (calc)"}
+  - {claim: "Durgapur scheme completes within 12 months of year end", number: "by 31 Mar 2027", timeframe: "12 months", credibility: "MEDIUM: shareholder, creditor, NCLT approvals pending"}
+  - {claim: "Parent guarantees needed up to INR M 16,000", number: "16,000 vs 7,977.6 used", timeframe: "to 35th AGM", credibility: "MEDIUM: peak FY26 20,432"}
+  - {claim: "cash-pool lending up to INR M 10,000", number: "10,000 vs 4,500.0 today", timeframe: "to 35th AGM", credibility: "signals 2.2x lending intent (calc)"}
+monitorables:
+  - {metric: "Core EBITDA margin ex other income and ex allowance reversal", threshold: ">=11% (brief level, unverified)", where: "Q3 FY27 results and notes", why: "tests whether FY26 12.4% is run-rate"}
+  - {metric: "RPO and order inflow", threshold: "RPO >= INR M 16,278; inflow >= revenue", where: "investor presentation, concall, AR27 Note 27", why: "revenue visibility after -38.9%"}
+  - {metric: "AGM Items 8, 9, 10 outcome and PCG covering ICD", threshold: "passed; PCG 100% of balance", where: "exchange voting results; Q3 FY27 notes", why: "closes unsecured-loan gap; outcome NOT FOUND in corpus"}
+  - {metric: "ICD balance and note treatment", threshold: "<= INR M 4,500.0 and included in financial-instrument/credit-risk notes", where: "half-year balance sheet and notes", why: "largest non-operating asset"}
+  - {metric: "CFO excluding group-deposit movements; inventory days; receivable days", threshold: "CFO >= PAT; inventory days <= 71; receivable days <= 219", where: "half-year cash flow", why: "one-time release not repeated"}
+  - {metric: "Durgapur scheme: NCLT sanction, supply price, cost of materials", threshold: "sanction by 31 Mar 2027; supply cost disclosed", where: "exchange filings", why: "post-demerger cost of INR M 247.0 supply"}
+  - {metric: "Warranty provision by head; slump-sale label", threshold: "explained; no release above INR M 299.2", where: "half-year notes", why: "Note 26 label defect"}
+  - {metric: "CARO vii(b) vs Note 39 reconciliation", threshold: "gap explained", where: "AR27", why: "INR M 3,446.2 gap"}
+  - {metric: "Permanent CFO and CS; one attrition figure", threshold: "in seat; 8.7% vs 71.11% reconciled", where: "CG filing; BRSR", why: "continuity"}
+  - {metric: "Top two customers share", threshold: "<= 38.6%", where: "AR27 Note 35", why: "concentration"}
+ar_new_downstream_entities:
+  - {name: "JSW Energy Limited", where_in_ar: "Directors' Report p.28; Note 47(iii) p.194", entity_type: "demerger counterparty (receives Durgapur; issues shares 10 for 139)"}
+  - {name: "Quality Profiles Private Limited (QPPL)", where_in_ar: "Directors' Report p.28 (L 1480-1488)", entity_type: "repairs-facility partner (Leave and License; Contract Manufacturing Agreement)"}
+  - {name: "GE Vernova (Switzerland) GmbH", where_in_ar: "Note 36 p.180", entity_type: "RPT counterparty: other income INR M 188.6 (FY25 nil)"}
+  - {name: "Monnet Power", where_in_ar: "Directors' Report p.18, MD&A p.91", entity_type: "named customer: 500 MW generator stator repair, value not stated"}
+  - {name: "Adani Kawai (Shanghai Electric SEC 660 MW turbine IP inner casing)", where_in_ar: "Directors' Report p.19", entity_type: "named first-time customer order, value not stated"}
+  - {name: "RattanIndia Power", where_in_ar: "Directors' Report p.19", entity_type: "named first-time customer: LP last-stage blades 270 MW, value not stated"}
+  - {name: "RRUVNL Kalisindh", where_in_ar: "Directors' Report p.19, p.21", entity_type: "named customer: ESP refurbishment and stator rewind, value not stated"}
+strengths_top3:
+  - "Debt-free balance sheet: cash INR M 4,244.6, current ratio 1.34, cash losses ended (p.131; CARO xvii)"
+  - "Cost-line gains: materials 67.3% to 60.2% and employee cost 18.5% to 14.5% of revenue; revenue +21.2% (p.132)"
+  - "BHEL (INR M 3,430.6) and JPVL (INR M 250) disputes closed with cash; ICRA upgrade to BBB+ (Notes 53-54; CG p.115)"
+red_flags_top3:
+  - "Profit quality: reversal 1,016.6, write-backs 240.9, group income 851.9; core margin 12.4% vs reported 27.0%"
+  - "Group dependence: unsecured INR M 4,500.0 deposit with promoter-group treasury (106% of cash), guarantee only proposed; INR M 16,000 bank guarantees from one parent"
+  - "Order book RPO -38.9% to INR M 16,278 while MD&A says healthy and omits the Durgapur demerger"
+best_fit_strategy: "Turnaround"
+one_line_verdict: "Turnaround: cash-rich parent-captive thermal services business; FY26 margin and cash flattered by one-offs and a group deposit; order book shrunk 38.9%."
+analyst_note: "Three AR-only results stage 2 could not reach. (1) The INR M 4,500.0 ICD was unsecured at 31 Mar 2026 per Note 16 header and CARO iii(a); the Notice's 'secured by PCG' reads as the proposed INR M 10,000 guarantee (Item 10), so coverage starts after the 14 Aug 2026 AGM vote (outcome not in corpus). (2) CARO vii(b) lists INR M 8,022.1 of disputed dues against Note 39's INR M 4,575.9; the gap (3,446.2) is larger than the whole contingency provision (1,901.3). (3) FY25 CFO was re-presented up INR M 593.9 when Durgapur funding moved to financing, so FY26 CFO is continuing-only. Brief's Rs 13.21 cr royalty = INR M 132.1 = AR25 original line. Brief's 85-90% / 11% FY27 guidance and the Rs 1,218 cr core backlog are NOT in the AR; INR M 1,218.6 in Note 34 is an unrelated PF-trust item."

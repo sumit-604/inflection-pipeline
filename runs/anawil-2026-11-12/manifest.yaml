@@ -1,0 +1,34 @@
+company: Anawil Wire and Engineering Ltd
+ticker: ANAWIL
+cmp: 391.0
+market_cap_cr: 977.0
+run_date: 2026-11-12
+run_type: full
+concalls_available: false   # no earnings-call transcript exists yet: the first call (H1 FY27) was held 2026-11-09 and its transcript is not filed
+sector_cap_row: "Cables / Industrial products"   # 25x, section-1b chunk 05. Resolved at stage 0 from B04 (orchestrator SECTOR CAP ROW RESOLUTION): the business-model evidence supports this row on 4 of 6 tests. step1 Step D first picked "EV charging / energy transition equipment" (28x), which B04 finds supported on end-market only and not refuted. Operator rules at the /fttcp pillar gate
+sector_cap_row_guess: "Pharma / CDMO"   # collector keyword guess only, never consumed (wrong)
+listed_date: "2026-08-10"   # NSE SME (NSE Emerge); H1 FY27 results note 10
+screener_url: "https://www.screener.in/company/ANAWIL/"   # standalone; the /consolidated/ page carries no price or financials
+remediation_cycles: 1
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+verifier_a_shadow: skipped   # .claude/shadow.yaml is armed, but sibling run kusumgar-2026-11-12 claimed the single shadow run; this run leaves the switch untouched
+collector_warnings:
+  - "BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing."
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, 544150:Profit & Loss, 544150:Quarters, 544150:Balance Sheet, 544150:Cash Flow, 544150:Customization, INOXWIND:Profit & Loss, INOXWIND:Quarters, INOXWIND:Balance Sheet, INOXWIND:Cash Flow, INOXWIND:Customization, SUZLON:Profit & Loss, SUZLON:Quarters, SUZLON:Balance Sheet, SUZLON:Cash Flow, SUZLON:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no AR found on screener: AR stages will be skipped"
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+  - "only 1 concalls -> no-concall mode"
+step1_repairs:
+  - "announcements/: company is NSE-only (no BSE scrip). 17 filings fetched from the NSE corporate-announcements API (index=sme), 2026-08-25 to 2026-11-09, plus the PDF inside the 2026-10-31 KMP resignation zip."
+  - "shareholding/: company-site pattern PDF (dated 10-08-2026 on its page; the site also posts the same file under a 31.03.2026 label) and two NSE XBRL filings (07-Aug-2026 revised, 30-Sep-2026) saved verbatim as .txt with line breaks added between tags."
+  - "results/: H1 FY27 results (Outcome of Board Meeting, 2026-11-06) fetched from NSE. Scanned; pages 2-8 OCRed."
+  - "rating/: Crisil rating rationale filed with NSE 2026-08-21 (full rationale, text PDF)."
+  - "prospectus/: final Prospectus dated 2026-08-06 and the Addendum to the RHP, from the company website."
+  - "annual-report/: NO annual report has been published (NSE annual-reports API returns none; listed 2026-08-10). The folder holds the FY2025-26 statutory audited financial statements with the auditor's report (103 scanned pages, company website), OCRed. It has no board report or MD&A."
+  - "concalls/: the collector's 'Concall_Oct_2026_Transcript.pdf' is a 4-page Outcome of Investor Meet note, not a transcript. Moved to announcements/2026-10-05_Outcome_of_the_meet.pdf. concalls/ is empty."
+  - "presentation/: H1 FY27 presentation (2026-11-08) and the listing-day presentation (2026-08-10)."
+  - "OCR: this machine has no tesseract, so tools/ocr_repair.py cannot run. Blank pages were OCRed with rapidocr-onnxruntime at 220 dpi from a scratch environment and tagged [OCR:rapidocr ...] in the page-marked .txt. OCR drops some word spaces; check load-bearing figures at the page image."
+  - "Every PDF has a page-marked .txt beside it (tools/extract_pdfs.py). Stages read the .txt."
+notes: "Step-1 intake 2026-11-12. Collected by collect_to_repo.py v3 (screener, peers) and repaired by hand from NSE and the company website. Brief: step1-business-brief.md. Standalone filer; AS (Indian GAAP), not Ind AS."

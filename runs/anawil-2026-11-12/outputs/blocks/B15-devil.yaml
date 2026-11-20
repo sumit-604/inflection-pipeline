@@ -1,0 +1,20 @@
+stage: B15-devil
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+dimensions:
+  growth_triggers: "weakened"       # survives | weakened | destroyed
+  moat_durability: "weakened"       # survives | weakened | destroyed
+  management_trust: "weakened"      # survives | weakened | destroyed
+  valuation_safety: "weakened"      # survives | weakened | destroyed
+overall: "WEAKENED BUT ALIVE"       # SURVIVES | WEAKENED BUT ALIVE | DESTROYED
+top_counters:
+  - "Mixed-world multiple: the resolution-based base declares Kutch FAILURE (p 0.40) yet prices it at 16.1x, a Pillar 1 input that passes the 4G check only with Kutch filling (FY28 ROCE 23.53%); the failure world's own Track 1 is 14.4x, entry about Rs 205 against the Rs 227 top of the zone (V 1B.9, 4G; DLB Ruling 4)"
+  - "ROCE FIRING ruled at probability above 60% on a Kutch-led basis the same operator prices at p 0.40; chunk 16 maps 20-40% to STAGNANT; base ROCE falls 26.87% to 17.72%; with slippage the base case for a timeline-miss management (A18.7), the 31-Mar-2027 falsifier is more likely to fire than not"
+  - "Single point of failure: Customer A is Rs 144.6 Cr, 36.6% of the book and 71% of Model 3 (Pres p.21); billed on time in Q4 FY27 it can alone fail the FY27 cash test (fully open at year-end it is about 128 days of FY27 revenue); slipped one quarter, FY27 EPS falls to Rs 11.93 and the forward PE to 31.9x; cancelled, the FY28 run-rate base drops 15%"
+  - "Residual demand pool: firm inflow outside two orders about zero for seven months; JSW holds the Sany licence, blade plants and plate; Suzlon, Inox and Adani make their own towers; the book ends Q1 FY28 and the LOI-free FY28 floor is 152 towers, below the 196-tower bear"
+  - "Generous bear: the record prices bear EPS Rs 8.12 at 14.9x; bear-consistent pillars give 11.1x and a coherent bear of about Rs 102.6, so upside/downside reaches 2x only at about Rs 216, and probability-weighted CAGR is 12-15% at Rs 227 and about 1% at the Rs 339 A25 starter"
+  - "Ugliness contest: the cash optic is a STRUCTURAL-FEATURE of the TO state (Model 3 puts steel and customer credit on the books; CRISIL calls 292 GCA days a business requirement; no working-capital plan); if it holds, gap CLOSED plus STRUCTURAL is AVOID and the zone does not open on price alone"
+  - "Disclosure record leans INTEGRITY: a Reg 30 no-tax-litigation statement against a filed Rs 367.25 lakh demand; Prospectus 'commenced March 2026' at Kutch against 'trial runs underway'; a cash-flow subtotal labelled EBITDA per tower; CARE 'No' on use as per the offer document"
+  - "Supply and access overhang: the one-year lock-in ends about Aug-2027 on 22.6% promoter and 5.4% pre-offer equity (pre-IPO cost Rs 101); wind ALMM covers towers and Anawil is not on the EN-182 annexure as the C&I grandfathering window closes about Jan-2027 (PENDING LIVE VERIFICATION)"

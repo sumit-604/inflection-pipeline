@@ -1,0 +1,29 @@
+stage: B12c
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+scope: "phase-1: Gate 0 (B01) and Emerging Moat (B07) only; valuation audit PENDING PHASE 3; no valuation framework doc read"
+gate0: {rules_checked: 52, fails: ["G0-06 CAGR formula: revenue CAGR stated 177.1%, recomputed 77.1% from 25.78 and 143.2669 (B01 l.74)", "G0-20 C4: stated 0 on -85.2pp, recomputed 5 on +14.8pp; Block C 15 to 20, core 61 to 66", "G0-25 'latest' read as 31-Mar-2026 for Block D and 30-Sep-2026 for E1/E3; Block D 15 on the Sep-26 basis", "G0-40 M11: stated 3, recomputed 1 under the fewer-than-6-years conservative clause; moats 2 to 1, MODERATE to THIN", "G0-51 report-embedded YAML differs from the block file and a line follows it"]}
+emoat: {rules_checked: 27, fails: ["EM-02 Meet Outcome 2026-10-05 tagged DOC; it is a management claim; no score change", "EM-10 recount text names 6 claim categories as 5; B1 documented item is the unattributed CWIP rise; count unchanged", "EM-21 R1 scored 0.7 on claim-only evidence but has no optionality register row", "EM-24 6C states core as 61 of 140; core maximum is 100; carries uncorrected Gate 0 values"]}
+valuation: {rules_checked: 0, fails: []}  # PENDING PHASE 3: B10/B11 not yet produced
+expectation_ledger: {present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}  # rules 13-14; any fail = REWORK stage 11; PENDING PHASE 3, null = not assessed
+business_understanding_narrative: {present: null, five_questions_answered: null, prose_only: null, section6_candidates_named: null, valuation_vocab_leak: null, fails: []}  # rule 9; any fail = REWORK stage 13; not in phase-1 scope, null = not assessed
+recomputed_destination_pe: ""  # PENDING PHASE 3
+recomputed_decision: ""        # concur: Gate 0 AVERAGE, EM NONE, combined AVERAGE
+recomputed_gate0: {blocks: {A: 20, B: 3, C: 20, D: 8, E: 15}, core_score: 66, moat_score: 5, grand_total: 71, moats_confirmed: 1, moat_class: "THIN", classification: "AVERAGE"}  # F1 + F2 on maker's stated inputs; FY26 Block D basis kept (15 on Sep-26 basis, core 73)
+recomputed_emoat: {em_score: 10.8, em_classification: "NONE"}  # concur
+findings:
+  - {id: F1, severity: MAJOR, framework: gate0, rule: "G0-06, G0-20", location: "01-gate0.md l.74, l.77; B01 blocks.C, core_score, grand_total, data_notes, analyst_note", stated: "revenue CAGR 177.1%; C4 -85.2pp = 0; Block C 15; core 61; grand total 68", recomputed: "revenue CAGR 77.1%; C4 +14.8pp = 5; Block C 20; core 66; grand total 73 (71 with F2)", effect: "classification unchanged AVERAGE; analyst_note 'ramp-year base wrecks C4, M1 and B4' is wrong on C4 and B4"}
+  - {id: F2, severity: MAJOR, framework: gate0, rule: "G0-40", location: "01-gate0.md l.123, l.135; B01 moat_score, moats_confirmed, moat_class", stated: "M11 3; moats 2; MODERATE; moat score 7", recomputed: "M11 1 (selling share 1.9% to 2.0% rising; fewer-than-6-years clause says score conservatively); moats 1; THIN; moat score 5", effect: "classification unchanged AVERAGE; B07 6C carries the stale MODERATE"}
+  - {id: F3, severity: MINOR, framework: gate0, rule: "G0-25", location: "01-gate0.md l.81, l.95, l.101, l.103", stated: "Block D 8 on 31-Mar-2026; E1/E3 on 30-Sep-2026", recomputed: "Block D 15 on 30-Sep-2026 (D1 4, D2 2, D3 4, D4 5); core 73 with F1", effect: "classification unchanged; if latest = Sep-26, Block D and B07 G1 credit the same IPO deleveraging; operator ruling requested"}
+  - {id: F4, severity: MINOR, framework: gate0, rule: "G0-51", location: "01-gate0.md l.106, l.157-188", stated: "embedded YAML abbreviated; text after block; truncated '1.38 crore... see note'", recomputed: "B01-gate0.yaml is the copy of record", effect: "presentational"}
+  - {id: F5, severity: MINOR, framework: gate0, rule: "G0-08 (observation)", location: "01-gate0.md l.40, l.148", stated: "No sensitivity moves it off AVERAGE", recomputed: "FY23 ROCE NOT FOUND; floor 11.88% from EBIT 9.61 / TA 80.90; Block A floor 15; recomputed core floor 61 (60 with filed CFO)", effect: "AVERAGE holds only after F1; on the maker's core 61 the floor is 56 (matrix AVERAGE, then AVOID if the downgrade runs below AVERAGE)"}
+  - {id: F6, severity: MINOR, framework: emoat, rule: "EM-21", location: "07-emoat.md l.188, l.218, l.225-234", stated: "R1 0.7 on claim-only evidence, no register row", recomputed: "add R1 register row; 0.7 is matrix-consistent", effect: "EM NONE unchanged; analyst_note path E1 to 2.0 reaches 11.4, not 12.1, without R1"}
+  - {id: F7, severity: MINOR, framework: emoat, rule: "EM-02", location: "07-emoat.md l.104, l.179", stated: "Meet Outcome 2026-10-05 tagged DOC", recomputed: "management claim", effect: "no score change; B2 DOC tier rests on Prospectus p.119-120"}
+  - {id: F8, severity: MINOR, framework: emoat, rule: "EM-10", location: "07-emoat.md l.175; B07 completionist_recount", stated: "claims 6 across 5 categories (six named); B1 documented item = CWIP rise", recomputed: "6 categories; attributable B1 documented item = Rs 0.89 Cr GCP machinery (CARE p.8)", effect: "recount stays 13 items across 7 categories; no score change"}
+  - {id: F9, severity: MINOR, framework: emoat, rule: "EM-24", location: "07-emoat.md l.261-263; B07 combined_reasoning", stated: "61 of 140 core points; grand total 68; MODERATE", recomputed: "core maximum 100; with F1 and F2 core 66, grand total 71, THIN", effect: "combined AVERAGE unchanged"}
+critical_count: 0
+major_count: 2
+minor_count: 7
+acceptance_rate: 88.6             # 70 of 79 rules passed (gate0 47/52, emoat 23/27)

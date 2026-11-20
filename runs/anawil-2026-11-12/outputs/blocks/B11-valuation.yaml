@@ -1,0 +1,89 @@
+stage: B11-valuation
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"
+status: complete
+entity: "consolidated single-entity"
+entity_count: 1
+input_gaps:
+  - "No annual report; 9-Nov-2026 call transcript not filed (named limitation, Ruling 7)"
+  - "Debt Capacity Assessment block NOT FOUND; FTTCP B7 Year 3 net debt NOT FOUND; net debt held at Rs 33.41 Cr (H1R p.7)"
+  - "Market-Implied Assumptions block NOT FOUND; recognition gap resolved from the PE gap"
+  - "Live peer table absent: Step 1C PENDING LIVE PEER TABLE"
+  - "Capex plan NOT FOUND: FCF and net debt projections NOT FOUND"
+  - "Model 3 steel clause, slice ROCE and WC NOT FOUND; A17.3 5-year median spread NOT FOUND (stand-in Rs 25.6 lakh a tower, median of printed series)"
+  - "October 2026 dispatches NOT FOUND; realistic peak utilisation and plant-wise tonnage NOT FOUND"
+  - "Industry growth anchor not on B10: wind roadmap 8/9/10/12/13.2 GW from B09, named assumption"
+  - "Live price fetched by orchestrator (stage 11 has no web tools): Rs 381, 17-Nov-2026, run-log.md Phase 3"
+  - "macro-sheet.md stale (August 2026; next refresh 1-Sep-2026)"
+  - "Numeric r table and Track 1 base definition NOT FOUND in frameworks"
+flags:
+  - {type: FLAG-CASH, reason: "Cash INDETERMINATE (operator Ruling 5). Pillar 2 multiplier applied 1.00x (operator Ruling 4; OR-5). Structural 0.65x reading gives Track 1 10.5x, Track 2 13.9x. Caps the gate verdict at PROCEED WITH CAVEATS. Missing: customer-wise ageing 31-Mar-2026 and 30-Sep-2026; Rs 30.04 Cr capital advances; revenue, cost and WC by model per half; Model 3 payment terms and steel clause; FY27 audited cash flow."}
+  - {type: FLAG-FRAMEWORK-CONFLICT, reason: "Operator Pillar 1 method (midpoint 21.61%) overrides chunk 01 FIRING rule (current 23.45%, 19.2x / 21.2x / 16.9x). Carried, approved base governs."}
+  - {type: FLAG-ROCE-PATH, reason: "Stage 11 base ROCE 21.76% FY27, 17.64% FY28, 17.72% FY29, 19.28% FY30. FY28 17.64% vs recorded 19.76% gives approved-method base 17.8x, Track 2 19.8x, Track 1 15.7x (sensitivity). Base path inconsistent with ROCE FIRING, which rests on Kutch (excluded from base by single credit)."}
+  - {type: FLAG-4G-ROCE, reason: "4G check fails: Year 3 ROCE 17.7% below the 21.61% Pillar 1 input. Year-3-consistent Track 1 14.4x shown as sensitivity; approved 16.1x kept (no silent override of the operator base)."}
+  - {type: FLAG-RECOGNITION-GAP, reason: "CLOSED. Current PE 22.0x forward (FY27 base EPS Rs 17.33) / 19.8x trailing, at or above the R3 neighbourhood (about 19x) and above both destinations. Posture: PRICED NARRATIVE (TRAP). Return rides EPS growth against a 27% de-rating to 16.1x."}
+  - {type: FLAG-HURDLE, reason: "STOP band on both tracks: Track 1 HR 1.18 (bull 1.34), Track 2 1.49 (bull 1.69), threshold 1.953, on probability-weighted EPS CAGR 17.3%. Caps no verdict (OR-2)."}
+  - {type: FLAG-STARTER-FAIL, reason: "A25 starter test fails on governing Track 1: T1 + T2 = 66.8% of CMP (below 75%); residual 16.0%. Passes at Rs 339 or lower. OR-9 open."}
+  - {type: FLAG-DISPERSION, reason: "FV range width 128.9% (Track 2 126.8%): position capped at Small."}
+  - {type: FLAG-UPDOWN, reason: "Upside/downside 0.26x on Track 1 (0.87x Track 2), below 2x."}
+  - {type: FLAG-SHARED-CATALYST, reason: "Kutch supports the ROCE FIRING label, the Pillar 3 capacity test and the p 0.4 slice; Kutch rupees counted once (slice; Track 2 slice valued at 18.3x without Pillar 3). Order book sits in base revenue and in the 3a qualifier; strict single credit would set 3a +0x, Track 2 18.3x; Track 1 unaffected. Role 3 stress test."}
+  - {type: FLAG-EXIT-HAIRCUT, reason: "EM NONE is the typical A18.0 trigger for a minus-one-turn exit haircut. Not applied: the Year 4-5 industry-growth story is evidenced (B09 roadmap; Koppal headroom). Deliberation silent. Sensitivity Track 1 15.1x, Track 2 19.3x. Operator to rule."}
+  - {type: FLAG-PRICE, reason: "CMP Rs 381 (17-Nov-2026 screener close, orchestrator fetch, run-log.md Phase 3) used; B10 Rs 391 (12-Nov-2026) shown beside."}
+  - {type: FLAG-MACRO-STALE, reason: "macro-sheet.md is the August 2026 fill; next refresh 1-Sep-2026 has passed."}
+  - {type: FLAG-DOWNSIDE-UNRULED, reason: "Ledger D1-D3 probabilities (0.35 / 0.30 / 0.90) are Claude Code proposals, not operator rulings."}
+  - {type: FLAG-GATE0, reason: "Carried: Gate 0 AVERAGE, core 66, grand 71, moat THIN (B01)."}
+  - {type: FLAG-KUTCH-CONTRADICTION, reason: "Carried: Pros p.232 'commenced March 2026, 16 towers' vs PR 2026-11-06 p.3 'trial runs underway'."}
+  - {type: FLAG-PROVISIONAL, reason: "Carried: card provisional on cash INDETERMINATE, steel clause NOT FOUND, slice ROCE/WC NOT FOUND, r table NOT FOUND, Darpan check pending."}
+framework_versions: "Master v3.7 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10 / FTTCP v2.3"
+pe_basis: "forward"   # entry FY27 EPS; exit year FY29, exit EPS FY30 (Amendment 18.1; operator Ruling 1)
+exit_pe_base_approved: "Pillar 1 base 18.3x (ROCE input 21.61%) x Pillar 2 1.00x + Pillar 3 +2x + strategic 0 = 20.3x Track 2 (18.8x-21.8x); Track 1 RRM r 14.5% = 16.1x (14.9x-17.3x; 17.2x on r 14.0%); Track 1 sets entry zone (OR-1); sector cap 25x not binding. Deliberation Ruling 4, SIGNED OFF 2026-11-17."
+destination_pe:
+  track1_rrm: {low: 14.9, mid: 16.1, high: 17.3, r_used: 14.5, rrm: 0.88}
+  track2_additive: {low: 18.8, mid: 20.3, high: 21.8}
+  divergence_pct: 26
+  governing_track: "Track 1 (RRM): the more conservative track sets the entry zone (OR-1 as written, operator Ruling 4); it also fits best, carrying no Pillar 3 paid twice for the order book and sitting in the R2 converter neighbourhood the business occupies on evidence"
+pillar_detail:
+  roce_used: 21.61
+  roce_base: 18.3
+  roce_recovery_route: "pillar1-midpoint"
+  pillar1_normalization_route: "none"
+  cash_multiplier: 1.00
+  structural_or_growth: "INDETERMINATE (operator Ruling 5); 1.00x volatile-band neutral as approved (equal to growth-induced 0.80 + 0.20); structural 0.65x shown"
+  growth_offset: 0
+  growth_premium: 2
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 25
+hurdle_ratio: {base: 1.18, bull_used: false, verdict: "STOP"}   # Track 1; bull row = base + 5 pp (grade C) gives 1.34; Track 2 1.49 / 1.69; caps no verdict
+run_rate_base:
+  basis: "full-year FY27 forward scenario (seasonal half-yearly filer; operator Ruling 1; neither single-quarter-annualised nor trailing-4q)"
+  pat_run_rate_cr: 43.33
+  one_offs_adjusted: "Other income Rs 0.22 Cr stripped (operating earnings, FTTCP B4); Section 115BAB back-tax about Rs 5.2 Cr for FY24-FY26 kept out of earnings (D1, bear equity bridge); H1 not annualised; H2 at the HD V5 JSW-lag reading with JSW pull carried as T3"
+  annual_model_divergence_pct: -9.9   # vs TTM PAT Rs 48.09 Cr; +20.5% vs FY26 audited Rs 35.95 Cr (floor)
+price_decomposition:
+  t1_confirmed: {rs_cr: 697.6, rs_per_share: 279.0, pct_cmp: 73.2}
+  t2_high_prob: {rs_cr: -60.9, rs_per_share: -24.4, pct_cmp: -6.4}
+  t3_speculative: {rs_cr: 163.1, rs_per_share: 65.2, pct_cmp: 17.1}
+  residual: {rs_cr: 152.8, rs_per_share: 61.1, pct_cmp: 16.0}
+  step1c_peer_base_crosscheck: "PENDING LIVE PEER TABLE (relative would govern only if adjusted peer base exceeds 23.0x, capped 25x)"
+  governing_multiple: "pillar (Track 1 16.1x, operator-approved)"
+fair_values:   # Year 3 (exit end FY29 on FY30 EPS), triangulated P/E 70% / EV-EBITDA 30%, resolution-based slices; today governing FV Rs 313.8 (Track 2 Rs 391.2)
+  track1: {bear: 139.5, base: 443.3, bull: 710.7}
+  track2: {bear: 178.1, base: 556.6, bull: 883.6}
+expected_cagr_prob_weighted: 17.3   # probability-weighted EPS CAGR on the A21 base (Hurdle input, wrapper rule); 4D expected price CAGR at Rs 381: Track 1 -3.0%, Track 2 4.7%
+entry_range: {low: 202, high: 227}   # Track 1: 30% CAGR price to 25% hurdle price; FV CAGR 12.3% HYBRID
+mos_price: 159   # reference only (mixed evidence 30%); A25 fast-growth: margin of safety is position size, not a price haircut
+upside_downside_ratio: 0.26
+decision: "WATCHLIST (on valuation): hard watch, no position. CMP Rs 381 is 21% above today's governing FV Rs 313.8 and 68% above the Track 1 entry zone Rs 202-227; A25 starter test met only at Rs 339 or lower; recognition gap CLOSED, posture PRICED NARRATIVE (TRAP). Decision stays with the operator."
+unresolved_inputs_used:
+  - {field: "cash structural vs growth-induced", assumption: "1.00x (operator Ruling 4; OR-5)", readings: "structural 0.65x -> Track 1 10.5x / growth-induced 0.80+0.20 = 1.00x -> 16.1x", separating_observation: "FY27 CFO at or above 70% of EBITDA with receivables under 60 days and inventory under 90 days, vs below 50%", confirm_by: "FY27 audited statements, about Sep-2027"}
+  - {field: "Darpan r adjustment", assumption: "r 14.5% (operator Ruling 4)", readings: "14.5% -> 16.1x / 14.0% -> 17.2x", separating_observation: "Claude web Darpan check (Ruling 7)", confirm_by: "before /finalize"}
+  - {field: "numeric r table and Track 1 base definition", assumption: "RRM on quality-adjusted base, governance adj 0 (repo precedent; operator r)", readings: "as used / non-zero governance adjustment for promoter CAUTION", separating_observation: "operator ruling", confirm_by: "open"}
+  - {field: "peer medians / live peer table", assumption: "pillar destination governs (Correction 6)", readings: "pillar governs / relative governs if adjusted peer base above 23.0x (cap 25x)", separating_observation: "Claude web Step 1C table", confirm_by: "before /finalize"}
+  - {field: "Model 3 steel clause and slice ROCE/WC", assumption: "CONVERTER (OR-6)", readings: "converter 18.3x base / non-converter 26.79% -> 20.9x base, Track 1 18.4x", separating_observation: "9-Nov-2026 transcript or IR reply (tracker row 5)", confirm_by: "when the transcript is filed"}
+  - {field: "guided margin band", assumption: "EBITDA per tower Rs 33.72 lakh (H1 FY27)", readings: "per-tower holds / falls toward Rs 29 lakh", separating_observation: "H2 FY27 revenue and cost by model", confirm_by: "about May-2027"}
+  - {field: "October 2026 dispatches (FY28 book left)", assumption: "bear floor 196 towers (no estimate needed)", readings: "196 / higher if October dispatches sat outside the 31-Oct book", separating_observation: "H2 FY27 deck tower count", confirm_by: "about May-2027"}
+som_cagr_crosscheck: "consistent: base revenue CAGR 37.4% FY26-FY29 and 27.9% FY26-FY31 sit below SOM-implied 49.3% (yr3) and 35.1% (yr5)"
+one_line_thesis: "Not buying ANAWIL at Rs 381: base EPS grows from Rs 17.33 (FY27) to Rs 26.16 (FY30) on order-book then industry-paced tower volume, at a Track 1 destination PE of 16.1x (ROCE 21.61%, cash 1.00x, EM 10.8, cap 25x) = Rs 443 Year-3 target = 5.2% CAGR; the price already sits above the destination. Key risk: no order book beyond Q1 FY28 and towers lost to OEMs that build their own. Cash quality: INDETERMINATE."

@@ -1,0 +1,38 @@
+stage: B12b
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 25
+caught: 12
+partially_caught: 10
+missed:
+  - {severity: "MINOR", item: "CS and Compliance Officer resignation: letter dated 2026-10-01 ('personal reasons') disclosed 2026-10-31; filing body says 'pre-occupation', Annexure-I says 'to pursue career opportunities outside the organization'; letter 52 days after listing", anchor: "Ann 2026-10-31 KMP letter p.1; Ann 2026-10-31 NSE intimation p.1, p.3; Ann 2026-11-03 p.1-3"}
+  - {severity: "MINOR", item: "Investor-meet intimations promise no forward-looking statement; the 2026-10-05 outcome note publishes forward-looking margin and EBITDA-per-tower statements", anchor: "Ann 2026-09-21 p.1; Ann 2026-09-24 p.1; Ann 2026-10-05 p.2"}
+  - {severity: "MINOR", item: "Order-book line '4XM, 12, Rs 0.6 Cr' (Customer H) matches Inox's 4X platform; [INFERENCE] Inox may be a small existing customer that is building its own South India tower plant", anchor: "Pres p.21; INOX Q1FY27 p.4; INOX Q2FY26 p.4"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
+credibility_grade_concur: "concur: C holds on the delivery record (re-scored 3 delivered, 2 partial, 1 missed) but sits at its floor; the under-weighted Kutch contradiction, CARE deviation versus results note 10, the tax-litigation statement and the 81% slip of Dec-2026-due towers point to D if the H1 transcript or H2 print confirms them"
+findings:
+  - {severity: "MAJOR", location: "B05 2A row 4; promise_delivery row 4; peer_questions item 5", finding: "Kutch promise scored Partial; evidence reads MISSED or REGRESSED. B05 did not use the prospectus statement that Kutch supplied 16 towers (Rs 877.74 lakh) in March 2026 or the 4,822.20 MT March output, so it missed the cross-filing contradiction with 'nearing completion, trial runs underway'", evidence: "Pros p.232; List p.9; PR(11-06) p.3; Pres p.18, p.23"}
+  - {severity: "MAJOR", location: "B05 2A row 1; promise_delivery row 1", finding: "CARE 'Deviation: Yes' scored Delivered and mis-described as machinery mixed with debt repayment; omits 'all utilisation as per offer document: No', Rs 2 Cr of the debt object to working-capital borrowings, Rs 0.04 Cr excess transferred to the promoter selling shareholder, and the clash with results note 10", evidence: "MA p.3, p.4, p.6; H1 p.5-6; Pros p.6"}
+  - {severity: "MAJOR", location: "B05 2A row 5; timeline_slippages", finding: "Order-book slip under-weighted: by product-description match at least 182 of 225 towers (81%) due by 2026-12-31 remain open at 2026-10-31 and one tower is past its 2026-09-30 date; 'cannot separate old from new' does not hold", evidence: "Pros p.114; Pres p.18, p.21"}
+  - {severity: "MINOR", location: "B05 2A reproduction check; FLAG-METRIC-REFRAME; input_gaps", finding: "Overstated: Rs 32.82 lakh reproduces exactly as cash-flow operating profit before working-capital changes 3,511.65 lakh / 107 towers (FY26 base 6,001.21 / 210 = 28.58 lakh, +14.8%); withdraw 'implies 109.9 towers'; the defect is the EBITDA label, Rs 0.97 Cr below reported EBITDA of Rs 36.08 Cr", evidence: "H1 p.8; PR(11-06) p.2"}
+  - {severity: "MINOR", location: "B05 FLAG-FIRST-GUIDANCE", finding: "Overstated: first guidance issued with a results print is routine; no signal beyond FLAG-GUIDANCE-TOWERS", evidence: "PR(11-06) p.2; B05 2A"}
+  - {severity: "MINOR", location: "B06 FLAG-WC-ABOVE-PEERS", finding: "Overstated: CRISIL gross current asset days (292) compared with peer net cycles; Anawil net working capital about 178 days at Mar-26 (derived), inside the 86-210 day peer range", evidence: "CRISIL p.2; INOX Q3FY26 p.7; H1 p.4, p.7"}
+  - {severity: "MINOR", location: "B06 Q3, Q9, flags, coverage map", finding: "Anchor error: Inox South India tower plant quote is on INOX Q2FY26 [page 4], not [page 3]", evidence: "INOXWIND-Concall_Nov_2025 file lines 107-111"}
+  - {severity: "MINOR", location: "B05 (absent)", finding: "Missed CS and Compliance Officer exit with three reasons and a 30-day letter-to-disclosure gap", evidence: "Ann 2026-10-31 letter p.1; Ann 2026-10-31 p.1, p.3"}
+  - {severity: "MINOR", location: "B05 (absent)", finding: "Missed: no-forward-looking-statement undertaking followed by forward-looking margin statements", evidence: "Ann 2026-09-21 p.1; Ann 2026-09-24 p.1; Ann 2026-10-05 p.2"}
+  - {severity: "MINOR", location: "B06 (absent)", finding: "Missed: '4XM' order-book line likely ties Inox as a small customer that is insourcing towers [INFERENCE]", evidence: "Pres p.21; INOX Q1FY27 p.4"}
+  - {severity: "MINOR", location: "B05 1C LOI row; 2A row 2", finding: "Under-weighted: Q1 FY27 LOI absent from prospectus post-balance-sheet events, then used to market the listing four days later", evidence: "Pros p.236-237; List p.2, p.8; CRISIL p.1"}
+  - {severity: "MINOR", location: "B05 2A row 5", finding: "Under-weighted: derived inflow of 48 towers equals the two announced orders (38 + 10), so firm inflow outside them is about zero for seven months", evidence: "Pros p.114; Order(09-10) p.2; Ann 2026-10-29 p.2; Pres p.21"}
+  - {severity: "MINOR", location: "B05 2C consistency; 3D", finding: "Under-weighted: deck placeholder 'Text', ROE 57% vs RONW 40.92% unlabelled, counterparty names withheld on the two orders that make 48.6% of the book", evidence: "Pres p.7, p.21, p.25; List p.15; Order(09-10) p.2; Ann 2026-10-29 p.2"}
+  - {severity: "MINOR", location: "B06 2B", finding: "Under-weighted: Suzlon FY27 EBITDA guidance cut from about 17% to 15% plus 1% on mix not named", evidence: "SUZ Q2FY27 p.9-10"}
+  - {severity: "MINOR", location: "B05 2A, 2C", finding: "Under-weighted: no sequential comparison (H2 FY26 to H1 FY27 PAT down 57%; EBITDA per tower 34.5 to 33.7 lakh on P&L basis); YoY is the seasonally fair basis, so completeness only", evidence: "H1 p.4; Pres p.18"}
+critical_count: 0
+major_count: 3
+minor_count: 12
+material_found: 7
+material_caught: 7
+acceptance_rate: 100
+coverage_basis: "7 material (0 CRITICAL, 7 MAJOR) of 25 listed; 4 caught, 3 partially caught (counted as caught: the pipeline already had them; weighting disputed in 3 MAJOR findings), 0 material missed; 3 MINOR missed. Strict caught-only reading would be 4 of 7 (57%)."

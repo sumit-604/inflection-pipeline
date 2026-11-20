@@ -1,0 +1,49 @@
+stage: B01-gate0
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Screener P&L, Quarters, Balance Sheet, Cash Flow sheets ABSENT (only Data_Sheet populated). FY23 comes from Data_Sheet only: no FY23 current liabilities, payables, capex line, CFO detail, ROCE. FY23 ROCE untested range: at least 11.88% for any current-liabilities value (see data_notes)."
+  - "Audited FY2025-26 statements (inputs/annual-report/, OCR text on all 103 pages) read for the FY26 cash flow (AFS p.15) only. Scored P&L, balance sheet and FY24-FY25 on the Prospectus restated statements (INR lakh)."
+  - "No annual report, no concall transcript, no research notes (B00 gaps carried)."
+  - "Peer data NOT used: no listed pure-play tubular tower peer; M2, M5, M9 scored 0 PEER DATA NEEDED."
+  - "Promoter holding at 31-Mar-2026 (pre-offer) not extracted this run: NOT FOUND. E1 and E3 use the 30-Sep-2026 XBRL."
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE (GOOD one tier down for LIMITED 4-year history). Depressors: Block B 3/20 (FY26 capex Rs 93.05 Cr, CFO/PAT 0.50 in FY26, WC days 68 to 109 FY24-FY26, Rs 50.0 Cr short-term loans and advances), Block D 8/20 on FY26 pre-IPO leverage (repaid after year end), E2 0 from IPO dilution 100% to 65.26%, M1 0 from FY23 ramp-year margin base."}
+  - {type: FLAG-CASH, reason: "FY26 operating cash flow prints Rs 18.44 Cr (Prospectus restated, Annexure III p.174) and Rs 12.47 Cr (audited statements p.15, H1 FY27 results p.8). Stage 2 (02-notes.md) settles this as a classification difference; capex items sit in operating both ways. Gate 0 scores restated 18.44; on audited 12.47 cumulative CFO/PAT is 0.48, B1 falls 1 to 0 and deal-breaker 4 (<0.50) triggers. Classification is AVERAGE on either basis."}
+  - {type: OPERATOR-RULING-NEEDED, reason: "Meaning of 'latest' across Block D. Headline uses 31-Mar-2026 (same year as Blocks A to C). Sep-26 post-IPO balance sheet gives D 15 and core 73. If ruled Sep-26, Block D and the Emerging Moat G1 deleveraging row credit the same IPO repayment; stage 11 must take it through one mechanism only."}
+data_years: 4
+fy_range: "FY23 to FY26"
+blocks: {A: 20, B: 3, C: 20, D: 8, E: 15}
+core_score: 66
+moat_score: 5
+grand_total: 71
+moats_confirmed: 1
+moat_class: "THIN"
+classification: "AVERAGE"
+deal_breakers:
+  - "DB2: Block B 3 < 8, max GOOD (driven by FY26: capex Rs 93.05 Cr, FCF -74.61 Cr, B3 0, B4 0 from WC days +41.4 FY24 to FY26)"
+  - "DB4 CONDITIONAL: not triggered on restated CFO (0.58); triggers at 0.48 if audited FY26 CFO Rs 12.47 Cr (AFS p.15) governs (max AVERAGE)"
+history_downgrade: true
+data_notes:
+  - "Data available: 4 years (FY23 to FY26). Scoring adapted to 4-year history. Confidence LIMITED, one tier downgrade applied: GOOD to AVERAGE."
+  - "Basis: FY24-FY26 from Prospectus restated statements (INR lakh converted to Rs Cr by /100, shown in anchors); FY23 from screener Data_Sheet (Rs Cr). Restated PAT FY24/25/26 = 4.39/12.31/36.63 Cr; originally audited PAT = 3.34/13.98/35.95 Cr (Prospectus Annexure V p.187). Screener matches restated."
+  - "LATEST-BASIS RULE: Blocks A to D and E4 run on 31-Mar-2026 year-end. E1 and E3 use the 30-Sep-2026 shareholding pattern because the rule text says 'latest quarter' and a shareholding pattern has no audit year. Sensitivity: Block D on 30-Sep-2026 (unaudited, post-IPO) = 15, core 73. E1 and E3 score 5 on 65.26% and 0% pledge; Mar-2026 pre-offer holding NOT FOUND. Operator ruling needed on 'latest' (see flags)."
+  - "ROCE computed (screener Data_Sheet carries none): EBIT = PBT + finance cost, over (Total Assets - Current Liabilities) at year end. FY24 16.39%, FY25 26.25%, FY26 26.79%. FY23 NOT FOUND (no current liabilities). Median of 3 years."
+  - "FY23 ROCE sensitivity: FY23 EBIT 9.61 Cr (6.28+3.33, SC) over total assets 80.90 Cr (SC) gives at least 11.88% for any current-liabilities value. Block A over all FY23 values runs 15 to 20 (floor 15 at 11.88-11.99% via A2=1, or above 31.8% via A4=0). Core floor 61, or 60 with audited CFO. Classification AVERAGE throughout."
+  - "ROE FY23 uses closing net worth only (no opening). Median of 4 years 29.2%."
+  - "CFO basis per score: B1, B2, B3, B4 and block_b_trend use RESTATED CFO and capex (Prospectus p.174; screener agrees). Sensitivity on AUDITED FY26 CFO 12.467 (AFS p.15, 1,246.69 lakh; H1 results p.8 prints 1,246.70) gives B1 0.482 = 0, Block B 2, DB4 triggers. Stage 2 (02-notes.md) finds the 18.44 vs 12.47 gap is a classification difference (capex advance and capital creditors sit in operating cash both ways), not an error; its capex-neutral CFO range is Rs 28.1 to 31.1 Cr."
+  - "FY23 capex NOT FOUND; FY23 CFO is -2.81 so FY23 FCF is negative whatever the capex. B2 counts 2 of 4 years FCF-positive; B3 negative."
+  - "WC days FY23 NOT FOUND (no payables). B4 compares FY26 109.5 with FY24 68.1 (earliest computable): +41.4 days. Revenue basis used (COGS not used). FY25 peak 132.3. FY23 is not used in B4."
+  - "CAGR window FY23 to FY26 (3 years) starts from a ramp year (production began Dec 2022): revenue CAGR 77.1% ((143.2669/25.78)^(1/3)-1), PAT CAGR 91.9% ((36.6283/5.18)^(1/3)-1). C4 = +14.8pp scores 5. FY23 PAT 5.18 exceeds FY24 PAT 4.39 (PAT fell once). No loss-to-profit swing."
+  - "D block scored on FY26 year-end (pre-IPO). Sensitivity on 30-Sep-2026 interim (unaudited, post-IPO, Rs 115 Cr debt repaid): D1 0.38x LTM = 4, D2 4.44x H1 = 2, D3 0.15 = 4, D4 2.02 = 5, D = 15, core 73, GOOD then AVERAGE."
+  - "E2: 3-year promoter change derived, not filed: promoters held ~100% at Mar 2024 (arithmetic from Prospectus pp.64-65 and p.213; 96,50,000 shares), 65.26% at 30-Sep-2026 (NSE XBRL; Prospectus p.68). Decline is IPO dilution, the 13.8 lakh share pre-IPO placement (Prospectus p.213) and 7.2 lakh promoter sale in Sept 2025. Scored 0 by rule."
+  - "E4: contingent liabilities Rs 0.00 at 31-Mar-2026 (FY25 and FY24 Rs 2.27 Cr income tax demand) over net worth Rs 89.51 Cr = 0%."
+  - "PEER DATA NEEDED: M2, M5, M9 scored 0. M6 R&D NOT FOUND scored 0. M7 no regulated segment evidenced, 0. M8 no distribution network, 0."
+  - "M1 uses FY23 base: EBITDA margin 49.7% (FY23) to 42.6% (FY26), -7.1pp scores 0. On FY24 base (41.1%) it is +1.5pp = 3. H1 FY27 EBITDA margin 23.4% (Rs 36.08 Cr on Rs 153.97 Cr), computed from the filed H1 results."
+  - "M11 scored 1 under the fewer-than-6-years 'score conservatively' clause: revenue CAGR 77.1% (>15%) but selling and admin share rises 1.9% (FY23) to 2.0% (FY26), tier 'growth >15% but selling % rising'. Reading the 0.1pp rise as stable gives 3; the clause governs because the two-window test cannot run. It is a growth artefact, not a network effect. On 3: moats 2, MODERATE, moat score 7, core 66 + MODERATE = GOOD, then AVERAGE. Classification unchanged."
+  - "Unit trap handled: results, Prospectus and audited statements in INR lakh, presentation and screener in Rs Cr."
+  - "Short-term loans and advances Rs 50.02 Cr at Mar 2026: vendor advances 30.63, GST receivable 18.79, employees 0.37, prepaids 0.23 (Prospectus Annexure P). No loans to promoters or related parties (Annexure K/P notes)."
+block_b_trend: "deteriorating: CFO/PAT 2.03 (FY24) to 0.79 (FY25) to 0.50 (FY26); FCF +2.10 to +2.51 to -74.61 Cr. H1 FY27 CFO Rs 28.28 Cr vs PAT Rs 14.39 Cr rests on an Rs 18.38 Cr inventory release and an Rs 20.90 Cr payables fall."
+analyst_note: "Grand total 71 of 160 (core 66 of 100, moat 5 of 60) reads weaker than the business ROCE (26.8%) and ROE suggest. Three things drive it: a FY26 cash year (Rs 93 Cr capex, Rs 50 Cr advances and GST receivable, WC days 109) that zeroes B3 and B4; a pre-IPO year-end balance sheet that scores Block D 8 (15 on Sep-26, after Rs 115 Cr debt repaid); and a four-year history that forces a one-tier downgrade. The FY23 ramp base hurts only M1 and E2 style comparisons; C4 is positive (PAT 7.07x against revenue 5.56x). FY26 CFO prints Rs 18.44 Cr restated and Rs 12.47 Cr audited; stage 2 calls the gap a classification difference. It decides whether deal-breaker 4 fires. Classification is AVERAGE in every sensitivity run. Operator should rule what 'latest' means for Block D."

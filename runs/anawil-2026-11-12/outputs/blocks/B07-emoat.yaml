@@ -1,0 +1,45 @@
+stage: B07-emoat
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "NO-CONCALL MODE: no transcript on file (H1 FY27 call held 2026-11-09, transcript not filed). F2 run on dated capex and order statements, not a promise-delivery record. FY27 guidance first appears 2026-11-06, so guidance delivery is NOT TESTABLE."
+  - "No annual report exists (listed 2026-08-10). Prospectus, H1 FY27 results, two presentations, CARE report and CRISIL rationale used. FY25-26 audited statements OCR partly blank, used as cross-check only."
+  - "Peer data absent: no listed pure-play tower maker; A1 rarity, I1 leg (b) and I2 competitor sacrifice cannot be tested against peers."
+  - "Not named in any document: project held in CWIP of Rs 30.69 Cr at 2026-09-30; plant-wise tower count for H1 FY27; capacity and cost of the Koppal internals plant; holder of Rs 50.0 Cr short-term advances."
+flags:
+  - {type: FLAG-KUTCH-STATUS, reason: "Kutch described as commercial operation (Prospectus 2026-08-06), as awaiting client approval and certification (2026-10-05 meet note), and as nearing completion with trial runs (2026-11-06 release). Gujarat revenue Rs 3.23 Cr, 2.1% of H1 FY27, vs Rs 8.78 Cr from 16 towers in March 2026."}
+  - {type: FLAG-ORDERBOOK-BASIS, reason: "Oct-31 book lists the 10-tower Envision order at Rs 58.3 Cr, the GST-inclusive figure (Rs 58,32,42,345). Ex 5% GST (rate from 10-Sep order) it is Rs 55.5 Cr; book overstated by about Rs 2.8 Cr if meant ex-GST."}
+  - {type: FLAG-GUIDANCE-ARITHMETIC, reason: "FY27 guidance Rs 450-500 Cr needs H2 revenue Rs 296-346 Cr, 2.9x to 3.4x H2 FY26 (Rs 101.90 Cr), and H2 PAT margin 13.2-13.7% vs 9.3% in H1. Implied H2 share 66-69% is below the stated 70-80% seasonality."}
+  - {type: FLAG-CARE-FORM, reason: "CARE monitoring report page 3 box reads Deviation from objects: Yes (range N/A) while its body reports no material deviation; Rs 0.89 Cr GCP machinery spend verified on declaration and CA certificate only, funds comingled in CC account."}
+  - {type: FLAG-CONCENTRATION, reason: "Largest customer 22.70% to 29.32% of revenue (FY25 to FY26); Customer A 36.6% of Oct-26 book; Karnataka 97.9% of H1 FY27 revenue vs 93.87% FY26; no long-term customer agreements (Prospectus p.24)."}
+em_score: 10.8
+em_classification: "NONE"
+active_categories:
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "DOC", time_to_materialise: "Already visible; Kutch ramp and H2 delivery untested"}
+  - {id: "G1", name: "War chest", strength: "Moderate", evidence_type: "DOC", time_to_materialise: "Already visible; CFO gap Rs 12.47 vs 18.44 Cr unresolved"}
+evidence_mix: {documented: 13, claim: 6, inference: 6}
+completionist_recount: "📄 recount performed: 13 documented items across 7 categories (G1 3, F2 4, C2 2, B1 1, B2 1, C1 1, E1 1); 8 of 23 rows scored, below the 12-category trigger; I1/I2 contribute 0.0."
+catalysts_12m:
+  - {catalyst: "Q3 FY27 results: H2 delivery against Rs 296-346 Cr need and Gujarat (Kutch) revenue line", window: "Feb 2027", evidence_type: "CLAIM (guidance) with DOC order book", anchor: "Press Release 2026-11-06 p.2-3; H1 Pres. slide 20-22 (Rs Cr)"}
+  - {catalyst: "Kutch client approval and certification, end of trial runs", window: "Next 1-2 quarters", evidence_type: "CLAIM", anchor: "Meet Outcome 2026-10-05 p.2; Press Release 2026-11-06 p.3"}
+  - {catalyst: "Execution of Rs 133.98 Cr, 38-tower order (EN-156/3.3 MW, Andhra Pradesh FDRE)", window: "By Q4 FY27 (Mar 2027)", evidence_type: "DOC", anchor: "Press Release 2026-09-10 p.2 (Rs Cr)"}
+  - {catalyst: "Conversion of LOIs of Rs 44.05 Cr (44 towers) and book execution to Q1 FY28", window: "Q3 FY27 to Q1 FY28", evidence_type: "CLAIM", anchor: "H1 Pres. slide 7, 20 (Rs Cr)"}
+  - {catalyst: "H1 FY27 earnings-call transcript filing (call held 2026-11-09)", window: "Weeks, from 2026-11-12", evidence_type: "DOC when filed", anchor: "Recording cover letter 2026-11-09"}
+capex_embedded_growth_pct: 22.5
+optionality_register:
+  - {optionality: "Kutch fills toward 192 towers p.a.", converting_evidence: "Client approval and certification received; plant-wise tower count and revenue disclosed", first_appears: "Q3 FY27 results release and state-wise revenue line", window: "1-2 quarters"}
+  - {optionality: "Koppal internals plant lifts EBITDA per tower", converting_evidence: "Disclosed capex, installed capacity and internals share of cost", first_appears: "Q3/Q4 FY27 presentation; first annual report note", window: "2-4 quarters"}
+  - {optionality: "Customer base diversifies", converting_evidence: "Top-5 share below 70%, largest customer below 25%, a ninth named customer", first_appears: "FY27 annual report customer note; Q4 results presentation", window: "12 months"}
+  - {optionality: "Multi-year framework or sole-source terms with an OEM", converting_evidence: "Signed multi-year supply agreement or rate contract under Reg 30", first_appears: "Exchange filing; first concall transcript", window: "12-24 months"}
+  - {optionality: "Scarcity of qualified tower makers (A1 claim in Prospectus)", converting_evidence: "Independent count of OEM-approved fabricators and capacity", first_appears: "Stage 9 industry research; OEM filings", window: "Not time-bound"}
+  - {optionality: "Model 3 working capital normalises", converting_evidence: "WC days toward 68 and CFO/PAT above 0.8 on audited statement", first_appears: "FY27 annual report cash flow; Q3 FY27 balance sheet", window: "2-4 quarters"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (68 of 160) plus EM NONE (10.8): the step-up is filed and the build was on time, but no non-copyable barrier is visible, so the ramp thesis rests on utilisation and mix and carries its risk in position size."
+top_moat_risks:
+  - "No non-copyable barrier: margin depends on tight tower capacity that rivals can add"
+  - "Kutch ramp behind its label: 2.1% of H1 revenue, approvals pending"
+  - "Customer concentration: largest customer 29.32% of FY26 revenue and 36.6% of the Oct-26 book, no long-term agreements"
+  - "H2 guidance arithmetic needs 2.9x to 3.4x of H2 FY26 revenue"
+analyst_note: "Score 10.8 sits 1.2 below the MODEST band, so the first Kutch evidence (approval, plant-wise towers) decides the class: E1 moving from 0.7 to 2.0 reaches 12.1. G1 credits the post-IPO balance sheet, which Gate 0 scored only as a sensitivity (Block D 8 at FY26, 15 at Sep-26), so there is no double credit. G1 still rests on a CFO that prints Rs 12.47 or Rs 18.44 Cr for FY26. Tower count 107 vs 108 is two growth rates (72.6% and 74.2%), each internally consistent; EBITDA per tower Rs 32.82 lakh excludes about Rs 1 Cr of non-tower EBITDA (inference). Order roll-forward ties within Rs 0.3 Cr only if the Rs 58.3 Cr order is taken ex-GST at 5%. The low EM score does not falsify the utilisation-and-mix thesis; it says no barrier sits behind it."

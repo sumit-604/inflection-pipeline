@@ -1,0 +1,517 @@
+stage: B00-inputs
+company: ANAWIL
+company_name: Anawil Wire and Engineering Ltd
+run_date: 2026-11-12
+model: orchestrator session model (stage 0 inline); identity rows from stage-00-intake-check (claude-haiku-5-5)
+status: complete
+spear: "Spear: OVERRIDE 2026-11-12 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+load_bearing_facts:      # first verification priority for every stage; from step1-business-brief.md (COMPANY MEMORY, not anchored)
+  - "Guidance vs delivery: FY27 guidance revenue Rs 450-500 Cr, PAT Rs 55-60 Cr; H1 FY27 delivered Rs 153.97 Cr and Rs 14.39 Cr. Verify against the filed H1 results; test H2 against the Rs 395.58 Cr order book and its Q1 FY28 execution date."
+  - "Margin mix: EBITDA margin 42.7% (FY26) to 23.4% (H1 FY27) with Model 3 integrated supply at 64.3% of revenue. Verify per-tower economics of the three models and the tower count (107 in the press release, 108 in the presentation)."
+  - "Cash conversion: FY26 operating cash flow prints as Rs 12.5 Cr and as Rs 18 Cr in the same presentation, against PAT Rs 36.0 Cr. Short-term loans and advances Rs 50.0 Cr at Mar 2026. Verify against the audited statements; name who holds the advances."
+  - "Concentration and IPO money: largest customer 29% of FY26 revenue; Customer A 36.6% of the order book; Karnataka 93.9% of revenue. Rs 142.56 Cr of IPO proceeds used by 30 Sep 2026. Verify against the prospectus objects and related-party disclosures."
+sector_cap_row: "Cables / Industrial products"
+sector_cap: "25x"
+sector_cap_evidence: "Resolved from B04 (outputs/reports/04-bizmodel.md): the business-model evidence supports Cables / Industrial products (25x) on 4 of 6 tests; EV charging / energy transition equipment (28x), the step1 Step D first pick, is supported on end-market demand only and is not refuted. Separating observation per B04: conversion fee per tower at the next Sany or Envision re-bid against Rs 58.7 lakh. Cap table: .claude/skills/section-1b/references/05-sector-cap.md. No exit multiple is chosen here; the operator rules the row at the /fttcp pillar gate."
+reporting_units:
+  results: "INR lakh (face of H1 FY27 results, pages 4, 7, 8)"
+  prospectus: "INR lakh (Prospectus convention note, page 14)"
+  audited_financial_statements: "read off the face of each statement (OCR text)"
+  presentation: "INR Cr"
+  press_release: "INR Cr"
+  rating: "INR crore"
+  screener: "INR Cr"
+accounting_framework: "Accounting Standards (AS / Indian GAAP), not Ind AS; SME exemption (H1 FY27 results note 3). Standalone only; AS 17 segment reporting stated not applicable (note 4)."
+listed_date: "2026-08-10"
+recently_listed: true          # prospectus is the foundational document; present
+concalls_available: false      # NO-CONCALL MODE
+no_concall_reason: "No earnings-call transcript exists. The first call (H1 FY27) was held 2026-11-09; the company filed the audio link and said the transcript follows within five working days (inputs/announcements/2026-11-09_Recording_Cover_Letter_.txt). inputs/announcements/2026-10-05_Outcome_of_the_meet.txt is a 4-page investor-meet outcome note, not a transcript."
+inventory:
+  prospectus: 2          # Prospectus 2026-08-06 (332 pp); Addendum to RHP (30 pp)
+  annual-report: 1       # FY2025-26 statutory audited financial statements + auditor report (103 scanned pp, OCR). NOT a full annual report
+  results: 1             # H1 FY27 (half year ended 30-Sep-2026), limited review, scanned, OCR
+  rating: 1              # Crisil rating rationale 2026-08-19 (filed 2026-08-21)
+  concalls: 0
+  peer-concalls: 12      # KP Green Engineering (544150) x4, Inox Wind x4, Suzlon x4
+  announcements: 17
+  shareholding: 3        # company-site PDF (10-08-2026) + NSE XBRL 07-Aug-2026 (revised) + NSE XBRL 30-Sep-2026
+  research: 0
+  screening: 4           # Data_Sheet CSVs only (main + 3 peers)
+  presentation: 2        # H1 FY27 (2026-11-08); listing-day (2026-08-10)
+  other: 0
+input_gaps:
+  - "collector_warning (verbatim): BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing. [REPAIRED at step1: 17 filings fetched from NSE]"
+  - "collector_warning (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. [REPAIRED at step1: three patterns held]"
+  - "collector_warning (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization, for screener (main), 544150, INOXWIND and SUZLON. [OPEN: those screener sheets are ABSENT documents; only Data_Sheet is populated]"
+  - "collector_warning (verbatim): no AR found on screener: AR stages will be skipped [see the annual-report gap below; stages 2 and 3 run on the Prospectus restated statements and the FY26 audited statements]"
+  - "collector_warning (verbatim): no results PDFs yet (screener has none) [REPAIRED: H1 FY27 results held]"
+  - "collector_warning (verbatim): no rating PDF yet [REPAIRED: Crisil rationale held]"
+  - "collector_warning (verbatim): only 1 concalls -> no-concall mode [the one file was a meet-outcome note, moved]"
+  - "ANNUAL REPORT ABSENT (HIGH): the company has published no annual report (listed 2026-08-10; NSE annual-reports API returns none). inputs/annual-report/ holds the FY2025-26 statutory audited financial statements with the auditor report only: no board report, no MD&A, no corporate governance report. Backward history comes from the Prospectus restated statements (FY24, FY25, FY26)."
+  - "CONCALL TRANSCRIPTS ABSENT (declared, NO-CONCALL MODE): H1 FY27 call held 2026-11-09; transcript not yet filed. First upload item for the operator when it appears on NSE."
+  - "research/ empty: no broker notes. No effect on anchored evidence."
+  - "OCR TEXT: results (pages 2-8), audited financial statements (all 103 pages) and four announcements (2026-08-25, 2026-09-10 order, 2026-09-21, 2026-10-31 resignation letter) are scanned images. Text comes from rapidocr at 220 dpi and is tagged [OCR:rapidocr ...]. OCR drops some word spaces and can misread a digit; a load-bearing figure from an OCR page must be checked against a second document or the page image. tools/ocr_repair.py could not run (no tesseract on this machine)."
+  - "MOVE: inputs/concalls/Concall_Oct_2026_Transcript.pdf -> inputs/announcements/2026-10-05_Outcome_of_the_meet.pdf (investor-meet outcome note filed under Reg 30, not a transcript)."
+  - "Shareholding: the company website posts one identical file under two labels (31.03.2026 and 10.08.2026); its own first page dates it 10-08-2026. No pre-IPO March 2026 pattern is held; the Prospectus capital structure covers it."
+  - "Peer note: no listed pure-play tubular tower maker with earnings calls exists. Inox Wind and Suzlon are turbine makers (customers of the category that also make towers in house); KP Green Engineering is the closest fabrication comp."
+  - "Verifier A shadow NOT run: .claude/shadow.yaml reads armed, but sibling run kusumgar-2026-11-12 claimed the single shadow run. The switch was left untouched."
+  - "IDENTITY CHECK (stage-00-intake-check, verified at the page): 43 files, no misfile, none unreadable. inputs/prospectus/Addendum_to_RHP.pdf is, on its own page 1, an addendum to the DRHP dated 25 Jun 2026 (addendum dated 27 Jul 2026), and its cover prints CIN U72300UP2015PLC070649, which differs from the CIN on every other filing (name, promoters and Vapi address match). 2026-11-03_NSE_INTIMATION_REVISED.pdf repeats 2026-10-31_NSE_INTIMATION_FINAL.pdf on page 1. The NSE XBRL pattern filed 07-Aug-2026 carries a 10-Aug-2026 document date."
+empty_folder_confirmation: "SUPPRESSED under the /step1 autonomy contract. Standing answer: proceed with the gaps. Empty folders: research (and concalls, declared by concalls_available: false)."
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "inputs/results/H1FY27_Results_Outcome_of_Board_Meeting_2026-11-06.pdf"
+    mate_expected: "H1 FY27 concall transcript"
+    status: "SKIPPED"
+    missing_doc: "skipped: concalls_available false. Named anyway: H1 FY27 transcript (call 2026-11-09) not yet filed"
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: "inputs/rating/CRISIL_Rating_Rationale_2026-08-19.pdf"
+    mate_expected: "full rating rationale"
+    status: "PASS"
+    missing_doc: ""
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: "none referenced in the corpus (grep of prospectus, rating, results, announcements)"
+    mate_expected: "n/a"
+    status: "PASS"
+    missing_doc: ""
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "FY2025-26 audited financial statements (inputs/annual-report/)"
+    mate_expected: "FY2025-26 annual report"
+    status: "PASS"
+    missing_doc: "no AR has ever been published; the matching-year audited statements and the Prospectus restated FY26 statements are held, so no held document is older than the latest audited year. The absent AR is recorded as a HIGH gap above"
+freshness_verdict: "FRESHNESS PAIRS OK"
+company_memory:
+  - "companies/ANAWIL.md"
+  - "runs/anawil-2026-11-12/step1-business-brief.md"
+corpus_manifest:          # verified rows from B00-intake.yaml (43 files, no misfile, none unreadable)
+  - path: inputs/announcements/2026-08-25_NSE_Intimation_Letter.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: exchange intimation (RTA appointment, Reg 30 and 7(4)/(5))
+    period: Aug 2026 (agreement dated 25 Aug 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Page 1 is OCR text.
+  - path: inputs/announcements/2026-09-10_NSE_Order_signed.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: exchange intimation (order receipt)
+    period: Sep 2026 (dated 10 Sep 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Page 1 is OCR text.
+  - path: inputs/announcements/2026-09-10_NSE_Press_release_signed.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: press release (order win)
+    period: Sep 2026 (dated 10 Sep 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: ''
+  - path: inputs/announcements/2026-09-21_Intimation.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: exchange intimation (investor meet schedule)
+    period: Sep 2026 (dated 21 Sep 2026, meet on 24 Sep 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Page 1 is OCR text.
+  - path: inputs/announcements/2026-09-24_INTIMATION.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: exchange intimation (investor meet schedule)
+    period: Sep 2026 (dated 24 Sep 2026, meet on 30 Sep 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: ''
+  - path: inputs/announcements/2026-09-28_Trading_Window_Closure.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: exchange intimation (trading window closure)
+    period: Quarter ended 30 Sep 2026
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: ''
+  - path: inputs/announcements/2026-10-05_Outcome_of_the_meet.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: exchange intimation (outcome of investor conference)
+    period: Quarter ended 30 Sep 2026 (conference held 30 Sep 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: ''
+  - path: inputs/announcements/2026-10-10_ANAWIL_REG_74_5_.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: exchange intimation (Reg 74(5) RTA certificate)
+    period: Quarter ended 30 Sep 2026
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: ''
+  - path: inputs/announcements/2026-10-24_Integrated_Governance.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: exchange filing (integrated governance report)
+    period: Quarter ended 30 Sep 2026
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: ''
+  - path: inputs/announcements/2026-10-29_NSE_INTIMATION.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: exchange intimation (order receipt)
+    period: Oct 2026 (dated 29 Oct 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: ''
+  - path: inputs/announcements/2026-10-31_KMP_Resignation_Letter.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: resignation letter (Company Secretary and Compliance Officer)
+    period: Oct 2026 (letter dated 1 Oct 2026, effective 31 Oct 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Page 1 is OCR text.
+  - path: inputs/announcements/2026-10-31_NSE_INTIMATION_FINAL.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: exchange intimation (change of Company Secretary, Reg 30)
+    period: 31 Oct 2026
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: ''
+  - path: inputs/announcements/2026-11-03_NSE_INTIMATION_REVISED.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: exchange intimation (change of Company Secretary, Reg 30)
+    period: 31 Oct 2026
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Page 1 is identical to 2026-10-31_NSE_INTIMATION_FINAL.pdf (dated 31 Oct 2026, no revision date on page). Possible duplicate; no misfile.
+  - path: inputs/announcements/2026-11-04_NSE_INTIMATION.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: exchange intimation (earnings call invite)
+    period: H1 FY27 (call on 9 Nov 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: ''
+  - path: inputs/announcements/2026-11-06_ANAWIL_PRESS_RELEASE_FINAL.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: press release (H1 FY27 results)
+    period: H1 FY27 (half year ended 30 Sep 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: ''
+  - path: inputs/announcements/2026-11-07_NSE_Intimation.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: exchange intimation with IPO monitoring agency report (CARE Ratings)
+    period: Quarter ended 30 Sep 2026
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: ''
+  - path: inputs/announcements/2026-11-09_Recording_Cover_Letter_.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: exchange intimation (H1 FY27 earnings call recording link)
+    period: H1 FY27 (call held 9 Nov 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: ''
+  - path: inputs/annual-report/Audited_Financial_Statements_FY2025-26.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: audited financial statements (auditor's report, G.B. Laddha and Co LLP)
+    period: FY2025-26 (balance sheet as at 31 Mar 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Page 1 is OCR text.
+  - path: inputs/peer-concalls/544150-Concall_Dec_2024_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: KP Green Engineering Ltd (BSE 544150)
+    doc_type: concall transcript
+    period: H1 FY25 (half year ended 30 Sep 2024)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Peer. Call held 29 Nov 2024; filename month is the filing month.
+  - path: inputs/peer-concalls/544150-Concall_May_2025_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: KP Green Engineering Ltd (BSE 544150)
+    doc_type: concall transcript
+    period: H2 FY25 (year ended 31 Mar 2025)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Peer. Call held 20 May 2025.
+  - path: inputs/peer-concalls/544150-Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: KP Green Engineering Ltd (BSE 544150)
+    doc_type: concall transcript
+    period: H2 FY26 (year ended 31 Mar 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Peer. Call held 13 May 2026.
+  - path: inputs/peer-concalls/544150-Concall_Nov_2025_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: KP Green Engineering Ltd (BSE 544150)
+    doc_type: concall transcript
+    period: H1 FY26 (half year ended 30 Sep 2025)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Peer. Call held 14 Nov 2025.
+  - path: inputs/peer-concalls/INOXWIND-Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Inox Wind Ltd (INOXWIND)
+    doc_type: concall transcript
+    period: Q1 FY27 (quarter ended 30 Jun 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Peer. Call held 7 Aug 2026.
+  - path: inputs/peer-concalls/INOXWIND-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Inox Wind Ltd (INOXWIND)
+    doc_type: concall transcript
+    period: Q3 FY26 (quarter and nine months ended 31 Dec 2025)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Peer. Call held 13 Feb 2026.
+  - path: inputs/peer-concalls/INOXWIND-Concall_Jun_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Inox Wind Ltd (INOXWIND)
+    doc_type: concall transcript
+    period: Q4 FY26 (year ended 31 Mar 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Peer. Call held 29 May 2026.
+  - path: inputs/peer-concalls/INOXWIND-Concall_Nov_2025_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Inox Wind Ltd (INOXWIND)
+    doc_type: concall transcript
+    period: Q2 and H1 FY26 (quarter and half year ended 30 Sep 2025)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Peer. Call held 14 Nov 2025.
+  - path: inputs/peer-concalls/SUZLON-Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Suzlon Energy Ltd (SUZLON)
+    doc_type: concall transcript
+    period: Q1 FY27 (quarter ended 30 Jun 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Peer. Call held 28 Jul 2026.
+  - path: inputs/peer-concalls/SUZLON-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Suzlon Energy Ltd (SUZLON)
+    doc_type: concall transcript
+    period: Q3 FY26 (quarter ended 31 Dec 2025)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Peer. Call held 5 Feb 2026.
+  - path: inputs/peer-concalls/SUZLON-Concall_Jun_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Suzlon Energy Ltd (SUZLON)
+    doc_type: concall transcript
+    period: Q4 FY26 (year ended 31 Mar 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Peer. Call held 25 May 2026.
+  - path: inputs/peer-concalls/SUZLON-Concall_Nov_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Suzlon Energy Ltd (SUZLON)
+    doc_type: concall transcript
+    period: Q2 FY27 (quarter ended 30 Sep 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Peer. Call held 29 Oct 2026.
+  - path: inputs/presentation/Investor_Presentation_H1FY27_2026-11-08.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: investor presentation
+    period: H1 FY27 (half year ended 30 Sep 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Page 1 is the cover letter dated 8 Nov 2026.
+  - path: inputs/presentation/Investor_Presentation_Listing_2026-08-10.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: investor presentation (listing)
+    period: FY26 (year ended 31 Mar 2026 figures)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Page 1 has no date; period taken from the FY26 figures on page 2.
+  - path: inputs/prospectus/Prospectus_2026-08-06.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: prospectus (100% book built offer)
+    period: Dated 6 Aug 2026
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: ''
+  - path: inputs/prospectus/Addendum_to_RHP.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: addendum to DRHP (notice to investors)
+    period: Dated 27 Jul 2026 (addendum to DRHP dated 25 Jun 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Page 1 calls the document an addendum to the DRHP, not an RHP. Cover CIN U72300UP2015PLC070649 differs from the CIN in the other filings; name, promoters and Vapi address match.
+  - path: inputs/rating/CRISIL_Rating_Rationale_2026-08-19.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: rating (CRISIL Ratings rationale)
+    period: FY26 financials cited; action date not on page 1
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: ''
+  - path: inputs/results/H1FY27_Results_Outcome_of_Board_Meeting_2026-11-06.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: results (board outcome with limited review report)
+    period: H1 FY27 (half year ended 30 Sep 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Page 1 is the outcome letter dated 6 Nov 2026. Page 2 is the limited review report.
+  - path: inputs/shareholding/Shareholding_Pattern_company_site.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: shareholding pattern (pre-listing)
+    period: Pre-listing, as at 10 Aug 2026
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Possible duplicate of Shareholding_Pattern_2026-08-07_NSE_XBRL_revised.txt (same date and type).
+  - path: inputs/shareholding/Shareholding_Pattern_2026-08-07_NSE_XBRL_revised.txt
+    file_type: txt
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd (symbol ANAWIL, from XBRL identifier)
+    doc_type: shareholding pattern (XBRL, pre-listing)
+    period: As at 10 Aug 2026 (context period 11 May 2026 to 10 Aug 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: XBRL XML with no page markers; read as page 1. Filename date 7 Aug 2026 differs from document date 10 Aug 2026.
+  - path: inputs/shareholding/Shareholding_Pattern_2026-09-30_NSE_XBRL.txt
+    file_type: txt
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd (symbol ANAWIL, from XBRL identifier)
+    doc_type: shareholding pattern (XBRL)
+    period: Quarter ended 30 Sep 2026 (1 Jul to 30 Sep 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: XBRL XML with no page markers; read as page 1.
+  - path: inputs/screening/screener-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: Anawil Wire and Engineering Ltd
+    doc_type: screener data sheet (main company)
+    period: FY2023 to FY2026 (annual columns to 31 Mar 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: ''
+  - path: inputs/screening/544150-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: KP Green Engineering Ltd (BSE 544150)
+    doc_type: screener data sheet (peer)
+    period: FY2022 to FY2026 (annual columns to 31 Mar 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Peer.
+  - path: inputs/screening/INOXWIND-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: Inox Wind Ltd (INOXWIND)
+    doc_type: screener data sheet (peer)
+    period: FY2017 to FY2026 (annual columns to 31 Mar 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Peer.
+  - path: inputs/screening/SUZLON-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: Suzlon Energy Ltd (SUZLON)
+    doc_type: screener data sheet (peer)
+    period: FY2017 to FY2026 (annual columns to 31 Mar 2026)
+    folder_match: true
+    proposed_move: ''
+    page_read: 1
+    note: Peer.
+flags: []
+analyst_note: ""

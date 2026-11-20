@@ -1,0 +1,80 @@
+stage: B04-bizmodel
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "No annual report exists (listed 2026-08-10). Business description comes from the Prospectus 2026-08-06; the audited FS has no MD&A or segment note."
+  - "No concall transcript (NO-CONCALL MODE). Model 3 pricing terms, steel clause, payment terms and credit days: NOT FOUND."
+  - "FY26 revenue split by model and tower split by model: NOT FOUND. Only H1 FY27 and the order book carry the split."
+  - "Customer-site geography: NOT FOUND. The Karnataka 93.9% line is plant-of-origin."
+  - "Vendor names behind Rs 3,063.21 lakh vendor advances (Mar 2026): NOT FOUND."
+  - "GST rate and ex-GST value of the Customer C order (Rs 58.32 Cr incl GST): NOT FOUND."
+  - "Listed tower-maker multiple and named competitor list: NOT FOUND in held documents."
+  - "Investor presentations present (H1 FY27 and listing day)."
+flags:
+  - "ARCHETYPE: build-to-spec component maker for the whole company. Model 1 (21.2% H1 FY27, 24.5% book) and Model 2 (10.8%, 24.2%) are not converters. Model 3 (64.3%, 51.3%) fails to resolve Amendment 17.0: input is steel (met), pricing cost-plus or fixed unknown, margin-vs-steel history untestable (about 4 towers FY26 plus one half). OR-6 default is CONVERTER with ambiguity stated; stage 11 rules. Separator: a steel price-variation or back-to-back clause in Customer A and C contracts."
+  - "SECTOR_CAP_ROW: business-model evidence supports Cables / Industrial products (25x) on 4 of 6 tests; Energy transition equipment (28x) supported on end-market only and not refuted. Separator: conversion fee per tower at re-bid against Rs 58.7 lakh (flat across Mar-26 and Oct-26 books). No exit multiple chosen. Operator rules at /fttcp."
+  - "MARGIN_STORY_IS_PART_SEASON: H1 FY26 EBITDA margin 24.5%, H2 FY26 50.1%, FY26 42.7%, H1 FY27 23.4% (derived from H1 results filing). The brief's 42.7% to 23.4% compares a year with a half. EBITDA per tower H1 FY26 16.4, H2 FY26 34.5, H1 FY27 33.7 lakh."
+  - "EBITDA_PER_TOWER_UNRECONCILED: reported Rs 32.82 lakh; Rs 36.08 Cr over 107 towers is 33.72, over 108 is 33.41; implies 109.9 towers. Press release prints 107, presentation prints both 107 and 108."
+  - "ORDER_BOOK_MIXED_TAX_BASIS: Customer C Rs 58.32 Cr is inclusive of GST (Oct-29 intimation) and enters the Rs 395.58 Cr book as 58.3; Customer A Rs 133.98 Cr is excluding GST. Model 3 51.3% ties to Customers A plus C (derived); Customer A is 71% of Model 3."
+  - "GUIDANCE_SHAPE: FY27 guidance needs H2 revenue Rs 296.0 to 346.0 Cr, 2.9x to 3.4x H2 FY26 and 75% to 87% of the whole Oct-31 book, against a stated execution target of Q1 FY28. Needs 206 to 280 towers in H2 against a best prior half of 148."
+  - "CAPACITY_BASIS: FY26 utilisation 48.17% reproduces as 210 / 436 (420 Koppal + 16 Kutch). On 612 it is 34.3%. Tonnes capacity 207,000 t; a 474 t tower lowers tower-count capacity to about 437."
+  - "CASH: FY26 OCF Rs 12.47 Cr audited (after Rs 8.51 Cr tax) vs Rs 18.44 Cr restated. Vendor advances Rs 30.63 Cr and GST receivable Rs 18.79 Cr make up Rs 50.0 Cr short-term loans and advances."
+  - "CRISIL_PREMISE: August upgrade assumed operating margin around 40% over the medium term (CRISIL p.1); H1 FY27 printed 23.4% on the Model 3 mix."
+  - "CYCLICALITY: classed secular-growth on filed GW data; down-cycle behaviour NOT FOUND (three-year wind history)."
+business_type: manufacturing
+revenue_streams:
+  - {name: "Model 3 integrated supply (H1 FY27; order book 51.3%)", type: "build-to-order product sale, material-inclusive", pct_of_revenue: 64.3, predictability: "M-L"}
+  - {name: "Model 1 pure conversion (H1 FY27; order book 24.5%)", type: "job-work conversion fee", pct_of_revenue: 21.2, predictability: "M"}
+  - {name: "Model 2 conversion plus internals (H1 FY27; order book 24.2%)", type: "conversion fee plus component sale", pct_of_revenue: 10.8, predictability: "M"}
+  - {name: "Others: scrap and accessories (H1 FY27)", type: "incidental sales", pct_of_revenue: 3.7, predictability: "L"}
+asset_intensity: heavy
+wc_intensity: high
+pricing_power: moderate
+cyclicality: secular-growth
+moats_present:
+  - "Efficient scale / location near top wind states: moderate durability, replicable by a new plant"
+  - "Customer approvals and relationships (switching cost): low to moderate durability, no long-term contracts"
+  - "Process certification (ISO 3834-2, EN 1090-2): table stakes, low durability"
+valuation_methods:
+  primary: {method: "P/E on normalised, mix-aware earnings (towers x EBITDA per tower less D&A, interest, tax)", why: "Profit is capacity x volume x profit per tower; H1 and H2 differ by season so spot P/E misleads"}
+  secondary: {method: "EV/EBITDA on full-year EBITDA", why: "IPO changed capital structure; compares across fabricators"}
+  tertiary: {method: "EV per installed tonne of capacity (floor check)", why: "Asset-heavy plant; capacity is tonnes, not towers"}
+  not_applicable: ["P/B or ROE", "EV/Sales (Model 3 puts steel in sales)", "SOTP (one product)", "Dividend yield", "DCF as primary (three-year wind history, no long-term contracts)"]
+irrelevant_ratios:
+  - "EBITDA margin %: Model 3 puts steel in revenue; track EBITDA per tower by model"
+  - "FY margin vs H1 margin: H1 24.5%, H2 50.1% in FY26; compare like halves"
+  - "H1 YoY growth 272%: lapping a Rs 41.4 Cr base that is 29% of the year"
+  - "Annualised H1 P/E: H1 is 20-30% of annual revenue"
+  - "Spot ROCE: IPO cash, Rs 30.7 Cr CWIP and Kutch at 2.1% of revenue distort the base"
+  - "Debt to equity: IPO repaid debt"
+  - "Headline utilisation 48.17%: uses 436 towers as base, 34.3% on 612"
+must_track_metrics:
+  - {metric: "EBITDA per tower, blended and by model", healthy: "At or above Rs 33 lakh (H1 FY27 derived 33.7) and level with or above H2 FY26 34.5", red_flag: "Below Rs 29 lakh (FY26) with Model 3 above 50% of revenue"}
+  - {metric: "Towers delivered per half", healthy: "H2 FY27 206 to 280 to meet guidance (best prior half 148)", red_flag: "H2 FY27 below 148"}
+  - {metric: "Order book (value, towers, mix, ex-GST) and Customer A share", healthy: "Rs 395.58 Cr or higher after execution; Customer A at or below 36.6%", red_flag: "Customer A above 40%, book falling, mixed GST bases"}
+  - {metric: "Net trade WC and vendor advances, with OCF / EBITDA", healthy: "WC per tower falling; OCF / EBITDA above 70% for the year (H1 FY27 78%)", red_flag: "WC rising faster than Model 3 revenue; OCF / EBITDA below 50%"}
+  - {metric: "Kutch revenue share and customer approval", healthy: "Rising from 2.1% of H1 FY27 revenue; approval dated", red_flag: "Still below 10% in H2 FY27"}
+unit_economics:
+  unit: "one finished wind tower"
+  revenue_per_unit: "Model 1 Rs 50-60 lakh; Model 2 Rs 1.0-1.1 Cr; Model 3 Rs 3.0-3.5 Cr (company); blended Rs 143.9 lakh H1 FY27, Rs 68.2 lakh FY26 (derived)"
+  margin_per_unit: "EBITDA Rs 25-30 / 35-40 / 40-50 lakh by model (company); blended Rs 33.7 lakh H1 FY27 (derived; reported 32.82), Rs 29.1 lakh FY26"
+  key_lever: "Towers per year on built capacity, then scope of supply per tower; Model 3 adds about 3.4% handling margin on extra steel (derived midpoints), so steel pass-through is the swing factor"
+first_deterioration_signals:
+  - {risk: "Customer concentration and short contracts", first_signal: "Order book value or tower count falls between filings; Customer A share above 40%"}
+  - {risk: "Model 3 steel price exposure", first_signal: "Material cost per tower (Rs 83.8 lakh H1 FY27) rises faster than Model 3 realisation"}
+  - {risk: "Kutch ramp and absorption", first_signal: "Other expense per tower stays near Rs 23.7 lakh in H2 FY27 instead of falling"}
+  - {risk: "Working capital lock-up", first_signal: "Vendor advances and inventory rise while payables fall; OCF / EBITDA under 50%"}
+  - {risk: "H2 guidance slip into Q1 FY28", first_signal: "Oct to Nov dispatches below 30 towers a month"}
+  - {risk: "Conversion fee erosion at re-bid", first_signal: "New Sany or Envision order below Rs 58.7 lakh per tower"}
+mgmt_questions:
+  - "In Model 3, is the price fixed or index-linked to steel, and what is the lag from plate purchase to billing?"
+  - "Why does Rs 32.82 lakh EBITDA per tower not match Rs 36.08 Cr over 107 or 108 towers?"
+  - "What keeps 70 to 80% of annual revenue in H2 FY27 when the book is targeted for Q1 FY28?"
+  - "Who holds the Rs 30.6 Cr vendor advances, for what plate, and when do they convert?"
+  - "Is the Customer C order Rs 58.3 Cr including GST, and what is the book ex-GST?"
+  - "When does Kutch get customer approval, and what are its towers and margin?"
+  - "Who owns and prices scrap in Model 1 (FY26 'Others' 5.51% of revenue)?"
+one_line_verdict: "A three-year-old wind tower fabricator with real profit per tower, where the margin fall is mostly mix and season; the tests are H2 FY27 delivery and the Model 3 steel clause."
+analyst_note: "Two decoding facts a later stage cannot rebuild from the fields. First, the margin fall is half season: H1 FY26 24.5%, H2 FY26 50.1%. EBITDA per tower H1 FY27 (33.7 lakh) sits level with H2 FY26 (34.5), so the reported +104.7% YoY is H1 against a weak H1. Second, order-book model shares tie exactly to customers: Model 3 = A plus C (51.29%), so the Model 3 slice is two customers, one of them GST-inclusive. Model 3 earns about 3.4% handling margin on its extra steel (company midpoints), so one steel clause decides whether it is a converter. The 48.17% FY26 utilisation uses a 436-tower base; 612 is not the right denominator for heavier 474 t towers. Sector cap row: 25x row fits the economics, 28x fits only the end-market."

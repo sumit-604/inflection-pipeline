@@ -1,0 +1,43 @@
+stage: B13-synthesis
+mode: phase-1-lite
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+files_written:
+  - outputs/final/business-narrative.md
+  - outputs/final/gate-recommendation.md
+  - outputs/final/verifier-summary.md
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3          # FLAG-CASH active, determination INDETERMINATE caps at PROCEED WITH CAVEATS; rule 4 points the same way
+verdict_alternatives_on_ruling:
+  - "REWORK (stage 5) if the operator rules the strict Verifier B caught-only reading of 4 of 7 = 57% under OR-29; remediation cap reached, so it stands as a Halt 1 open item"
+  - "INSUFFICIENT EVIDENCE if rule 2 is read literally on INDETERMINATE cash; same missing-evidence list"
+flags_active: [FLAG-CASH, FLAG-GATE0]
+flags_not_active: [FLAG-PROMOTER]   # B08 verdict CAUTION; block fires on CONCERN or AVOID only; B08 notes CAUTION could read CONCERN
+cash_determination: "INDETERMINATE"
+cash_missing_evidence:
+  - "customer-wise receivables ageing at 31 Mar 2026 and 30 Sep 2026"
+  - "vendors, order value, delivery and security for the 3,003.57 lakh capital-goods advances"
+  - "revenue, cost and working capital by contract model per half year"
+  - "Model 3 payment terms and steel price clause"
+  - "FY27 audited cash flow"
+cash_falsification_metric: "FY27 full-year OCF/EBITDA below 50% (FY27 audited cash flow) marks the cash problem STRUCTURAL; above 70% with receivables under 60 days and inventory under 90 days at 31 Mar 2027 supports GROWTH-INDUCED"
+freshness_verdict: "FRESHNESS PAIRS OK"   # freshness cap not applied
+partial_stages:
+  - "stage 8 promoter: partial (SEBI, SCORES, eCourts, MCA21, NCLT, proxy advisors not reachable)"
+  - "stage 9 TAM: partial (no independent tower-market source; 3 fetches HTTP 403; global benchmark skipped)"
+no_concall_mode: true
+confidence_delta: {numerical: 97, redflag: 100, framework: 88.6, peer: 100, overall: 88.6}
+confidence_band: "75-89"
+open_ruling_or29: "Verifier B acceptance 100 as written; strict caught-only reading 4 of 7 = 57% would force REWORK; operator ruling needed at Halt 1"
+gate0_corrected: {core_score: 66, moat_score: 5, grand_total: 71, moat_class: "THIN", classification: "AVERAGE"}
+stale_carry: "07-emoat.md section 6C and B07.combined_reasoning still carry run-1 Gate 0 figures (core 61, grand 68, MODERATE, '61 of 140'); B01 governs"
+source_fidelity_dispositions: "4 Verifier A source-fidelity findings (01-gate0 C1, C4 and totals, E1 anchor; 04-bizmodel 3D FY26 material cost): GATE HELD, corrected at source by the maker in cycle 1; no verifier re-check"
+transition_posture: "NOT CLASSIFIED (Mental Model not signed; recognition gap resolves at stage 11)"
+headline: "Real tower volumes, unproven cash and Kutch"
+falsification_metric: "FY27 results (about May 2027): H2 FY27 revenue below Rs 296 Cr, at fewer than 206 towers"
+monitorables_count: 8
+contradicted_claims_peer: 0
+open_items_count: 9
+valuation_fields: "PENDING PHASE 3 (no valuation_decision, entry_range, MoS price, destination PE or Hurdle verdict in phase 1)"

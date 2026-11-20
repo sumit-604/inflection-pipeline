@@ -1112,3 +1112,34 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+
+## 2026-11-12 · ANAWIL /step1 Phase 1 (runs/anawil-2026-11-12)
+- Collector: REPO_ROOT in tools/collector/collect_to_repo.py is hardcoded to a path absent on this machine, and screener_collect.py launches Chromium headed, which fails here. Ran through a scratch wrapper and a headless shim; tools/ not edited.
+- Ten sibling sessions shared one screener login: first pass throttled on 3 of 4 companies and exited 0 with empty folders. Re-ran with 75-second waits.
+- NSE-only SME name: the collector finds no BSE scrip, so announcements, results, rating, prospectus and shareholding came from the NSE API and the company website by hand.
+- No tesseract on the machine, so tools/ocr_repair.py cannot run. 114 scanned pages (results, FY26 audited statements) were OCRed with rapidocr from a scratch environment; about 25 minutes. Stages 1 and 2 pass 1 started before OCR finished and read a blank file.
+- Stage 1 printed a growth factor as a rate (revenue CAGR 177.1% for 77.1%); Verifiers A and C both caught it. One remediation cycle (stages 1, 4, 5) used the cap.
+- Verifier B block leaves the acceptance rule open: partly-caught items counted as caught give 100, strict reading gives 57% (below OR-29). Operator ruling needed.
+- Stage 5 no-concall run used 204k tokens against the 100k target.
+- Verifier A shadow skipped: ten parallel runs, one armed switch; kusumgar-2026-11-12 claimed it.
+- prompts/12-verifiers-pipeline.md line 379 template defect reported by Verifier C (note N1); needs a prompt PR.
+- session-cost.md fresh and re-read lines are n/a: the desktop harness gives one token total per subagent.
+
+## 2026-11-17 · ANAWIL /fttcp (runs/anawil-2026-11-12)
+- Cross-family grader skipped: no GEMINI_API_KEY in the desktop environment.
+- Draft ran on the intake model by operator ruling; review and sign-off on Opus 5.5 after a mid-session model change.
+- Operator ruled ROCE FIRING (+2) but asked for the RECOVERING midpoint method in Pillar 1; recorded as an override with both numbers (Track 1 16.1x against 16.9x). Chunk 01 has no rule for this pairing.
+- Handover dossier pre-ruling "trailing-four-half" is ambiguous for a half-yearly filer; operator chose FORWARD FY27.
+
+## 2026-11-17 — ANAWIL /finalize (runs/anawil-2026-11-12)
+| # | What went wrong or was corrected | Stage | File or rule | Status |
+|---|---|---|---|---|
+| 1 | Operator override: ROCE scored FIRING but Pillar 1 used the RECOVERING midpoint; chunk 01 has no rule for the pairing | 11 valuation | chunk 01; deliberation Ruling 4 | CLOSED |
+| 2 | 4G check fails (Year-3 ROCE 17.72% against the 21.61% input); approved 16.1x kept, 14.4x shown; Verifier C CRITICAL P1 | 11 valuation | Master 4G l.897 | OPEN |
+| 3 | Pillar 3a credits the order book already in base revenue; Verifier C CRITICAL P2 (Track 2 18.3x) | 11 valuation | Master l.617; v3.10 l.79 | OPEN |
+| 4 | Stage 11 wrote WATCHLIST where Master Role 2 Section 7 gives AVOID; stage 14 and Verifier C apply AVOID | 11 / 14 | Master l.1129 | OPEN |
+| 5 | Downside ledger probabilities D1-D3 are orchestrator proposals; A22 needs operator values; they decide the A25 starter | 11 valuation | v3.9 A22 | OPEN |
+| 6 | Chunk 06 l.92 drops "downward" from Master l.897; Master l.296 still carries the banned hybrid label | Verifier C check 15 | chunk 06; Master l.296 | OPEN |
+| 7 | prompts/12-verifiers-pipeline.md l.379 template defect (narrative field replaced by proposal text), reported twice | 12c verifier C | prompts/12 l.379 | OPEN |
+| 8 | Stage 11 has no web tools; the orchestrator fetched the live price (Rs 381) and messaged it in | 11 valuation | .claude/agents/stage-11-valuation.md | CLOSED |

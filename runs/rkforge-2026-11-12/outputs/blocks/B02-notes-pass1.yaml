@@ -1,0 +1,16 @@
+stage: B02-notes-pass1
+company: "RKFORGE"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+pass: 1
+report_path: "outputs/reports/02-notes-pass1.md"
+source: "inputs/annual-report/Annual_Report_2026.pdf (INR lakh); prior year Annual_Report_2025.pdf"
+scope: "Standalone Notes 1-53 read in full; consolidated Notes 5, 6, 8, 14, 18, 20, 34, 35, 36, 42, 45, 50, 53 read for differences"
+input_gaps:
+  - "Customer names and Tata Motors share not disclosed in notes (Note 34 says two customers >10%)"
+  - "Covenant, bank and amount behind FY26 waiver not disclosed (Note 18.4)"
+  - "Q4 FY26 results scan not used by this stage"
+top_findings_count: 10
+rating_tally: {red: 5, yellow: 5}
+load_bearing_facts_checked: [LB1_inventory_restatement, LB2_guidance_vs_delivery, LB3_promoter_capital, LB4_cash_conversion]

@@ -1,0 +1,59 @@
+stage: B09-tam
+company: "RKFORGE"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "B07 block absent at start; capex and capacity taken from filings (IP slide 10, Reg 30 intimations Jan/Mar/Apr 2026, AR26 p.46)"
+  - "Competitor revenues beyond Bharat Forge forgings, RKFL and Happy Forgings NOT FOUND; unorganised share NOT FOUND"
+  - "Five SAM filters could not be applied with sourced percentages; SAM set as a named-peer revenue floor"
+  - "FY26 average USD/INR NOT FOUND; 30 Mar 2026 reference rate used (third-party mirror)"
+flags:
+  - "Management-cited Grand View figure is 2.03x the conservative estimate (inflated read)"
+  - "SAM is a floor and includes Bharat Forge overseas revenue; share of SAM 21.5% is indicative"
+  - "Management Rs 8,000 Cr FY29 target needs 92.7% of installed capacity at today's price per tonne; exceeds 80% line by Rs 1,097 Cr"
+  - "SOM CAGR 13.6% is below management's 23.6% and below the H1 FY27 annualised run rate growth of 23.7%, but equals the run rate carried at 8.8% for two years"
+  - "TAM growth 8.8% is a USD-terms forecast; INR fell 9.88% in FY26"
+market_definition: "India forging industry by value (forged and machined components, all end uses) with RKFL's NA/Europe export book inside the same product class"
+tam_cr: {conservative: 53006, realistic: 63220}
+sam_cr: 19712
+sam_pct_of_tam: 31.2
+som_3yr_cr: 6220
+som_5yr_cr: 7964
+som_implied_revenue_cagr: {yr3: 13.6, yr5: 13.4}
+current_sam_share_pct: 21.5
+revenue_headroom_x: 4.65
+tam_growth_pct: 8.8
+runway_class: "GOOD"
+mgmt_claim_cr: 107403
+mgmt_claim_ratio: 2.03
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient to FY29 (SOM 6,220 vs 6,903 at 80% of installed 8,628); FY31 SOM 7,964 gap of Rs 1,061 Cr to the 80% line, more capex needed; management Rs 8,000 Cr FY29 target is the optimistic side"
+methods_used: ["top-down published reports", "bottom-up AIFI tonnes x filed realisation", "peer aggregation (floor)", "import substitution (rail wheels, no rupee value)"]
+stale_data_flags: []
+searches_performed:
+  - "India forging industry market size AIFI output 2025"
+  - "ACMA auto component turnover FY26 exports"
+  - "North America Class 8 forecast 2026 2027 ACT FTR"
+  - "Bharat Forge FY26 revenue forgings"
+  - "USD INR rate FY26 RBI reference rate"
+  - "Happy Forgings FY26 revenue MM Forgings market share"
+  - "India forged wheels demand Indian Railways RKFL Titagarh"
+searches_skipped:
+  - "MM Forgings FY26 revenue"
+  - "Unorganised share of Indian forging"
+  - "Per-capita forging benchmark (Method 5)"
+  - "FY26 average USD/INR"
+  - "Industry-average forging realisation per tonne"
+  - "FTR Class 8 production forecast"
+  - "Rupee value per rail wheel"
+downstream_candidates:
+  - {signal: "Tata Motors CV volumes and orders", entity_type: "end-customer", demand_link: "33.4% of consolidated revenue; domestic auto 47%", likely_source: "Tata Motors monthly sales release and quarterly results", cadence: "monthly", shared: true}
+  - {signal: "India CV production and wholesale", entity_type: "macro", demand_link: "Domestic CV cycle drives Tata Motors and domestic forging tonnes", likely_source: "SIAM monthly production data", cadence: "monthly", shared: true}
+  - {signal: "North America Class 8 orders and build", entity_type: "macro", demand_link: "NA is 58% of FY26 exports and 71% of Q2 FY27 exports", likely_source: "ACT Research and FTR preliminary orders", cadence: "monthly", shared: true}
+  - {signal: "US tariffs on steel and aluminium auto parts", entity_type: "regulatory", demand_link: "Tariffs cut FY26 exports 19.94%", likely_source: "US Federal Register, USTR and Commerce notices", cadence: "event-driven", shared: true}
+  - {signal: "EU truck and van registrations", entity_type: "macro", demand_link: "Europe is 41% of FY26 exports", likely_source: "ACEA registrations release", cadence: "monthly", shared: false}
+  - {signal: "Indian Railways forged wheel procurement and RDSO approval", entity_type: "regulatory", demand_link: "200,000 wheels a year, 60-70% imported; JV plant not producing", likely_source: "Ministry of Railways, RDSO and Railway Board orders", cadence: "event-driven", shared: false}
+  - {signal: "ACMA auto component industry turnover", entity_type: "macro", demand_link: "Sector read for domestic auto and export component demand", likely_source: "ACMA quarterly press release", cadence: "quarterly", shared: false}
+demand_externally_verifiable: true
+analyst_note: "SAM is a floor built from three named peers (Bharat Forge forgings 13,928 incl. overseas, RKFL 4,238, Happy 1,546) because no sourced percentages exist for the five filters; do not read 21.5% share as precise. TAM central 63,220 uses AIFI 2.9 Mt x RKFL H1 FY27 realisation 2.18 lakh/t, an upper-side price basis. SOM CAGR 13.6% uses 8.8% SAM growth (USD forecast) and +3pp share; at 6.5% growth it is 11.2%. Capacity value uses 395,800 t x 2.18 lakh = 8,628 Cr and may double count ring rolling. EBITDA CAGR 20.5% assumes 18.1% margin held; PAT growth not derived. Trailing P/E 203x uses screener snapshot price 785.6 (date unstated) and FY26 consolidated PAT 72 Cr."

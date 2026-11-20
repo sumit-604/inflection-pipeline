@@ -1,0 +1,82 @@
+stage: B09b-dossier
+company: "RKFORGE"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "CRISIL full rating rationale (Dec 2025; June 2025 watch outcome)"
+    expected_source: "rating agency site"
+    kind: "findable-missing"
+  - document: "Complete BSE announcement feed (23 held are a hand-fetched selection)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Screener Profit and Loss, Quarters, Balance Sheet, Cash Flow sheets (company and three peers)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Q2 FY26 concall transcript (Oct or Nov 2025)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Clean Q4 FY26 results PDF (held copy is an OCR scan)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Shareholding patterns and XBRL before 30 Jun 2026 (pledge history)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "SEBI settlement order texts (company 19 Mar 2024; Riddhi Portfolio 2018)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "M M Forgings and Happy Forgings Q2 FY27 concalls"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Broker or research notes (research/ empty)"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Prospectus (listed 2004)"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Core auto and industrial forgings, machining, castings, aluminium forgings"
+    archetype: "Build-to-spec component maker"
+  - line: "Rail wheel joint venture (RTRWL, not in commercial production)"
+    archetype: "Licence/scarcity business"
+transition:
+  - line: "Core forgings"
+    from_tier: "R2 (cost-advantaged converter, lower edge)"
+    to_tier: "R3 (value-added / spec'd supplier)"
+    engine: "Fixed cost spreads over more tonnes on FY24-FY26 capex of Rs 2,490.70 Cr (utilisation 72% Q2 FY27, EBITDA per tonne Rs 0.40 lakh); debt falls as capex ends and working capital eases (Rs 500 Cr cut guided, Rs 126 Cr done in H1 FY27)"
+    proof_gate: "Q3 and Q4 FY27 consolidated revenue above Rs 1,405 Cr with EBITDA margin at or above 18.23%; net debt on stated basis below Rs 1,700 Cr at 31 Dec 2026 and at or below Rs 1,500 Cr at 31 Mar 2027 with acceptances plus receivables sold flat or down from 1,04,994.72 INR lakh; ROCE 12-15% FY27 once the management basis is defined (basis NOT FOUND)"
+    recognition_gap: "OPEN QUESTION: does the TO state already look reflected in market pricing; resolved at Stage 11 via the PE gap; no conclusion here"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Revenue flat QoQ for two quarters or margin stalls near 18%; H1 debt-cut pace (Rs 126 Cr) repeats in H2 or net debt not below Rs 1,700 Cr at Dec 2026; capex raised beyond about Rs 550 Cr; receivables and inventory keep rising faster than revenue"
+  - line: "Rail wheel JV"
+    from_tier: "none (pre-revenue); fits no rung"
+    to_tier: "not stated by any block"
+    engine: "Written Railways acceptance of the first 300 wheels, then production from December 2026 and an offtake contract"
+    proof_gate: "Written Railways acceptance of the first 300 wheels and the first invoice"
+    recognition_gap: "OPEN QUESTION: whether any wheel economics are reflected in market pricing; resolved at Stage 11; no conclusion here"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Another slip beyond December 2026 or larger JV losses; RDSO requirement unresolved (AR26 p.43 versus Oct 2026 call)"
+dominant_variables:
+  - "Utilisation and EBITDA per tonne on the FY26 capacity (72%, Rs 0.40 lakh per tonne in Q2 FY27)"
+  - "Export recovery and North America share (71% of Q2 FY27 exports)"
+  - "Net debt and the bank-funded working-capital channels (Rs 126 Cr of Rs 500 Cr cut; 1,04,994.72 INR lakh acceptances plus receivables sold)"
+  - "Domestic commercial vehicle cycle and Tata Motors concentration (33.4% of 9M FY26 consolidated revenue)"
+business_falsifier: "EBITDA per tonne back below Rs 0.30 lakh at utilisation above 70% with steel, energy and shipping cost not passing through and Tata Motors share rising without new customers, which re-declares the line as a Commodity converter"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 6
+  verifiability_ratio: "2 of 6 externally observable"
+  single_point_failure: "Bank-funded working-capital channels (acceptances plus receivables sold, 1,04,994.72 INR lakh, 59.3% of standalone borrowings) together with covenant compliance"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 3
+  confirm_by_observations: 2
+research_brief_items: 16
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "cc14133bff227f2622840b2f1cd6b4d71c60c89c"

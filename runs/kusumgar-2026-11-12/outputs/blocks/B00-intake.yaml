@@ -1,0 +1,337 @@
+stage: B00-intake
+model: claude-haiku-5-5
+status: complete
+corpus_manifest:
+  - path: "inputs/announcements/20260811-565ce96c-7a48-4964-9fd0-d8c8a465545c.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "board outcome (Q1 FY27 results annexed, CFO appointment)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 text identical to results/Kusumgar_Results_Q1FY27_BM_Outcome_2026-08.pdf (duplicate candidate)."
+  - path: "inputs/announcements/20260812-2fea8591-1980-486b-83a2-3c8e6f33eebc.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "exchange intimation (earnings presentation transmittal)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Same transmittal as presentation/Investor_Presentation_Q1FY27_2026-08-12.pdf (duplicate candidate)."
+  - path: "inputs/announcements/20260818-951159d7-c3ed-4751-99ed-4c1d48ad120b.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "concall transcript (BSE cover letter)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026; call held 14 Aug 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Same cover letter as concalls/Concall_Aug_2026_Transcript.pdf (duplicate candidate)."
+  - path: "inputs/announcements/20260918-410101fa-17d6-45c3-969b-677cc273586e.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "postal ballot e-voting results and scrutinizer report"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Not a financial period. Page 1 identical to announcements/20260918-65abd413 (duplicate candidate)."
+  - path: "inputs/announcements/20260918-65abd413-decb-44c3-a586-0bfa969d657f.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "postal ballot e-voting results and scrutinizer report"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Not a financial period. Page 1 identical to announcements/20260918-410101fa (duplicate candidate)."
+  - path: "inputs/announcements/20261013-138fc543-6fe2-4538-95e3-651cac5fd73b.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "registrar certificate (Reg 74(5) SEBI Depositories and Participants)"
+    period: "Quarter ended 30 Sep 2026 (Q2 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Certificate from Bigshare Services Pvt Ltd, the RTA, enclosed by the company."
+  - path: "inputs/announcements/20261023-d614aaae-26ea-4b4a-81c3-03956ea5d133.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "exchange clarification (credit rating) with CARE letter attached"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Company states on page 1 that it gave no CRISIL mandate or information. Relevant to rating/Kusumgar_Rating_CRISIL_Rationale_2026-10-22.pdf. Not a misfile."
+  - path: "inputs/announcements/20261105-15830548-c1d4-4484-a25f-2caf3f9f6a18.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "board outcome (Q2 FY27 and H1 FY27 results annexed; Certoplast JV term sheet)"
+    period: "Quarter and half-year ended 30 Sep 2026 (Q2 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 text identical to announcements/20261105-23ce311d and -804b2604 and results/Kusumgar_Results_Q2FY27_2026-11-05.pdf (duplicate candidates)."
+  - path: "inputs/announcements/20261105-23ce311d-4e41-4452-9065-8ec1cab44b6e.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "board outcome (Q2 FY27 and H1 FY27 results annexed; Certoplast JV term sheet)"
+    period: "Quarter and half-year ended 30 Sep 2026 (Q2 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Duplicate candidate of announcements/20261105-15830548."
+  - path: "inputs/announcements/20261105-804b2604-4fc0-4075-924f-01ef5e880a93.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "board outcome (Q2 FY27 and H1 FY27 results annexed; Certoplast JV term sheet)"
+    period: "Quarter and half-year ended 30 Sep 2026 (Q2 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Duplicate candidate of announcements/20261105-15830548."
+  - path: "inputs/announcements/20261105-928e77fa-074e-48a6-a3eb-e40addbde6fa.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "exchange intimation (earnings presentation transmittal)"
+    period: "Quarter and half-year ended 30 Sep 2026 (Q2 FY27 and H1 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Same transmittal as presentation/Investor_Presentation_Q2FY27_2026-11-05.pdf (duplicate candidate)."
+  - path: "inputs/announcements/20261107-b1312e6d-7f1a-4ad0-9efb-7a3104950173.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "newspaper publication notice (results extract, Business Standard and Navshakti)"
+    period: "Quarter and half-year ended 30 Sep 2026 (Q2 FY27 and H1 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/concalls/Concall_Aug_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "concall transcript (BSE cover letter; transcript follows)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026; call held 14 Aug 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is the BSE cover letter, identical to announcements/20260818-951159d7 (duplicate candidate)."
+  - path: "inputs/peer-concalls/ARVIND-Concall_Jan_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Arvind Limited (ARVIND)"
+    doc_type: "concall transcript"
+    period: "Q3 FY26 (call dated 30 Jan 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document. Not anchored to Kusumgar."
+  - path: "inputs/peer-concalls/ARVIND-Concall_May_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Arvind Limited (ARVIND)"
+    doc_type: "investor call transcript (AAML acquisition), BSE and NSE cover letter"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 11 May 2026. Call is an acquisition investor call, not a results concall. No period on page 1. Peer document."
+  - path: "inputs/peer-concalls/MAYURUNIQ-Concall_Feb_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Mayur Uniquoters Limited (MAYURUNIQ)"
+    doc_type: "concall transcript (BSE cover letter; transcript follows)"
+    period: "Q3 FY26 (quarter and nine months ended 31 Dec 2025; call held 2 Feb 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document."
+  - path: "inputs/peer-concalls/MAYURUNIQ-Concall_May_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Mayur Uniquoters Limited (MAYURUNIQ)"
+    doc_type: "concall transcript (BSE cover letter; transcript follows)"
+    period: "Q4 FY26 and FY26 (audited, year ended 31 Mar 2026; call held 20 May 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document."
+  - path: "inputs/peer-concalls/MAYURUNIQ-Concall_Aug_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Mayur Uniquoters Limited (MAYURUNIQ)"
+    doc_type: "concall transcript (BSE cover letter; transcript follows)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026; call held 6 Aug 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document."
+  - path: "inputs/peer-concalls/MAYURUNIQ-Concall_Nov_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Mayur Uniquoters Limited (MAYURUNIQ)"
+    doc_type: "concall transcript (BSE cover letter; transcript follows)"
+    period: "Q2 FY27 (quarter and half-year ended 30 Sep 2026; call held 5 Nov 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document."
+  - path: "inputs/presentation/Investor_Presentation_Q1FY27_2026-08-12.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "investor presentation (BSE transmittal letter on page 1)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 identical to announcements/20260812-2fea8591 (duplicate candidate)."
+  - path: "inputs/presentation/Investor_Presentation_Q2FY27_2026-11-05.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "investor presentation (BSE transmittal letter on page 1)"
+    period: "Q2 FY27 and H1 FY27 (half-year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 identical to announcements/20261105-928e77fa (duplicate candidate)."
+  - path: "inputs/prospectus/Kusumgar_Prospectus_2026-07-10.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited (formerly Kusumgar Private Limited)"
+    doc_type: "prospectus (100% book built offer, fresh issue and offer for sale)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 10 Jul 2026. Pages 1 and 2 read; neither states a financial period. Period NOT FOUND in pages 1 to 2."
+  - path: "inputs/rating/Kusumgar_Rating_CARE_2026-04.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "rating (CARE Ratings press release, reaffirmation, A Stable)"
+    period: "FY25 (audited) and 9MFY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Press release dated 2 Apr 2026."
+  - path: "inputs/rating/Kusumgar_Rating_CRISIL_Rationale_2026-10-22.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "rating (CRISIL rationale, BB-/Stable, issuer not cooperating)"
+    period: "Q1 FY27 and FY26 key indicators (rationale dated 22 Oct 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Folder fits the type. Company filing announcements/20261023-d614aaae states no CRISIL mandate was given. Flag for orchestrator; identity and type are as printed."
+  - path: "inputs/results/Kusumgar_Results_Q1FY27_BM_Outcome_2026-08.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "board outcome (Q1 FY27 results annexed, CFO appointment)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 identical to announcements/20260811-565ce96c (duplicate candidate)."
+  - path: "inputs/results/Kusumgar_Results_Q2FY27_2026-11-05.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Limited"
+    doc_type: "board outcome (Q2 FY27 and H1 FY27 results annexed; Certoplast JV term sheet)"
+    period: "Quarter and half-year ended 30 Sep 2026 (Q2 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 matches the announcements/20261105 board outcome set (duplicate candidate)."
+  - path: "inputs/shareholding/Kusumgar_Shareholding_Screener_Sep2026_SECONDARY.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Kusumgar Ltd (screener.in company page; BSE 544821)"
+    doc_type: "secondary capture (screener.in company summary); not a shareholding pattern on page 1"
+    period: ""
+    folder_match: false
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 shows price Rs 549 at 12 Nov close and ratio panels. No shareholding quarter on page 1. Type does not fit the shareholding folder. No target folder is named in the inputs layout; orchestrator decides."
+  - path: "inputs/other/Kusumgar_Standalone_Financial_Statements_FY2025-26_scanned_no_text.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: ""
+    doc_type: ""
+    period: ""
+    folder_match: false
+    proposed_move: ""
+    page_read: 1
+    note: "UNIDENTIFIED. Scanned, no text layer. Opens as a PDF (page 1 image viewed). Page 1 image shows an auditor's report on standalone statements of Kusumgar Limited, year ended 31 Mar 2026. Not entered as identity under the no-text-layer rule. Left in place. Orchestrator to confirm by operator or OCR. Folder match not assessable."
+  - path: "inputs/screening/screener-Data_Sheet.csv"
+    file_type: csv
+    content_ok: true
+    issuer: "Kusumgar Ltd (KUSUMGAR)"
+    doc_type: "screener data sheet (P&L by FY)"
+    period: "FY26 (last report date 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Company name read from row 1. Filename does not name the company."
+  - path: "inputs/screening/ARVIND-Data_Sheet.csv"
+    file_type: csv
+    content_ok: true
+    issuer: "Arvind Ltd (ARVIND)"
+    doc_type: "screener data sheet (P&L by FY)"
+    period: "FY26 (last report date 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer data. Figures beside row labels present."
+  - path: "inputs/screening/GARFIBRES-Data_Sheet.csv"
+    file_type: csv
+    content_ok: true
+    issuer: "Garware Technical Fibres Ltd (GARFIBRES)"
+    doc_type: "screener data sheet (P&L by FY)"
+    period: "FY26 (last report date 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer data. Figures beside row labels present."
+  - path: "inputs/screening/MAYURUNIQ-Data_Sheet.csv"
+    file_type: csv
+    content_ok: true
+    issuer: "Mayur Uniquoters Ltd (MAYURUNIQ)"
+    doc_type: "screener data sheet (P&L by FY)"
+    period: "FY26 (last report date 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer data. Figures beside row labels present."
+  - path: "inputs/prospectus/SECTION_INDEX.md"
+    file_type: md
+    content_ok: true
+    issuer: "Kusumgar Limited (index of the prospectus)"
+    doc_type: "mechanical section index (derived file built by /step1, not a filed document)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Index of Kusumgar_Prospectus_2026-07-10.pdf. Not a corpus document. Not anchored evidence."
+unreadable: []
+unidentified:
+  - "inputs/other/Kusumgar_Standalone_Financial_Statements_FY2025-26_scanned_no_text.pdf"

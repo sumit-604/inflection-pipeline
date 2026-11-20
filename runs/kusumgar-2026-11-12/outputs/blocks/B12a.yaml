@@ -1,0 +1,21 @@
+stage: B12a
+company: "KUSUMGAR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+numbers_checked: 715
+mandatory_checked: 315
+mandatory_total: 315
+findings:
+  - {severity: "MAJOR", location: "08-promoter.md Section 4C CRISIL bullet and ERRATA bullet 2", claimed: "CRISIL rating 'BB- on 2026-01-21', then BB- Stable / A4+ on 2026-10-22 (CRISIL rationale p.1-2)", source_truth: "CRISIL rationale 2026-10-22 p.2 rating history: 21-01-26 = Crisil B/Stable (Issuer Not Cooperating) long term and Crisil A4 (INC) short term; BB-/Stable and A4+ are the 2026-10-22 revision (p.1); 28-11-24 B/Stable; 20-09-23 B/Stable", note: "MISMATCH. Body text and errata say BB- on 2026-01-21; source says B. The B08 YAML block ('history B back to 2023') is correct. Not a pillar or card input, so MAJOR.", source_fidelity: true}
+  - {severity: "MINOR", location: "08-promoter.md 3D Rating disclosure bullet; YAML adverse_findings item 3", claimed: "CRISIL non-cooperation 2026-01-21 at 'CARE release 2026-04-02 p.4'", source_truth: "CARE release p.3 'Status of non-cooperation with previous CRA' (CRISIL press release dated January 21, 2026); p.4 holds Annexure-1 and Annexure-2 only", note: "ANCHOR NOT FOUND. Date is right, page is wrong. B03 anchors p.3.", source_fidelity: true}
+  - {severity: "MINOR", location: "04-bizmodel.md 1B A&D Fabrics row; 1D WC intensity and Regulatory rows; 4A Structural row", claimed: "'payment follows inspection and acceptance' and 'normal cycle 100 to 120 days' at Q2 Pres p.23", source_truth: "Investor Q&A 17 on Q2 presentation p.24 (p.23 holds Q&A 6-12)", note: "ANCHOR NOT FOUND. Text and 100-120 days exist on the adjacent page. B05 anchors p.24.", source_fidelity: true}
+  - {severity: "MINOR", location: "04-bizmodel.md anchor line under 1B", claimed: "66.21% of Industrial and Automotive revenue tied to exports at 'p.194 (66.21%)'", source_truth: "Prospectus p.198: 1,091.61 of 1,648.60 = 66.21%", note: "ANCHOR NOT FOUND at the explicit page. p.198 appears in the same anchor list. B05 and B07 cite p.198.", source_fidelity: true}
+  - {severity: "MINOR", location: "07-emoat.md 1B Geography row", claimed: "Sri Lanka 102.79 to 349.63 in a row timed FY24-FY26", source_truth: "Prospectus p.209: Sri Lanka FY24 nil, FY25 102.79, FY26 349.63", note: "Period label imprecision. Both values exist at p.209; 102.79 is FY25, not FY24.", source_fidelity: false}
+critical_count: 0
+major_count: 1
+minor_count: 4
+false_positives_struck: 5
+material_universe: 1415
+acceptance_rate: 99
+coverage_note: "Mandatory tier 315 of 315 checked (236 Gate 0 inputs plus 79 Section 1B pillar and verdict-card inputs; my own enumeration, about +/-10% counting error; zero unchecked). Sample tier: about 1,100 material figures counted, 400 checked, about 700 not checked (mostly B02 pass 1 related-party tables, B03 board and pay detail, B06 quotes beyond the 20 tested, B09 Lattice sub-splits). numbers_checked 715 = 315 + 400. material_universe 1415 = 315 + 1,100. Not opened: company letter 2026-10-23, Reg 74(5) certificate and other announcements files except postal-ballot results and the 2026-11-05 outcome; Q1 FY27 deck; ARVIND, GARFIBRES, MAYURUNIQ CSVs; inputs/other scanned PDF. Web-sourced claims in B08 and B09 have no PDF in my inputs and were not checked. Five candidate rows struck under rule 5a (6.19x rounding; net debt 1,755.21 vs 1,755.22; printed peer P/E labels; FY25 utilisation 42.32% as printed; CARE gearing sentence as printed)."

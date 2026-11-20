@@ -1,0 +1,54 @@
+stage: B06-peers
+company: "KUSUMGAR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "peer-concalls: 6 transcripts across 2 of 3 peers (ARVIND 2, MAYURUNIQ 4). GARFIBRES publishes no transcripts on screener. ARVIND Aug and Oct 2026 transcripts carry no link on screener."
+  - "concalls: one main-company transcript only (Q1 FY27); no Q2 FY27 call was held, a written Investor Q&A replaced it."
+  - "annual-report ABSENT: the prospectus (dated 2026-07-10) stands in."
+flags:
+  - "ARVIND-Concall_May_2026 is the 7 May 2026 AAML acquisition investor call (Dalco-GFT, US needle-punch nonwovens, auto and geotextiles), not a results call. Management declined to discuss business performance on it (page 3). Its evidence maps to Arvind US automotive nonwovens, not to Arvind India protective or defence fabrics."
+  - "Neither peer set contains a defence-fabric or protective-textile comparable disclosure beyond one Arvind remark on lumpy defence orders (ARVIND Jan 2026 page 5). Defence-specific claims are UNVERIFIABLE; adjacent-segment evidence is weighted down."
+  - "Mayur margins are quoted by management and analysts on a basis that sometimes includes other income and FX gain (MAYURUNIQ May 2026 page 14). Basis is not stated per quote. Kusumgar deck EBITDA also includes other income, so the comparison is like-for-like only in direction."
+  - "Mayur management gave three different FY26 export OEM figures in one call (200, 260, 280 INR crore; MAYURUNIQ Nov 2026 page 14). Mayur numbers used here are anchored but carry that reliability caveat."
+  - "ARVIND Jan 2026 and ARVIND May 2026 are the only Arvind transcripts. The Q4 FY26 and Q1 FY27 Arvind calls (Aug and Oct 2026 per input gaps) are not in the corpus, so Arvind AMD data is stale to January 2026 for the margin and tariff questions."
+peers_provided: 3
+verified: []
+partially_verified:
+  - {claim: "Q1: Peers disclose an order book, order inflow or segment backlog and the share from government or defence buyers (Kusumgar refuses both)", peers: ["MAYURUNIQ", "ARVIND"]}
+  - {claim: "Q2: Long qualification and approval cycles, and a qualified supplier keeps its programme (Kusumgar: 90% linked to long-standing product approvals)", peers: ["ARVIND", "MAYURUNIQ"]}
+  - {claim: "Q4: EBITDA margin band 27-31% with large quarterly swings, expected to stay very similar in FY27", peers: ["MAYURUNIQ", "ARVIND"]}
+  - {claim: "Q5: US is 10-15% of revenue, blocked Q4 volume shipped when tariffs lifted, customer arrangements cushion a repeat", peers: ["ARVIND", "MAYURUNIQ"]}
+  - {claim: "Q6: Utilisation 55-60% after a large capex, no large capex planned, new areas and a JV taking shape", peers: ["MAYURUNIQ", "ARVIND"]}
+  - {claim: "Q7: Defence and indigenisation are a secular market driver; most raw material rises are passed on with a lag", peers: ["MAYURUNIQ", "ARVIND"]}
+  - {claim: "Q8: Export receivables are covered by a natural hedge, not mainly by forwards", peers: ["MAYURUNIQ"]}
+contradicted: []
+unverifiable:
+  - {claim: "Q3: Receivable days, operating cash conversion and government payment delay after inspection at peers", peers_checked: ["ARVIND", "MAYURUNIQ"]}
+peer_coverage_map:
+  - {peer: "ARVIND", quarter: "Q3 FY26 (call 30 Jan 2026)", usage: "SUBSTANTIVE", contribution: "AMD margin 15.5% and 14-15% thumb rule; lumpy defence orders; tariff discounts absorbed; US about 20% of fabric; working capital turns above 6x"}
+  - {peer: "ARVIND", quarter: "AAML acquisition investor call (7 May 2026; Dalco-GFT)", usage: "SUBSTANTIVE", contribution: "Auto OEM sole-sourcing 85-88%, contract life 5-6 years, model life 6-7 years; Dalco utilisation 85%, 60-day working capital, USD 5m per line capex"}
+  - {peer: "MAYURUNIQ", quarter: "Q3 FY26 (call 2 Feb 2026)", usage: "SUBSTANTIVE", contribution: "Margin 24-25%, dollar-fixed export pricing, tariff not impacting, PVC pass-through only for major moves, imports one third of RM"}
+  - {peer: "MAYURUNIQ", quarter: "Q4 FY26 (call 20 May 2026)", usage: "SUBSTANTIVE", contribution: "30% exit margin explained by export mix, FX and efficiency; 25-30% band; capex 300 crore global vs 50 crore line; pass-through lag 1-2 months; no fixed orders, projections only"}
+  - {peer: "MAYURUNIQ", quarter: "Q1 FY27 (call 6 Aug 2026)", usage: "SUBSTANTIVE", contribution: "Prior-quarter margin called FX one-off; sustainable 25% plus 1-2%; utilisation 75-78%; 10% natural hedge; no export price increase; freight 4x"}
+  - {peer: "MAYURUNIQ", quarter: "Q2 FY27 (call 5 Nov 2026)", usage: "SUBSTANTIVE", contribution: "US OEM volume weak, dispatches cut and warehouse cleared; PU plant 25% utilisation, breakeven 40%; new OEM wins take 2-3 years; Mayur segment data inconsistency"}
+  - {peer: "GARFIBRES", quarter: "none", usage: "NOT PROVIDED", contribution: "Publishes no call transcripts on screener; zero files; not an unused file"}
+industry_cross_read:
+  demand: "Split. Arvind AMD reports record quarter and holds 18-20% growth with chunky defence and composite orders (ARVIND Jan page 5); Mayur domestic is flat to weak and US auto OEM demand softened in H1 FY27 (MAYURUNIQ Nov page 5). No peer mentions an industry-wide defence boom."
+  pricing_inputs: "Peers raw materials are petroleum-linked and rose from March 2026; pass-through lags 1-2 months and is selective (MAYURUNIQ May page 11; Aug pages 8-9, 11; ARVIND May page 15). Peers absorbed tariff and freight shocks rather than passing them on (ARVIND Jan page 8; MAYURUNIQ Aug page 9). Matches Kusumgar's lag statement, not its margin stability."
+  capex_cycle: "Not an industry capacity race. Both peers add small step capacity inside existing sites (Mayur 50 crore line, Arvind USD 5m per line) and hold bigger capex pending a location decision (Mayur 250-300 crore). Kusumgar is a lone post-expansion digester at 55-60% utilisation, not a lone expander."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Currency tailwind reverting: Mayur called its Q4 FY26 margin abnormally high from a one-time FX move (MAYURUNIQ Aug page 6)"
+  - "Freight and logistics cost spike, shipment cost 4x (MAYURUNIQ Aug pages 8-9; Nov page 8)"
+  - "Customer end-demand and OEM projection cuts in the US (MAYURUNIQ Nov page 5)"
+  - "Tariff-linked discounts demanded by brands, absorbed by the supplier (ARVIND Jan page 8)"
+  - "Underused second plant (PU) at 25% utilisation versus 40% breakeven (MAYURUNIQ Nov page 11)"
+  - "Promoter succession and a failed AGM resolution on remuneration (MAYURUNIQ Nov page 10)"
+  - "Leverage and covenant headroom after a debt-funded acquisition (ARVIND May pages 4, 14-15)"
+  - "Consolidated margin distortion from subsidiary warehouse sales and transfer pricing (MAYURUNIQ Nov page 9)"
+  - "Chinese import competition in PU (MAYURUNIQ Feb page 8; Aug page 16)"
+net_narrative_effect: "complicates"
+cross_peer_hypothesis: "In the 2026 rupee window (about 85 to 92-94 per dollar), export-linked peers' margin step-ups are part currency and mix, not only structural, and the supplier carries the cost shocks (tariff, freight, raw material) while customers do not. Test: if Kusumgar's 27-31% band (deck basis incl. other income) is largely currency and mix, it should fall by a margin proportional to export share times the currency reversal when the rupee strengthens, and its other income and export mix should show it."
+analyst_note: "No peer discloses a comparable cash conversion or defence receivable profile, so Kusumgar's weakest metric (H1 CFO 16.8% of EBITDA) has no peer anchor. The closest margin anchor is Mayur at 25-30% on an export OEM mix, which makes a 27-31% band plausible for coated fabric but sourced to FX help. Arvind AMD at 14-15% is a different mix (project, composites, filtration) and is not a margin ceiling comparison. No peer mentions Kusumgar or parachute contracts. Mayur's own Q4 to Q1 margin drop shows how one-off the exit margin can be: the same pattern is a test for Kusumgar's Q1 31.1% to Q2 28.4%."

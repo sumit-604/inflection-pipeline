@@ -1,0 +1,21 @@
+stage: B13-synthesis
+company: "KUSUMGAR"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+verdict: "PROCEED WITH CAVEATS"                    # the five-verdict set only
+verdict_rule_applied: 3        # FLAG-CASH INDETERMINATE caps rule 3 at PROCEED WITH CAVEATS; rule 4 (five verifier MAJORs) lands on the same verdict
+flags_active: [FLAG-CASH, FLAG-GATE0]   # FLAG-CASH determination INDETERMINATE; FLAG-PROMOTER not active (B08 CAUTION, status partial)
+confidence_delta: {numerical: 99, redflag: 82, framework: 84.3, peer: null, overall: 82}   # peer NOT APPLICABLE (denominator below 4); framework is Gate 0 + Emerging Moat only, valuation half PENDING PHASE 3
+valuation_decision: ""         # PHASE 1 LITE: stage 11 has not run; no BUY | WATCHLIST | AVOID
+entry_range: {low: null, high: null}   # PHASE 1 LITE: NOT APPLICABLE, stage 11 has not run
+headline: "Defence fabric profits wait on cash collection"
+falsification_metric: "Q3 FY27 quarterly revenue below 2,000 INR mn without a stated cause, or a second deferral of the 2,371.96 INR mn A&D Solutions order (Q3 FY27 results); cash flag separator: FY27 consolidated CFO/EBITDA below 30% or Mar 2027 receivable days above 120 reads STRUCTURAL"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""  # empty if false
+notion_save:
+  page_title: ""               # PHASE 1 LITE: no Notion payload produced in this mode
+  summary: ""
+  drive_link: ""               # not supplied to this stage
+  mode: append-never-overwrite-status

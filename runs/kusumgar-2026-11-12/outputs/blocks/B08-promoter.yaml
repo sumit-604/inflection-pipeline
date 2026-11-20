@@ -1,0 +1,57 @@
+stage: B08-promoter
+company: "KUSUMGAR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "annual-report ABSENT: no annual report exists (listed 2026-07-15). The prospectus (dated 2026-07-10) stands in for the governance sections; no corporate governance report or board attendance record exists in the corpus."
+  - "shareholding: only a screener page print of the Sep 2026 pattern (SECONDARY); the exchange filing is not in the corpus, so the pledge figure after listing is not filing-anchored."
+  - "FY2025-26 standalone audited statements are a scanned PDF with no text layer; the statutory CARO report is not in the corpus."
+  - "concalls: one transcript only (Q1 FY27)."
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 3, caution: 7, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "100% offer for sale: promoters sold 15,521,698 shares for 6,500 INR mn with no money to the company; derived total cash to the promoter family 10,290.53 INR mn across OFS, pre-IPO secondary (2,672.00) and ECFPL (1,118.53)", evidence_tier: "VERIFIED (filing); total is derived", source: "Prospectus p.392, p.236-239, p.234-235", date: "2026-07-10"}
+  - {finding: "ECFPL bought from the promoters for 1,118.53 INR mn (10.1x net assets of 111.16; 35.1x FY25 profit of 31.84) while FY25 CFO was negative 1,549.76; the related-party risk factor omits it", evidence_tier: "VERIFIED (filing); multiples derived", source: "Prospectus p.234-235, p.330, p.283, p.49-50", date: "2024-12-05 (SPA)"}
+  - {finding: "CRISIL rated Rs 10 crore of bank facilities BB- Stable / A4+ 'issuer not cooperating' (history B on 2024-11-28 and 2023-09-20); company says it never mandated CRISIL; the Prospectus credit-rating risk factor lists CARE only", evidence_tier: "VERIFIED (filing)", source: "CRISIL rationale p.1-2; Company letter 2026-10-23; CARE release 2026-04-02 p.4", date: "2026-10-22"}
+  - {finding: "New CFO Ratan Jha appointed 27 days after listing; exit of CFO Kinnar Mehta (CFO since 2025-01-01) not in the corpus; second CFO change in 20 months", evidence_tier: "VERIFIED (appointment); exit NOT FOUND", source: "BM outcome 2026-08-11 p.1-2; Prospectus p.261", date: "2026-08-11"}
+  - {finding: "Public institutional category cast 87.19% of its votes against the ESOP ratification (9,286,511 against, 1,364,766 for); passed by the promoter block (99.99% of 78,754,401 shares); CEO holds 94.7% of options", evidence_tier: "VERIFIED (filing); percentages derived", source: "Postal ballot results 2026-09-18 p.3-4", date: "2026-09-18"}
+  - {finding: "CSR unspent in FY24, FY25 and FY26 (FY26 required 20.29, spent 4.08; cumulative unspent 37.93 INR mn)", evidence_tier: "VERIFIED (filing)", source: "Prospectus p.45", date: "2026-07-10"}
+  - {finding: "NCLT Section 9 IBC petition by Collage Design for 22.30 INR mn, pending; defects noted 2026-01-20", evidence_tier: "VERIFIED (filing)", source: "Prospectus p.382", date: "2025-12-06"}
+  - {finding: "Audit trail not enabled at database level until 2025-07-27 and not disclosed in board reports FY24-FY25; statutory auditor changed for FY25 (reason NOT FOUND)", evidence_tier: "VERIFIED (filing)", source: "Prospectus p.41-42, p.275-277", date: "2025-06-10"}
+  - {finding: "Prospectus table prints 120.00 INR mn for 82,192 shares at 365 (derived 30.00); printed 170.00 vs derived 80.00 for the WhiteOak SPA", evidence_tier: "VERIFIED (filing); discrepancy derived", source: "Prospectus p.238", date: "2025-09-25"}
+transition_evidence:
+  - {item: "Outside professional CEO with options", anchor: "Ankur Kothari since 2020-09-25; 2,071,222 options at 1 INR (Prospectus p.242, p.99-100)", weight: "moderate, pre-existing"}
+  - {item: "Outside CFO with IPO experience", anchor: "Ratan Jha appointed 2026-08-11 (BM outcome p.1-2)", weight: "weak to moderate; predecessor exit undisclosed"}
+  - {item: "Institutional entry", anchor: "WhiteOak, Ashoka, Motilal Oswal Finvest 2.60%, Edelweiss 1.95%, Spark Midas 1.56% (Prospectus p.236-239, p.104); DII 13.18% Sep 2026 (Screener, SECONDARY)", weight: "moderate; via promoter-sold placement"}
+  - {item: "Governance build before listing", anchor: "Three independents and audit committee 2025-03-17/2025-06-10; non-compete 2025-06-01; investor special rights terminated (Prospectus p.251, p.268, p.235-236)", weight: "moderate; IPO-readiness"}
+pledge_pct_latest: 0
+pledge_trend: "stable at nil: Prospectus p.110 (2026-07-10) states none of the promoter shares are pledged; three-year trend NOT FOUND; post-listing figure not filing-anchored (Screener print gives no pledge line)"
+searches_performed:
+  - "Kusumgar Limited IPO promoters offer for sale governance concerns"
+  - "Siddharth Kusumgar SEBI order OR penalty OR investigation"
+  - "Kusumgar Corporates parachute fabric Yogesh Kusumgar founder history"
+  - "Kusumgar Ltd CRISIL issuer not cooperating rating clarification BSE"
+  - "Kusumgar Corporates AmbitionBox OR Glassdoor reviews"
+  - "Kusumgar share price listing July 2026 promoter selling stake analyst concerns receivables"
+  - "Kusumgar CFO Kinnar Mehta resigns OR cessation Kusumgar Limited"
+  - "Kusumgar Limited IiAS OR SES OR InGovern proxy advisor ESOP postal ballot Ankur Kothari options"
+  - "Kusumgar Specialty Fabrics OR Kusumgar Technomic OR Four S Weaving MCA director Yogesh Kusumgar"
+  - "Yogesh Kusumgar Lifetime Achievement Award ITTA Kusumgar CSR philanthropy trust"
+  - "Kusumgar Q2 FY27 results November 2026 stock reaction promoter"
+  - "Kusumgar Ltd ED OR CBI OR income tax OR GST OR DRI search raid"
+  - "Kusumgar valuepickr OR reddit OR forum governance promoter sold 100% OFS receivables concern"
+  - "Kusumgar court OR tribunal OR NCLT OR High Court dispute Collage Design"
+  - "WebFetch cxodigitalpulse.com Ratan Jha CFO (read)"
+searches_skipped:
+  - "SEBI orders database direct search (not available through WebSearch)"
+  - "MCA21 master data for promoter entities and auditor change forms (ADT-1/ADT-3)"
+  - "NSE/BSE announcement portal for Kinnar Mehta cessation and post-listing shareholding/pledge"
+  - "IiAS, SES, InGovern proxy-adviser sites"
+  - "Glassdoor (no page found); X and Reddit full-text search"
+  - "WebFetch valueresearchonline.com (HTTP 403) and askfuzz.ai (HTTP 404)"
+  - "Broker IPO note PDFs (Axis, HDFC Securities, Motilal Oswal) not opened"
+verdict_basis: "No regulator, court or auditor finding against the promoters and no pledge, but a 100% offer for sale (about 10,290.53 INR mn derived to the family), the ECFPL purchase, an unresolved CRISIL non-cooperation dispute, a CFO change 27 days after listing and an institutional vote against the ESOP form a pattern of friction the corpus cannot settle"
+analyst_note: "FLAG-PROMOTER-PRELIM from B03 is resolved to CAUTION, not escalated. Two decisive unknowns: why CFO Kinnar Mehta left (not in corpus) and which lender sits behind the Rs 10 crore CRISIL lines. Derived 10,290.53 = OFS 6,500 + secondary 2,672.00 (2,292.00 + 80.00 + 299.9998) + ECFPL 1,118.53; the WhiteOak SPA line uses 80.00 because the printed 120.00 for 82,192 shares at 365 does not compute (Prospectus p.238). Prospectus pledge statement p.110; the Screener print has no pledge line. Rule G ledger has four of four heads evidenced; OR-14 does not bind because the verdict is CAUTION. Claude web should verify the five items listed in the report."

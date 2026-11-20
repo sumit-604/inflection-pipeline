@@ -1,0 +1,94 @@
+stage: B09-tam
+company: "KUSUMGAR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "annual-report ABSENT: no annual report exists (listed 2026-07-15). The prospectus (dated 2026-07-10) stands in; its industry section is a company-commissioned report."
+  - "segment split after FY26: NOT FOUND (the company reports a single segment after listing)."
+  - "order book and management revenue guidance: NOT FOUND in filings (management states a no-formal-guidance policy; the 'Rs 2,000 Cr by FY30' statement in the Step 1 brief is from a TV interview and is not in the corpus)."
+  - "concalls: one transcript only (Q1 FY27); no Q2 FY27 call was held."
+flags:
+  - {type: FLAG-COMPANY-COMMISSIONED-REPORT, reason: "Every market size is from the Lattice report dated 2026-06-21, paid for by the company (Prospectus p.141). Labels differ across sections: global shares are '2025' on p.150 and '2024' on p.189. Treat as management-sourced."}
+  - {type: FLAG-A&D-INDIA-SIZE-GAP, reason: "India A&D fabrics 5,850 Cr (Prospectus p.161) is 3.87x the spend-proportional benchmark of 1,513 Cr (global A&D fabrics US$5.4bn x India share of global defence spend 3.17%, p.155-156, p.159). Both shown; report figure carried; separator is India fabric intensity per defence rupee. Kusumgar's A&D revenue is 54.64% of FY26 contract revenue."}
+  - {type: FLAG-SOLUTIONS-MARKET-NOT-FOUND, reason: "India A&D solutions market size NOT FOUND. A proxy (global solutions/fabrics ratio 0.877 x India A&D fabrics = 5,129 Cr, confidence L, years differ 2024 vs 2025) sits in realistic TAM and SAM only."}
+  - {type: FLAG-SOM-BELOW-RUNRATE, reason: "Central SOM FY29 984 Cr is below the H1 FY27 annualised run-rate 996 Cr (derived 2 x 498.19). At least 63.6% of H1 FY27 revenue came from work other than the 2,371.96 mn order (B04), and that floor annualises to about 634 Cr. Alternative run-rate-anchored path: 22.9% yr3, 19.0% yr5. Separating observation: H2 FY27 revenue excluding the 2,371.96 mn order."}
+  - {type: FLAG-CAPACITY-FY31, reason: "Central SOM FY31 1,273 Cr needs 99.6 INR per metre at 100% utilisation of 127.80 mn m (FY26: 98.4). Gap 16 Cr at 100% and 267 Cr at 80% at FY26 revenue per metre; closes only if revenue per metre rises with A&D mix (FY25: 165.5)."}
+  - {type: FLAG-EXPORT-SAM-NOT-SIZED, reason: "Exports are 39.99% of FY26 contract revenue (Prospectus p.190 via B04). Export SAM not sized; export SOM grows at global weighted CAGR 8.39%, share held. Export split by segment NOT FOUND."}
+  - {type: FLAG-MGMT-GROWTH-STATEMENT, reason: "The only management growth figure (Rs 2,000 Cr by FY30) is from the Step 1 brief, memory not a filed claim. Not used in mgmt_claim fields."}
+market_definition: "India domestic consumption (incl. imports, excl. exports) of engineered fabrics in the A&D, industrial and outdoor/lifestyle pools, FY26 base, plus implied A&D solutions; global shown separately"
+tam_cr: {conservative: 94100, realistic: 99229}
+sam_cr: 63445
+sam_pct_of_tam: 63.9
+som_3yr_cr: 984
+som_5yr_cr: 1273
+som_implied_revenue_cagr: {yr3: 13.4, yr5: 13.5}
+current_sam_share_pct: 0.64
+revenue_headroom_x: 156.7
+tam_growth_pct: 13.1
+runway_class: "MASSIVE"
+mgmt_claim_cr: 99000
+mgmt_claim_ratio: 1.05
+mgmt_claim_read: "reasonable"
+capacity_check: "sufficient to FY29 at FY26 revenue per metre (984 Cr = 78% of 1,257 Cr ceiling); FY31 gap of Rs 16 Cr at 100% utilisation and Rs 267 Cr at 80%; SOM is the optimistic side if mix stays fabric-heavy, the capex plan is not (no large capex planned)"
+methods_used:
+  - "M1 top-down (Lattice report, India FY26)"
+  - "M3 peer revenue aggregation (organised floor only; unorganised NOT FOUND)"
+  - "M4 import substitution (qualitative; engineered-fabric import share NOT FOUND)"
+  - "M5 global benchmark (India share of global by pool; defence-spend proportional A&D check)"
+  - "M2 bottom-up: not performed, unit data NOT FOUND"
+stale_data_flags:
+  - {datapoint: "India engineered fabrics FY2020 base 558.8 bn (CAGR 10.0% FY20-26)", source: "Prospectus p.152", year: 2020}
+  - {datapoint: "India A&D fabrics FY2020 base 22.8 bn (CAGR 17.0%)", source: "Prospectus p.161", year: 2020}
+  - {datapoint: "Global A&D solutions 2019 base US$4,250 mn (CAGR 1.8% 2019-24)", source: "Prospectus p.163", year: 2019}
+  - {datapoint: "India technical textile imports US$2.05 bn / exports US$2.59 bn FY24 (search snippet, article not pinned)", source: "web search 2026-11-12", year: 2024}
+searches_performed:
+  - "India technical textiles market size FY2025 NTTM (WebSearch 2026-11-12)"
+  - "India defence budget 2026-27 capital outlay domestic procurement (WebSearch 2026-11-12)"
+  - "India technical textiles exports imports FY2025 SRTEPC MATEXIL (WebSearch 2026-11-12)"
+  - "Garware Technical Fibres Q2 FY27 defence parachute (WebSearch 2026-11-12)"
+  - "India technical textiles unorganised share import dependence defence fabrics (WebSearch 2026-11-12)"
+  - "India parachute market military procurement Gliders India (WebSearch 2026-11-12)"
+searches_skipped:
+  - "Unorganised-sector share of Indian technical textiles: searched, NOT FOUND; no estimate filled."
+  - "Engineered-fabric import share by value: searched, NOT FOUND; no estimate filled."
+  - "Independent India parachute / camouflage market size: searched, NOT FOUND."
+downstream_candidates:
+  - signal: "MoD capital acquisition budget and domestic-procurement carve-out"
+    entity_type: "macro"
+    demand_link: "Funds the tenders behind A&D fabrics and solutions; 75% of capital acquisition reserved for domestic industry."
+    likely_source: "Union Budget Ministry of Defence demand for grants; PIB defence releases; Parliament Q&A (sansad.in)"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Defence Acquisition Council approvals and MoD parachute / camouflage tenders"
+    entity_type: "regulatory"
+    demand_link: "Each approval or tender is the trigger for A&D Solutions orders and A&D fabric pull-through."
+    likely_source: "PIB (DAC releases); GeM portal bids; MoD tender pages"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Gliders India Limited and Troop Comforts Limited (government buyers named on Call p.13)"
+    entity_type: "counterparty"
+    demand_link: "Buy Kusumgar fabric directly and make finished goods for the military."
+    likely_source: "Gliders India filings and concall (listed PSU), PIB, Parliament Q&A"
+    cadence: "quarterly"
+    shared: false
+  - signal: "US tariff actions on Indian engineered fabrics (Section 301 proposal 12.5%, Section 122 surcharge)"
+    entity_type: "regulatory"
+    demand_link: "10-15% of revenue is US-linked (Call p.7); tariffs delayed shipments into Q4 FY26."
+    likely_source: "USTR notices and Federal Register; MATEXIL trade data"
+    cadence: "event-driven"
+    shared: true
+  - signal: "India technical textile exports, monthly, by HS code"
+    entity_type: "macro"
+    demand_link: "Tracks export demand across all four segments; exports are 39.99% of FY26 revenue."
+    likely_source: "DGCI&S / tradestat.commerce.gov.in; MATEXIL monthly bulletin"
+    cadence: "monthly"
+    shared: true
+  - signal: "India automobile production (SIAM monthly) for tapes, roof liner and custom fabrics"
+    entity_type: "macro"
+    demand_link: "Drives part of Industrial and Automotive Fabrics, 24.43% of FY26 revenue."
+    likely_source: "SIAM monthly production data; DGCI&S for auto component exports"
+    cadence: "monthly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Three points a later stage cannot rebuild. (1) Conservative TAM 94,100 Cr is the three end-use pools whole; the real filter is SAM, which drops the automobile product class (28,784 Cr) and adds the solutions proxy; mgmt claim is 1.56x SAM. Capability, channel and customer filters are NOT FOUND, so SAM is an upper bound. (2) Share-gain pp rules fail at 0.64% share: +1pp equals about 634 Cr, more than the 582 Cr of capacity headroom at FY26 mix. Capacity binds first, so SOM rides market growth (domestic 16.5% mix-weighted India CAGR, exports 8.39% global). (3) The central SOM sits below the H1 FY27 annualised run-rate; carry both paths and let Stage 11 pick on forward evidence, not on this block."

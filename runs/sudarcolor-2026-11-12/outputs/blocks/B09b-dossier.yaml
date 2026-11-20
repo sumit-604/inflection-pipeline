@@ -1,0 +1,74 @@
+stage: B09b-dossier
+company: "SUDARCOLOR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Any company concall transcript (Q2 FY27 call or earlier); company holds none, web search at /step1 found none"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Investor presentation (any quarter)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Credit rating rationale (AR FY26 p.67 item 19: no rating sought)"
+    expected_source: "rating agency site"
+    kind: "plausibly-nonexistent"
+  - document: "H1 FY27 Reg 23 related-party filing (group share of sales, purchases, receivables, payables)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Quarterly shareholding pattern as filed with pledge/encumbrance line (corpus holds a screener copy only)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Reg 30 announcements before 2026-09-01 (prior 12 months; collector limit)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Annual report FY2023-24 (third annual report; two held)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Text versions of scanned SAST filings 6D1F3240, A16C6814 and C1DC7FB5 pages 1-5"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Letter of Offer (open offer computation section)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "SUDARSCHEM (parent) Q2 FY27 concall transcript"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+archetypes:
+  - line: "Third-party pigment sales (71.6% of revenue, B04)"
+    archetype: "Build-to-spec component maker (alternate reading open: Commodity converter, which would bind Amendment 17)"
+  - line: "Group-allocated sales and services (24.5% goods plus 3.2% services, B04)"
+    archetype: "Outsourcing partner"
+transition:
+  - line: "Pigments (single reporting segment)"
+    from_tier: "R1 COMMODITY PRICE-TAKER edge of R2 (weak pricing power, ROCE 7.98% to 10.2% depending on convention, B01, B04)"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (management claims a move up the value chain, AR FY26 p.10 via B05)"
+    engine: "Group portfolio and plant loading (Frankfurt AZO to Roha, ONE Sudarshan accounts) lifting third-party and group volume over a mostly fixed cost base; operating EBITDA margin 12.2% H1 FY27 vs 10.7% H1 FY26 (B04, B05)"
+    proof_gate: "Two consecutive quarters (Q3 and Q4 FY27) with operating EBITDA margin at or above 12% AND gross margin at or above 39.3% AND third-party revenue growing in the H1 FY27 Reg 23 split AND CFO positive in H2 FY27 (thresholds from B05 triggers 1-3)"
+    recognition_gap: "OPEN QUESTION for Stage 11 via the PE gap: does the TO state already look reflected in market pricing? No conclusion here"
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "Growth sits only in group sales, or Q3 FY27 revenue falls back toward 175-211, or gross margin below 39% while other expenses grow faster than revenue, or inventory above 255.22 / CFO still negative at FY27 year end (B05 kill signals)"
+dominant_variables:
+  - "Third-party vs group revenue split (group allocation of volume)"
+  - "Gross and operating EBITDA margin vs transfer-priced group purchases"
+  - "Working capital days and cash conversion (inventory, receivables, overdue and group payables)"
+  - "Domestic end-market volume (paints and coatings, plastics, inks) vs Chinese price floor"
+business_falsifier: "H1 FY27 or FY27 related-party disclosure shows third-party revenue falling while group share of sales rises above 24.5% and group purchases above 32.0%, so the entity is a toll node of the parent and must be re-declared Outsourcing partner; or any merger, delisting or amalgamation scheme text appears (none found, B08)"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 5
+  verifiability_ratio: "3 of 5 externally observable"
+  single_point_failure: "Group allocation of volume: the parent sets plant loading and sourcing, and group sales explain 97.9% of the FY26 revenue fall (B03)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 12
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "20ac48b61db04be4f578bb3d6c45d0631a113788"

@@ -1,0 +1,71 @@
+stage: B09b-dossier
+company: "SHAWGELTIN"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Q2 FY27 results (quarter and half year ended 30-Sep-2026), incl. H1 balance sheet and cash flow; board meeting on the run date 12-Nov-2026, not filed at collection"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "AGM 19-Aug-2026 recording (CDSL webcast); members' questions answered by MD and CFO, content unrecorded in the outcome filing"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Annual Report FY2023-24 (only FY2025-26 and FY2024-25 held; FY2024-25 is scanned with no OCR text)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "NGL Reg 30 filing of 4-Dec-2024 (board approval of the IGCL investment), IGCL Letter of Offer (Mar-2025) and IDC fairness recommendation, NGL DLOF 19-Jun-2023 read only via secondary summary or SEBI web copy"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Public shareholding sub-category detail (named FII/DII holders); only category-level BSE Sep-2026 summary and screener trend held"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Investor presentation (none on BSE or screener)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "NGL earnings-call transcripts (company holds no calls; concalls_available false)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Broker or research notes on NGL (none collected, no coverage found)"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Prospectus (long-listed company; not expected)"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Gelatine (pharma and edible grade, 70.62% of FY26 revenue)"
+    archetype: "Commodity converter"
+  - line: "DCP animal feed grade (29.08% of FY26 revenue, co-product of the same bone)"
+    archetype: "Commodity converter"
+transition:
+  - line: "Gelatine (one plant; DCP co-product shown as no claimed climb, stays at the FROM rung)"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R2 COST-ADVANTAGED CONVERTER"
+    engine: "Cost position: bone and materials cost (materials plus inventory change down 511 bp of revenue) and power and fuel (down 217 bp, 2.15 MW solar and UF plant); capacity +600 MT gelatine and +1,500 MT DCP from Jan-2027 is the second lever (rater view)"
+    proof_gate: "Standalone operating margin before other income at or above 18% with materials plus inventory change at or below 52% of revenue, held in Q2 FY27 and the next quarter (Q1 FY27: 20.79% and 50.6%), while IGCL's materials ratio does not rebound. Two-quarter hold is a drafting choice for the operator to confirm."
+    recognition_gap: "OPEN QUESTION for Stage 11: does the market already reflect an R2 state? Resolved through the PE gap at Stage 11. No conclusion here."
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Operating margin before other income below 16.4% or materials plus inventory change above 53% of revenue with gelatine ASP flat, while IGCL's ratio rises with it (industry cycle, not structure); or no commissioning notice by 2027-03-31"
+dominant_variables:
+  - "Materials plus inventory change as % of revenue (bone and gelatine spread): FY26 53.0%, Q1 FY27 50.6%; IGCL fell 727 bp (B03)"
+  - "Power and fuel as % of revenue: FY26 10.8%, Q4 FY26 8.9%, Q1 FY27 11.9% (B03, B05)"
+  - "Capacity expansion delivery: +600 MT gelatine, +1,500 MT DCP, Rs 33 Cr, commissioning from Jan-2027, rater view only (B05)"
+  - "Cash conversion: CFO/PAT 86.4% in FY26 vs 99.0% in FY25, inventory 156 days of materials cost (B02, B03)"
+business_falsifier: "Filed evidence that the gelatine line is spec-in with qualification lock-in and contract terms (build-to-spec rather than commodity converter), or a scheme or transaction that merges NGL operations with IGCL, which changes the starting business itself (B04 archetype marker, B08 reading A)"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 8
+  verifiability_ratio: "4 of 8 externally observable"
+  single_point_failure: "Materials plus inventory change ratio (bone and gelatine spread) reversing: 511 bp of the 6.2 point margin move sits in this line and IGCL moved the same way"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+second_order:
+  chains_drafted: 2
+  pending_live_links: 6
+  confirm_by_observations: 2
+research_brief_items: 18
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "b091934be3b5088c72d5b942924050279a2e8c55"

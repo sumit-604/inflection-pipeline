@@ -1,0 +1,22 @@
+stage: confidence-delta
+company: SHAWGELTIN
+run_date: 2026-11-12
+phase: 1
+verifier_a_identity_check: "B12a carries 0 CRITICAL rows; no strike needed. Verifier A struck 5 of its own rows at its self-check (recorded in B12a false_positives_struck)."
+confidence_delta:
+  numerical_acceptance: 99.0      # B12a, 768 numbers checked; mandatory tier 348 of 348 (OR-32)
+  redflag_coverage: 80            # B12b, 4 of 5 MATERIAL (CRITICAL + MAJOR) items caught upstream; material_found 5 >= 4
+  framework_adherence: 85.3       # B12c phase-1 half only: Gate 0 54/59 + Emerging Moat 33/43 = 87/102; valuation half pending phase 3
+  peer_utilisation: null          # B12d: 1 of 3 peers used substantively; denominator 3 < 4
+  overall: 80
+  overall_set_by: "redflag_coverage (B12b)"
+  not_applicable:
+    - "peer_utilisation: denominator 3 peers provided (< 4); reported as a count: 1 of 3 substantive (NATCAPSUQ); NITTAGELA and IGCL hold no calls"
+  pending_phase_3:
+    - "framework_adherence valuation half (B10, B11)"
+band: "75-89 normal, note specifics"
+rework_triggers:
+  verifier_a_confirmed_critical: 0
+  any_acceptance_below_60_on_denominator_ge_4: false
+  verdict: "no REWORK"
+remediation_cycles: 0   # no cycle run; MAJOR findings carried to Halt 1 as open items

@@ -1,0 +1,91 @@
+stage: B09-tam
+company: "SHAWGELTIN"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "No concalls, no presentation, Q2 FY27 results not filed (B00); management TAM claim is one global figure and one India growth rate, source unnamed (AR PDF p.11)"
+  - "NOT FOUND: bone vs hide split of India gelatine, pharma-grade vs food-grade share for bone gelatine, unlisted producer capacities, India DCP production and import tonnage, unorganised share, per-capita benchmark"
+flags:
+  - "SAM at 84.6% of TAM is a ceiling: the only evidenced filter is Mordor's animal-based share (79.55%); bone, pharma and technical filters are NOT FOUND"
+  - "Method divergence: top-down India gelatine Rs 2,735 Cr vs listed-peer plus import floor Rs 1,491 Cr (ratio 1.83); separating observation is output of unlisted producers, NOT FOUND"
+  - "SOM yr3 Rs 339 Cr exceeds capacity-embedded revenue Rs 263 Cr at flat price and utilisation; utilisation NOT FOUND"
+  - "Management claim is a global figure (USD 3.60 bn), compared to an India TAM; scope mismatch noted"
+  - "Market-research sources are secondary, sources disagree 15% on India gelatine (Mordor vs MRF vs MnM); DCP market has one source"
+market_definition: "India bone-based pharma and edible gelatine plus feed-grade DCP, domestic sales plus import-priced competition; global shown separately"
+tam_cr: {conservative: 3647, realistic: 3896}
+sam_cr: 3087
+sam_pct_of_tam: 84.6
+som_3yr_cr: 339
+som_5yr_cr: 431
+som_implied_revenue_cagr: {yr3: 16.3, yr5: 14.9}
+current_sam_share_pct: 7.0
+revenue_headroom_x: 14.3
+tam_growth_pct: 6.9
+runway_class: "GOOD"
+mgmt_claim_cr: 34290
+mgmt_claim_ratio: 9.4
+mgmt_claim_read: "inflated"
+capacity_check: "gap of Rs 76 Cr at yr3 (SOM 339 vs capacity-embedded 263 at flat price and utilisation); SOM is the optimistic side unless FY26 utilisation is well below 100% (NOT FOUND)"
+methods_used: ["top-down", "peer revenue aggregation (partial, listed only)", "import substitution (value only)", "global benchmark (ratio only)", "bottom-up (not completed, NOT FOUND)"]
+stale_data_flags:
+  - {datapoint: "India HS 3503 gelatine imports USD 61 mn", source: "Trendeconomy via web search", year: 2023}
+  - {datapoint: "India HS 3503 import tonnage 4,803 t", source: "trade page via web search, direction only", year: 2015}
+  - {datapoint: "India gelatin market USD 330.75 mn", source: "Market Research Future", year: 2024}
+  - {datapoint: "India DCP market USD 95.7 mn", source: "Market Research Future", year: 2024}
+  - {datapoint: "NGL capacity lifted 2,100 to 2,400 MT", source: "web profile page; CARE 06-Mar-2026 p.3 also gives 2,400", year: 2008}
+searches_performed:
+  - "India gelatin market size 2025 (Mordor USD 287.13 mn 2025; MRF; MnM; Ken)"
+  - "Mordor India gelatin page fetch (source split, grade split, players)"
+  - "India gelatine manufacturers and capacities (Nitta, IGCL, NGL)"
+  - "India gelatin imports HS 3503 (value only)"
+  - "IGCL capacity (2,000 MT, plan to 2,700 MT)"
+  - "India DCP feed-grade market (MRF USD 95.7 mn 2024)"
+  - "India DCP consumption and producers (no tonnage found)"
+  - "India empty capsule market (MnM USD 169.8 mn 2025)"
+  - "USD INR RBI reference rate (95.2492 on 06-Nov-2026)"
+searches_skipped:
+  - "Pioneer Jellice, Sterling Gelatin (Godrej), Rousselot-Bhargava capacities: no usable result, NOT FOUND"
+  - "India DCP import share and domestic production tonnage: not in public snippets, NOT FOUND"
+  - "Bone-gelatine share of India gelatine and pharma-grade share: NOT FOUND"
+  - "Per-capita gelatine benchmark vs China and SE Asia: not searched to a usable source"
+  - "Unorganised-sector share: NOT FOUND"
+downstream_candidates:
+  - signal: "Hard-capsule maker volumes and gelatine buying (ACG, Geltec, Fortcaps, Natural Capsules)"
+    entity_type: "end-customer"
+    demand_link: "Capsule makers buy NGL pharma gelatine; capsule volume growth about 6% sets pull."
+    likely_source: "Listed capsule makers' exchange filings and concall transcripts"
+    cadence: "quarterly"
+    shared: false
+  - signal: "India HS 3503 gelatine import value and volume"
+    entity_type: "macro"
+    demand_link: "Imports are 18-20% of one buyer's gelatine and cap domestic gelatine price."
+    likely_source: "Commerce ministry trade statistics (DGCI&S), tracked by HS code"
+    cadence: "monthly"
+    shared: false
+  - signal: "Peer capacity commissioning (IGCL 2,000 to 2,700 MT, Nitta expansion)"
+    entity_type: "counterparty"
+    demand_link: "Rival capacity lands in the same capsule-maker customer base as NGL's +600 MT."
+    likely_source: "BSE/NSE announcements and annual reports of IGCL and Nitta"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Poultry and animal feed production volumes"
+    entity_type: "macro"
+    demand_link: "Feed-grade DCP volume follows feed output, 57.7 mn mt in 2025 per trade-press report."
+    likely_source: "Feed industry association data and poultry trade press"
+    cadence: "quarterly"
+    shared: false
+  - signal: "BIS IS 5470 mandatory standard for feed-grade DCP (enforcement date 1 Apr 2027 per secondary source)"
+    entity_type: "regulatory"
+    demand_link: "A quality mandate can move DCP volume toward compliant producers."
+    likely_source: "BIS notifications and DGFT/ministry orders"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Bone and crushed-bone supply price (domestic and imported)"
+    entity_type: "counterparty"
+    demand_link: "Raw bone sets both gelatine and DCP cost; serves both revenue streams."
+    likely_source: "Trade data on raw-bone imports and peer annual reports"
+    cadence: "quarterly"
+    shared: true
+demand_externally_verifiable: true
+analyst_note: "Central TAM is Mordor India gelatine USD 287.13 mn (2025) plus MRF India DCP USD 95.7 mn (2024), both converted at 95.25 INR/USD. The DCP leg rests on one secondary source; treat its 6.9% share as low confidence. Two readings of share gain: FY26 volume +16.17% vs market about 6% means about +0.7pp share a year (supports +2pp in 3 years), or the volume was stock-built and price-cut (ASP -5.20%, finished goods down 276 lakh per B04). Separating observation: FY27 gelatine volume growth with ASP flat or up after the Jan-2027 capacity. SOM is not a forecast; stage 11 should cap revenue at capacity-embedded Rs 263 Cr until utilisation is known."

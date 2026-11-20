@@ -1,0 +1,127 @@
+stage: B05-concall
+company: "TDPOWERSYS"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "FRESHNESS: Q2 FY27 earnings call transcript absent (call held 13 Nov 2026; BSE, screener and tdps.co.in show audio only as of 15 Nov 2026). Expected source: BSE corporate announcements for 533553, about 19 Nov 2026."
+  - "collector_warning (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. [REPAIRED in Step F: two shareholding filings downloaded from tdps.co.in]"
+  - "collector_warning (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again. [OPEN: those five sheets are ABSENT documents; Data_Sheet is populated, annual FY2017-FY2026, quarterly Jun 2024-Sep 2026; Number of shares row blank]"
+  - "collector_warning (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again [REPAIRED in Step F: three results filings downloaded from BSE]"
+  - "collector_warning (verbatim): no rating PDF yet: add later the same way [REPAIRED in Step F: CRISIL rationale 22 Jun 2026, a print of the HTML rationale, not the agency PDF]"
+  - "research/ empty: no broker notes (non-anchored source only; no effect on anchored evidence)"
+  - "prospectus/ empty: not expected, company listed 2011; not a gap"
+  - "Peer Q2 FY27 transcripts absent: TRITURBINE and AZAD list audio only; CGPOWER latest is Q1 FY27"
+  - "No peer screening sheets (collector peer pass delivered zero files; peer transcripts fetched by direct download)"
+  - "Rating: only CRISIL checked; no other agency rationale sought"
+  - "Read route: pre-extracted page-marked .txt beside every PDF (tools/extract_pdfs.py) for all stages and verifiers; the SAST Reg 29(1) scan of 14 Nov 2026 and one newspaper notice went through OCR"
+  - "STAGE 5: Q2 FY27 management commentary (13 Nov 2026 call) UNREAD; Q2 FY27 delivery judged from filed results, presentation tables and announcements only. Capacity plan for FY29-30 promised for that call is NOT FOUND."
+  - "STAGE 5 NOT FOUND: quantum of the Turkey LD, motor revenue for FY26, data-centre share of inflow, customer shares on calls, QIP object of issue, cause of the order-book roll-forward gap, MW rating of the Rs 192 cr own-design order"
+flags:
+  - {type: FLAG-GUIDANCE, reason: "FY27 revenue guide stepped Rs 2,200+ -> 2,400+ -> 2,600 -> 2,900-3,000 cr, each beaten before it was raised; H1 Rs 1,481.4 cr is 51% of the low end; low end needs Rs 709 cr per quarter in H2 vs Q2 Rs 841.3 cr. Guide is not a forecast (Q3C p.5; Q4C p.5; Q1C p.4; presentation p.38; Q2 results p.7)."}
+  - {type: FLAG-CASH, reason: "H1 FY27 consolidated CFO Rs 211.7 cr vs PAT Rs 210.0 cr (100.8%) rests on other payables line +Rs 297.6 cr; ex that line CFO about -Rs 85.9 cr. Receivables Rs 742.1 -> 952.9 cr; other current liabilities Rs 190.3 -> 430.3 cr, nature of Q2 rise unconfirmed (Q2 results p.8-9)."}
+  - {type: FLAG-FUNDING, reason: "Promoter preferential Rs 75 cr at Rs 600 (post-split) approved 14 Aug 2026 and QIP Rs 600 cr at Rs 775 closed 12 Oct 2026, with Rs 288.9 cr cash and no debt at 30 Sep; not signalled on the Q3 or Q4 calls; QIP object NOT FOUND (announcements 20260814-65cacc0e, 20261012-39697c5e; Q2 results p.8)."}
+  - {type: FLAG-ORDERBOOK, reason: "Order book rose Rs 320 cr more than inflow minus revenue over Q4 FY26 to Q2 FY27; Q2 FY27 inflow Rs 824.4 cr vs revenue Rs 841.3 cr (0.98); H1 domestic inflow -31% YoY (presentation p.28-29; calls p.3)."}
+  - {type: FLAG-DISCLOSURE, reason: "Data-centre share, share of wallet, pricing quantum, headcount added, large-generator customer/capex/TAM refused or deferred across calls; customer concentration and subsidiary channel never raised (2E, 2D)."}
+quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Gas turbine and gas engine generator volume for OEM data-centre and distributed power programmes", type: "VOLUME / SECTORAL", timeframe: "FY27-FY28 (beyond FY28 medium conviction)", conviction: "H", confirm_signal: "Quarterly inflow Rs 750-800 cr or more; inflow / revenue back above 1.0; Q3 FY27 revenue at or above Rs 709-759 cr", kill_signal: "Inflow / revenue below 1.0 for two quarters; OEM slot cancellations; Customer A share rising from 23.17%"}
+  - {priority: 2, name: "Debottlenecking to about Rs 3,200 cr FY28 capacity (Rs 50 cr FY27 capex)", type: "VOLUME", timeframe: "FY27-FY28", conviction: "M", confirm_signal: "Quarterly revenue at or above Rs 800 cr with gross margin 33-35%; capex on plan (H1 Rs 46.1 cr)", kill_signal: "Gross margin below 32%; production loss from labour or equipment; capex overrun"}
+  - {priority: 3, name: "Margin hold: pass-through, forex, mix keep gross margin 34% plus or minus 1% and EBITDA 19-21%", type: "PRICE-MIX / COST", timeframe: "FY27", conviction: "M", confirm_signal: "Gross margin 33-35%; EBITDA 19% or more; employee cost / revenue near 7-8%", kill_signal: "Gross margin below 32% for two quarters; copper up another 20-30%"}
+  - {priority: 4, name: "Capacity to Rs 4,000 cr+ for FY29-FY30 funded by Rs 675 cr raised", type: "VOLUME", timeframe: "FY29-FY30", conviction: "M", confirm_signal: "Capex plan with amount and year (promised for the 13 Nov call, unread)", kill_signal: "Plan deferred again; QIP proceeds not tied to a capex or working-capital line"}
+  - {priority: 5, name: "Large generators above 100 MW: Siemens Energy build-to-print framework, Rs 192 cr own-design 2-pole order, UK R&D", type: "VOLUME / PRICE-MIX", timeframe: "CY2028 onward (FY29+)", conviction: "L-M", confirm_signal: "Purchase orders under the Siemens framework with value; capex amount; deliveries from Aug 2027", kill_signal: "Slip past calendar 2028; no POs in 12 months; capex above funded amount"}
+  - {priority: 6, name: "Hydro new and refurbishment orders", type: "VOLUME / REGULATORY-POLICY", timeframe: "FY27-FY28", conviction: "M", confirm_signal: "More hydro orders in Q3 and Q4 FY27; hydro revenue disclosed", kill_signal: "Order flow stalls; no revenue split ever given"}
+  - {priority: 7, name: "Combined-cycle conversion at data-centre sites", type: "SECTORAL", timeframe: "FY29+", conviction: "L", confirm_signal: "Steam-turbine generator orders linked to combined cycle", kill_signal: "Project delays push it past FY30"}
+  - {priority: 8, name: "Motors and nuclear (NPCIL, SMR)", type: "VOLUME / REGULATORY-POLICY", timeframe: "FY28+", conviction: "L", confirm_signal: "A motor revenue number on any call", kill_signal: "Remains unquantified"}
+guidance:
+  - {item: "FY26 revenue", number: "Rs 1,800+ cr (delivered Rs 1,856.2 cr consolidated)", timeframe: "FY26", stated_in: "Q3 FY26 call p.5"}
+  - {item: "Q4 FY26 production and sales", number: "Rs 550-575 cr (delivered Rs 589.2 cr)", timeframe: "Q4 FY26", stated_in: "Q3 FY26 call p.4"}
+  - {item: "Quarterly sales from Q1 FY27", number: "about Rs 600 cr", timeframe: "FY27", stated_in: "Q3 FY26 call p.4"}
+  - {item: "FY27 revenue", number: "Rs 2,200+ cr", timeframe: "FY27", stated_in: "Q3 FY26 call p.5"}
+  - {item: "Bulk capacity", number: "none to FY28; Rs 2,600-2,800 cr peak", timeframe: "to FY28", stated_in: "Q3 FY26 call p.12"}
+  - {item: "Gross margin", number: "about 35%", timeframe: "ongoing", stated_in: "Q3 FY26 call p.13"}
+  - {item: "FY27 revenue", number: "Rs 2,400+ cr", timeframe: "FY27", stated_in: "Q4 FY26 call p.5"}
+  - {item: "Capex existing lines", number: "Rs 50 cr FY27 plus about Rs 50 cr FY28", timeframe: "FY27-FY28", stated_in: "Q4 FY26 call p.7"}
+  - {item: "Capacity", number: "Rs 3,000-3,200 cr", timeframe: "FY28", stated_in: "Q4 FY26 call p.7, p.13"}
+  - {item: "Gross contribution margin", number: "about 34% average", timeframe: "FY27", stated_in: "Q4 FY26 call p.6"}
+  - {item: "Large-generator capex and plan", number: "details in 2-3 months", timeframe: "by Aug 2026", stated_in: "Q4 FY26 call p.5"}
+  - {item: "FY27 revenue", number: "Rs 2,600 cr", timeframe: "FY27", stated_in: "Q1 FY27 call p.4"}
+  - {item: "FY27 order inflow", number: "about Rs 700 cr per quarter, Rs 2,800+ cr", timeframe: "FY27", stated_in: "Q1 FY27 call p.5"}
+  - {item: "FY28 capacity", number: "Rs 3,200 cr (Rs 22 bn also spoken in same call, conflict)", timeframe: "FY28", stated_in: "Q1 FY27 call p.3, p.5-6"}
+  - {item: "FY29-FY30 capacity", number: "Rs 4,000 cr+, year not given", timeframe: "FY29-FY30", stated_in: "Q1 FY27 call p.3, p.6"}
+  - {item: "Debottlenecking capex", number: "Rs 50 cr FY27 (Rs 500 mn and Rs 100 cr also stated)", timeframe: "FY27-FY28", stated_in: "Q1 FY27 call p.3, p.5-6, p.12"}
+  - {item: "FY27 revenue (presentation, not a call)", number: "Rs 2,900-3,000 cr", timeframe: "FY27", stated_in: "Q2 FY27 investor presentation p.38 (12 Nov 2026)"}
+promise_delivery:
+  delivered: 11
+  partial: 5
+  missed: 4
+  rows:
+    - {promised_in: "Q3 FY26", promise: "FY26 revenue over Rs 1,800 cr", outcome: "delivered", explanation: "Rs 1,856.2 cr consolidated (Q4 results p.14); standalone Rs 1,716.7 cr"}
+    - {promised_in: "Q3 FY26", promise: "Q4 FY26 sales Rs 550-575 cr", outcome: "delivered", explanation: "Rs 589.2 cr consolidated; standalone Rs 534.3 cr below band"}
+    - {promised_in: "Q3 FY26", promise: "About Rs 600 cr a quarter from Q1 FY27", outcome: "delivered", explanation: "Q1 Rs 640.1 cr; Q2 Rs 841.3 cr"}
+    - {promised_in: "Q3 FY26", promise: "FY27 guide Rs 2,200+ cr, high probability to raise", outcome: "delivered", explanation: "Raised to 2,400+, 2,600, then 2,900-3,000; counted once"}
+    - {promised_in: "Q3 FY26", promise: "Gross margin about 35%", outcome: "missed", explanation: "Q4 30.7%, Q1 34.7%, Q2 33.5%; Turkey LD blamed, target reset to 34%"}
+    - {promised_in: "Q3 FY26", promise: "Forex benefit from Q4, major in Q1", outcome: "partial", explanation: "EBITDA Q4 16.6%, Q1 19.0%, Q2 20.6%"}
+    - {promised_in: "Q3 FY26", promise: "Q4 overheads up only about 5%", outcome: "partial", explanation: "Employee +2.9%, other expenses +22.0%; cause NOT FOUND"}
+    - {promised_in: "Q3 FY26", promise: "No bulk capacity to FY28; Rs 2,600-2,800 cr peak", outcome: "partial", explanation: "Ceiling raised to Rs 3,200 cr with more capex; no bulk spend yet"}
+    - {promised_in: "Q3 FY26", promise: "Big new US customer, order in a couple of weeks", outcome: "missed", explanation: "Q1 call: no major client additions; silence"}
+    - {promised_in: "Q3 FY26", promise: "Rail: 4 markets, steady state", outcome: "missed", explanation: "Q1 call: no fresh rail orders, review at year end; no explanation"}
+    - {promised_in: "Q3 FY26", promise: "Hydro highest year, refurbishment growing", outcome: "delivered", explanation: "Refurbishment orders in Q1; largest hydro order, Nepal (presentation p.27)"}
+    - {promised_in: "Q4 FY26", promise: "Q1 FY27 better than Q4 FY26", outcome: "delivered", explanation: "Revenue Rs 640.1 vs 589.2 cr; EBITDA 19.0% vs 16.6%"}
+    - {promised_in: "Q4 FY26", promise: "Gross contribution back to about 34%; margins in line with FY26 ex Turkey", outcome: "delivered", explanation: "Q1 34.7%, Q2 33.5%; EBITDA above FY26 17.8%"}
+    - {promised_in: "Q4 FY26", promise: "Turkey LD is a one-off", outcome: "delivered", explanation: "No recurrence in Q1 or Q2; LD amount NOT FOUND"}
+    - {promised_in: "Q4 FY26", promise: "No major employee cost increases", outcome: "missed", explanation: "Employee cost +22.5% in Q1, +13.1% in Q2; headcount 1,750 to 2,600"}
+    - {promised_in: "Q4 FY26", promise: "Large-generator capex and plan in 2-3 months", outcome: "partial", explanation: "Siemens Energy framework signed 13 Aug, no value or capex; capex plan moved to next call"}
+    - {promised_in: "Q4 FY26", promise: "EBITDA to cash conversion will improve, inventory converts next quarter", outcome: "partial", explanation: "H1 CFO/EBITDA 71.7% via advances; inventory and receivables rose"}
+    - {promised_in: "Q4 FY26", promise: "Capex Rs 50 cr in FY27", outcome: "delivered", explanation: "H1 payments Rs 46.1 cr consolidated; on pace"}
+    - {promised_in: "Q1 FY27", promise: "Order inflow about Rs 700 cr a quarter, Rs 2,800+ cr", outcome: "delivered", explanation: "Q2 inflow Rs 824.4 cr; H1 Rs 1,558.5 cr; on pace"}
+    - {promised_in: "Q1 FY27", promise: "Large-generator announcement in August", outcome: "delivered", explanation: "Siemens Energy framework dated 13 Aug 2026 (content partial, see Q4 row)"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "Data-centre share of inflow, order book or revenue split by turbine and engine", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "Gross margin level and price pass-through mechanics (copper, price quantum built in)", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters (35% to 34%); mechanism deflected"}
+  - {question: "Share of wallet or market share gain with prime-mover OEMs", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "Large-generator customer, capex, revenue, TAM and timing", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "deflected every time (deferred, then partly answered by the Siemens announcement without value)"}
+  - {question: "Peak revenue and capacity beyond FY28", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters (Rs 2,800 to 3,200 cr; FY29-30 deferred)"}
+  - {question: "Overheads and employee cost after the new plant", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters"}
+  - {question: "Working capital: receivables, EBITDA to CFO, customer advances", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "answered in part; Q4 promise not seen in balance sheet"}
+credibility_grade: "B"
+credibility_basis: "Trailing four quarters Q3 FY26 to Q2 FY27 (3 transcripts + filed Q2 FY27 documents; Q2 commentary unread): 11 of 20 testable promises delivered, 5 partial, 4 missed; all headline revenue and inflow promises beaten, but misses on Q4 gross margin, employee cost, US customer and rail, deferred large-generator disclosure, unsignalled equity raise"
+peer_questions:
+  - {question: "Domestic steam turbine and captive power market growing 10-12% a year, large sets moving to 30-60 MW", why: "Base for domestic steam turbine revenue, about 25% of TD revenue", check_peers: ["TRITURBINE", "CGPOWER"]}
+  - {question: "Gas turbine and engine OEMs doubling capacity by 2030 (INNIO tripling) with firm forecasts to 2030", why: "Whole volume case beyond FY28", check_peers: ["AZAD", "CGPOWER", "TRITURBINE"]}
+  - {question: "Share of OEM backlog that is slot reservation vs firm order; non-refundable advances", why: "Decides whether FY29-30 capacity gets absorbed", check_peers: ["AZAD", "CGPOWER"]}
+  - {question: "Copper near $14,000, customer price talks approaching double digits, price variation clauses protect margin", why: "Gross margin must hold at 34% plus or minus 1%", check_peers: ["CGPOWER", "TRITURBINE", "AZAD"]}
+  - {question: "Is TD gaining share with OEMs (competitor-replacement order cited, share claim refused)", why: "Growth may be market lift, not share gain", check_peers: ["AZAD", "CGPOWER"]}
+  - {question: "Machine-tool lead time 15-16 months for large machining as everyone expands", why: "Sets large-generator timeline (capacity CY27, ramp CY28)", check_peers: ["AZAD", "CGPOWER", "TRITURBINE"]}
+  - {question: "OEMs raise prices but TD says better pricing is difficult", why: "Tests whether gross margin can rise above 34%", check_peers: ["TRITURBINE", "AZAD", "CGPOWER"]}
+  - {question: "Headcount 1,750 to 2,600 in a year, wage hike built in", why: "Employee cost rose 22.5% in Q1 FY27", check_peers: ["CGPOWER", "TRITURBINE", "AZAD"]}
+  - {question: "US tariff paid by customers on India-made product with no order disruption", why: "If wrong, demand shifts to Turkey or US plants", check_peers: ["AZAD", "TRITURBINE", "CGPOWER"]}
+  - {question: "Receivable days and customer advances in export OEM business", why: "Tests whether TD 146-day receivables and advance reliance are normal", check_peers: ["CGPOWER", "TRITURBINE", "AZAD"]}
+  - {question: "India power capex: large coal sets booked 3-4 years, domestic demand subdued at 10-12%, no India hyperscaler demand", why: "TD domestic inflow fell 31% in H1 FY27", check_peers: ["TRITURBINE", "CGPOWER"]}
+  - {question: "Chinese equipment competition below 100 MW has no impact", why: "Competitive threat dismissed twice by management", check_peers: ["TRITURBINE", "CGPOWER"]}
+red_flags:
+  - {flag: "Cash conversion rests on customer advances: other current liabilities +126% in six months, CFO ex that line about -Rs 85.9 cr, receivables +28.4%", severity: "High"}
+  - {flag: "Rs 675 cr equity raised (Rs 75 cr promoter preferential at Rs 600, Rs 600 cr QIP at Rs 775) with Rs 288.9 cr cash and no debt; not signalled on Q3 or Q4 calls; QIP object NOT FOUND", severity: "High"}
+  - {flag: "Data-centre dependence unmeasured: share refused on all three calls; export 88-93% of quarterly inflow", severity: "High"}
+  - {flag: "Order-book roll-forward gap about Rs 320 cr over three quarters; Q2 FY27 inflow / revenue 0.98; H1 domestic inflow -31%", severity: "Medium"}
+  - {flag: "Repeated refusals on share of wallet, pricing, headcount, large-generator economics, TAM, advances", severity: "Medium"}
+  - {flag: "Capacity and capex statements shift between and inside calls; export share of book 57% vs 75%", severity: "Medium"}
+  - {flag: "Customer concentration and subsidiary sales channel never addressed on calls", severity: "Medium"}
+  - {flag: "Labour dispute, Head of Operations exit and senior retirement absent from calls", severity: "Medium"}
+  - {flag: "Guidance is a floor, not a forecast: low end needs H2 below Q2 revenue", severity: "Medium"}
+  - {flag: "Large-generator claim rests on an unvalued framework and one order with MW rating not given; 18-20 month build claim vs delivery from Aug 2027", severity: "Medium"}
+  - {flag: "Defensive tone on repeated questions", severity: "Low"}
+  - {flag: "Mis-statements: Q-on-Q for year on year; EBITDA definition does not reproduce", severity: "Low"}
+dropped_triggers:
+  - "Motors Rs 150 cr FY26 target (last stated Q3 FY26; no number in Q4 or Q1)"
+  - "Rail traction growth (Q3 FY26 steady state, 4 markets; Q1 FY27 no fresh orders)"
+  - "Big new US customer (Q3 FY26 'very close'; Q1 FY27 'no major client additions')"
+  - "Larger-OEM prototype and aeroderivative update (refused in Q4 FY26, absent in Q1 FY27)"
+  - "Turkey plant as tariff hedge (Q3 FY26) reduced to service 'insurance facility' (Q1 FY27)"
+timeline_slippages:
+  - "Large-generator business plan and capex: 'in 2 or 3 months' (Q4 FY26) became 'next earnings call' (Q1 FY27)"
+  - "Large-generator volume ramp: calendar 2027 for 20-100 MW (Q3 FY26) vs calendar 2028 (FY29) for above 100 MW (Q4 FY26)"
+  - "FY29-FY30 capacity decision: 'this time next year' (Q3 FY26) then '3 months' (Q1 FY27) then 'next call'"
+  - "US customer machine order 'in a couple of weeks' (Q3 FY26) not confirmed by Q1 FY27"
+analyst_note: "Guidance ladder 2,200+ to 2,900-3,000 was beaten at every step, so it is a floor. Two readings: sandbag habit, or lumpy Q2 dispatches; the separating observation is Q3 FY27 revenue against Rs 709-759 cr (low and high end of H2 run-rate needed). H1 CFO/PAT of 100.8% rests on the other-payables line (+Rs 297.6 cr); the nature of the Q2 rise is unconfirmed. Order book rises Rs 320 cr faster than inflow minus revenue; Q2 inflow / revenue is 0.98. Promoters bought Rs 75 cr at Rs 600 post-split on 14 Aug approval; QIP priced Rs 775 on 12 Oct. Grade B keyed to Q3 FY26 to Q2 FY27 delivery; Q2 commentary unread, so the 13 Nov capacity plan is not graded."

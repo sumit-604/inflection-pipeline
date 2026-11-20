@@ -1,0 +1,65 @@
+stage: B09b-dossier
+company: "TDPOWERSYS"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "TD Power Systems Q2 FY27 earnings call transcript (call held 13 Nov 2026)"
+    expected_source: "BSE (scrip 533553), about 19 Nov 2026"
+    kind: "freshness-pair"
+  - document: "Screener export sheets: Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization"
+    expected_source: "operator re-save of Financials.xlsx and --push-again (screener export)"
+    kind: "findable-missing"
+  - document: "Peer Q2 FY27 transcripts (TRITURBINE, AZAD) and peer screening sheets"
+    expected_source: "BSE (peers); operator for screening sheets"
+    kind: "findable-missing"
+  - document: "Annual reports FY2022-23 and FY2023-24"
+    expected_source: "BSE | company IR page"
+    kind: "findable-missing"
+  - document: "CRISIL agency PDF rationale and any second agency rationale"
+    expected_source: "rating agency site"
+    kind: "findable-missing"
+  - document: "Broker or research notes (research/ folder empty)"
+    expected_source: "none; company publishes none, non-anchored source only"
+    kind: "plausibly-nonexistent"
+  - document: "Prospectus (prospectus/ folder empty; listed 2011)"
+    expected_source: "none expected"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Generators for gas engines, gas turbines and steam turbines sold to prime-mover OEMs (with motors and rail traction parts as build-to-print work)"
+    archetype: "Build-to-spec component maker"
+  - line: "Hydro generators and refurbishment"
+    archetype: "Order-book business (EPC/defence/capital goods)"
+transition:
+  - line: "Generators for gas, steam and engine OEM programmes"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER (project-cycle vendor with a domestic base)"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (OEM qualification, serial programmes)"
+    engine: "1) Order mix shifts to serial export OEM programmes for gas turbines and gas engines (exports 88-93% of quarterly inflow). 2) Throughput rises on a largely fixed cost base after Unit 3 and debottlenecking to about Rs 3,200 cr FY28 capacity."
+    proof_gate: "All four legs: consolidated revenue >= Rs 709 cr in each of Q3 FY27 and Q4 FY27; order inflow / revenue >= 1.0 in the same quarters; a priced Siemens Energy purchase order plus Customer A < 23.17% and top 10 < 84% in the FY27 annual report; FY27 CFO before change in other payables positive and >= 54% of PAT."
+    recognition_gap: "Open question for Stage 11: does the market already reflect the TO state? Resolved through the PE gap. No conclusion here."
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Q3 FY27 revenue below Rs 709 cr with order inflow below revenue for a second straight quarter (Q2 FY27 was 0.98); supporting breaks: gross margin below 32% for two quarters, Customer A above 23.17% with no priced Siemens PO in 12 months, OEM reports of deferred dispatch."
+dominant_variables:
+  - "OEM order inflow against revenue (Q2 FY27 ratio 0.98; order book Rs 2,318.7 cr)"
+  - "Cash conversion quality (H1 FY27 CFO/PAT 100.8% on other payables +Rs 297.6 cr; receivable days 145.9 in FY26)"
+  - "Customer concentration and named OEM programmes (Customer A 23.17%, top 10 84%)"
+  - "Gross margin under contract indexation (Q2 FY27 33.5%; price-variation coverage not evidenced)"
+business_falsifier: "Evidence that TD Power is not a qualified build-to-spec vendor to several OEMs: a Toyo Denki, Voith or Siemens licence lapses or proves non-renewable; Customer A is one OEM that can in-source, or the 24.08% of standalone sales to three subsidiaries hides a captive single-customer channel; the transfer-pricing demand of Rs 19.86 cr widens to the whole subsidiary channel."
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 6
+  verifiability_ratio: "2 of 6 externally observable"
+  single_point_failure: "OEM gas-turbine and engine capex cycle tied to data-centre demand (exports 88-93% of inflow); Customer A at 23.17% is a second kill-switch candidate"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+second_order:
+  chains_drafted: 2
+  pending_live_links: 4
+  confirm_by_observations: 5
+research_brief_items: 20
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "a36c0b9a69855dbf588247b013a0d9e29dccc36b"

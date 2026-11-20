@@ -1,0 +1,90 @@
+stage: B03-ardeep
+company: "TDPOWERSYS"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "FRESHNESS: Q2 FY27 earnings call transcript absent (call held 13 Nov 2026; BSE, screener and tdps.co.in show audio only as of 15 Nov 2026). Expected source: BSE corporate announcements for 533553, about 19 Nov 2026."
+  - "collector_warning (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. [REPAIRED in Step F: two shareholding filings downloaded from tdps.co.in]"
+  - "collector_warning (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again. [OPEN: those five sheets are ABSENT documents; Data_Sheet is populated, annual FY2017-FY2026, quarterly Jun 2024-Sep 2026; Number of shares row blank]"
+  - "collector_warning (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again [REPAIRED in Step F: three results filings downloaded from BSE]"
+  - "collector_warning (verbatim): no rating PDF yet: add later the same way [REPAIRED in Step F: CRISIL rationale 22 Jun 2026, a print of the HTML rationale, not the agency PDF]"
+  - "research/ empty: no broker notes (non-anchored source only; no effect on anchored evidence)"
+  - "prospectus/ empty: not expected, company listed 2011; not a gap"
+  - "Peer Q2 FY27 transcripts absent: TRITURBINE and AZAD list audio only; CGPOWER latest is Q1 FY27"
+  - "No peer screening sheets (collector peer pass delivered zero files; peer transcripts fetched by direct download)"
+  - "Rating: only CRISIL checked; no other agency rationale sought"
+  - "Read route: pre-extracted page-marked .txt beside every PDF (tools/extract_pdfs.py) for all stages and verifiers; the SAST Reg 29(1) scan of 14 Nov 2026 and one newspaper notice went through OCR"
+  - "STAGE 3 COVERAGE: S Notes 1-14, 16-18, 22-33, 37-41, 45-52, 55-57 and C Notes 2-28, 30-43, 45-52 taken from the stage 2 report, not re-read; BRSR Principles 1-9 detail (PDF p.83-125) searched, not read page by page"
+  - "STAGE 3 NOT FOUND IN AR: nameplate capacity, customer names, product-wise revenue, promoter pledge, sale price and dates of promoter share sales, auditor firm for the three foreign subsidiaries' special purpose audits, independent director Sastry start date, cause of 22,262.38 lakh gap between order-book execution and C revenue, production loss from union dispute"
+flags:
+  - {type: FLAG-CASH, reason: "CFO/PAT S 57.1% FY24, 4.1% FY25, 53.0% FY26; C 72.6%, 22.6%, 54.1% (cash flow p.130 and p.198; FY24 prior-year AR other/). Three-year cumulative C 47.7%. FCF before dividends 454.66 lakh S and 1,840.13 lakh C. Receivables C +69.7% against revenue +45.2%, days 145.9 (PY 124.8) (p.194). Ex the 6,044.58 lakh advance rise, C CFO/PAT is 28.7% (stage 2)."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Promoter group 34.42% (31 Mar 2024) to 33.22% to 26.87% (31 Mar 2026); 99,00,000 shares sold in FY26 (Saphire Finman 33,00,000; Nikhil Kumar 45,00,000; Hitoshi Matsuo 21,00,000) after 17,28,000 by the MD in FY25 (S Note 15 VI p.152; CG Annexure B p.68). No pledge disclosed in the AR. MD pay 509.66 (S Note 44 p.174) vs 1,167.00 (CG report p.60) vs 1,299.09 (C Note 44 p.242). Full verdict is B08's."}
+phase_verdicts: {p1: "YELLOW: unmodified opinion, one KAM (revenue), audit trail not enabled for Bank Master creation, 30.6% of C revenue on special-purpose audits", p2: "YELLOW: 14 of 15 stage 2 findings verified, 1 discrepancy (MD pay level); accounting 6/10 agreed", p3: "YELLOW: PAT +40.8% S, net cash, but CFO/PAT 53.0% S, FCF 454.66 lakh S, C gross margin down 1.89 pt", p4: "YELLOW: 11 missing risks, 5 internal contradictions, MD&A explains all growth as volume", p5: "YELLOW: clean process; promoter group 34.42% to 26.87% in two years; three MD pay figures; 4 board meetings; 8 senior management events", p6: "YELLOW: size claims hold; concentration, traction, motors and UK programme claims fail or unmeasured; 2 material quiet abandonments", p7_best_fit: "Capex-Led Growth (GARP WATCHLIST, Turnaround FAIL, Cash Flow Compounder FAIL, Insider Confidence FAIL)"}
+overall_quality: 6.25
+quality_components: {governance: 6.0, accounting: 6.0, balance_sheet: 7.0, earnings: 6.0}
+kill_switch_notes:
+  - "P1: would not stop; no qualification, fraud or default; audit-trail exception on Bank Master creation noted"
+  - "P2: would not stop; totals tie, no policy change; CARO ii(b) comfort thinner than it reads against Note 53"
+  - "P3: would not stop; net cash 11,757.19 lakh S, no debt stress; cash conversion flagged"
+  - "P4: would not stop; omissions are priced-in risks; CG hedging 'Nil' contradicts Note 40C"
+  - "P5: would not stop; no pledge, no regulatory action, no related-party loan; promoter selling goes to B08"
+  - "P6: would not stop; 2 material quiet abandonments (customer concentration, traction)"
+triple_pass_verification:
+  verified: 14
+  discrepancies:
+    - {finding_rank: 6, triple_pass_value: "MD pay 509.66 lakh S, 1,299.09 lakh C", ar_value: "CG report p.60 prints salary 745.04 + PF 11.96 + commission 410.00 = 1,167.00 lakh standalone; Annexure 4 p.32 prints MD pay increase Nil vs Note 44 +17.8% S and +30.8% C", note_ref: "S Note 44 p.174; C Note 44 p.242; CG report p.60; Annexure 4 p.32"}
+missing_risks:
+  - {risk: "Customer concentration", evidence: "Top 10 customers 84% of C revenue (MD&A p.50); C Customer A 23.17% (PY 14.10%), B 10.74% (C Note 42(ii) p.238); S A 25.06%, B 24.08%, C 11.62% (S Note 42(ii) p.170); MD letter p.5 says growth not concentrated in any customer segment", likely_reason: "contradicts the diversification story"}
+  - {risk: "Collection and working-capital risk", evidence: "Receivables C 74,208.77 vs 43,733.89 lakh (+69.7%), days 145.9 (p.194); CFO/PAT 54.1% (p.198); no cash-flow discussion in MD&A", likely_reason: "MD&A omits cash flow"}
+  - {risk: "Foreign exchange and hedging", evidence: "Net EUR exposure 298.41 lakh, forwards 120.00 lakh (40.2%); MTM loss 674.82 lakh; 5% EUR move 1,612.78 lakh (S Note 40C p.168); CG report p.66 states FX and hedging 'Nil'", likely_reason: "boilerplate; internal contradiction"}
+  - {risk: "Subsidiary channel and transfer pricing", evidence: "24.08% of S sales (41,342.32 lakh) to three subsidiaries (BRSR p.90; S Note 44); TP demand 1,986.03 lakh stayed in Karnataka High Court on overall-turnover basis (S Note 36 p.162); 585.02 lakh MD commission from subsidiaries (C Note 44 p.242)", likely_reason: "CG report p.64 calls RPTs not materially significant"}
+  - {risk: "Labour dispute and strike injunction", evidence: "Announcement 20 Nov 2025 (outside AR): court extended injunction restraining Workers Union during a strike from obstructing factory gates; AR MD&A p.56 says employee relations remained stable; 100% of 240 permanent workers unionised (BRSR p.96)", likely_reason: "management omission of a pre-signing event"}
+  - {risk: "Domestic demand decline", evidence: "Domestic sales 84,769.65 to 73,438.95 lakh (-13.4%) while exports 41,154.63 to 96,858.53 lakh (+135.4%) (S Note 42 p.170)", likely_reason: "export growth is the headline"}
+  - {risk: "Reliance on special-purpose audits and Japan branch loss", evidence: "Three foreign subsidiaries, revenue 56,745.38 lakh (30.6% of C), special purpose statements audited by an unnamed Indian CA firm (C auditor's report p.188); Japan branch loss 967.53 lakh (C p.188); US and German statutory audit not mandatory (CG p.64)", likely_reason: "structure, not seen as an operating risk"}
+  - {risk: "AI and data-centre cycle dependence", evidence: "Strongest segment driven by AI and data-centre demand in the US and a major US gas turbine OEM (MD&A p.48); risk table p.54 names steam turbine concentration instead", likely_reason: "risk table not updated"}
+  - {risk: "Key-person and management churn", evidence: "MD and Chairman sign from Frankfurt and Ahmedabad (p.26); CEO from 3 Apr 2026 (Directors' Report p.22); 8 senior management events including Head of Operations leaving after about five months (CG report p.64)", likely_reason: "not framed as a risk"}
+  - {risk: "Traction order decline", evidence: "Traction order book 31,636.77 to 24,762.20 lakh (-21.7%); share of book 23.1% to 12.6% (MD&A p.50)", likely_reason: "offset by generator growth"}
+  - {risk: "Capacity and execution", evidence: "Nameplate capacity NOT FOUND IN DOCUMENT; capital commitments 4,008.73 lakh (S Note 36 p.162); 22,262.38 lakh gap between order-book execution and C revenue unexplained (MD&A p.50)", likely_reason: "disclosure choice"}
+guidance_table:
+  - {claim: "Revenue to exceed Rs 2,400 cr consolidated, +29.3% on FY26 Rs 1,856.2 cr", number: "2,400 cr", timeframe: "FY27 (MD letter p.6; MD&A p.48)", credibility: "HIGH: prior-year AR guided FY26 at Rs 1,500 cr, delivered Rs 1,856.2 cr (123.7%); order book Rs 1,972.9 cr covers 82.2%; later upgrades to 2,600 and 2,900-3,000 are outside this AR"}
+  - {claim: "Improved EBITDA margin from operational efficiency", number: "not quantified", timeframe: "FY26 (prior-year AR other/ lines 2999-3001)", credibility: "MEDIUM: S margin +0.87 pt to 17.54%, C margin -0.28 pt to 17.76%"}
+  - {claim: "Higher level of operational and financial performance", number: "not quantified", timeframe: "FY27 (MD&A p.48)", credibility: "MEDIUM: qualitative; FY26 C PAT +36.8%"}
+  - {claim: "Europe market outlook 15-20% growth", number: "15-20%", timeframe: "FY27 (Directors' Report p.22)", credibility: "MEDIUM: Europe subsidiary revenue +55.8% in FY26; market claim, not company claim"}
+  - {claim: "US order intake will grow yet again", number: "not quantified", timeframe: "FY27 (Directors' Report p.22)", credibility: "LOW: untestable"}
+  - {claim: "Hydro to achieve one of its highest revenue contributions", number: "not quantified", timeframe: "FY27 (MD&A p.48)", credibility: "LOW: no hydro revenue disclosed"}
+  - {claim: "Motors volume production after US and European qualification", number: "none", timeframe: "no date (MD&A p.48-50)", credibility: "LOW: 105 motors of 8,055 units supplied cumulatively (AR p.4)"}
+  - {claim: "Third facility Rs 120 cr, commissioning starting Q1 FY26", number: "120 cr", timeframe: "FY26 (prior-year AR other/ lines 355-359)", credibility: "MEDIUM: commissioned in FY26; operations start 18 Dec 2025 per B00 manifest, about two quarters later (inference); capacity NOT FOUND"}
+  - {claim: "UK R&D centre developing 40-200 MW generators", number: "none", timeframe: "open (MD letter p.6)", credibility: "LOW: R&D 872.50 lakh (0.51% of turnover), capital nil (Annexure 3 p.30)"}
+monitorables:
+  - {metric: "C receivable days", threshold: "above 146 deteriorates; below 125 clears the flag", where: "quarterly balance sheet and results filings", why: "growth outrunning collection; days 124.8 to 145.9"}
+  - {metric: "CFO/PAT", threshold: "below 54% keeps FLAG-CASH; above 70% clears it", where: "H1 and FY27 cash-flow statements", why: "printed ratio is a ceiling; 28.7% ex advances"}
+  - {metric: "Customer advances vs receivables", threshold: "advances falling while receivables rise is the trigger", where: "balance sheet, other current liabilities note", why: "CFO relies on prepayments; advance days 23.9, 33.2, 36.6"}
+  - {metric: "Customer A share and top 10 share", threshold: "Customer A above 23.17% or top 10 above 84%", where: "annual segment note, MD&A", why: "single-buyer payment risk"}
+  - {metric: "Sales to subsidiaries as % of S revenue", threshold: "above 24.08%; any new TP assessment", where: "related-party note, BRSR openness table", why: "pass-through and tax exposure; TP demand 1,986.03 lakh"}
+  - {metric: "Order book / trailing C revenue and book-to-bill", threshold: "order book below 1.0x or book-to-bill below 1.0", where: "investor presentation, MD&A", why: "visibility behind 2,400+ guide; now 1.06x and 1.21"}
+  - {metric: "C EBITDA margin ex other income", threshold: "below 17.5%", where: "quarterly results", why: "fell 0.28 pt in FY26 while S rose"}
+  - {metric: "Promoter holding and pledge", threshold: "below 26.87%; any pledge", where: "Reg 31 and SAST filings; B08", why: "selling against the narrative"}
+  - {metric: "Finished goods in transit and inventory days", threshold: "FG in transit above 4,461.43 lakh; inventory days above 105.6", where: "inventory note", why: "revenue-before-dispatch risk"}
+  - {metric: "MSME payables principal and interest", threshold: "principal above 4,871.60 lakh", where: "trade payables note", why: "Sec 43B(h) and statutory interest"}
+  - {metric: "Capacity and utilisation disclosure", threshold: "any disclosure; NOT FOUND today", where: "concall, investor presentation", why: "FY28 Rs 3,200 cr is described as capacity, not guidance"}
+  - {metric: "Union dispute status", threshold: "any production loss disclosure", where: "exchange announcements", why: "omitted from the AR"}
+ar_new_downstream_entities:
+  - {name: "Trident Automobiles Private Limited", where_in_ar: "S Note 44 p.174 and C Note 44 p.242: vehicle purchase 80.93 lakh, servicing 2.16 lakh; absent from the FY2024-25 AR related-party table (only Trident Automobiles (Bangalore) appears there)", entity_type: "RPT counterparty (company in which KMP or relatives are interested)"}
+  - {name: "Trilegal", where_in_ar: "C Note 44 p.242: professional services 8.58 lakh in FY26, nil in FY25; nature of the related-party interest not stated", entity_type: "RPT counterparty (professional services firm)"}
+  - {name: "Customer A (C 23.17%, S 25.06%) - name not disclosed", where_in_ar: "C Note 42(ii) p.238; S Note 42(ii) p.170", entity_type: "customer above 10% of revenue (unnamed)"}
+  - {name: "Customer B (C 10.74%) and S Customer C (11.62%) - names not disclosed; S Customer B 24.08% matches sales to the three subsidiaries", where_in_ar: "C Note 42(ii) p.238; S Note 42(ii) p.170; BRSR p.90", entity_type: "customer above 10% of revenue (unnamed)"}
+  - {name: "Major US-based gas turbine OEM (unnamed)", where_in_ar: "MD&A p.48: significant volume orders for generators for AI and data-centre applications", entity_type: "OEM customer (unnamed)"}
+  - {name: "Global OEM in the gas engine segment (unnamed)", where_in_ar: "MD&A p.48: breakthrough prototype (NPI) orders", entity_type: "OEM customer (unnamed)"}
+  - {name: "Russian locomotive programmes (counterparty unnamed)", where_in_ar: "MD&A p.48: qualification units for traction motors", entity_type: "prospective customer programme (unnamed)"}
+strengths_top3:
+  - "Growth with order cover: C revenue +45.2% to Rs 1,856.2 cr, order book Rs 1,972.9 cr (1.06x revenue), book-to-bill 1.21, FY26 guide of Rs 1,500 cr beaten by 23.7% (MD&A p.50; prior-year AR other/)"
+  - "Balance sheet: borrowings 1,809.62 lakh against net cash 11,757.19 lakh S and 18,048.40 lakh C; ROE 23.2% S, 24.7% C (p.126, p.194; my arithmetic)"
+  - "Clean statutory record: unmodified opinions, no CARO adverse remark, no fraud, no whistle-blower complaint, no SEBI action in three years (p.115, p.122, CG p.68)"
+red_flags_top3:
+  - "Cash conversion: CFO/PAT 53.0% S and 54.1% C (FY25 4.1% and 22.6%); FCF 454.66 lakh S; receivables +69.7% C, days 145.9; funded by advances +5,693.91 lakh and payables +15,663.79 lakh (p.130, p.198, p.126)"
+  - "Concentration and related-party channel: top 10 customers 84%, Customer A 23.17%; 24.08% of S sales to subsidiaries; TP demand 1,986.03 lakh; MD letter says growth is not concentrated (MD&A p.50; Note 36 p.162; MD letter p.5)"
+  - "Promoter selling and pay opacity: 99,00,000 shares sold in FY26, group 34.42% to 26.87% in two years; MD pay 509.66 vs 1,167.00 vs 1,299.09 lakh across three AR tables (S Note 15 VI p.152; CG p.60; Notes 44)"
+best_fit_strategy: "Capex-Led Growth, with GARP on WATCHLIST until cash conversion shows"
+one_line_verdict: "Fast-growing, debt-free generator maker with order cover and a record of beating its own guidance, but profit turns into cash slowly, customers and the subsidiary channel are concentrated, and promoters are selling."
+analyst_note: "Read the 54% CFO/PAT as a ceiling: three-year cumulative C conversion is 47.7% and FCF is 2.1% of S PAT. New AR-only findings: BRSR p.90 prints related-party sales at 24% (PY 28.23%), matching S Customer B, which upgrades the stage 2 inference; MD pay is 509.66, 1,167.00 or 1,299.09 lakh depending on the table; the CG report says FX hedging is Nil while Note 40C shows EUR forwards and a 674.82 lakh MTM loss; a workers' union strike injunction (announcement 20 Nov 2025) is absent from the AR. The AR gives the order book (Rs 1,972.9 cr) that stage 2 could not, but a 22,262.38 lakh gap between book execution and C revenue is unexplained. Capacity is NOT FOUND, so FY28 Rs 3,200 cr cannot be tested. AR is pre-QIP; per-share and cash bases are 31 Mar 2026, Rs 2 face value."

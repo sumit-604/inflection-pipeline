@@ -1,0 +1,65 @@
+stage: B08-promoter
+company: "TDPOWERSYS"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "FRESHNESS: Q2 FY27 earnings call transcript absent (call held 13 Nov 2026); expected on BSE about 19 Nov 2026"
+  - "collector_warning: shareholding/ was empty [REPAIRED in Step F: two shareholding filings downloaded from tdps.co.in]"
+  - "collector_warning: screener export sheets EMPTY (Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization) [OPEN: ABSENT documents; Data_Sheet populated; Number of shares row blank]"
+  - "collector_warning: no results PDFs [REPAIRED in Step F: three results filings downloaded from BSE]"
+  - "collector_warning: no rating PDF [REPAIRED in Step F: CRISIL rationale 22 Jun 2026, a print of the HTML rationale]"
+  - "research/ empty: no broker notes"
+  - "prospectus/ empty: not expected, company listed 2011; not a gap"
+  - "Peer Q2 FY27 transcripts absent: TRITURBINE and AZAD audio only; CGPOWER latest Q1 FY27"
+  - "No peer screening sheets"
+  - "Rating: only CRISIL checked"
+  - "Read route: SAST Reg 29(1) scan of 14 Nov 2026 and one newspaper notice went through OCR"
+flags:
+  - {type: FLAG-PROMOTER-WATCH, verdict: CAUTION, top_findings: ["MD pay shown at 509.66, 1,167.00 and 1,299.09 lakh (S Note 44 p.174; CG p.60; C Note 44 p.242), unreconciled; Rs 585.02 lakh commission from subsidiaries", "Promoter group 34.42% to 26.87% (31 Mar 2024 to 31 Mar 2026): about Rs 456 crore block sale 22 May 2025 at about Rs 461 pre-split; 26.51% after QIP dilution", "Promoter preferential Rs 600 (Rs 75 crore) vs QIP Rs 775 three weeks later; ID Rahul Matthan's firm Trilegal was issuer counsel on the QIP"]}
+verdict: CAUTION
+scorecard: {clean: 4, caution: 6, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Promoter group sold 99,00,000 pre-split shares in one block on 22 May 2025 (Nikhil Kumar 45,00,000; Saphire Finman 33,00,000; Hitoshi Matsuo 21,00,000), about Rs 456 crore at about Rs 461 pre-split; after 17,28,000 sold by the MD in FY25; group 34.42% to 26.87%", evidence_tier: VERIFIED for quantities (AR Note 15 VI p.152) and MEDIA for price and date, source: "AR FY2025-26 S Note 15 VI p.152; theweek.in 22 May 2025; businesstoday.in 22 May 2025", date: "2025-05-22"}
+  - {finding: "MD pay shown at three figures: 509.66 lakh S Note 44; 1,167.00 lakh CG report; 1,299.09 lakh C Note 44; implied non-commission pay 99.66 vs 745.04 lakh unreconciled", evidence_tier: VERIFIED, source: "AR FY2025-26 S Note 44 p.174; CG report p.60; C Note 44 p.242", date: "2026-05-14"}
+  - {finding: "MD commission from subsidiaries Rs 585.02 lakh (consolidated commission 995.02 less standalone 410.00); CG report calls RPTs not materially significant", evidence_tier: VERIFIED, source: "AR C Note 44 p.242; S Note 44 p.174", date: "2026-05-14"}
+  - {finding: "Promoter preferential Rs 600 post-split (Rs 75 crore, Nikhil Kumar and Mohib Khericha) set on relevant date 11 Aug 2026; QIP cleared at Rs 775 on 12 Oct 2026; Rs 21.9 crore above cost on the QIP price (my arithmetic). Legal under ICDR; a minority-treatment point", evidence_tier: VERIFIED, source: "20260817 EGM notice p.3 and p.17; 20260921-df3e0466; 20261012-39697c5e", date: "2026-09-20"}
+  - {finding: "Independent director Rahul Matthan is described as a founder partner of Trilegal; Trilegal is a related party (Rs 8.58 lakh FY26) and was issuer counsel on the Rs 600 crore QIP; FY27 fees NOT FOUND", evidence_tier: MEDIA for the partner title and the QIP role, VERIFIED for the related-party line, source: "C Note 44 p.242; barandbench.com 16 Oct 2026; BSE filing on 1 Apr 2024 appointments via search", date: "2026-10-16"}
+  - {finding: "Non-executive director S Prabhamani consultancy Rs 31.92 lakh vs Rs 10.76 lakh (+196.7%); total 57.7% of non-executive director pay needed a special resolution, passed 99.15%", evidence_tier: VERIFIED, source: "S Note 44 p.174; AGM scrutinizer report 12 Aug 2026 p.10-11", date: "2026-08-12"}
+  - {finding: "Senior management churn: 8 events in FY26 including Head of Operations gone after about five months (15 Oct 2025 to 12 Mar 2026), plus Director Business Development retired 31 May 2026 and a new Head IT 18 Jun 2026", evidence_tier: VERIFIED, source: "AR CG p.64; 20260313-46b5b372; 20260530-9a873401; 20260617-d89a7981", date: "2026-06-17"}
+  - {finding: "Workers Union strike notice and court injunction against union, extended till disposal of suit 18 Nov 2025; AR says employee relations stable", evidence_tier: VERIFIED, source: "20251120-703d2322 p.1; AR MD&A p.56 (via B03)", date: "2025-11-20"}
+transition_evidence:
+  - {item: "External professional CEO Deepak Kumar Sinha from 3 Apr 2026 (ex-CEO and WTD L&T-MHI Power Turbine Generators, ex-GE Power)", anchor: "20260402-cdbe380a p.1-2"}
+  - {item: "QIP Rs 599.99996 crore to institutions: Axis MF 13.33%, Canara Robeco 13.33%, ICICI Prudential 13.33%, Mirae 8.33%, ABSL 5.83%, SocGen ODI 5.67%, Bandhan 5.00% of issue; Axis MF at 5.12% of capital on 12 Nov 2026; mutual funds 25.67% at 30 Sep 2026", anchor: "20261012-4bdf9e3e p.3; 20261114-A1BAFB16 p.2-3; Reg 31 30 Sep 2026 p.4"}
+  - {item: "Promoters subscribed Rs 75 crore at 4.1% above ICDR floor with lock-in on 27,180,640 shares", anchor: "20260921-df3e0466 p.2; EGM notice p.15-17; Reg 31 30 Sep 2026 p.3"}
+  - {item: "CRISIL upgrade to AA-/Stable 22 Jun 2026; independent directors Olsson and Matthan from 1 Apr 2024", anchor: "CRISIL rationale p.1; S Note 44 p.174"}
+pledge_pct_latest: 0
+pledge_trend: "stable at nil: Reg 31 declarations 30 Jun 2026, 30 Sep 2026 and 12 Oct 2026 all show no pledge, no NDU, no other encumbrance; AR FY2025-26 discloses none; FY24 and FY25 pledge history NOT FOUND beyond AR silence. Promoter holding 34.42% (31 Mar 2024), 33.22% (31 Mar 2025), 26.87% (31 Mar 2026), 27.16% (30 Sep 2026), 26.51% post-QIP (12 Oct 2026)"
+searches_performed:
+  - "TD Power promoter stake sale Saphire Finman Nikhil Kumar Hitoshi Matsuo block deal 2025"
+  - "TD Power SEBI order or penalty or investigation promoter Nikhil Kumar"
+  - "TD Power QIP Rs 600 crore October 2026 promoters preferential issue"
+  - "TD Power Nikhil Kumar managing director background Toshiba Mohib Khericha Chartered Capital"
+  - "WebFetch businesstoday.in block deal 22 May 2025"
+  - "WebFetch theweek.in block deal 22 May 2025"
+  - "TD Power workers union strike Nelamangala September 2025 injunction"
+  - "Hitoshi Matsuo TD Power Systems promoter history stake"
+  - "TD Power Glassdoor or AmbitionBox reviews"
+  - "TD Power Nikhil Kumar reappointment remuneration IiAS or proxy advisor"
+  - "Khericha Saphire Finman or Chartered Capital or Mazda SEBI or NCLT or litigation"
+  - "TD Power short seller or governance concern or related party or forensic or auditor resign"
+  - "Rahul Matthan Trilegal independent director TD Power"
+  - "Deepak Kumar Sinha CEO TD Power L&T-MHI GE Power"
+  - "TD Power Q2 FY27 promoter holding Axis Mutual Fund 5% stake"
+  - "WebFetch barandbench.com Trilegal QIP counsel"
+  - "WebFetch boardstewardship.com CEO appointment"
+searches_skipped:
+  - "MCA21 and RoC master data for Saphire Finman, Chartered Capital and Investment, Mazda (not reachable by search tool)"
+  - "SEBI enforcement orders site by promoter name; SAT, eCourts and indiankanoon by name"
+  - "ED, SFIO and CCI databases"
+  - "IiAS, SES, InGovern proxy advisory reports; SCORES complaints"
+  - "Exchange pledge and Reg 29 history for FY24 and FY25"
+  - "Education and background verification for Nikhil Kumar and Hitoshi Matsuo"
+verdict_basis: "No legal, pledge or auditor finding; CAUTION for a Rs 456 crore promoter block sale in May 2025, three unreconciled MD pay figures with Rs 585.02 lakh commission from subsidiaries, and a promoter preferential at Rs 600 against a Rs 775 QIP three weeks later; offset by an outside CEO from 3 Apr 2026, Rs 75 crore promoter subscription and institutional QIP."
+analyst_note: "The 14 Nov 2026 SAST Reg 29(1) was filed by Axis Mutual Fund (5.12%), not by promoters. The brief's 26.51% promoter holding is QIP dilution: promoter shares were 85,207,322 at both 30 Sep and 12 Oct 2026 and no promoter sale appears after 31 Mar 2026. The 2025 sale was one block of 99,00,000 pre-split shares on 22 May 2025 at about Rs 461 (Rs 230.5 post-split); promoters then paid Rs 600 post-split. Weigh the Rs 21.9 crore value gap above cost on the QIP price as minority-treatment, not a breach. The Trilegal link needs FY27 fee data. MCA, court and proxy-advisor checks were not reachable, so status is partial."

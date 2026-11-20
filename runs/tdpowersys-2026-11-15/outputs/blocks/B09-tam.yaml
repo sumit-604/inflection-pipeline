@@ -1,0 +1,117 @@
+stage: B09-tam
+company: "TDPOWERSYS"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "FRESHNESS: Q2 FY27 earnings call transcript absent (call held 13 Nov 2026; BSE, screener and tdps.co.in show audio only as of 15 Nov 2026). Expected source: BSE corporate announcements for 533553, about 19 Nov 2026."
+  - "collector_warning (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. [REPAIRED in Step F: two shareholding filings downloaded from tdps.co.in]"
+  - "collector_warning (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again. [OPEN: those five sheets are ABSENT documents; Data_Sheet is populated, annual FY2017-FY2026, quarterly Jun 2024-Sep 2026; Number of shares row blank]"
+  - "collector_warning (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again [REPAIRED in Step F: three results filings downloaded from BSE]"
+  - "collector_warning (verbatim): no rating PDF yet: add later the same way [REPAIRED in Step F: CRISIL rationale 22 Jun 2026, a print of the HTML rationale, not the agency PDF]"
+  - "research/ empty: no broker notes (non-anchored source only; no effect on anchored evidence)"
+  - "prospectus/ empty: not expected, company listed 2011; not a gap"
+  - "Peer Q2 FY27 transcripts absent: TRITURBINE and AZAD list audio only; CGPOWER latest is Q1 FY27"
+  - "No peer screening sheets (collector peer pass delivered zero files; peer transcripts fetched by direct download)"
+  - "Rating: only CRISIL checked; no other agency rationale sought"
+  - "Read route: pre-extracted page-marked .txt beside every PDF (tools/extract_pdfs.py) for all stages and verifiers; the SAST Reg 29(1) scan of 14 Nov 2026 and one newspaper notice went through OCR"
+  - "STAGE 9: no B07 block exists (stage 7 not run). Capex evidence taken from B01/B03 and confirmed at AR p.198 (cash flow), AR p.162 (Note 36), announcement 18 Dec 2025, CRISIL p.2 and Q1 FY27 call p.4-6; not from B07"
+  - "STAGE 9: nameplate capacity (MVA or MW) NOT FOUND; Q1 FY27 transcript prints FY28 capacity as INR22 billion (p.4) and INR32 billion (p.5, p.6); INR32 billion carried, INR22 billion refuted by the FY27 guide on the same call (p.4: Rs 2,600 Cr)"
+  - "STAGE 9: generator content value per kW or per MVA NOT FOUND in any source; SAM filters (geography, channel, customer, capability) have no sourced percentages; SAM, SAM share and SAM headroom are NOT FOUND"
+  - "STAGE 9: competitor names and market shares NOT FOUND in filings; web share claims (75-80% of small steam generators) come from low-grade sites and are unverified; Method 3 not computed"
+  - "STAGE 9: AR market-size charts carry no named research provider; hydro chart (AR p.56, 166.84 to 320 USD bn) is implausible and unused; two gas turbine charts in the same AR disagree (21.11 vs 32.51 USD bn for 2026)"
+flags:
+  - {type: FLAG-TAM-DEFINITION, reason: "Only one sourced market size matches TDPS product scope: AR global gas generator market USD 5.9 bn in 2026 (AR p.57), Rs 56,198 Cr at Rs 95.25 per USD. Steam, hydro, wind generators and large motors have no sourced generator-level size. Conservative and realistic TAM are therefore the same number; the unsized segments add to it."}
+  - {type: FLAG-SAM-NOT-FOUND, reason: "SAM, SAM % of TAM, current SAM share and SAM headroom are NOT FOUND. No sourced filter percentages exist. SOM is built from capacity and order evidence instead, which makes it a capacity-bound figure, not a share-of-SAM figure."}
+  - {type: FLAG-CAPACITY-READING, reason: "Q1 FY27 call prints FY28 capacity as INR22 billion (p.4) and INR32 billion (p.5, p.6). FY27 guide on the same call is Rs 2,600 Cr (p.4), above 2,200. Q2 FY27 revenue Rs 841.3 Cr annualises to Rs 3,365 Cr, above 3,200. INR32 billion is carried; the Q2 FY27 transcript or a nameplate disclosure separates the readings."}
+  - {type: FLAG-SOM-5YR-UNCOMMITTED, reason: "SOM FY31 Rs 4,000 Cr rests on a capacity direction (INR40 billion and above, Q1 FY27 call p.4, p.6) with no capex plan yet; capital commitments are Rs 40.09 Cr (AR p.162). With no further capacity the cap is Rs 3,200 Cr (11.5% CAGR)."}
+  - {type: FLAG-CONCENTRATION, reason: "Consolidated Customer A 23.17% of revenue FY26 vs 14.10% FY25; Customer B 10.74% vs 12.32% (AR consolidated notes, txt p.238 area). Top 10 customers 84% per B04. Market size does not bound the revenue; a few OEM order books do."}
+  - {type: FLAG-MARKET-DATA-QUALITY, reason: "AR charts give no research provider. Internal conflicts: gas turbine 2026 USD 21.11 bn (AR p.56) vs 32.51 bn (AR p.57); hydro chart implausible; diesel 2026 label unreadable. Headline TAM uses only the gas generator chart."}
+  - {type: FLAG-FX, reason: "USD figures converted at Rs 95.25 per USD (RBI reference rate 6 Nov 2026 via MSEI archive, web search result). Archive may carry a copy error on 30 Oct. Constant FX applied to the 2031 TAM."}
+market_definition: "Global generators for gas engines and gas turbines (TDPS largest line, share NOT FOUND); steam, hydro, wind generators and large motors named but not sized; OEM and EPC customers; 111 countries, about 70% of FY26 group sales overseas (CRISIL p.1)"
+tam_cr: {conservative: 56198, realistic: 56198}
+sam_cr: "NOT FOUND"
+sam_pct_of_tam: "NOT FOUND"
+som_3yr_cr: 3200
+som_5yr_cr: 4000
+som_implied_revenue_cagr: {yr3: 19.9, yr5: 16.6}   # FY26 base Rs 1,856.2 Cr; FY29 and FY31; if no capacity beyond FY28, yr5 is 11.5
+current_sam_share_pct: "NOT FOUND"
+revenue_headroom_x: "NOT FOUND"
+tam_growth_pct: 8.64
+runway_class: "STRONG"
+mgmt_claim_cr: 502920
+mgmt_claim_ratio: 8.95
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient to FY29 (Rs 3,200 Cr FY28 capacity vs SOM FY29 Rs 3,200 Cr); gap of Rs 800 Cr by FY31 (SOM Rs 4,000 Cr vs Rs 3,200 Cr committed), capex plan not yet announced and capital commitments only Rs 40.09 Cr; the capacity plan is the optimistic side for FY31, demand evidence (order inflow Rs 750-800 Cr a quarter, Pres. slide 38) supports Rs 3,000-3,200 Cr a year"
+methods_used:
+  - "M1 top-down from AR market charts (gas generator USD 5.9 bn 2026), with exclusions shown"
+  - "M2 demand-pull cross-check: global gas turbine build 60-70 GW a year and INNIO engine output, implied alternator value per kW (internal consistency only, L confidence)"
+  - "M3 peer aggregation: NOT COMPUTED (competitors and shares NOT FOUND)"
+  - "M4 import substitution: NOT APPLICABLE (export-led OEM supply, no India import-substitution thesis in filings)"
+  - "M5 global per-capita benchmark: NOT APPLICABLE (capital goods, no per-capita driver)"
+  - "SOM by capacity and order-evidence bridge (cross-check to FY27 guide, FY28 capacity, inflow run-rate)"
+stale_data_flags: []
+searches_performed:
+  - "India gas turbine generator electric motors market size data centre power equipment shortage 2026 (India data-centre generator USD 729.4 mn IMARC 2025 vs USD 333.2 mn MarketsandMarkets 2026; no India gas turbine or motor size)"
+  - "data center gas engine gensets prime power demand GW forecast 2030 (Bloom 80 GW load; 35 GW behind-the-meter by 2030 per Turbomachinery; Enverus 29.6 of 31.6 GW US BTM gas; INNIO 1.25 GW Rehlko framework)"
+  - "global gas turbine orders backlog 2026 (GE Vernova 116 GW backlog and reservations Q2 2026; Siemens Energy 69 GW; MHI 35 GW; WoodMac 60-70 GW a year capacity vs about 110 GW orders)"
+  - "INNIO Jenbacher annual output MW 2026 (capacity 3.5 GW 2025 to about 10 GW by 2030; 1.1 GW data-centre order Q2 2026)"
+  - "India hydropower capacity addition target 2032 CEA pumped storage (pumped storage 50 to 57 GW by 2032; installed about 4.7-5 GW; conventional hydro additions very low)"
+  - "India electric motor market size crore HT synchronous (total motors EMR INR 118.30 bn 2024, 11% CAGR; Ken USD 4,134 mn 2025; no HT or synchronous slice)"
+  - "RBI reference rate USD INR November 2026 (95.2492 on 6 Nov 2026, MSEI archive)"
+  - "TD Power Systems competitors and market share (names and 75-80% steam generator share on weak sites; unverified, not used)"
+searches_skipped:
+  - "gas turbine generator alternator cost share and price per kW: no usable result; alternator content per kW NOT FOUND"
+  - "alternator suppliers for gas engine gensets (WEG, Leroy-Somer, Marelli, Mecc Alte, Meidensha) and capacity/lead time: no alternator-specific result; competitor set NOT FOUND"
+  - "India steam turbine generator and hydro generator market size in Rs Cr: not searched beyond the above; no sourced figure; NOT FOUND"
+downstream_candidates:
+  - signal: "INNIO Jenbacher gas engine bookings, capacity ramp and lead times"
+    entity_type: "counterparty"
+    demand_link: "Named long-term supply agreement for gas engine generators; engine output gates generator pull-through."
+    likely_source: "INNIO earnings call and investor release; TDPS BSE announcements"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Siemens Energy gas and steam turbine orders and its 10-year build-to-print framework"
+    entity_type: "counterparty"
+    demand_link: "Customer under the 13 Aug 2026 framework and also the licensor of the 2-pole design; no volume floor."
+    likely_source: "Siemens Energy quarterly results; TDPS BSE announcement 14 Aug 2026"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Major US gas turbine OEM identified in Q2 FY27 deck (name not disclosed; Customer A or B unconfirmed)"
+    entity_type: "end-customer"
+    demand_link: "Significant volume orders for Americas gas turbine programs at 13.8 kV; likely the Customer A step-up to 23.17%."
+    likely_source: "OEM SEC filings (10-Q, 8-K) and earnings call; identity to be confirmed from company"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Hyperscaler and data-centre developer capex and behind-the-meter gas procurement"
+    entity_type: "end-customer"
+    demand_link: "Drives gas engine and gas turbine orders at once; Q1 FY27 call p.3 names AI data centres first."
+    likely_source: "Hyperscaler 10-Q and earnings calls; Enverus and Bloom data-centre reports"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Global gas turbine backlog, slot reservations and OEM capacity additions (GE Vernova, Siemens Energy, MHI)"
+    entity_type: "macro"
+    demand_link: "Backlog of 116, 69 and 35 GW sets the alternator order pipeline; delivery slots run to 2031."
+    likely_source: "OEM quarterly results and earnings calls; Wood Mackenzie data"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Nepal and South Asia hydropower awards, plus India CEA hydro and pumped storage commissioning"
+    entity_type: "regulatory"
+    demand_link: "Segment's largest order is a Nepal vertical hydro generator; pipeline cited across South Asia, Europe and India."
+    likely_source: "Nepal Electricity Authority tenders; CEA monthly reports; PIB releases"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Alstom traction motor stator and rotor supply under the 2017 long-term agreement"
+    entity_type: "counterparty"
+    demand_link: "Rail book Rs 169.6 Cr at Sep-26 (B04); Q1 FY27 call: no fresh rail orders, review at year end."
+    likely_source: "Alstom half-year results; TDPS BSE announcements and concall"
+    cadence: "quarterly"
+    shared: false
+  - signal: "US tariff and trade-order changes on electrical machinery imports"
+    entity_type: "macro"
+    demand_link: "Exports are 56.4% of standalone FY26 revenue and Americas orders are rising; Triveni cited a 56% tariff in Nov 2025."
+    likely_source: "USTR and US Customs notices; Federal Register; Triveni and TDPS concalls"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Market size does not bind this name; capacity and four OEM order books do. Only one sourced size fits the product scope: AR gas generator USD 5.9 bn 2026 (Rs 56,198 Cr), against FY26 revenue Rs 1,856.2 Cr (3.3%). SAM is NOT FOUND, so SOM is capacity-bound: Rs 3,200 Cr FY29, Rs 4,000 Cr FY31. The yr3 19.9% CAGR is mostly delivered by the FY27 guide (Rs 2,900-3,000 Cr); from the guide midpoint to Rs 3,200 Cr is 4.1% a year, so stage 11 should treat years 2 and 3 as capacity-limited unless a capex plan appears (Q2 FY27 transcript, about 19 Nov 2026, is the separating observation). INR22 billion capacity reading is refuted by the Rs 2,600 Cr guide on the same call. No B07 exists; capex came from B01/B03 and filings."

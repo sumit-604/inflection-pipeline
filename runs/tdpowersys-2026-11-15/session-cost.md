@@ -1,0 +1,54 @@
+# Session cost: tdpowersys 2026-11-15 (Phase 1)
+
+Per-stage token ledger, from subagent result metadata. This harness exposes only total tokens and wall time per subagent; the split columns are n/a, never estimated.
+
+| # | stage | model | effort | in_tok | cache_read | cache_write | out_tok | total_tok | wall | run# |
+|---|---|---|---|---|---|---|---|---|---|---|
+| S1 | step1-brief-peers-cap (Steps B-D) | claude-opus-5-5 | default | n/a | n/a | n/a | n/a | 138613 | 7m15s | 1 |
+| S1 | step1-corpus-collection (Step F) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 225467 | 34m43s | 1 |
+| 1 | gate0 | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 88054 | 4m33s | 1 |
+| 0 | intake-check | claude-haiku-5-5 | medium | n/a | n/a | n/a | n/a | 152132 | 4m53s | 1 |
+| 2 | notes-pass1 | claude-sonnet-5-5 | default-high | n/a | n/a | n/a | n/a | 268688 | 9m46s | 1 |
+| 2 | notes-pass2 | claude-sonnet-5-5 | default-high | n/a | n/a | n/a | n/a | 244582 | 8m02s | 2 |
+| 2 | notes-pass3 | claude-sonnet-5-5 | default-high | n/a | n/a | n/a | n/a | 133455 | 4m07s | 3 |
+| 3 | ardeep | claude-sonnet-5-5 | default-high | n/a | n/a | n/a | n/a | 455522 | 19m15s | 1 |
+| 8 | promoter | claude-sonnet-5-5 | default-high | n/a | n/a | n/a | n/a | 257013 | 7m00s | 1 |
+| 4 | bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 236256 | 10m27s | 1 |
+| 5 | concall | claude-sonnet-5-5 | default-high | n/a | n/a | n/a | n/a | 268432 | 15m26s | 1 |
+| 9 | tam | claude-sonnet-5-5 | default-high | n/a | n/a | n/a | n/a | 179848 | 7m34s | 1 |
+| 6 | peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 350236 | 6m43s | 1 |
+| 7 | emoat | claude-sonnet-5-5 | default-high | n/a | n/a | n/a | n/a | 240025 | 9m27s | 1 |
+| 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 350183 | 10m08s | 1 |
+| 12a-shadow | verifier-a-shadow | claude-haiku-5-5 | high | n/a | n/a | n/a | n/a | 288922 | 13m51s | 1 |
+| 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 54834 | 1m10s | 1 |
+| 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 321092 | 15m09s | 1 |
+| 12c | verifier-c-framework-phase1 | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 199455 | 17m54s | 1 |
+| 13 | synthesis-lite | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 211083 | 11m19s | 1 |
+| 9b | halt1-dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 322003 | 13m00s | 1 |
+
+## Close-out summary (Phase 1)
+
+Run total, subagents only: 4,985,895 tokens over 21 ledger rows.
+
+### (a) TOP FIVE BY TOKENS
+1. notes (3 passes): 646,725 (13.0% of run total)
+2. ardeep: 455,522 (9.1% of run total)
+3. peers: 350,236 (7.0% of run total)
+4. verifier-a-numerical: 350,183 (7.0% of run total)
+5. halt1-dossier: 322,003 (6.5% of run total)
+
+### (b) DOWNSHIFT FAILURES
+none. stage-00-intake-check ran on claude-haiku-5-5, verifier A on claude-sonnet-5-5, verifier-a-shadow on claude-haiku-5-5, each as set in its agent frontmatter (the Haiku and Verifier A reports state their model; the harness does not print the served model).
+
+### (c) COST SPIKES
+none. No prior run exists for this ticker.
+
+### (d) OPERATOR SNAPSHOT
+SESSION TOTAL (/cost)
+
+
+### (e) FRESH VS RE-READ
+All 21 ledger rows carry n/a in the input, cache-read, cache-write and output columns (the harness exposes total tokens only), so all 21 rows are left out of the three sums below.
+Fresh tokens (cache write + output + uncached input): n/a
+Re-read tokens (cache read): n/a
+Re-read multiple (re-read / cache write): n/a

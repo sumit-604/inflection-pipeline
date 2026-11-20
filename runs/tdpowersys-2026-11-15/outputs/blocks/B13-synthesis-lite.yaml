@@ -1,0 +1,70 @@
+stage: B13-synthesis-lite
+company: "TDPOWERSYS"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"
+status: complete
+mode: "PHASE 1 LITE (no valuation content; stages 10, 11, 14, 15 and Verifier C valuation half not run; Mental Model unsigned)"
+gate_verdict: "PROCEED WITH CAVEATS"
+gate_verdict_line: "VERDICT: PROCEED WITH CAVEATS (freshness cap CORPUS GAPPED-FRESHNESS; FLAG-CASH INDETERMINATE caps at caveats; four verifier MAJORs carried)"
+verdict_rule_applied: 3          # rule 3 with INDETERMINATE cap; freshness cap and rule 4 land on the same verdict
+verdict_rule_trace:
+  rule1_rework: "not fired: 0 CRITICAL in B12a; lowest acceptance 78 (B12b, denominator 9); overall 78; 7 source-fidelity findings open, none on a Gate 0, verdict-card or Section 1B pillar input, all shown corrected"
+  rule2_insufficient_evidence: "considered, not fired: AR, 3 results, 3 transcripts, CRISIL rationale, shareholding and Data_Sheet present; stages 1-9 ran; gaps partial"
+  rule3_flags: "FLAG-CASH active, INDETERMINATE: caps at PROCEED WITH CAVEATS"
+  rule4_caveats: "MAJORs carried: B12a Alstom year, B12b F1, B12b F2, B12c C-G05"
+freshness_cap_applied: true
+freshness_verdict: "CORPUS GAPPED-FRESHNESS"
+missing_mate_document: "TD Power Systems Q2 FY27 earnings call transcript (call held 13 Nov 2026); expected in BSE corporate announcements for scrip 533553, about 19 Nov 2026"
+flags_active: [FLAG-CASH, FLAG-GATE0]
+flag_promoter: "not active: B08 verdict CAUTION (clean 4, caution 6, red 0, no deal-breaker); orchestrator rule fires on CONCERN or AVOID; findings carried as caveat 4"
+flag_cash:
+  determination: INDETERMINATE
+  metric_direction: "C receivable days 124.8 (FY25) to 145.9 (FY26); C CFO/PAT 72.6%, 22.6%, 54.1% FY24-FY26, 100.8% H1 FY27 on other payables +29,764.52 lakh; CFO ex that line -8,590.39 lakh (Res. Q2 FY27 p.9)"
+  rating_quote: "\"The TDPS group reported minimal working capital utilisation in recent months to fund its expanding scale.\" (CRISIL rationale 22 Jun 2026 p.2; retrieved at stage 13, not Verifier A checked; rationale silent on receivable days and advances)"
+  missing_evidence:
+    - "Split of the Rs 240.0 Cr rise in other current liabilities (advances / tax / other): Q2 FY27 transcript, BSE 533553, about 19 Nov 2026; else FY27 AR notes"
+    - "Receivables ageing at 30 Sep 2026 and collections from receivable Customer A since 31 Mar 2026: company via Q2 FY27 call or Halt 1 question"
+    - "CFO on cash capex basis: FY27 AR cash flow and notes"
+    - "Rating agency detail on receivables and advances: next CRISIL surveillance rationale or another agency rationale (none sought)"
+  separating_metric: "FY27 consolidated CFO before the change in other payables, provisions and liabilities (FY27 audited cash flow, May 2027): positive and >= 54% of PAT supports GROWTH-INDUCED; negative supports STRUCTURAL. Earlier tripwire: 31 Mar 2027 C receivable days > 146 with other current liabilities < Rs 430.3 Cr reads STRUCTURAL"
+flag_gate0: "AVERAGE core 45/100, moat 25/60, grand 70/160; DB2; depressors FY17-FY20 returns (historical), FY17-FY24 capex and payables NOT FOUND (data gap), cumulative CFO/PAT 0.57 (live); open B12c C-G05 strict reading core 39 AVOID; no verdict cap"
+transition_posture: "NOT CLASSIFIED (phase 1: Mental Model unsigned; proof gate read at FTTCP; recognition gap resolves at Stage 11)"
+confidence_delta: {numerical: 98.6, redflag: 78, framework: 90.4, framework_valuation: "PENDING PHASE 3", peer: 100, overall: 78}
+weakest_component: "redflag_coverage 78 (B12b F1 and F2 partially caught)"
+partial_stages:
+  - "B08 promoter: partial (MCA21/RoC, SEBI/SAT/eCourts, ED/SFIO/CCI, proxy advisors and SCORES, FY24-FY25 pledge and Reg 29 history, promoter background checks not reachable)"
+  - "B09 TAM: partial (alternator content per kW, alternator competitor set, India steam and hydro generator size NOT FOUND; SAM NOT FOUND)"
+headline: "Export generator orders outrun cash conversion"
+falsification_metric: "Q3 FY27 results (Feb 2027): consolidated revenue below Rs 709 Cr with order inflow below revenue for a second straight quarter (Q2 FY27 inflow / revenue 0.98)"
+monitorables_count: 8
+contradicted_claims_count: 8   # 3 from the peer stage (with B12b F1, F3 and B12d D-1 readings), 5 management claims contradicted by company documents
+open_items:
+  - "B12c C-G05 (MAJOR): Gate 0 ROCE proxy; strict reading core 39 AVOID; needs screener ROCE row FY17-FY26 or operator ruling"
+  - "B12a source-fidelity findings open: 7 (1 MAJOR Alstom agreement year 2017 per Pres. slide 5, not 2020; 6 MINOR page-anchor slips in 04, 05, 07, 09); corrected anchors shown in gate-recommendation.md"
+  - "B12b F1 (MAJOR): B06 Q9 tariff CONTRADICTED overstated; reclassify PARTIALLY VERIFIED for TD; operator ruling"
+  - "B12b F2 (MAJOR): data-centre execution-delay tone shift; add tracker kill signal for deferred dispatch or commissioning"
+source_fidelity_findings_open: 7
+source_fidelity_figures_carried_uncorrected: 0
+verifier_disagreements: 0
+disagreement_log_written: false
+publish_candidate: true
+publish_candidate_summary: "Same power-equipment upcycle, three peer margin outcomes by contract type: CG price variation widened margin, Azad 5% band held 36-38% EBITDA, Triveni fixed price fell to 18.0% from 25.8%; explainer slot; flagged only"
+valuation_content: "none (excluded in phase 1 lite)"
+files_written:
+  - "outputs/final/business-narrative.md"
+  - "outputs/final/gate-recommendation.md"
+  - "outputs/final/verifier-summary.md"
+  - "outputs/blocks/B13-synthesis-lite.yaml"
+input_gaps:
+  - "FRESHNESS: Q2 FY27 earnings call transcript absent (call held 13 Nov 2026; BSE, screener and tdps.co.in show audio only as of 15 Nov 2026). Expected source: BSE corporate announcements for 533553, about 19 Nov 2026."
+  - "collector_warning (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. [REPAIRED in Step F: two shareholding filings downloaded from tdps.co.in]"
+  - "collector_warning (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again. [OPEN: those five sheets are ABSENT documents; Data_Sheet is populated, annual FY2017-FY2026, quarterly Jun 2024-Sep 2026; Number of shares row blank]"
+  - "collector_warning (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again [REPAIRED in Step F: three results filings downloaded from BSE]"
+  - "collector_warning (verbatim): no rating PDF yet: add later the same way [REPAIRED in Step F: CRISIL rationale 22 Jun 2026, a print of the HTML rationale, not the agency PDF]"
+  - "research/ empty: no broker notes (non-anchored source only; no effect on anchored evidence)"
+  - "prospectus/ empty: not expected, company listed 2011; not a gap"
+  - "Peer Q2 FY27 transcripts absent: TRITURBINE and AZAD list audio only; CGPOWER latest is Q1 FY27"
+  - "No peer screening sheets (collector peer pass delivered zero files; peer transcripts fetched by direct download)"
+  - "Rating: only CRISIL checked; no other agency rationale sought"
+  - "Read route: pre-extracted page-marked .txt beside every PDF (tools/extract_pdfs.py) for all stages and verifiers; the SAST Reg 29(1) scan of 14 Nov 2026 and one newspaper notice went through OCR"
+analyst_note: "One corpus retrieval at stage 13: the CRISIL working-capital lines (rationale p.2) quoted verbatim for the FLAG-CASH block because no earlier block carried them; not Verifier A checked."

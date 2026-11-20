@@ -1,0 +1,47 @@
+stage: B01-gate0
+company: "TDPOWERSYS"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "FRESHNESS: Q2 FY27 earnings call transcript absent (call held 13 Nov 2026; BSE, screener and tdps.co.in show audio only as of 15 Nov 2026). Expected source: BSE corporate announcements for 533553, about 19 Nov 2026."
+  - "screener export sheets P&L, Quarters, Balance Sheet, Cash Flow, Customization are ABSENT; Data_Sheet populated (annual FY2017-FY2026, quarterly Jun 2024-Sep 2026); Number of shares row blank"
+  - "No capex or trade payable lines in Data_Sheet for FY17-FY24; B2, B3, B4, M12 scored 0 as NOT FOUND"
+  - "No peer screening sheets: M2, M5, M9 PEER DATA NEEDED"
+  - "Promoter holding at Sep 2023 NOT FOUND (E2 3-year window); AR gives Mar 2024 onward"
+  - "research/ empty: no broker notes (non-anchored source only)"
+  - "Peer Q2 FY27 transcripts absent: TRITURBINE and AZAD list audio only; CGPOWER latest is Q1 FY27"
+  - "Rating: only CRISIL checked; no other agency rationale sought"
+flags:
+  - {type: FLAG-GATE0, reason: "AVERAGE on core 45; depressors are FY17-FY20 low returns (ROCE -0.1% to 8.6%, PAT -14.42 to 29.94 cr) and NOT FOUND capex and payables FY17-FY24 (B2-B4 scored 0); FY23-FY26 ROCE 22.2% to 30.6%"}
+data_years: 10
+fy_range: "FY2017 to FY2026"
+blocks: {A: 8, B: 1, C: 9, D: 19, E: 8}
+core_score: 45
+moat_score: 25
+grand_total: 70
+moats_confirmed: 5
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers:
+  - "DB2: Block B 1 < 8, max GOOD (B2-B4 NOT FOUND for FY17-FY24; B1 0.57)"
+history_downgrade: false
+data_notes:
+  - "Basis consolidated; screener FY26 PAT 238.77 cr equals AR consolidated 23,877.49 lakh (AR p.230)"
+  - "ROCE computed: EBIT = PBT + interest (includes other income); capital employed proxy = equity + reserves + borrowings; FY26 AR cross-check 1,083.37 vs 1,089.87 cr"
+  - "ROE on average net worth; FY17 on closing (no opening)"
+  - "C2 PAT CAGR N/M (negative endpoint, FY17 PAT -4.43); loss-to-profit swing, FY18 to FY19; C4 scored 0"
+  - "Capex found only for FY25 (55.97 cr) and FY26 (108.52 cr), AR p.198; FY17-FY24 NOT FOUND; B2 and B3 scored 0 (2-year sensitivity: B2 would be 2, B3 stays 0)"
+  - "Trade payables found only for FY25 and FY26 (AR p.194); B4 and M12 scored 0; sales basis used for inventory and payable days"
+  - "PEER DATA NEEDED: M2, M5, M9; M6 scored 0 on R&D 0.51% of turnover"
+  - "M11 passes on formula only (revenue CAGR 28.6% vs 19.2%, selling % 4.03 to 3.86); not evidence of network effects"
+  - "E1 professionally managed clause not applied (promoter-led); if applied E1 = 3, core 48, same class"
+  - "E2: Sep 2023 start NOT FOUND; Mar 2024 34.42% to Sep 2026 27.16% = -7.26pp"
+  - "Promoter 27.16% at 30 Sep 2026 (Reg 31 p.3); brief 26.51% (post-QIP) not in this file"
+  - "D uses 30 Sep 2026 consolidated balance sheet (results Q2 FY27 p.8); net cash"
+  - "H1 FY27 revenue 1,481.37 cr (results Q2 FY27 p.7) vs brief 1,481.5; guidance not settled by these documents"
+  - "Customer A 23.17%, B 10.74% consolidated FY26 confirmed (AR p.238); standalone A 25.06, B 24.08, C 11.62"
+  - "Receivables 742.09 to 952.93 cr and other current liabilities 190.27 to 430.27 cr, 31 Mar to 30 Sep 2026, confirmed (results Q2 FY27 p.8); nature of liabilities NOT FOUND"
+  - "Related-party FY26: Europe GmbH 256.28 cr, USA Inc 167.08 cr (AR Form AOC-2)"
+block_b_trend: "improving: CFO/PAT 22.6% FY25 to 54.1% FY26 to 100.8% H1 FY27 (211.74 / 210.04 cr), but H1 FY27 rests on other payables +297.65 cr of unconfirmed nature and cumulative FY17-FY26 stays 0.57"
+analyst_note: "Core 45 sits in AVERAGE mainly because FY17-FY20 (ROCE -0.1% to 8.6%) hold the 10-year medians at 14.6% ROCE and 12.1% ROE, and because capex and payable history is absent from the Data Sheet (B2-B4 zero). Latest-three-year returns are 23.6%, 27.4%, 30.6% ROCE. Net cash, 43.9x interest cover, 14.7% contingent-liability ratio. Promoter holding fell from 34.42% (Mar 2024) to 27.16% (Sep 2026). Receivable days rose 124.8 to 145.9 in FY26."

@@ -1,0 +1,64 @@
+stage: B07-emoat
+company: "TDPOWERSYS"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "FRESHNESS: Q2 FY27 earnings call transcript absent (call held 13 Nov 2026; BSE, screener and tdps.co.in show audio only as of 15 Nov 2026). Expected source: BSE corporate announcements for 533553, about 19 Nov 2026."
+  - "collector_warning (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. [REPAIRED in Step F: two shareholding filings downloaded from tdps.co.in]"
+  - "collector_warning (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again. [OPEN: those five sheets are ABSENT documents; Data_Sheet is populated, annual FY2017-FY2026, quarterly Jun 2024-Sep 2026; Number of shares row blank]"
+  - "collector_warning (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again [REPAIRED in Step F: three results filings downloaded from BSE]"
+  - "collector_warning (verbatim): no rating PDF yet: add later the same way [REPAIRED in Step F: CRISIL rationale 22 Jun 2026, a print of the HTML rationale, not the agency PDF]"
+  - "research/ empty: no broker notes (non-anchored source only; no effect on anchored evidence)"
+  - "prospectus/ empty: not expected, company listed 2011; not a gap"
+  - "Peer Q2 FY27 transcripts absent: TRITURBINE and AZAD list audio only; CGPOWER latest is Q1 FY27"
+  - "No peer screening sheets (collector peer pass delivered zero files; peer transcripts fetched by direct download)"
+  - "Rating: only CRISIL checked; no other agency rationale sought"
+  - "Read route: pre-extracted page-marked .txt beside every PDF (tools/extract_pdfs.py) for all stages and verifiers; the SAST Reg 29(1) scan of 14 Nov 2026 and one newspaper notice went through OCR"
+  - "STAGE 7 NOT FOUND: nameplate capacity and facility-wise utilisation; product-wise revenue; large-generator capex, TAM and customer; Siemens Energy, INNIO and Alstom volume floors and licence expiry; patent counts, named inventors and technical-hire remuneration; QIP object of issue; UK 40-200 MW design ownership; TDPS PLI enrolment; competitor filings for the I2 test; global manufacturer count for TDPS own range"
+flags:
+  - {type: FLAG-EM-CASH-QUALITY, reason: "G1 war chest scored 3.0 but H1 FY27 cash plus bank rose Rs 219.9 cr while other current liabilities rose Rs 240.0 cr (Pres. slide 31); split of the liability NOT FOUND; Rs 675 cr equity raised while holding net cash, QIP object NOT FOUND (EGM notice p.13 gives working capital for the Rs 75 cr preferential)"}
+  - {type: FLAG-EM-NO-VOLUME-FLOOR, reason: "H2 and B2 rest on a Siemens Energy 10-year build-to-print framework with no stated volume or value (Ann. 14 Aug 2026 p.2) and on INNIO and Alstom agreements whose terms are NOT FOUND (Pres. slide 5; Q4C p.10)"}
+  - {type: FLAG-EM-CONCENTRATION-RISING, reason: "C2 scored 0 with counter-evidence: top 10 customers 84% in FY25 and FY26 (AR p.50), Customer A 14.10% to 23.17% (AR p.238); CRISIL p.2 states 60-70% for core generator sales, conflicting with the AR"}
+  - {type: FLAG-EM-LICENSED-NOT-OWNED, reason: "A2 scored 0: core designs licensed from Toyo Denki, Voith and Siemens, expiry NOT FOUND; ownership of UK 40-200 MW designs NOT FOUND; R&D 0.51% of turnover (AR p.30)"}
+  - {type: FLAG-EM-LARGE-GEN-UNFUNDED, reason: "Large generators 40-200 MW carry no capex amount, TAM or customer; plan slipped three times (B05 timeline_slippages); excluded from 2C arithmetic; machine tools take 15-16 months (Q4C p.9)"}
+  - {type: FLAG-EM-MATRIX-ABSENT, reason: "6D combined matrix table was not in the stage inputs; AVERAGE assigned using only the rule stated in the stage prompt"}
+em_score: 18.7
+em_classification: "MODEST"
+active_categories:
+  - {id: "G1", name: "War chest", strength: "Strong", evidence_type: "documented", time_to_materialise: "already in place; cash quality to confirm in 6-12 months"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Strong", evidence_type: "documented (Siemens Energy framework); claim for other agreements", time_to_materialise: "POs and deliveries from Aug 2027"}
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "documented (own-design 2-pole order, API 541 motors)", time_to_materialise: "12-36 months"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "claim (agreements, pre-qualification) with documented customer stability", time_to_materialise: "in place; value visible in 12-24 months"}
+  - {id: "E2", name: "China+1 beneficiary", strength: "Moderate", evidence_type: "documented exports, inference on cause", time_to_materialise: "already visible; reversible"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already visible"}
+evidence_mix: {documented: 14, claim: 12, inference: 5}
+completionist_recount: "📄 recount performed: 14 documented items across 9 categories (A1, B2, C1, E2, F2, G1, G2, H2, R1); 6 categories active at Strong or Moderate, inside the 3-6 base rate"
+catalysts_12m:
+  - {catalyst: "Q2 FY27 call (13 Nov 2026) disclosure of FY29-30 capacity plan, large-generator capex and QIP use; transcript expected on BSE about 19 Nov 2026", window: "Nov 2026 to Dec 2026", evidence_type: "claim until a capex amount is filed", anchor: "Q1 FY27 call p.4-5; B00 freshness FAIL"}
+  - {catalyst: "Q3 FY27 results: revenue at or above Rs 709-759 cr and inflow / revenue above 1.0 (Q2 FY27 was 0.98)", window: "Feb 2027", evidence_type: "documented once filed", anchor: "Inv. Pres. slide 38 and slide 26; B05 triggers"}
+  - {catalyst: "First Siemens Energy purchase order under the 10-year framework, with value", window: "next 6-12 months", evidence_type: "documented once a Reg 30 filing appears", anchor: "Announcement 14 Aug 2026 p.2-3"}
+  - {catalyst: "First delivery of TDPS-design 2-pole generators under the Rs 192 cr order", window: "from Aug 2027 (month 9 of 12)", evidence_type: "documented order, delivery to be observed", anchor: "Announcement 1 Oct 2026 p.1"}
+  - {catalyst: "FY27 results and annual report: Customer A and top 10 shares, product mix, capacity, other current liabilities split, rail year-end review", window: "May to Jul 2027", evidence_type: "documented once filed", anchor: "AR p.50, p.238; Q1 FY27 call p.4"}
+capex_embedded_growth_pct: 17.8
+optionality_register:
+  - {optionality: "Large generators 40-200 MW from the UK branch", converting_evidence: "Board-approved capex with amount, machine-tool order, a PO with value and MW rating", first_appears: "Q2 FY27 call, then exchange filing or Q3 FY27 call", window: "3-9 months for capex; first revenue FY29"}
+  - {optionality: "Siemens Energy build-to-print volume", converting_evidence: "First PO under the framework with value and delivery dates", first_appears: "Reg 30 order filing or results note", window: "6-12 months"}
+  - {optionality: "INNIO capacity commitment to 2030", converting_evidence: "Filed minimum-volume or take-or-pay terms, or a disclosed share of OEM backlog", first_appears: "AR FY27 related notes or Reg 30 filing", window: "12-18 months"}
+  - {optionality: "Motors in US and Europe", converting_evidence: "Customer approval notice, first volume PO, a motor revenue line", first_appears: "Exchange order filing or AR FY27 segment note", window: "12-24 months"}
+  - {optionality: "Aftermarket and service flywheel", converting_evidence: "Service revenue disclosed in the AR; spares above 0.7% of order book", first_appears: "AR FY27 MD&A or presentation", window: "12 months; installed base needs about 10 years"}
+  - {optionality: "Owned IP for UK designs", converting_evidence: "Patent filings with named inventors and an IP ownership statement", first_appears: "AR FY27 or ipindia.gov.in search", window: "24-36 months"}
+  - {optionality: "Customer diversification", converting_evidence: "Customer A below 23.17% and top 10 below 84%", first_appears: "AR FY27 segment note", window: "12 months"}
+  - {optionality: "Gross margin above 35% via Business Excellence and mix", converting_evidence: "Four quarters at 35% or more with Customer A flat", first_appears: "Quarterly results", window: "4-6 quarters"}
+  - {optionality: "Talent asymmetry (I1)", converting_evidence: "Named technical hires with remuneration annexure and a competitor pay-break calculation", first_appears: "AR remuneration annexure and patent databases", window: "24+ months, low probability"}
+  - {optionality: "Hydro refurbishment vertical", converting_evidence: "Hydro revenue and order book disclosed by segment", first_appears: "AR FY27 or presentation", window: "12 months"}
+  - {optionality: "Cash quality of the war chest", converting_evidence: "Split of other current liabilities into advances and tax; CFO ex-advances positive", first_appears: "Notes to the Mar-27 balance sheet", window: "6-12 months"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (core 45) with EM MODEST (18.7, below the 25 line); six active categories, none in a prove-out yet, and the matrix table was not in the inputs."
+top_moat_risks:
+  - "Cash is advance funded: other current liabilities +Rs 240.0 cr in H1 FY27 against cash plus bank +Rs 219.9 cr; reversal would remove the G1 score"
+  - "Siemens, INNIO and Alstom agreements show no volume floor; value NOT FOUND"
+  - "Customer A at 23.17% and top 10 at 84% of revenue; Q2 FY27 inflow / revenue 0.98"
+  - "Large-generator build has no capex amount and has slipped three times; first revenue FY29 at best"
+  - "Export 88-93% of quarterly inflow depends on prime-mover and data-centre capex and US tariff handling"
+analyst_note: "Two readings. A: TDPS is a qualified outsourced vendor to a few capacity-starved prime movers, and Siemens Energy's 10-year framework plus a US MNC's Rs 192 cr own-design order show that qualification is real. B: the 71-85% growth is OEM capex pass-through into one vendor, with no disclosed volume floors, Customer A rising to 23.17%, advance-funded cash and flat gross margin. The one observation that separates them: the first Siemens PO with a value, with Customer A and top 10 shares falling in the FY27 AR. Single-credit rule applied: each fact scored once (Siemens framework under H2 only; own-design order under A1 only). I1 and I2 contribute 0.0. The Q2 FY27 call (13 Nov 2026) is unread; the FY29-30 capacity plan promised for it is NOT FOUND. The 6D matrix table was not in my inputs."

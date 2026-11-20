@@ -1,0 +1,58 @@
+stage: B06-peers
+company: "QLL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "No QLL concall transcript exists (no-concall mode, B05); peer evidence is base-rate only, no peer names QLL"
+  - "No peer discloses CFO/PBT; peer CFO/PBT base rate NOT FOUND"
+  - "ITCPL acquisition price and multiple NOT FOUND in B05, so peer deal multiples cannot be compared like for like"
+  - "Peer transcript file names differ from call dates (Lal Feb file = 30 Jan 2026 call; Lal May file = 30 Apr 2026 call; Krsnaa Aug file = 14 Aug 2026 call)"
+flags:
+  - "FLAG-PEER-MARGIN-PATH: no peer shows margin rising with new-footprint growth above 25% inside four quarters; Krsnaa guided to hold 28% and printed 25% (Q1 FY27) and 27% (Q2 FY27)"
+  - "FLAG-PEER-BASE-RATE: top organic or like-to-like peer rates are 12-13% (Krsnaa) and 19-20% (Lal); none near QLL standalone organic 47% FY26"
+  - "FLAG-PEER-GOVT-RECEIVABLES: Krsnaa DSO 139-155 days, receivables about Rs 470 Cr at Sep 2026, collection dates slipped repeatedly"
+  - "FLAG-PEER-RAMP-TIMING: Vimta cites 2-3 years for new capacity to reach return targets; QLL ties margin recovery to H2 FY27"
+peers_provided: 12
+verified:
+  - {claim: "New labs and capacity dilute margin first and recover with utilisation (QLL ties margin rise to new labs crossing utilisation thresholds)", peers: ["VIMTALABS", "KRSNAA"], anchor_count: 9}
+partially_verified:
+  - {claim: "QLL FY27 EBITDA margin guide of 25-27% against 21.6% in H1 FY27 is peer-consistent (level yes, path under fast growth no)", peers: ["VIMTALABS", "KRSNAA", "LALPATHLAB"]}
+  - {claim: "QLL FY27 revenue growth of 35-40% (standalone organic 47% in FY26): peers show growth above industry is possible, none shows this organic magnitude", peers: ["VIMTALABS", "KRSNAA", "LALPATHLAB"]}
+  - {claim: "Government and PPP collections: QLL CFO/PBT 42% H1 FY27 and 22.4% receivables over 6 months (Krsnaa only: DSO 139-155 days)", peers: ["KRSNAA"]}
+  - {claim: "Bolt-on multiples, goodwill and integration cost (QLL goodwill 51.2% of equity): Lal gives about 3.3x sales for Shahbazkers and a disputed 5x sales for S N GeneLab; no peer discusses goodwill", peers: ["LALPATHLAB"]}
+  - {claim: "Overseas share target of 30% by FY31 vs 2.7% in FY26: Vimta exports 38-40%; Lal expects international under 5% for years", peers: ["VIMTALABS", "LALPATHLAB"]}
+contradicted: []
+unverifiable: []
+peer_coverage_map:
+  - {peer: "VIMTALABS", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "EBITDA 34.3%, exports 39%, E&E chamber 80-85% utilisation, capex equals prior-year depreciation"}
+  - {peer: "VIMTALABS", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "FY26 margin 35.8%, 20-25% CAGR called a stretch, utilisation ramp over 3 years, US subsidiary"}
+  - {peer: "VIMTALABS", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Rs 100 Cr building 60% occupied, capex Rs 80 Cr, asset turn 1-1.2x, no acquisition active"}
+  - {peer: "VIMTALABS", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "Growth 9.9% on pharma R&D lull, 100-200 bps margin correction, biologics 1:1 by year 3, top-5 client share 25-35%"}
+  - {peer: "KRSNAA", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Margin dip called timing, receivable recovery, ex-retail de-growth, pathology mix 65%"}
+  - {peer: "KRSNAA", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Like-to-like growth 13%, DSO 155 to 139 with target 120, FY25 and FY26 guide misses, Rs 500 Cr capex"}
+  - {peer: "KRSNAA", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Margin 25% on 22% growth, fixed cost from day one, like-to-like 12%"}
+  - {peer: "KRSNAA", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "Receivables Rs 470 Cr, payables Rs 63 Cr to Rs 230 Cr, cash PPP pivot to 40-45%, margin 27%"}
+  - {peer: "LALPATHLAB", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Organic 10.6%, margin guide 27-28%, radiology centre Rs 15-16 Cr, no price hike"}
+  - {peer: "LALPATHLAB", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Shahbazkers Rs 20 Cr on Rs 6.11 Cr revenue, Suburban integration lag, FY27 guide early to mid teens"}
+  - {peer: "LALPATHLAB", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Revenue +19.1%, EBITDA 31.0%, CGHS 2-3%, international under 5%, Ghana 80% deal"}
+  - {peer: "LALPATHLAB", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "S N GeneLab Rs 168 Cr plus Rs 31-32 Cr for 70%, DSO 17 days, mid-teens organic sustainable, international under 5%"}
+industry_cross_read:
+  demand: "Split: diagnostics strong (Lal +19.6%, Krsnaa +27% H1 FY27) while contract research and testing is soft (Vimta +9.9% Q2 FY27, pharma R&D lull, food export-import hit); QLL 33% is not a sector wave"
+  pricing_inputs: "Input and labour inflation presses margin at Vimta and Lal (imported reagents, dollar, labour code); only Lal offsets with price and mix (CGHS 2-3%); Krsnaa PPP prices fixed with 2-5% escalators"
+  capex_cycle: "Capacity race, not a lone expander: Vimta Rs 80 Cr, Lal Rs 140-150 Cr, Krsnaa Rs 500 Cr in FY27; Lal and Vimta fund from net cash, Krsnaa from debt, so QLL borrowing-led build resembles Krsnaa"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Government payer delay and service suspension to force payment (KRSNAA Q3 FY26 p.15, Q4 FY26 pp.16-17, Q1 FY27 p.17, Q2 FY27 p.5)"
+  - "Contract tenure expiry cuts revenue (KRSNAA Q4 FY26 p.4, Q2 FY27 p.3)"
+  - "Major client loss and top-5 concentration 25-35% (VIMTALABS Q2 FY27 pp.10, 13)"
+  - "Middle East war: shipping cost, sample volume, reagent lead time (VIMTALABS Q4 FY26 p.7, Q2 FY27 p.6; LALPATHLAB Q4 FY26 p.11)"
+  - "Rupee and dollar effect on imported consumables (LALPATHLAB Q3 FY26 p.13; VIMTALABS Q1 FY27 p.4)"
+  - "New labour code one-off charge (VIMTALABS Q3 FY26 Rs 1.6 Cr p.5; LALPATHLAB Q3 FY26 Rs 30 Cr p.6)"
+  - "Industry talent attrition (VIMTALABS Q3 FY26 p.11)"
+  - "Senior management turnover (KRSNAA Q3 FY26 p.7, Q4 FY26 p.17)"
+  - "Cost reclassification between P&L lines (LALPATHLAB Q4 FY26 p.17; KRSNAA Q1 FY27 pp.8-9)"
+  - "Pharma R&D pipeline lull and regulator wait (VIMTALABS Q2 FY27 pp.6, 12)"
+net_narrative_effect: "complicates"
+analyst_note: "No peer names QLL and none is a like-for-like TIC business, so every verdict is a base rate. Vimta alone maps to QLL lab segments. The key separating read: Lal grows 19% and expands margin 4 points on existing capacity and price-mix; Krsnaa grows 22-32% on new footprint and loses 2-3 points with receivables stretching. Cross-peer hypothesis: growth source, not pace, decides margin and cash conversion. Test: H2 FY27 margin at or above 27% with growth filling existing labs reads H1 as timing; margin below 24% with growth from labs under 12 months old and PPP billing reads the 25-27% guide as set off the H2 FY26 peak. cross_peer_hypothesis is in the report Part 5."
+cross_peer_hypothesis: "Growth source decides margin and cash conversion in this lab set: new-footprint growth (Krsnaa, Vimta building) cuts EBITDA margin and ROCE for about four to eight quarters and, with government payers, stretches DSO to 139-155 days; price-mix growth on existing capacity (Lal) lifts margin about 4 points with DSO 17 days. Test for QLL: if H2 FY27 growth comes mostly from labs under 12 months old and PPP billing, expect margin below the 25-27% guide and CFO/PBT near 42%; if from existing labs, expect margin at or above 27%."

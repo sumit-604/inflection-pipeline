@@ -1,0 +1,70 @@
+stage: B04-bizmodel
+company: "QLL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "No concall transcript (declared, B00): vertical split, utilisation, lab-level cost, PPP terms NOT FOUND"
+  - "FY26 revenue by vertical NOT FOUND: AR reports one segment (AR26 p.72); only management FY27 driver ranges (Deck p.23)"
+  - "Customer concentration FY26 NOT FOUND (last disclosed: top-10 32.34% at H1 FY24, Prospectus)"
+  - "Actual tests per year, price per test, lab-level P&L, accreditation lapse history, repeat customer share NOT FOUND"
+  - "H1 FY27 investor presentation not filed at run date; FY25 deck read as history"
+  - "Peer margins derived from screener extracts only (Vimta latest FY24); no TIC peer with consistent segment data"
+flags:
+  - "FLAG-SECTOR-CAP: row Consulting / Engineering services 25x supported, no TIC row exists; lab capex heavier than consulting; operator sanity check at /fttcp pillar gate"
+  - "FLAG-NO-LEVERAGE: FY26 incremental EBITDA margin 24.0% (derived) equals average margin; H1 FY27 reversed the H2 FY26 sequential gain"
+  - "FLAG-MIX-UNREPORTED: single reportable segment; vertical shares are management ranges, not actuals"
+business_type: services
+revenue_streams:
+  - {name: "Transport, defence, mechanical testing", type: "transactional per test", pct_of_revenue: "40-45 (Deck p.23 mgmt range, FY26 actual NOT FOUND)", predictability: "M"}
+  - {name: "Food and feed testing", type: "transactional, regulation-driven", pct_of_revenue: "25-30 (Deck p.23 mgmt range)", predictability: "M-H"}
+  - {name: "Pharma, cosmetics, life sciences testing", type: "transactional plus project", pct_of_revenue: "15-20 (Deck p.23 mgmt range)", predictability: "M"}
+  - {name: "Minerals, metals, PPP, inspection, software and other", type: "per lot, operating contract, fee", pct_of_revenue: "NOT FOUND (residual 5-20 derived)", predictability: "L-M"}
+asset_intensity: medium
+wc_intensity: high
+pricing_power: moderate
+cyclicality: secular-growth
+moats_present:
+  - "Accreditation / licences (NABL, USFDA-approved lab): moderate durability, replicable"
+  - "Local PPP scale (6 govt labs, Bhubaneswar 27-year contract): moderate, terms NOT FOUND"
+  - "Mandated regulatory demand (BIS, FSSAI, EV, defence): strong at industry level, no QLL exclusivity"
+  - "Switching costs: plausible, unevidenced"
+valuation_methods:
+  primary: {method: "Forward P/E on owners' PAT", why: "Positive PAT, services model, matches Section 1B PE frame; one earnings basis, treat capitalised interest and goodwill explicitly"}
+  secondary: {method: "EV/EBITDA less maintenance capex", why: "Borrowings +86% then +23%; D&A 22.8% of EBITDA (derived); cross-checks leverage"}
+  tertiary: {method: "Reverse DCF (sanity only)", why: "FCF negative every year FY21-FY26 (B01); forward DCF rests on terminal margin guess"}
+  not_applicable: ["P/B and asset-based (goodwill 51.2% of equity)", "EV/Sales (acquisition-driven revenue)", "Dividend yield", "SOTP (single segment reported)"]
+irrelevant_ratios:
+  - "Gross margin 87%: excludes lab labour, the real COGS"
+  - "Inventory turnover 379.62: service firm, AR calls it not comparable"
+  - "Net capital turnover -42.99: negative working capital from payables and dues build"
+  - "Deck ROE 22% / ROCE 17%: AR shows RoNW 6.9% / ROCE 7.4%; compute net of goodwill"
+  - "Headline +77% growth: acquisition-inflated; standalone +47%"
+  - "P/B: goodwill 51.2% of equity"
+must_track_metrics:
+  - {metric: "Consolidated EBITDA margin", healthy: "25%+ (FY27 guide 25-27%)", red_flag: "under 22% (H1 FY27 21.6%)"}
+  - {metric: "CFO/PBT", healthy: "above 90%", red_flag: "under 75% (FY26 75.7%, H1 FY27 42%)"}
+  - {metric: "Organic standalone revenue growth", healthy: "25%+ (FY26 +47%)", red_flag: "under 15%"}
+  - {metric: "Net debt/EBITDA", healthy: "under 3.0x", red_flag: "above 3.5x (annualised H1 about 3.6x)"}
+  - {metric: "Receivable days and over-6-month share", healthy: "under 100 days, under 20%", red_flag: "over 120 days, over 22.4%"}
+unit_economics:
+  unit: "One lab-year (test counts not filed)"
+  revenue_per_unit: "Rs 124.52 Cr over 16 labs = about Rs 7.8 Cr per lab (derived, upper bound); per test NOT FOUND"
+  margin_per_unit: "Consolidated EBITDA 23.5% (derived from Deck p.11); lab-level NOT FOUND"
+  key_lever: "Utilisation of new labs: FY26 incremental EBITDA margin 24.0% (no leverage), H2 FY26 sequential 43% (fill), H1 FY27 21.6% (gave back)"
+first_deterioration_signals:
+  - {risk: "Utilisation does not rise after capex", first_signal: "Revenue per lab; standalone organic growth; H2 FY27 revenue vs 9,583 Lakh needed"}
+  - {risk: "Margin dilution from new labs and acquisitions", first_signal: "Employee cost % revenue above 36%; consolidated EBITDA margin under 22%"}
+  - {risk: "Cash conversion and receivables", first_signal: "CFO/PBT under 60%; over-6-month receivables above 22.4%"}
+  - {risk: "Leverage and goodwill", first_signal: "Net debt/EBITDA above 3.5x; interest cover under 3x; ITCPL PAT under 710.83 Lakh"}
+  - {risk: "Governance and related-party", first_signal: "CS and independent director vacancies; new AAL advances"}
+mgmt_questions:
+  - "FY26 and H1 FY27 revenue and EBITDA by vertical and lab; utilisation per lab"
+  - "Like-for-like organic growth excluding ITCPL; intercompany elimination"
+  - "Cause and committed fix for H1 FY27 EBITDA 21.6% vs 25-27% guide"
+  - "Receivable ageing by customer type and provisioning"
+  - "Independent valuation for ITCPL swap; goodwill test inputs"
+  - "Top-10 customer share; renewal terms of 6 PPP contracts"
+  - "Use of 4,698.06 Lakh raise; named acquisition targets; debt plan"
+one_line_verdict: "A people-heavy, lab-capital testing roll-up where the FY27 margin guide needs new labs to fill; primary value metric is forward P/E on owners' PAT, with Consulting / Engineering services 25x as the supported sector cap row."
+analyst_note: "Sector cap: B00 row Consulting / Engineering services (25x) is supported. No TIC row exists. Healthcare services (35x) needs patient care, Pharma/CDMO (38x) needs drug making; pharma testing is 15-20% of mix (management range). Lab capex at 41% of revenue is heavier than consulting, but the cap is a ceiling, so no upward move is argued. Mix: AR reports one segment; vertical shares are management ranges (Deck p.23), FY26 actuals NOT FOUND. Competing readings of FY27: new labs fill and margin reaches 25-27%, or acquired labs carry structurally lower margin (consolidated 23.5% vs standalone 24-26%). Separating observation: H2 FY27 consolidated EBITDA margin at or above 27%, plus standalone vs ITCPL margin disclosure. Physics: FY26 incremental margin 24.0% shows no operating leverage yet; H2 FY26 sequential 43% was a fill effect that H1 FY27 reversed."

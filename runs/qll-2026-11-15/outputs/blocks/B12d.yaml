@@ -1,0 +1,18 @@
+stage: B12d
+company: "QLL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 3
+substantive_confirmed: 3
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, item: "Claim 4 labelled two peers but cites three; Lal gives no ramp period", anchor: "06-peers.md Claim 4"}
+  - {severity: MINOR, item: "Call labels differ from file names; mapping needs the Caveats note", anchor: "06-peers.md Caveats"}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 100

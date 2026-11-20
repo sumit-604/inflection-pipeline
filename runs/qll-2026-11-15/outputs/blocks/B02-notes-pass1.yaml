@@ -1,0 +1,7 @@
+stage: B02-notes-pass1
+company: "QLL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+report: outputs/reports/02-notes-pass1.md
+note: "Interim block, pass 1 only. The final B02-notes block is emitted by Pass 3."

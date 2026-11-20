@@ -1,0 +1,36 @@
+stage: B01-gate0
+company: "INVPRECQ"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Screener data sheet has no ROCE, no payables, no capex line, no contingent liabilities: ROCE computed; payables only FY25-FY26 (AR p.107); capex proxied by cash from investing."
+  - "Shareholding: one quarter only (Sep 2026); 3-year promoter change NOT FOUND (AR p.68 gives 1-Apr-2025 to 31-Mar-2026 only)."
+  - "Peer data not supplied to this stage: M2, M5, M9 PEER DATA NEEDED."
+  - "Q2 FY27 results P&L pages (3, 4) and note 6 page 7 are OCR-illegible; no figure taken from them."
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE (core 49/100). Depressors: ROCE 4.2-4.9% in FY20-FY22 and 9.8% in FY25 (Block A 6/20); WC days not scorable (payables NOT FOUND before FY25); ND/EBITDA 2.19x."}
+  - {type: FLAG-CASH, reason: "H1 FY27 CFO Rs 348.50 lakh against PAT Rs 1,079.22 lakh (0.32x) with inventory build Rs 1,145.75 lakh (Q2 FY27 results p.6). 10-year CFO/PAT is 2.62x."}
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 6, B: 10, C: 12, D: 7, E: 14}
+core_score: 49
+moat_score: 3
+grand_total: 52
+moats_confirmed: 0
+moat_class: "NONE"
+classification: "AVERAGE"
+deal_breakers:
+  - "DB1 Block A 6 <8 -> max GOOD (years driving: FY20, FY21, FY22 ROCE 4.15/4.65/4.86%; FY25 9.77%)"
+history_downgrade: false
+data_notes:
+  - "ROCE computed (screener gives none): EBIT = PBT + Interest; capital employed = equity capital + reserves + borrowings (total assets less 'Other Liabilities', current liabilities not split in the sheet)."
+  - "FCF uses cash from investing as capex proxy (screener-data). AR p.110 capex FY26 Rs 2,403.28 lakh, FY25 Rs 444.84 lakh; cumulative FCF/PAT 0.48 on AR capex for those two years, same band."
+  - "WC days: payables NOT FOUND FY17-FY24, so B4 scored 0 and M12 scored 0. FY26 computed 121.6 days, FY25 139.2 days (AR p.107, p.108; revenue basis)."
+  - "PAT FY20 loss -0.72 Cr (screener-data); endpoints FY17 and FY26 positive so CAGR computed; no loss-to-profit swing across the window endpoints."
+  - "E2 scored 0 (NOT FOUND for 3 years). Partial window 51.91% (1-Apr-2025) to 51.97% (Sep-2026), +0.06pp (AR p.68; BSE page). Scored on it, E2 = 3, core 52."
+  - "D4 current ratio 1.197 (AR p.107), 0.003 below the 1.2 band edge."
+  - "PEER DATA NEEDED: M2, M5, M9 (and M6 peer leg)."
+  - "AR equity Rs 10,278.09 lakh vs screener 102.61 Cr (reserves differ by 0.17 Cr); screener borrowings 71.59 = AR debt 70.10 + lease 1.49."
+block_b_trend: "deteriorating in the current year: CFO/PAT 2.19 FY26 -> 0.32 H1 FY27 (Q2 FY27 results p.6); 10-year CFO/PAT 2.62"
+analyst_note: "Core 49 sits 11 points under GOOD. Block A (6/20) is the main drag: ROCE ran 4-5% in FY20-FY22, 10-13% since, so 10.7% median. FY26 ROCE 13.3% is the best since FY18. Cash scores high on history (CFO/PAT 2.62), yet FY26 FCF was only Rs 2.14 Cr after Rs 24 Cr capex and H1 FY27 CFO is 0.32x PAT. Moat score is near zero by construction: three tests need peers not given here, and R&D spend is not quantified in the AR."

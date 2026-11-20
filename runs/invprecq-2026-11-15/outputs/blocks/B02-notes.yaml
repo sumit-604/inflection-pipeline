@@ -1,0 +1,43 @@
+stage: B02-notes
+company: "INVPRECQ"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Notes carry no capital commitment, no events-after-date note and no approval of the Rs 100 Cr capex (load-bearing fact 3 not reachable from the AR Notes)"
+  - "H1 FY27 cash conversion, A&D 11% share, HAL/MKU programmes not in the AR (facts 1 and 2 H1 FY27 parts not reachable)"
+  - "Borrowing rates, lenders, maturities, covenants, ECL matrix rates, lease discount rate, solar commissioning date and cost: NOT FOUND IN DOCUMENT"
+  - "Pass 3 read AR text only (no PDF page opened); all figures foot to a second AR line"
+flags: []
+accounting_quality: 7
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Audited FY26 revenue from operations Rs 18,844.62 lakh (16,507.37; +14.16%). 185.79 Cr slide = castings segment 18,579.08 excl wind credits 265.54; 189.7 Cr = total income 18,968.21", note_ref: "Note 23 p.127; Cons Note 38 p.173; P&L p.109", rating: "green", why: "Fixes the base year; reconciles the revenue mismatch fact"}
+  - {rank: 2, finding: "Promoter-family web: Meche purchases 319.88 plus deposit 100.00; capital advance 306.00 to Tamboli Foundry unchanged, no completion date; guarantee commission 84.52; HUF rent 24.00; RPT flows 884.92 = 4.70% of revenue; Piyush+Jainam pay, commission, rent, salary = 29.1% of pre-exceptional PBT", note_ref: "Note 38 pp.135-136; Notes 8-9 p.121", rating: "yellow", why: "Governance cost and value leakage; no arm's-length test disclosed"}
+  - {rank: 3, finding: "CMD/WTD pay up 51.2% / 68.7% (directors total +46.9%, Note 38) vs Board report +41.10% / +50.27%; special resolution lifts loss-year ceiling to Rs 18.00 Cr (4.2x FY26 pay)", note_ref: "Notes 27, 38 pp.128, 135; Notice Item 4 pp.46, 53; Board report p.76", rating: "yellow", why: "Pay growth outruns median employee +7%; two sources disagree"}
+  - {rank: 4, finding: "Capex burst: cash capex 2,403.28 (plant additions 1,977.42) vs CFO 2,577.89; FCF after capex 174.61. Power segment assets 1,903.97 (188.59), liabilities 1,126.48 (Nil). 4 MW solar: Annexure 4 says development phase, Year at Glance says commissioned. Full-year depreciation on additions 131.83 to 247.18 vs FY26 total 851.90", note_ref: "Note 2 p.117; CF p.111; Cons Note 38 p.174; pp.75, 78", rating: "yellow", why: "Margin bridge needs the depreciation step; commissioning date missing"}
+  - {rank: 5, finding: "CFO tie-out: receivables line 135.64 does not tie to net fall 227.10; best fit puts 77.84 build in lien deposits inside CFO (INFERENCE; CFO about 2,655.73 without it). Other borrowing cost 99.86 deducted inside CFO", note_ref: "CF p.111; Notes 8, 11, 13, 28", rating: "yellow", why: "Cash conversion 2.19x PAT is real but the line composition is unreconciled"}
+  - {rank: 6, finding: "Debt 7,009.87: 75.8% short term, term debt 2,200.88 (31.4%) vs 1,283.00 (19.9%); WC finance 4,808.99 (68.6%); all floating by sensitivity; director personal guarantee; no rates, maturities, covenants disclosed. Lien deposits 200.13 vs 122.29; net debt on free cash 6,790.30", note_ref: "Notes 17, 33, 34, 8, 13 pp.121-133", rating: "yellow", why: "Refinancing and rate exposure undisclosed; free cash smaller than headline"}
+  - {rank: 7, finding: "Receivables improved: over 6 months 5.83 (0.15%) vs 132.09 (3.13%); not due 87.9% vs 72.6%; days 80.09 vs 87.63; ECL allowance Nil vs 57.29 with no movement table", note_ref: "Note 11 pp.121-122; Note 39 p.137", rating: "green", why: "Clean ageing; unexplained allowance release to be asked"}
+  - {rank: 8, finding: "A&D revenue 1,086.42 (539.01), 5.86% of industry revenue 18,539.51; auto 63.84%, non-auto 30.30% (-5.7%). No customer or programme named in Notes", note_ref: "Cons Note 38 p.174", rating: "green", why: "FY26 6% confirmed; H1 FY27 11% not reachable"}
+  - {rank: 9, finding: "Inventory 5,170.18 (+6.1%): WIP +12.1%, stores +18.5% (1.9 years of consumption), FG -24.9%; P&L inventory credit 113.46 vs 141.12; no write-down or overhead absorption disclosed", note_ref: "Notes 10, 26 pp.121, 128", rating: "yellow", why: "WIP absorption test for margin quality"}
+  - {rank: 10, finding: "MSME note: interest due Nil under 'within due date' heading, yet 413.20 of MSE payables past due; Section 43B(h) link to tax 'not allowed' 511.91 is a question only", note_ref: "Notes 22.1, 37, 14, 20 pp.123-135", rating: "yellow", why: "Disclosure contradicts ageing; possible tax and interest exposure"}
+  - {rank: 11, finding: "Labour codes: exceptional 52.51, gratuity past service cost 43.10, funded ratio 53.8% (66.4%), no FY26 contribution; paid 17.84 vs forecast 61.62; company says more clarity pending", note_ref: "Notes 36, 40 pp.133-134, 138", rating: "yellow", why: "Possible repeat cost; plan assets falling"}
+  - {rank: 12, finding: "Tax: effective rate 30.4%; reconciliation covers current tax 428.00 only (excl. deferred 78.75, earlier 7.61); 'not allowed' 511.91 unexplained; MAT credit use Nil vs 224.39", note_ref: "Note 14 p.123; P&L p.109", rating: "yellow", why: "Cash tax rate normalised; tax bridge unusable as printed"}
+  - {rank: 13, finding: "Ind AS 116: first lease, ROU 190.34, liability 148.88; HUF rent 24.00 moved from rent expense to depreciation and interest (three figures match, INFERENCE); EBITDA flattered about 24.00", note_ref: "Notes 5, 30, 38; CF p.111", rating: "yellow", why: "Like-for-like EBITDA and promoter rent flow"}
+  - {rank: 14, finding: "Subsidiary I&PCL Vacuum Cast: cost 25.00, net assets 7.90, turnover nil, no impairment; AOC-1 99.99% vs 'wholly-owned'; other auditors", note_ref: "Note 6 p.120; AOC-1 p.66; Cons Note 39 p.174", rating: "yellow", why: "Unrecorded impairment indicator; small"}
+  - {rank: 15, finding: "Printing defects a model could copy: Cons FY25 EPS 3.03 (should be 6.06); liquidity table 6,47.71 vs 644.65; CF label 'cash generated from operations (103.34)'; segment liabilities FY25 slip 0.20; unclaimed dividend 3.03 vs 3.05", note_ref: "Cons Note 30 p.166; Note 33 p.131; CF p.111; Cons Note 38 p.174", rating: "yellow", why: "Data-feed risk"}
+red_flags: []
+questions_for_mgmt:
+  - "What are the interest rate, tenor, lender and covenants on the new term loans (term debt 2,200.88), and how much of the 917.88 rise funded the 4 MW solar plant?"
+  - "Why has the 306.00 capital advance to Tamboli Foundry and the 100.00 Meche deposit stayed unchanged for a year, and what are the completion date and valuation basis?"
+  - "What were the board approval and benchmarking for CMD/WTD pay rises of 51.2% and 68.7%, and why does the Notice ask for an Rs 18.00 Cr ceiling?"
+  - "When did the 4 MW solar plant commission, what did it cost, and what asset lives apply to the 1,977.42 plant additions?"
+  - "Where did the 57.29 receivables allowance go, and are any of the 413.20 past-due MSE payables or the 511.91 disallowed expenses linked to Section 43B(h)?"
+receivables_trend: "improving. Not due 3,453.95 of 3,931.23 (87.9%) vs 3,062.25 of 4,215.62 (72.6%); over 6 months 5.83 (0.15%) vs 132.09 (3.13%); days 80.09 vs 87.63 (Note 11 pp.121-122; Note 39 p.137). Caveat: CF receivables line 135.64 does not tie to net fall 227.10 (CF p.111)."
+restatements_found:
+  - "No restatement. Note 44 / Cons Note 45: previous-year figures regrouped and rearranged (AR p.138, p.176); no amounts quantified."
+  - "Cons FY25 EPS printed 3.03 against 605.72 / 10,000,000 = 6.06 (Cons P&L p.146; Cons Note 30 p.166): printing error, not restatement."
+going_concern_language: "NONE. Note 1.1 p.112 'prepared on accrual and going concern basis'; CARO item 19 p.105 'nothing has come to our attention... material uncertainty'; Board report line on regulators: no order affecting going concern."
+analyst_note: "FY26 base is Rs 18,844.62 lakh. Accounting is clean on receivables and statutory disclosure, and moderate on governance. The 2.19x CFO/PAT figure carries a likely 77.84 lien-deposit build inside operating cash flow and 99.86 other borrowing cost deducted there; use FCF after capex 174.61 and net debt 6,790.30 on free cash. The 4 MW solar plant is the key unknown: depreciation steps up 131.83 to 247.18 a year and the commissioning date is not filed. HUF rent now sits below EBITDA under Ind AS 116 (about 24.00). Promoter-family cash take is 29.1% of pre-exceptional PBT and pay rose about 47% against median employee +7%. Facts 1, 2, 3: H1 FY27 parts and the Rs 100 Cr capex are not in the AR."

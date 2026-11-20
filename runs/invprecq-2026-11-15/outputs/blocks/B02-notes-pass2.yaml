@@ -1,0 +1,17 @@
+stage: B02-notes-pass2
+company: "INVPRECQ"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+note: "Pass 2 of 3. Final B02-notes block is written by pass 3."
+report: runs/invprecq-2026-11-15/outputs/reports/02-notes-pass2.md
+pass_2_empty: false
+new_findings: 13
+red_flags: []
+highlights:
+  - "CF receivables line 135.64 does not tie to Note 11 (net fall 227.10 lakh); best fit puts 77.84 lakh of lien-deposit build inside CFO (INFERENCE, residual 1.15)"
+  - "Special resolution caps managerial pay at Rs 18.00 Cr (1,800 lakh) in inadequate-profit years, 4.2x FY26 directors' remuneration 425.39 lakh (pp.46, 53)"
+  - "Solar plant: Annexure 4 says development phase; Year at Glance says commissioned; commissioning date NOT FOUND; full-year depreciation on plant additions 131.83 to 247.18 lakh at stated lives"
+  - "HUF rent 24.00 lakh now runs through Ind AS 116 (lease payments 24.00 = 12.86 principal + 11.14 interest)"
+  - "Subsidiary AOC-1: turnover nil, reserves (Rs 17.11 lakh), 99.99% vs 'wholly owned'"
+  - "Term debt 2,200.88 lakh (31.4% of debt) vs 1,283.00 (19.9%); lien-marked deposits 200.13 vs 122.29"

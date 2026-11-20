@@ -1,0 +1,77 @@
+stage: B09b-dossier
+company: "INVPRECQ"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Quarterly shareholding patterns for earlier quarters (12-quarter pledge and holding trend)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "AGM 13-Aug-2026 voting result on Item 4 (Rs 18.00 Cr pay ceiling)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "BSE notice of Regulation 17 fine (amount and date)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Annual reports before FY2024-25 (FY17 to FY24 payables, current liabilities, PPE purchases)"
+    expected_source: "BSE | company IR page"
+    kind: "findable-missing"
+  - document: "Screener Quarters, Cash Flow, Customization sheets (empty exports)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "PTC Industries concall transcripts (closest process peer)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Meche Pvt Ltd and Tamboli Foundry Supplies and Services financials after March 2021"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Earnings call transcripts (company holds no calls; results-to-concall pair SKIPPED)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Prospectus and broker research (folders empty; long-listed company)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Q1 FY27 investor presentation (none in 12-month BSE listing)"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Order values and order book for GTRE, MKU, HAL, PLR, CQB; filed H1 FY27 A&D rupee split"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Auto and non-auto industrial castings (63.84% and 30.30% of industry split)"
+    archetype: "Build-to-spec component maker"
+  - line: "Aerospace and defence castings (5.86%)"
+    archetype: "Build-to-spec component maker"
+transition:
+  - line: "Aerospace and defence castings, and the company mix it drives"
+    from_tier: "R2 (lower edge, at the R1 to R2 boundary; operator may place at R1, which makes the claim two rungs)"
+    to_tier: "R3"
+    engine: "Nominated A&D parts (HAL, GTRE, MKU, PLR, CQB) move into monthly series supply; fixed-cost absorption as utilisation rises from about 51% to about 60% of 3,060 t"
+    proof_gate: "Filed A&D rupees at or above 11% of revenue per half-year with at least one order carrying a stated value (first test Q3 FY27, about Feb 2027; FY27 AR split); operating margin excluding other income and inventory credit near 14% or above; H2 FY27 operating cash at or above profit"
+    recognition_gap: "Open question for Stage 11: does the TO state already look reflected in market pricing; resolved via the PE gap; no conclusion here"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "A&D share below 8% in H2 FY27 or in the FY27 AR industry split; margin falls when the inventory credit shrinks; gearing above 0.80x with utilisation near 60%"
+dominant_variables:
+  - "A&D conversion into filed rupees and monthly supply (5.86% FY26; 11% deck claim; five orders, values withheld)"
+  - "Cash conversion and work-in-progress absorption (H1 FY27 0.32x, up to about 0.61x; INDETERMINATE)"
+  - "Utilisation and fixed-cost absorption (about 60% vs 51%; 13.9% margin floor excluding the inventory line)"
+  - "Funding of the Rs 100 Cr programme (88.8% of equity; gearing 0.71x; 75.8% of debt short term floating; mix NOT FOUND)"
+business_falsifier: "Auto stays the earnings base and volume driver through the FY27 AR while the FY26 margin gain reverses and the metal-cost pass-through lag widens, so the firm behaves as a pass-through converter, not a build-to-spec maker; or promoter-entity flows (Rs 306.00 lakh advance, Meche purchases) grow into the economic operator question"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "5 of 7 externally observable"
+  single_point_failure: "Conversion of the nominated A&D programmes into filed monthly supply (A&D share below 8% breaks the thesis; HAL and GTRE order flow is company-narrated, values withheld)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 3
+  confirm_by_observations: 2
+research_brief_items: 21
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "8574d70aa0e6b7ebaf9d7a8c5e6f292f1006da08"

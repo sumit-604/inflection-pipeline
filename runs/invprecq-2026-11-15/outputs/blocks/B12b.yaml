@@ -1,0 +1,54 @@
+stage: B12b
+company: "INVPRECQ"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 49
+caught: 17
+partially_caught: 12
+missed:
+  - {severity: "MAJOR", item: "R5 FY26 growth auto-led (auto about 91% of +22.85 Cr, derived); non-auto 26.55% to 20.28% (about 43.2 to 37.6 Cr, derived) against AR 'broad-based acceleration across all five business segments', the CFO diversification-led margin claim and CARE auto share 66% to 64%", anchor: "AR26 p.21, p.22, p.24, p.19; CARE p.2; P-Q2FY27 p.9"}
+  - {severity: "MAJOR", item: "R6 AGM special resolution: managerial pay cap Rs 18 Cr p.a. in no or inadequate profit years (1.5x FY26 profit); CMD +41.10%, WTD and CFO +50.27% vs median +7%; CMD 431.63 lakh incl 84.52 guarantee commission = 36.7% of FY26 profit; guarantee commission about 40.25 to 77.09 lakh H1 on H1", anchor: "AR26 p.45, p.52, p.72, p.75; R-Q4FY26 PAGE 10; R-Q2FY27 PAGE 7 (OCR)"}
+  - {severity: "MINOR", item: "R11 CFO letter: D/E improved 0.71 to 0.68 'supported by healthy cash generation' while total debt rose 560.32 lakh", anchor: "AR26 p.19, p.71"}
+  - {severity: "MINOR", item: "R12 Deck FY26 interest-coverage comparator 3.40x equals CARE TD/GCA; deck method gives 3.74x (derived); CARE coverage 5.04x", anchor: "P-Q2FY27 p.11; CARE p.2; R-Q4FY26 PAGE 5"}
+  - {severity: "MINOR", item: "R14 Deck errors: Q4 FY25 PAT change 80.48% and 63.29% (actual +414% and +171%, derived); Empire State address; Q4 FY26 deck places the Q3 exceptional item beside Q4", anchor: "P-Q4FY25 p.8, p.9, p.12; P-Q4FY26 p.9; R-Q4FY26 PAGE 5"}
+  - {severity: "MINOR", item: "R15 AR has no management explanation of FY26 results (MD&A industry text and SWOT only; ratio reasons 'Increase in profit'); stale 'Six Directors' and 'no material changes' text", anchor: "AR26 p.76, p.77, p.78, p.55, p.136"}
+  - {severity: "MINOR", item: "R17 BSE price-movement query 29-Jun-2026, reply 30-Jun-2026 'no pending material information', CARE upgrade 9-Jul-2026; knowledge on 30-Jun NOT FOUND", anchor: "A-20260630 p.1; CARE p.1"}
+  - {severity: "MINOR", item: "R18 RPT: Meche Pvt Ltd purchases 319.88 lakh FY26 (254.93 FY25); HUF rent 24.00; relative consulting 6.00", anchor: "AR26 p.134, p.135"}
+  - {severity: "MINOR", item: "R19 CRISIL suspended ratings 18-Sep-2014 for non-cooperation by IPCL", anchor: "CARE p.3"}
+  - {severity: "MINOR", item: "R27 Azad speakers contradict each other on FX lift: 'few percentages' vs '5%, 6%'", anchor: "AZAD Q1 FY27, Chopdar and Malpani, [page 15]"}
+  - {severity: "MINOR", item: "R29 Azad dodges: capex not quantified, factory count withheld, utilisation deflected, hot-section margin withheld, some order values undisclosed with book flat at Rs 6,500 Cr after Rs 600 Cr delivered", anchor: "AZAD Q2 FY26 [page 12], [page 17], [page 19]; Q4 FY26 [page 6], [page 17], [page 18]"}
+  - {severity: "MINOR", item: "R30 Azad volunteered churn: 'selectively replacing certain functional roles internally'", anchor: "AZAD Q4 FY26, Chopdar, [page 4]-[page 5]"}
+  - {severity: "MINOR", item: "R33 Steelcast 2.4 MW power plant 'by 30th June, 2026' moved to 'before 31st December 26', no reason given", anchor: "STEELCAS Q2 FY26 [page 5]; Q3 FY26 [page 5]; Q4 FY26 [page 5]; Q1 FY27 [page 4]"}
+  - {severity: "MINOR", item: "R34 Steelcast contradicts itself: Alang scrap 20-25% vs none; two segment mixes in one call; exports about 65% vs 'historically 45% to 50%'", anchor: "STEELCAS Q3 FY26 [page 9]; Q1 FY27 [page 8], [page 9], [page 10], [page 11]; Q2 FY26 [page 5]"}
+  - {severity: "MINOR", item: "R35 Steelcast dodges: US share 'you need to figure this out'; 'SEBI doesn't allow us'; 'these are aberrations'", anchor: "STEELCAS Q2 FY26 [page 8]; Q3 FY26 [page 12]; Q4 FY26 [page 10]"}
+  - {severity: "MINOR", item: "R39 Steelcast drops US railroad after two calls of unresolved issues", anchor: "STEELCAS Q2 FY26 [page 10]; Q4 FY26 [page 9]; Q1 FY27 [page 6]"}
+  - {severity: "MINOR", item: "R41 Alicon margin gains 'will continue in coming two quarters', then Q3 margin 10.9% vs 12.9%; FY27 outlook deferred twice", anchor: "ALICON Q2 FY26 [page 11], [page 12]; Q3 FY26 [page 6], [page 18]"}
+  - {severity: "MINOR", item: "R42 Alicon CFO '8% to 10%' vs CEO '12% to 15%' FY27 growth in the same call", anchor: "ALICON Q1 FY27, Gupta [page 9]; Bhatnagar [page 10], [page 15]"}
+  - {severity: "MINOR", item: "R43 Alicon 'underlying volume growth about 17.5%' vs tonnage 'close to 1% higher'", anchor: "ALICON Q1 FY27, Bhatnagar, [page 3], [page 14]"}
+  - {severity: "MINOR", item: "R45 Alicon leadership transition: Q3 call without CEO or CEO-designate; succession costs and impairment; plans 'have not yielded the results'; Rs 25-26 Cr one-time costs incl unspecified provisions", anchor: "ALICON Q3 FY26 [page 2], [page 5], [page 16]; Q4 FY26 [page 11], [page 14], [page 17]"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
+credibility_grade_concur: "concur: C fits the delivery rubric (spot checks give delivered 4, partial 2, missed 0); B05's basis omits five written statements contradicted by the company's own filings (R5 twice, R10, R11, R12), which put the C at its low end"
+findings:
+  - {id: "F1", severity: "MAJOR", target: "B05", finding: "Missed R5: FY26 growth auto-led, non-auto down about 13%; AR 'broad-based' claim, CFO diversification margin claim and CARE auto-share claim contradicted by AR26 p.24", fix: "Add to 4D as HIGH; use FY26 segment rupees in stage 13 and Role 1"}
+  - {id: "F2", severity: "MAJOR", target: "B05", finding: "Missed R6: Rs 18 Cr managerial pay-cap resolution, CMD +41.10% and WTD/CFO +50.27% vs median +7%, CMD take 36.7% of FY26 profit, guarantee commission +91.5% H1 on H1", fix: "Add to 4D; carry to Role 2 governance ledger as a tripwire"}
+  - {id: "F3", severity: "MAJOR", target: "B05", finding: "R4 partial: cash flag treats other assets (651.51) as working capital though management said capex sat there in H1 FY26; H1 FY26 0.11x comparator carries about 11 Cr solar capex (derived); 2.41 Cr capex gap ties to CWIP +241.43 lakh, not advances", fix: "State both readings (0.32x filed, up to about 0.61x) and the separating observation; restate or drop the H1 FY26 comparator"}
+  - {id: "F4", severity: "MAJOR", target: "B05", finding: "R1 under-weighted: order value withheld in 5 filings over 4 quarters graded MEDIUM; repeated_evasions empty", fix: "Re-grade HIGH; name it a repeated non-disclosure"}
+  - {id: "F5", severity: "MAJOR", target: "B06", finding: "R22 misclassified: 'Claims contradicted: 0' while Steelcast calls defence 'one of the most riskiest' with worse pricing, against I&PCL 'strategic pillar'", fix: "Add to contradicted with moderate weight"}
+  - {id: "F6", severity: "MINOR", target: "B05", finding: "Solar slip understated; FY26 AR target line is copied text printed after commissioning; FY25 AR said 'second half of FY 2025'; decks listed the solar farm as existing before it was built", fix: "Replace the 'met by one day' reading"}
+  - {id: "F7", severity: "MINOR", target: "B05", finding: "2A row 4 (growth across auto and non-auto) scored DELIVERED; non-auto fell in FY26", fix: "Re-score PARTIAL; counts 4/2/0"}
+  - {id: "F8", severity: "MINOR", target: "B05, B06", finding: "13.9% margin 'excluding inventory credit' removes the whole change-in-inventories line; only fixed-overhead absorption is a quality risk; 13.9% is a floor", fix: "Label 13.9% a lower bound with the reason"}
+  - {id: "F9", severity: "MINOR", target: "B05", finding: "R11 debt framing and R12 interest-coverage comparator not caught; 1B carries 3.40x as fact", fix: "Note both in 2C Consistency"}
+  - {id: "F10", severity: "MINOR", target: "B05", finding: "R8 segment drop not read as lost disclosure; R9 re-filing cause not found", fix: "Add both to 2D"}
+  - {id: "F11", severity: "MINOR", target: "B05", finding: "R13 (beyond headcount), R14, R15, R17, R18, R19 not listed", fix: "Add to 2C and 2D"}
+  - {id: "F12", severity: "MINOR", target: "B06", finding: "No peer evasions, intra-call contradictions or slips logged (R26, R27, R29, R30, R32 to R36, R39, R41 to R45)", fix: "Optional add to risks_peers_raise; R33 and R43 are useful base rates"}
+  - {id: "F13", severity: "MINOR", target: "B06", finding: "'one of four expanders in a six-company set'; the set is four companies", fix: "Cosmetic correction"}
+  - {id: "F14", severity: "MINOR", target: "B05", finding: "2A row 2 scores a status statement as a delivered promise; evidence not tied to the customer", fix: "Move outside the counts or tie to PLR evidence"}
+critical_count: 0
+major_count: 5
+minor_count: 9
+material_found: 7
+material_caught: 5
+acceptance_rate: 71
+coverage_basis: "NO-CONCALL MODE: main company audited against AR, results, decks, Reg 30, CARE; 12 peer transcripts read in full. 49 listed (0 critical, 7 major, 42 minor); 7 material: 2 CAUGHT (R2, R3) + 3 PARTIALLY CAUGHT (R1, R4, R22) = 5 had, 2 MISSED (R5, R6); 5/7 = 71%; strict CAUGHT-only 2/7 = 29%. All 49: 17 caught, 12 partial, 20 missed. critical/major/minor counts above are consolidated findings F1-F14"

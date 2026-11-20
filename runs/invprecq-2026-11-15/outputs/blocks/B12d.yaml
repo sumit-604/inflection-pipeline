@@ -1,0 +1,20 @@
+stage: B12d
+company: "INVPRECQ"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 12              # 12 peer transcripts (Azad x4, Steelcast x4, Alicon x4); 3 companies
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true     # 9 of 9 B05 peer_questions carry a verdict in B06
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, where: "B06 Q4 and Part 2C, Alicon Q1 FY27 Rs 125 Cr / Rs 500 Cr / possession 1-Sep-2026", issue: "Cited [page 6] and [page 20]; text sits on marker page 5 (lines before the [page 6] marker) and marker page 19. Content exists as quoted; anchor off by one, against B06's own start-of-page convention"}
+  - {severity: MINOR, where: "B06 Q3, Steelcast Q1 FY27 inventory 'time lag of 1 to 2 months'", issue: "Cited [page 11]; quote is on marker page 12. Content exists as quoted"}
+  - {severity: MINOR, where: "B06 Q9, Alicon EV 'market has not grown in the manner we were thinking for the EV'", issue: "Attributed to Q3 FY26 call (Feb-2026) [page 16]; quote is in the Q4 FY26 call (May-2026) on marker page 18. Q3 file has no such quote. Also the Q4 [page 9] anchor shows the order-book cut but not EV as the named cause (EV cause is at Q4 page 18)"}
+  - {severity: MINOR, where: "B06 Q5 and Q8 verdict labels", issue: "Q5 listed under verified though the nickel, cobalt and scrap trend half is unverifiable (3 independent peers meet the 2-anchor bar for pass-through, so no discipline fail). Q8: no peer claims share gain; Azad GTRE engine delivery is indigenisation, not share gain; PARTIALLY VERIFIED is generous but not an upgrade from silence"}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 100           # 12 of 12 transcripts correctly handled (citations real and findable); anchor slips are minor

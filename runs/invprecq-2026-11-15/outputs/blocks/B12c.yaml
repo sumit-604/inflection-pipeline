@@ -1,0 +1,26 @@
+stage: B12c
+company: "INVPRECQ"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete  # phase-1 scope: gate0 + emoat only; valuation half runs in phase 3 after B11
+gate0: {rules_checked: 58, fails: ["G-02 rule 4 anchors missing on C1/C2 endpoints, C3 decline years, M11 window CAGRs (MINOR)", "G-04 ROCE fixed formula substituted with EBIT/(equity+reserves+borrowings) (MAJOR)", "G-07 FCF fixed formula substituted with CFO+CFI (MAJOR)", "G-40 M3 FAT denominator 100.82 unnamed and unanchored; gross-block basis scores 0 (MINOR)"]}
+emoat: {rules_checked: 28, fails: ["EM-03 evidence items anchored to B03/B04/B05 blocks, not document pages (MINOR)", "EM-06 1A status labels missing on GTRE and MKU rows (MINOR)", "EM-11 offset rule not in prompts/07 zeroes rows with tagged evidence; written matrix 10.8-12.6 vs filed 7.8 (MAJOR)", "EM-12 A1 multiplier 0.7 matches no tier the row holds (DOC + INF) (MAJOR)", "EM-18 recount line miscounts (15 in 9 categories + 1 Section 2) and ledger omits 3 DOC + 2 CLAIM table items (MINOR)"]}
+valuation: {rules_checked: 0, fails: []}  # PENDING PHASE 3: B10/B11 do not exist in phase 1
+expectation_ledger: {present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}  # rules 13-14; PENDING PHASE 3, not checked in phase 1; any fail = REWORK stage 11
+narrative: {checked: false, fails: []}  # rule 9; PENDING, stage 13 not yet run, fires at /finalize; any fail = REWORK stage 13
+recomputed_destination_pe: ""  # PENDING PHASE 3
+recomputed_decision: ""        # PENDING PHASE 3
+findings:
+  - {id: "G-04", framework: "Gate 0", severity: "MAJOR", rule: "ROCE fixed as EBIT / (Total Assets - Current Liabilities); missing input = NOT FOUND, score 0", filed: "EBIT / (equity + reserves + borrowings); A1 1, A4 5, M3 1; Block A 6; core 49", recomputed: "as written: A1 0, A4 0, M3 0; Block A 0; core 43, AVERAGE; any true TA-CL ROCE keeps core 43-58 (AVERAGE)", decision_effect: "none alone; with G-07 also strict, core 38 = AVOID; flag for Halt 1"}
+  - {id: "G-07", framework: "Gate 0", severity: "MAJOR", rule: "FCF fixed as CFO - purchase of PPE and intangibles; missing input = NOT FOUND, score 0", filed: "CFO + CFI proxy; B2 2, B3 3; Block B 10", recomputed: "as written: B2 0, B3 0; Block B 5; core 44, AVERAGE; FY25-FY26 AR capex check holds the B3 band (0.48)", decision_effect: "none alone; with G-04 also strict, core 38 = AVOID; separating observation: FY17-FY24 current liabilities and PPE purchases from prior ARs"}
+  - {id: "G-02", framework: "Gate 0", severity: "MINOR", rule: "rule 4 anchor on every extracted number", filed: "C1/C2 endpoints 92.04, 4.17, 11.76, C3 decline years, M11 3.5% and 21.4% carry no anchor", recomputed: "no score change; routed to Verifier A", decision_effect: "none"}
+  - {id: "G-40", framework: "Gate 0", severity: "MINOR", rule: "M3 basis stated and anchored", filed: "FAT 188.45/100.82 = 1.87x, M3 1; denominator unnamed", recomputed: "net block 1.91x = 1; gross block 0.93x = 0, moat 2, grand total 51", decision_effect: "none; moats_confirmed 0 and class NONE either way"}
+  - {id: "EM-11", framework: "Emerging Moat", severity: "MAJOR", rule: "Section 5 matrix: no evidence = 0, LL = 1; Section 3: evidence table or NO EVIDENCE FOUND", filed: "unwritten offset rule zeroes E2, G1, G2, H2, C1, F1; em_score 7.8 NONE", recomputed: "written matrix: narrow set 10.8-11.2 (NONE); wide set 12.2-12.6 (MODEST, edge 12)", decision_effect: "band NONE vs MODEST; UA qualifier (EM >=25) unmet either way; Pillar 3 effect checked in phase 3; operator ruling needed on offset evidence"}
+  - {id: "EM-12", framework: "Emerging Moat", severity: "MAJOR", rule: "multiplier by evidence tier: DOC 1.0, CLAIM 0.7, INF 0.5", filed: "A1 at 0.7; A1 evidence is DOC (furnace, GTRE order) + INF (rarity), no CLAIM", recomputed: "0.5 by the stage's weakest-leg convention: A1 1.0, total 7.4; 1.0 on the documented furnace: A1 2.0, total 8.4", decision_effect: "none; NONE either way on the filed set"}
+  - {id: "EM-03", framework: "Emerging Moat", severity: "MINOR", rule: "rule 3 document anchor on each evidence item", filed: "items anchored to B03, B04 and B05 (beyond the promise record) at E L45, L66, L148, L172, L209", recomputed: "no score change; no scored row rests on these alone", decision_effect: "none"}
+  - {id: "EM-06", framework: "Emerging Moat", severity: "MINOR", rule: "Section 1A status from the prescribed set", filed: "GTRE and MKU rows read PO received", recomputed: "ANNOUNCED for both on the stated facts", decision_effect: "none"}
+  - {id: "EM-18", framework: "Emerging Moat", severity: "MINOR", rule: "recount line and evidence_mix match the evidence tables", filed: "16 documented across 9 categories plus the approval; evidence_mix 16/15/6", recomputed: "15 in 9 categories + 1 Section 2 = 16; ledger omits 3 DOC and 2 CLAIM table items: documented >=19, claim >=17", decision_effect: "none; guard outcome unchanged (6 of 23 scored)"}
+critical_count: 0
+major_count: 4
+minor_count: 5
+acceptance_rate: 89.5             # rules passed ÷ rules checked, %

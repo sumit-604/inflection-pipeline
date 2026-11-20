@@ -1,0 +1,59 @@
+stage: B06-peers
+company: "INVPRECQ"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "No pure investment-casting peer holds calls (PTC Industries not in corpus). Azad is machined parts, Steelcast is steel sand castings, Alicon is aluminium die casting; all three map only partly to I&PCL"
+  - "No peer names I&PCL, HAL, MKU, nickel or cobalt (Grep of all 12 files); Q1 growth number, Q7 top-five share, nickel/cobalt trend have no peer evidence"
+  - "Load-bearing facts 1 to 4 (cash conversion, A&D share, Rs 100 Cr capex vs net worth, revenue basis) need I&PCL filings; not reachable from peer transcripts. Peer pace and funding evidence relevant to facts 1, 2, 3 is reported in 06-peers.md"
+  - "Transcript page anchors use the [page N] marker (start-of-page convention); Alicon own labels run one below the marker"
+flags:
+  - "PEER-PACE: Azad (Rolls-Royce 2.5 years engagement to first qualification batch), Steelcast (defence prototypes approved Jun 2025, no serial order by Jul 2026), Alicon (JLR eAxle 18-month customer delay) all show new-programme revenue arriving 6 to 18 months after first stated date; B05 trigger 1 (monthly A&D supply H2 FY27) sits at the fast end"
+  - "PEER-WIP-MARGIN: Azad CFO states consumption line fell partly on process content of WIP in inventory (Q1 FY27 call p.17-18); same mechanism as I&PCL 863.65 lakh inventory credit"
+  - "PEER-FUNDING: Steelcast funds Rs 120 Cr greenfield from cash (debt free, Rs 114 Cr cash), Azad from Rs 700 Cr QIP plus term debt, Alicon from accruals plus borrowings; I&PCL Rs 100 Cr is 88.8% of equity at 0.71x gearing (B05)"
+  - "PEER-DEFENCE-VIEW: Steelcast de-prioritised Indian defence (bureaucratic, single customer, pricing worse than industrial); no peer reports share gain on HAL"
+  - "ALICON-ORDERBOOK: Rs 9,100 Cr cut to Rs 7,600 Cr in Q4 FY26 on programmes where customer volume did not materialise; multi-year order books are volume estimates"
+peers_provided: 12
+verified:
+  - {claim: "What are nickel, cobalt, aluminium and scrap cost trends and pass-through terms? (company claims pass-through contract terms)", peers: ["STEELCAS", "ALICON", "AZAD"], anchor_count: 6}
+partially_verified:
+  - {claim: "How long from purchase order to monthly series supply on defence and aerospace parts, and what year-one revenue does a programme carry?", peers: ["AZAD", "STEELCAS"]}
+  - {claim: "Do peers carry inventory and WIP build of this size when moving to superalloy or vacuum work, and how long before it converts to cash?", peers: ["AZAD", "STEELCAS", "ALICON"]}
+  - {claim: "What capex per rupee of revenue, utilisation and commissioning time do peers cite for aerospace and defence capacity?", peers: ["AZAD", "STEELCAS", "ALICON"]}
+  - {claim: "Do peers report EBITDA margins near 20% in castings and how much comes from absorption or mix?", peers: ["AZAD", "STEELCAS", "ALICON"]}
+  - {claim: "Do peers claim share gain on HAL, GTRE or private defence OEM programmes?", peers: ["AZAD", "STEELCAS"]}
+  - {claim: "How do peers see electrification affecting casting demand for powertrain parts?", peers: ["ALICON"]}
+contradicted: []
+unverifiable:
+  - {claim: "Do peers cite the same 4.5% to 5.4% investment casting growth, or higher growth for aerospace and defence castings?", peers_checked: ["AZAD", "STEELCAS", "ALICON"]}
+  - {claim: "What top-five customer share do peers treat as normal?", peers_checked: ["AZAD", "STEELCAS", "ALICON"]}
+peer_coverage_map:
+  - {peer: "AZAD", quarter: "Q2 FY26 (call 3-Nov-2025)", usage: "SUBSTANTIVE", contribution: "Tri-party raw material price terms with 5% band; Rolls-Royce first deliveries next FY; asset turn 1.7-1.8 on Rs 700 Cr QIP"}
+  - {peer: "AZAD", quarter: "Q3 FY26 (call 14-Feb-2026)", usage: "SUBSTANTIVE", contribution: "Rs 200-250 Cr infrastructure plus Rs 450-500 Cr P&M at 1.7-2.0 turn; WC days target 140-150 for H2 FY26; GTRE engine 'couple of months'"}
+  - {peer: "AZAD", quarter: "Q4 FY26 (call 16-May-2026)", usage: "SUBSTANTIVE", contribution: "Inventory 'deliberate', 96% under 1 year; Rolls-Royce 2.5 years to qualification batch; WC target reset to 160-170 days; Saudi capex shifted"}
+  - {peer: "AZAD", quarter: "Q1 FY27 (call 8-Aug-2026)", usage: "SUBSTANTIVE", contribution: "GTRE engine delivered 22-Jul-2026; WIP process content lowers consumption line; plant Rs 150-180 Cr revenue at full use; analyst asks about investment castings, management declines"}
+  - {peer: "STEELCAS", quarter: "Q2 FY26 (call 31-Oct-2025)", usage: "SUBSTANTIVE", contribution: "Defence deprioritised; defence export prototypes 250 then 2,000 units; 500 bps one-time margin gain; utilisation 48%"}
+  - {peer: "STEELCAS", quarter: "Q3 FY26 (call 30-Jan-2026)", usage: "SUBSTANTIVE", contribution: "Sales price variation formula passes input cost both ways; utilisation 46%; order book Rs 115 Cr; capex decision at 75% utilisation"}
+  - {peer: "STEELCAS", quarter: "Q4 FY26 (call 1-Jun-2026)", usage: "SUBSTANTIVE", contribution: "Raw material +10% gives price +4-5% with lag; sustainable EBITDA 25-26%; capex decision brought forward"}
+  - {peer: "STEELCAS", quarter: "Q1 FY27 (call 30-Jul-2026)", usage: "SUBSTANTIVE", contribution: "Rs 120 Cr greenfield for about Rs 300 Cr revenue, target 31-Mar-2028; inventory piles up in ramp; defence 'riskiest' business"}
+  - {peer: "ALICON", quarter: "Q2 FY26 (call 7-Nov-2025)", usage: "SUBSTANTIVE", contribution: "DAR vertical nascent; fixed cost absorption of new plants not yet optimal; order book Rs 9,100 Cr over FY24-FY29"}
+  - {peer: "ALICON", quarter: "Q3 FY26 (call 16-Feb-2026)", usage: "SUBSTANTIVE", contribution: "JLR eAxle running at a loss pending ramp; DAR RFQs early stage; metal price rise not recovered in-quarter"}
+  - {peer: "ALICON", quarter: "Q4 FY26 (call 13-May-2026)", usage: "SUBSTANTIVE", contribution: "Order book cut to Rs 7,600 Cr; aluminium pass-through with lag, now mostly monthly; JLR 18-month customer delay; creditor days 135"}
+  - {peer: "ALICON", quarter: "Q1 FY27 (call 14-Aug-2026)", usage: "SUBSTANTIVE", contribution: "Rs 125 Cr plant for Rs 500 Cr revenue in 4-5 years; EV 16% and hybrid 12% of order book; margin 9.5% on aluminium inflation; non-auto only 2% of book"}
+industry_cross_read:
+  demand: "Split by exposure: strong in energy and aero (Azad order book Rs 6,500 Cr plus), recovered in mining and earthmoving (Steelcast Q1 FY27 +17%), strong domestic auto and weak export auto (Alicon); no peer describes a castings-specific boom"
+  pricing_inputs: "Input costs rose sharply from March 2026 (aluminium +15-20% in April, steel raw material +10%, natural gas about +50% vs Feb); all three pass through with a one-month to one-quarter lag; margin percent falls where metal is pass-through (Alicon 9.5%); Azad margin helped by indigenous sourcing and WIP process content"
+  capex_cycle: "Not a lone expander: all three peers are adding capacity (Azad 8 dedicated plants, Steelcast Rs 120 Cr, Alicon Rs 125 Cr), so a broad capacity race on China-plus-one and OEM sourcing; funding differs, only I&PCL pairs a large programme with 0.71x gearing and 60% utilisation"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Customer-side programme slippage: Azad GTRE engine, Baker Hughes Saudi plan (Azad Q4 FY26 p.15); Steelcast defence serial orders (Q4 FY26 p.7); Alicon JLR 18 months (Q4 FY26 p.14)"
+  - "Working capital days at 200 for Azad, creditors 135 days at Alicon, bill discounting lifting finance cost (Azad Q1 FY27 p.11)"
+  - "Labour cost step-ups: Haryana minimum wage +35% (Alicon Q4 FY26 p.5) and new labour codes"
+  - "Fuel and gas availability and price in the Middle East war (Alicon Q4 FY26 p.4-5; Steelcast Q1 FY27 p.13)"
+  - "Order book rationalisation when customer volume fails (Alicon Q4 FY26 p.9)"
+  - "Skilled manpower hiring and training at 150-200 people a month (Azad Q3 FY26 p.14)"
+  - "Defence concentration: single buyer, tender delays (Steelcast Q2 FY26 p.6; Q1 FY27 p.15)"
+  - "Qualification cycles of years, expensed not capitalised (Azad Q2 FY26 p.14, p.16)"
+net_narrative_effect: "complicates"
+analyst_note: "No peer is an investment caster, so verdicts are weak. Strongest transferable finding is pace: three peers show 6-18 months of slip from first stated date, all customer-side. Second is margin quality: Azad's CFO ties lower consumption to WIP process content, the same mechanism behind I&PCL's 863.65 lakh inventory credit. Third is funding: only Steelcast funds internally from cash. Peers did not contradict any I&PCL claim; they supply base rates, not corroboration. Stage 11 should read Azad A&D growth (24.7-34%) as capacity-limited company growth, not market growth. Cross-peer hypothesis is in the report (Part 5)."

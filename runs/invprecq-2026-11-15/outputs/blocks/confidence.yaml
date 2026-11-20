@@ -1,0 +1,25 @@
+stage: confidence-delta
+company: INVPRECQ
+run_date: 2026-11-15
+phase: 1
+confidence_delta:
+  numerical_acceptance: 98        # B12a.acceptance_rate; 441 numbers checked; mandatory 111 of 111
+  redflag_coverage: 71            # B12b.acceptance_rate; material_caught 5 of material_found 7
+  framework_adherence: 89.5       # B12c phase-1 scope (Gate 0 + Emerging Moat); 77 of 86 rules; valuation half PENDING PHASE 3
+  peer_utilisation: 100           # B12d; 12 of 12 peer transcripts SUBSTANTIVE and confirmed
+  overall: 71                     # min of the applicable components
+  overall_set_by: redflag_coverage
+  not_applicable: []              # every component has a denominator of 4 or more
+band: "60-74: PROCEED verdicts downgrade one level"
+denominators: {numerical: 441, redflag_material: 7, framework_rules: 86, peers: 12}
+verifier_a_identity_check: "No CRITICAL row in B12a (critical_count 0). Nothing to strike. Verifier A reports 6 rows struck on its own self-check."
+rework_triggers:
+  verifier_a_confirmed_critical: false
+  any_acceptance_below_60_on_denominator_4_plus: false
+rework: false
+notes:
+  - "B12b states two readings of its own rate in coverage_basis: 71% counting PARTIALLY CAUGHT as caught (5 of 7; the figure in its acceptance_rate field, which this file uses), and 29% on full catches only (2 of 7). prompts/12 defines material_caught as items 'the pipeline already had' and PARTIALLY CAUGHT as 'found but under-weighted or misclassified'. The block field governs. On the strict count the component would be below 60% and REWORK would fire. This is an OPEN ITEM for the operator at Halt 1; the orchestrator does not re-score a verifier."
+  - "B12c: framework_adherence covers Gate 0 and Emerging Moat only. Two findings need an operator ruling (G-04 with G-07 formula substitutes; EM-11 offset rule). Valuation adherence is pending phase 3."
+  - "Verifier A shadow not run in this session (the single shadow run belongs to the TD Power session)."
+  - "Source-fidelity findings in B12a (source_fidelity: true): three MINOR anchor-page findings; values exist in the documents. They bind: synthesis corrects the anchors, never the reverse."
+verifier_disagreements: "none (no downstream step has yet taken a position against a Verifier A source-fidelity finding)"

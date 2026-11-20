@@ -1112,3 +1112,15 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+
+## 2026-11-15 · INVPRECQ /step1 intake + Phase 1 (runs/invprecq-2026-11-15)
+- Collector: REPO_ROOT hard-coded to a missing path, headed Chromium fails, AZAD and ALICON peers returned nothing under screener throttling (nine parallel sessions). Fixed by scratch wrapper, headless hook and single-peer reruns; results, rating and announcements came by direct BSE and CARE download; shareholding by a Chrome page text capture.
+- Scanned results filings: financial tables are rotated 90 degrees. tools/ocr_repair.py output was unreadable on those pages and stage 1 lost the Q2 FY27 P&L. A scratch rotation-aware re-OCR fixed it. Column headers stay lost and the rupee sign reads as "2" ("2100 crore"). tools/ocr_repair.py should try rotations.
+- Stage 2 read the "[page N]" marker as a page end, so its AR anchors run one page high (Verifier A MINOR, source_fidelity). The marker convention should be stated in prompts/02 and in the extract tool header.
+- Stages 4 and 5 stalled once each in the harness (600 s stream watchdog); one re-invoke each completed.
+- Stage 5 no-concall cost 157,026 tokens against the 100k target (LESSONS open action C2, 2026-10-04).
+- Verifier B gave two readings of its own rate (71% with partial catches, 29% strict). prompts/12 does not say whether PARTIALLY CAUGHT counts in material_caught. The strict count would fire REWORK. Needs an operator ruling.
+- Verifier C: Gate 0 used substitute ROCE and FCF formulas (screener sheet lacks current liabilities and capex), and stage 7 applied an "offset" rule prompts/07 does not contain. prompts/12 line 379 holds placeholder text; prompts/07 Section 6D names an undefined matrix.
+- Ledger: the desktop harness reports only total tokens per subagent; split columns and the re-read multiple are n/a.
+- Verifier A shadow not run here (belongs to the TD Power session).

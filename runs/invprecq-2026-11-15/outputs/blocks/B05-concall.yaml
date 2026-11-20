@@ -1,0 +1,77 @@
+stage: B05-concall
+company: "INVPRECQ"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "No earnings calls: Sections 2C (Q&A tone) and 2E (repeated questions) have no source; no cross-quarter transcript comparison possible"
+  - "Order values for GTRE, MKU, HAL, PLR and CQB orders withheld by the company (confidentiality); no order book figure anywhere"
+  - "A&D 11% of H1 FY27 revenue is a presentation claim; no filed industry split in the results (single segment from FY27)"
+  - "Split of the Q2 FY27 changes-in-inventories credit (603.73 lakh) between WIP and finished goods: NOT FOUND"
+  - "Funding mix, phasing and timeline of the Rs 100 Cr capital investment: NOT FOUND"
+  - "Solar cost, generation and saving: NOT FOUND"
+  - "Q1 FY27 investor presentation not in corpus; Q3 FY26 presentation not read (results only)"
+  - "Results OCR: column header rows lost; order fixed by tie to presentation appendix; PDF pages not opened"
+flags:
+  - "FLAG-CASH: H1 FY27 operating cash 348.50 lakh vs net profit 1,079.22 lakh (0.32x); inventories +1,145.75 lakh (Q2 FY27 results p.5, p.6)"
+  - "FLAG-CAPEX: Rs 100 Cr approved = 88.8% of 30-Sep-2026 standalone equity 11,261.47 lakh; funding accruals and debt; CARE assumed no major debt funded capex"
+  - "FLAG-BASIS: FY26 revenue 18,844.62 (AR) vs 18,579.07 (Q2 FY27 presentation p.21); wind credit 265.55 lakh netted against power and fuel from FY27, prior periods re-presented"
+quarters_analysed: ["Q4 FY25 (presentation)", "Q2 FY26 (report)", "Q3 FY26 (results)", "Q4 FY26", "Q1 FY27", "Q2 FY27 / H1 FY27"]
+triggers:
+  - {priority: 1, name: "A&D ramp from nominated parts into monthly supply (HAL, MKU, GTRE, PLR, CQB)", type: "volume and mix", timeframe: "H2 FY27 to FY28", conviction: "M", confirm_signal: "Filed A&D rupees at or above 11% of revenue per half-year; any order with a stated value", kill_signal: "A&D share below 8% in H2 FY27 or in the FY27 AR industry split"}
+  - {priority: 2, name: "Fixed-cost absorption as utilisation rises from 51% to 60% on 3,060 t", type: "margin", timeframe: "near", conviction: "M", confirm_signal: "Operating margin excluding inventory credit holds near 14% or above", kill_signal: "Margin falls when the inventory credit shrinks"}
+  - {priority: 3, name: "Inventory and WIP conversion to cash", type: "cash", timeframe: "H2 FY27", conviction: "M-L", confirm_signal: "H2 FY27 operating cash at or above profit; inventory credit shrinks", kill_signal: "Operating cash below profit through FY27"}
+  - {priority: 4, name: "Rs 100 Cr capital programme (lost-foam, CNC, heat treat, vacuum)", type: "volume and mix", timeframe: "FY27 to FY29", conviction: "L", confirm_signal: "Phased plan, sanctioned loans, commissioning dates, customer-backed demand", kill_signal: "Gearing above 0.80x with utilisation near 60%"}
+  - {priority: 5, name: "Captive solar and wind savings", type: "cost", timeframe: "near", conviction: "L", confirm_signal: "Power and fuel below 8% of revenue for two quarters", kill_signal: "Power and fuel grows faster than revenue"}
+  - {priority: 6, name: "CARE upgrade to BBB lowering financing cost", type: "cost", timeframe: "near", conviction: "L", confirm_signal: "Finance cost falls as percent of revenue", kill_signal: "Finance cost keeps rising about 40% year on year"}
+guidance:
+  - {item: "Capital investment approval, Aerospace Defence Energy", number: "up to Rs 100 crore", timeframe: "none given", stated_in: "Q2 FY27 results note 6 p.4; Q2 FY27 presentation p.6"}
+  - {item: "Capex funding", number: "internal accruals and debt, no split", timeframe: "none given", stated_in: "Q2 FY27 presentation p.11"}
+  - {item: "H1 FY27 capex (actual)", number: "Rs 5.27 Cr", timeframe: "H1 FY27", stated_in: "Q2 FY27 presentation p.11"}
+  - {item: "Capacity utilisation (actual)", number: "about 60% vs 51% FY26", timeframe: "H1 FY27", stated_in: "Q2 FY27 presentation p.17"}
+  - {item: "Gearing and interest coverage (actual)", number: "0.71x; 5.12x", timeframe: "30-Sep-2026", stated_in: "Q2 FY27 presentation p.11"}
+  - {item: "CQB carbine first supplies", number: "November 2026", timeframe: "Nov 2026", stated_in: "Reg 30 announcement 17-Oct-2026"}
+  - {item: "Solar 4 MW operational", number: "4 MW", timeframe: "second half of 2025 (Q4 FY25 deck); second half of FY2026 (AR)", stated_in: "Q4 FY25 presentation p.11; AR Annexure 4 p.74"}
+  - {item: "Dividend", number: "Rs 1 per share, 100.00 lakh", timeframe: "AGM 13-Aug-2026", stated_in: "AR p.55 via B03"}
+  - {item: "Revenue, margin, order book, return targets", number: "NOT FOUND", timeframe: "n/a", stated_in: "no document carries one"}
+promise_delivery:
+  delivered: 5
+  partial: 1
+  missed: 0
+  rows:
+    - {promised_in: "Q4 FY25 presentation p.11", promise: "4 MW solar operational in second half of 2025", outcome: "PARTIAL", explanation: "Commissioned 30-Mar-2026 (Reg 30 of 31-Mar-2026); about 3 months late on calendar reading; no reason given"}
+    - {promised_in: "Q4 FY25 presentation p.11", promise: "Long-term international defence project from March 2025", outcome: "DELIVERED", explanation: "A&D revenue 5.39 Cr to 10.87 Cr FY26; 11% share H1 FY27 (company claim)"}
+    - {promised_in: "Q2 FY26 report p.12", promise: "Strong defence order inflow; non-auto gains in coming quarters", outcome: "DELIVERED", explanation: "Five Reg 30 orders Feb to Oct 2026; values withheld"}
+    - {promised_in: "Q2 FY26 report p.12", promise: "Robust growth momentum", outcome: "DELIVERED", explanation: "Standalone sales rose every quarter from 4,395.53 to 5,795.19 lakh"}
+    - {promised_in: "Q4 FY26 presentation p.6", promise: "Spare capacity, ready to ramp", outcome: "DELIVERED", explanation: "Utilisation 51% to about 60%; low bar"}
+    - {promised_in: "AR via B03", promise: "Dividend Rs 1 per share", outcome: "DELIVERED", explanation: "Paid 99.28 lakh in H1 FY27 cash flow"}
+    - {promised_in: "Q2 FY26 report p.12 and AR p.19", promise: "Solar to improve cash flow, energy cost and margin", outcome: "NOT YET TESTABLE", explanation: "H1 FY27 operating cash 0.32x profit; power and fuel 8.99% vs 9.17% of revenue; margin gain coincides with 8.64 Cr inventory credit"}
+    - {promised_in: "AR p.36 via B03", promise: "Civil aviation decisive phase of growth", outcome: "UNSCORABLE", explanation: "No civil order named; quietly dropped from H1 FY27 deck"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "No-concall default C: trailing four quarters (Q3 FY26 to Q2 FY27) show soft promises met (growth, defence orders, utilisation, dividend), solar about 3 months late, no numeric guidance to test, order values withheld, H1 FY27 operating cash 0.32x profit; B bar not met"
+peer_questions:
+  - {question: "Do peers cite the same 4.5% to 5.4% investment casting growth, or higher growth for aerospace and defence castings?", why: "Sets the growth cap in valuation; company cites two different market sizes in AR and H1 FY27 deck", check_peers: ["AZAD", "STEELCAS", "ALICON"]}
+  - {question: "How long from purchase order to monthly series supply on defence and aerospace parts, and what year-one revenue does a programme carry?", why: "Tests the H2 FY27 monthly-supply claim and the 6% to 11% A&D step", check_peers: ["AZAD", "STEELCAS"]}
+  - {question: "Do peers carry inventory and WIP build of this size when moving to superalloy or vacuum work, and how long before it converts to cash?", why: "I&PCL H1 FY27 operating cash 348.50 lakh vs profit 1,079.22 lakh; inventories +1,145.75 lakh", check_peers: ["AZAD", "STEELCAS", "ALICON"]}
+  - {question: "What capex per rupee of revenue, utilisation and commissioning time do peers cite for aerospace and defence capacity?", why: "Rs 100 Cr approval vs FY26 revenue 185 Cr and 60% utilisation", check_peers: ["AZAD", "STEELCAS", "ALICON"]}
+  - {question: "What are nickel, cobalt, aluminium and scrap cost trends and pass-through terms?", why: "Company claims pass-through contract terms; no clause detail", check_peers: ["STEELCAS", "ALICON", "AZAD"]}
+  - {question: "Do peers report EBITDA margins near 20% in castings and how much comes from absorption or mix?", why: "I&PCL H1 FY27 21.6%, about 13.9% excluding the 8.64 Cr inventory credit (derived)", check_peers: ["AZAD", "STEELCAS", "ALICON"]}
+  - {question: "What top-five customer share do peers treat as normal?", why: "I&PCL top five about half of revenue", check_peers: ["AZAD", "STEELCAS", "ALICON"]}
+  - {question: "Do peers claim share gain on HAL, GTRE or private defence OEM programmes?", why: "Tests the market-share and indigenisation claim", check_peers: ["AZAD", "STEELCAS"]}
+  - {question: "How do peers see electrification affecting casting demand for powertrain parts?", why: "Auto is 62% of I&PCL H1 FY27 revenue", check_peers: ["ALICON", "STEELCAS"]}
+red_flags:
+  - "HIGH: H1 FY27 operating cash 348.50 lakh vs net profit 1,079.22 lakh (0.32x); inventories +1,145.75 lakh; inventory credit 8.64 Cr of EBITDA 24.12 Cr"
+  - "HIGH: Rs 100 Cr capex = 88.8% of equity; funding accruals and debt; no timeline; CARE assumed no major debt funded capex"
+  - "MEDIUM: five defence orders, no values; A&D 11% has no filed rupee split"
+  - "MEDIUM: FY26 revenue on two bases (18,844.62 vs 18,579.07 lakh); wind credit netted against power and fuel"
+  - "MEDIUM: finance cost +40.6% year on year in Q2 FY27 despite the CARE upgrade"
+  - "LOW: capex Rs 5.27 Cr vs cash capex 7.68 Cr; headcount 1,100 vs 165 permanent"
+dropped_triggers:
+  - "Civil aviation growth (AR p.36), absent from H1 FY27 deck"
+  - "Vacuum Cast subsidiary, R&D, carbon credits, AI/ML (AR, B03 6E)"
+timeline_slippages:
+  - "Solar 4 MW: 'second half of 2025' (May 2025) vs commissioned 30-Mar-2026; AR re-stated the target as second half of FY 2026"
+analyst_note: "No transcripts exist, so the grade rests on soft statements, not guided numbers. Stage 11 should treat the A&D 11% as a company slide until the FY27 AR industry split. Capacity basis is 3,060 t; 1,500 t is output (Q4 FY26 deck p.6), so utilisation is about 51% FY26 and about 60% H1 FY27. H1 FY27 EBITDA 24.12 Cr includes an 863.65 lakh inventory credit; stripping it gives about 13.9%, a floor that assumes zero absorption, not a forecast. Do not project 21.6%. Wind credit netting from FY27 shifts the FY26 revenue base by 265.55 lakh; use the AR base."

@@ -1,0 +1,48 @@
+stage: B08-promoter
+company: "INVPRECQ"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "CMD qualification, age and prior ventures: NOT FOUND in the AR pages read or the web results"
+  - "BSE Regulation 17 fine: amount and date NOT FOUND (AR CG report p.89 states a fine, gives neither)"
+  - "AGM 13-Aug-2026 voting result on Item 4 (Rs 18.00 Cr pay ceiling): NOT FOUND in the corpus"
+  - "Meche Pvt Ltd financials after March 2021 and Tamboli Foundry Supply and Services financials: NOT FOUND"
+  - "Pledge history beyond two data points (31-Mar-2025 nil, 31-Mar-2026 nil) and Sep 2026 nil: three-year trend NOT FOUND"
+flags: []
+verdict: CAUTION
+scorecard: {clean: 5, caution: 5, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Family cash take 507.91 lakh = 29.1% of pre-exceptional PBT; CMD pay +51.2% (229.54 to 347.11), Jainam +68.7%, against PBT +107.9%", evidence_tier: VERIFIED, source: "AR FY2025-26 Note 38 pp.134-135; Annexure 5 p.75", date: "2026-05-19 (AR report date)"}
+  - {finding: "Related-party balances with promoter entities unmoved: capital advance 306.00 to Tamboli Foundry Supplies and Services (45.5% of capital advances) and deposit 100.00 with Meche; purchases from Meche 319.88 (+25.5%); no arm's-length benchmark", evidence_tier: VERIFIED, source: "AR Note 9 p.120; Note 38 pp.134-135; Board report item 21 p.58", date: "2026-05-19"}
+  - {finding: "BSE fine for delay in appointing an Independent Director under Regulation 17; amount and date not disclosed; AR also says no penalty was imposed", evidence_tier: VERIFIED, source: "AR CG report p.89", date: "FY2025-26"}
+  - {finding: "NRC met once (22-May-2025); chair attended 0 of 1; CMD and spouse are NRC members; CMD and CFO sit on the Audit Committee; two independents below 75% attendance; Rs 18.00 Cr pay ceiling requested in the Notice", evidence_tier: VERIFIED, source: "AR pp.45, 52, 81-83", date: "2026-05-19"}
+  - {finding: "100% of CSR spend (13.86) goes to the promoter-linked Shri Tamboli Foundation; CSR report internal figures differ (12.64 vs 13.85)", evidence_tier: VERIFIED, source: "AR CSR report pp.96-97; Note 30 p.128", date: "2026-05-19"}
+  - {finding: "AmbitionBox rating 2.8 of 5 from 24 reviews; salary and promotions lowest at 2.2", evidence_tier: FORUM, source: "https://ambitionbox.com (search result summary, not fetched)", date: "2026-11-15"}
+transition_evidence:
+  - {item: "Board refresh: four independents added Sep 2023 to May 2025 plus Poddar Nov 2022; credentials unverified; partial weight", source: "AR CG report pp.78-80"}
+pledge_pct_latest: 0
+pledge_trend: "stable at nil: 0% at 31-Mar-2025 and 31-Mar-2026 (AR MGT-9 p.68) and 0% at 30-Sep-2026 (BSE shareholding page); promoter holding 51.97% at all three dates"
+searches_performed:
+  - "Piyush Tamboli IPCL CMD profile"
+  - "IPCL SEBI order / penalty / adjudication"
+  - "IPCL lawsuit / court / NCLT / income tax / GST raid"
+  - "Meche Private Limited Bhavnagar Tamboli"
+  - "IPCL IiAS / InGovern / SES / short seller / SCORES"
+  - "IPCL employee reviews AmbitionBox / Glassdoor"
+  - "Tofler director page DIN 00146033 (fetch)"
+  - "IPCL promoter news 2026"
+  - "IPCL BSE fine Regulation 17 independent director"
+  - "Tofler Meche company and directors pages (fetch x2)"
+  - "Inventa Steels Pvt Ltd Bhavnagar Tamboli status"
+searches_skipped:
+  - "SEBI orders database, SAT, eCourts, NCLT case status, MCA21 master/charge data (not reachable by the tool)"
+  - "ET, Mint, Business Standard, Moneycontrol archive fetch for promoter name"
+  - "Glassdoor (no result); AmbitionBox page fetch"
+  - "BSE announcement page for the Regulation 17 fine notice"
+  - "IiAS, SES, InGovern reports"
+  - "Political donation / electoral bond lookup"
+  - "CMD biography, qualification, age"
+verdict_basis: "No pledge, selling, dilution or regulatory hit found, but the AR shows family cash take of 507.91 lakh (29.1% of PBT), unmoved promoter-entity balances (306.00 and 100.00), CMD pay +51.2% set by a once-met NRC, and an unquantified BSE Regulation 17 fine."
+analyst_note: "CAUTION is a STRUCTURE reading (pay and RPT), not INTEGRITY. Meche (paid-up Rs 1 lakh, 319.88 lakh sold to IPCL) is the key unknown: its balance sheet is not in the corpus. Web absence of legal hits is weak evidence because SEBI, eCourts, NCLT and MCA21 were not reachable. Do not confuse with Tamboli Industries / Tamboli Castings (Vaibhav Tamboli group). Operator tripwires: AGM vote on Item 4, fate of the 306.00 advance, FY27 Meche purchases, pledge or new guarantees when the Rs 100 Cr capex is funded."

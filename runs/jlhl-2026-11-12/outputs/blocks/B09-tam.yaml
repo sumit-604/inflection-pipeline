@@ -1,0 +1,65 @@
+stage: B09-tam
+company: "JLHL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "B00: screener export sheets empty; only Data_Sheet CSVs populated (no effect on market sizing)."
+  - "B00: research and other folders empty; no broker notes."
+  - "B07 not on disk (stage 7 running); capacity check built from B03, B05, ICRA p.2 and Pres Q2 p.11."
+  - "NOT FOUND: unorganised share, top-3 concentration, regional private-bed split, tertiary share of private pool, peer regional revenue, Dombivli revenue, hospital-wise ARPOB, Mira Road and BKC sub-market density, anchored USD/INR."
+flags:
+  - {type: FLAG-STALE-SOURCE, reason: "Regional TAM rests on CRISIL RHP Aug 2023 (3.2 years old); no newer regional source in corpus."}
+  - {type: FLAG-SAM-CEILING, reason: "Only the private-ownership filter (73%) is anchored; product and capability filters NOT FOUND, so SAM is a ceiling and current share 9.4% is a floor."}
+  - {type: FLAG-DATA-CONFLICT, reason: "Pune PMR population 14.97 M printed vs 7.17 M implied by beds and density (RHP p.185); TAM 25,155 vs 31,420 Cr."}
+  - {type: FLAG-NO-BED-SHORTAGE, reason: "MMR 33.0, Pune 30.0, Indore 37.5 beds per 10,000 vs global median 29 (Mar 2023); only Kalyan-Dombivli (10) is under-bedded."}
+  - {type: FLAG-CAPACITY-BINDS, reason: "Y5 SOM 3,768 Cr is 101% of the constant-price physical ceiling 3,724 Cr; needs ARPOB growth and Pune South and Mira Road ramp."}
+  - {type: FLAG-MGMT-CLAIM-NOT-COMPARABLE, reason: "Only management market claim is India-wide USD 193.42 Bn (AR26 p.39), 1.58x IBEF USD 122.3 Bn; no JLHL rupee TAM claimed."}
+market_definition: "Private multi-specialty tertiary and quaternary IPD and OPD hospital services in MMR, Pune PMR and Indore, FY27"
+tam_cr: {conservative: 24584, realistic: 25155}   # FY27 basis, all hospital delivery; named alternate 31420
+sam_cr: 18363                                      # FY27 ceiling; FY26 basis 16003
+sam_pct_of_tam: 73
+som_3yr_cr: 2586                                   # FY29, +2pp share case; alternate 2814 (+3pp)
+som_5yr_cr: 3768                                   # FY31, +4pp share case; alternates 3486 (+3pp), 4049 (+5pp)
+som_implied_revenue_cagr: {yr3: 19.9, yr5: 20.2}   # FORMAL handoff to stage 11; base FY26 total income Rs 1,499.8 Cr; alternates yr3 23.3, yr5 18.4 to 22.0; hold-share 12.4 / 12.0
+current_sam_share_pct: 9.4
+revenue_headroom_x: 10.7
+tam_growth_pct: 11.3                               # CRISIL national delivery CAGR; regional reading 14.9
+runway_class: "STRONG"                             # stage-assumed thresholds; bottom of band; SAM is a ceiling
+mgmt_claim_cr: "NOT FOUND"                         # only claim is USD 193.42 Bn India-wide; no anchored FX
+mgmt_claim_ratio: 1.58                             # USD basis: AR26 193.42 / IBEF 122.3, not claim / conservative rupee TAM
+mgmt_claim_read: "stretched (1.5x to 2x band), not like for like"
+capacity_check: "sufficient on paper with positive ARPOB growth; gap Rs 44 Cr in Y5 at constant price and zero ramp (Y5 SOM 101% of 3,724 ceiling); Y3 SOM is 91% of 2,838 ceiling; at zero ARPOB growth the SOM is the optimistic side, at 6% or more the capex plan is not binding"
+methods_used: ["top-down CRISIL West India pro-rated by population and private share", "bottom-up beds x occupancy x ARPOB (ceiling and consistency)", "global bed-density benchmark"]
+stale_data_flags:
+  - {datapoint: "India healthcare delivery Rs 5.6 trillion FY23, Rs 8.6 trillion FY27, 11.3% CAGR", source: "CRISIL via RHP p.163", year: 2023}
+  - {datapoint: "West India Rs 1.05-1.15 trillion FY22 to Rs 2.15-2.25 trillion FY27", source: "CRISIL via RHP p.164", year: 2023}
+  - {datapoint: "Private-treated share 73% FY27", source: "CRISIL via RHP p.164", year: 2023}
+  - {datapoint: "Micro-market beds and density (MMR, Pune, Kalyan-Dombivli, Indore)", source: "CRISIL via RHP p.177-178, p.185-186", year: 2023}
+  - {datapoint: "Insurance penetration 38% FY22, West India 78%", source: "CRISIL via RHP p.165-166", year: 2022}
+searches_performed:
+  - "India hospital industry size FY2026 CRISIL ICRA IBEF"
+  - "MMR hospital beds per 1000 and private additions 2025"
+  - "ICRA hospitals outlook FY2027 occupancy ARPOB"
+  - "IBEF healthcare hospital market size 2025 2026"
+  - "Pune hospital beds and new capacity 2026"
+  - "Thane Kalyan-Dombivli Mira-Bhayandar new hospitals 2026-27"
+  - "Indore hospital capacity Medanta Bombay Apollo 2026"
+searches_skipped:
+  - "Business Standard 1-Sep-2026 article (HTTP 403)"
+  - "Bombay Hospital Indore plans"
+  - "Fortis, Apollo, Hiranandani, Wockhardt MMR projects"
+  - "Pune PMR current population and beds"
+  - "Maharashtra and MP share of West India healthcare spend"
+  - "Anchored USD/INR rate"
+  - "Mira Road and BKC sub-market bed density"
+downstream_candidates:
+  - {signal: "Health insurer and TPA cashless empanelment and claim settlement", entity_type: "counterparty", demand_link: "Insurance is about 44% of payor mix; Dombivli needs cashless insurers within about 12 months", likely_source: "IRDAI annual report and handbook; insurer quarterly disclosures", cadence: "quarterly", shared: true}
+  - {signal: "Health insurance penetration and premium trend", entity_type: "macro", demand_link: "Sets hospitalisation rates and payer mix across all four hospitals", likely_source: "General Insurance Council monthly data; IRDAI", cadence: "monthly", shared: true}
+  - {signal: "Pune private bed supply (Max Yerawada 450, Lata Mangeshkar 1,000)", entity_type: "counterparty", demand_link: "Sets Baner occupancy and Pune South fill from CY28", likely_source: "Peer investor presentations and concalls; Maharashtra permits", cadence: "quarterly", shared: false}
+  - {signal: "MMRDA BKC lease registration and MBMC Mira Road approvals", entity_type: "regulatory", demand_link: "Dates the CY29 and CY31 capacity", likely_source: "MMRDA tender notices; BSE and NSE Reg 30 filings; MBMC notices", cadence: "event-driven", shared: false}
+  - {signal: "NPPA and DoP onco-drug 30% margin cap from 1-Nov-2026; Supreme Court markup review", entity_type: "regulatory", demand_link: "Hits IPD drug margin and ARPOB mix", likely_source: "NPPA notifications; Gazette of India; Supreme Court orders", cadence: "event-driven", shared: false}
+  - {signal: "NABH accreditation of Dombivli", entity_type: "regulatory", demand_link: "Gate for insurer empanelment and occupancy step-up", likely_source: "NABH accredited-hospital list", cadence: "event-driven", shared: false}
+  - {signal: "Peer micro-market occupancy and ARPOB (Medanta Indore, KIMS, Yatharth, Apollo Indore)", entity_type: "counterparty", demand_link: "Tests whether Indore and Pune pricing holds under new supply", likely_source: "Peer quarterly investor presentations and concalls", cadence: "quarterly", shared: false}
+demand_externally_verifiable: true
+analyst_note: "TAM rests on one stale regional source (CRISIL Aug 2023) pro-rated by population, so confidence is L. Central uses Pune PMR population 7.17 M (derived from the RHP's own bed density); the printed 14.97 M gives TAM 31,420 Cr. SAM is a ceiling (only the 73% private share is anchored), so the 9.4% share is a floor. MMR, Pune and Indore are not short of beds by count; only Kalyan-Dombivli is. SOM central is +2pp Y3 and +4pp Y5 of SAM, market growth 11.3% after FY27. Year 5 SOM is 101% of the constant-price physical ceiling, so it needs ARPOB growth near 6% or more and a ramp haircut of 25% or less. Separating observation: Dombivli occupancy and ex-Dombivli ARPOB growth in Q3 and Q4 FY27. Alternate readings: Y3 +3pp gives 23.3% CAGR; hold-share gives 12.4%. Stage 11 should treat the 12% to 23% range as the cross-check band for the base revenue CAGR, not the 20% point alone. Runway thresholds are stage-assumed."

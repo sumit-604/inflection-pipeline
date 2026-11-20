@@ -1,0 +1,29 @@
+stage: confidence-delta
+company: JLHL
+run_date: 2026-11-12
+phase: 1
+computed_by: orchestrator (prompts/00-orchestrator.md Section 5)
+confidence_delta:
+  numerical_acceptance: 97        # B12a.acceptance_rate; 470 numbers checked, mandatory 32 of 32; 0 CRITICAL, 4 MAJOR, 1 MINOR
+  redflag_coverage: 85            # B12b.acceptance_rate; material_found 13, material_caught 11 (7 in full, 4 partial)
+  framework_adherence: 94.4       # B12c phase-1 scope only: 68 of 72 rules (Gate 0 46/48, Emerging Moat 22/24)
+  framework_adherence_valuation: "PENDING PHASE 3"
+  peer_utilisation: 100           # B12d: 12 substantive confirmed of 12 peers provided
+  overall: 85
+  overall_set_by: redflag_coverage
+  band: "75-89 normal, note specifics"
+  not_applicable: []
+verifier_a_identity_check: "No CRITICAL rows in B12a, so no row to test. No finding struck by the orchestrator."
+rework_triggers:
+  verifier_a_confirmed_critical: false
+  acceptance_below_60: false
+  note: "Verifier B also reports a full-catch-only rate of 7/13 = 53.8%, 'shown for transparency, not scored' (B12b.coverage_basis). The scored B12b.acceptance_rate is 85 and that figure is used, per Section 5. The alternative count is carried to Halt 1 as an open item for the operator."
+remediation_cycles: 0
+open_items_from_verifiers:
+  - "B12a: five source-fidelity findings (one wrong value: Gate 0 FY26 tax rate 25.7% printed, source 25.44%; four anchor-page errors in 01-gate0.md and 09-tam.md). Not corrected in the stage reports; no remediation cycle was run because REWORK did not fire. Each must be corrected at source before any phase-3 use."
+  - "B12b F1 (MAJOR, missed upstream): Pune South land was leased, against the May statement on owning the real estate; Rs 150 Cr purchase; landowner not named."
+  - "B12b F2 (MAJOR, missed upstream): Q2 FY26 unbilled-revenue accounting policy change, one-time revenue bump, unsized."
+  - "B12b F3, F4, F5 (MAJOR): B05 breakeven 'slippage' not supported; B05 2A row 8 has no source promise; Dombivli Q2 swing second reading (cost timing) not named. Due-only promise recount 4 delivered / 2 partial / 0 missed."
+  - "B12c C-01 (MAJOR): Gate 0 E2 scored 3 on an 18-month window; rule scores 0; core 68 not 71; classification GOOD unchanged. C-02 (MAJOR): B07 capex_embedded_growth_pct 177 counts projects not under execution; recompute 62. C-04: evidence-multiplier basis needs an operator ruling (13.9 MODEST vs 11.1 NONE)."
+  - "B12d: three MINOR; B06 block pricing_inputs line still attributes insurer price pressure to MEDANTA (KIMS alone supports it)."
+  - "Verifier A shadow not run by this session (claimed by runs/kusumgar-2026-11-12)."

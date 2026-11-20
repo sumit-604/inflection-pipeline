@@ -1,0 +1,30 @@
+stage: B12c
+company: "JLHL"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+scope: "phase1"  # gate0 + emoat only; valuation, ledger and narrative pending
+gate0:
+  rules_checked: 48
+  fails:
+    - {rule: "G26 E2 promoter change over 3 years; NOT FOUND scores 0 (prompts/01 L91-92, L19-22)", severity: MAJOR, reported: 3, recomputed: 0, effect: "Block E 16 -> 13; core 71 -> 68; grand total 94 -> 91; classification GOOD unchanged"}
+    - {rule: "G03 ROCE fixed formula EBIT / (TA - CL), no substitution (prompts/01 L27-31)", severity: MINOR, reported: "EBIT / (TA - other liabilities), FY20-FY26", recomputed: "NOT RECOMPUTABLE from B01 inputs for FY21-FY25; FY26 fixed basis 13.82%, same band", effect: "A1 median FY22 15.35% is 0.35pp over the 15% boundary; worst case A1 3 -> 1, core -2; classification unchanged"}
+emoat:
+  rules_checked: 24
+  fails:
+    - {rule: "E17 2C counts capex under execution only (prompts/07 L59-62)", severity: MAJOR, reported: 177, recomputed: 62, effect: "only Pune South (750 Cr) is under execution; 750 x 1.245 = 933.8 Cr = 62.3% of FY26 1,499.8 Cr; range 50-64; bed-day cross-check 48; 177 is the announced pipeline"}
+    - {rule: "E10 evidence multiplier on one basis across rows (prompts/07 L172-174)", severity: MINOR, reported: "B1 at 0.7 on the claimed benefit while E1 and R1 take 1.0 on the documented fact; total 13.6", recomputed: "B1 at 1.0 (IV plant acquired, documented captive source); total 13.9, MODEST", effect: "band unchanged on the fact basis; advantage basis (E1, R1 at 0.5) gives 11.1, NONE; operator ruling needed"}
+valuation: {rules_checked: 0, fails: [], status: "PENDING PHASE 3"}  # stages 10 and 11 not run; B10/B11 audit deferred
+expectation_ledger: {present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: []}  # rules 13-14; NOT CHECKED in phase 1 (stage 11 not run), defaults only; any fail = REWORK stage 11
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # rule 9; NOT CHECKED in phase 1 (stage 13 not run), defaults only; any fail = REWORK stage 13
+recomputed_destination_pe: ""  # blank: valuation out of phase-1 scope
+recomputed_decision: ""        # blank: no decision exists in phase 1; Gate 0 GOOD and EM MODEST both stand on recompute
+findings:
+  - {id: "C-01", scope: gate0, severity: MAJOR, rule: "E2 promoter change over 3 years; NOT FOUND scores 0 (prompts/01 L91-92, L19-22)", claimed: "E2 = 3 on an 18-month window, Mar-2025 to Sep-2026; B01 itself calls the 3-year point NOT FOUND (B01 L101)", recomputed: "E2 = 0; Block E 13; core 68; grand total 91", decision_effect: "none: Core 60-79 + STRONG = GOOD+, capped to GOOD by deal-breaker 2", confirming_observation: "promoter group % in the 30-Sep-2023 shareholding pattern (first post-listing quarter): 39.91-41.91% restores E2 = 3 and core 71"}
+  - {id: "C-02", scope: emoat, severity: MAJOR, rule: "2C counts capex under execution only (prompts/07 L59-62)", claimed: "capex_embedded_growth_pct 177 on 2,129 Cr: Pune South, Mira Road, BKC, Thane (B07 L92-94, L376)", recomputed: "62: Pune South 750 Cr x 1.245 = 933.8 Cr on FY26 1,499.8 Cr; range 50-64; bed-day cross-check 48", decision_effect: "none in phase 1; risk that stage 11 or 13 reads 177 as embedded capacity growth", confirming_observation: "construction start at Mira Road, BKC or Thane (Reg 30 or concall) adds that project to the 2C count"}
+  - {id: "C-03", scope: gate0, severity: MINOR, rule: "ROCE fixed formula EBIT / (TA - CL), no substitution (prompts/01 L27-31)", claimed: "EBIT / (TA - other liabilities) for FY20-FY26 (B01 L18); CL split exists in RHP p.75, AR 2025, AR 2026 p.191 for FY21-FY26", recomputed: "NOT RECOMPUTABLE from B01 inputs for FY21-FY25; FY26 fixed basis 13.82%, same band (B01 L29)", decision_effect: "none; worst case A1 3 -> 1, core -2 (66 with C-01), GOOD unchanged", confirming_observation: "FY22 TA - CL from the RHP restated balance sheet: at or below 807.1 Cr keeps FY22 ROCE at or above 15.0% and A1 = 3"}
+  - {id: "C-04", scope: emoat, severity: MINOR, rule: "evidence multiplier on one basis across rows (prompts/07 L172-174; prompts/12 L241-244)", claimed: "B1 at 0.7 on the claimed benefit; E1 and R1 at 1.0 on the documented fact although B07 L205 names their advantage readings as inference; total 13.6", recomputed: "B1 at 1.0 on the fact basis; total 13.9, MODEST", decision_effect: "none on the fact basis; advantage basis gives 11.1 (10.5 with B2 at 0.7), NONE, which changes the Pillar 3 EM input", confirming_observation: "operator ruling on what the multiplier grades (indicator fact or advantage reading); prompt gap at prompts/07 L172-174"}
+critical_count: 0
+major_count: 2
+minor_count: 2
+acceptance_rate: 94.4             # 68 passed / 72 checked; gate0 46/48, emoat 22/24

@@ -1,0 +1,42 @@
+[
+  {
+    "index": 1,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 14 Jan 2022 from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/14012022061412_Tips_Industries_Limited.pdf",
+    "file": "01-CARE.pdf",
+    "status": 200,
+    "bytes": 94027
+  },
+  {
+    "index": 2,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 19 May 2021 from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/19052021061505_Tips_Industries_Limited.pdf",
+    "file": "02-CARE.pdf",
+    "status": 200,
+    "bytes": 764973
+  },
+  {
+    "index": 3,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 4 Mar 2020 from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/Tips Industries Limited-03-04-2020.pdf",
+    "file": "03-CARE.pdf",
+    "status": 200,
+    "bytes": 764000
+  },
+  {
+    "index": 4,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 30 Apr 2019 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/Tips_Industries_Limited_April_30_2019_RR.html",
+    "file": "04-CRISIL.html",
+    "status": 200,
+    "bytes": 47241
+  }
+]

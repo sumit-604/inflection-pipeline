@@ -1,0 +1,54 @@
+stage: B02-notes
+company: "KELTECH"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "COLLECTOR WARNING (verbatim, B00): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "B00: peer-sheet P&L, Quarters, Balance Sheet and Cash Flow tabs for PREMEXPLN and APOLLO came out empty; only Data_Sheet CSVs exist."
+  - "B00: the AR, results and rating collector warnings are STALE; repaired by direct HTTP in Step F. AR FY2025-26 held at inputs/annual-report/AR_FY2025-26.pdf."
+  - "B00: concalls/ ABSENT, DECLARED (concalls_available false, NO-CONCALL MODE). presentation/ ABSENT. research/ ABSENT. prospectus/ ABSENT, not a gap."
+  - "B00: shareholding/ PARTIAL, screener capture only; no pledge data and no FII line; the formal BSE pattern for Sep 2026 was not retrieved."
+  - "B00: announcements/ 10 files; the 2026-04-24 exchange clarification query has no attachment on BSE."
+  - "B00: results/ Q1 FY27 pages 2 to 4 are OCR reads; other/ holds AR FY2024-25 and Q3 FY26 results (scanned), never consumed. Prior-year AR was not used, so a 3-year receivable and payable days trend is NOT FOUND in this stage."
+  - "B00: screener figures are Rs Cr; filings are Rs lakh. Verifier A shadow NOT RUN in this run."
+  - "NOTES: TNT versus Surjagarh silo split of CWIP 3,800.82 Rs lakh, TNT sanctioned loan amount, and capital commitment split by project are NOT FOUND IN DOCUMENT (Notes 3, 13(a), 31)."
+  - "NOTES: Chowgule 2021 family settlement, Vijay Chowgule share transfer, Lavgan contract and pricing basis, arm's-length statement, promoter pledge, and export markets, products and margin are NOT FOUND IN DOCUMENT."
+flags:
+  - {type: FLAG-CASH, reason: "Receivable days flat (42.2 vs 42.4) but over-6-month receivables 441.11 Rs lakh = 7.08% of gross 6,233.47 (FY25 4.25% incl disputed); 6m-1y bucket 56.71 to 305.37 (Note 5(c) p.109); PSU balances unconfirmed (Note 14 p.121); CFO 4,850.02 Rs lakh leans on reclassifiable lines, cleaned range 3,609.18 to 4,850.02 (CFS pp.102-103, derived)."}
+  - {type: FLAG-BANK-RETURNS, reason: "Quarterly stock statements to the Canara consortium show inventory 19-30% above books in all four quarters vs a stated 10% tolerance; Mar-26 return 4,203.59 Rs lakh equals the Mar-25 balance sheet figure (Note 13 p.118; Note 9 p.112)."}
+  - {type: FLAG-TNT-FUNDING, reason: "Commitments 3,996.21 Rs lakh (Note 31 p.141), CWIP 3,800.82 (Note 3 p.106), TNT loan drawn 2,045.46 (Note 13(a) p.117), undrawn long-term facilities nil (Note 26 p.136); cash credit about 94% drawn is inference from matching sums (Pass 2 B5)."}
+accounting_quality: 5
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Quarterly returns to Canara consortium show inventory 19-30% above books in all four quarters (Mar-26 books 3,001.98, return 4,203.59, balance sheet 4,929.75, Rs lakh); receivables 20.4% above books at Dec-25; tolerance stated 10%; Note 13(e) says statements match books", note_ref: "Note 13, p.118; Note 9, p.112; CARO ii(b) p.84", rating: "RED", why: "Drawing power rests on figures the books do not support; auditor says gaps not material; ICFR financial-closure exception p.88"}
+  - {rank: 2, finding: "TNT funding visibility: CWIP 3,800.82, commitments 3,996.21, TNT loan drawn 2,045.46, undrawn long-term facilities nil (Rs lakh); TNT assets absent from pledged table; TNT loan wholly in over-5-years bucket", note_ref: "Notes 3, 31, 13(a), 26, 33, pp.106, 141, 117, 136, 142", rating: "YELLOW", why: "Brief cost Rs 190 Cr and debt Rs 135 Cr have no visible funding path in the notes; CWIP Rs 38.01 Cr confirmed"}
+  - {rank: 3, finding: "CFO 4,850.02 vs FY25 -1,757.03 (Rs lakh); cleaned for capital advances 1,091.48, bank balances 961.95 and deposits 812.59 gives 3,609.18 (derived)", note_ref: "CFS pp.102-103; Notes 8, 5(e), 5(f)", rating: "YELLOW", why: "Conversion above 100% on every cut but depends on classification and a 1,261.51 other-liability inflow"}
+  - {rank: 4, finding: "Exceptional income 317.76 (8.2% of PBT) = duty 233.41 + interest 84.35; duty receivable 401.95 incl 84.18 under protest; CESTAT order April 2026; refund application not filed; policy test virtually certain (Rs lakh)", note_ref: "Note 40 p.146; Note 2.11 p.93; Note 5(f) p.110", rating: "YELLOW", why: "One-off lifts FY26 profit; strip for run-rate"}
+  - {rank: 5, finding: "PSU receivables not confirmed; powder factor provision 394.40 (+132%); FY25 other operating revenue held 884.72 reversal and refund (Rs lakh)", note_ref: "Notes 14, 17, pp.121, 125", rating: "YELLOW", why: "Like-for-like FY26 revenue growth 10.7% not 8.7% (derived)"}
+  - {rank: 6, finding: "Receivables over 6 months 441.11 = 7.08% of gross (FY25 4.25%); 6m-1y bucket 56.71 to 305.37; ECL bucket splits conflict between Notes 5(c) and 26 for both years; MOIL 44.33 written off and still carried (Rs lakh)", note_ref: "Notes 5(c), 26, 22, pp.109-110, 135, 128", rating: "YELLOW", why: "Tail deteriorating while days flat at 42"}
+  - {rank: 7, finding: "Chowgule items: 84.51 receivable from major shareholder above 1,095 days, 20% provided, denied in Note 5(c)(ii); Lavgan 100.00 services, balance 116.00 unchanged; vehicle purchase 21.82 untraced (Rs lakh)", note_ref: "Notes 29, 5(c), 26, 3, pp.139-140, 109, 135, 105", rating: "YELLOW", why: "RPT is 0.50% of revenue but nature and pricing not disclosed; no arm's-length statement"}
+  - {rank: 8, finding: "Other expenses ex-repairs +17.5% vs revenue +8.7%; repairs -52.5% to 708.51 in a year of 5,540.62 PPE additions; legal and professional +33.2% (Rs lakh)", note_ref: "Note 22, p.128", rating: "YELLOW", why: "Possible cost shift to CWIP or uneven maintenance; unitemised"}
+  - {rank: 9, finding: "Explosives segment profit 3,051.85 vs 3,129.40 on revenue +11.8% (margin 6.67% vs 7.64%); possible 182.37 other income in segment results; ROCE 19.95% vs 24.59% reason NA (Rs lakh)", note_ref: "Notes 28, 41, pp.137, 147", rating: "YELLOW", why: "Margin compression under headline growth"}
+  - {rank: 10, finding: "Borrowing cost capitalised 177.15 (FY25 17.00) at a stated NIL rate; gross cost +32.9% vs finance cost -3.0% (Rs lakh)", note_ref: "Notes 3, 23, pp.106, 130", rating: "YELLOW", why: "Cost shield ends as TNT and detonator assets enter use"}
+  - {rank: 11, finding: "FX gain 274.29 (7.1% of PBT) in other income; naturally hedged claim vs net USD assets about 1,522.69 (Rs lakh)", note_ref: "Notes 18, 26, pp.125, 133", rating: "YELLOW", why: "Profit sensitivity to USD"}
+  - {rank: 12, finding: "Gratuity P&L 76.87 / 82.46 / 8.51, obligation 891.31 vs 900.65, plan assets three figures; attrition 1% (Rs lakh)", note_ref: "Notes 14, 20, pp.122-124, 127", rating: "YELLOW", why: "Small amount; loose reconciliation"}
+  - {rank: 13, finding: "Land conversion liability 191.72 unpaid about two years, not located in provisions; CARO says no dues in arrears (Rs lakh)", note_ref: "Note 30(ii) p.141; CARO vii(a) p.85", rating: "YELLOW", why: "Statutory dues; interest not ascertainable"}
+  - {rank: 14, finding: "Unitemised: outstanding liabilities 2,695.09 (+75.6%), other borrowing cost 164.57, FY25 other current assets Others 1,378.92 (Rs lakh)", note_ref: "Notes 13(c), 23, 10, pp.119, 130, 113", rating: "YELLOW", why: "Drive the CFO inflow and the cash conversion read"}
+  - {rank: 15, finding: "Rent 93.01 with nil short-term lease expense; ROU 23.21 in Note 35 vs 122.29 in Note 3A; DTL on depreciation down while net block +72% (Rs lakh)", note_ref: "Notes 22, 35, 3A, 6, pp.128, 144, 107, 111", rating: "YELLOW", why: "Thin note review"}
+red_flags:
+  - "Bank stock and debtor statements above books 19-30% against 10% tolerance (Note 13 p.118)"
+  - "ICFR exception on financial closure (auditor report p.88) and internal audit needs to be improved (CARO xiv(a) p.85)"
+  - "Exceptional income recognised ahead of a filed refund application against a virtually certain policy test (Note 40 p.146; Note 2.11 p.93)"
+  - "Capitalised borrowing cost 177.15 Rs lakh at a stated NIL rate (Note 3 p.106)"
+questions_for_mgmt:
+  - "Why do quarterly returns to the consortium show inventory 19-30% above books, and why does the Mar-26 return equal the Mar-25 balance sheet while Mar-26 books differ from the Mar-26 balance sheet?"
+  - "What is the sanctioned cost, debt sanction and funding plan for the TNT plant against commitments of 3,996.21 Rs lakh and nil undrawn long-term facilities, and what part of CWIP 3,800.82 is TNT versus the silo?"
+  - "What services does Chowgule Lavgan Shiprepair provide for 100.00 Rs lakh a year, on what contract and pricing basis, and why does the balance stay at 116.00?"
+  - "What is in outstanding liabilities 2,695.09 Rs lakh and in FY25 other current assets Others 1,378.92?"
+  - "Why did repairs fall 52.5% while PPE additions were 5,540.62 Rs lakh, and does any repair-type spend sit in pre-operative expenses 289.66?"
+receivables_trend: "stable on days, tail deteriorating: year-end receivable days 42.2 vs 42.4 (net 6,154.83 vs 5,679.59 Rs lakh over revenue 53,206.01 vs 48,940.93, derived); not due 4,725.95 (75.8%) vs 4,311.12 (74.9%); over 6 months 441.11 = 7.08% of gross 6,233.47 vs 4.25% incl disputed; 6m-1y bucket 305.37 vs 56.71 (Note 5(c) p.109); ECL 78.64 = 1.26% of gross (Note 26 p.135); no customer above 10% (Note 28 p.138)"
+restatements_found: []
+going_concern_language: "NONE in the notes. Only standard text: Directors' report going-concern basis; auditor responsibility text; CARO clause (xix) no material uncertainty (p.86)."
+analyst_note: "Pass 2 corrections govern: the Chowgule and Co receivable 84.51 Rs lakh sits above 1,095 days at 20% (Note 26 p.135); contingent 30(b) rebuilds to 1,375.43 + 151.50 + 121.02 = 1,647.95. Cleaned CFO range 3,609.18 to 4,850.02 is my reclassification, not a Stage 10 figure. Cash credit about 94% drawn is inference from matching sums, sanction NOT FOUND. Rating column uses RED / YELLOW. No restatement, no covenant, no going concern language. Notes do not state arm's length for related parties. Rs lakh throughout; stage 10 converts once."

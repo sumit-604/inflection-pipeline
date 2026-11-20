@@ -1,0 +1,111 @@
+stage: B03-ardeep
+company: "KELTECH"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "COLLECTOR WARNING (verbatim, B00): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "B00: peer-sheet P&L, Quarters, Balance Sheet and Cash Flow tabs for PREMEXPLN and APOLLO came out empty; only Data_Sheet CSVs exist."
+  - "B00: the AR, results and rating collector warnings are STALE; repaired by direct HTTP in Step F. AR FY2025-26 held at inputs/annual-report/AR_FY2025-26.pdf."
+  - "B00: concalls/ ABSENT, DECLARED (concalls_available false, NO-CONCALL MODE). presentation/ ABSENT (AR p.68 confirms presentations: None). research/ ABSENT. prospectus/ ABSENT, not a gap."
+  - "B00: shareholding/ PARTIAL, screener capture only; no pledge data and no FII line; the formal BSE pattern for Sep 2026 was not retrieved."
+  - "B00: announcements/ 10 files; the 2026-04-24 exchange clarification query has no attachment on BSE."
+  - "B00: results/ Q1 FY27 pages 2 to 4 are OCR reads; other/ holds AR FY2024-25 and Q3 FY26 results (scanned), never consumed. Prior-year AR not used, so multi-year trends beyond the FY25 comparatives in this AR are NOT FOUND."
+  - "B00: screener figures are Rs Cr; filings are Rs lakh. Verifier A shadow NOT RUN in this run."
+  - "AR: TNT sanctioned cost (brief Rs 190 Cr), TNT debt sanction (brief Rs 135 Cr), capacity, licence, offtake, TNT versus Surjagarh silo split of CWIP 3,800.82 Rs lakh: NOT FOUND IN DOCUMENT."
+  - "AR: the 4,09,940-share transfer from Chowgule and Company to Vijay V Chowgule, Lavgan contract and pricing basis, promoter pledge, FII and DII trend, export markets, products and margin, Perlite segment swing cause, ICFR exception detail, FY25 independent director exits: NOT FOUND IN DOCUMENT."
+  - "AR: whether the FY25 Explosives segment result 3,129.40 Rs lakh includes the 884.72 reversals is NOT FOUND (prior-year segment note not consumed)."
+flags:
+  - {type: FLAG-CASH, reason: "Mixed. FY26 CFO 4,850.02 Rs lakh (cleaned 3,647.77) above PAT on every cut, but FY25 CFO -1,757.03; two-year CFO/PAT 0.58x reported (1.12x cleaned); trade working capital absorbed 2,679.87; cash conversion cycle +15.2 days vs -9.3 (derived); receivables over 6 months 441.11 = 7.08% of gross; FCF -3,749.14 (CFS pp.102-103; Notes 5(c), 9, 13(d); derived)."}
+  - {type: FLAG-BANK-RETURNS, reason: "Carried from B02. Inventory in quarterly returns to Canara consortium 19.2-30.3% of the reported return above books in all four quarters vs 10% test; Mar-26 return 4,203.59 Rs lakh equals Mar-25 balance sheet inventory; CARO ii(b) calls it not material (Note 13 p.118; Note 9 p.112; CARO p.84)."}
+  - {type: FLAG-TNT-FUNDING, reason: "Revised from B02. Commitments 3,996.21 and CWIP 3,800.82 Rs lakh have no stated project cost or sanction in the AR; liquid pool 5,715.82 (derived) and Rs 400 Cr borrowing limit sought give a visible funding route (Notes 3, 31, 13(a); pp.106, 141, 117, 8-9, 19)."}
+  - {type: FLAG-CONTROL-TRANSITION, reason: "Memorandum of Family Settlement of 11 Jan 2021 under arbitral implementation; promoter shareholding 'may undergo changes'; specific transfer not in the AR (CG annex pp.77-78). FLAG-PROMOTER-PRELIM not raised: no pledge or selling found, pledge NOT FOUND."}
+phase_verdicts: {p1: "YELLOW", p2: "YELLOW (RED on bank returns)", p3: "YELLOW", p4: "YELLOW", p5: "YELLOW", p6: "YELLOW", p7_best_fit: "Capex-Led Growth (WATCHLIST)"}
+overall_quality: 5.5
+quality_components: {governance: 5, accounting: 5, balance_sheet: 6, earnings: 6}
+kill_switch_notes:
+  - "P1: reviewer would not stop; would ask for ICFR exception detail and bank stock audit reports (p.87, p.84)."
+  - "P2: reviewer would not stop; would pause the working-capital read until bank stock audit reports are seen (Note 13 p.118)."
+  - "P3: reviewer would not stop; would watch FCF and cash conversion cycle through the TNT build (pp.102-103)."
+  - "P4: reviewer would not stop; would not rely on MD&A for TNT and would use notes and later filings (p.55, p.106)."
+  - "P5: reviewer would not stop; would want settlement outcome and post-transfer promoter group before relying on governance (pp.77-78)."
+  - "P6: reviewer would not stop; narrative errs by omission, not overstatement."
+triple_pass_verification:
+  verified: 13
+  discrepancies:
+    - {finding_rank: 1, triple_pass_value: "inventory 19-30% 'above books'; receivables 20.4% above books", ar_value: "same numbers are 19.2-30.3% and 20.4% of the amount reported in the return (the note's own 10% basis); as a share of books 23.7-43.6% and 25.6% (derived)", note_ref: "Note 13, p.118"}
+    - {finding_rank: 7, triple_pass_value: "no arm's-length statement; Lavgan nature NOT FOUND", ar_value: "AOC-2 states arm's length and gives Lavgan nature 'Maintenance of Mechanical / Civil works' 100.00 Rs lakh, one year, approved 12 Feb 2025; CG report p.70 states arm's length for all RPTs. Absent from the notes only.", note_ref: "Annexure A p.35-36; CG report O.1 p.70; Note 29 p.140"}
+missing_risks:
+  - {risk: "Bank drawing power rests on stock statements above books", evidence: "Note 13 p.118; CARO ii(b) p.84; ICFR p.87"}
+  - {risk: "TNT, detonator and silo execution and funding with no stated cost, capacity or licence", evidence: "Note 3 p.106; Note 31 p.141; Note 13(a) p.117; Board's Report p.29"}
+  - {risk: "Ammonium nitrate dependence: materials 66.6% of revenue; anti-dumping history", evidence: "Note 19 p.126; Note 40 p.146; MD&A p.55"}
+  - {risk: "PSU concentration, powder factor deductions 394.40 Rs lakh, unconfirmed balances", evidence: "Note 14 p.121"}
+  - {risk: "FX: net USD assets about 1,522.69 Rs lakh, FX gain 274.29", evidence: "Note 26 p.133; Note 18 p.125"}
+  - {risk: "Leverage step-up (debt +87.7%) and Rs 400 Cr borrowing limit sought", evidence: "Note 27 p.136; Notice item 8 pp.8-9, 19"}
+  - {risk: "Control change under family settlement in arbitration", evidence: "CG annex pp.77-78"}
+  - {risk: "MD and Vice-Chairman took executive roles in a group company April 2026", evidence: "CG report p.58"}
+  - {risk: "Internal audit reach and period-end close", evidence: "CARO xiv(a) p.85; Annexure B p.87"}
+  - {risk: "Perlite segment swing -286.25 to +290.42 Rs lakh unexplained", evidence: "Note 28 p.137"}
+guidance_table:
+  - {claim: "Nitration-based accessories to be commissioned fully in 2027", number: "none", timeframe: "2027", credibility: "Low specificity: year only, no cost or capacity (Board's Report p.29)"}
+  - {claim: "New plant commissioned in March 2026 expected to stabilise", number: "none", timeframe: "FY27", credibility: "Plant not named; CWIP capitalised 4,993.10 Rs lakh consistent (MD&A p.55; Note 3 p.106)"}
+  - {claim: "Focus is majorly into exports", number: "none", timeframe: "FY26 text", credibility: "Low: export share 15.6% both years; Board says +7%, notes +11.0% (MD&A p.55; Note 34 p.143)"}
+  - {claim: "Explosives industry to grow on mining and infrastructure", number: "none", timeframe: "open", credibility: "Unquantified; volumes +8.4% fit (MD&A p.55; Board p.28)"}
+  - {claim: "Perlite filter-aid into pharma to get higher volumes", number: "none", timeframe: "open", credibility: "Not yet shown: volume +0.2% (MD&A p.55; Board p.28)"}
+  - {claim: "Borrowing limit up to Rs 400 Cr", number: "40,000 Rs lakh", timeframe: "any time", credibility: "Enabling limit vs debt 7,168.95; not a plan (Notice item 8 pp.8-9, 19)"}
+monitorables:
+  - {metric: "Inventory in bank return vs books", threshold: "gap above 10% of the return in any quarter", where: "next AR Note 13; stock audit reports", why: "drawing power basis"}
+  - {metric: "CWIP and capital commitments", threshold: "CWIP above 3,800.82 or commitments above 3,996.21 Rs lakh with no stated TNT cost", where: "quarterly results; next AR Notes 3, 31", why: "project delivery and funding"}
+  - {metric: "Finance cost", threshold: "rise as capitalised 177.15 ends and detonator loan 2,711.14 at 9.80% is expensed", where: "quarterly P&L", why: "earnings step-down"}
+  - {metric: "Explosives segment result", threshold: "below 3,051.85 Rs lakh or margin below 6.67%", where: "quarterly segment note", why: "settles FY25 base fork"}
+  - {metric: "Receivables over six months", threshold: "above 441.11 Rs lakh; 6m-1y above 305.37", where: "next AR Note 5(c)", why: "PSU deductions"}
+  - {metric: "Cash conversion cycle", threshold: "above +15.2 days (derived)", where: "next AR", why: "working capital strain"}
+  - {metric: "Free cash flow", threshold: "still negative after the TNT commissioning year", where: "cash flow statement", why: "self-funding test"}
+  - {metric: "Promoter holding and pledge", threshold: "any change from 54.33% or any pledge", where: "BSE shareholding pattern", why: "family settlement outcome"}
+  - {metric: "Export share and growth", threshold: "share below 15.6% or growth below domestic", where: "next AR Note 34", why: "load-bearing fact 4"}
+ar_new_downstream_entities:
+  # First-time status versus the prior AR is NOT FOUND (prior AR not consumed). Listed: entities named in THIS AR.
+  - name: "Chowgule Brothers Pvt Ltd"
+    where_in_ar: "Note 29 p.140; AOC-2 p.35 (warehousing and marketing 75.90 Rs lakh)"
+    entity_type: "RPT counterparty"
+  - name: "Chowgule ABP Coatings Pvt Ltd"
+    where_in_ar: "Note 29 p.140; AOC-2 p.36 (epoxy purchase 66.18 Rs lakh; three independent directors and MD are directors)"
+    entity_type: "RPT counterparty"
+  - name: "Chowgule Lavgan Shiprepair Pvt Ltd"
+    where_in_ar: "Note 29 p.140; AOC-2 p.36 (maintenance of mechanical and civil works 100.00 Rs lakh)"
+    entity_type: "RPT counterparty"
+  - name: "Chowgule Industries Pvt Ltd"
+    where_in_ar: "Note 29 p.140; AOC-2 p.35 (truck purchase and insurance renewal 21.82 Rs lakh)"
+    entity_type: "RPT counterparty"
+  - name: "Chowgule Construction Chemicals Pvt Ltd; Kolhapur Oxygen and Acetylene Pvt Ltd; Dharini Educational Foundation; Santosh Chowgule HUF"
+    where_in_ar: "Note 29(A) p.139 (listed related parties; nil or small FY26 transactions)"
+    entity_type: "RPT counterparty"
+  - name: "Dolphin Investment Ltd"
+    where_in_ar: "Note 11 p.114; MOFS annex p.77 (promoter group, 9.36%; absent from Note 29 list)"
+    entity_type: "promoter group shareholder"
+  - name: "Chowgule and Company Pvt Ltd"
+    where_in_ar: "Note 11 p.114; Note 29 p.140 (40.99%; receivable 84.51 Rs lakh above 1,095 days)"
+    entity_type: "major shareholder and RPT counterparty"
+  - name: "Manganese Ore India Ltd (MOIL)"
+    where_in_ar: "Note 14 p.121 (risk-purchase withholding 63.78 Rs lakh; 44.33 provided under ECL)"
+    entity_type: "customer (PSU)"
+  - name: "Canara Bank (consortium lead)"
+    where_in_ar: "Note 13 pp.116-118 (term loans and working capital; quarterly returns)"
+    entity_type: "lender"
+  - name: "Chowgule Steamships Ltd"
+    where_in_ar: "CG report p.58; Annexure 2 p.21 (listed company; Chairperson is executive chairperson, an independent director sits on it)"
+    entity_type: "promoter group listed company, board cross-seat"
+  - name: "Customers above 10% of revenue"
+    where_in_ar: "Note 28 p.138: NIL"
+    entity_type: "none"
+strengths_top3:
+  - "Like-for-like EBITDA margin 7.68% vs 6.06% after stripping the FY25 884.72 Rs lakh reversals (derived, Note 17 p.125; P&L p.99); volumes +8.4% (Board p.28)"
+  - "Funding on the balance sheet: liquid pool 5,715.82 Rs lakh vs commitments 3,996.21; no covenants; no default (Note 26 p.136; Note 27 p.137; CARO ix p.85)"
+  - "Unmodified opinion; no whistle-blower complaint, SEBI order or fraud (pp.79, 85, 48)"
+red_flags_top3:
+  - "Quarterly bank stock statements 19-30% of the return above books vs 10% test; Mar-26 return equals Mar-25 balance sheet; CARO says not material (Note 13 p.118; p.84)"
+  - "TNT, detonator and silo disclosed only in notes: no cost, capacity, licence, offtake, or CWIP split (Notes 3, 13, 31; MD&A p.55)"
+  - "ICFR exception and weak internal audit; family settlement may change the promoter; executives took group roles April 2026 (pp.85, 87, 77-78, 58)"
+best_fit_strategy: "Capex-Led Growth (WATCHLIST)"
+one_line_verdict: "Underlying earnings are stronger than the headline and funding exists, but the AR gives no cost, capacity or return for the TNT build, bank stock statements do not tie to the books, and promoter control is unsettled."
+analyst_note: "Differences from B02: (1) bank-return percentages are shares of the reported return (the note's 10% basis); as a share of books they are 24-44%. (2) AOC-2 p.36 gives the Lavgan nature and states arm's length; B02 looked only at the notes. (3) FY25 held 884.72 Rs lakh of one-offs; like-for-like FY26 EBITDA is +40.4% (derived) and explosives margin 'compression' may be a base effect: the separating observation is whether FY25 segment result includes the 884.72, held in the prior AR (not consumed). (4) Liquid pool 5,715.82 vs commitments 3,996.21 softens the TNT funding flag. (5) The brief's page cites p37 and p41 are wrong: CWIP is p.106, presentations None is p.68. Rs lakh throughout. Verdict labels are text, not symbols."

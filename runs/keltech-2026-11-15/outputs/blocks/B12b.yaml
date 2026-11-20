@@ -1,0 +1,46 @@
+stage: B12b
+company: "KELTECH"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 30
+caught: 13
+partially_caught: 8
+missed:
+  - {severity: "MAJOR", item: "FY25 Perlite volume stated two ways in consecutive ARs: 24,584 MT (FY25 AR) vs 18,704 MT comparative (FY26 AR), 5,880 MT apart, no restatement note; FY26 volume +0.2% or -23.8% on revenue +4.6%", anchor: "AR FY2024-25 Board's Report p.30; AR FY2025-26 Board's Report p.28; AR FY26 Note 28 p.137"}
+  - {severity: "MAJOR", item: "MD and Vice-Chairman (both executive directors) appointed Executive Directors in April 2026 at an unnamed Chowgule Global group company during the TNT build; their FY26 pay Rs 410.26 lakh = 14.3% of PAT", anchor: "AR FY26 CG p.58 note 2; CG p.63; CRISIL p.2"}
+  - {severity: "MINOR", item: "CESTAT order passed 'In April 2026'; BSE price query reply 25 Apr 2026 said all price-sensitive information disclosed; Reg 30 disclosure 12 May 2026; order date NOT FOUND (PENDING LIVE VERIFICATION; MAJOR if before 24 Apr)", anchor: "Q4 FY26 results p.9 note 3; announcements 2026-04-25 p.1, 2026-05-12 p.1"}
+  - {severity: "MINOR", item: "FY26 MD&A outlook carried forward from FY25 with stale year ('During the Financial Year 2025-26 ... focus is majorly into exports'); Perlite 'considerable growth' text repeated against flat or falling volume", anchor: "AR FY26 MD&A p.55; AR FY25 MD&A p.58"}
+  - {severity: "MINOR", item: "Audit Committee disclosure contradicts itself (chair Tumbe p.60 vs Ghatge p.61; executive and independent labels swapped); two chairs listed in NRC, SRC, CSR tables", anchor: "AR FY26 CG pp.60-62, 64-65"}
+  - {severity: "MINOR", item: "BSE penalties within three years under LODR Reg 17(1A) and 23(9), while compliance table marks both 'Yes'", anchor: "AR FY26 CG p.71 item 2; pp.72-73"}
+  - {severity: "MINOR", item: "AGM 7 Aug 2026: MD replied to speaker-shareholder queries; content not filed (B05 says no Q&A forum)", anchor: "AGM outcome 2026-08-07 p.2"}
+  - {severity: "MINOR", item: "Filing quality: voting-results cover with wrong AGM number, date and report year, corrected after 52 days but the enclosed cover still shows the errors; AR says CRISIL 'reaffirmed' though rating was 'assigned'; Note 28 mislabels export revenue as non-current assets", anchor: "Scrutinizer report 2026-08-07 p.1; corrigendum 2026-09-28 pp.1-2; AR FY26 p.70; CRISIL p.3; AR Note 28 p.138"}
+  - {severity: "MINOR", item: "H1 FY27 actuarial remeasurement loss 197.86 lakh vs 23.78 for all FY26, unexplained", anchor: "Q2 FY27 results p.5"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur: FY25 AR adds one delivered dated commitment (Garamsur accessories project operational in FY26), but the same two ARs restate FY25 Perlite volume by 5,880 MT without a note and the Perlite volume promise missed, so C holds"
+findings:
+  - {id: F1, severity: MAJOR, stage: "B05", finding: "Missed cross-AR contradiction on FY25 Perlite volume (24,584 vs 18,704 MT); row 4 and 4C consistency rely on the FY26 figure", anchor: "AR FY25 p.30; AR FY26 p.28"}
+  - {id: F2, severity: MAJOR, stage: "B05, B06", finding: "Missed: both executive directors took executive roles at an unnamed group company in April 2026 during the TNT build", anchor: "AR FY26 CG p.58 note 2; p.63"}
+  - {id: F3, severity: MAJOR, stage: "B06 (B05 contributing)", finding: "TNT framed as merchant defence energetics against AR 'Nitration Based Accessories', CRISIL 'established clientele reduces demand risks', and Apollo's TNT licence 'for industrial explosive requirements'; B06 Q4, FLAG-SECOND-INDIAN-TNT-LICENCE and cross-peer hypothesis rest on the unproven reading", anchor: "AR FY26 p.29; CRISIL p.2; APOLLO Q4FY26 p.11"}
+  - {id: F4, severity: MAJOR, stage: "B05", finding: "Q3 FY26 called a data gap though the Q4 FY26 filing prints it (Explosives 4.64%); four-quarter margin fall from 9.00% (Q4 FY25) began before the March 2026 plant start; B05 reads a one-quarter Q4 low", anchor: "Q4 FY26 results pp.8, 10; Q2 FY27 p.6"}
+  - {id: F5, severity: MINOR, stage: "B05", finding: "'No company statement on timing since Feb 2026' contradicted by Board's Report (approved 27 May 2026) 'to be commissioned fully in 2027'; pace arithmetic stands", anchor: "AR FY26 p.29; Q4 FY26 outcome p.2"}
+  - {id: F6, severity: MINOR, stage: "B05", finding: "Red flag 6 overstated: AR notes name the TNT project and its Canara Bank loan; only cost and April 2027 are CRISIL-only", anchor: "AR Note 3; Note 13(a) p.117"}
+  - {id: F7, severity: MINOR, stage: "B05", finding: "Promise rows 3 and 5 use carried-forward MD&A text; row 3 tests a sentence against the year it reports (circular); outcome survives on FY25 AR p.58", anchor: "AR FY26 p.55; AR FY25 p.58"}
+  - {id: F8, severity: MINOR, stage: "B06", finding: "2B states Solar's 18-20% price rise as realised; it is the FY27 expected component of guided growth", anchor: "SOLARINDS Q4FY26 p.7"}
+  - {id: F9, severity: MINOR, stage: "B06", finding: "Keltech rise-and-fall clauses marked NOT FOUND; CRISIL p.2 states a price escalation clause 'up to some extent' (quoted in B05 3B)", anchor: "CRISIL p.2"}
+  - {id: F10, severity: MINOR, stage: "B06", finding: "Apollo RPT resolution defeat called 'not confirmed in the call'; management confirmed it", anchor: "APOLLO Q3FY26 p.14"}
+  - {id: F11, severity: MINOR, stage: "B06", finding: "FLAG-SECOND-INDIAN-TNT-LICENCE implication overstated: Apollo licence covers its industrial explosive requirements, so a shared merchant TNT window is not evidenced", anchor: "APOLLO Q4FY26 p.11"}
+  - {id: F12, severity: MINOR, stage: "B05", finding: "Missed CESTAT order timing against the 24-25 Apr 2026 BSE price query; order date NOT FOUND, PENDING LIVE VERIFICATION", anchor: "Q4 FY26 p.9 note 3; announcements 2026-04-25, 2026-05-12"}
+  - {id: F13, severity: MINOR, stage: "B05", finding: "Settlement context omitted: MOFS under an arbitral tribunal of retired judges; AR states impact as 'Change in the Promoter'", anchor: "AR FY26 CG pp.77-78"}
+  - {id: F14, severity: MINOR, stage: "B05", finding: "Missed governance and disclosure items: Audit Committee contradictions, BSE penalties Reg 17(1A)/23(9), AGM Q&A forum exists, 52-day voting corrigendum whose enclosed cover still carries the errors, 'reaffirmed' vs 'assigned'", anchor: "AR FY26 CG pp.60-71; AGM outcome p.2; corrigendum 2026-09-28 pp.1-2"}
+  - {id: F15, severity: MINOR, stage: "B05", finding: "CFO headline includes bank-deposit movements (+961.95 FY26, -318.30 H1 FY27); ex-item H1 ratio 0.59x; INDETERMINATE cap stands", anchor: "Q4 FY26 p.12; Q2 FY27 p.8"}
+  - {id: F16, severity: MINOR, stage: "B05", finding: "CRISIL liquidity decline (Rs 63 Cr to Rs 50 Cr cash and liquid investments, Mar to Sep 2025; 84% limit use) and Rs 400 Cr borrowing power left without a reading", anchor: "CRISIL p.2; AR Notice item 8 p.19"}
+  - {id: F17, severity: MINOR, stage: "B05", finding: "Missed H1 FY27 actuarial loss 197.86 lakh vs 23.78 for FY26, unexplained", anchor: "Q2 FY27 p.5"}
+critical_count: 0
+major_count: 4
+minor_count: 13
+material_found: 9
+material_caught: 7
+acceptance_rate: 78
+coverage_basis: "9 material of 30 listed (22 company, 8 peer); 5 caught outright, 2 partially caught (C3 TNT end use, C4 margin trough) counted as 'already had' per the PARTIALLY CAUGHT definition, 2 missed (C1 Perlite volume, C2 executive bandwidth). Strict rate excluding partials 5/9 = 55.6%, below the 60% REWORK line; the orchestrator should note the sensitivity. Peer read targeted (15 B06 anchors verified in full, term search across all 12), not a full re-read."

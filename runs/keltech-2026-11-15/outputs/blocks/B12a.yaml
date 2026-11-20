@@ -1,0 +1,23 @@
+stage: B12a
+company: "KELTECH"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+numbers_checked: 300
+mandatory_checked: 32
+mandatory_total: 32
+findings:
+  - {severity: "MAJOR", location: "05-concall.md s1C T2 row, s2D row 4, s3C item 3, YAML kill_signal (Q4 FY26 Explosives revenue and growth)", claimed: "12,365.58 lakh; +7.8% vs Q4 FY25 11,471.77 (Q4 FY26 results p.10)", source_truth: "12,355.58 lakh; +7.70% (Q4 FY26 audited results PDF p.10 page image; Q1 FY27 results comparative column 12,355.58; annual 45,766.61 less Q1-Q3 FY26 sum)", note: "MISMATCH from garbled text twin; margin 4.66% unchanged at 2 dp", source_fidelity: true}
+  - {severity: "MAJOR", location: "05-concall.md s2A row 2 and YAML promise_delivery and trigger 2; 04-bizmodel.md s3B and YAML must_track; 06-peers.md Q3 net read; 07-emoat.md s1C (H1 FY27 Explosives segment result and margin; 04 also H1 revenue)", claimed: "result 1,963.31 lakh; margin 6.47% (05, 06, 07) or 6.48% (04); 04 revenue 30,320.32", source_truth: "result 1,953.31 lakh; revenue 30,323.32 lakh; margin 6.44% (Q2 FY27 results PDF p.6 page image; 936.60 + 1,016.71; 13,900.64 + 16,422.68)", note: "MISMATCH from garbled twin; B05 trigger 2 confirm signal of 6.5% was set against the wrong base", source_fidelity: true}
+  - {severity: "MAJOR", location: "05-concall.md s1C margin table, s2A row 2, s2D, s4A trigger 3, YAML trigger 3; 06-peers.md s2B (Q2 FY27 EBITDA ex other income)", claimed: "other income 200.80; EBITDA 1,318.51, 8.21%; H1 2,698.11, 7.85%", source_truth: "other income 209.80; EBITDA 1,309.51, 8.16%; H1 2,689.11, 7.82% (Q2 FY27 results PDF p.5 page image; total income 16,263.01 = 16,053.21 + 209.80)", note: "MISMATCH from garbled twin; 8% confirm signal still holds", source_fidelity: true}
+  - {severity: "MAJOR", location: "01-gate0.md method note (exceptional items) and block D line D2 (interest coverage)", claimed: "'AR p.4' for finance costs 417.88 lakh and for exceptional 317.76 lakh", source_truth: "AR p.4 is the board and KMP list; 417.88 and 317.76 sit at AR p.99 (P&L), p.27 (Board's report) and p.130 (Note 23)", note: "ANCHOR NOT FOUND on a mandatory Gate 0 input; value is correct (scr 4.18 Cr ties)", source_fidelity: true}
+  - {severity: "MAJOR", location: "02-notes.md top findings rank 1, risks table, red_flags, questions, YAML FLAG-BANK-RETURNS (bank return gaps)", claimed: "inventory 19-30% above books; receivables 20.4% above books", source_truth: "AR p.118 Note 13: 19.2%-30.3% (receivables 20.4%) are shares of the amount reported in the return; as a share of books 23.7%-43.6% (receivables 25.6%)", note: "UNANCHORED basis label on the only RED finding; 03-ardeep.md already corrects it, 02 does not", source_fidelity: true}
+  - {severity: "MINOR", location: "03-ardeep.md Phase 2 Top-15 row 14", claimed: "Note 13(c) outstanding liabilities 2,695.09 at p.120", source_truth: "AR p.119", note: "ANCHOR NOT FOUND (one page off); number correct", source_fidelity: true}
+  - {severity: "MINOR", location: "06-peers.md Q6, Q7, Q9 and coverage map (four peer page anchors)", claimed: "SOLARINDS Q2FY26 Rs 960 Cr at p.3; SOLARINDS Q2FY27 Rs 17,568 Cr at p.9; APOLLO Q4FY26 IDL ~Rs 380 Cr at p.10; PREMEXPLN Q1FY27 6% regular explosives within pp.4, 10-11", source_truth: "[page 4]; [page 10]; [page 9]; [page 9]", note: "ANCHOR NOT FOUND (adjacent page); all four numbers exist and are quoted correctly", source_fidelity: true}
+critical_count: 0
+major_count: 5
+minor_count: 2
+false_positives_struck: 5
+material_universe: 560
+acceptance_rate: 95
+coverage_note: "Mandatory tier = Gate 0 scored inputs (A1-A4, B1-B4, C1-C4, D1-D4, E1-E4, M1-M12), 32 of 32 checked; no verdict-card or Section 1B pillar input exists in stage 1-9 reports (stages 10, 11, 13 not run). B4 and E3 are stage-reported NOT FOUND and were confirmed absent from the sources; D2 anchor defect is F4. Sample tier: about 560 material numbers counted (feed a score, flag, trigger, load-bearing fact or verdict evidence), about 300 checked at claim level. Not checked: web-sourced figures in stages 8 and 9 (Ken Research, Univest, ICRA, media, aggregators, RBI rate) and the ICRA CCPL rationale, none of which is a source PDF in my inputs; Q1 FY27 OCR pages only through figures repeated in Q2 FY27; about 25 of about 150 peer-transcript quotes located; stage 3 phases 5-6 sampled. Q2 FY27 and Q4 FY26 text twins are garbled in places; F1-F3 digits were read from the PDF page images and every other Q2 and Q4 figure used by the stages that I checked tied."

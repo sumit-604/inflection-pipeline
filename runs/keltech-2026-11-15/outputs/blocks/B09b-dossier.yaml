@@ -1,0 +1,79 @@
+stage: B09b-dossier
+company: "KELTECH"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "BSE shareholding pattern, quarter ended 30 Sep 2026 (filed; pledge and FII lines)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "PREMEXPLN and APOLLO screener P&L, Quarters, Balance Sheet, Cash Flow tabs"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Q3 FY26 results in readable form (held scanned in other/)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "2026-04-24 BSE clarification query attachment"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "ICRA Feb 2026 non-cooperation rationale and Jul 2026 withdrawal notice"
+    expected_source: "rating agency site"
+    kind: "findable-missing"
+  - document: "AR FY2023-24"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "PREMEXPLN Q2 FY27 and SOLARINDS Q1 FY27 peer transcripts"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Keltech concall transcripts"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Keltech investor presentations"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Explosives (86.0% of revenue)"
+    archetype: "Commodity converter"
+  - line: "Perlite (10.5% of revenue)"
+    archetype: "Commodity converter"
+transition:
+  - line: "Explosives, via TNT / nitration build"
+    from_tier: "R2"
+    to_tier: "R3"
+    engine: "Garamsur TNT and nitration plant (about Rs 190 Cr, April 2027) converting CWIP to PPE with a named customer; Explosives volume operating leverage against rising fixed charges"
+    proof_gate: "Both legs: (1) Q4 FY27 or Q1 FY28 filing shows CWIP moved to PPE and a filed licence, offtake or first booked revenue outside the two segments names a customer; interim CWIP plus advances not below about Rs 150 Cr at 31 Dec 2026; (2) Explosives filing-basis segment margin at or above 6.5% for two consecutive quarters (H1 FY27 base 6.44%)"
+    recognition_gap: "Open question for Stage 11: does the current market pricing already reflect the R3 TO state; resolved via the PE gap"
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "CWIP plus advances below about Rs 150 Cr at 31 Dec 2026, date restated to FY28, or cost above Rs 190 Cr or debt above Rs 135 Cr; no customer, licence or booked revenue by first commissioning quarter; own-use accessories reading confirmed; two peers commission TNT/RDX/HMX capacity"
+  - line: "Perlite (pharma filter aid, cryogenic insulation)"
+    from_tier: "R1"
+    to_tier: "R2"
+    engine: "Filter-aid diversification into pharma and cryogenic insulation (MD&A direction only, no quantified evidence)"
+    proof_gate: "Perlite segment result sustained above 91.52 Rs lakh per half with volume growth"
+    recognition_gap: "Open question for Stage 11: does the current market pricing already reflect the R2 TO state; resolved via the PE gap"
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "Perlite segment result back to negative or volume flat on a stable base"
+dominant_variables:
+  - "TNT spend and commissioning pace (CWIP 3,800.82 to 6,280.63 Rs lakh in H1 FY27; at least Rs 114.5 Cr remaining)"
+  - "TNT end use and customer (no filed customer, licence, capacity or offtake)"
+  - "Explosives filing-basis segment margin and ammonium nitrate to PSU price spread (6.44% H1 FY27)"
+  - "Cash conversion and bank funding (CFO over PAT 0.39x H1 FY27; bank returns above books against 10% test)"
+business_falsifier: "Suspension or lapse of an Explosives Act licence at one of the 12 plants, or a lender cutting drawing power to books after the stock-statement gap"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 6
+  verifiability_ratio: "4 of 6 externally observable"
+  single_point_failure: "TNT end use and customer: no filed customer, licence or capacity; the own-use accessories reading alone fails the tier claim"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 13
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "98d54e13ca6ec240b399e844fad635d5e591dff8"

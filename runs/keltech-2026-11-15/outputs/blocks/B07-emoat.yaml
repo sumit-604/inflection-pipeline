@@ -1,0 +1,42 @@
+stage: B07-emoat
+company: "KELTECH"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "NO-CONCALL MODE: no transcripts; no investor presentation (AR p.68). F2 run on capex-completion evidence."
+  - "shareholding: screener capture only, no pledge, no FII line (B00)."
+  - "peer sheets: PREMEXPLN and APOLLO P&L, Quarters, Balance Sheet, Cash Flow tabs empty; no listed-player census for H1."
+  - "NOT FOUND: TNT capacity, licence, offtake, buyer, TNT vs Surjagarh silo CWIP split, detonator project cost and status, nitration technology licensor and exclusivity, export markets, products and margin, plant-wise capacity and utilisation, prior-year project budgets and dates."
+  - "Q1 FY27 pp.2-4 OCR; Q2 FY27 cash-flow line items misaligned in text twin (subtotals used)."
+flags:
+  - {type: FLAG-TNT-UNDOCUMENTED, reason: "TNT plant Rs 190 Cr (CRISIL p.2, Rs Cr) and Rs 135 Cr loan (CRISIL p.3) confirmed; capacity, licence, offtake, buyer NOT FOUND in AR, CRISIL, Q2 or any Reg 30 filing. CWIP 3,800.82 to 6,280.63 Rs lakh (AR p.106; Q2 p.7)."}
+  - {type: FLAG-CAPEX-GROWTH-UNRELIABLE, reason: "2C mechanical range 122% to 246% of FY26 revenue is not credible for a nitration plant with no stated product or price; not used as a growth input."}
+  - {type: FLAG-EXPORT-CONFLICT, reason: "Exports +11.04% (AR pp.138, 143, Rs lakh) vs +7% in Board's Report p.28; exports grew in line with revenue (+10.7%), not faster."}
+em_score: 4.6
+em_classification: "NONE"
+active_categories: []
+evidence_mix: {documented: 8, claim: 5, inference: 6}
+completionist_recount: "📄 recount performed: 8 documented items across 6 categories (A1, B1, C2, E2, F2, H2); none documents the moat leg itself. 7 scored categories, 0 Strong or Moderate."
+catalysts_12m:
+  - {catalyst: "Q3 FY27 results: CWIP plus advances against ~Rs 114 Cr still to spend", window: "Feb 2027", evidence_type: "documented", anchor: "Q2 FY27 pp.7-8 (Rs lakh); B05 kill line"}
+  - {catalyst: "TNT plant start of operations", window: "April 2027", evidence_type: "claim", anchor: "CRISIL 2026-02-13 p.2; AR p.29 ('2027')"}
+  - {catalyst: "AR FY2026-27 Notes 3, 28, 31 and Form B: TNT cost, product, nitration technology absorbed", window: "May to Jul 2027", evidence_type: "documented", anchor: "AR p.29, p.106, p.141 (current-year format)"}
+  - {catalyst: "Licence or offtake naming a buyer, or first revenue outside Explosives and Perlite", window: "NOT FOUND, watched over 6 to 18 months", evidence_type: "inference", anchor: "none filed yet"}
+capex_embedded_growth_pct: 122     # low end of 122-246 mechanical range; unreliable, see flag
+optionality_register:
+  - {optionality: "TNT or energetics as a licensed, scarce capability (reading A)", converting_evidence: "Licence naming product and capacity, signed offtake with named buyer, or first booked revenue in a new segment", first_appears: "Reg 30 filing; Q4 FY27 segment note; AR FY2026-27 Notes 3, 28, 31", window: "6 to 18 months"}
+  - {optionality: "TNT as captive input for own accessories (reading B)", converting_evidence: "Company statement tying TNT to cast boosters and a falling bought-in input line", first_appears: "AR FY2026-27 MD&A and Note 17", window: "12 to 24 months"}
+  - {optionality: "Export engine", converting_evidence: "Export markets, products, margin disclosed; share above 15.6%", first_appears: "AR FY2026-27 Note 34 and Board's Report", window: "12 to 24 months"}
+  - {optionality: "Nitration technology as a barrier", converting_evidence: "Licensor named with exclusivity and absorption declared complete", first_appears: "AR FY2026-27 Form B", window: "12 months"}
+  - {optionality: "Perlite pharma and cryogenic", converting_evidence: "Perlite segment result sustained above 91.52 lakh per half with volume growth", first_appears: "Quarterly segment note; AR Board's Report", window: "6 to 12 months"}
+  - {optionality: "Detonator project and Surjagarh silo", converting_evidence: "Cost, capacity, commissioning date; CWIP drop", first_appears: "Quarterly balance sheet; AR Notes 3, 31", window: "6 to 12 months"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (63/160) with emerging moat NONE (4.6); TNT build is documented as spend, not as a scarce capability, so no transition setup is evidenced."
+top_moat_risks:
+  - "TNT date slips past April 2027 or cost exceeds Rs 190 Cr / debt Rs 135 Cr (CRISIL pp.2-3)"
+  - "No filed licence, capacity or buyer for TNT; moat stays inference"
+  - "Fixed charges (depreciation +28.7%, finance cost +76.3% H1 FY27, OCR) outrun EBITDA"
+  - "Cash conversion weak (H1 FY27 CFO/PAT 0.39) with bank stock statements 19-30% above books"
+  - "Exports grow only in line with revenue; markets unknown"
+analyst_note: "Score 4.6 comes from six Weak rows plus R1; none has a documented moat leg. The AR's own wording adds one fact the earlier stages lacked: Form B p.29 lists 'Technology imported: Nitration Based Accessories', to be commissioned fully in 2027, with no licensor or exclusivity. TNT is a nitration product and sits at Garamsur, so the TNT Project and the nitration accessories are probably one build. That fits reading B (own accessories) and reading A equally, so it does not separate them. Separator unchanged: a licence or offtake naming a buyer, or first revenue outside the two segments. If reading A were documented in full (A1 at 4, R1 at 3), the score would be 10.4, still below 12. 2C is shown but not used. Rs lakh in AR and filings; Rs Cr in CRISIL and screener."

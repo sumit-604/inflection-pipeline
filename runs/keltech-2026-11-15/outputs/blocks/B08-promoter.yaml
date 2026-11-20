@@ -1,0 +1,67 @@
+stage: B08-promoter
+company: "KELTECH"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "COLLECTOR WARNING (verbatim, B00): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "shareholding/: PARTIAL, COLLECTOR GAP. The formal BSE shareholding pattern for Sep 2026 was not retrieved. A screener.in table capture is held: promoter, DII, public percentages only. NO pledge data and NO FII line. Pledge status from filings is NOT FOUND."
+  - "Promoter pledge latest filed: NOT FOUND; nil on aggregators and a 2024 BSE SAST declaration found only in a search snippet."
+  - "Which family group owns Dolphin Investment Ltd (9.36%): NOT FOUND."
+  - "Reg 10(1)(a)(ii) exemption outcome and any SEBI or exchange response to the 27 Oct 2026 LOI: NOT FOUND."
+  - "Merits and subject of the family arbitration: NOT FOUND (only procedural court rulings located)."
+  - "ICRA Feb 2026 non-cooperation report on Keltech: fetch failed (404, 502); not read."
+  - "concalls/ and presentation/ ABSENT, DECLARED (B00): no management commentary beyond the AR and Reg 30 filings."
+flags:
+  - {type: FLAG-CONTROL-TRANSITION, verdict: "CAUTION", top_findings: ["4,09,940 shares (40.99%) pending transfer from CCPL (Group A) to Vijay V Chowgule (Group B) under the 2021 family settlement; his direct stake rises 3.97% to 44.97% (derived); promoter total stays 54.33%; open-offer exemption intended under Reg 10(1)(a)(ii), outcome NOT FOUND", "ED FEMA enquiry on Vijay Chowgule through Chowgule Steamships, summonses Jul 2024, Feb 2026, Jun 2026, no charge (media from BSE filings)", "Four of five independent directors tied to Chowgule group boards; MD and Vice-Chairman took group executive roles Apr 2026"]}
+verdict: CAUTION
+scorecard: {clean: 3, caution: 7, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "ED summonses under FEMA to Vijay Chowgule (Whole Time Director, Chowgule Steamships Ltd), 18 Jul 2024, 2 Feb 2026, 5 Jun 2026, after an ED search on 3 Jul 2024; enquiry concerns 'Jaywant Chowgule and others'; company says no charges or orders and no material impact", evidence_tier: "MEDIA REPORTED", source: "https://www.whalesbook.com/corporate-news/English/sebiexchange/Chowgule-Steamships-Director-receives-ED-summons-company-says-no-material-impact/6a241e1876afea9b85869a3a ; https://www.investywise.com/?p=119593 (both summarise BSE filings, not opened)", date: "2026-06-06"}
+  - {finding: "Three BSE fines on Keltech totalling Rs 2,11,220: Rs 59,000 (Reg 24A), Rs 17,700 (Reg 23(9)), Rs 1,34,520 (Reg 17(1A), director over 75, waiver rejected)", evidence_tier: "VERIFIED", source: "AR FY2025-26 pp.44-46, 71 (Rs)", date: "2026-05-27"}
+  - {finding: "Family settlement under arbitration since May 2021; Keltech promoter shares move under it; procedural Supreme Court ruling 29 Jan 2026; merits NOT FOUND", evidence_tier: "VERIFIED (AR pp.77-78) and MEDIA REPORTED (court timeline)", source: "AR pp.77-78; https://courtbook.in/posts/sc-clarifies-who-can-extend-arbitration-timelines-sets-aside-bombay-hc-orders-in-chowgule-family-dispute", date: "2026-01-29"}
+  - {finding: "Reg 30 disclosure of an unsecured inter-corporate loan agreement up to Rs 15 Cr (Rs 1,500 lakh, 9.8% of net worth, derived) between Keltech and promoter-group entity Dolphin Investment Ltd, outstanding nil at disclosure; not mentioned in AR, CARO iii says no loans, Note 29 omits Dolphin; direction contested in media", evidence_tier: "MEDIA REPORTED", source: "https://groww.in/blog/keltech-energies-secures-15-crore-unsecured-loan-from-dolphin-investment ; https://univest.in/blogs/keltech-energies-invests-15-crore-in-dolphin", date: "2025-04-16"}
+  - {finding: "Chowgule Lavgan Shiprepair (Group B): Rs 100.00 lakh both years, 'Maintenance of Mechanical / Civil works', balance 116.00 lakh unchanged, direction of balance not stated; scope, contract and pricing NOT FOUND; AOC-2 says arm's length", evidence_tier: "VERIFIED", source: "AR AOC-2 p.36; Note 29 p.140 (Rs lakh)", date: "2026-05-27"}
+  - {finding: "Rs 84.51 lakh receivable from major shareholder CCPL, above 1,095 days, 20% provided, while Note 5(c)(ii) says no receivable from director-linked firms; CCPL exits the register on transfer", evidence_tier: "VERIFIED", source: "AR Note 29 p.140; Note 26 p.135; Note 5(c)(ii) p.109 (Rs lakh)", date: "2026-05-27"}
+  - {finding: "ICRA cut Keltech to BB+ Issuer Not Cooperating on 23 Feb 2026 (from BBB+), withdrew at company request Jul 2026; CRISIL BBB+ dated 13 Feb 2026 in corpus; ICRA text not read", evidence_tier: "MEDIA REPORTED", source: "ICRA site via search result (https://www.icra.in/Rating/GetRationalReportFilePdf?id=141111, fetch failed)", date: "2026-02-23"}
+  - {finding: "Four of five independent directors tied to Chowgule group boards (Tumbe, Ghatge, Kothari on supplier Chowgule ABP Coatings; Jadhav on Chowgule Steamships); MD on ABP Coatings and Chowgule Industries; MD and Vice-Chairman took group executive roles Apr 2026; two FY25 independent exits with no stated reason", evidence_tier: "VERIFIED", source: "AR AOC-2 pp.35-36; CG report p.58; Note 29 p.140", date: "2026-05-27"}
+  - {finding: "Auditor ICFR opinion carries an exception on period-end financial closure; CARO xiv(a) says internal audit needs improvement; CARO ii(b) calls 19-30% stock-statement gaps not material", evidence_tier: "VERIFIED", source: "AR pp.84-88 (Rs lakh)", date: "2026-05-27"}
+  - {finding: "Chairman age 79, no named successor; control consolidates in one individual (44.97% direct, derived) after transfer", evidence_tier: "VERIFIED (age, holding) with derived sum", source: "AR p.58, p.114; LOI p.8", date: "2026-10-28"}
+transition_evidence:
+  - {item: "Control clarity: LOI to move CCPL's 40.99% to Vijay V Chowgule, ending the family-settlement overhang; CCPL told ICRA the division is final and closes within FY2027", anchor: "LOI 2026-10-28 pp.6-8; Q2 FY27 board outcome p.2; ICRA CCPL 23 Jun 2026 p.2", strength: "moderate, not complete until registered"}
+  - {item: "Professional non-family MD: Wataney CEO from Jul 2020, MD from May 2023; Santosh moved to Vice-Chairperson", anchor: "AR p.18; MarketScreener (media)", strength: "moderate, partly offset by group roles from Apr 2026"}
+  - {item: "DII holding 0.16% (Jun 2026) to 1.26% (Sep 2026); holder not named", anchor: "screener shareholding CSV (media tier)", strength: "weak"}
+pledge_pct_latest: 0
+pledge_trend: "stable at nil on aggregators (moneyworks4me, MarketsMojo) and a 2024 SAST declaration seen only in a search snippet; promoter total flat at 54.33% for 12 quarters Dec 2023 to Sep 2026 (screener CSV); latest filed BSE pattern NOT FOUND"
+searches_performed:
+  - "Chowgule family settlement arbitration Group A Group B Padma Chowgule"
+  - "Keltech Energies promoter Chowgule SEBI order"
+  - "Chowgule Steamships inter-se transfer family settlement open offer exemption"
+  - "Chowgule Lavgan Shiprepair Pvt Ltd"
+  - "Keltech Energies shareholding pattern pledge promoter encumbered BSE 506528"
+  - "Sheela Chowgule Vijay Chowgule family dispute Goa arbitration"
+  - "Mahesh Wataney Keltech Energies managing director background"
+  - "Dolphin Investment Limited Chowgule promoter Keltech 9.36%"
+  - "Chowgule Steamships SEBI penalty order adjudication fine"
+  - "Keltech Energies Glassdoor AmbitionBox"
+  - "Keltech Energies Mahendra Wadhwani stake DII Sep 2026"
+  - "Keltech Energies Vijay Chowgule SAST annual disclosure encumbrance 2026"
+  - "Keltech Dolphin inter-corporate loan Rs 15 crore April 2025"
+  - "Keltech Santosh Chowgule change in designation Wataney 2023"
+  - "Chowgule Global group news 2026 settlement implementation"
+  - "Keltech ICRA issuer not cooperating Feb 2026"
+  - "Keltech DII Sep 2026 holder"
+  - "Chowgule Steamships Vijay Chowgule 2026 governance"
+  - "Fetches: lawtext, courtbook, Business Goa, Argus, Investywise x2, Whalesbook, Univest, Groww, ICRA CCPL 23 Jun 2026 (read)"
+searches_skipped:
+  - "SEBI enforcement orders database by name (not run)"
+  - "MCA / RoC records for Dolphin, Chowgule Lavgan and directors (not reachable)"
+  - "NCLT and court records for a Keltech-specific case (not run)"
+  - "BSE filed shareholding pattern Sep 2026 and BSE encumbrance filings (blocked, known corpus gap)"
+  - "BSE Reg 30 filings on ED summons, Dolphin loan, Dec 2025 transfers (read via media only)"
+  - "ICRA Keltech NCR rationale (fetch 404 then 502, not read)"
+  - "Proxy advisers IiAS, SES, InGovern (not run)"
+  - "Dolphin Investment Ltd business and group side (nothing found)"
+verdict_basis: "Inter-se transfer of 40.99% to Vijay V Chowgule leaves the promoter total at 54.33% with no SEBI order, no pledge found and no dilution, but an open ED FEMA enquiry on the incoming controller, a group-tied independent board and internal-control exceptions keep it at CAUTION; STRUCTURE concern, three of four Rule G ledger heads evidenced."
+analyst_note: "The transfer moves Keltech from Group A's flagship (CCPL) to Group B's lead. Every FY26 related party is Group B, so the supplier book does not change at completion. Three items the AR does not carry sit in web sources: the ED FEMA summonses (Chowgule Steamships), the Rs 15 Cr Dolphin loan agreement of Apr 2025 (direction contested in media; BSE filing not retrieved), and ICRA's Feb 2026 non-cooperation then Jul 2026 withdrawal. Each could move the verdict if confirmed adverse. One observation settles most: the post-completion SAST disclosures plus the Dec 2026 filed shareholding pattern, which also gives the first filed pledge figure. Vijay is 79 with no named successor."

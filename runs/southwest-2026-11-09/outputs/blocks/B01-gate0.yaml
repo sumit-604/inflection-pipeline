@@ -1,0 +1,46 @@
+stage: B01-gate0
+company: "SOUTHWEST"
+run_date: "2026-11-09"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, ASIANENE, DEEPINDS and JINDRILL equivalents. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+  - "HIGH (freshness): inputs/concalls/ has no Q2 FY27 transcript. Call scheduled 11 Nov 2026 16:00 IST, after this run."
+  - "shareholding/ is empty: COLLECTOR gap, not evidence. FII+DII UA qualifier and pledge trend stay open."
+  - "Screener export: Data_Sheet populated for main and peers; Profit & Loss, Quarters, Balance Sheet and Cash Flow CSVs ABSENT. Stages use Data_Sheet and filings."
+  - "results/ and rating/ cured by /step1: three BSE results filings and the CRISIL rationale of 10 Jul 2026 (text capture, no PDF)."
+  - "Q3 FY26 concall transcript (Feb 2026) not in corpus. Q3 FY26 results and press release are in announcements/."
+  - "annual-report/ holds FY26 and FY25 only. FY26 governs; FY25 prior-year comparison only."
+  - "announcements/ cover Nov 2025 to Nov 2026; board-meeting intimations and byte-identical copies dropped by /step1."
+  - "announcements/20261107-eaf4e423-...txt: cover letter readable; newspaper-advert pages garbled. Not material."
+  - "announcements/20260929-ae2f036b-...txt: AGM voting results; 15 of 32 pages carry text."
+  - "research/ is empty: no broker notes supplied."
+  - "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT. Standing default: proceed with the gaps. Empty folders: prospectus (not expected), shareholding, research."
+flags: []
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 11, B: 10, C: 18, D: 15, E: 8}
+core_score: 62
+moat_score: 10
+grand_total: 72
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "GOOD"
+deal_breakers: []
+history_downgrade: false
+data_notes:
+  - "ROCE, FCF, WC days computed on FY24-FY26 only: data sheet lacks current liabilities, payables, capex; FY17-FY23 NOT FOUND. Sources: AR FY26 p.166-168 and AR FY25 consolidated statements (INR Lakhs / 100)."
+  - "ROCE computed (EBIT = PBT + Interest; CE = total assets - current liabilities): FY24 12.44, FY25 15.84, FY26 23.11."
+  - "WC days on revenue basis (COGS not explicit): FY24 258.1, FY25 210.4, FY26 216.7."
+  - "E1 scored on 31 Mar 2026 promoter holding 68.85% (AR FY26 p.133); latest-quarter pattern NOT FOUND; Jun-Sep 2026 promoter disposals not netted."
+  - "E2 window incomplete (FY24 change NOT FOUND); FY25 -4.34pp partly dilution. E3 pledge NOT FOUND scored 0."
+  - "E4 note 42 column order garbled; 13.8% primary, 12.1% alternate, same band."
+  - "PEER DATA NEEDED: M2, M5, M9. NOT FOUND: M6 R&D spend, M7 listed-player count."
+  - "M11 passes mechanically (rev CAGR 25.1%, S&A % stable); no network effect evidenced."
+  - "Load-bearing: Q2 FY27 revenue -7.55% YoY, H1 +16.3% (results p.8); Q2 margin 14.42% consol / 13.92% standalone, memory figure 14.38% not reproduced; FY26 24.00% reproduced (AR p.167). Guidance 20% NOT FOUND in stage inputs."
+  - "Coal block: GR approved, mining plan being finalised (results Q2 FY27 p.12); coal segment assets 2,298.52 lakh (p.11); reserves, capex, funding, related party NOT FOUND here."
+block_b_trend: "deteriorating: CFO/PAT 1.65 (FY25) to 0.38 (FY26); FY26 FCF -35.09 Cr after 47.54 Cr capex"
+analyst_note: "Core 62 with MODERATE moat gives GOOD, but the score leans on FY26 (ROCE 23.1% vs 12.4% FY24; PAT 33.03 vs 8.27). Earnings are not yet cash: FY26 CFO/PAT 0.38, FCF -35.09 Cr, receivable days 175, WC days 217. Block E loses 10 points to NOT FOUND pledge and an incomplete promoter window, not to evidence of a problem. Q2 FY27 revenue fell 7.55% YoY and margin was 14.42% vs 24.00% FY26, so the FY26 base is not the run rate."

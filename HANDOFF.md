@@ -70,7 +70,11 @@ Run PRs (Phase 1 to Halt 1, waiting on operator Halt 1 decisions):
 - The auto-mode permission classifier refuses edits under .claude/ as
   self-modification. Switch the session to Accept edits mode before a
   framework change there.
-- .claude/shadow.yaml is armed. The next /run-pipeline flips it to spent.
+- .claude/shadow.yaml is spent by runs/southwest-2026-11-09 (2026-11-09).
+  Its comparison is at runs/southwest-2026-11-09/shadow/verifier-a-comparison.md.
+- Local branch framework/shallow-agents (b84274b4, unpushed) holds the /shallow
+  framework extract. dry_check failed checks 1, 2 and 4 on it; see
+  LESSONS_ARCHIVE.md 2026-11-09 SOUTHWEST.
 - RE-COLLECT pending: KRONOX FY2024-25 AR; KOPRAN FY2024-25 and FY2025-26
   ARs; AKUMS peer PPLPHARMA Q2 FY26 transcript.
 - fetch_bse_announcements untested on the live BSE API (PR #167).

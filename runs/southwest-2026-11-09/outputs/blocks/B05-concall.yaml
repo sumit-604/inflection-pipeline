@@ -1,0 +1,107 @@
+stage: B05-concall
+company: "SOUTHWEST"
+run_date: "2026-11-09"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "shareholding/ is empty (B00): FII+DII UA qualifier and promoter pledge trend stay open."
+  - "screener export sheets empty (P&L, Quarters, Balance Sheet, Cash Flow); stages use Data_Sheet and filings (B00)."
+  - "HIGH freshness gap: no Q2 FY27 transcript (call 11 Nov 2026, after run). Q1 FY27 promises tested on filings and the 8 Nov 2026 press release only."
+  - "Q3 FY26 concall transcript not held (B00); Q3 FY26 delivery tested on the 9 Feb 2026 board outcome only."
+  - "annual-report/ holds FY25 and FY26 only; announcements cover Nov 2025 to Nov 2026 only; research/ empty (B00)."
+  - "Reg 30 award values and Reg 29(2) promoter disposal quantities NOT FOUND (B00 read page 1 only); stage 8 owns promoter detail."
+flags:
+  - {type: FLAG-GUIDANCE-VS-DELIVERY, reason: "Q2 FY27 cons revenue 5,773.04 L, -7.5% YoY, -6.4% QoQ; EBITDA margin 14.4% (derived) vs 24.2% Q1 FY27 after Q4 FY26 call said continuity of growth across all quarters (Results_Q2FY27 p.8; Q4 FY26 p.15)"}
+  - {type: FLAG-MARGIN-EXPLANATION, reason: "Direct cost 59.6% of revenue vs 59.5% a year ago; employee cost 22.8% vs 13.7%, +53.5% on falling revenue; PR blames monsoon, maintenance and diesel (Results_Q2FY27 p.8, derived; PR 8 Nov)"}
+  - {type: FLAG-CONCENTRATION, reason: "HZL Rs 307 Cr + Reliance extension Rs 166 Cr = 62% of Rs 761 Cr book (derived); management claims 60% of revenue from two contracts then refused contribution (Q1 FY27 p.3, p.10)"}
+  - {type: FLAG-DISCLOSURE-RETREAT, reason: "Reliance Rs 24-25 Cr/qtr and 35% disclosed in Q2/Q4 FY26, refused in Q1 FY27; bid win rate and margin never given (Q2 FY26 p.12, p.21; Q4 FY26 p.13; Q1 FY27 p.10)"}
+  - {type: FLAG-COAL-TIMELINE-SLIP, reason: "Coal EBITDA run rate 2027 to 2028 (Q2 FY26 p.20), production FY28-29 (Q1 FY27 p.8, p.19); 24.25% govt revenue share first stated Q1 FY27 (p.8); no capex split, peak tonnage NOT FOUND"}
+  - {type: FLAG-RIG-DELIVERY-SLIP, reason: "5 rigs due Dec-Jan (Q2 FY26 p.24), 4 rigs 3-6 months (Q4 FY26 p.8), PR 8 Nov says new rigs Q3 FY27; fleet stated 40, 40, 43, 47"}
+  - {type: FLAG-CALL-VS-FILING, reason: "Debt Rs 15 Cr (Q1 FY27 p.11) vs D/E 0.39 (Mar-26 gross debt 7,861.34 L / equity 20,251.42 L); PL not needed (Q4 FY26 p.14) vs FY26 AR Note 1 PL-cum-ML underway (B03); private mix 60%, two-thirds, 77%, 70-75%"}
+  - {type: FLAG-PROMOTER-ANSWER, reason: "22 Jul answer on promoter dilution 'cannot answer' (Q1 FY27 p.19) vs Reg 29(2) disposals listed in B00 for Jun to Sep 2026; quantities NOT FOUND; route to stage 8"}
+  - {type: FLAG-CASH, reason: "H1 FY27 standalone CFO 1,537.71 L vs PAT 1,037.43 L (1.48x) driven by 2,014.37 L receivable release on lower billing; FCF about -275 L derived; cash 44.48 L; FY26 CFO/PAT 0.40 (B03)"}
+quarters_analysed: ["Q2 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "HZL Rs 307 Cr ramp and new rigs in Q3 FY27", type: "revenue", timeframe: "near", conviction: "M", confirm_signal: "Q3 FY27 cons revenue clearly above Rs 62 Cr; rig hand-over filed", kill_signal: "rig delivery slips again; revenue not above Q2 level"}
+  - {priority: 2, name: "Margin recovery from 14.4% as HZL absorbs fixed cost", type: "margin", timeframe: "near", conviction: "L-M", confirm_signal: "Q3 FY27 EBITDA margin 20% or above, employee cost under 18% of revenue", kill_signal: "margin below 18% with employee cost above 20% of revenue"}
+  - {priority: 3, name: "Reliance CBM Rs 166 Cr extension and third rig", type: "revenue", timeframe: "near", conviction: "M-H", confirm_signal: "Reliance share 35-40% of revenue and rig deployed", kill_signal: "share disclosure stays refused or exceeds 45%"}
+  - {priority: 4, name: "Non-anchor order replenishment from Rs 500-700 Cr tenders", type: "revenue", timeframe: "near-medium", conviction: "L-M", confirm_signal: "Reg 30 awards lift ex-HZL/Reliance book above Rs 300 Cr", kill_signal: "book flat near Rs 767 Cr with no new LOAs"}
+  - {priority: 5, name: "Jharkhand mining plan approval and funded Phase 1", type: "both", timeframe: "long", conviction: "L", confirm_signal: "mining plan approved; Phase 1 funding by source with amounts", kill_signal: "production slips past FY28-29 or equity raise funds it"}
+  - {priority: 6, name: "Cash conversion on higher private mix", type: "cash", timeframe: "near", conviction: "M", confirm_signal: "H2 FY27 CFO/PAT above 0.7 and falling receivable days", kill_signal: "receivables rebuild with H2 billing"}
+  - {priority: 7, name: "Oman JV profit and first cash repatriation", type: "profit", timeframe: "medium-long", conviction: "L-M", confirm_signal: "JV profit share above 222.55 L H1 FY27 run rate and dividend or loan repayment", kill_signal: "cash stays as loans to JVs"}
+  - {priority: 8, name: "UCG, aquifer, mineral block auction exploration orders", type: "revenue", timeframe: "medium", conviction: "L", confirm_signal: "a UCG or new aquifer order filed", kill_signal: "no order in 12 months"}
+guidance:
+  - {item: "FY26 revenue growth", number: "15-20% YoY", timeframe: "FY26", stated_in: "Q2 FY26"}
+  - {item: "Exploration revenue CAGR", number: "15-20%", timeframe: "next 3-5 years", stated_in: "Q2 FY26"}
+  - {item: "FY27 revenue growth", number: "about 20% YoY", timeframe: "FY27 short to medium term", stated_in: "Q4 FY26"}
+  - {item: "EBITDA margin", number: "NOT FOUND (no number given in any call)", timeframe: "n/a", stated_in: "Q2 FY26, Q4 FY26, Q1 FY27"}
+  - {item: "Order book", number: "Rs 412 Cr; about Rs 581 Cr; Rs 761 Cr", timeframe: "point in time", stated_in: "Q2 FY26; Q4 FY26; Q1 FY27"}
+  - {item: "Reliance share of revenue", number: "35% FY26; 35-40% FY27 (+/-5%)", timeframe: "FY27", stated_in: "Q4 FY26; Q1 FY27"}
+  - {item: "HZL contract", number: "Rs 300+ Cr then Rs 307 Cr over 4 years, about Rs 75 Cr/yr", timeframe: "4 years", stated_in: "Q4 FY26; Q1 FY27"}
+  - {item: "Rig additions", number: "5 (Dec-Jan); 4 (3-6 months); fleet 40 to 43", timeframe: "FY26-FY27", stated_in: "Q2 FY26; Q4 FY26; Q1 FY27"}
+  - {item: "Coal block capex", number: "Rs 400+ Cr in two phases; Phase 1 Rs 225 Cr then Rs 200 Cr", timeframe: "to FY28-29", stated_in: "Q2 FY26; Q4 FY26; Q1 FY27"}
+  - {item: "Coal block revenue and EBITDA", number: "Rs 300-400 Cr a year at peak; EBITDA 42-46%; IRR 40-45%", timeframe: "from production start", stated_in: "Q2 FY26; Q4 FY26"}
+  - {item: "Coal production start", number: "FY28-29 (EBITDA Rs 100 Cr run rate moved 2027 to 2028 in Q2 FY26)", timeframe: "FY28-29", stated_in: "Q2 FY26; Q1 FY27"}
+  - {item: "Government revenue share on coal", number: "24.25%", timeframe: "life of block", stated_in: "Q1 FY27"}
+  - {item: "Oman own investment", number: "Rs 15-20 Cr", timeframe: "3-5 years", stated_in: "Q4 FY26"}
+  - {item: "Debt", number: "lowest level in FY27 from about Rs 80 Cr; Q1 FY27 stated Rs 15 Cr with D/E 0.39", timeframe: "FY27", stated_in: "Q4 FY26; Q1 FY27"}
+  - {item: "Dividend policy", number: "NOT FOUND", timeframe: "n/a", stated_in: "n/a"}
+promise_delivery:
+  delivered: 8
+  partial: 4
+  missed: 3
+  rows:
+    - {promised_in: "Q2 FY26", promise: "FY26 revenue +15-20%", outcome: "delivered", explanation: "FY26 cons 24,302.17 L vs 18,029.50 L = +34.8%; guidance conservative"}
+    - {promised_in: "Q2 FY26", promise: "H2 better than H1", outcome: "delivered", explanation: "H2 14,039 L vs H1 10,253 L standalone"}
+    - {promised_in: "Q2 FY26", promise: "H2 growth significant vs H2 FY25", outcome: "partial", explanation: "H2 FY26 +15.7% (derived); Q4 only +5%; no explanation"}
+    - {promised_in: "Q2 FY26", promise: "profit grows faster than revenue", outcome: "delivered", explanation: "FY26 PAT +101% vs revenue +35%"}
+    - {promised_in: "Q2 FY26", promise: "sizable orders within 3-4 months", outcome: "delivered", explanation: "book 412 to about 581 Cr incl HZL Rs 300+ Cr"}
+    - {promised_in: "Q2 FY26", promise: "Reliance order continues to Mar 2027; extensions", outcome: "delivered", explanation: "Rs 166 Cr extension 7 Jul 2026"}
+    - {promised_in: "Q2 FY26", promise: "Jharkhand EBITDA Rs 100 Cr run rate from 2027", outcome: "missed", explanation: "moved to 2028 on same call, production now FY28-29; second slip unacknowledged"}
+    - {promised_in: "Q2 FY26", promise: "5 rigs: 3 in Dec-Jan, 2 in customs", outcome: "partial", explanation: "fleet 40 in May, 43 in Jul, 47 in PR boilerplate; new rigs again Q3 FY27"}
+    - {promised_in: "Q4 FY26", promise: "HZL execution starts in two weeks", outcome: "partial", explanation: "started about 7 Jun, about 2.5 weeks late, no explanation"}
+    - {promised_in: "Q4 FY26", promise: "Rs 500-700 Cr tenders, orders in 1-2 months", outcome: "partial", explanation: "Reliance Rs 166 Cr extension only; book Rs 767 Cr in Nov; win rate undisclosed"}
+    - {promised_in: "Q4 FY26", promise: "continuity of growth across all quarters, monsoon-proof book", outcome: "missed", explanation: "Q2 FY27 -7.5% YoY, -6.4% QoQ; PR cites monsoon, maintenance, diesel"}
+    - {promised_in: "Q4 FY26", promise: "EBITDA should also increase", outcome: "missed", explanation: "Q2 FY27 14.4%, H1 19.4% vs FY26 24.0%"}
+    - {promised_in: "Q4 FY26", promise: "exploration then GR then mining plan", outcome: "delivered", explanation: "GR approved by Nov 2026; mining plan still pending, no date"}
+    - {promised_in: "Q1 FY27", promise: "balance 75% warrant money received", outcome: "delivered", explanation: "2,797.43 L in H1 FY27 CF; share capital 3,265.14 L"}
+    - {promised_in: "Q1 FY27", promise: "participate in Alara rights issue", outcome: "delivered", explanation: "422.41 L investment in others in H1 FY27 CF; phase 2 amount NOT FOUND"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "Sustainable EBITDA margin", quarters_asked: ["Q2 FY26", "Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "Bid pipeline and win rate", quarters_asked: ["Q2 FY26", "Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters"}
+  - {question: "Reliance and large-contract share of revenue", quarters_asked: ["Q2 FY26", "Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters"}
+  - {question: "Revenue split by vertical or coal share", quarters_asked: ["Q2 FY26", "Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "Coal Phase 1 funding split", quarters_asked: ["Q2 FY26", "Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "Receivable days and cash conversion", quarters_asked: ["Q2 FY26", "Q4 FY26"], classification: "deflected every time"}
+credibility_grade: "B"
+credibility_basis: "Q3 FY26 to Q2 FY27: 15 scored promises, 8 delivered, 4 partial, 3 missed; FY26 revenue +34.8% vs 15-20% guide and orders, Reliance extension, GR approval delivered; misses on coal timing, margin and Q2 seasonality; Q3 FY26 and Q2 FY27 tested on filings only"
+peer_questions:
+  - {question: "Are rig shortage, utilisation over 100% and rising rates visible in peer commentary?", why: "Underwrites SW margin and rig capex; Q2 FY27 margin did not follow", check_peers: ["ASIANENE", "DEEPINDS", "JINDRILL"]}
+  - {question: "Did peers report monsoon and diesel cost hits in Q2 FY27? Did their direct-cost ratios rise?", why: "SW direct cost 59.6% vs 59.5% YoY; employee cost drove the margin fall", check_peers: ["DEEPINDS", "JINDRILL", "ASIANENE"]}
+  - {question: "What EBITDA margin range do peers hold, and do they step up employee cost ahead of ramp?", why: "Tests SW 24% margin as steady state vs 14.4% in Q2", check_peers: ["ASIANENE", "DEEPINDS", "JINDRILL"]}
+  - {question: "Is CBM drilling a few-player market, who else is active, and what is peer customer concentration?", why: "Reliance 35-40% of FY27 revenue; market-leader claim", check_peers: ["DEEPINDS", "ASIANENE"]}
+  - {question: "Seismic pricing, Oil India empanelment, and is seismic about 4% of SW revenue plausible vs peers?", why: "Alpha Geo and Asian Energy cited as seismic competitors", check_peers: ["ASIANENE"]}
+  - {question: "Capex per rig, rig delivery lead times and slippage experience", why: "SW rig deliveries slipped three calls running", check_peers: ["DEEPINDS", "JINDRILL", "ASIANENE"]}
+  - {question: "Receivable days and private versus PSU payment speed", why: "SW states 45-90 days; derived DSO 147-175 days", check_peers: ["ASIANENE", "DEEPINDS", "JINDRILL"]}
+  - {question: "Do coal and mineral block auctions and UCG tenders convert into exploration orders for peers?", why: "SW policy tailwind claims have no UCG order", check_peers: ["ASIANENE", "DEEPINDS", "JINDRILL"]}
+  - {question: "Peer book-to-bill and order conversion pace", why: "SW book Rs 767 Cr is 2.95x trailing revenue of Rs 259.8 Cr", check_peers: ["ASIANENE", "DEEPINDS", "JINDRILL"]}
+  - {question: "Does JINDRILL operate offshore only and overlap with SW domains?", why: "Piyush Jain says Jindal is offshore, SW onshore", check_peers: ["JINDRILL"]}
+red_flags:
+  - "Q2 FY27 revenue -7.5% YoY and margin 14.4% after continuity-of-growth statement (HIGH)"
+  - "Margin explanation does not match cost lines; employee cost +53.5% on falling revenue (HIGH)"
+  - "Two contracts 62% of order book; contribution disclosure withdrawn (HIGH)"
+  - "Coal funding, peak tonnage and 24.25% revenue share unreconciled; production slid to FY28-29 (MEDIUM-HIGH)"
+  - "Promoter dilution answer vs Reg 29(2) disposals Jun to Sep 2026 (MEDIUM-HIGH, route to stage 8)"
+  - "Rig delivery slipped across three calls; fleet count unreconciled (MEDIUM)"
+  - "Call vs filing conflicts on debt, PL-cum-ML and private mix (MEDIUM)"
+  - "Chairman is director and shareholder of Alara while company invests in it (MEDIUM)"
+dropped_triggers:
+  - "Coal EBITDA Rs 100 Cr run rate from 2027 (moved to 2028, then production FY28-29; not revisited)"
+  - "Seismic as 4% of revenue (not repeated while Oil India empanelment is a headline)"
+timeline_slippages:
+  - "Coal EBITDA Rs 100 Cr run rate 2027 to 2028 (Q2 FY26 p.20); production FY28-29 (Q1 FY27 p.8, p.19)"
+  - "Rig deliveries: Dec-Jan 2025-26 (Q2 FY26), 3-6 months from May 2026 (Q4 FY26), Q3 FY27 (PR 8 Nov 2026)"
+  - "HZL start: two weeks from 6 May to about 7 Jun 2026"
+  - "Mining plan: no submission date given in any call or the PR"
+analyst_note: "Q3 FY26 and Q2 FY27 are tested on filings only. Q2 FY27 margin 14.4% is derived on the company basis (consolidated, ex other income), which reproduces stated FY26 24.0% and Q4 FY26 26.2%; B00 states 14.38%. Margin fall is employee cost (22.8% of revenue vs 13.7%), not direct cost (59.6% vs 59.5%), so the diesel and monsoon explanation is incomplete. FY27 at 20% growth needs H2 +22.7% on H2 FY26 (derived). Trailing four quarters revenue Rs 259.8 Cr vs FY26 Rs 243.0 Cr. Grade B is conditional on Q3 FY27: revenue growth above 15% and margin above 20% hold B; a repeat of Q2 margin moves it to C."

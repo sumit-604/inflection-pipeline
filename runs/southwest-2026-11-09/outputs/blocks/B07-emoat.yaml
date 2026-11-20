@@ -1,0 +1,52 @@
+stage: B07-emoat
+company: "SOUTHWEST"
+run_date: "2026-11-09"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "shareholding/ is empty: FII+DII UA qualifier and promoter pledge trend stay open (B00)."
+  - "screener export sheets empty (Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization; ASIANENE, DEEPINDS, JINDRILL equivalents); Data_Sheet only (B00)."
+  - "HIGH (freshness): no Q2 FY27 transcript; call 11 Nov 2026 16:00 IST, after this run (B00)."
+  - "Q3 FY26 concall transcript (Feb 2026) not in corpus (B00)."
+  - "annual-report/ holds FY25 and FY26 only; announcements Nov 2025 to Nov 2026 only (B00)."
+  - "no results PDFs from screener and no rating PDF; cured by /step1 with three BSE results filings and CRISIL rationale text of 10 Jul 2026 (B00)."
+  - "research/ empty: no broker notes (B00)."
+  - "announcements/20261107-eaf4e423 newspaper-advert pages garbled; 20260929-ae2f036b AGM voting results 15 of 32 pages carry text (B00)."
+  - "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing default: proceed with the gaps (B00)."
+  - "B07 stage gap: capital commitments column order garbled in AR Note 42 (INR 17.21 Cr or 24.98 Cr); rig capex per rig, funding source, and utilisation by facility NOT FOUND."
+flags:
+  - {type: FLAG-THRESHOLD-SENSITIVE, reason: "em_score 12.8 is 0.8 above the 12 band edge; C1 likelihood H to M or E1 to LL moves it to 11.8 (NONE)"}
+  - {type: FLAG-CONCENTRATION, reason: "Three customers 72.27% of FY26 revenue (PY 48.00%) (AR p.146); HZL + Reliance extension 62% of INR 761 Cr book (B05)"}
+  - {type: FLAG-COAL-UNFUNDED, reason: "Coal block Phase 1 INR 200-225 Cr, funding split deflected on three calls; mining plan pending; production slipped to FY28-29"}
+  - {type: FLAG-DATA-CONFLICT, reason: "Rig count 45/47/43; order book 7,613 Mn vs 5,812 Mn at FY26; geoscientists 42/43/15; coal revenue INR 700-800 Cr over 3 years (AR p.60) vs INR 300-400 Cr a year (calls)"}
+em_score: 12.8
+em_classification: "MODEST"
+active_categories:
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "documented", time_to_materialise: "Present; term-bound (3 years Oil India empanelment)"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Moderate", evidence_type: "documented", time_to_materialise: "Present; concentration 62% of book in two contracts"}
+evidence_mix: {documented: 12, claim: 11, inference: 3}
+completionist_recount: "📄 recount performed: 11 documented items across 6 categories (B2 3, C1 2, E1 1, G1 2, H2 2, R1 1), plus 1 capital commitments line in 2A; 7 categories carry any score; below the 12-category guard."
+catalysts_12m:
+  - {catalyst: "Q2 FY27 concall: rig utilisation, rig cost and funding, margin bridge", window: "11 Nov 2026", evidence_type: "management claim", anchor: "B00 call intimation 4 Nov 2026"}
+  - {catalyst: "New drilling rigs delivered and deployed", window: "Q3 FY27 (Oct-Dec 2026)", evidence_type: "management claim", anchor: "Inv. Pres. slide 33; slipped on three prior calls"}
+  - {catalyst: "Q3 FY27 results: revenue above INR 62 Cr, EBITDA margin 20% or above", window: "Feb 2027", evidence_type: "documented once filed", anchor: "B05 triggers 1-2"}
+  - {catalyst: "Jharkhand mining plan submission and approval", window: "next 12 months", evidence_type: "management claim", anchor: "Inv. Pres. slide 33"}
+  - {catalyst: "HZL INR 307 Cr ramp at about INR 75 Cr a year", window: "FY27", evidence_type: "documented contract", anchor: "Q4 FY26 call p.9; Q1 FY27 call p.15"}
+  - {catalyst: "Reliance third CBM rig and INR 166 Cr extension execution", window: "FY27", evidence_type: "documented contract", anchor: "Announcement 7 Jul 2026; Q4 FY26 call p.12"}
+capex_embedded_growth_pct: 22
+optionality_register:
+  - {optionality: "Jharkhand coal block becomes a funded mine (84 MT, 24.25% revenue share)", converting_evidence: "Mining plan approval, clearances, Phase 1 funding by source and amount", first_appears: "Reg 30 filing; Q3/Q4 FY27 call; AR FY27 intangible note", window: "12-24 months; production FY28-29"}
+  - {optionality: "Oman block 22B (17.5% JV) yields a resource estimate", converting_evidence: "Resource statement, drilling budget, SWPE funding of INR 15-20 Cr share", first_appears: "Reg 30 Oman update; AR FY27", window: "24-48 months"}
+  - {optionality: "UCG exploration orders", converting_evidence: "A UCG LOA or tender award to SWPE", first_appears: "Reg 30 order announcement", window: "12 months or later"}
+  - {optionality: "CBM production orders beyond Reliance", converting_evidence: "Non-Reliance CBM production work order; third rig deployed", first_appears: "Reg 30 LOA; concall", window: "6-18 months"}
+  - {optionality: "Aquifer re-tenders replace INR 595 Mn run-off", converting_evidence: "CGWB new LOA of comparable size", first_appears: "Reg 30 award announcement", window: "6-18 months"}
+  - {optionality: "Oil India seismic empanelment becomes orders", converting_evidence: "First Oil India seismic work order", first_appears: "Reg 30 order; concall", window: "6-24 months"}
+  - {optionality: "24-25% core EBITDA margin is a steady state", converting_evidence: "Q3 FY27 margin above 20%, employee cost under 18% of revenue, rig utilisation disclosed", first_appears: "Q3 FY27 results; Q2 FY27 call", window: "3-6 months"}
+combined_assessment: "GOOD"
+combined_reasoning: "Gate 0 GOOD (core 62, MODERATE moat) plus MODEST forward score; narrow accreditations and two concentrated contracts, unfunded coal block, Q2 FY27 margin 14.38% show no EXPANSION."
+top_moat_risks:
+  - "Customer concentration: three customers 72.27% of FY26 revenue; two contracts 62% of book"
+  - "Coal block second timeline slip with funding split undisclosed against FY26 CFO/PAT 0.38"
+  - "Fixed-cost deleverage: Q2 FY27 margin 14.38% vs 23.99% FY26, employee cost +53.5% on falling revenue"
+  - "Accreditations are term-bound and non-exclusive"
+analyst_note: "Score 12.8 rests on two Moderate rows (B2, C1) and sits 0.8 above the MODEST floor; class is MODEST-to-NONE. No double credit: Reliance only in C1, coal block only in E1, Oman JV 1 only in H2, Oman block 22B left in the register. capex_embedded_growth_pct 22 uses the low column reading of garbled capital commitments (17.21 Cr) and average-PPE turnover 3.15x; range 19 to 32. It is a ceiling, not a forecast. Two readings on Q2 margin: monsoon dip (management) vs FY26 utilisation peak. Separator: Q3 FY27 margin plus disclosed rig utilisation. Gate 0 existing moats overlap B2, A1, E1; do not add them in the combined view. The combined matrix file was not in inputs; label GOOD applies the stated rule."

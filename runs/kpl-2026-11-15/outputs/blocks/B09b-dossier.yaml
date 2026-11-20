@@ -1,0 +1,59 @@
+stage: B09b-dossier
+company: "KPL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "KPL Q2 FY27 concall transcript (call held 13 Nov 2026; audio only as of 16 Nov 2026)"
+    expected_source: "BSE"
+    kind: "freshness-pair"
+  - document: "Shareholding pattern with category breakdown (FII, DII) and 12-quarter pledge history"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Screener Profit and Loss, Quarters, Balance Sheet, Cash Flow sheets (KPL and 3 peers)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Peer transcripts: CAPLIPOINT Q2 FY27 and LINCOLN after Feb 2026 (2 of 12)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "KPL Q3 FY26 (Feb 2026) concall transcript (only an investor-meet recording exists)"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Out-licensing and supply (about 90% of revenue)"
+    archetype: "Outsourcing partner"
+  - line: "CDMO (about 10% of revenue)"
+    archetype: "Outsourcing partner"
+transition:
+  - line: "Out-licensing and supply, including claimed owned-registration and regulated-market products"
+    from_tier: "R2"
+    to_tier: "R3"
+    engine: "Registration count converting into revenue (60-70 registrations in three quarters per management; 18-19 of 70 Mexico filings approved); mix toward owned-registration, regulated-market and oncology products lifting gross margin on a largely fixed plant and people base. Mix mechanism untestable: registration-holder split NOT FOUND."
+    proof_gate: "Filed Q3 and Q4 FY27: gross margin at or above 52% and EBITDA margin at or above 27% in both quarters; FY27 CFO/PAT at or above 60% with trade receivables below INR 33,503.65 lakh (30 Sep 2026); company discloses revenue and EBITDA by registration holder with own share rising."
+    recognition_gap: "Open question for Stage 11: does the TO state (R3 on owned registrations and regulated-market mix) already look reflected in market pricing? Resolved via the PE gap; no number or conclusion here."
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "Gross margin back under 48%; receivables above INR 350 Cr with CFO/PAT below 35%; own-vs-partner share still undisclosed after next AR or one name above 20%; oncology expansion slipping past June 2027."
+dominant_variables:
+  - "Registration-to-revenue ramp (FY27 revenue 720+ Cr goal; Q3 at or above 176 Cr, Q4 at or above 200 Cr)"
+  - "Margin and mix, own vs partner-held registrations (gross margin 52%+, EBITDA 27%+)"
+  - "Receivable collection and cash conversion (CFO/PAT, receivables in rupees, debtor days)"
+  - "Capacity and pipeline delivery with funding (oncology expansion June 2027, Unit 6 licence, EPO trial, capex vs CFO)"
+business_falsifier: "Evidence that the 90% out-licensing and supply line is concentrated in a few partner groups or in director-linked counterparties (domestic turnover 50.3% vs management India about 5%; SD Pharma/Mana Pharma re-exports; Kaler Biopharmachem sale 121.48 vs return 262.75 INR lakh), or a qualified first audit by the new auditor or a restatement of the receivable book, forcing re-declaration of the FROM business."
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "4 of 7 externally observable"
+  single_point_failure: "Receivable collection and cash conversion (candidate: receivables above INR 350 Cr with CFO/PAT below 35%, or a provisioning change at the first audit by the new auditor)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+second_order:
+  chains_drafted: 2
+  pending_live_links: 4
+  confirm_by_observations: 2
+research_brief_items: 18
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "5842ce704db8c6c22fe5393afd2fc2ece3945ea2"

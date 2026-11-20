@@ -1,0 +1,106 @@
+stage: B09-tam
+company: "KPL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "No TAM, SAM or market-size claim exists in the AR, three decks or two concalls; management claim comparison NOT FOUND"
+  - "Regional oral-solid generic pool, channel split, capability filter, top-3 concentration, KPL revenue by country and customer: NOT FOUND"
+  - "Methods 3 (peer aggregation), 4 (import substitution) and 5 (global benchmark) not run; Method 2 usable only as a calibration test"
+  - "EPO international and Pembrolizumab pools: NOT FOUND. Hormone pool definitions conflict (US$12.5 bn vs US$30-35.6 bn global)"
+  - "Several figures taken from search snippets, pages not opened: Expert Market Research MEA generics, Pharmexcil regional growth, India exports to Africa, Brazil 38% share"
+  - "Runway matrix thresholds not written in repo; STRONG is the analyst reading"
+flags:
+  - {type: FLAG-NO-MGMT-TAM, reason: "Management states no market size; runway story is a registration-count funnel. Per-registration revenue 1.5-2 million (unit unstated) does not reconcile to filed revenue per filing of 0.72-0.92 Cr in rupees or dollars"}
+  - {type: FLAG-REGISTRATION-FLOW, reason: "New registrations at stated pace explain 11% to 40% of the 497 Cr FY26-FY29 step-up [INFERENCE]; rest depends on ramp of held approvals, oncology and mix"}
+  - {type: FLAG-CAPACITY-CONFLICT, reason: "Turnover method ceiling 797-888 Cr vs FY29 SOM 1,000 Cr (gap 112-203 Cr); utilisation method ceiling about 1,080 Cr (SOM needs 93%). Mgmt oncology 300 Cr FY29 needs about 99% utilisation"}
+  - {type: FLAG-TAM-DEFINITION, reason: "Conservative TAM (injectables only) and realistic TAM (all forms) differ 10.3x; cause is definition, not disagreement. Only two Method-1 cuts"}
+  - {type: FLAG-SAM-FILTERS, reason: "Three of five SAM filters (channel, customer, capability) could not be applied; Brazil removal uses a total-pharma share on injectables [INFERENCE]"}
+  - {type: FLAG-YEAR5-NO-EVIDENCE, reason: "No guidance or filed evidence beyond FY30; yr5 SOM is a ceiling-type number (1,080 core + 155 gated add-ons)"}
+  - {type: FLAG-PE, reason: "P/E 41.1x is unanchored (Step-1 brief); FY29 PAT NOT FOUND; EBITDA used for earnings growth"}
+market_definition: "Finished-dose generic formulations (injectables first, oral solids second) sold through registration-holding partners and tenders in LATAM and MEA; excludes patented, OTC retail, US, CIS, India-for-India"
+tam_cr: {conservative: 68861, realistic: 711075}
+sam_cr: 54105
+sam_pct_of_tam: 7.6
+som_3yr_cr: 1000
+som_5yr_cr: 1235
+som_implied_revenue_cagr: {yr3: 25.7, yr5: 19.7}   # FY26 audited base 503.08; yr3 = FY29, yr5 = FY31. From FY27E 720: yr3 17.9 (2 years)
+current_sam_share_pct: 0.45
+revenue_headroom_x: 224
+tam_growth_pct: 5.7
+runway_class: "STRONG"
+mgmt_claim_cr: "NOT FOUND"
+mgmt_claim_ratio: "NOT FOUND"
+mgmt_claim_read: "NOT FOUND (no TAM claim filed); FY30 revenue ambition 1,500 vs SOM 1,235 = 1.21x, reasonable"
+capacity_check: "gap of 112-203 Cr on B07 turnover basis (FY29 1,000 vs 797-888); none on utilisation basis (ceiling about 1,080, needs 93%); SOM is the optimistic side below about 90% utilisation; FY31 gap to mgmt 1,500 is 265 Cr over SOM"
+methods_used: ["top-down generics all-form (IMARC, EMR)", "top-down generic injectables regional share (IMARC)", "bottom-up registration calibration (test only)"]
+stale_data_flags:
+  - {datapoint: "Mexico generics market US$6.2 bn", source: "Scotts International via search", year: 2023}
+  - {datapoint: "Mexico generics forecast ~US$9.5 bn for 2025", source: "Statista (Seale & Associates), direction only", year: 2016}
+  - {datapoint: "India EPO market US$205 mn", source: "Ken Research", year: 2024}
+  - {datapoint: "India EPO sales Rs 102 crore", source: "BioSpectrum, undated, direction only", year: "undated"}
+searches_performed:
+  - "LATAM pharma market size 2025"
+  - "MENA pharma market size 2025"
+  - "Africa pharma market 2025 and India exports"
+  - "India pharma exports FY26 Pharmexcil"
+  - "Generic sterile injectables market 2025"
+  - "USD INR rate Nov 2026 RBI"
+  - "Mexico generics market 2025"
+  - "India EPO biosimilar market"
+  - "Oncology generic injectables market 2025"
+  - "Sex and synthetic hormones market 2025"
+  - "WebFetch IMARC LATAM generic drug market"
+  - "WebFetch IMARC generic injectables market"
+searches_skipped: []
+downstream_candidates:
+  - signal: "COFEPRIS Mexico product approvals"
+    entity_type: "regulatory"
+    demand_link: "Each approval opens revenue; 18-19 of 70 filed approved, more expected."
+    likely_source: "COFEPRIS registry and approvals list"
+    cadence: "event-driven"
+    shared: false
+  - signal: "INVIMA Colombia approvals and plant audit"
+    entity_type: "regulatory"
+    demand_link: "Colombia filings gate LATAM growth and oncology expansion."
+    likely_source: "INVIMA registry"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Saudi SFDA registration of filed products"
+    entity_type: "regulatory"
+    demand_link: "12-13 filings; management expects first GCC revenue from Q3 FY27."
+    likely_source: "SFDA registered products list"
+    cadence: "event-driven"
+    shared: false
+  - signal: "SD Pharma and Mana Pharma purchase volumes"
+    entity_type: "counterparty"
+    demand_link: "Domestic-booked sales re-exported to LATAM and MENA; concentration undisclosed."
+    likely_source: "KPL related-party notes in results and AR; Mana Pharma disclosures"
+    cadence: "quarterly"
+    shared: true
+  - signal: "EU-GMP status and EU registrations"
+    entity_type: "regulatory"
+    demand_link: "EU access underpins the claimed 40% EBITDA leg."
+    likely_source: "EudraGMDP database; EMA"
+    cadence: "event-driven"
+    shared: false
+  - signal: "CDSCO approvals: Unit 6 licence, EPO trial, Pembrolizumab"
+    entity_type: "regulatory"
+    demand_link: "Gates the 155 Cr hormone and EPO add-on layer."
+    likely_source: "CDSCO orders page; CTRI trial registry"
+    cadence: "event-driven"
+    shared: true
+  - signal: "India pharma exports to LAC and Africa"
+    entity_type: "macro"
+    demand_link: "Sector flow: LAC +16.58%, Africa +6.48% in H1 FY27."
+    likely_source: "Pharmexcil monthly export data"
+    cadence: "monthly"
+    shared: false
+  - signal: "USD/INR"
+    entity_type: "macro"
+    demand_link: "Rupee-dollar level drives export realisation and API cost offset."
+    likely_source: "RBI reference rate"
+    cadence: "monthly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "No TAM claim exists to test. The runway story is registration count, and the per-registration figure fails to reconcile to filed revenue. New registrations at the stated pace explain 11-40% of the FY29 step-up [INFERENCE], so the guide needs ramp of held approvals. Capacity methods conflict (797-888 vs about 1,080 ceiling). SOM yr5 is a ceiling-type figure because no evidence exists past FY30. Market size is not the binding constraint. Gates that move the SOM: Q4 FY27 revenue 200 Cr or more with utilisation 80% or higher; Unit 6 licence Nov 2026; EPO trial start Nov-Dec 2026."

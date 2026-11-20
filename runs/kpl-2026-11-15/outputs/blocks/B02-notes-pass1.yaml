@@ -1,0 +1,15 @@
+stage: B02-notes-pass1
+company: "KPL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+pass: 1
+input_gaps: []
+report_path: runs/kpl-2026-11-15/outputs/reports/02-notes-pass1.md
+unit: "INR lakhs (AR face); derived percentages and ratios unit-free"
+headline_findings:
+  - "CFO 1,658.62 vs PAT 6,734.60 (24.6%); receivable days 135.9 -> 152.1 -> 203.2 (derived); Note 9, p.211; CFS p.190"
+  - "Zero ECL/doubtful provision on 28,005.24 receivables; 3,030.29 over 6 months; Note 9(a), p.212"
+  - "Contingent liabilities 3,697.75 = 11.2% of net worth, no provision; Note 34, p.226-227"
+receivables_trend_preliminary: "deteriorating (over 6m share 28.0% -> 18.7% -> 10.8%, but total receivables +81.5% vs revenue +35.9%, days 203.2)"
+going_concern_language_preliminary: "NONE in notes; CARO (xix) finds no material uncertainty (p.108-109)"

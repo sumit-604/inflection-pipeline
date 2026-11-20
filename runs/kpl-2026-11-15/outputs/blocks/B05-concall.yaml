@@ -1,0 +1,118 @@
+stage: B05-concall
+company: "KPL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Q2 FY27 concall transcript NOT PUBLISHED: call held 13 Nov 2026, audio only (announcements 20261109, 20261114). Re-collect if a text appears."
+  - "Q3 FY26 (Feb 2026) concall transcript does not exist. Only two transcripts analysed (19 May 2026, 10 Aug 2026)."
+  - "Quarter-map dates conflict with transcripts: map says 21 May and 12 Aug; transcripts say calls held 19 May and 10 Aug (21 May and 12 Aug are filing dates). Transcript dates used."
+  - "Middle East debtor rupee amount, age and provision; cash balance; customer and partner concentration; revenue and margin by registration holder (own vs partner-held): NOT FOUND in any corpus document."
+  - "Company secretary resignation claim in company memory: no corpus filing; CS signs filings dated 9 and 14 Nov 2026. Unverified."
+  - "Q4 FY26 results PDF not re-opened separately; FY26 audited figures taken from the FY26 column of the Q1 and Q2 results and the Q4 deck."
+flags:
+  - {type: FLAG-AUDITOR, reason: "Incumbent Vijay Mehra and Co resigned 12 Nov 2026 (term to FY2028-29); B S R and Co LLP appointed to casual vacancy; management said KPMG on 19 May and 10 Aug calls and the Q2 deck says KPMG; no EGM or auditor resolution at the 31 Aug AGM (Q2 results p.1-2, p.19-23; Q2 deck p.11)"}
+  - {type: FLAG-MDA-PAT-MISLABEL, reason: "Filed Q2 MD&A states PAT 50 Cr vs 25 Cr; these are EBITDA values. Filed consolidated Q2 PAT is 2,902.62 lakh = 29.03 Cr vs 1,411.57 lakh = 14.12 Cr (Q2 results p.3 vs p.16; deck p.7)"}
+  - {type: FLAG-TAX, reason: "Q2 FY27 effective tax 31.2% (1,319.16 / 4,221.77 lakh) vs 23.5% Q2 FY26 and 24.6% Q1 FY27; PAT guide 122+ needs about 22% H2 tax vs 28.3% H1 (derived)"}
+  - {type: FLAG-CASH, reason: "H1 FY27 CFO 2,756.79 lakh = 50.4% of PAT 5,464.85; receivables +5,498.41 lakh; capex 3,850.49; net borrowing +1,578.18 lakh; debtor days 178 vs own 150-160 ideal (Q2 results p.14-15, p.18)"}
+  - {type: FLAG-DOMESTIC-SHARE, reason: "AR domestic turnover 25,326.18 lakh = 50.3% of 50,305.89 vs management India about 5% (AR p.154; May call p.20); SD Pharma (Indian entity of Mana Pharma) buys in India and re-exports (Aug call p.5); no concentration or own vs partner split"}
+  - {type: FLAG-SILENT-CUT, reason: "FY27 oncology revenue 150 Cr (May p.4) restated to 100-110 Cr (Aug p.16-17) without acknowledgement"}
+  - {type: FLAG-SLIPPAGE, reason: "EPO about 12 months, hormone WHO-GMP 7-8 months, oncology expansion Mar to Jun 2027"}
+quarters_analysed: ["Q4 FY26 (call 19 May 2026)", "Q1 FY27 (call 10 Aug 2026)", "Q2 FY27 (deck, MD&A and filings only; no call text)"]
+triggers:
+  - {priority: 1, name: "Registration-led revenue to 720+ Cr FY27, Q4 above 200 Cr", type: "revenue", timeframe: "near", conviction: "M-H", confirm_signal: "Q3 FY27 revenue at or above 176 Cr and Q4 at or above 200 Cr; 6-7 registrations per quarter named", kill_signal: "Q3 revenue below Q2 181 Cr unexplained; receivables above 350 Cr"}
+  - {priority: 2, name: "Gross margin 52%+ and EBITDA 27-28%", type: "margin", timeframe: "near", conviction: "M", confirm_signal: "Q3 and Q4 gross margin at or above 52% (Q2 52.1%)", kill_signal: "Gross margin back under 48%"}
+  - {priority: 3, name: "PAT bridge to 122 Cr via H2 tax near 22%", type: "earnings", timeframe: "near", conviction: "L-M", confirm_signal: "Q3 effective tax at or below 25%", kill_signal: "Q3 tax above 28%; guide cut to about 111-116 Cr (derived)"}
+  - {priority: 4, name: "Cash conversion: debtor days to 165, CFO/PAT at or above 60%", type: "cash", timeframe: "near", conviction: "L", confirm_signal: "FY27 CFO/PAT at or above 60%; ME debtor rupees disclosed; debtor days at or below 165", kill_signal: "Receivables above 350 Cr with CFO/PAT below 35%"}
+  - {priority: 5, name: "BE programme and niche injectables (80-100 Cr FY28)", type: "revenue+margin", timeframe: "medium", conviction: "L-M", confirm_signal: "5-6 molecules filed or commercialised by Q4 FY27", kill_signal: "Filings slip beyond Q1 FY28"}
+  - {priority: 6, name: "Oncology expansion (June 2027) and peptide mix", type: "revenue+margin", timeframe: "medium", conviction: "M-L", confirm_signal: "EU and INVIMA audits of expansion; oncology above 40 Cr per quarter", kill_signal: "Further slip past June 2027; FY27 oncology under 100 Cr"}
+  - {priority: 7, name: "Unit 6 hormones (70-80 Cr FY28 on tenders)", type: "revenue", timeframe: "medium", conviction: "L", confirm_signal: "Manufacturing licence Nov 2026; first tender sale FY28", kill_signal: "Licence delayed beyond Q4 FY27"}
+  - {priority: 8, name: "Biologics: EPO India 80-100 Cr FY28, Pembrolizumab by CY2028", type: "revenue+margin", timeframe: "long", conviction: "L", confirm_signal: "EPO trial start Nov-Dec 2026; Pembrolizumab pre-clinical done Mar 2027", kill_signal: "No trial start by Mar 2027"}
+  - {priority: 9, name: "Auditor reset: first audit by B S R and Co LLP (risk trigger)", type: "governance", timeframe: "near", conviction: "risk", confirm_signal: "Member approval by about 12 Feb 2027; clean FY27 audit; ECL policy disclosed", kill_signal: "Delay, qualification, or provisioning change cutting FY27 PAT"}
+guidance:
+  - {item: "FY27 revenue", number: "650 (650-700)", timeframe: "FY27", stated_in: "Q4 FY26 call 19 May 2026 (p.3-4); Q4 deck p.32"}
+  - {item: "FY27 revenue", number: "700+", timeframe: "FY27", stated_in: "Q1 FY27 call 10 Aug 2026 (p.3, p.6); Q1 deck p.3"}
+  - {item: "FY27 revenue", number: "720+", timeframe: "FY27", stated_in: "Q2 FY27 deck p.6 and MD&A (Q2 results p.3)"}
+  - {item: "FY27 EBITDA margin", number: "26-27% (call); 25% / 27-28% (decks)", timeframe: "FY27", stated_in: "Q4 call p.5; Q1 deck p.3; Q2 deck p.6"}
+  - {item: "FY27 PAT", number: "100 then 109+ then 122+ Cr", timeframe: "FY27", stated_in: "Q4 deck p.32; Q1 deck p.3; Q2 deck p.6"}
+  - {item: "Q1 FY27 revenue", number: "150-160 Cr", timeframe: "Q1 FY27", stated_in: "Q4 FY26 call p.7"}
+  - {item: "Q2 FY27 revenue", number: "160-170 Cr", timeframe: "Q2 FY27", stated_in: "Q4 FY26 call p.7"}
+  - {item: "Q4 FY27 revenue", number: "above 200 Cr", timeframe: "Q4 FY27", stated_in: "Q4 FY26 call p.7"}
+  - {item: "FY28 revenue and EBITDA", number: "800-850 Cr; 28% (May); 25-30% growth (Aug)", timeframe: "FY28", stated_in: "Q4 FY26 call p.5-6; Q1 FY27 call p.6"}
+  - {item: "FY29 revenue and EBITDA", number: "1,000 Cr; 30%", timeframe: "FY29", stated_in: "Q4 FY26 call p.3, p.6; Q1 FY27 call p.6"}
+  - {item: "FY30 revenue", number: "1,500 Cr (1,300-1,400 per Q&A)", timeframe: "FY30", stated_in: "Q1 FY27 call p.6, p.14-15"}
+  - {item: "FY27 gross margin", number: "52-53% (May); cost 49-51% (Aug)", timeframe: "FY27", stated_in: "Q4 FY26 call p.14, p.18; Q1 FY27 call p.10"}
+  - {item: "Oncology revenue", number: "FY27 150 Cr (May), 100-110 Cr (Aug); FY29 300 Cr", timeframe: "FY27, FY29", stated_in: "Q4 FY26 call p.4; Q1 FY27 call p.16-17"}
+  - {item: "Capex", number: "260-270 Cr total (May); 185-190 Cr plus 150 Cr clinical (Aug)", timeframe: "FY26-FY29", stated_in: "Q4 FY26 call p.6; Q1 FY27 call p.11-12"}
+  - {item: "Debtor days", number: "150-160 (May); 165-170 (Aug)", timeframe: "FY27", stated_in: "Q4 FY26 call p.15; Q1 FY27 call p.9"}
+  - {item: "Hormone WHO-GMP", number: "before Nov 2026 (May); Jun-Jul 2027 (Aug)", timeframe: "2026-27", stated_in: "Q4 FY26 call p.5; Q1 FY27 call p.8"}
+  - {item: "Oncology expansion completion", number: "Mar 2027 (Aug call); Jun 2027 (Q2 deck)", timeframe: "FY27", stated_in: "Q1 FY27 call p.11; Q2 deck p.5"}
+  - {item: "EPO timeline", number: "registration end CY2026 (May); commercial before end CY2027 (Aug)", timeframe: "CY2026-27", stated_in: "Q4 FY26 call p.12; Q1 FY27 call p.4"}
+promise_delivery:
+  delivered: 9
+  partial: 7
+  missed: 5
+  rows:
+    - {promised_in: "FY23 (per May analyst); AR", promise: "FY26 revenue 500 Cr plus", outcome: "delivered", explanation: "503.1 Cr (50,308.34 lakh, Q2 results p.16)"}
+    - {promised_in: "Q4 FY26 call", promise: "Q1 FY27 revenue 150-160 Cr", outcome: "delivered", explanation: "162.4 Cr (16,235.22 lakh, Q1 results p.8)"}
+    - {promised_in: "Q4 FY26 call", promise: "Q2 FY27 revenue 160-170 Cr", outcome: "delivered", explanation: "181.2 Cr (18,122.29 lakh, Q2 results p.16)"}
+    - {promised_in: "Q4 FY26 call", promise: "FY27 revenue 650 Cr", outcome: "delivered", explanation: "Raised to 700+ then 720+; H1 343.6 Cr"}
+    - {promised_in: "Q4 FY26 call", promise: "FY27 EBITDA margin 26-27%", outcome: "delivered", explanation: "Q1 25.3%, Q2 27.5%, H1 26.5% (Q2 deck p.6-7)"}
+    - {promised_in: "Q4 FY26 call", promise: "FY27 PAT 100 Cr", outcome: "delivered", explanation: "H1 PAT 54.6 Cr; guide raised to 122+; H2 needs about 22% tax vs 28.3% H1 (open)"}
+    - {promised_in: "Q1 FY27 deck", promise: "Unit 6 construction done by Q3 CY2026", outcome: "delivered", explanation: "Deck p.15 says 100%; CWIP 3,254.61 lakh; deck-only evidence"}
+    - {promised_in: "Q4 FY26 call", promise: "Pembrolizumab pre-clinical filing in October", outcome: "delivered", explanation: "CDSCO nod filed 24 Jul 2026"}
+    - {promised_in: "Q4 FY26 call", promise: "Mexico about 10 registered, 6 more by Q2", outcome: "delivered", explanation: "18-19 registered per Aug call; submission count drifts 55 to 70"}
+    - {promised_in: "Q4 FY26 call", promise: "Gross margin 52-53% from Q2 FY27", outcome: "partial", explanation: "Q1 46.2%, Q2 52.1%; Aug re-guided cost to 49-51%"}
+    - {promised_in: "Q4 FY26 call", promise: "Middle East debtors 60-70 Cr, 40% realised, rest by June-July", outcome: "partial", explanation: "No filing gives ME amount; receivables +55.0 Cr in H1; unverified"}
+    - {promised_in: "Q4 FY26 call", promise: "Q2 FY27 pretty good operating cash flow", outcome: "partial", explanation: "H1 CFO 27.6 Cr = 50.4% of PAT; FCF -10.9 Cr"}
+    - {promised_in: "Q4 FY26 call", promise: "Interest about 11 Cr, borrowings unchanged", outcome: "partial", explanation: "Finance cost annualised 11.3 Cr; gross borrowings +15.8 Cr (+12.1%)"}
+    - {promised_in: "Q4 FY26 and Q1 FY27 calls", promise: "Global auditor KPMG, next quarter then Q3 or Q4", outcome: "partial", explanation: "Slipped one quarter; 12 Nov incumbent resigned; B S R and Co LLP appointed; deck says KPMG"}
+    - {promised_in: "Q4 FY26 call", promise: "36 BE studies finish this year", outcome: "partial", explanation: "19 of 40 done; 21 dossiers due Q4 2026 to Q1 2027; prior counts drift"}
+    - {promised_in: "Q4 FY26 call", promise: "Four German registrations in two months", outcome: "partial", explanation: "No filing or deck confirms; Hungary EU-GMP site certificate only"}
+    - {promised_in: "Q4 FY26 call", promise: "Debtor days 150-160, already 170", outcome: "missed", explanation: "178 days H1 FY27; target loosened to 165-170 in Aug"}
+    - {promised_in: "Q4 FY26 call", promise: "Oncology FY27 revenue 150 Cr", outcome: "missed", explanation: "Restated 100-110 Cr in Aug without acknowledgement"}
+    - {promised_in: "Q4 FY26 call", promise: "Hormone WHO-GMP before Nov 2026", outcome: "missed", explanation: "Aug call: Jun-Jul 2027"}
+    - {promised_in: "Q4 FY26 call", promise: "EPO clinical data filed Oct-Nov 2026, registration by end CY2026", outcome: "missed", explanation: "Aug call: trials start Nov-Dec 2026, close Oct-Nov 2027"}
+    - {promised_in: "Q1 FY27 call", promise: "Oncology expansion done by March 2027", outcome: "missed", explanation: "Q2 deck p.5: June 2027"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "Which global auditor and when", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters; Nov filing names a different firm"}
+  - {question: "Middle East debtor rupee amount and cash balance", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "Gross margin trajectory", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters; cost ratio and margin swapped"}
+  - {question: "Oncology FY27 revenue", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters; cut not acknowledged"}
+  - {question: "Capex funding without new debt", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "answered both times; H1 cash flow shows net new borrowing of 15.8 Cr"}
+credibility_grade: "B"
+credibility_basis: "Two calls plus three filed quarters: revenue bands, EBITDA margin and Q2 gross margin delivered or beaten (9 of 21 checked promises delivered, 7 partial, 5 missed); misses sit in regulatory timelines, debtor days and auditor statements; fewer than four quarters of call history."
+peer_questions:
+  - {question: "What growth rate do peers report for LATAM, MENA and Africa generics? KPL's end markets are treated as low single digit (Aug call p.4).", why: "Tests whether registration-led growth of 40% is share gain or market growth", check_peers: ["CAPLIPOINT", "LINCOLN", "SENORES"]}
+  - {question: "Do peers selling to semi-regulated markets run 150-180 receivable days, and did the 2026 Gulf disruption lengthen their cycles?", why: "KPL debtor days 178 vs its own 150-160 ideal; tests whether the war explanation is sector-wide", check_peers: ["CAPLIPOINT", "LINCOLN", "SENORES"]}
+  - {question: "What do peers say about 2026 API cost and pass-through? KPL says 80-85% domestic API, 15% China, no pass-through, offset by a stronger dollar.", why: "Raw material claim behind gross margin guidance", check_peers: ["CAPLIPOINT", "SENORES", "LINCOLN"]}
+  - {question: "What approval timelines and revenue per registration do peers cite for COFEPRIS, INVIMA and other LATAM filings? KPL: 18-19 of 70 Mexico filings approved, 1.5-2 million a year each.", why: "Tests the registration-to-revenue engine behind 720+ Cr", check_peers: ["CAPLIPOINT", "SENORES"]}
+  - {question: "Do peers see price erosion after first-generic entry and how many approved plants compete? KPL claims very less competition and first-generic status in 70-80% of markets.", why: "Market share gain and moat claim", check_peers: ["CAPLIPOINT", "SENORES", "LINCOLN"]}
+  - {question: "Do peers report EU Annex 1 effects on injectable capacity utilisation and the cost of similar expansions? KPL: oncology utilisation 35-40% to 65%, 50 Cr line.", why: "Capex-cycle claim", check_peers: ["SENORES", "LINCOLN"]}
+  - {question: "What gross margin step-up do peers report after moving to regulated markets? KPL expects 3-4 points and 40% EBITDA on fresh EU registrations.", why: "Margin bridge to 27-30% EBITDA", check_peers: ["SENORES", "LINCOLN"]}
+  - {question: "How do peers split own-registered and own-distributed revenue from partner-held revenue, and what margin gap do they report?", why: "KPL revenue is 90% out-licensing and supply; own vs partner split NOT FOUND", check_peers: ["CAPLIPOINT", "LINCOLN"]}
+  - {question: "Do first-mover BE product margins fade from 40-45% to 25-30% within two to three years at peers?", why: "KPL FY29 30% EBITDA rests on these products fading", check_peers: ["SENORES", "CAPLIPOINT"]}
+  - {question: "Did any peer change its statutory auditor mid-term, and was the change previewed on calls?", why: "Benchmark for KPL auditor resignation of 12 Nov 2026", check_peers: ["CAPLIPOINT", "SENORES", "LINCOLN"]}
+red_flags:
+  - "HIGH: statutory auditor resigned 12 Nov 2026 mid-term (term to FY2028-29), same day as limited review; deck says KPMG, filing says B S R and Co LLP; no EGM at AGM; first audit on nil-ECL receivables"
+  - "MEDIUM-HIGH: filed Q2 MD&A mislabels EBITDA 50 vs 25 Cr as PAT; filed PAT 29.03 vs 14.12 Cr"
+  - "HIGH: domestic turnover 50.3% of FY26 revenue vs management India about 5%; no customer concentration; partner-routed sales"
+  - "HIGH: H1 CFO/PAT 50.4%, receivables +55.0 Cr, FCF -10.9 Cr, net borrowing +15.8 Cr, debtor days 178"
+  - "MEDIUM: PAT 122+ needs about 22% H2 tax vs 28.3% H1 and 31.2% Q2"
+  - "MEDIUM: silent cut of FY27 oncology revenue 150 to 100-110 Cr"
+  - "MEDIUM: slippage on EPO, hormone WHO-GMP and oncology expansion"
+  - "MEDIUM-HIGH: Kaler Biopharma related-party answer gave no price; AR sale return above sale"
+  - "MEDIUM: FY29 30% EBITDA vs new-product margins fading to 25-30%; flat selling prices for three years"
+  - "LOW pending live check: company secretary resignation claim unverified; CS signs filings 9 and 14 Nov 2026"
+dropped_triggers:
+  - "Alteplase biosimilar (replaced by Pembrolizumab; disclosed only under analyst question on 19 May 2026)"
+  - "Four German product registrations promised within two months (not mentioned after May)"
+timeline_slippages:
+  - "EPO: registration end CY2026 (May) to commercial before end CY2027 (Aug); about 12 months"
+  - "Hormone WHO-GMP: before Nov 2026 (May) to Jun-Jul 2027 (Aug); 7-8 months"
+  - "Oncology expansion: Mar 2027 (Aug call) to Jun 2027 (Q2 deck)"
+  - "Auditor appointment: next quarter (May) to Q3-Q4 (Aug) to B S R and Co LLP on 12 Nov via resignation"
+  - "Debtor days target: 150-160 (May) to 165-170 (Aug) to 178 actual"
+  - "Biosimilar clinical trial spend: 60-70 Cr in FY27 (May) to 150 Cr over Q3 FY28-Q4 FY29 (Aug)"
+analyst_note: "Hard P&L promises (revenue, EBITDA, Q2 gross margin) were met and the guide is set low on purpose (CFO: lower side so fewer queries, Aug p.13). Pipeline dates, debtor days and auditor statements slipped. Key derived points: Q2 PAT 29.03 Cr and tax 31.2%; MD&A PAT text is wrong; AR domestic turnover 50.3% vs India about 5% on the call; FY29 segment statements sum to 950-1,050 Cr before the general base. Grade B rests on two calls and three filed quarters; move to C on Q3 tax above 28% with PAT guide held, or a qualified first audit. The Q2 call text would test the CS and KPMG claims."

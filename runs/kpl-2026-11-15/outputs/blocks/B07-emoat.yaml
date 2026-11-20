@@ -1,0 +1,59 @@
+stage: B07-emoat
+company: "KPL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Registration-holder split (KPL-held vs partner-held) of revenue and EBITDA: NOT FOUND in any corpus document (B04 LB4)."
+  - "Customer, partner and country concentration table: NOT FOUND."
+  - "Q2 FY27 concall transcript not published (call 13 Nov 2026); Q3 FY26 call does not exist. Only May and Aug 2026 transcripts read."
+  - "Count of global manufacturers with comparable capability, patent filings, yield data, R&D expense line, Unit 6 and Unit 7 capacity and cost, state manufacturing licence copy, Algeria JV agreement: NOT FOUND."
+  - "PLI or other scheme enrolment, amounts and duration: NOT FOUND (AR names schemes at sector level only)."
+  - "Employee reconciliation (2,200+ per deck vs 1,137 permanent per AR p.50) and capital advances for Unit 6: NOT FOUND."
+flags:
+  - {type: FLAG-LB4-NOT-FOUND, reason: "Own vs partner-held registrations undisclosed; caps B2, A4, E1"}
+  - {type: FLAG-CAPEX-FUNDING, reason: "H1 FY27 capex 38.5 Cr vs CFO 27.6 Cr; gross borrowings 130 to 146 Cr; three capex totals (260-270; 185-190 plus 150; ICRA 70 and 40); component sum 175-185 vs stated 185-190"}
+  - {type: FLAG-CWIP-HORMONE, reason: "Unit 6 '50% spent by FY26' vs CWIP 17 Cr at Mar 2026 and 33 Cr at Sep 2026; cost drift 65 to 70 Cr"}
+  - {type: FLAG-SLIPPAGE, reason: "Six dated slippages from B05 carried into F2 and R1"}
+  - {type: FLAG-MIX-INCONSISTENT, reason: "FY30 revenue mix midpoints sum to 107.5% (115%+ with Keytruda at 30%)"}
+  - {type: FLAG-UNIT-UNSTATED, reason: "Registration yield '1.5 million or 2 million' per year: currency not stated (Aug call p.4); not converted"}
+em_score: 10.3
+em_classification: "NONE"
+active_categories:
+  - {id: "A4", name: "Product platform / dossier library", strength: "Moderate", evidence_type: "claim with documented fragments", time_to_materialise: "12-36 months"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "documented (plant certifications); lock-in unevidenced", time_to_materialise: "12-24 months"}
+evidence_mix: {documented: 10, claim: 9, inference: 3}
+completionist_recount: "📄 recount performed: 10 documented items across 7 categories (B2, A4, E1, R1, G1, F1, F2); 8 categories carry any evidence, 2 reach Moderate, 0 Strong"
+catalysts_12m:
+  - {catalyst: "Unit 6 manufacturing licence granted, then WHO-GMP/COPP", window: "Nov 2026 licence; Jun-Jul 2027 GMP", evidence_type: "claim (audit triggered per deck)", anchor: "Aug call p.8; Q2 deck p.15"}
+  - {catalyst: "Q3 FY27 revenue at or above 176 Cr and Q4 at or above 200 Cr with H2 tax near 22%", window: "Feb 2027 and May 2027 results", evidence_type: "claim", anchor: "May call p.7; B05 triggers 1 and 3"}
+  - {catalyst: "EPO clinical trial start and ROW dossier filings", window: "Nov 2026 to Mar 2027", evidence_type: "claim", anchor: "Aug call p.3-4"}
+  - {catalyst: "21 BE dossiers ready (7 by Q4 2026, 14 by Q1 2027) and 5-6 molecules filed or commercial by Q4 FY27", window: "Q4 2026 to Q1 2027", evidence_type: "claim", anchor: "Q2 deck p.12; Aug call p.8"}
+  - {catalyst: "Oncology expansion completes and EU/INVIMA audit requested", window: "Jun 2027", evidence_type: "claim", anchor: "Q2 deck p.5; Aug call p.16"}
+  - {catalyst: "Pembrolizumab pre-clinical completes", window: "Dec 2026 to Mar 2027", evidence_type: "claim (CDSCO nod is documented)", anchor: "Aug call p.9; BSE 24 Jul 2026"}
+  - {catalyst: "First EU marketing authorisations (7-8 by CY2027)", window: "within 12 months", evidence_type: "claim", anchor: "May call p.8"}
+  - {catalyst: "Octreotide LAR and Ampho B BE completion", window: "Apr-Jun 2027", evidence_type: "claim", anchor: "Aug call p.9"}
+  - {catalyst: "Auditor transition to B S R and Co LLP with first audit clean (risk catalyst)", window: "member approval by about Feb 2027; FY27 audit May-Aug 2027", evidence_type: "documented event (BSE 12 Nov 2026), outcome open", anchor: "B05 FLAG-AUDITOR; Q2 results p.19-23"}
+capex_embedded_growth_pct: 77   # 115 Cr plant capex (hormone 65 + oncology 50) x 3.35x FY26 net-PPE turnover = 385 Cr on 503.08 Cr; range 58-77 using FY23-26 average 2.56x
+optionality_register:
+  - {optionality: "Oncology expansion adds 45-50% capacity at 30-32% blended margin", converting_evidence: "Commissioning, CWIP capitalised, EU/INVIMA audit of the expanded line, onco revenue above 40 Cr per quarter", first_appears: "Reg 30; Q3-Q4 FY27 deck; AR FY27", window: "Jun-Dec 2027"}
+  - {optionality: "Unit 6 hormones 70-80 Cr FY28 on tenders", converting_evidence: "State manufacturing licence; first tender invoice", first_appears: "Reg 30; Q3 FY27 deck", window: "Nov 2026 to FY28"}
+  - {optionality: "BE library converts to 80-100 Cr FY28", converting_evidence: "Named country registrations and first commercial sale of BE molecules", first_appears: "Q3 and Q4 FY27 decks; concall", window: "6-18 months"}
+  - {optionality: "First-generic position on Octreotide LAR and Leuprolide 45 mg", converting_evidence: "BE completion filing; first-generic market list", first_appears: "Reg 30; Q1 FY28 deck", window: "Apr 2027 to Q2 FY28"}
+  - {optionality: "EPO India launch FY28 and 10-12 ROW registrations", converting_evidence: "CDSCO trial permission; trial registry entry; foreign dossier receipts", first_appears: "Reg 30; Q3 FY27 deck", window: "Trial start Nov 2026 to Mar 2027"}
+  - {optionality: "Pembrolizumab biosimilar before end CY2028", converting_evidence: "Pre-clinical completion; CDSCO clinical approval", first_appears: "Reg 30", window: "Mar 2027 pre-clinical; 2028 launch"}
+  - {optionality: "Algeria biosimilar JV with partner-funded plant", converting_evidence: "Signed JV agreement with equity split, exclusivity and partner capex", first_appears: "Reg 30; RPT filing", window: "6-12 months"}
+  - {optionality: "EU registrations at about 40% EBITDA", converting_evidence: "Named EU marketing authorisations with holder identified", first_appears: "Reg 30; Q3-Q4 FY27 deck", window: "12-18 months"}
+  - {optionality: "Own-registration share rising (decides B2, A4, E1 impact)", converting_evidence: "Revenue and EBITDA by registration holder; top-5 customer and country table", first_appears: "AR FY27 note; concall answer", window: "12-18 months"}
+  - {optionality: "Working capital improves in rupees", converting_evidence: "Receivables below 335 Cr with FY27 CFO/PAT at or above 60%", first_appears: "H2 FY27 results; AR FY27 cash-flow statement", window: "6-12 months"}
+  - {optionality: "Three generics of patented molecules", converting_evidence: "Patent-expiry-linked registrations or filings", first_appears: "Q3 deck; Reg 30", window: "12-36 months"}
+  - {optionality: "Unit 7 mega general plant", converting_evidence: "Capex amount, funding and EU-GMP plan", first_appears: "AR FY27; Reg 30", window: "24+ months"}
+combined_assessment: "GOOD"
+combined_reasoning: "Gate 0 GOOD (core 61, capped by deal-breaker 2) plus emerging score 10.3 (NONE) gives GOOD with no forward uplift; pipeline is large but undocumented."
+top_moat_risks:
+  - "Registrations may be partner-held; own vs partner split NOT FOUND"
+  - "Capex and growth funded by supplier credit and borrowings (H1 CFO/PAT 50.4%, borrowings +15.8 Cr)"
+  - "Six dated pipeline slippages; further slips on hormone, oncology expansion, EPO"
+  - "BE first-mover margins fade 40-45% to 25-30% by 2028-29"
+  - "Auditor resigned mid-term 12 Nov 2026; first audit on nil-ECL receivables"
+analyst_note: "Score 10.3 is 1.7 below the 12 line, so the class is fragile in both directions. B2 is scored 2.0 because plant certificates are filed facts, but the same certificates give a competitor with equal plants an equal route, and registration-holder data is absent. Pipeline items (oncology expansion, hormones, BE, EPO, Pembrolizumab) are in the register, not the score. 2C arithmetic: 115 Cr plant capex at 3.35x gives 77%, range 58-77%. FY27 guide takes about 93% of a crude 774 Cr full-utilisation ceiling, so FY28 growth depends on oncology and hormone capacity landing. Hormone cost drifted 65 to 70 Cr and the '50% spent' claim matches the September CWIP, not March. WC days improved while receivables rose in rupees; G2 scored 0."

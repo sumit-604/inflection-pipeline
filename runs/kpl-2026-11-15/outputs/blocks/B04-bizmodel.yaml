@@ -1,0 +1,74 @@
+stage: B04-bizmodel
+company: "KPL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "LOAD-BEARING FACT 4 open: revenue share on KPL-held vs partner-held registrations, margin on each, top customer/partner/country concentration: NOT FOUND in AR FY26, Q4/Q1/Q2 FY27 decks, Q2 results letter, ICRA rationale. The 28-32% vs 24-26% EBITDA figures exist only in the web brief (unanchored)."
+  - "Revenue by country, customer names, contract terms and tenor for out-licensing and CDMO: NOT FOUND."
+  - "Named competitors: NOT FOUND in AR or decks; peer comparison deferred to peer stage."
+  - "Per-unit volume and price (tablets, vials sold): NOT FOUND; decks give capacity only. Unit economics built per Rs 100 revenue."
+  - "Q2 deck slide 26 (dosage-form shares) and Q4 deck unit-split chart: extraction order garbled; Q4 unit mapping not confirmed."
+  - "Q2 FY27 concall transcript absent (B00); investor presentation present for all three periods."
+flags:
+  - {type: FLAG-LB4-NOT-FOUND, reason: "Own-registration vs partner-held share, margins and concentration undisclosed in all filed documents; margin-engine claim untestable from the corpus"}
+  - {type: FLAG-CONSISTENCY, reason: "Web-brief EBITDA bands (own 28-32%, partner 24-26%) bound blended margin at 24-32%, but FY26 filed EBITDA is 23.5% (Q2 Pres slide 6); only Q2 FY27 27.5% fits. [INFERENCE] ranges are forward or not like-for-like; separating observation: management EBITDA by registration type for one reported quarter"}
+  - {type: FLAG-DEFINITION, reason: "Deck receivable days 178 reproduces only on annualised H1 revenue (335/(343.6x2)x365 = 177.9, derived) while receivables rose 280 to 335 Cr (+19.6%, Q2 Pres slides 8-9); days fall on denominator growth"}
+  - {type: FLAG-DEFINITION, reason: "Filings count: Q2 Pres slide 21 shows cumulative 700+ at FY26 and slide 27 shows 200 for FY26 on the same label; basis not stated"}
+  - {type: FLAG-LABEL, reason: "'Asset-light' (AR p.91, Q2 Pres slide 27) describes market access; company owns 5 plants, PPE 150 Cr, biologics capex 195 Cr+ and hormones 65 Cr (Q2 Pres slides 8, 16)"}
+  - {type: FLAG-SECTOR-CAP, reason: "Pharma / CDMO row accepted as nearest, but only ~10% of revenue is labelled CDMO (Q2 Pres slide 27); 90% is registration-led formulation supply; web-brief PE 41.1 (unanchored) exceeds the 38x cap, stage 11 to compute on filed numbers"}
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Out-licensing and supply (registration-led formulation sales; KPL-held vs partner-held split NOT FOUND)", type: "product sales, repeat batch orders", pct_of_revenue: 90, predictability: "M"}
+  - {name: "CDMO (contract manufacturing)", type: "contract manufacturing", pct_of_revenue: 10, predictability: "M"}
+  - {name: "Cross-cut: export turnover FY26 (49.65%, AR p.222, derived) and domestic turnover (50.34%); not additive to above", type: "geography", pct_of_revenue: 50, predictability: "L-M"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "secular-growth"
+moats_present:
+  - "Registrations and plant approvals (750+ filings, EU-GMP 4 of 5 plants): medium durability; ownership split NOT FOUND"
+  - "Process know-how in complex injectables (liposomal, lyophilised, long-acting): medium durability"
+  - "Switching cost via partner-held registrations: low-medium; contract terms NOT FOUND"
+  - "Cost advantage: low-medium, unproven against named peers"
+valuation_methods:
+  primary: {method: "Forward P/E, exit PE from Section 1B only", why: "Profitable, growing, low debt; earnings basis identical at entry and exit; cash conversion gates the earnings quality"}
+  secondary: {method: "EV/EBITDA", why: "Strips tax-rate noise (Q2 FY27 tax 31.3% derived) and depreciation; debt small so adds modest information"}
+  tertiary: {method: "PEG / growth-adjusted P/E", why: "Fits a 25%-growth story; hinges on FY27 guidance of 720+ Cr delivering"}
+  not_applicable: ["DCF as primary (FCF -3,235.42 lakh FY26)", "P/B and ROE-based (book mostly receivables)", "EV/Sales", "SOTP (single reportable segment)", "NAV or replacement cost"]
+irrelevant_ratios:
+  - "Current ratio 1.80: inflated by 203-day receivables"
+  - "Debtor turnover 2.30: year-end balance hides intra-year swings"
+  - "Debt/equity 0.39 and interest cover 9.15: low because suppliers fund working capital"
+  - "Spot ROCE 31.0%: definition not stated, base swollen by receivables"
+  - "Deck cash conversion cycle 130 days: improves on denominator growth while receivables rupees rise"
+  - "Operating profit margin 19.97% (AR p.96): different basis from deck EBITDA 23.5%"
+  - "P/B: book value mostly debtors"
+must_track_metrics:
+  - {metric: "Receivables in rupees and days on a fixed stated basis", healthy: "falling in both; below 178 days", red_flag: "rupees up faster than revenue; days above 203; over-one-year bucket above 1,566.38 lakh"}
+  - {metric: "CFO / PAT (half-year)", healthy: "60% or higher", red_flag: "below 35% (FY26 24.6%)"}
+  - {metric: "Gross margin", healthy: "50%+ (FY26 48.7%, Q2 FY27 52.2%, derived)", red_flag: "below 48.6%"}
+  - {metric: "EBITDA margin vs 27-28% FY27 guide", healthy: "27%+ (Q2 FY27 27.5%)", red_flag: "below 25% for two quarters"}
+  - {metric: "Own-vs-partner registration revenue mix and customer/country concentration", healthy: "disclosed, own share rising, no customer above 10%", red_flag: "remains undisclosed or one name above 20%"}
+unit_economics:
+  unit: "Rs 100 of revenue (per-dosage-unit volume and price NOT FOUND)"
+  revenue_per_unit: "Rs 100"
+  margin_per_unit: "FY26: gross 48.7, EBITDA 23.5; Q2 FY27: gross 52.2, EBITDA 27.5 (Q2 Pres slides 38, 7, derived). Incremental EBITDA margin 28.6% FY26, 34.8% Q2 YoY, 46.3% Q2 QoQ (derived)"
+  key_lever: "Mix toward KPL-held registrations, oncology (22% of Q2 FY27) and regulated markets lifting gross margin on a largely fixed people and plant base; untestable until the registration split is disclosed"
+first_deterioration_signals:
+  - {risk: "Registration-gated revenue, tender or approval loss", first_signal: "Export-leg revenue growth below 15%"}
+  - {risk: "Margin-engine claim untestable", first_signal: "Gross margin falling while revenue rises"}
+  - {risk: "Credit given to customers, nil provision on 28,005.24 lakh", first_signal: "Receivables rupees and over-one-year bucket"}
+  - {risk: "Supplier-funded growth reverses", first_signal: "Payables days fall while inventory rises; CFO/PAT"}
+  - {risk: "Unit 6, biologics, oncology execution and funding", first_signal: "Capital work in progress and capex vs plan; another slip in EPO or Unit 6 date"}
+  - {risk: "Governance (auditor resignation 12 Nov 2026, family board, director-interested RPT)", first_signal: "Auditor or independent director changes; related-party returns"}
+mgmt_questions:
+  - "What share of H1 FY27 revenue and EBITDA sits on KPL-held vs partner-held registrations?"
+  - "Top 5 customers and top 5 countries as % of revenue and of receivables?"
+  - "Why did receivables rise 280 to 335 Cr in H1 while days fell to 178, and what base defines the days?"
+  - "Why no expected credit loss on 28,005.24 lakh of receivables?"
+  - "Why did the auditor resign on 12 Nov 2026?"
+  - "How much of the 720+ Cr FY27 revenue is invoiced or on order vs still to be won?"
+  - "How is Rs 500-600 Cr of capex funded without equity when CFO is about 25% of PAT?"
+one_line_verdict: "A growing, registration-led formulation exporter with real margin expansion in the filings, but the own-vs-partner mix that drives it and the cash conversion that proves it are not disclosed."
+analyst_note: "LB4 NOT FOUND in every filed document. Only filed margin statement tied to registrations is the May 2026 call: 7-8 new EU registrations by CY2027 at about 40% EBITDA, about 10% of revenue (a forecast). Export 49.65% / domestic 50.34% of FY26 revenue (AR p.222, lakhs, derived) answers geography only; ICRA says domestic buyers re-export, so domestic is not 'partner-held'. Business is single-segment, so no audited stream data exists. Sector row Pharma / CDMO accepted as nearest despite only 10% CDMO. FY26 tax rate derived 24.7% (AR p.30 lines: 2,214.62 / 8,949.27); Q2 FY27 31.3% (Q2 Pres slide 7). Commission +131.5% and distribution-cost fall are [INFERENCE] readings, each with a named separating observation in the report."

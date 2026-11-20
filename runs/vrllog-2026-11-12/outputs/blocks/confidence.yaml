@@ -1,0 +1,19 @@
+confidence_delta:
+  phase: phase 1 (evidence)
+  numerical_acceptance: 95
+  numerical_basis: 'B12a: 560 numbers checked; mandatory 140 of 140; CRITICAL 0, MAJOR 3, MINOR 5'
+  redflag_coverage: 67
+  redflag_basis: 'B12b: material found 9, fully caught 6; partial catches scored as not caught'
+  framework_adherence: 85.3
+  framework_basis: 'B12c phase 1 scope: Gate 0 43 of 48, Emerging Moat 21 of 27; valuation half pending phase 3'
+  peer_utilisation: 100.0
+  peer_basis: 'B12d: 12 of 12 peer transcripts confirmed substantive'
+  overall: 67
+  overall_set_by: redflag_coverage
+  not_applicable: []
+  band: '60-74: PROCEED verdicts downgrade one level'
+  rework_triggers:
+    verifier_a_confirmed_critical: 0
+    any_acceptance_below_60_on_denominator_4_plus: false
+  verifier_a_identity_check: no CRITICAL rows; nothing struck
+  verifier_a_shadow: not run (switch left armed; claimed by runs/kusumgar-2026-11-12)

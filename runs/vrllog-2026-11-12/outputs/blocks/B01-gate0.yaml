@@ -1,0 +1,41 @@
+stage: B01-gate0
+company: "VRLLOG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "screener P&L, Quarters, Balance Sheet, Cash Flow sheets absent (empty export); only the Data_Sheet was used"
+  - "trade payables FY17-FY23 NOT FOUND, so B4 earliest-year WC days not computable (B4 scored 0)"
+  - "actual capex FY17-FY24 NOT FOUND; FCF uses CFO + CFI proxy for those years (actual capex used FY25, FY26 from AR p.173)"
+  - "peer data not provided: M2, M5, M6, M9 scored 0 PEER DATA NEEDED"
+  - "promoter holding before 31 Mar 2024 NOT FOUND; earlier 5.4% promoter stake sale (web, company memory) date NOT FOUND in corpus"
+  - "full-year FY27 capex guidance Rs 220-240 Cr and FY tonnage table NOT FOUND in files read at this stage"
+  - "H1 FY27 lease payments NOT FOUND (presentation cash flow condensed)"
+  - "ICRA rationale dated 2025-11-19, twelve months old"
+  - "sector_cap_row NOT FOUND (HIGH, carried from B00; operator rules at /fttcp)"
+flags: []
+data_years: 10
+fy_range: "FY2017 to FY2026"
+blocks: {A: 13, B: 14, C: 12, D: 6, E: 18}
+core_score: 63
+moat_score: 11
+grand_total: 74
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "GOOD"
+deal_breakers: []
+history_downgrade: false
+data_notes:
+  - "ROCE COMPUTED (screener has no ROCE row): (PBT+Interest)/(Equity+Reserves+Borrowings); Borrowings include lease liabilities 698.44 Cr at Mar-26. FY23 EBIT includes other income 171.13 Cr. Strict formula FY26 = 18.9% (AR p.170), FY25 = 15.8%; bands unchanged."
+  - "Management ROCE (presentation p.16, 30/21/15/21/25% FY22-FY26) uses another definition; not substituted."
+  - "FCF proxy FY17-FY24 = CFO + CFI; actual capex FY25 448.79 Cr and FY26 298.62 Cr (AR p.173). FCF after lease payments: FY26 159.26 Cr, FY25 -78.92 Cr (lease principal+interest 196.49 and 184.92 Cr, AR p.173); formula FCF unchanged."
+  - "M12 scored 3 on two evidenced years only (WC days 11.7 FY26, 12.1 FY25)."
+  - "E2 scored 3 on 31 Mar 2024 to 30 Sep 2026 flat 60.24% (NSE master); 3-year window pre-Mar-2024 NOT FOUND."
+  - "LB1 EBITDA definition: management EBITDA includes other income and divides by total income. Q2 FY27 225.6 Cr / 966.6 = 23.3%; operating basis (revenue less three cost lines, results p.4) Q2 22.97%, H1 22.14%, Q1 21.23%. Results face has no EBITDA line."
+  - "LB2 tonnage (presentation p.12 chart, thousand tonnes): FY25 4,273, FY26 3,955 (-7.4%), H1 FY26 1,911, H1 FY27 2,098 (printed 2,099, +10%). FY26 sum comes from chart label order."
+  - "LB3 buyback Rs 280 Cr at Rs 320, 87.5 lakh shares (5.00%), promoters not tendering; promoter holding 60.24% Sep-26, 0% pledged; derived post-buyback promoter holding 63.4% if fully taken up. Related-party items small, arm's length (AR p.223-224)."
+  - "LB4 H1 FY27 CFO 362.5 Cr, capex 158 Cr; net debt 337.2 Cr (rebuilt, ex-lease) vs 440.07 Cr Mar-26; leases 682.5 Cr Sep-26 vs 698.4 Cr Mar-26; current investments 280.8 Cr held at Sep-26 ahead of the buyback; derived ex-lease net debt after full buyback about 617 Cr. Sep-26 current ratio 1.00 vs FY26 0.49."
+  - "Presentation p.14 balance sheet columns mislabelled: 'SEP-25' column is the 31 Mar 2026 balance sheet."
+  - "PEER DATA NEEDED: M2, M5, M6, M9."
+block_b_trend: "improving: FY26 CFO 654.37 Cr vs 554.79 Cr FY25 (screener-data); but FCF after lease payments is 159.26 Cr FY26 vs -78.92 Cr FY25"
+analyst_note: "Gate 0 GOOD on core 63, moat MODERATE. Weakest block D (6/20): current ratio 0.49 and lease-inclusive D/E 1.01. Strongest E (18/20). Margin 22.14% H1 on operating basis, not 22.6%; management EBITDA includes other income. CFO is before lease payments of about 196 Cr a year, so cash conversion reads richer than equity free cash flow. Buyback Rs 280 Cr is already parked as current investments; net debt rises about 280 Cr when it settles."

@@ -1,0 +1,49 @@
+stage: B08-promoter
+company: "VRLLOG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "No direct registry search possible: SEBI orders and SCORES, MCA21/RoC, NCLT, eCourts, ED/SFIO were not queried; web search only"
+  - "Bus sale (Sep 2022, Rs 230 Cr to promoter company Vijayanand Travels): valuation report, fairness opinion and non-promoter vote tally NOT FOUND"
+  - "Buyer of the Dec 2022 5.4% block and the exact nature of the FY25 PPE sold (1,488 lakh) NOT FOUND"
+  - "Reasons for exit of independent directors Bellad (Nov 2023), Kore and Narekuli (Mar 2024) NOT FOUND"
+  - "FY26 AGM voting result on CMD re-appointment pay and any proxy adviser report NOT FOUND"
+  - "Dr. Anand Sankeshwar education and other directorships NOT FOUND"
+flags: []
+verdict: "TRUSTWORTHY"
+scorecard: {clean: 5, caution: 5, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Promoters sold about 9.4 points of equity in nine months for about Rs 511.5 Cr: Vijay 47.92 lakh shares at about Rs 570 (Rs 273.14 Cr, 5.4%, 14 Dec 2022); Anand 35 lakh at about Rs 681 (Rs 238.38 Cr, 4%, Sep 2023). Reason not disclosed; no sale since (60.24% for 12 quarters). Today's filed 28.33% and 31.43% match the post-sale press figures.", evidence_tier: "MEDIA (holdings reconciliation VERIFIED)", source: "latestly.com PTI 4587199 and 5398522; moneyworks4me; Trendlyne bulk deal table; LoO para 6.5 (announcements/20261024-44aad60b)", date: "2022-12-14; 2023-09"}
+  - {finding: "Promoter-owned Vijayanand Travels bought the bus division (Rs 230 Cr, 6.7x division net worth of Rs 34.52 Cr, board 15 Sep 2022, subject to non-promoter vote), the air business (1,700 lakh, FY24) and PPE worth 1,488 lakh (FY25). Valuation report and vote tally NOT FOUND.", evidence_tier: "MEDIA for bus; VERIFIED for air and PPE amounts", source: "autocarpro.in 16 Sep 2022; FY25 AR Note 43(b) [page 221]", date: "2022-09-15; FY24; FY25"}
+  - {finding: "FY26 related-party note stopped naming counterparties per line. Travelling to related parties 535 (113), rent cost 76 (13), rent income 323 (226). Total related-party flows 0.46% of revenue; no loans or guarantees.", evidence_tier: "VERIFIED", source: "FY26 AR Note 35, p.223-224; FY25 AR Note 43 [page 220-222]", date: "FY26"}
+  - {finding: "CMD re-appointment from 1 Jan 2027 at age 76: fixed pay up to Rs 40 lakh a month (480 a year vs 324, +48%) fixed for three years, plus up to 0.75% of profits; CMD pay 496 lakh FY26 = 207x median; result of the AGM vote NOT FOUND.", evidence_tier: "VERIFIED", source: "FY26 AR notice item 5, p.8 and [page 24-25]", date: "FY26 AR"}
+  - {finding: "Directors' Report says there are no auditor qualifications while the auditor's books-of-account paragraph carries an audit trail exception; March 2026 bank stock statement unfiled (CARO ii(b)); shareholder count mismatch 79,770 vs 81,024. First year of Walker Chandiok after term-end rotation of Kalyaniwalla and Mistry.", evidence_tier: "VERIFIED", source: "FY26 AR p.36, p.40, p.161-163, Note 40 (via 03-ardeep.md)", date: "2026-05-18"}
+  - {finding: "Non-executive, non-independent director Ashok Shettar resigned 7 Oct 2026 citing increased professional commitments, no other reasons. Letter says effective 6 Oct, company intimation says 7 Oct. He attended 3 of 5 board meetings in FY26 and sat on the Nomination and Remuneration Committee.", evidence_tier: "VERIFIED", source: "announcements/20261008-90a90947 pp.1-3; FY26 AR board table via 03-ardeep 5A", date: "2026-10-08"}
+  - {finding: "Key-person concentration: CMD 76, MD 51, grandson on board, no named non-family successor or outside CEO.", evidence_tier: "VERIFIED", source: "FY26 AR p.8, p.128-130, p.137", date: "FY26 AR"}
+transition_evidence:
+  - "Institutional depth: mutual funds 24.34%, HDFC Small Cap family 9.77% (FY26 AR p.146); HDFC Small Cap took 25.02% of accepted buyback shares (post-buyback ad 12 Nov 2026, table 3.2)"
+  - "Governance refresh: six independents appointed Aug 2023 to Feb 2025, 50% of board (FY25 AR Note 43 list; FY26 AR p.128-130)"
+  - "Auditor changed to Walker Chandiok from 6 Aug 2025 at term end; mid-tier firm, not a Big-4 upgrade (FY25 AR notice; FY26 AR p.157)"
+  - "Promoter stake rises 60.24% to 63.41% by non-tendering in the Rs 280 Cr buyback at Rs 320; no promoter cash taken out (LoO paras 6.9, 11.2; post-buyback ad table 3.3)"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0%: no pledge or encumbrance at 31 Mar 2026 (FY26 AR p.150) or 30 Sep 2026 (XBRL flags false); promoter holding 60.24% flat for 12 quarters Mar 2024 to Sep 2026"
+searches_performed:
+  - "WebSearch: VRL promoter stake sale 5.4% Vijay and Anand Sankeshwar block deal"
+  - "WebSearch: VRL buyback Rs 280 Cr Rs 320 promoters not participate 2026"
+  - "WebSearch: Vijay Sankeshwar VRL SEBI order, penalty, investigation, income tax raid"
+  - "WebSearch: VRL bus business sale Vijayanand Travels, wind, air, related party"
+  - "WebSearch: bus slump sale Rs 230 Cr shareholder approval and valuation"
+  - "WebSearch: VRL Glassdoor or AmbitionBox"
+  - "WebSearch: IiAS or proxy adviser VRL remuneration re-appointment"
+  - "WebSearch: Vijay Sankeshwar 47.92 lakh shares Dec 2022 buyers"
+  - "WebSearch: Vijay Sankeshwar controversy, Vijayanand Printers, Times Group"
+  - "WebFetch: autocarpro.in bus division article"
+  - "Corpus reads: FY26 AR, FY25 AR, Letter of Offer, post-buyback ad, resignation PDF, SHP master and Sep 2026 XBRL, B02, B03, ICRA text"
+searches_skipped:
+  - "WebFetch latestly.com (2 articles): HTTP 502; trendlyne insider page: HTTP 405; bigul.co: no content. Facts from search snippets only"
+  - "SEBI orders and SCORES, MCA21/RoC entity status, NCLT, eCourts, ED/SFIO: not queried"
+  - "Bus sale vote tally and valuation; FY26 AGM voting results; postal ballot public-only vote; peer reputation; Glassdoor (no results)"
+verdict_basis: "No regulatory action, no pledge, no loans or guarantees to the group, related-party flows 0.46% of revenue, promoters out of the 2026 buyback; five caution items are disclosure, structure and succession, none shows value moving to the family"
+analyst_note: "Load-bearing fact 3 resolved: buyback Rs 280 Cr at Rs 320 closed, 3.94x subscribed, promoters 63.41% after; the 5.4% sale was Vijay Sankeshwar, 14 Dec 2022 (media), and a second 4% sale by Anand in Sep 2023 was not in the brief. A Trendlyne Feb 2026 Anand sale conflicts with filings and is not used. The FY25 PPE buyer is Vijayanand Travels (FY25 AR). The verdict is low-margin TRUSTWORTHY; it moves to CAUTION if the 2022 bus sale valuation or vote shows a below-fair price, or if FY27 related-party flows grow beyond 0.46% of revenue."

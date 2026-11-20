@@ -1,0 +1,15 @@
+# VERIFIER A ERRATA: vrllog-2026-11-12
+
+Mechanical copy of every B12a source-fidelity finding. The stage reports are left as written (they are the audit target).
+Downstream stages (synthesis-lite, 09b dossier) use the SOURCE TRUTH column, never the claimed value.
+
+| # | severity | location | claimed | source truth (Verifier A) |
+|---|---|---|---|---|
+| 1 | MAJOR | 04-bizmodel.md Section 3D, last bullet (operating leverage) | A 1% freight rate change = about Rs 3.2 Cr of quarterly EBITDA at Q2 revenue (961.9 x 1%) | 961.9 Cr x 1% = Rs 9.62 Cr. Revenue base 961.9 Cr is right (Q2 FY27 results p.4, 96,192 lakh). The 3.2 does not follow from the stated inputs |
+| 2 | MAJOR | 01-gate0.md LB1, verdict bullet: freight cost to revenue 6.05% from 6.27% (presentation p.7) | Freight cost to revenue fell to 6.05% in Q2 from 6.27% on freight hikes (presentation p.7); stated reason text also cited to p.7 | 6.05% and 6.27% are the Hamali (loading and unloading) row on presentation PDF p.9 (Q2 FY27 vs Q2 FY26, % to revenue). Freight, handling and servicing cost is 567.8/961.9 = 59.0% vs 480.4/797.0 = 60.3%. The reason text Increase in Volumes and Freight Rates leads to increase in margins is on p.9, not p.7 (p.7 is the P&L) |
+| 3 | MAJOR | 01-gate0.md LB1 labelling defect line and LB4 (H1 cash flow, tax paid, current investments, net debt rebuild) | Balance sheet on presentation p.14 (current investments 280.8); H1 CFO 362.5, CFI -440.5, CFF +74.5, tax paid 54.0 vs 6.8 on presentation p.15 | Balance sheet is PDF p.13 (printed slide 12); cash flow statement is PDF p.14 (printed slide 13). p.14 holds the cash flow and p.15 holds Key Financial Ratios. Values themselves match (280.8; 362.5; -440.5; 74.5; 54.0; 6.8) |
+| 4 | MINOR | 01-gate0.md: EBITDA 673.9 and other income 23.7 (p.33); ROCE chart 30/21/15/21/25 (p.16); record date 22 Oct 2026 (p.6) | presentation p.33; p.16; p.6 | 673.9 and 23.7 are on PDF p.32 (printed 31); the ROCE chart is on PDF p.15 (printed 14); record date appears on PDF p.5 (and p.16 text). Values match |
+| 5 | MINOR | 05-concall.md throughout (anchor key says [page N] marker) | Q2 FY27 call: buyback p.4-5, 21-22% margin p.6/p.8, capex H2 p.7, ROCE 30% p.9; Q1 FY27 call: 20-21% for 3-4 years p.10 | The statements exist and the quotes match, but they sit on printed page numbers (Page N of 14 header), which equal the [page N] marker minus 1. By the declared marker convention the pages are 5-6, 7/9, 8, 10, and 11. Stage 7 says its call anchors use printed pages; stage 5 declares markers |
+| 6 | MINOR | 09-tam.md Method 2: TCIEXP Q2 FY27 tonnage 265,000 t cited to transcript p.2, line 201 | transcript p.2 | Line 201 is on [page 5] (printed Page 4 of 13). Value 265,000 tons and +7.5% match |
+| 7 | MINOR | 03-ardeep.md LB4 row 4 and Phase 3A: MD&A capex 29,805 (p.85, p.87) | p.85, p.87 | 29,805 lakh appears on PDF p.86 (line 4162) and p.87 (line 4204). p.85 is the margin table |
+| 8 | MINOR | 07-emoat.md 1B: contractual customers added (Pres. p.15) | Pres. p.15 | Addition of New customers including Contractual customers is on PDF p.8. p.15 is Key Financial Ratios |

@@ -1,0 +1,21 @@
+stage: B13-synthesis   # phase 1 lite mode; file B13-synthesis-lite.yaml
+company: "VRLLOG"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"
+status: complete
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 4   # six verifier MAJORs worth carrying; overall 67 in the 60-74 band (band read as a second route to the same level, not a second step)
+flags_active: []   # FLAG-PROMOTER not active (B08 TRUSTWORTHY); FLAG-CASH not active (B01 Block B and B02 receivables both improving); FLAG-GATE0 CONTINGENT on the operator ruling for Verifier C G0-07 reading (b)
+confidence_delta: {numerical: 95, redflag: 67, framework: 85.3, peer: 100, overall: 67}
+valuation_decision: "NOT APPLICABLE (phase 1 lite; stage 11 has not run)"
+entry_range: {low: "NOT APPLICABLE (phase 1 lite)", high: "NOT APPLICABLE (phase 1 lite)"}
+headline: "Parcel trucker proved price, now prove volume"
+falsification_metric: "Q3 FY27 (quarter to 31 Dec 2026) operating EBITDA margin on revenue from operations (results face: revenue less freight/handling/servicing, employee and other expenses) below 20% while realisation per tonne holds at or above Rs 8,840"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+notion_save:
+  page_title: "VRLLOG VRL Logistics: phase 1 evidence run 2026-11-12"
+  summary: "Parcel trucker proved price, now prove volume. Gate (phase 1, evidence only): PROCEED WITH CAVEATS, rule 4, overall confidence 67. Promoter TRUSTWORTHY (stage partial); cash flag not active; Gate 0 GOOD 74/160 contingent on two operator rulings (G0-07, G0-27). Sector cap row NOT FOUND blocks stage 11. No decision, no entry range: valuation has not run. Business understanding narrative in outputs/final/business-narrative.md."
+  drive_link: "none"
+  mode: append-never-overwrite-status

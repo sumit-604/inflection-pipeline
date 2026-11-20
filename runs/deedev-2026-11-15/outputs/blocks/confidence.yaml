@@ -1,0 +1,26 @@
+stage: confidence
+company: DEEDEV
+run_date: 2026-11-15
+phase: 1
+confidence_delta:
+  numerical_acceptance: 98.6      # B12a: 442 numbers checked, 6 findings (0 CRITICAL, 3 MAJOR, 3 MINOR); mandatory tier 112 of 112
+  redflag_coverage: 88.9          # B12b.acceptance_rate: 16 of 18 material items already in the pipeline (8 fully caught, 8 partially caught)
+  framework_adherence: 87.5       # B12c phase-1 scope only: Gate 0 40/45 + Emerging Moat 23/27 = 63/72; valuation adherence PENDING PHASE 3
+  peer_utilisation: 83.3          # B12d: 10 peer transcripts used substantively of 12 provided
+  overall: 83.3
+  overall_set_by: peer_utilisation
+  not_applicable: []
+  band: "75-89 normal, note specifics"
+verifier_a_identity_check: "B12a carries no CRITICAL row; nothing to test, nothing struck."
+rework_triggers:
+  verifier_a_confirmed_critical: false
+  acceptance_below_60: false
+  note: "No REWORK trigger on the block figures (OR-29)."
+open_item_for_operator: "Verifier B states two readings of its own acceptance rate. The block field is 88.9% (caught plus partially caught, the prompt definition 'ones the pipeline already had'). Counting only fully caught items it is 8 of 18 = 44.4%, below the 60% REWORK line. The orchestrator used the block field as written. The operator rules which basis governs."
+verifier_blocks: {A: outputs/blocks/B12a.yaml, B: outputs/blocks/B12b.yaml, C: outputs/blocks/B12c.yaml, D: outputs/blocks/B12d.yaml}
+framework_adherence_valuation: "pending phase 3"
+source_fidelity_dispositions:
+  - {finding: "B12a row 1, 03-ardeep.md contingent liabilities total", disposition: "GATE HELD - figure corrected at source (25,475.26 INR lacs, 28.7%; AR Note 32B p.229, Note 46 p.251, Note 32(e) p.230)"}
+  - {finding: "B12a row 2, 05-concall.md and 09-tam.md oil and gas 890.12", disposition: "GATE HELD - figure corrected at source (889.95; order filing 13 Nov 2026 p.2)"}
+  - {finding: "B12a row 3, 09-tam.md India book 59.6% power", disposition: "GATE HELD - figure corrected at source (59.05%; order filing 13 Nov 2026 p.2)"}
+verifier_disagreements: "none"

@@ -1,0 +1,34 @@
+stage: B02-notes-pass1
+company: "DEEDEV"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+pass: 1
+report_path: "runs/deedev-2026-11-15/outputs/reports/02-notes-pass1.md"
+unit: "INR lacs (source unit, not converted)"
+input_gaps:
+  - "empty screener P&L/BS/CF/Quarters sheets (Data_Sheet populated)"
+  - "Q2 FY27 concall transcript absent (call on 17 Nov 2026, after run date; CORPUS GAPPED-FRESHNESS)"
+  - "Q2 FY27 investor presentation absent"
+  - "research empty"
+  - "shareholding is XBRL text"
+  - "pass 1 did not read standalone policy text lines 11460-12285 or consolidated Notes 2, 17-26, 32-37 line by line"
+flags:
+  - {type: FLAG-CASH, reason: "standalone receivables 34,304.28 vs 20,307.13 (+68.9% vs revenue +43.8%); 15,938.75 sold non-recourse (FY25 4,186.33); over 6 months overdue 9.2% vs 5.3%; nil ECL; operating cash flow -4,450.03 (FY25 -15,428.58) (Note 6A p.186-187; cash flow p.160)"}
+  - {type: FLAG-QUALIFIED-OPINION, reason: "consolidated auditor qualifies on Malwa Power assets 4,761.67 lacs, impairment not assessable (auditor report p.253; Cons. Note 45(b) p.351)"}
+  - {type: FLAG-CONTINGENCY, reason: "Abohar PSPCL excess revenue 1,384.96 lacs unprovided, High Court stay, auditor EoM; absent from Note 32B table (Note 46 p.251)"}
+top_findings_pass1:
+  - {rank: 1, finding: "Malwa Power carrying value untestable; consolidated qualified opinion; PPA expired 27 Apr 2025; tariff Rs 8.59 to Rs 5.22; MPPL loss 555.04; standalone exposure 959.01 inv + 151.00 loan + 527.04 guarantee + 310.05 receivable", note_ref: "Cons. Note 45(b) p.351; Note 5 p.184; Note 31 p.225", rating: "RED"}
+  - {rank: 2, finding: "Abohar excess-revenue payable 1,384.96 unprovided (19.1% of PBT); stay by High Court; standalone and consolidated texts differ (5.88 vs 5.42; 1,384.96 vs 14 crores)", note_ref: "Note 46 p.251; Cons. Note 45(a) p.350", rating: "RED"}
+  - {rank: 3, finding: "Receivables +68.9% and 15,938.75 sold; over-6-month 9.2%; nil ECL; 8 customers 71% of balance; 'majorly cash based' wording conflicts", note_ref: "Note 6A p.186-187; Note 36 p.241", rating: "RED"}
+  - {rank: 4, finding: "Operating cash flow -4,450.03 funded by current borrowings 50,984.72 (+75.9%); gearing 41.89%; undrawn lines 1,304.77 from 4,964.13", note_ref: "Cash flow p.160-161; Note 11B p.200; Note 37 p.243", rating: "RED"}
+  - {rank: 5, finding: "Thailand subsidiary exposure 16,476.57 (18.6% of net worth); interest receivable 2,894.76; interest income fell 549.53 to 255.49; no impairment", note_ref: "Note 5 p.185; Note 31C p.225", rating: "YELLOW"}
+  - {rank: 6, finding: "Customer concentration: Numaligarh 18.80%, Dow Canada 12.03% (from 4.38% and 0.12%)", note_ref: "Note 33(c) p.234", rating: "YELLOW"}
+  - {rank: 7, finding: "Contingent: export obligation 20,237.29 (2.0x, 22.8% of net worth); customs bond 1,759.76; customs demand 1,120.09 in note text but not in table; FEMA notice open", note_ref: "Note 32B p.229-230", rating: "YELLOW"}
+  - {rank: 8, finding: "Bank stock-statement vs books gaps: receivables 1,303.20, inventory 519.91; consolidated books figures do not equal consolidated balance sheet", note_ref: "Note 11B p.201-202; Cons. Note 9B p.306", rating: "YELLOW"}
+  - {rank: 9, finding: "Related-party: consolidated related payables 763.89 (Shikha Bansal 762.90) vs 27.75 standalone; new director advances 37.15; 99.8% of CSR to promoter foundation", note_ref: "Cons. Note 29C p.329; Note 31C p.225; Note 25(b) p.214", rating: "YELLOW"}
+  - {rank: 10, finding: "Controls and tie-outs: audit trail not enabled on parts of three applications; gratuity past service cost 116.10 vs 119.23 do not tie; DTA 348.12 credited to securities premium", note_ref: "Notes 44-45 p.250-251; Note 30 p.220; Note 39 p.246; Note 17C p.206", rating: "YELLOW"}
+receivables_trend: "deteriorating: 34,304.28 vs 20,307.13 (+68.9%); not due 24,725.49 (72.1%); under 6m overdue 6,427.85; 6m-1y 2,915.00; 1-2y 177.71; 2-3y 52.33; >3y 5.90; over-6m share 9.2% vs 5.3%; sold non-recourse 15,938.75 vs 4,186.33 (Note 6A p.186-187)"
+restatements_found: []
+going_concern_language: "NONE as doubt language; Note 2.1 p.164 states going-concern basis. Cons. Note 45(b) p.351: MPPL 'operational viability' adversely impacted, 'uncertainty over its future cash flows'"
+analyst_note: "Pass 1 only. Units INR lacs, not converted. Derived ratios marked in report. Pass 2 should first read standalone policy text lines 11460-12285 and consolidated Notes 2, 17-26, 32-37."

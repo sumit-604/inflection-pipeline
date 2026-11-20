@@ -1,0 +1,45 @@
+stage: B01-gate0
+company: "DEEDEV"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "screener P&L/BS/CF/Quarters sheets empty; Data_Sheet populated and used"
+  - "Q2 FY27 concall transcript absent (call 17 Nov 2026; CORPUS GAPPED-FRESHNESS)"
+  - "Q2 FY27 investor presentation absent (none filed)"
+  - "research folder empty"
+  - "shareholding is XBRL text, not a PDF"
+  - "capex FY20 and FY24, payables FY20 and FY24, current liabilities FY20-FY24: NOT FOUND"
+  - "R&D spend: NOT FOUND"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVOID (core 39; override 6: ND/EBITDA 3.51x and interest cover 2.58x, FY26). Depressors: all seven years ROCE under 10% on proxy basis (median 7.65%); FY26 debt-funded capex 189.54 Cr and working-capital build; pre-IPO FY20-FY24 low-return base."}
+  - {type: FLAG-CASH, reason: "Block B trend deteriorating: FY25+FY26 CFO -98.91 Cr on PAT 120.80 Cr; H1 FY27 CFO -6.79 Cr on PBT 49.92 Cr (results Q2 FY27 p.7). Cum CFO/PAT 1.29 is carried by FY20-FY22."}
+data_years: 7
+fy_range: "FY20 to FY26"
+blocks: {A: 5, B: 5, C: 12, D: 6, E: 11}
+core_score: 39
+moat_score: 12
+grand_total: 51
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers:
+  - "6: ND/EBITDA 3.51x AND interest cover 2.58x, FY26 (AVOID)"
+  - "3: median ROCE 7.65% < 10% (all years FY20-FY26 under 10%, proxy basis) (max AVERAGE)"
+  - "1: Block A 5 < 8 (max GOOD)"
+  - "2: Block B 5 < 8 (max GOOD)"
+history_downgrade: false
+data_notes:
+  - "ROCE computed (screener Data_Sheet has no ROCE row): EBIT=PBT+interest; capital employed=equity+reserves+borrowings (TA less Other Liabilities proxy). Strict TA-CL ROCE: FY26 14.9%, FY25 11.1%; other years not computable."
+  - "ROE FY20 on closing net worth (no opening)."
+  - "FCF evaluated on 5 years (FY21-23, FY25-26); FY20 and FY24 capex NOT FOUND, not estimated. FY21-23 capex from prospectus INR million; FY25-26 from results Q4 FY26 p.17 INR lacs."
+  - "WC days on revenue basis; earliest year FY21 (FY20 payables NOT FOUND): 225.0 to 275.2 days."
+  - "E4 scored on full Note 30B listed total 25.8% (incl. export obligation 20,237.29 INR lacs); ex-obligation 3.1% would score 5 (Block E 15, core 43). Override 6 still holds AVOID."
+  - "M11 scores 5 by arithmetic (FY23-26 CAGR 24.2% vs FY20-23 -6.2%; selling % 9.29 to 6.91) but is an artefact: no network economics. Without it moats=1 THIN."
+  - "M5 provisional on three auto-selected peers (mcap rank 3 of 4, margin rank 2 of 4); full segment peer list PEER DATA NEEDED."
+  - "M6 R&D NOT FOUND scored 0. M9 GM proxy=(Sales-RM+/-inventory change)/Sales: 58.05% vs peer median 45.36%."
+  - "Revenue CAGR FY20-26 7.9%; FY23-26 24.2%. Window fixed at full history per prompt."
+  - "LBF1: H1 FY27 sales 587.45 Cr, H2 needs 912.55 (+55.3%) for 1,500 Cr; guidance and deferral statements unverified (concall absent). LBF2: H1 FY27 CFO -6.79 Cr on PBT 49.92 Cr CONFIRMED (results Q2 FY27 p.7). LBF3 Abohar 13.85 Cr not found in AR text search; not verified here."
+  - "Pre-IPO promoter holding 100.00% (Prospectus pre-Offer) vs 65.13% now (shareholding-30Sep2026); drop is IPO dilution and OFS."
+block_b_trend: "deteriorating: FY25+FY26 CFO -98.91 Cr on PAT 120.80 Cr; H1 FY27 CFO -6.79 Cr on PBT 49.92 Cr"
+analyst_note: "AVOID rests on FY26 leverage (borrowings +259 Cr to fund capex and working capital), not on loss-making history: PAT grew from 13.37 to 77.17 Cr. Every ROCE year is under 10% on the proxy basis; strict TA-CL basis gives 14.9% for FY26 because 553 Cr of short-term borrowing sits in current liabilities. Cash conversion has broken since IPO (CFO/PAT 1.29 cumulative hides FY25-26). The call is mechanical; the flags carry forward to sizing."

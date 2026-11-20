@@ -1,0 +1,65 @@
+stage: B09b-dossier
+company: "DEEDEV"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "Q2 FY27 earnings call transcript (call 17 Nov 2026)"
+    expected_source: "BSE"
+    kind: "freshness-pair"
+  - document: "Q2 FY27 investor presentation (none filed to 14 Nov 2026)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Broker or research notes (research folder empty)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Screener export sheets: Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization for four companies (empty export)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Quarterly shareholding patterns Jun 2024 to Jun 2026 (promoter pledge history)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Order book by customer"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Tonnes shipped and revenue per tonne"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Piping division (87.7% of FY26 revenue) and Heavy fabrication (7.0%)"
+    archetype: "Build-to-spec component maker"
+  - line: "Biomass power (4.9% of FY26 revenue)"
+    archetype: "Licence/scarcity business"
+transition:
+  - line: "Piping division"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER (ROCE below the mid-teens R2 neighbourhood, between R1 and R2)"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER"
+    engine: "Fill Anjar (about 50% now) and the 7,000 MTPA seamless plant against fixed overhead; seamless backward integration and Thailand HRSG reservation (from 1 Jun 2027)"
+    proof_gate: "H2 FY27 consolidated operating EBITDA margin at or above 19% with gross profit in rupees rising; H2 FY27 consolidated operating cash flow positive with CFO/EBITDA at or above 0.5; FY27 operating cycle at or below 220 days"
+    recognition_gap: "Open question: does the TO state already appear reflected in market pricing; Stage 11 resolves it via the PE gap"
+    ugliness: "UNRESOLVED between ARTIFACT-OF-CLIMB and STRUCTURAL-FEATURE (cash determination INDETERMINATE; separated by H2 FY27 operating cash flow with Anjar utilisation above 60%)"
+    transition_falsifier: "Q3 FY27 consolidated revenue at or below Rs 292.99 cr; H2 FY27 revenue under Rs 800 cr or H2 margin below 18%; H2 FY27 operating cash flow negative while the order book rises; Anjar near 50% through FY27; no GE HRSG purchase order by Q4 FY27"
+dominant_variables:
+  - "Order conversion to revenue at the guided margin (H2 FY27 need Rs 912.55 cr; margin at or above 19%)"
+  - "Cash conversion and the working-capital cycle (CFO/EBITDA, operating cycle, receivables sold)"
+  - "Utilisation of Anjar and the seamless plant (disclosed utilisation, external seamless orders, capex)"
+  - "Thermal and HRSG order pipeline (BHEL awards, GE HRSG purchase order, Siemens clearance, Thailand reservation)"
+business_falsifier: "The order book proves to be reserved capacity and letters of intent rather than orders (GE line about Rs 380 cr; Thailand booking claim), or revenue shifts to pass-through trading where material is 95-100% of order value, or a third qualified group audit opinion re-opens the group perimeter"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "4 of 7 externally observable"
+  single_point_failure: "Cash conversion: H2 FY27 operating cash flow negative while the order book rises fails the proof gate on its cash leg alone"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 16
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "21c75533b8196b8769070f8f871fad646740657b"

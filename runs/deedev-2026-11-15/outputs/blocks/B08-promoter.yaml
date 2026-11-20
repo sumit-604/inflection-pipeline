@@ -1,0 +1,68 @@
+stage: B08-promoter
+company: "DEEDEV"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "empty screener P&L/BS/CF/Quarters sheets (Data_Sheet populated)"
+  - "Q2 FY27 concall transcript absent (call on 17 Nov 2026, after run date; CORPUS GAPPED-FRESHNESS)"
+  - "Q2 FY27 investor presentation absent"
+  - "research empty"
+  - "shareholding is XBRL text"
+  - "promoter pledge for quarters between Jun 2024 and Jun 2026: only prospectus (Jun 2024) and XBRL (30 Sep 2026) in corpus; intermediate quarters NOT FOUND"
+  - "nature of Rs 762.90 lacs payable to Shikha Bansal (Cons. Note 29C): split between salary and trade payable NOT DISCLOSED"
+  - "status of Shikha Bansal income-tax appeal (CIT(A), filed 12 Mar 2024) after the Prospectus date: NOT FOUND"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CAUTION"
+    top_findings:
+      - "AGM 23 Sep 2026 voted down the special resolution to raise WTD Shikha Bansal's pay to Rs 1.38 cr: 71.08% for, 28.92% against, needs 75%; public institutions 50.29% against (AGM voting results, 24 Sep 2026 filing p.9)"
+      - "Rs 762.90 lacs payable to Shikha Bansal at group level (678.30 prior year) against 26.76 at standalone; only footnote says salary payable plus trade payable (AR Cons. Note 29(C), PDF p.329)"
+      - "Prospectus records an Income Tax best-judgement assessment on Shikha Bansal, AY 2022-23: income assessed Rs 121.95 mn vs Rs 14.46 mn returned, foreign property, s.115BBE, demand Rs 103.48 mn, appeal pending in Jun 2024; later status NOT FOUND (Prospectus PDF p.432)"
+      - "Directors' report says no audit qualification while the consolidated opinion is qualified (carried from B03); CFO resigned 5 Jan 2026 with his wife and brother leaving payroll the same day (Reg 30, 6 Jan 2026; AR Note 31A)"
+adverse_findings:
+  - {finding: "Special resolution on Shikha Bansal WTD pay (Rs 42.81 lacs standalone FY26 to Rs 1.38 cr, 3.2x) failed at 37th AGM; 5,196,811 of 10,333,947 institutional votes against", evidence_tier: "VERIFIED", source: "BSE/NSE Reg 44 voting results filed 24 Sep 2026, file 20260924-87246f76, p.9; AGM notice Item 7 (AR PDF p.28-29)", date: "2026-09-23"}
+  - {finding: "Rs 762.90 lacs payable to Shikha Bansal (group), Rs 678.30 lacs prior year; standalone payable 26.76; advance to her 29.46; group remuneration 171.04 vs standalone 42.81", evidence_tier: "VERIFIED", source: "AR 2025-26 Cons. Note 29(B)-(C) PDF p.328-329; Standalone Note 31(B)-(C) PDF p.224-225", date: "2026-03-31"}
+  - {finding: "Income Tax assessment order on director Shikha Bansal, AY 2022-23, s.144 best judgement, s.115BBE penalty notice, demand Rs 103.48 mn, appeal to CIT(A) 12 Mar 2024, pending at Prospectus date", evidence_tier: "VERIFIED", source: "Prospectus June 2024, Outstanding Litigation, Directors, PDF p.432 (printed 427)", date: "2024-02-19"}
+  - {finding: "Customs adjudication order 8 May 2024: duty Rs 81.50 mn confirmed, fine Rs 22.50 mn, penalty Rs 8.00 mn on the company; suo moto breach admitted for Oct 2017 to Jan 2019 pre-import conditions", evidence_tier: "VERIFIED", source: "Prospectus PDF p.429 (printed 424)", date: "2024-05-08"}
+  - {finding: "Enforcement Directorate FEMA information order to the company dated 19 May 2023; responses 8 Jun and 25 Aug 2023; pending at Prospectus date; later status NOT FOUND", evidence_tier: "VERIFIED", source: "Prospectus PDF p.429-430 (printed 424-425)", date: "2023-05-19"}
+  - {finding: "Board report says audit report has no qualification while consolidated opinion is qualified on Malwa Power assets 4,761.67 lacs", evidence_tier: "VERIFIED", source: "B03-ardeep (Directors report p.54; Auditor p.253), carried not reopened", date: "2026-03-31"}
+  - {finding: "CFO Sameer Agarwal resigned 5 Jan 2026 (personal reasons, letter denies disagreement); wife Charu Agarwal (SMP) and brother Naveen Kishore Agarwal also left payroll 6 Jan 2026; replacement CFO Brham Prakash Yadav from 7 Jan 2026", evidence_tier: "VERIFIED", source: "Reg 30 filing 6 Jan 2026 files 20260106-2c11dce8 and 20260106-8bc396f6 p.2-3; AR Standalone Note 31(A)-(B) PDF p.222-224", date: "2026-01-06"}
+  - {finding: "Family and relatives drawn from group payroll: Ashima Bansal 93.30 lacs consolidated vs 13.53 standalone after leaving the board 14 Apr 2025; Ashvika Bansal CEO of a subsidiary from 18 Aug 2025 (minor beneficiary of DEE Group Trust at Prospectus date); Sudhir Bhalla 99.51 lacs plus loan to group 152.90 lacs", evidence_tier: "VERIFIED", source: "AR Cons. Note 29(A)-(C) PDF p.328-329; Prospectus PDF p.128 (DEE Group Trust beneficial owners note)", date: "2026-03-31"}
+  - {finding: "Corporate guarantees to subsidiaries given with no commission; quantum shown as 668.89 / 4,885.22 / 2,300.00 given, and CARE prints Rs 9.76 cr outstanding", evidence_tier: "VERIFIED", source: "B03 FLAG-GUARANTEE-QUANTUM; AR Standalone Note 31(E)(vi) PDF p.227; CARE rationale 9 Nov 2026 line 141", date: "2026-11-09"}
+  - {finding: "Founder/CMD aged 71 sits as member of the Audit Committee", evidence_tier: "VERIFIED", source: "AR Corporate Governance Report 3.1-3.2 PDF p.66", date: "2026-03-31"}
+  - {finding: "HSPCB environmental compensation Rs 4.40 lakh (29 Aug 2025); SDD notice answered, no penal action; NSE query on IPO proceeds verification closed without adverse action", evidence_tier: "VERIFIED", source: "AR Corporate Governance Report section 10.2 PDF p.76", date: "2025-08-29"}
+transition_evidence:
+  - "Institutional entry: Rs 300 cr preferential at Rs 502 approved 3 Jun 2026, 23 non-promoter allottees (Kotak Multi Asset 6.39% post, ValueQuest, WhiteOak, 360 ONE, Ashoka) plus Rs 20 cr from CMD (3,98,406 shares); at 30 Sep 2026 MF 7.95%, AIF 5.60%, foreign institutions 5.25%, domestic institutions 13.54% (Reg 30 3 Jun 2026 file 20260603-692306e6 Annex A-C; XBRL 30 Sep 2026)"
+  - "Promoter fall 70.17% to 65.13% is dilution, not a sale: promoter shares rose 4,86,06,381 to 4,90,04,787 (+3,98,406) (AR Note 9 PDF p.195; XBRL 30 Sep 2026)"
+  - "Pledge nil at Jun 2024 and 30 Sep 2026 (Prospectus PDF p.129 para 23; XBRL WhetherAnySharesHeldByPromotersAreEncumberedUnderPledged = false)"
+  - "Institutions used their vote against promoter-family pay on 23 Sep 2026 (voting results p.9): evidence of external discipline"
+  - "New CFO from outside the family circle from 7 Jan 2026; the outgoing CFO's two relatives left payroll (Reg 30 6 Jan 2026; AR Note 31A). Background of the new CFO NOT FOUND"
+  - "CARE upgrade A- to A Stable, 9 Nov 2026 (rating, not a promoter governance step; CARE text does not cite governance)"
+deal_breakers: []
+verdict: "CAUTION"
+scorecard: {clean: 3, caution: 7, red: 0}
+pledge_pct_latest: 0
+pledge_trend: "stable at nil: nil at Prospectus (Jun 2024) and nil at 30 Sep 2026 (XBRL); quarters between NOT FOUND in corpus"
+searches_performed:
+  - "WebSearch 2026-11-15: DEE Development Engineers Krishan Lalit Bansal SEBI order OR penalty OR investigation (no enforcement action found)"
+  - "WebSearch 2026-11-15: DEE Piping AGM Shikha Bansal remuneration resolution defeated institutional investors (confirms resolution failed; no vote detail)"
+  - "WebSearch 2026-11-15: DEE Development Engineers proxy advisor IiAS OR SES OR InGovern (nothing relevant)"
+  - "WebSearch 2026-11-15: DEE Piping Malwa Power Abohar PSERC tariff Punjab High Court (tariff cut Aug 2025; Malwa tariff Rs 5.224 on 27 Mar 2026; High Court outcome NOT FOUND)"
+  - "WebSearch 2026-11-15: DEE Piping Systems Palwal employee reviews (AmbitionBox about 4.1 of 5, about 301-319 reviews; no Glassdoor)"
+  - "WebSearch 2026-11-15: Shikha Bansal DEE income tax foreign property assessment (nothing found)"
+  - "WebSearch 2026-11-15: DEE Development Engineers promoter governance concern / short seller / forensic (no short report; auditor emphasis coverage only)"
+  - "WebSearch 2026-11-15: DEE Development CARE A- rating promoter Bansal"
+  - "WebSearch 2026-11-15: Krishan Lalit Bansal Faridabad FIR OR ED OR CBI (no match to this person)"
+  - "WebSearch 2026-11-15: promoter open-market buying 2025 (Feb-Mar and Dec 2025 purchases reported by aggregators)"
+  - "WebFetch 2026-11-15: arthneeti AGM result page (confirms Resolution 7 not passed, 28.9167% against)"
+  - "Corpus reads: Prospectus promoter, management, group company, litigation sections; AR governance report, RPT notes, shareholding notes; 33 Reg 30 filings (targeted Grep); XBRL 30 Sep 2026; CARE 9 Nov 2026"
+searches_skipped:
+  - "sebi.gov.in enforcement orders and settlement orders search by entity name (site is form-driven; not run) - PENDING LIVE VERIFICATION"
+  - "MCA21 master data and charge register for Malwa Power, DEE Fabricom, DDE Piping Components, Uprise Trade Solutions LLP (login/captcha) - PENDING LIVE VERIFICATION"
+  - "trendlyne insider-trading page (HTTP 405 on fetch); purchases taken from search snippets only, tier MEDIA REPORTED"
+  - "IiAS / SES / InGovern recommendation on the 2026 AGM (no public hit) - PENDING LIVE VERIFICATION"
+  - "Glassdoor (no result returned)"
+  - "CIT(A) / ITAT status of the Shikha Bansal appeal (no hit; case number not in corpus)"
+verdict_basis: "No SEBI action, nil pledge, promoter bought in market and subscribed at Rs 502, but a founder-family pay vote lost to institutions, an unexplained Rs 762.90 lacs payable to a WTD with an open tax assessment, and a board report that denies the audit qualification."
+analyst_note: "Load-bearing facts checked at the page. Promoter fall 70.17% to 65.13% is dilution (+3,98,406 promoter shares). The 762.90 line sits only in the consolidated note; standalone shows 26.76, so about 736 lacs sits in a subsidiary. Its footnote says salary payable and trade payable, no split. Group pay of five family members is 622.04 lacs (592.14 prior), +5.0% while group PAT rose 76.9% (B03): pay is not running ahead of profit. The failed vote, not the amount, is the signal: promoters could not carry it with the public. Tripwires: split of 762.90; Shikha tax appeal outcome; re-tabled pay resolution; Directors' report wording corrected; FY27 opinion on Malwa Power."

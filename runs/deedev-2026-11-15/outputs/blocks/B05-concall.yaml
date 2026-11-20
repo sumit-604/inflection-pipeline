@@ -1,0 +1,103 @@
+stage: B05-concall
+company: "DEEDEV"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Screener P&L/BS/CF/Quarters sheets empty (Data_Sheet populated)"
+  - "Q2 FY27 concall transcript absent: call on 17 Nov 2026, after run date (CORPUS GAPPED-FRESHNESS). Q2 FY27 judged on the filing only"
+  - "Q2 FY27 investor presentation absent"
+  - "Research folder empty"
+  - "Shareholding is XBRL text"
+  - "Results_Q4FY26 text is an OCR layer (no load-bearing figure taken from it)"
+  - "Management net debt definition and company working-capital day-count basis NOT FOUND"
+  - "Management definition of the Piping Rs 1,150-1,250 cr segment vs reported Piping division NOT FOUND"
+  - "Confirming filing for Siemens MOM and the build of the Rs 36 cr FY26 power drain NOT FOUND"
+flags:
+  - "Q2 FY27 operating cash flow Rs -6.79 cr vs F promise of positive H1 cash flow"
+  - "Malwa asset base Rs 50.63 cr audit-qualified in Q2 FY27 review; CMD said no impairment question (M p.14)"
+  - "Non-core FY27 revenue target Rs 80 cr (A, IP) cut to Rs 47.71 cr in 13 Nov 2026 filing"
+  - "CFO 200 days vs CMD 180 days working capital target on same call (M p.8, p.16); order book Rs 1,940 cr (CFO) vs Rs 2,040 cr (CMD)"
+  - "Top-10 customers ~80% of FY26 TOI (59% FY25) per CARE; never discussed on calls"
+  - "Load-bearing fact 1d: Rs 25 cr Q1 deferral not visible in Q2 revenue (Rs 292.99 cr vs Q1 Rs 294.46 cr)"
+quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Revenue ramp to Rs 1,500 cr plus at EBITDA above 19%", type: "both", timeframe: "FY27", conviction: "M", confirm_signal: "H2 FY27 revenue near Rs 912 cr; FY27 margin above 19%", kill_signal: "H2 under Rs 800 cr or H2 margin below 18%"}
+  - {priority: 2, name: "Domestic thermal orders (BHEL, L&T, JSW)", type: "revenue", timeframe: "near", conviction: "M", confirm_signal: "BHEL tenders awarded; monthly order filings", kill_signal: "BHEL slips past FY27; thermal cancellations broaden"}
+  - {priority: 3, name: "HRSG and GT piping (Nooter, Siemens, GE)", type: "both", timeframe: "near-long", conviction: "M", confirm_signal: "GE PO for 15-16 units; Siemens Anjar clearance; Thailand Rs 170-200 cr", kill_signal: "GE PO not placed by Q4 FY27; reservation lapses"}
+  - {priority: 4, name: "Cash conversion and deleveraging", type: "margin", timeframe: "near", conviction: "L", confirm_signal: "Positive H2 operating cash flow; net debt Rs 400-425 cr", kill_signal: "Operating cash flow stays negative; new term loans"}
+  - {priority: 5, name: "Seamless plant ramp", type: "margin", timeframe: "medium", conviction: "M", confirm_signal: "60-70% utilisation; ~20% EBITDA", kill_signal: "External orders stay at Rs 68 cr class"}
+  - {priority: 6, name: "Anjar ramp", type: "revenue", timeframe: "medium", conviction: "M", confirm_signal: "60-65% utilisation in FY27", kill_signal: "Utilisation near 50% through FY27"}
+  - {priority: 7, name: "Non-core stabilisation (pellet and Malwa)", type: "margin", timeframe: "near", conviction: "L", confirm_signal: "Power division EBIT positive; clean audit opinion by Q3 FY27", kill_signal: "Qualified opinion persists; APTEL cuts tariff"}
+  - {priority: 8, name: "Nuclear and data-centre option", type: "revenue", timeframe: "long", conviction: "L", confirm_signal: "Qualified order, partner terms, capex announced", kill_signal: "No order by FY28"}
+guidance:
+  - {item: "Consolidated revenue", number: "Rs 1,500 cr plus (bare minimum)", timeframe: "FY27", stated_in: "Q4 FY26 call; Q1 FY27 call"}
+  - {item: "EBITDA margin", number: "18-20% (Q3 FY26); above 19% consolidated (Q4 FY26, Q1 FY27)", timeframe: "FY27", stated_in: "Q3 FY26; Q4 FY26; Q1 FY27"}
+  - {item: "Piping revenue", number: "Rs 1,150-1,250 cr", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "Order inflow", number: "more than Rs 2,000 cr", timeframe: "FY27", stated_in: "Q4 FY26; Q1 FY27"}
+  - {item: "Working capital cycle", number: "~200 days (CFO) / 180 days (CMD) in Q4 FY26; 180-200 days in Q1 FY27; CARE: 190-200", timeframe: "FY27", stated_in: "Q4 FY26; Q1 FY27"}
+  - {item: "Net debt", number: "below Rs 400-425 cr", timeframe: "FY27 end", stated_in: "Q1 FY27 call"}
+  - {item: "Capex", number: "Rs 10-15 cr (Q3 FY26); Rs 20-30 cr (Q4 FY26)", timeframe: "FY27", stated_in: "Q3 FY26; Q4 FY26"}
+  - {item: "Non-core revenue", number: "Rs 47.71 cr (Q4 FY26 call; 13 Nov 2026 filing); Rs 80 cr (Q1 FY27 call)", timeframe: "FY27", stated_in: "Q4 FY26; Q1 FY27"}
+  - {item: "Seamless plant", number: "7,000 t, Rs 90 cr capex, peak revenue Rs 450 cr, IRR 30-35%", timeframe: "peak", stated_in: "Q3 FY26 call"}
+  - {item: "Anjar utilisation", number: "60-65% in FY27; ~100% by end FY28", timeframe: "FY27-FY28", stated_in: "Q1 FY27 call"}
+  - {item: "Revenue plan", number: "Rs 2,500 cr by FY30 (maybe FY29)", timeframe: "FY30", stated_in: "Q4 FY26; Q1 FY27"}
+promise_delivery:
+  delivered: 8
+  partial: 7
+  missed: 5
+  rows:
+    - {promised_in: "Q3 FY26", promise: "Seamless plant nearing commissioning; capex 95-98% done by Mar-26", outcome: "delivered", explanation: "Commercial production Reg 30 filing 19 Mar 2026"}
+    - {promised_in: "Q3 FY26", promise: "Malwa PSERC order expected, relief near Rs 5.5/unit", outcome: "delivered", explanation: "Final order 27 Mar 2026 at Rs 5.224 (Q2 FY27 results note 6)"}
+    - {promised_in: "Q3 FY26", promise: "Pellet plant COD very shortly, March sales", outcome: "partial", explanation: "Commissioned mid-Q1 FY27; no reason given"}
+    - {promised_in: "Q3 FY26", promise: "FY26 Rs 36 cr power drain will not recur", outcome: "partial", explanation: "H1 FY27 Power division EBIT Rs -2.71 cr; Rs 36 cr not reconciled to segment note"}
+    - {promised_in: "Q3 FY26", promise: "Positive operating cash flow in H1 FY27", outcome: "missed", explanation: "H1 FY27 operating cash flow Rs -6.79 cr; no explanation given"}
+    - {promised_in: "Q3 FY26", promise: "No new term loan; Rs 40 cr annual repayment", outcome: "missed", explanation: "H1 FY27 long-term proceeds Rs 57.53 cr vs repayment Rs 20.88 cr; silence"}
+    - {promised_in: "Q3 FY26", promise: "FY27 capex Rs 10-15 cr (Q4 FY26: Rs 20-30 cr)", outcome: "missed", explanation: "H1 FY27 capex purchases Rs 58.02 cr; silence"}
+    - {promised_in: "Q3 FY26", promise: "Order wins Rs 300-400 cr; order book growth", outcome: "delivered", explanation: "Rs 1,303 cr to Rs 2,531 cr by 30 Sep 2026"}
+    - {promised_in: "Q3 FY26", promise: "FY26 margin 16-18%", outcome: "delivered", explanation: "FY26 operating EBITDA margin 16.7%"}
+    - {promised_in: "Q3 FY26, Q4 FY26", promise: "FY27 EBITDA margin above 19%", outcome: "partial", explanation: "Q1 16.9%; Q2 20.1% and H1 18.5% derived from filing"}
+    - {promised_in: "Q4 FY26", promise: "Working capital cycle 190-200 days; payables 70-75, debtors 95-100", outcome: "partial", explanation: "Q1 inventory days down to 174; debtors 123 and creditors 34 worse; cycle 263; CFO and CMD gave 200 vs 180"}
+    - {promised_in: "Q4 FY26", promise: "Nooter Eriksen capacity agreement; more OEMs", outcome: "delivered", explanation: "Thailand practically 100% booked for three years (Q1 FY27 call)"}
+    - {promised_in: "Q4 FY26", promise: "Siemens agreement", outcome: "delivered", explanation: "MOM signed; 10 units next year; confirming filing NOT FOUND"}
+    - {promised_in: "Q4 FY26", promise: "GE HRSG and GT piping orders", outcome: "partial", explanation: "GT orders continue; HRSG PO for 15-16 units not issued; blamed on GE"}
+    - {promised_in: "Q4 FY26", promise: "Anjar almost optimal utilisation in FY27", outcome: "missed", explanation: "Now 60-65% in FY27, ~100% by end FY28; no cause given"}
+    - {promised_in: "Q4 FY26", promise: "Capacity blueprint very soon", outcome: "partial", explanation: "No size or date; nuclear framework with domestic EPC signed 16 Oct 2026"}
+    - {promised_in: "Q4 FY26", promise: "BHEL orders feed Rs 2,000 cr inflow", outcome: "partial", explanation: "BHEL slower than expected; ~Rs 200 cr order in Q1 FY27"}
+    - {promised_in: "Q1 FY27", promise: "Rs 225 cr of Rs 293 cr proceeds to debt", outcome: "delivered", explanation: "Rs 225 cr short-term debt repaid (Q2 FY27 results note 4)"}
+    - {promised_in: "Q1 FY27", promise: "Nuclear partner agreement in Q2 FY27", outcome: "delivered", explanation: "Framework with domestic EPC 16 Oct 2026; scope differs from the export partner described"}
+    - {promised_in: "Q1 FY27", promise: "Non-core FY27 revenue ~Rs 80 cr", outcome: "missed", explanation: "13 Nov 2026 filing: Rs 47.71 cr incl Rs 23.4 cr pellet; no explanation"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "Working capital and inventory days: level and timing", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters"}
+  - {question: "Gross margin decline split between mix and commodity; alloy and job-work mix", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "How order-book growth and working capital will be funded", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters"}
+  - {question: "Capex and capacity expansion plan (nuclear, HRSG): size and date", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+credibility_grade: "B"
+credibility_basis: "Trailing four quarters Q3 FY26 to Q2 FY27 (Q2 on filing only): 8 delivered, 7 partial, 5 missed, 4 pending; orders, plant start-up, tariff and use of proceeds delivered; cash flow, loans, capex, WC and number consistency missed"
+peer_questions:
+  - {question: "Is Indian thermal power piping and boiler pressure-part ordering (about 40 GW live, 80 GW to 2031) moving at the pace management assumes, and are BHEL awards slower than L&T and private EPC?", why: "Order-inflow guide above Rs 2,000 cr with 60% power (M, A) depends on it; Rajasthan cancelled 3.2 GW", check_peers: ["ISGEC", "RATNAMANI"]}
+  - {question: "Do peers report soft pricing and long credit from pipe and tube mills, and do mills ask fabricators for advance payment or LC of about 30 days (F p.14)?", why: "Management cites mill terms as the reason for low creditor days and heavy inventory", check_peers: ["RATNAMANI", "ISGEC"]}
+  - {question: "What working-capital cycle (inventory, debtor, payable days) do project engineering peers run, and is 190-200 days plausible for a build-to-print piping supplier?", why: "Management targets 180-200 days; Q1 FY27 shows 263; H1 FY27 operating cash flow is negative", check_peers: ["ISGEC", "ANUP", "RATNAMANI"]}
+  - {question: "Is gross-margin dilution from the move to material-supplied orders seen at peers, and what EBITDA margin do peers hold on material-supplied thermal and refinery orders?", why: "DEE says gross margin falls while EBITDA stays above 19% (M, A)", check_peers: ["ISGEC", "ANUP"]}
+  - {question: "Is alloy and P91/P92 seamless pipe supply and pricing tight or loose, and is domestic thick-wall alloy seamless capacity being added?", why: "Management says Indian sourcing replaced China/Europe imports (M p.12) and expects ~20% EBITDA on seamless", check_peers: ["RATNAMANI", "ISGEC"]}
+  - {question: "Do peers claim a market-share gain or capacity shortage in HRSG, GT piping or heat-recovery modules, and is capex being added in that segment?", why: "DEE says HRSG piping vendors are scarce and competition is Korean and Turkish only (M p.12)", check_peers: ["ISGEC", "ANUP", "RATNAMANI"]}
+  - {question: "What capex cycle and capacity expansion do peers describe for nuclear and process-industry equipment, and what pre-qualification or partner do export nuclear jobs need?", why: "DEE plans a nuclear facility and relies on a partner for export nuclear work (A p.11)", check_peers: ["ANUP", "ISGEC"]}
+red_flags:
+  - "Malwa assets Rs 50.63 cr audit-qualified in Q2 FY27 (no impairment assessment); CMD said no impairment question (HIGH)"
+  - "H1 FY27 operating cash flow Rs -6.79 cr vs promised positive (HIGH)"
+  - "Non-core revenue target cut from Rs 80 cr to Rs 47.71 cr in a filing, not on a call (MEDIUM)"
+  - "Top-10 customers ~80% of FY26 TOI, never discussed on calls (MEDIUM)"
+  - "Officer inconsistency on same call: WC 200 vs 180 days; order book Rs 1,940 cr vs Rs 2,040 cr (MEDIUM)"
+  - "Q1 Rs 25 cr deferral not visible in Q2 revenue; H2 FY27 needs Rs 912.5 cr, +40.8% on H2 FY26 (MEDIUM)"
+  - "Abohar Rs 13.85 cr payable unprovided; stay date conflict Sep vs Oct 2025 (MEDIUM)"
+  - "Power 64.9% of order book with thermal cancellation risk (MEDIUM)"
+dropped_triggers:
+  - "InvIT housing for pellet capacity (Q3 FY26 call; still in IP p.28; not raised on later calls)"
+timeline_slippages:
+  - "Anjar optimal utilisation: FY27 (Q4 FY26) to 60-65% in FY27 and ~100% by end FY28 (Q1 FY27)"
+  - "Pellet plant: March/April 2026 sales (Q3 FY26) to commissioned mid-Q1 FY27 (Q1 FY27)"
+  - "GE HRSG order: delayed past Q1 FY27; PO for 15-16 units not issued"
+  - "Nuclear partner: Q2 FY27 'under any circumstances' (Q1 FY27); domestic EPC framework signed 16 Oct 2026"
+  - "Audit qualification: clean opinion 'by third quarter' (Q4 FY26) untested; Q2 FY27 review still qualified"
+analyst_note: "Q2 FY27 has no call (17 Nov). Derived by me, not stated: Q2 operating EBITDA 20.1%, H1 18.5% (PBT + finance + depreciation - other income); Sep-26 days on a revenue basis. H1 revenue is 39.2% of the Rs 1,500 cr guide; H2 needs +40.8%. Grade B rests on order and plant delivery. It drops to C if H2 shows negative operating cash flow or a third audit qualification. Check on the 17 Nov call: Rs 25 cr deferral, WC days, Rs 47.71 vs 80 cr, impairment, and the Rs 21 cr gap between the two FY27 inflow columns in the order filing."

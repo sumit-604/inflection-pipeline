@@ -1,0 +1,19 @@
+stage: B12d
+company: "DEEDEV"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 10
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "ANUP", missed_item: "Analyst on ANUP Q3 FY26 call puts ANUP's own cash conversion cycle at 'around 190 to 200-odd days' (target 120); management answers on the path to 3 turns and does not dispute. B06 Q3 says 190-200 is above every peer figure and uses only 2.2 turns (~166 days)", anchor: "ANUP-Concall_Feb_2026_Transcript, page 14 (lines 545-550 of .txt)"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: MAJOR, rule: 3, item: "B06 Q3 net read and Part 4 'most consequential gap' state no peer supports 190-200 days. ANUP Q3 FY26 p.14 carries an analyst figure of 190-200 days for ANUP itself, undisputed. B06 accepted an analyst-quoted 163 days for Ratnamani (Q4 FY25) but skipped this one, so the standard is uneven. Verdict PARTIALLY VERIFIED stands; the 'above every peer figure' sentence and the flag in B06 need softening to: one peer shows 190-200 days in the stressed FY26 period, with management targeting 120", anchor: "ANUP Q3 FY26 p.14"}
+  - {severity: MINOR, rule: 3, item: "B06 flag 3 and Part 2E tie FGD retention to a BHEL-weighted book. ISGEC CFO says the stuck FGD retention is 'not really BHEL' (NTPC). The PSU-terms point holds; the BHEL link does not", anchor: "ISGEC Q3 FY26 (Feb 2026 transcript, .txt line 443)"}
+critical_count: 0
+major_count: 1
+minor_count: 1
+acceptance_rate: 92

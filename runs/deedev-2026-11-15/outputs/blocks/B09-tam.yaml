@@ -1,0 +1,111 @@
+stage: B09-tam
+company: "DEEDEV"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: partial                # 5 searches/fetches skipped or incomplete, named in searches_skipped
+input_gaps:
+  - "Screener P&L/BS/CF/Quarters sheets empty (Data_Sheet populated) [carried from B00]"
+  - "Q2 FY27 concall transcript absent: call 17 Nov 2026, after run date (CORPUS GAPPED-FRESHNESS) [carried]"
+  - "Q2 FY27 investor presentation absent [carried]"
+  - "Research folder empty [carried]"
+  - "Shareholding is XBRL text [carried]"
+  - "Tonnes shipped, revenue per tonne, overall utilisation, Anjar expansion project cost: NOT FOUND (B04, B07)"
+  - "Process piping share of project cost, product-fit and capability share of the D&B market, unorganised share, peer piping-only revenue: NOT FOUND"
+flags:
+  - "FLAG-SCOPE-DIVERGENCE: D&B India process piping FY23 Rs 25,400 cr vs Grand View Research India process piping 2022 USD 303.99 mn (about Rs 2,100-2,700 cr at an illustrative INR 70-90 per USD, FX not sourced): about 10x apart. D&B carried as central (filed in SEBI offer document); GVR is the second reading. Observation that separates them: piping-only revenue of named peers (NOT FOUND in corpus)"
+  - "FLAG-NO-MGMT-TAM: no explicit TAM figure in AR, deck or three calls; management gives a revenue plan (Rs 2,500 cr FY30) and demand indicators. mgmt_claim fields carry the revenue claim, ratio taken against FY30 SOM, not against TAM"
+  - "FLAG-SAM-FILTER: only the end-use filter (63% of D&B FY23 market) is sourced; product-fit and capability filters NOT FOUND, so SAM is an upper bound and DEE share 2.82% is a lower bound"
+  - "FLAG-CAPACITY: installed plus committed capacity supports about Rs 1,302-1,470 cr at FY26 asset turns (B07 capex-embedded 14.0%-28.7%); FY30 guide Rs 2,500 cr needs 3.5x asset turns (1.9x today) or about Rs 656 cr more fixed assets; capex guide Rs 20-30 cr and deck 'Rs 15-20 cr maintenance only' is the optimistic side"
+  - "FLAG-POWER-MIX: power is 64.9% of the 31 Oct 2026 order book but only 15% of the D&B FY23 India market, which D&B calls the slowest-growing end-use; D&B thermal view (40 GW FY23-30) predates the 80 GW FY32 government plan"
+  - "FLAG-GUIDANCE: FY27 Rs 1,500 cr needs H2 Rs 912.55 cr = Rs 152.1 cr a month vs Rs 93.02 cr executed in Oct 2026 (1.63x)"
+  - "FLAG-STALE: D&B base year FY23 is 3.6 years before run date; GVR base 2022 is over 4 years (direction only)"
+market_definition: "India-delivered made-to-order engineered process piping (spools, high-pressure piping, bends, fittings, skids) for power, refining, chemical and process end-uses (SAM = 63% of the D&B India process piping market), plus export piping as a separate, unsized lever"
+tam_cr: {conservative: 25400, realistic: 30338}   # conservative = D&B FY23 observed; realistic = rolled to FY26 at D&B 6.1% CAGR
+sam_cr: 19113                  # FY26 basis, India, end-use filter only
+sam_pct_of_tam: 63
+som_3yr_cr: 1765               # company-level FY29 (India piping SOM 1,100 + export 533 + fab 80 + non-core 48 + unallocated 5)
+som_5yr_cr: 2298               # company-level FY31
+som_implied_revenue_cagr: {yr3: 15.6, yr5: 15.0}   # FY26 base Rs 1,142 cr; FORMAL handoff to stage 11. Aggressive reading 24.8 / 22.5; narrow-market (GVR) reading about 6-7 / NOT COMPUTED
+current_sam_share_pct: 2.82    # India piping Rs 538.9 cr / SAM Rs 19,113 cr
+revenue_headroom_x: 35.5       # India SAM / India piping revenue; 16.7x on total revenue
+tam_growth_pct: 6.1
+runway_class: "GOOD"
+mgmt_claim_cr: 2500            # FY30 revenue claim (no TAM claim exists)
+mgmt_claim_ratio: 1.24         # Rs 2,500 cr / FY30 SOM Rs 2,020 cr
+mgmt_claim_read: "reasonable"  # on market room only; capacity does not support it (see capacity_check)
+capacity_check: "gap of about Rs 1,198 cr at FY26 asset turns vs the Rs 2,500 cr FY30 guide (about Rs 463 cr vs SOM yr3 Rs 1,765 cr); the maintenance-only capex plan is the optimistic side, unless asset turns rise 1.9x"
+methods_used:
+  - "M1 top-down D&B India market less end-use slices (M-L confidence, STALE)"
+  - "M2 capex-proxy ratio check: D&B market 4.1% of FY23 completed projects (L, adjudicates nothing, benchmark NOT FOUND)"
+  - "M3 peer aggregation: NOT COMPUTABLE, floor only (DEE India piping Rs 538.9 cr)"
+  - "M4 import substitution: NOT SIZED (seamless thick-wall 100% import-dependent per deck p.22, market size NOT FOUND)"
+  - "M5 global benchmark: D&B regional USD sizes shown, India USD share NOT COMPUTED (no FX in source)"
+  - "Cross-check: Grand View Research India process piping (L)"
+stale_data_flags:
+  - {datapoint: "India process piping Rs 25,400 cr FY23 and 6.1% CAGR to Rs 38,400 cr FY30", source: "D&B report in DEE Prospectus June 2024, pdf p.190-191", year: 2023}
+  - {datapoint: "End-use split: refineries 23%, chemical and pharma 25%, power 15%, paper 14%, F&B 19%, others 4%", source: "same, pdf p.191", year: 2023}
+  - {datapoint: "Global process piping USD 39.2 bn CY2023 to USD 54.5 bn 2030, 4.8% CAGR", source: "same, pdf p.183-184", year: 2023}
+  - {datapoint: "Sector capex pipelines (refining Rs 3.39 lakh cr, chemicals Rs 1.57 lakh cr, power Rs 4.27 lakh cr under implementation)", source: "same, CMIE, pdf p.195-199", year: 2023}
+  - {datapoint: "D&B thermal addition of about 40 GW FY23-30", source: "same, pdf p.199", year: 2023}
+  - {datapoint: "Grand View Research India process piping USD 303.99 mn (2022), USD 481.03 mn (2030)", source: "grandviewresearch.com India Process Piping Market page", year: 2022}
+  - {datapoint: "Thermal under construction 26.38 GW", source: "Power Ministry figure reported early 2025 (search summary, not opened)", year: 2025}
+  - {datapoint: "DEE CMP Rs 658, market cap Rs 4,952 cr", source: "Investor_Presentation_1 p.35, CMP as on 04.08.26", year: 2026}
+searches_performed:
+  - "WebSearch: India process piping market size forecast 2030 (found Grand View Research USD figures; no INR figure)"
+  - "WebFetch: grandviewresearch.com India process piping market page (scope, shares)"
+  - "WebSearch: CEA thermal capacity addition 80 GW by 2032 (found target, FY25 miss 4.53 GW vs 15.4 GW)"
+  - "WebSearch: India refining capacity 310 MMTPA 2030 (309.5 MMTPA in Rajya Sabha reply; minister said 300 in Oct 2026)"
+  - "WebSearch: Anup/Ratnamani/Isgec piping market share (returned plastic pipe pages only, nothing usable)"
+  - "WebSearch: global HRSG and gas turbine orders 2026 (GE Vernova 116 GW contracted Q2 2026; Siemens Energy 95 GW; WoodMac capacity 60-70 GW a year)"
+  - "WebSearch: India nuclear 100 GW by 2047 (8.8 GW installed; 6.0-7.5 GW under construction, sources conflict)"
+searches_skipped:
+  - "WebFetch powerpeakdigest.com 83.5 GW thermal article: HTTP 403, figure taken from search summary only"
+  - "CEA Apr-Jun 2026 thermal progress report: totals not read; current under-construction GW NOT FOUND"
+  - "USD/INR rate not retrieved; global-to-India conversion and GVR INR conversion left as a bracket or NOT COMPUTED"
+  - "Peer piping-only revenue (Isgec, Anup, Ratnamani, L&T): third search returned no usable page; peer aggregation not done"
+  - "HRSG and engineered-spool market size for India or export: no source found"
+downstream_candidates:
+  - signal: "BHEL thermal boiler and pressure-part tender awards (about Rs 210 cr L1)"
+    entity_type: "end-customer"
+    demand_link: "BHEL awards drive domestic thermal piping orders, 59.6% of India piping order book is power"
+    likely_source: "BHEL Reg 30 order disclosures and tender results (BSE/NSE)"
+    cadence: "event-driven"
+    shared: true
+  - signal: "CEA thermal project monitoring: GW under construction and commissioned"
+    entity_type: "regulatory"
+    demand_link: "Government plan of 80 GW thermal by FY32 sets the domestic thermal piping pool"
+    likely_source: "CEA thermal project progress reports (cea.nic.in), Ministry of Power"
+    cadence: "quarterly"
+    shared: true
+  - signal: "GE Vernova HRSG purchase order for 15-16 units and gas turbine backlog"
+    entity_type: "counterparty"
+    demand_link: "HRSG piping at Thailand and Anjar depends on OEM purchase orders and turbine slot conversion"
+    likely_source: "GE Vernova quarterly results and backlog disclosure; DEE Reg 30 filing"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Siemens Energy gas turbine backlog and Anjar vendor clearance"
+    entity_type: "counterparty"
+    demand_link: "Gas turbine piping, 10 units planned FY28, shares the HRSG and turbine cycle"
+    likely_source: "Siemens Energy quarterly results; DEE Reg 30 filing"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Numaligarh Refinery and other refinery expansion capex (15.12% of FY26 revenue)"
+    entity_type: "end-customer"
+    demand_link: "Refining capacity 258 to about 310 MMTPA by 2030 drives refinery piping packages"
+    likely_source: "NRL/IOCL/HPCL annual reports and board capex approvals; PPAC capacity data"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Dow and chemical-sector capex announcements (9.67% of FY26 revenue)"
+    entity_type: "end-customer"
+    demand_link: "Chemicals and pharma are 25% of the D&B India market; Dow is the second-largest customer"
+    likely_source: "Dow Inc. quarterly results, Indian chemical company capex filings"
+    cadence: "quarterly"
+    shared: false
+  - signal: "NPCIL / DAE nuclear fleet-mode PHWR awards and the 16 Oct 2026 framework agreement"
+    entity_type: "end-customer"
+    demand_link: "Nuclear spool demand of 4,000-5,000 t per GW is an option, not yet an order"
+    likely_source: "NPCIL and Department of Atomic Energy releases, PIB, DEE Reg 30 filing"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Two readings of market size, not averaged. A (carried): D&B Rs 25,400 cr FY23 covers all process piping spend; DEE is 2% of it, so Rs 19,113 cr SAM leaves 35x headroom and the market does not bind. B: Grand View puts India near Rs 2,100-2,700 cr in 2022 (illustrative INR 70-90 per USD); DEE would hold 15-20% of its FY26 market and FY30 Rs 2,500 cr (about 60% India) would need a 35-45% share; SOM yr3 CAGR falls to about 6-7%. D&B calls the industry concentrated yet puts DEE, the largest by capacity, at 2%: that fits neither reading cleanly. The observation that separates them is piping-only revenue of named peers, NOT FOUND. Put the conservatism in size. Capacity, not market, is the binding test: guide Rs 2,500 cr needs asset turns 3.5x vs 1.83x with maintenance-only capex."

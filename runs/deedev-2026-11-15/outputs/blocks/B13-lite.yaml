@@ -1,0 +1,38 @@
+stage: B13-synthesis
+mode: phase-1-lite
+company: "DEEDEV"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+missing_mate_document: "Q2 FY27 earnings call transcript (call held 17 Nov 2026, after the run date of 2026-11-15; expected source: the company's BSE/NSE transcript filing or the screener Concalls list, a few days after the call)"
+verdict: "PROCEED WITH CAVEATS"
+verdict_line: "VERDICT: PROCEED WITH CAVEATS"
+verdict_rule_applied: 3          # FLAG-PROMOTER and FLAG-CASH active; capped at PROCEED WITH CAVEATS by INDETERMINATE cash and the CORPUS GAPPED-FRESHNESS cap
+verdict_caps: ["freshness: CORPUS GAPPED-FRESHNESS", "cash: INDETERMINATE"]
+rework_check: "not fired on block figures (no Verifier A CRITICAL; all block acceptance rates >= 60%; overall 83.3); fires on the Verifier B fully-caught basis (44.4%) if the operator rules that basis"
+flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-GATE0]
+flag_promoter_verdict: "CAUTION"
+cash_determination: "INDETERMINATE"
+gate0_classification: "AVOID"     # stage 1 output, reported as the Gate 0 classification
+transition_posture: "NOT ASSIGNED (Mental Model unsigned); proof gate not fired on evidence; ugliness unresolved; recognition gap open (stage 11); candidate cells RESEARCH / WATCH or VALUE-TRAP RISK"
+confidence_delta: {numerical: 98.6, redflag: 88.9, framework: 87.5, peer: 83.3, overall: 83.3, overall_set_by: peer_utilisation, framework_valuation: "pending phase 3"}
+valuation_decision: "not run (phase 3)"
+entry_range: "not run (phase 3)"
+headline: "Order book doubled, cash has not followed"
+falsification_metric: "Q3 FY27 consolidated revenue at or below Q2's Rs 292.99 cr, leaving about Rs 620 cr (derived) for Q4 against the Rs 1,500 cr guide"
+monitorables_count: 8
+source_fidelity: "3 Verifier A MAJORs, all GATE HELD (corrected at source); corrected figures used"
+verifier_disagreements: "none"
+partial_stages: [B08, B09]
+open_items:
+  - "(a) Verifier B acceptance rate: 88.9% on the block field vs 44.4% fully caught (below the 60% REWORK line); orchestrator used the block field; operator rules the basis"
+  - "(b) B08 and B09 status partial (web searches skipped, named in each block)"
+  - "(c) stage 7 agent stalled after its report; block built from the report by the orchestrator"
+  - "(d) Verifier C MAJORs F-G0-1, F-G0-2, F-EM-1 change scores, not the Gate 0 classification; F-EM-1 (NONE vs MODEST) to settle before stage 11 reads Pillar 3"
+  - "(e) Verifier A shadow run not executed in this session by operator batch instruction"
+publish_candidate: false
+publish_candidate_summary: ""
+files:
+  - "runs/deedev-2026-11-15/outputs/final/business-narrative.md"
+  - "runs/deedev-2026-11-15/outputs/final/gate-recommendation.md"
+  - "runs/deedev-2026-11-15/outputs/final/verifier-summary.md"

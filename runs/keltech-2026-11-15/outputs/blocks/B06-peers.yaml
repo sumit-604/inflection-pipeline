@@ -1,0 +1,66 @@
+stage: B06-peers
+company: "KELTECH"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "PREMEXPLN has no Q2 FY27 transcript (latest is Q1 FY27 filed 2026-08-20); SOLARINDS has no Q1 FY27 transcript; SOLARINDS Q4FY26 page 1 garbled (later pages clean). 12 of 12 expected transcripts provided."
+  - "NO-CONCALL MODE: Claims are B05 peer_questions propositions, not management statements."
+  - "B00 collector warnings carried: peer-sheet tabs empty for PREMEXPLN and APOLLO (P&L, Quarters, Balance Sheet, Cash Flow); shareholding folder partial (screener capture, no pledge, no FII line); Verifier A shadow not run; Q3 FY26 Keltech results scanned and never consumed. None alters this stage."
+  - "NOT FOUND in peers: TNT price, TNT offtake or buyers, Indian TNT supply balance, industry volume growth for H1 FY27, Coal India or Singareni receivable days, supplier credit terms, export margin for explosives, per-unit realised prices, IDL EBITDA margin percentage, detonator capacity."
+  - "Solar domestic and international values are derived from stated basket percentages and revenue (rounding band about +52% to +63% for Q2 FY27 domestic); not company-reported."
+flags:
+  - {type: FLAG-PEER-SLIPPAGE-BASE-RATE, reason: "Five of five dated peer projects traced across two or more calls slipped one to three quarters (Premier Katepally RDX/HMX FY26 end to Q1 FY27 to Q3 FY27 per Q2FY26 p.8, Q3FY26 p.5, Q4FY26 pp.6-7, Q1FY27 p.8; Solar 155 mm, Pinaka sales, Bhargavastra; Apollo IDL defence explosive). Adds to B05 FLAG-TNT-PACE."}
+  - {type: FLAG-SECOND-INDIAN-TNT-LICENCE, reason: "Apollo subsidiary IDL holds an industrial licence for TNT and RDX, cited as 500 t TNT and 50 t HMX, with larger defence-grade DPRs in preparation (APOLLO Q4FY26 pp.5, 11). No commissioning date given."}
+  - {type: FLAG-PSU-BULK-THIN-MARGIN, reason: "Premier, Solar and Apollo/IDL describe Coal India and Singareni bulk as L1, thin or negative margin (PREMEXPLN Q1FY27 p.11; SOLARINDS Q2FY26 p.15; APOLLO Q1FY27 p.7)."}
+  - {type: FLAG-NO-TNT-PRICE-EVIDENCE, reason: "No peer states a TNT price, buyer or offtake; Premier declines an RDX/HMX band and ties demand to the war with a 2 to 3 year horizon (PREMEXPLN Q1FY27 p.11)."}
+peers_provided: 12
+verified:
+  - {claim: "Q3: Coal India and PSU bulk explosives are L1 priced with thin or negative margins and high competitive intensity", peers: [PREMEXPLN, SOLARINDS, APOLLO], anchor_count: 6}
+  - {claim: "Q5: Peers are adding explosives capacity (Solar regional plants, IDL silos and accessories, Premier minimal); market is crowded in bulk and accessories, tighter in defence energetics", peers: [SOLARINDS, PREMEXPLN, APOLLO], anchor_count: 8}
+  - {claim: "Q9: IDL is a loss-making-for-years, thin-margin, seasonal bulk and accessories unit valued by Apollo for licences and energetics optionality", peers: [APOLLO, PREMEXPLN], anchor_count: 8}
+partially_verified:
+  - {claim: "Q1: Industry volume growth versus Keltech Explosives +35% (FY26 flat; H1 FY27 strong; Solar domestic value about +55% to +57% derived; industry volume 6-7% structural; H1 FY27 industry volume NOT FOUND)", peers: [SOLARINDS]}
+  - {claim: "Q2: AN cost pass-through (Solar: about 60% immediate escalation, balance after a quarter, inventory buffer, raw material ratio flat at 47.6%)", peers: [SOLARINDS]}
+  - {claim: "Q4: Defence energetics tightness corroborated (Apollo, Premier, Solar); TNT-specific price, offtake and buyers not stated by any peer", peers: [APOLLO, PREMEXPLN, SOLARINDS]}
+  - {claim: "Q6: Export demand strong at Solar (international +32% FY26, about +58% Q2 FY27 derived) but local-manufacture based; Keltech export markets and margin NOT FOUND", peers: [SOLARINDS, PREMEXPLN]}
+  - {claim: "Q8: Working capital strain in an input-inflation year at Solar (90-100 days, Rs 1,600 Cr absorbed in FY26 per analyst); PSU explosives receivable days not discussed by any peer", peers: [SOLARINDS, PREMEXPLN]}
+contradicted:
+  - {claim: "Q7: A stated commissioning date for a new energetics or explosives plant holds (base rate for Keltech April 2027 TNT start)", contradicting_peer: "PREMEXPLN (also SOLARINDS, APOLLO)", quote_anchor: "PREMEXPLN Q2FY26 p.8 'By the end of financial year, we'll be starting the production' ; Q3FY26 p.5 'first quarter of next financial year' ; Q4FY26 pp.6-7 'It may go up to Q3' ; Q1FY27 p.8 'we are expecting to take up the water trials in September month'"}
+unverifiable:
+  - {claim: "TNT price, offtake and buyer base for Keltech's plant", peers_checked: [APOLLO, PREMEXPLN, SOLARINDS]}
+  - {claim: "PSU (Coal India, Singareni) receivable days and deductions in explosives", peers_checked: [SOLARINDS, PREMEXPLN, APOLLO]}
+  - {claim: "Keltech export markets, products and margin", peers_checked: [SOLARINDS, PREMEXPLN]}
+  - {claim: "Keltech AN rise-and-fall clauses and pass-through lag", peers_checked: [SOLARINDS, APOLLO]}
+peer_coverage_map:
+  - {peer: "APOLLO", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "IDL order book about Rs 500 Cr; defence-grade explosive 'in six months'; Coal India rate-contract dilution; ban lifted"}
+  - {peer: "APOLLO", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "IDL TNT/RDX industrial licence; 500 t TNT, 50 t HMX; global stock depletion; IDL revenue about Rs 380 Cr, loss-making for years"}
+  - {peer: "APOLLO", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "IDL select Coal India circles in a shrinking-margin business; PAT positive but low; Premier 41.33% deal about Rs 1,550 Cr"}
+  - {peer: "APOLLO", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "Bolkunda 9,000 t silo; off-season lean quarter; IDL transformation 'couple of quarters more'; working capital days 353"}
+  - {peer: "PREMEXPLN", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Katepally RDX/HMX start dated FY26 end; MoD debtors 4-5 months; RDX/HMX demand unchanged"}
+  - {peer: "PREMEXPLN", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Katepally slipped to Q1 FY27; no Coal India bulk; Singareni two mines; RDX/HMX Rs 150-200 Cr expected"}
+  - {peer: "PREMEXPLN", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Katepally slipped to Q2-Q3 FY27; two plant accidents; export licence risk; 5-year new-plant lead time"}
+  - {peer: "PREMEXPLN", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Water trials Sept 2026; Coal India and Singareni margins thin or negative; 40+ bulk players; RDX/HMX demand good, licences hard"}
+  - {peer: "SOLARINDS", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Working capital and CFO strain; Coal India and Singareni L1 basis; capex deferral; 155 mm and Pinaka dates"}
+  - {peer: "SOLARINDS", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Flat FY26 coal demand; industry 6-7%, Solar volume 10-12%; international +35%; Africa drivers"}
+  - {peer: "SOLARINDS", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "AN pass-through mechanics (60% escalation, quarter lag); price +18-20%; regional capacity; working capital; Kalyani entry query"}
+  - {peer: "SOLARINDS", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "Domestic 27% and international 43% of Rs 3,519 Cr; margin 29.02%; industry 6-7%, volume 10-15%; rain-light demand"}
+industry_cross_read:
+  demand: "Commercial explosives: flat FY26, strong H1 FY27 at the leader (domestic value about +55% to +57% derived, price-led plus rain-light Q2); defence energetics demand strong but held by licences and trials."
+  pricing_inputs: "AN, gas and crude lifted prices 18-20% at Solar, with about 60% escalation immediate and the rest after a quarter; Solar margin held at 29%; fixed-price books (Premier) lost margin; PSU bulk stays L1 and thin."
+  capex_cycle: "Leader-led capacity race, not a lone expander: Solar adds regional plants (Rs 2,050 Cr FY27), IDL builds silos and plans 15 plants, Premier is land-constrained; Keltech's Rs 190 Cr TNT plant is a small player's bet beside a second Indian TNT licence holder (Apollo/IDL)."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Plant accidents and licence suspension at explosives sites (PREMEXPLN Q4FY26 pp.6, 11, 17)"
+  - "Export or import licence delay or rejection, 3-5 months (PREMEXPLN Q3FY26 p.9; Q4FY26 p.7)"
+  - "Shipping and maritime disruption delaying imported plant components (PREMEXPLN Q1FY27 p.8)"
+  - "Plant and product qualification after erection, 1-2 months (PREMEXPLN Q4FY26 p.7)"
+  - "AN price spike causing a few months of demand contraction (SOLARINDS Q4FY26 p.12)"
+  - "New entrant risk, Kalyani Group (SOLARINDS Q4FY26 p.7)"
+  - "Coal India L1 tendering and sub-scale withdrawal on price (SOLARINDS Q2FY26 p.15; PREMEXPLN Q3FY26 p.13)"
+  - "State supplier raw material shortage (MIL) forcing material substitution (PREMEXPLN Q4FY26 pp.6, 17)"
+  - "Land acquisition price delaying new plants (PREMEXPLN Q1FY27 p.8)"
+  - "Related-party scrutiny read-across: allegation of institutional votes against Rs 500 Cr RPT involving IDL, not confirmed (APOLLO Q3FY26 p.14)"
+net_narrative_effect: "complicates"
+analyst_note: "Q7 is marked CONTRADICTED as a base-rate claim only; no peer speaks about Keltech and the verdict should not be read as a Keltech fact. Two readings of the TNT date: payment is back-ended and April 2027 holds, or it slips; the separating observation is CWIP plus advances at Dec 2026 and Mar 2027 against the 114.5 Cr remainder. Peers cannot settle TNT price or offtake, so those stay NOT FOUND for stage 8/11. Solar domestic and international values are derived from rounded basket percentages. Apollo and Premier are defence-led, so their commercial-explosives data weigh less than Solar's. The H1 FY27 price-led growth may fade as higher prices enter the base (Solar Q2FY27 p.11), which matters for Keltech's FY28 comparison."
+cross_peer_hypothesis: "Capital in this peer set is migrating out of commercial bulk explosives into defence-grade energetics, and bulk licences and silos are valued as an entry ticket. Solar domestic explosives share fell 35% to 32% in H1 FY27 while domestic value grew about 55% (derived); Premier left Coal India bulk on price and holds bulk near 6% of order book; Apollo bought loss-making IDL for TNT/RDX licences and silos. Implication: the scarcity premium a TNT plant relies on has a limited window. Testable by Q4 FY27 peer calls: at least two of Apollo, Premier, Solar report new commissioned TNT/RDX/HMX capacity or an approved defence-grade DPR, and stated energetics prices soften."

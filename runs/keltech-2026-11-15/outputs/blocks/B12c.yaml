@@ -1,0 +1,41 @@
+stage: B12c
+company: "KELTECH"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+scope: "phase-1 (Gate 0 B01 + Emerging Moat B07 only); valuation half pending phase 3"
+gate0:
+  rules_checked: 46
+  rules_passed: 44
+  fails:
+    - {id: C-G1, rule: "M3 capital efficiency; ROCE fixed formula (TA - CL) where computable", severity: MAJOR, stated: "M3 = 3 on FY26 proxy ROCE 19.02%", recomputed: "M3 = 5 (FY26 ROCE 43.03 / 203.72 = 21.1% > 20%; FAT 4.54x > 3x); B01 data note 'no band moves' is wrong for M3"}
+    - {id: C-G2, rule: "M5 scale; PEER DATA NEEDED scores 0", severity: MAJOR, stated: "M5 = 1 while marked PEER DATA NEEDED", recomputed: "M5 = 0; one listed-player census resolves M5 and M7"}
+  recomputed: {core_score: 53, moat_score: 11, grand_total: 64, moats_confirmed: 2, moat_class: "MODERATE", classification: "AVERAGE"}
+emoat:
+  rules_checked: 29
+  rules_passed: 24
+  fails:
+    - {id: C-E1, rule: "evidence multiplier vs stated tier (rule 3); B07 weakest-link convention", severity: MAJOR, stated: "H2 = LM 1 x 📄 1.0 = 1.0", recomputed: "H2 = LM 1 x 🔍 0.5 = 0.5; em_score 4.1"}
+    - {id: C-E2, rule: "I2 answered for each moat claimed in the scan", severity: MINOR, stated: "answered for licence/footprint, PSU relationships, TNT", recomputed: "B1, C2, E2, F2, H2 unanswered; I2 stays 0"}
+    - {id: C-E3, rule: "2C historical fixed asset turnover carried to capex_embedded_growth_pct", severity: MINOR, stated: "122 (FY26 spot 3.42x)", recomputed: "246 (FY23-FY25 average 6.89x); both flagged unreliable"}
+    - {id: C-E4, rule: "catalysts_12m evidence_type per taxonomy", severity: MINOR, stated: "catalysts 1 and 3 'documented'", recomputed: "future filing content is not documented; tag as inference or checkpoint"}
+    - {id: C-E5, rule: "report YAML equals block file", severity: MINOR, stated: "analyst_note and optionality_register differ", recomputed: "block is correct on analyst_note; register silo row merged (12 months vs 6 to 12 months)"}
+  recomputed: {em_score: 4.1, em_classification: "NONE"}
+  rule8_cat21_cat22: {present: true, i1_score: 0, i2_score: 0, rework_stage7: false}
+valuation: {rules_checked: 0, fails: []}  # pending phase 3; B10 and B11 not produced
+expectation_ledger: {present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}  # rules 13-14; pending phase 3 (B11 not produced); any fail = REWORK stage 11
+business_narrative: {checked: false, fails: []}  # rule 9; any fail = REWORK stage 13; pending /finalize (stage 13 not run)
+recomputed_destination_pe: ""  # pending phase 3
+recomputed_decision: ""        # pending phase 3
+findings:
+  - {id: C-G1, stage: B01, severity: MAJOR, summary: "M3 should be 5 under the fixed ROCE formula on B01's own latest-year basis (21.1%); moat score +2; class unchanged"}
+  - {id: C-G2, stage: B01, severity: MAJOR, summary: "M5 scored 1 on an incomplete peer set while marked PEER DATA NEEDED; rule gives 0; moat score -1; class unchanged"}
+  - {id: C-E1, stage: B07, severity: MAJOR, summary: "H2 multiplier 📄 1.0 breaks B07's declared weakest-link rule; 🔍 0.5; em_score 4.6 to 4.1; band NONE unchanged"}
+  - {id: C-E2, stage: B07, severity: MINOR, summary: "I2 question unanswered for 5 of 7 scored rows; score unchanged at 0"}
+  - {id: C-E3, stage: B07, severity: MINOR, summary: "capex_embedded_growth_pct carries spot-year 122 not historical-turnover 246; both unreliable; phase 3 must not use as CAPACITY basis"}
+  - {id: C-E4, stage: B07, severity: MINOR, summary: "catalysts 1 and 3 tagged documented for future disclosures; Pillar 3 must treat as checkpoints"}
+  - {id: C-E5, stage: B07, severity: MINOR, summary: "report YAML vs block drift: analyst_note wording and merged optionality row"}
+critical_count: 0
+major_count: 3
+minor_count: 4
+acceptance_rate: 90.7             # 68 passed / 75 checked, %

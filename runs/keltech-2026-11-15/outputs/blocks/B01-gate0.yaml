@@ -1,0 +1,41 @@
+stage: B01-gate0
+company: "KELTECH"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "shareholding: screener table only (promoter, DII, public); no pledge, no FII line; formal BSE SHP for Sep 2026 not retrieved. E3 pledge NOT FOUND, scored 0."
+  - "screening: only Data_Sheet CSVs exist. No capex (purchase of PPE) row, no trade payables history, no ROCE row, no current-liabilities split in the KELTECH sheet. Capex proxied from net block + CWIP + depreciation (validated to FY25, FY26 AR); ROCE computed; B4 earliest-year WC days NOT FOUND."
+  - "peer sheets: PREMEXPLN and APOLLO P&L, Quarters, Balance Sheet, Cash Flow tabs came out empty; only Data_Sheet CSVs used for M2, M5, M9. No listed-player census for M7."
+  - "concalls: absent, declared (no-concall mode). No effect on Gate 0 numbers."
+  - "results: Q1 FY27 pages 2-4 are OCR; no Q1 figure used. Q2 FY27 text twin is partly garbled; only totals that reconcile (CFO 638.39 lakh, PAT 1,633.10 lakh, CWIP 6,280.63 lakh) were used."
+flags:
+  - {type: FLAG-GATE0, reason: "AVERAGE with identified depressors: FY20-FY22 low-return window (min ROCE 6.10% FY21, incl. Rs 3.18 Cr exceptional charge), Block B 7 of 20 (FY25 CFO -17.57 Cr, FY26 capex 85.98 Cr, cumulative FCF FY18-26 -5.59 Cr), three NOT FOUND items (pledge, payables history, M7 census)."}
+  - {type: FLAG-CASH, reason: "H1 FY27 CFO 6.38 Cr vs PAT 16.33 Cr (0.39); FY25+FY26 CFO/PAT 0.58; WC days 5.9 (FY25) to 23.8 (FY26) on a payables unwind; AR CFO includes bank-balance movements of +9.62 Cr (FY26) and -11.01 Cr (FY25)."}
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 10, B: 7, C: 15, D: 13, E: 8}
+core_score: 53
+moat_score: 10
+grand_total: 63
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers:
+  - "DB2 Block B 7 < 8 (max GOOD, not binding): FY25 CFO -17.57 Cr, FY26 capex 85.98 Cr, FY19-FY20 CFO below capex proxy"
+  - "DB5 pledge untestable: NOT FOUND (open, not triggered)"
+history_downgrade: false
+data_notes:
+  - "No loss-to-profit swing; no negative CAGR endpoint."
+  - "ROCE computed (sheet has none): EBIT = PBT + Interest; capital employed = Total - Other Liabilities. Exact-formula check FY26 21.1%, FY25 25.9% (AR p.97-98); no band moves."
+  - "Capex = proxy (dNet Block + dCWIP + Depreciation) FY18-FY26; matches AR actual FY25 11.94 vs 11.96 and FY26 85.99 vs 85.98 Cr. FY17 capex and FCF NOT FOUND; B2, B3 on 9 years."
+  - "B4 NOT FOUND (no earliest-year payables); scored 0. FY25 WC days 5.85, FY26 23.77 (AR p.97-98), +17.9 days."
+  - "Exceptional items: FY21 charge and FY26 income, both Rs 3.18 Cr (317.76 lakh, ADD refund, AR p.146), sit in the sheet's other income. Sensitivities: A2 +1 (FY21 ROCE 9.73%), D2 -1 (FY26 coverage 9.53x)."
+  - "D1 uses cash and bank only (1.31x, score 3); with current investments 0.99x would score 4. D1-D4 are FY26; 30.09.2026 D/E 0.59, current ratio 1.16."
+  - "E4 26.7% is 97% LC/BG (AR p.140); FY25 was 47.1%. Excluding LC/BG would be 0.8%."
+  - "Currency: screener Rs Cr; AR and results Rs lakh; converted only where shown."
+  - "PEER DATA NEEDED: M5 universe (scored 1 on the provided set), M7 listed-player census (scored 0; +5 if <=5 players)."
+  - "Peer EBITDA margin FY26: SOLARINDS 27.6%, PREMEXPLN 10.2%, APOLLO 24.2% (median 24.2%); KELTECH 7.7%. APOLLO is defence electronics, not explosives."
+  - "Load-bearing facts checked: H1 FY27 CFO 6.38 Cr and PAT 16.33 Cr confirmed (Q2 p.8, p.5); FY25 CFO -17.57 Cr confirmed (AR p.102); CWIP 38.01 Cr (AR p.97) and 62.81 Cr (Q2 p.7) both confirmed and reconciled to H1 capex 25.73 Cr."
+block_b_trend: "deteriorating: H1 FY27 CFO/PAT 0.39 (6.38 / 16.33 Cr); FY25+FY26 FCF -67.0 Cr"
+analyst_note: "Core 53 sits 7 points under the GOOD line. The score understates and overstates in two directions. Three NOT FOUND items (pledge E3, payables history B4, M7 census) can add up to 15 points; E3 plus B4 alone could lift Core to 60+. Two exceptional-item sensitivities move A2 up one and D2 down one. Block B is weak because FY25 and FY26 FCF are negative on the TNT build, not because earnings are poor: CFO/PAT cumulative is 1.36. H1 FY27 CFO/PAT 0.39 and debt up Rs 25.0 Cr in H1 say the build is still consuming cash. AR CFO is moved by bank-balance lines (+9.62 Cr FY26, -11.01 Cr FY25), so single-year CFO is noisy. Moat 10 of 60 reflects margin well below explosives peers (7.7% vs Premier 10.2%, Solar 27.6%)."

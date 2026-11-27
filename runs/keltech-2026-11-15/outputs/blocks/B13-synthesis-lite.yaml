@@ -1,0 +1,44 @@
+stage: B13-synthesis
+mode: phase-1-lite
+company: "KELTECH"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3        # FLAG-CASH active, INDETERMINATE, caps at PROCEED WITH CAVEATS; rule 4 conditions also present
+verdict_scope: "FTTCP go/no-go gate recommendation on the phase 1 evidence record; no valuation-dependent content"
+flags_active: ["FLAG-CASH (INDETERMINATE)", "FLAG-GATE0", "FLAG-CONTROL-TRANSITION", "FLAG-BANK-RETURNS", "FLAG-TNT-PACE", "FLAG-TNT-UNDOCUMENTED", "FLAG-SEGMENT-BASIS"]
+flags_not_active: ["FLAG-PROMOTER (B08 verdict CAUTION; fires only at CONCERN or AVOID)"]
+partial_stages: ["B08-promoter (8 searches skipped)", "B09-tam (6 searches skipped)"]
+freshness: "FRESHNESS PAIRS OK; cap not applied"
+transition_posture: "UNRESOLVED: proof gate NOT FIRED, ugliness UNCLASSIFIED, recognition gap UNRESOLVED (stage 11); reachable cells RESEARCH-WATCH / PRICED NARRATIVE (TRAP) / VALUE-TRAP RISK; Mental Model NOT SIGNED"
+confidence_delta: {numerical: 95, redflag: 78, framework: 90.7, peer: 100, overall: 78}
+confidence_sensitivity: "Verifier B strict count 5 of 9 = 55.6% excluding partially caught items, below the OR-29 REWORK line; orchestrator used emitted 78 and did not re-score; operator ruling needed"
+gate0_scores: {stated: {grand: 63, moat: 10, core: 53}, verifier_c_recomputed: {grand: 64, moat: 11, core: 53}, classification: "AVERAGE (unchanged)"}
+emerging_moat: {stated: 4.6, verifier_c_recomputed: 4.1, classification: "NONE (unchanged)"}
+source_fidelity: "Verifier A F1 to F7 applied from ERRATA-verifier-corrections.md; GATE HELD, figure corrected at source; no flag cleared"
+valuation_decision: "NOT RUN (phase 1 lite; stage 11 pending)"
+entry_range: {low: "NOT RUN", high: "NOT RUN"}
+headline: "Thin margin explosives maker bets on TNT"
+falsification_metric: "Q3 FY27 results (quarter ended 31 Dec 2026): CWIP plus capital advances still below about Rs 150 Cr at 31 Dec 2026 (B05 trigger 1 kill line)"
+monitorables_count: 8
+open_items:
+  - "Verifier B sensitivity: strict 5 of 9 = 55.6%; operator ruling on partially caught items (REWORK if excluded)"
+  - "B08 partial and B09 partial: skipped searches listed in gate-recommendation.md Open Item b; PENDING LIVE VERIFICATION"
+  - "Corpus gap: filed BSE shareholding pattern Sep 2026 (scrip 506528); no pledge data, no FII line"
+  - "Verifier A shadow not run in this session; .claude/shadow.yaml untouched"
+  - "Mental Model NOT SIGNED; Halt 1 decision PENDING; 09b dossier not found at runs/keltech-2026-11-15/outputs/reports/09b-understanding-dossier.md"
+  - "CESTAT order date PENDING LIVE VERIFICATION (B12b F12)"
+  - "Peer sheet tabs empty for PREMEXPLN and APOLLO; M5 and M7 need a listed player census"
+  - "Stage 11 inputs: trailing P/E stated two ways (54.1x derived vs 58.7x brief); capex_embedded_growth_pct unreliable; catalysts 1 and 3 are checkpoints; Amendment 17 and TNT slice sector row open"
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - "runs/keltech-2026-11-15/outputs/final/business-narrative.md"
+  - "runs/keltech-2026-11-15/outputs/final/gate-recommendation.md"
+  - "runs/keltech-2026-11-15/outputs/final/verifier-summary.md"
+notion_save:
+  page_title: ""
+  summary: "none: no Notion payload in phase 1 lite"
+  drive_link: "none"
+  mode: append-never-overwrite-status

@@ -1,0 +1,530 @@
+stage: B00-inputs
+company: KELTECH
+run_date: '2026-11-15'
+model: orchestrator session (claude-fable-5-2); identity rows from stage-00-intake-check (claude-haiku-5-5)
+status: complete
+spear:
+  line: 'Spear: OVERRIDE 2026-11-15 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)'
+  source: companies/KELTECH.md
+  load_bearing_facts:
+  - 'TNT plant delivery versus claim: about Rs 190 Cr cost, Rs 135 Cr debt, operations April 2027 (CRISIL) versus
+    ''commissioned fully in 2027'' (AR). Verify capacity, licence, offtake and the CWIP figure (AR p37 Rs 38.01
+    Cr versus the Rs 62.81 Cr line in the Q2 balance sheet).'
+  - 'Chowgule group: Chowgule and Company Pvt Ltd will transfer 4,09,940 shares (about 41% of equity, derived) to
+    Vijay V Chowgule under a 2021 family settlement. FY26 related-party items include Rs 100.00 lakh with Chowgule
+    Lavgan Shiprepair; verify its nature.'
+  - 'Cash conversion: H1 FY27 CFO Rs 6.38 Cr against PAT Rs 16.33 Cr, and FY25 CFO was negative Rs 18 Cr. Verify
+    receivable and payable days through the TNT build.'
+  - 'Export line: Rs 82.84 Cr in FY26 (15.6% of revenue). Verify markets, products and margin against domestic.'
+manifest:
+  company: Keltech Energies Ltd
+  ticker: KELTECH
+  cmp: 16564.0
+  market_cap_cr: 1656.0
+  run_type: full
+  concalls_available: false
+no_concall_mode: true
+inventory:
+  prospectus: 0
+  annual-report: 1
+  results: 3
+  rating: 1
+  concalls: 0
+  peer-concalls: 12
+  announcements: 10
+  shareholding: 1 (screener table, not the filed pattern)
+  research: 0
+  screening: 4
+  presentation: 0
+  other: 5
+sector_cap_row: Cables / Industrial products
+sector_cap: 25x
+sector_cap_evidence: 'Section 1B cap table, .claude/skills/section-1b/references/05-sector-cap.md line 38. Business:
+  industrial explosives for mining and infrastructure plus perlite, sold as industrial consumables (screener Data
+  Sheet; Step B brief). No defence revenue is booked. The collector guess ''Specialty chemicals'' was checked and
+  rejected. The ''Defence / strategic'' row (38x, line 28) is not the company row; whether a TNT slice earns it
+  is a /fttcp and stage 11 question. To be re-confirmed against B04.'
+reporting_units:
+  results: 'INR lakh (face of Q2 FY27, Q1 FY27, Q4 FY26 statements: ''Rs.in Lakhs'')'
+  annual_report: INR lakh (balance sheet and P&L headers)
+  rating: INR crore
+  screener: INR Cr
+collector_defect_gate:
+  collector_warnings_carried: 5
+  screening_csv_content: all 4 Data_Sheet CSVs opened; figures present (KELTECH FY17-FY26 annual, 10 quarters to
+    Sep 2026)
+  announcements: present (10)
+  shareholding: screener capture only; filed pattern is a collector gap
+  cmp_check: 'cmp 16564.0, market_cap_cr 1656.0: non-zero, standalone URL collected'
+freshness_pairs:
+- pair: RESULTS to CONCALL
+  trigger_doc: inputs/results/2026-11-14_Q2FY27_board-outcome-and-results.pdf
+  mate_expected: Q2 FY27 concall transcript
+  status: SKIPPED
+  missing_doc: ''
+  note: 'concalls_available false: absence declared'
+- pair: RATING BULLETIN to RATIONALE
+  trigger_doc: inputs/rating/CRISIL_2026-02-13_rationale.pdf
+  mate_expected: full rating rationale
+  status: PASS
+  missing_doc: ''
+  note: 6 page full CRISIL rationale held
+- pair: SEBI ORDER to ORDER TEXT
+  trigger_doc: none referenced in results or announcements (SEBI mentions are regulation cites only)
+  mate_expected: n/a
+  status: PASS
+  missing_doc: ''
+  note: a CESTAT order is referenced (2026-05-12 announcement); it is not a SEBI order. Stages 2, 3 and 8 report
+    any SEBI order they find.
+- pair: AR to LATEST AUDITED ANNUAL RESULTS
+  trigger_doc: inputs/results/2026-05-27_Q4FY26_audited-results.pdf (FY2025-26 audited)
+  mate_expected: AR FY2025-26
+  status: PASS
+  missing_doc: ''
+  note: inputs/annual-report/AR_FY2025-26.pdf
+freshness_verdict: FRESHNESS PAIRS OK
+input_gaps:
+- 'COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding
+  pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend.'
+- 'COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV
+  was written for them: PREMEXPLN:Profit & Loss, PREMEXPLN:Quarters, PREMEXPLN:Balance Sheet, PREMEXPLN:Cash Flow,
+  PREMEXPLN:Customization, APOLLO:Profit & Loss, APOLLO:Quarters, APOLLO:Balance Sheet, APOLLO:Cash Flow, APOLLO:Customization.
+  Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again.'
+- 'COLLECTOR WARNING (verbatim): no AR found on screener: AR stages will be skipped'
+- 'COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again'
+- 'COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way'
+- 'NOTE on collector warnings: the AR, results and rating warnings are STALE. Step F repaired them by direct HTTP
+  from BSE and CRISIL: inputs/annual-report/AR_FY2025-26.pdf, three results filings, the CRISIL rationale. The peer-sheet
+  warning stands in part: only Data_Sheet CSVs exist per company; the P&L, Quarters, Balance Sheet and Cash Flow
+  tabs were formula sheets and no CSV was written. All four Data_Sheet CSVs were opened and hold figures.'
+- 'concalls/: ABSENT, DECLARED. manifest concalls_available: false. The company holds no earnings calls (Step B
+  brief cites AR FY2025-26 p41; stage 3 verifies). NO-CONCALL MODE.'
+- 'presentation/: ABSENT. The company issues no investor presentation. Stages 4 and 7 run with NOT PROVIDED.'
+- 'prospectus/: ABSENT, not a gap. Long-listed company (CIN year 1977).'
+- 'research/: ABSENT. No effect on anchored evidence.'
+- 'shareholding/: PARTIAL, COLLECTOR GAP. The formal BSE shareholding pattern for Sep 2026 was not retrieved (BSE
+  returned Access Denied to curl, the API and headless Playwright). A screener.in table capture is held instead:
+  promoter, DII, public percentages only. NO pledge data and NO FII line. The UA FII+DII qualifier and the pledge
+  trend stay OPEN on filed evidence. Operator upload list: BSE SHP for quarter ended 30 Sep 2026, scrip 506528.'
+- 'announcements/: 10 files, Feb 2026 to Nov 2026. Boilerplate skipped. The 2026-04-24 exchange clarification query
+  has no attachment on BSE. Other filings inside the 12 month window were byte-identical to results or AR filings,
+  or boilerplate.'
+- 'results/: Q1 FY27 PDF pages 2 to 4 are scanned. The page-marked .txt beside it is tesseract OCR at 200dpi (also
+  saved as .ocr.txt). Numbers from those pages are OCR reads; cross-check against the Q2 FY27 filing''s 30.06.2026
+  comparative column.'
+- 'peer-concalls/: 12 transcripts. PREMEXPLN has no Q2 FY27 transcript yet. SOLARINDS has no Q1 FY27 transcript
+  (screener lists a presentation for Aug 2026, held in other/).'
+- 'other/: holds AR FY2024-25, Q3 FY26 results (scanned), a duplicate Q2 FY27 filing, a SOLARINDS acquisition-call
+  transcript and a SOLARINDS presentation. Preserved, never consumed. Stage 0 intake proposed four moves out of
+  other/; all four were confirmed at the page and deliberately NOT moved (contract caps), see corpus_manifest orchestrator_check.'
+- 'screening/: the main sheet is named screener-Data_Sheet.csv (KELTECH). Screener figures are in Rs Cr; filings
+  are in Rs lakh.'
+- 'EMPTY-FOLDER CONFIRMATION: SUPPRESSED under the /step1 autonomy contract. Standing answer taken: proceed with
+  the gaps. No question was asked.'
+- 'Corpus read route: every PDF has a page-marked .txt twin (tools/extract_pdfs.py; check_extraction clean except
+  other/ Q3 FY26). Stages and verifiers read the .txt; page anchors are the [page N] markers, which equal PDF page
+  numbers.'
+- 'Verifier A shadow: NOT RUN here. .claude/shadow.yaml is armed, but ten /step1 sessions run in parallel today
+  and the single shadow run belongs to the TD Power session (batch instruction 2026-11-15). This run does not touch
+  shadow.yaml.'
+corpus_manifest:
+- path: inputs/annual-report/AR_FY2025-26.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH (Keltech Energies Ltd, CIN L30007KA1977PLC031660)
+  doc_type: annual report
+  period: FY2025-26
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Page 1 is the BSE cover letter dated 13 Jul 2026 submitting the AR FY2025-26 and the 49th AGM notice. Issuer
+    and period present on page 1, so page 2 not read.
+- path: inputs/results/2026-05-27_Q4FY26_audited-results.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH
+  doc_type: results
+  period: Q4 FY26 and FY ended 31 Mar 2026 (audited)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Board outcome letter dated 27 May 2026 enclosing audited standalone results. Filename says audited-results;
+    page says board outcome.
+- path: inputs/results/2026-07-31_Q1FY27_financial-results.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH
+  doc_type: results
+  period: Q1 FY27 (quarter ended 30 Jun 2026), unaudited
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Board outcome letter dated 31 Jul 2026. Page is OCR embedded; identity read from the .txt twin page 1.
+- path: inputs/results/2026-11-14_Q2FY27_board-outcome-and-results.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH
+  doc_type: results
+  period: Q2 FY27 (quarter ended 30 Sep 2026), unaudited
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Board outcome letter dated 14 Nov 2026. Same letter also reports promoter LOI dated 27 Oct 2026.
+- path: inputs/rating/CRISIL_2026-02-13_rationale.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH (Keltech Energies Ltd)
+  doc_type: rating
+  period: Rating action 13 Feb 2026; financials cited to FY2025
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Crisil rating rationale, BBB+/Stable / A2 on Rs 258 crore bank facilities.
+- path: inputs/rating/CRISIL_2026-02-13_rationale.html
+  file_type: html
+  content_ok: true
+  issuer: KELTECH (Keltech Energies Ltd)
+  doc_type: rating
+  period: Rating action 13 Feb 2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: HTML copy of the same Crisil rationale. Opens and carries text. Not a PDF.
+- path: inputs/announcements/2026-02-13_credit-rating-intimation.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH
+  doc_type: announcement (Reg 30 credit rating intimation)
+  period: 13 Feb 2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Company letter to BSE dated 13 Feb 2026 attaching the Crisil rating letter.
+- path: inputs/announcements/2026-04-22_large-corporate-disclosure.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH
+  doc_type: announcement (Reg 30 large corporate confirmation)
+  period: 22 Apr 2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Company letter to BSE dated 22 Apr 2026.
+- path: inputs/announcements/2026-04-25_price-movement-clarification.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH
+  doc_type: announcement (reply to BSE price-movement query)
+  period: 25 Apr 2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Company reply to BSE surveillance dated 25 Apr 2026.
+- path: inputs/announcements/2026-05-12_CESTAT-order.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH
+  doc_type: announcement (Reg 30 update on tribunal order)
+  period: 12 May 2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Company letter to BSE dated 12 May 2026 reporting a CESTAT order.
+- path: inputs/announcements/2026-08-07_AGM-outcome.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH
+  doc_type: announcement (AGM proceedings summary)
+  period: 49th AGM held 7 Aug 2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Letter dated 07-08-2026 enclosing AGM summary of proceedings.
+- path: inputs/announcements/2026-08-07_AGM-scrutinizer-report.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH
+  doc_type: announcement (voting results and scrutinizer report)
+  period: AGM held 7 Aug 2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: 'Page 1 carries internal errors: body says 48th AGM, scrutinizer report dated August 07, 2025, and subject
+    says August 08, 2026. Corrected by inputs/announcements/2026-09-28_AGM-scrutinizer-report.pdf.'
+- path: inputs/announcements/2026-08-07_change-in-management.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH
+  doc_type: announcement (Reg 30 board decisions)
+  period: 7 Aug 2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Page 1 records re-appointment by rotation of two directors and cost auditor appointment for FY2026-27. No
+    change in management appears on page 1; filename overstates the content.
+- path: inputs/announcements/2026-09-28_AGM-scrutinizer-report.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH
+  doc_type: announcement (corrigendum to voting results and scrutinizer report)
+  period: Corrects AGM held 7 Aug 2026; letter undated on page 1
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Corrigendum. States no change to resolutions or voting figures.
+- path: inputs/announcements/2026-10-28_promoter-inter-se-share-transfer.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH
+  doc_type: announcement (Reg 30 promoter inter-se transfer LOI)
+  period: 28 Oct 2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Letter dated 28 Oct 2026 disclosing LOI from Chowgule and Company Pvt Ltd (promoter) for inter-se transfer.
+- path: inputs/announcements/2026-11-02_board-meeting-intimation-Q2.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH
+  doc_type: announcement (Reg 29 board meeting intimation)
+  period: Board meeting 14 Nov 2026 for Q2 FY27 (quarter ended 30 Sep 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Date line on page 1 is garbled in the text twin; meeting date and agenda read clearly.
+- path: inputs/shareholding/KELTECH_shareholding_screener_2026-09.csv
+  file_type: csv
+  content_ok: true
+  issuer: KELTECH (BSE 506528)
+  doc_type: shareholding pattern (screener.in capture)
+  period: Quarter ended Sep 2026; captured 2026-11-15
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Header line states BSE SHP page blocked and pledge data not in capture.
+- path: inputs/screening/screener-Data_Sheet.csv
+  file_type: csv
+  content_ok: true
+  issuer: KELTECH (Keltech Energies Ltd)
+  doc_type: screener data sheet
+  period: FY2017 to FY2026 (annual)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filename carries no ticker. Issuer from COMPANY NAME row.
+- path: inputs/screening/SOLARINDS-Data_Sheet.csv
+  file_type: csv
+  content_ok: true
+  issuer: SOLARINDS (Solar Industries India Ltd)
+  doc_type: screener data sheet
+  period: FY2017 to FY2026 (annual)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer data sheet.
+- path: inputs/screening/PREMEXPLN-Data_Sheet.csv
+  file_type: csv
+  content_ok: true
+  issuer: PREMEXPLN (Premier Explosives Ltd)
+  doc_type: screener data sheet
+  period: FY2017 to FY2026 (annual)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer data sheet.
+- path: inputs/screening/APOLLO-Data_Sheet.csv
+  file_type: csv
+  content_ok: true
+  issuer: APOLLO (Apollo Micro Systems Ltd)
+  doc_type: screener data sheet
+  period: FY2020 to FY2026 (annual)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer data sheet. Report dates start FY2020.
+- path: inputs/peer-concalls/APOLLO-Q1FY27_Concall_2026-08-08_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: APOLLO (Apollo Micro Systems Ltd)
+  doc_type: concall transcript
+  period: Earnings call held 8 Aug 2026 (quarter not named on page 1)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Page 1 is an exchange cover letter dated 10 Aug 2026. Quarter label not on page 1; page 2 not read.
+- path: inputs/peer-concalls/APOLLO-Q2FY27_Concall_2026-10-26_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: APOLLO (Apollo Micro Systems Ltd)
+  doc_type: concall transcript
+  period: Q2 FY27 earnings call, 26 Oct 2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Transcript title page.
+- path: inputs/peer-concalls/APOLLO-Q3FY26_Concall_2026-02-09_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: APOLLO (Apollo Micro Systems Ltd)
+  doc_type: concall transcript
+  period: Earnings call held 9 Feb 2026 (quarter not named on page 1)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Exchange cover letter dated 12 Feb 2026. Quarter label not on page 1; page 2 not read.
+- path: inputs/peer-concalls/APOLLO-Q4FY26_Concall_2026-05-19_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: APOLLO (Apollo Micro Systems Ltd)
+  doc_type: concall transcript
+  period: Earnings call held 19 May 2026 (quarter not named on page 1)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Exchange cover letter dated 21 May 2026. Quarter label not on page 1; page 2 not read.
+- path: inputs/peer-concalls/PREMEXPLN-Q1FY27_Concall_filed-2026-08-20_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: PREMEXPLN (Premier Explosives Ltd)
+  doc_type: concall transcript
+  period: Q1 FY27 (quarter ended 30 Jun 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Exchange cover letter dated 20 Aug 2026.
+- path: inputs/peer-concalls/PREMEXPLN-Q2FY26_Concall_filed-2025-11-19_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: PREMEXPLN (Premier Explosives Ltd)
+  doc_type: concall transcript
+  period: Q2 and H1 FY26 (quarter ended 30 Sep 2025); call 14 Nov 2025
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Exchange cover letter dated 19 Nov 2025.
+- path: inputs/peer-concalls/PREMEXPLN-Q3FY26_Concall_filed-2026-02-25_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: PREMEXPLN (Premier Explosives Ltd)
+  doc_type: concall transcript
+  period: Q3 FY26 (quarter ended 31 Dec 2025); call 20 Feb 2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Exchange cover letter dated 25 Feb 2026.
+- path: inputs/peer-concalls/PREMEXPLN-Q4FY26_Concall_filed-2026-06-02_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: PREMEXPLN (Premier Explosives Ltd)
+  doc_type: concall transcript
+  period: Q4 and FY26 (year ended 31 Mar 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Exchange cover letter dated 2 Jun 2026.
+- path: inputs/peer-concalls/SOLARINDS-Q2FY26_Concall_filed-2025-11-14_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: SOLARINDS (Solar Industries India Ltd)
+  doc_type: concall transcript
+  period: Q2 and H1 FY26 (quarter ended 30 Sep 2025); call 11 Nov 2025
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Exchange cover letter dated 14 Nov 2025.
+- path: inputs/peer-concalls/SOLARINDS-Q2FY27_Concall_filed-2026-11-06_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: SOLARINDS (Solar Industries India Ltd)
+  doc_type: concall transcript
+  period: Q2 and H1 FY27 (quarter ended 30 Sep 2026); call 4 Nov 2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Exchange cover letter dated 6 Nov 2026.
+- path: inputs/peer-concalls/SOLARINDS-Q3FY26_Concall_filed-2026-02-09_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: SOLARINDS (Solar Industries India Ltd)
+  doc_type: concall transcript
+  period: Q3 and 9M FY26 (quarter ended 31 Dec 2025); call 4 Feb 2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Exchange cover letter dated 9 Feb 2026.
+- path: inputs/peer-concalls/SOLARINDS-Q4FY26_Concall_filed-2026-05-18_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: SOLARINDS (Solar Industries India Ltd)
+  doc_type: concall transcript
+  period: Q4 and FY26 (year ended 31 Mar 2026); call 15 May 2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Exchange cover letter dated 18 May 2026. Page 1 text is duplicated by OCR and garbled; period read from
+    the subject line.
+- path: inputs/other/2026-02-12_Q3FY26_results.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH
+  doc_type: results
+  period: Q3 FY26 (quarter ended 31 Dec 2025), unaudited
+  folder_match: false
+  proposed_move: inputs/results/
+  page_read: 1
+  note: Board outcome letter dated 12 Feb 2026. Results document sits in other/, not results/.
+  orchestrator_check: 'CONFIRMED at page 1 (board outcome 12-02-2026, Q3 FY26 results). NOT MOVED: results/ takes
+    the 3 most recent filings (Q4 FY26, Q1 FY27, Q2 FY27); this is the 4th, 3 of 4 pages scanned and not OCR''d.
+    Held in other/, never consumed.'
+- path: inputs/other/2026-11-14_Q2FY27_financial-results-filing_identical-to-board-outcome.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH
+  doc_type: results
+  period: Q2 FY27 (quarter ended 30 Sep 2026), unaudited
+  folder_match: false
+  proposed_move: inputs/results/
+  page_read: 1
+  note: Apparent duplicate of inputs/results/2026-11-14_Q2FY27_board-outcome-and-results.pdf. Page 1 matches it.
+    Full-file identity not confirmed beyond page 1. Orchestrator to decide keep or drop.
+  orchestrator_check: 'CONFIRMED byte-identical (cmp) to inputs/results/2026-11-14_Q2FY27_board-outcome-and-results.pdf.
+    NOT MOVED: duplicate, held in other/.'
+- path: inputs/other/AR_FY2024-25.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: KELTECH
+  doc_type: annual report
+  period: FY2024-25
+  folder_match: false
+  proposed_move: inputs/annual-report/
+  page_read: 1
+  note: Page 1 is the BSE cover letter dated 18 Jul 2025 submitting the AR FY2024-25 and 48th AGM notice. Prior-year
+    AR sits in other/.
+  orchestrator_check: 'CONFIRMED at page 1 (cover letter 18 Jul 2025, AR FY2024-25). NOT MOVED: annual-report/ takes
+    0-1 PDF and holds FY2025-26. Prior-year AR held in other/, never consumed.'
+- path: inputs/other/SOLARINDS-Concall_Sep_2026_Omnia-acquisition-call_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: SOLARINDS (Solar Industries India Ltd)
+  doc_type: concall transcript (acquisition call)
+  period: Conference call held 15 Sep 2026 (proposed acquisition of Omnia Holdings Ltd); not a quarter call
+  folder_match: false
+  proposed_move: inputs/peer-concalls/
+  page_read: 1
+  note: Peer transcript sits in other/. Cover letter dated 17 Sep 2026 forwards the transcript of call hosted by
+    ICICI Securities.
+  orchestrator_check: 'CONFIRMED peer transcript of an acquisition call, not a quarterly earnings call. NOT MOVED:
+    peer-concalls/ already holds 12 quarterly transcripts (contract cap 12). Held in other/.'
+- path: inputs/other/SOLARINDS-Q1FY27_investor-presentation_NOT-a-transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: SOLARINDS (Solar Industries India Ltd)
+  doc_type: investor presentation
+  period: Q1 FY27 (quarter ended 30 Jun 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 2
+  note: Page 1 is the exchange cover letter dated 13 Aug 2026. Page 2 is the Q1FY27 board presentation title. Other/
+    is the only folder for this peer presentation type.
+flags: []
+analyst_note: ''

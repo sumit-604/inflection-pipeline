@@ -1,0 +1,97 @@
+stage: B03-ardeep
+company: "CREDENT"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "rating/ folder empty"
+  - "research/ folder empty"
+  - "one results filing only (H1 FY27, OCR text garbled in places) and one concall, transcript not read in this stage"
+  - "screener history is one annual period"
+  - "RHP only; final prospectus absent; issue price implied (9,389.52 / 49.68 lakh shares = Rs 189), not read from a prospectus"
+  - "one annual report only (FY2025-26); no prior-year AR to test tone drift (6D NOT FOUND)"
+  - "FY24 and FY25 standalone restated, FY26 consolidated; AR FY25 comparatives unrestated against the RHP"
+  - "Indian GAAP (AS), not Ind AS: no ECL matrix, Ind AS 116 or impairment model exists to read"
+  - "AR strategy and Vision 2030 pages are images; no extractable text"
+  - "names of Alltrak and Credent Team auditors, customer identities, credit terms, covenants, Kartavya owners: NOT FOUND IN DOCUMENT"
+flags:
+  - {type: FLAG-CASH, reason: "Standalone CFO (796.33) vs PAT 1,080.29; consolidated CFO (662.33) vs PAT 1,836.45; H1 FY27 CFO (392.43) derived (AR p.77, p.105; H1 cash flow, Rs Lakhs). Receivables 4,063.31 vs 1,790.55 (+126.9%) on revenue +70.4%; days 106.4 vs 79.9; nil provision; consolidated payables outflow (342.14) unreconciled to a 98.50 payables balance."}
+  - {type: FLAG-CONCENTRATION, reason: "AR MD&A p.14 states top customer 15.76% and top 10 at 81.76% of FY26 revenue (83.31% FY25, 87.92% FY24), against the H1 call claim of none above 10% (memory, transcript not read). AR notes carry no customer data."}
+  - {type: FLAG-ACQUISITION, reason: "Three acquisitions from promoters/directors/COO for 1,152.23; goodwill 234.62; Alltrak 172.40 of 199.64 profit in 34 days after 2026-02-26 (AOC-1 p.58-59; auditor Other Matter p.98); Healthcare bought at 1.96x its FY26 profit."}
+  - {type: FLAG-GOVERNANCE-STRUCTURE, reason: "Four of six directors are one family; audit committee includes the wife and daughter-in-law of related-party counterparties; each committee met once; promoter CFO resigned CFO post 2026-09-18 and became CEO 2026-10-28 (ANN). No pledge, no regulator order, no whistleblower (full promoter verdict from B08)."}
+phase_verdicts: {p1: "YELLOW", p2: "RED", p3: "RED", p4: "YELLOW", p5: "YELLOW", p6: "YELLOW", p7_best_fit: "GARP (WATCHLIST, not PASS)"}
+overall_quality: 3.9
+quality_components: {governance: 3, accounting: 4, balance_sheet: 5, earnings: 3.5}
+kill_switch_notes:
+  - "P1 informational: no reason to stop; CARO conflicts (iii(c) vs iii(f); ii(b) immaterial vs 333.21) go to management"
+  - "P2 informational: reason to take notes weaknesses to management (nil provision, footing failures); not a stop"
+  - "P3 informational: reason to pause before sizing; CFO negative, receivables outrun revenue; IPO cash not yet tested against collections"
+  - "P4 informational: no reason to stop; read missing-risk list with Phase 3 before trusting guidance"
+  - "P5 informational: no reason to stop; weight family-controlled board and committee design in sizing"
+  - "Whole report informational: hold a position decision until cash conversion, Alltrak run rate and concentration basis resolve; flags only, no halt"
+triple_pass_verification:
+  verified: 15
+  discrepancies:
+    - {finding_rank: 14, triple_pass_value: "going concern/no regulator orders anchored DR p.49; Note 1 going concern at p.79", ar_value: "DR clause (a) sits at foot of p.48 and runs to p.49; Note 1 going concern text starts under marker p.78", note_ref: "AR p.48-49; p.78"}
+    - {finding_rank: 5, triple_pass_value: "B02 treats MD&A figures as consistent with the audited P&L; pass 1 states RHP dated 2026-07-31", ar_value: "MD&A p.14 mixes bases (FY25 PAT 553.23 audited with ROE 15.20% and net worth 1,590.27 restated); FY26 ROE 61.81%/ROCE 40.00% vs Note 28 61.44%/39.39%; EBITDA 2,846.36 in MD&A vs 2,874.91 from the audited P&L; RHP and DR p.37 date the RHP 2026-08-08", note_ref: "AR p.14, p.117, p.104; DR p.37"}
+    - {finding_rank: 4, triple_pass_value: "Healthcare wholly owned from 2025-10-05/08 only", ar_value: "Cash flow note p.105 and Note 1 p.106 say acquired and consolidated from 2025-04-02; AOC-1 reserves 1,647.36 + capital 1.00 = 1,064.49 + 583.87, so 583.87 is a 12-month profit", note_ref: "AR p.105, p.106, p.58"}
+missing_risks:
+  - "Collection risk: receivables +127% on revenue +70%, nil provision, 240.23 aged 1 to 2 years (BS p.75; Note 15)"
+  - "Operating cash outflow absent from MD&A (CF p.77, p.105)"
+  - "Related-party structure: 1,152.23 acquisitions from promoters, 31% of borrowings from related parties, 1,378.80 promoter loans in year (Note 12; Annexure A p.92-93)"
+  - "Alltrak 34-day profit window and goodwill 148.40 on negative net worth (AOC-1 p.58-59; Note 29 p.117)"
+  - "Accounting-basis risk: restated priors and unbilled-revenue policy (RHP p.193; KAM p.62)"
+  - "Promoter and management concentration; CFO resignation 2026-09-18 (DR p.39; ANN)"
+  - "Internal control: internal auditor first appointed 2026-10-28; auditor changed on management request (CARO xiv, xviii p.71; RHP p.72)"
+  - "Funding: 82.5% of third-party term debt raised 2025-12-12 to 2026-02-16 at 13.5% to 16.0% (RHP p.96 per B02; Annexure 4B p.88)"
+  - "Workforce classification: 2,286 contract staff and 2,589 riders; PF/ESIC penalty 1.76 (AR p.18; Note 25 p.86)"
+  - "Geographic concentration: Maharashtra and Uttar Pradesh 56.23% of revenue (AR p.13)"
+guidance_table:
+  - {claim: "Revenue CAGR to FY30", number: "about 45% (memory: call, step1 brief)", timeframe: "to FY30", credibility: "low-medium; FY26 growth 56.5% acquired, standalone ex one line +20.1%"}
+  - {claim: "Revenue target and main-board migration", number: "Rs 1,000 Cr (memory)", timeframe: "FY30", credibility: "unverified; needs about 47% CAGR from 214.2 Cr"}
+  - {claim: "EBITDA margin", number: "15% to 16% (memory)", timeframe: "three years", credibility: "medium-low; FY26 13.29%, H1 about 13% flat"}
+  - {claim: "Cash flow positive", number: "H2 next year (memory)", timeframe: "H2 FY28", credibility: "low; CFO (662.33) FY26 and (392.43) H1 FY27, days rising"}
+  - {claim: "Receivable ageing", number: "60 days now, under 45 target (memory)", timeframe: "n/a", credibility: "contradicted; 106.4 standalone, 100.3 consolidated year-end days"}
+  - {claim: "Industry growth double-digit", number: "diagnostics USD 16.5 bn (FY25) to 31.5 bn (FY30E) (AR p.8)", timeframe: "to FY30", credibility: "third-party; not mapped to company revenue"}
+  - {claim: "Company-specific numeric guidance inside the AR", number: "NOT FOUND IN DOCUMENT", timeframe: "n/a", credibility: "n/a"}
+monitorables:
+  - {metric: "Consolidated CFO/PAT", threshold: "at least 0.7 and CFO positive", where: "H2 FY27 cash flow statement", why: "tests cash-positive claim and receivable build"}
+  - {metric: "Receivable days incl unbilled", threshold: "at or below 80; unbilled below 10% of receivables", where: "balance sheet and ageing note, H2 FY27", why: "FY26 100.3 consolidated vs claim of 60"}
+  - {metric: "Receivables over 6 months and 1-2 year bucket", threshold: "over 6 months below 5%; 1-2 year bucket (240.61) below 100", where: "ageing note", why: "first provision would show loss recognition"}
+  - {metric: "Alltrak revenue and profit per half", threshold: "revenue at least 1,280 Lakhs per half (7.01 a day x 183) with profit consistent", where: "subsidiary disclosure, H2 FY27 results", why: "separates lumpy billing from run rate"}
+  - {metric: "Top customer and top-10 share", threshold: "top 1 at or below 15.76%; top 10 below 81.76%; customer disclosure in FY27 AR", where: "final prospectus, FY27 AR", why: "contradiction with call claim"}
+  - {metric: "Kartavya Healtheon 450.00 Lakhs loan", threshold: "repaid or interest received after 2026-11-25; no further ICD; equity option disclosed if exercised", where: "Reg 30 filings, RPT note", why: "group lending vs IPO objects"}
+  - {metric: "IPO utilisation vs objects", threshold: "no deviation; general corporate purposes below 1,000 Lakhs", where: "utilisation statement H1 and H2 FY27", why: "8,355.67 net raised, debt not reduced in H1"}
+  - {metric: "CFO and board stability", threshold: "CFO Sachin Sharma stays; audit committee meets at least 4 times", where: "Reg 30 filings, FY27 AR", why: "CFO changed 29 days after listing"}
+  - {metric: "EBITDA margin", threshold: "at or above 13.3% with path to 15-16%", where: "quarterly results", why: "guidance credibility"}
+  - {metric: "Total debt and promoter guarantees", threshold: "debt falls; personal guarantees released", where: "Annexure 4A/4B, FY27 AR", why: "debt unchanged despite IPO cash in H1"}
+ar_new_downstream_entities:
+  - name: "Alltrak Technologies Private Limited"
+    where_in_ar: "AOC-2 p.50; Annexure A p.92; AOC-1 p.58; Note 29 p.117"
+    entity_type: "wholly owned subsidiary from 2026-02-26; former related-party customer (services 130.33 FY26, 869.38 FY25) and borrower (loan 285.24)"
+  - name: "Credent Healthcare Private Limited (ex Credent Managements and Consultants)"
+    where_in_ar: "DR p.34; AOC-1 p.58; Note 12 p.83; Annexure A p.92"
+    entity_type: "wholly owned subsidiary; former related-party lender (452.78 closing); 43% of group revenue"
+  - name: "Credent Team Private Limited"
+    where_in_ar: "AOC-1 p.58-59; Annexure A p.92"
+    entity_type: "wholly owned subsidiary, no revenue, loss 5.51"
+  - name: "Credent Foundation"
+    where_in_ar: "Annexure A p.92; Annexure A to AGM notice p.30 (Dimple Sharma directorship)"
+    entity_type: "group entity, promoter-controlled; transactions NOT FOUND"
+  - name: "Think Positive (CSR00080174)"
+    where_in_ar: "CSR annexure p.56"
+    entity_type: "CSR implementing agency, 10,39,812 paid"
+  - name: "Customers above 10% of revenue"
+    where_in_ar: "MD&A p.14 gives share only (15.76%); no name anywhere in the AR"
+    entity_type: "NOT FOUND IN DOCUMENT"
+strengths_top3:
+  - "Operating scale and growth: consolidated revenue 21,416.18 Lakhs, standalone +70.4%, 2,530 labs, 4,052 payroll staff (AR p.11, p.18, p.76, p.104)"
+  - "Clean tax, legal and currency profile: only GST 62.11 contingent (1.71% of net worth), no forex, CSR met, no pledge, no regulator order found (CARO vii(b) p.69; RHP p.241-242, p.82)"
+  - "Low gearing on the face (D/E 0.50 consolidated), interest-free promoter loans, 944.02 converted to equity, post-IPO cash 6,919.72 (AR p.117; H1 balance sheet)"
+red_flags_top3:
+  - "Cash conversion: CFO (796.33) standalone, (662.33) consolidated, (392.43) H1 FY27; receivables +126.9% on revenue +70.4%; nil provision; only KAM is unbilled revenue (AR p.77, p.105, p.75, p.62)"
+  - "AR p.14 states top customer 15.76% and top ten 81.76%, against the call claim of none above 10%; no customer data in notes"
+  - "Promoter-priced acquired earnings: 1,152.23 for three promoter-side entities, goodwill 234.62, Alltrak 172.40 of 199.64 profit in 34 days, 41% of PAT from entities bought this year (AOC-1 p.58-59; Note 29 p.117)"
+best_fit_strategy: "GARP (WATCHLIST, not PASS)"
+one_line_verdict: "Growth is large and partly acquired, profit is not converting to cash, and the annual report itself shows a 15.76% top customer against a call claim of none above 10%, so GARP stays on watch."
+analyst_note: "No SEBI or regulator order found in the AR, RHP litigation section or nine filings. Statutory items only: GST DRC-07 demand ZD070824085120I (2024-08-24, 62.11); Ashok Kumar Sharma on ROC disqualified list 2016-2021 (RHP p.37); s.73 and s.185 breaches with compounding applications filed, outcome NOT FOUND (RHP p.31-32). Alltrak two readings: lumpy SaaS billing after the owner change, or income placed in the consolidated window; separator is Alltrak monthly revenue Apr-Sep 2026 and its SaaS policy. CARO ix(d) two readings: director loans are quasi-equity so it holds, or the OD funded the 1,152.23 investment so it fails; separator is OD and director-loan sources and uses. Implied IPO price Rs 189 is derived from H1 figures. Report correction: section 2B says committees formed one year after the 2025-04-01 approvals; correct is about nine months (formed 2025-12-22)."

@@ -1,0 +1,57 @@
+stage: B12b
+company: "CREDENT"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 34
+caught: 15
+partially_caught: 8
+missed:
+  - {severity: "MAJOR", item: "R06 selective disclosure keyed to the analyst's firm: MD names prepaid clients, calls it private information, discloses because 'you are from Hem'", anchor: "CREDENT H1 FY27 call 2026-10-29, Tarun Sharma to Prashant Sharma, PDF p.15"}
+  - {severity: "MAJOR", item: "R23 named customer Thyrocare densifies labs so samples no longer travel to its central lab except specialty tests; undercuts Credent long-haul sample logistics premise (logistics 24.81% of H1 revenue)", anchor: "THYROCARE Q1 FY27 2026-07-23 Rahul Guha p.4; Q2 FY27 2026-10-29 p.4; Q4 FY26 Ramesh Kinha p.6; CREDENT p.5, p.6, p.9"}
+  - {severity: "MINOR", item: "R17 company age: 'last 14 years back when we have started' against incorporation in 2015", anchor: "CREDENT Tarun Sharma p.19, p.4"}
+  - {severity: "MINOR", item: "R24 Thyrocare phlebotomy covers 4,500 pin codes (franchise about 5,500) against Credent 19,000 'tentatively in a year'", anchor: "THYROCARE Q2 FY27 Rajdeep Panwar p.15, analyst p.19; CREDENT p.5, p.11"}
+  - {severity: "MINOR", item: "R26 TCIEXP: big institutional clients squeeze vendor margins and prices; read-across to Credent enterprise-heavy book and margin path", anchor: "TCIEXP Q3 FY26 Mukti Lal p.8-9; CREDENT p.8, p.9"}
+  - {severity: "MINOR", item: "R27 TCIEXP targets pharma and temperature-sensitive air cargo and passenger-train rail express against Credent 'not as much competition'", anchor: "TCIEXP Q4 FY26 Chander Agarwal p.4, Mukti Lal p.13; Q2 FY27 p.12; CREDENT p.8, p.13"}
+  - {severity: "MINOR", item: "R29 Krystal repeated guidance evasion and FY26 miss (+5.32% against an 18-25% zone); benchmark weight only", anchor: "KRYSTAL Q4 FY25 p.18-19; Q2 FY26 p.13-16; Q4 FY26 p.7-8; Q2 FY27 p.7"}
+  - {severity: "MINOR", item: "R30 Krystal loans and advances called related-party in Q4 FY25, re-described as new-customer working capital in Q4 FY26 (INR 146.45 Cr); B06 Q5 counts it as growth working capital", anchor: "KRYSTAL Q4 FY25 Prachi / Sanjay Dighe p.18; Q4 FY26 Barun Dey p.8"}
+  - {severity: "MINOR", item: "R31 Krystal lost hospital zones on price at re-tender (three to one; six to one)", anchor: "KRYSTAL Q4 FY25 Sanjay Dighe p.7; Q2 FY26 p.9"}
+  - {severity: "MINOR", item: "R33 TCIEXP governance controversy question dodged", anchor: "TCIEXP Q2 FY27 Ravi Naredi / Mukti Lal p.7"}
+  - {severity: "MINOR", item: "R34 Krystal minority-interest attribution (INR 39.5 Mn on a 3% stake) unexplained", anchor: "KRYSTAL Q2 FY26 Pankaj Motwani / Barun Dey p.12-13"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "lower (C/D boundary): B05's C does not weigh the selective disclosure to the Hem analyst (p.15), the two refusals on the volume-price and acquired-entity questions that separate organic from acquired growth (p.9-10, p.12, p.15-16), or a named customer's calls contesting the monopoly claim; symmetric credit owed for the volunteered one-time tax credit (p.7) and state concentration (p.11), also omitted"
+findings:
+  - {severity: "MAJOR", ref: "R06", location: "B05 2C, 4D, red_flags", finding: "MISSED selective disclosure keyed to the analyst's firm; B05 2C records the reverse ('withholds client names ... p.14'); names were given at p.15", anchor: "CREDENT Tarun Sharma p.15"}
+  - {severity: "MAJOR", ref: "R23", location: "B06 Q1, Part 2 2C", finding: "MISSED named-customer lab densification (samples no longer travel to the central lab except specialty tests) against Credent's long-haul logistics premise; B06 uses the lab count only as a capex fact", anchor: "THYROCARE Q1 FY27 p.4; Q2 FY27 p.4; CREDENT p.5-6, p.9"}
+  - {severity: "MAJOR", ref: "R22", location: "B06 header and Q1 verdict; B05 3A, 3D", finding: "PARTIALLY CAUGHT, misclassified: B06 calls Thyrocare 'a customer, not a competitor' and rates Q1 UNVERIFIABLE; Thyrocare runs 'probably the largest phlebotomy network in India' and sells home collection to health-tech, corporate and insurer partners, contesting Credent's monopoly, leader and 'working with the Credent only' claims; B05 3D drops 'only'", anchor: "THYROCARE Q3 FY26 p.8; Q1 FY27 p.4; Q2 FY27 p.9, p.11; CREDENT p.8, p.12, p.13, p.14"}
+  - {severity: "MAJOR", ref: "B06 Q9", location: "B06 Q9, FLAG-LAUNCH-LOSSES, Part 4 priority list", finding: "OVERSTATED CONTRADICTED verdict: Credent conceded launch cost on the call; peers report margin dips, not losses; relabel PARTIALLY VERIFIED and drop from synthesis priority items", anchor: "CREDENT Tarun Sharma p.11; KRYSTAL Q2 FY27 p.7; TCIEXP Q3 FY26 p.16"}
+  - {severity: "MINOR", ref: "R04", location: "B05 2E", finding: "Volume and price refusal (two analysts, analyst insistence) recorded but not in red_flags and not named as the LB2 separator; a repeat next call is a repeated evasion", anchor: "CREDENT p.9-10, p.15-16"}
+  - {severity: "MINOR", ref: "R05", location: "B05 2E, 3C", finding: "Acquired-entity stabilisation question dodged; under-weighted, not in red_flags or credibility basis", anchor: "CREDENT Priyansh / Tarun Sharma p.12"}
+  - {severity: "MINOR", ref: "R12", location: "B05 3D", finding: "On-Demand built for unorganised small labs but the named clients are Wockhardt and Thyrocare; mismatch not noted", anchor: "CREDENT p.14, p.15"}
+  - {severity: "MINOR", ref: "R16", location: "B05 input_gaps", finding: "'First interaction with the investor community' against an analyst's 'pre-IPO calls' reference recorded as a gap, not an inconsistency", anchor: "CREDENT p.3, p.8"}
+  - {severity: "MINOR", ref: "R25", location: "B06 Q3, 2E(4)", finding: "Thyrocare credit-tightening revenue cost not set against Credent's 30-day terms plus 45-50% growth guide", anchor: "THYROCARE Q3 FY26 p.5, p.9; CREDENT p.10, p.16"}
+  - {severity: "MINOR", ref: "R28", location: "B06 Q4", finding: "TCIEXP guidance walk-down over four calls not flagged; its 15-16% margin path is a slipping benchmark", anchor: "TCIEXP Q3 FY26 p.10, p.16; Q4 FY26 p.10, p.17; Q1 FY27 p.9; Q2 FY27 p.4, p.7, p.13"}
+  - {severity: "MINOR", ref: "R32", location: "B06 2E(6)", finding: "Customer-group pledge and stake sale not cited; counterparty risk low given Thyrocare net cash", anchor: "THYROCARE Q1 FY27 p.14; Q2 FY27 p.8, p.11, p.19"}
+  - {severity: "MINOR", ref: "R17", location: "B05", finding: "MISSED company-age inconsistency (14 years against 2015)", anchor: "CREDENT p.19, p.4"}
+  - {severity: "MINOR", ref: "R24", location: "B05 2A-2 i", finding: "MISSED peer pin-code contrast; 19,000 reads as served-in-a-year, not active coverage", anchor: "THYROCARE Q2 FY27 p.15, p.19; CREDENT p.5, p.11"}
+  - {severity: "MINOR", ref: "R26", location: "B06 Q7", finding: "MISSED enterprise price-squeeze read-across", anchor: "TCIEXP Q3 FY26 p.8-9"}
+  - {severity: "MINOR", ref: "R27", location: "B06", finding: "MISSED listed express operator overlap in pharma and temperature-sensitive cargo", anchor: "TCIEXP Q4 FY26 p.4, p.13; Q2 FY27 p.12"}
+  - {severity: "MINOR", ref: "R29", location: "B06 2A", finding: "MISSED Krystal repeated guidance evasion and FY26 miss", anchor: "KRYSTAL Q4 FY25 p.18-19; Q2 FY26 p.13-16; Q4 FY26 p.8"}
+  - {severity: "MINOR", ref: "R30", location: "B06 Q5", finding: "MISSED Krystal related-party loans re-described as growth working capital", anchor: "KRYSTAL Q4 FY25 p.18; Q4 FY26 p.8"}
+  - {severity: "MINOR", ref: "R31", location: "B06", finding: "MISSED Krystal re-tender share loss on price in hospital manpower", anchor: "KRYSTAL Q4 FY25 p.7; Q2 FY26 p.9"}
+  - {severity: "MINOR", ref: "R33", location: "B06", finding: "MISSED TCIEXP governance controversy dodge", anchor: "TCIEXP Q2 FY27 p.7"}
+  - {severity: "MINOR", ref: "R34", location: "B06", finding: "MISSED Krystal minority-interest anomaly", anchor: "KRYSTAL Q2 FY26 p.12-13"}
+  - {severity: "MINOR", ref: "B06 Q5", location: "FLAG-PEER-CASH-CONTRADICTION", finding: "'No peer holds under 45' overstated: Thyrocare runs 30-40 days blended with a prepaid franchise, cited by B06 itself in Q3", anchor: "THYROCARE Q3 FY26 Rahul Guha p.17"}
+  - {severity: "MINOR", ref: "B05 2C", location: "Transparency rating evidence", finding: "Misread: client names were given (p.15), not withheld (p.14)", anchor: "CREDENT p.15"}
+  - {severity: "MINOR", ref: "B05 anchors", location: "LB2, 2B", finding: "One-page offsets: Prashant Sharma exchange p.14 is p.15; 'wrong question' p.15 is p.16 and occurs once, not twice; 'beautiful question' p.12 is p.13", anchor: "CREDENT p.13, p.15, p.16"}
+  - {severity: "MINOR", ref: "B05 row 6", location: "2A row 6, 2E", finding: "'Not too yet' answered the realisation average; the prepaid revenue question got no answer", anchor: "CREDENT p.15-16"}
+  - {severity: "MINOR", ref: "B06 anchors", location: "Q2, Q4, Q6, 2C, 2D", finding: "Eight one-page offsets (TCIEXP Q3 FY26 p.5, p.16; Q2 FY27 p.4; Q1 FY27 p.7, p.9; THYROCARE Q2 FY27 p.7, p.4; Q1 FY27 p.5); quotes exist on the adjacent page", anchor: "see report Section 5"}
+  - {severity: "MINOR", ref: "B06 Q6", location: "Net read", finding: "Krystal '30 bps' attributed to labour-code lag; transcript ties the 32 bps H1 dip to employee cost and contract start-up", anchor: "KRYSTAL Q2 FY27 Barun Dey p.6, Sanjay Dighe p.7, p.11"}
+critical_count: 0
+major_count: 4
+minor_count: 22
+material_found: 10
+material_caught: 8
+acceptance_rate: 80
+coverage_basis: "10 material of 34 listed; 5 caught, 3 partially caught, 2 missed; material_caught counts caught plus partially caught (items the pipeline had) = 8 of 10; fully-caught-only basis would be 5 of 10 (50%); all 13 transcripts read in full"

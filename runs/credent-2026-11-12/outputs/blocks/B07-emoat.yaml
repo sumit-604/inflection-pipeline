@@ -1,0 +1,42 @@
+stage: B07-emoat
+company: "CREDENT"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "one concall; one results filing; RHP only; one annual report; rating/ and research/ empty; peer data not provided"
+  - "FY24 and FY25 standalone restated, FY26 consolidated; AR strategy pages are images"
+  - "H1 FY27 top-1 share, Alltrak H1 revenue and profit, segment margins, price per collection, net block for fixed asset turnover: NOT FOUND"
+flags:
+  - {type: FLAG-CONCENTRATION, reason: "Top 1 15.76% and top 10 81.76% FY26 (AR p.14, RHP p.25-26, INR Lakhs) against call claim of none above 10%; top 10 trend 87.92, 83.31, 81.76, 80.60 (Sep 2026, press release p.3); H1 top-1 NOT FOUND"}
+  - {type: FLAG-ORGANIC-VS-ACQUIRED, reason: "FY26 step-up largely three promoter-side acquisitions (AR p.13-14); credited once under H1, not as an emerging moat"}
+  - {type: FLAG-CASH, reason: "CFO -662.34 Lakhs FY26, -39 Mn H1 FY27, receivables 588 to 788 Mn in six months; G2 scored 0"}
+  - {type: FLAG-IPO-USE, reason: "3.00 Cr machinery object nil utilised; Rs 4.50 Cr Kartavya loan outside objects (NSE 2026-11-04)"}
+em_score: 10.5
+em_classification: "NONE"
+active_categories: []
+evidence_mix: {documented: 5, claim: 6, inference: 0}
+completionist_recount: "recount performed: 5 documented items across 4 categories (B2, C2, G1, H1); 7 categories carry any evidence, all Weak; guard not triggered"
+catalysts_12m:
+  - {catalyst: "H2 FY27 revenue at or above 181.91 Cr with Alltrak shown separately", window: "H2 FY27 results", evidence_type: "claim", anchor: "B05 trigger 1; call p.10"}
+  - {catalyst: "Kartavya Healtheon Rs 4.50 Cr loan repaid or interest received after 2026-11-25", window: "Nov 2026 to H2 FY27", evidence_type: "documented", anchor: "NSE filing 2026-11-04"}
+  - {catalyst: "Top-10 share falls below 80.60% and top-1 disclosed", window: "H2 FY27 results and FY27 AR", evidence_type: "documented", anchor: "press release 2026-10-28 p.3; AR p.14"}
+  - {catalyst: "Consolidated CFO turns positive, receivable days at or below 80", window: "H2 FY27 to H2 FY28", evidence_type: "claim", anchor: "call p.16; B05 trigger 3"}
+  - {catalyst: "Alltrak and On-Demand revenue disclosed", window: "FY27 AR", evidence_type: "claim", anchor: "call p.14-16; B05 trigger 5"}
+capex_embedded_growth_pct: 0   # 2C: committed capex 3.00 Cr, none spent; fixed asset turnover NOT FOUND; 0% documented
+optionality_register:
+  - {optionality: "Alltrak becomes recurring SaaS revenue", converting_evidence: "Alltrak revenue and profit per half, customer count, SaaS policy", first_appears: "H2 FY27 results; FY27 AR note", window: "6-12 months"}
+  - {optionality: "On-Demand prepaid wallet platform", converting_evidence: "revenue line and wallet balances disclosed", first_appears: "H2 FY27 results; FY27 AR", window: "12-24 months"}
+  - {optionality: "Enterprise and mid-size client wins", converting_evidence: "named wins, revenue contribution, top-10 share below 70%", first_appears: "H2 results; FY27 AR concentration disclosure", window: "12-24 months"}
+  - {optionality: "Healthcare services pricing power", converting_evidence: "price per collection and segment margin by line", first_appears: "FY27 AR segment note", window: "12-24 months"}
+  - {optionality: "Talent retention via ESOP 2026 (5,64,000 share pool, none granted)", converting_evidence: "grants made, vesting, named technical hires", first_appears: "FY27 AR ESOP note", window: "12-24 months"}
+  - {optionality: "Tier 3-4 expansion on client minimum guarantees", converting_evidence: "signed minimum-guarantee clauses without launch loss", first_appears: "results commentary", window: "24-36 months"}
+  - {optionality: "Middle East entry", converting_evidence: "signed contract with named counterparty", first_appears: "exchange filing", window: "24-36 months"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (core 72, STRONG moat label mechanical, cash capped) plus EM 10.5 NONE; no transition setup evidenced, all forward items are claims."
+top_moat_risks:
+  - "Customer insourcing or loss: top 10 at 80.60% with terminable contracts and price-cut risk"
+  - "Acquired revenue fades or proves lumpy (Alltrak 172.40 of 199.64 Lakhs profit in 34 days)"
+  - "Cash conversion stays negative while receivables grow, eating the IPO float"
+  - "Further group lending outside IPO objects"
+analyst_note: "Sparse scan, honest. Seven categories carry weak evidence only; none reaches Moderate. Score 10.5 sits 1.5 under the MODEST band, and two items (H1 related-party bolt-ons, G1 IPO-raised cash) are generous, so the NONE call is not fragile. Two readings of the forward story: a healthcare logistics platform with Alltrak and On-Demand lifting pricing power, or outsourced labour at cost plus. Separator: segment margin and price per collection, NOT FOUND. The call-versus-filing gaps (10% customer, organic, 60 days) are credibility items for synthesis, not moat evidence."

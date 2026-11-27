@@ -1,0 +1,39 @@
+stage: B01-gate0
+company: "CREDENT"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "rating/ empty; research/ empty"
+  - "results/ holds one filing (H1 FY27); concalls/ holds one transcript"
+  - "screening: Data_Sheet only, FY26 only; history from RHP restated financials"
+  - "prospectus is RHP only; final prospectus not collected"
+  - "peer data not provided (M2, M5, M6, M9)"
+flags:
+  - {type: FLAG-GATE0, reason: "AVERAGE capped by cumulative CFO/PAT -0.014 (deal-breaker 4); driven by FY26 CFO -662.34 lakh and receivables build of 2835.61 lakh in the acquisition year; plus 3-year LIMITED history downgrade"}
+data_years: 3
+fy_range: "FY24 to FY26"
+blocks: {A: 19, B: 1, C: 20, D: 17, E: 15}
+core_score: 72
+moat_score: 21
+grand_total: 93
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers:
+  - "4: cumulative CFO/PAT -0.014 < 0.50 (max AVERAGE), driven by FY26"
+  - "2: Block B 1 < 8 (max GOOD), driven by FY25 FCF -138.03 and FY26 FCF -1213.69 lakh"
+history_downgrade: true
+data_notes:
+  - "Units INR Lakhs (RHP p.56-58). FY24/FY25 standalone, FY26 consolidated; not like for like (presentation p.18 note)"
+  - "ROCE computed = (PBT+finance cost)/(total assets - current liabilities); screener gives none. FY24 26.07, FY25 23.03, FY26 50.99"
+  - "ROE FY24 uses closing net worth (opening NOT FOUND)"
+  - "WC days revenue basis, no inventory: FY24 88.98, FY25 81.55, FY26 98.58; FY26 mixed basis (acquired receivables vs part-year revenue)"
+  - "D3 debt/equity 0.501 sits on the 0.5 band boundary; scored 3"
+  - "E2 -36.25pp is IPO and pre-IPO dilution (100% Aug 2024 to 63.75%); scored mechanically as 0"
+  - "PEER DATA NEEDED: M2, M5, M6, M9; M6 R&D NOT FOUND; M11 selling expense by year NOT FOUND; M7 scored 0 no licence evidenced"
+  - "Presentation p.18/21 FY25 revenue 81.8 Cr and PAT 5.5 Cr conflict with RHP restated 77.94 Cr and 2.25 Cr; RHP scored, gap unexplained"
+  - "M4 and M10 read the same revenue and receivable-day facts; STRONG moat label is mechanical on a 3-year, acquisition-inflated window"
+  - "Customer concentration RHP p.25-26: top1 15.76%, top10 81.76% FY26"
+block_b_trend: "deteriorating: cumulative CFO/PAT -0.014; CFO 80.93 -> 548.10 -> -662.34 lakh FY24 to FY26; H1 FY27 CFO Rs -39 Mn (presentation p.23)"
+analyst_note: "Core 72 reads as GOOD+ but the cash block (1/20) and the 3-year history cap it at AVERAGE. The growth and ROCE scores lean on a year-end consolidation of three acquired entities, so FY26 ROCE 50.99% and PAT CAGR 163% are not organic run-rate. The depressor is one year (FY26): receivables rose 2,835.61 lakh while revenue rose 13,621.92 lakh. H1 FY27 CFO is still negative (Rs -39 Mn) and receivables reached Rs 788 Mn. Promoter dilution (E2 = 0) is IPO mechanics, not selling. Downstream sizing may override AVERAGE for a post-IPO rebase case; the cash trend is the item to test."

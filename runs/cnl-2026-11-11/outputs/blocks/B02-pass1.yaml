@@ -1,0 +1,11 @@
+stage: B02-pass1
+company: "CNL"
+run_date: "2026-11-11"
+model: claude-sonnet-5-5
+status: complete
+report_path: "runs/cnl-2026-11-11/outputs/reports/02-notes-pass1.md"
+errata_path: "runs/cnl-2026-11-11/outputs/reports/02-notes-pass1-errata.md"
+finding_count: 54
+red_rated_findings: 5     # F23, F30, F31, F36, F43
+input_gaps: []
+notes: "Unit on face is Rs. in Lakhs (not converted). BSNL BharatNet: NOT FOUND in AR. 40-42% brand gross margin: NOT FOUND (brand segment result 33.2% of brand revenue disclosed). HK subs not audited by group auditor (AR p.93)."

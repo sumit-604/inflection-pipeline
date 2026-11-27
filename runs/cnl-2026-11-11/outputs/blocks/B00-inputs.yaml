@@ -1,0 +1,53 @@
+stage: B00-inputs
+company: CNL
+run_date: 2026-11-11
+model: claude-opus-5-5 (orchestrator, inline) + stage-00-intake-check claude-haiku-5-5
+status: complete
+spear_gate: "Spear: OVERRIDE 2026-11-11 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear) [companies/CNL.md]"
+load_bearing_facts:
+  - "LBF1 subsidiary profit and tax: Q2 FY27 standalone PAT Rs 12.65 Cr vs consolidated Rs 25.94 Cr with identical tax Rs 4.19 Cr; HK subsidiaries Secure Connection Ltd and Creative Peripherals and Distributions Ltd; minority share; related-party flows"
+  - "LBF2 cash conversion: FY26 CFO -Rs 271.9 Cr vs H1 FY27 CFO +Rs 351.24 Cr; source of the turn (collections, payables, TReDS/discounting, advances); debtor days 76 at Mar-2026"
+  - "LBF3 brand margin claim: 40-42% brand gross margin, 19% revenue share Q2 FY27; verify against AR segment note"
+  - "LBF4 BSNL BharatNet order about Rs 3,194.83 Cr (Odisha): contracting entity, consortium share, guarantees and funding vs Rs 209 Cr bank limits, revenue recognition"
+company_memory: [companies/CNL.md, runs/cnl-2026-11-11/step1-business-brief.md]
+sector_cap_row: "Cybersecurity / VAD"
+sector_cap_row_evidence: "Value-added distribution of IT, surveillance, networking and cybersecurity products plus owned/licensed brands (step1-business-brief.md items 1, 3, 11; Q2 FY27 presentation slides 3, 25-27). Only VAD row in the table; cap 25x. Source: .claude/skills/section-1b/references/05-sector-cap.md. FLAG for Phase 3: about 81% of revenue is plain distribution; distribution cap rows (commodity 18-19x, value-added 25-26x, blended) are an open operator decision (ENTERO). Collector guess 'Agri processing' rejected (keyword error)."
+reporting_units:
+  results: "Rs lakh (face of Q2 FY27 results: 'Rs. in Lakhs')"
+  annual_report: "Rs lakh in financial statements and notes; Rs Cr in the narrative/highlights pages"
+  presentation: "Rs Cr"
+  rating: "Rs Cr"
+  screener: "Rs Cr"
+units_line: "All figures in Rs Cr unless the source says otherwise; the source unit is on the face of the document, not in the filename. Results and AR statements are in Rs lakh."
+tooling: "Pre-extracted page-marked .txt beside every PDF (tools/extract_pdfs.py; check_extraction.py clean except two non-evidence pages). Stages read the .txt and open the PDF page for verification."
+freshness_pairs:
+  - {pair: "results to concall", trigger_doc: "results/CNL_results_Q2FY27.pdf (Q2 FY27)", mate_expected: "Q2 FY27 transcript", status: PASS, missing_doc: ""}
+  - {pair: "rating bulletin to rationale", trigger_doc: "rating/CNL_CRISIL_rationale_2026-08-06.txt", mate_expected: "full rationale", status: PASS, missing_doc: ""}
+  - {pair: "SEBI order to order text", trigger_doc: "none referenced (grep of AR, announcements, rating)", mate_expected: "n/a", status: PASS, missing_doc: ""}
+  - {pair: "AR to latest audited annual results", trigger_doc: "results/CNL_results_Q4FY26.pdf (FY26 audited)", mate_expected: "FY2025-26 AR", status: PASS, missing_doc: ""}
+freshness_verdict: FRESHNESS PAIRS OK
+concall_quarter_map:
+  - {file: inputs/concalls/CNL_Q2FY26_transcript_2025-11.pdf, quarter: "Q2 FY26 (call 12 Nov 2025)"}
+  - {file: inputs/concalls/CNL_Q4FY26_transcript_2026-05.pdf, quarter: "Q4 FY26 (call 15 May 2026)"}
+  - {file: inputs/concalls/CNL_Q2FY27_transcript_2026-10.pdf, quarter: "Q2 FY27 (call 29 Oct 2026)"}
+input_gaps:
+  - "COLLECTOR (verbatim): collector Playwright Chromium failed to launch on this machine (BrowserType.launch: spawn UNKNOWN), sandboxed and unsandboxed. Only the BSE announcements fetch ran. /step1 repaired the corpus by direct download of public BSE/NSE/CRISIL filings (2026-11-11)."
+  - "COLLECTOR (verbatim): screening: screener Excel exported via the operator's Chrome session; only Data_Sheet carries figures. Profit & Loss, Balance Sheet, Cash Flow and Quarters sheets exported blank (formula sheets, no cached values) and were not converted."
+  - "COLLECTOR (verbatim): peer screener Excel exports NOT collected (browser save dialog); peer financial CSVs absent."
+  - "COLLECTOR (verbatim): shareholding/ is empty: BSE shareholding API refused automated access (HTTP 403). FII+DII UA qualifier and pledge trend stay open."
+  - "COLLECTOR (verbatim): rating: CRISIL rationale 06-Aug-2026 saved as text from the CRISIL HTML page (no PDF published)."
+  - "COLLECTOR (verbatim): announcements: three items duplicated a concall, a presentation and a results file; moved to other/ (20261028-1bfd4ff2, 20261103-ab45d6d5, 20261028-c20e97f1)."
+  - "COLLECTOR (verbatim): Q1 FY27 (Aug 2026) and Q3 FY26 (Feb 2026) calls have no transcript on screener; concalls hold Q2 FY26, Q4 FY26 and Q2 FY27."
+  - "shareholding/: EMPTY (collector gap, not evidence). FII+DII qualifier and pledge trend open; UA cannot be affirmed in Phase 3 until a filed SHP is pushed."
+  - "prospectus/: empty, NOT a gap (long-listed; ARs on NSE since FY2018-19)."
+  - "research/: empty (no broker notes collected); no effect on anchored evidence."
+  - "screening: P&L, Balance Sheet, Cash Flow, Quarters sheets ABSENT (blank exports). Data_Sheet present with figures."
+  - "annual-report: only FY2025-26 held (contract 0-1). FY2024-25 AR not collected; FY25 comparatives come from the FY26 AR."
+  - "MOVED (orchestrator, page-verified): announcements/20261107-0e50fe51-8ee8-455e-a92c-ecc4ffd6ff7a.pdf -> other/ and announcements/20261107-eb218cce-8124-4add-8226-355bd7196d4c.pdf -> other/ (newspaper pages, not exchange filings; EGM notice itself is announcements/20261106-86a221f7)."
+  - "UNIDENTIFIED: announcements/20261029-84eb0d62 (one-line call-recording link, no issuer on page). Not anchored evidence."
+  - "DOCUMENT CONFLICT: Q2 FY27 media releases (announcements/20261028-2b047010, 20261028-90974ea1) call the results 'audited'; the Reg 33 board outcome and results (results/CNL_results_Q2FY27.pdf p.1, limited review report) say 'unaudited'. The filed results govern: Q2 FY27 figures are UNAUDITED, limited-reviewed."
+  - "VERIFIER A SHADOW: not run. .claude/shadow.yaml reads 'armed' on main, but HANDOFF.md records it spent by runs/southwest-2026-11-09 on an unmerged branch (commit 0e62cee3); the ruling allows one Phase 1 only."
+  - "EMPTY-FOLDER CONFIRMATION: suppressed by /step1 AUTONOMY CONTRACT; standing answer 'proceed with the gaps'. Empty folders: shareholding, research, prospectus (not a gap)."
+corpus_manifest_ref: outputs/blocks/B00-intake.yaml (rows verified by orchestrator; xlsx identity confirmed via CNL-Data_Sheet.csv row 1 'CREATIVE NEWTECH LTD'; two newspaper pages moved as above)
+flags: []
+analyst_note: "Corpus is complete for every stage except shareholding. Peer transcripts: four each for RPTECH, CPPLUS, REDINGTON (12, the contract maximum)."

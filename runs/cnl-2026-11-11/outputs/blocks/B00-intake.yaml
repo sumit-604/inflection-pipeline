@@ -1,0 +1,472 @@
+stage: B00-intake
+model: claude-haiku-5-5
+status: partial
+corpus_manifest:
+  - path: inputs/annual-report/CNL_AR_FY2025-26.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "annual report"
+    period: "FY2025-26 (22nd Annual Report, year to 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+
+  - path: inputs/concalls/CNL_Q2FY26_transcript_2025-11.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "concall transcript"
+    period: "Q2 FY26 (call 12 Nov 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+
+  - path: inputs/concalls/CNL_Q2FY27_transcript_2026-10.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "concall transcript"
+    period: "Q2 FY27 (half year ended FY27; call 29 Oct 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+
+  - path: inputs/concalls/CNL_Q4FY26_transcript_2026-05.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "concall transcript"
+    period: "Q4 FY26 (year ended 31 Mar 2026; call 15 May 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+
+  - path: inputs/other/20261028-1bfd4ff2-6210-415d-890f-c35ebff19f25.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "investor presentation"
+    period: "Q2 FY27 (Q2 H1 FY26-27)"
+    folder_match: false
+    proposed_move: "inputs/presentation/"
+    page_read: 1
+    note: "Known duplicate of presentation/CNL_Q2FY27_presentation.pdf (same page 1). Orchestrator to check for an existing copy before moving."
+
+  - path: inputs/other/20261028-c20e97f1-9d4b-4cc1-9b5e-0643cd759c92.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "results (board outcome letter, unaudited standalone and consolidated results for quarter and half year, Reg 33)"
+    period: "Q2 FY27 (quarter and half year ended 30 Sep 2026)"
+    folder_match: false
+    proposed_move: "inputs/results/"
+    page_read: 1
+    note: "Known duplicate of results/CNL_results_Q2FY27.pdf (same page 1). Orchestrator to check for an existing copy before moving."
+
+  - path: inputs/other/20261103-ab45d6d5-8e65-49fd-9dd0-f748fb74250e.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "concall transcript"
+    period: "Q2 FY27 (half year ended FY27; call 29 Oct 2026)"
+    folder_match: false
+    proposed_move: "inputs/concalls/"
+    page_read: 1
+    note: "Known duplicate of concalls/CNL_Q2FY27_transcript_2026-10.pdf (same page 1). Orchestrator to check for an existing copy before moving."
+
+  - path: inputs/peer-concalls/CPPLUS_2025-11_transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "CPPLUS (scrip 544466; company name not on page 1)"
+    doc_type: "peer earnings call transcript"
+    period: "Q2 FY26 (quarter and half year ended 30 Sep 2025; call 13 Nov 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, correctly held in peer-concalls/."
+
+  - path: inputs/peer-concalls/CPPLUS_2026-02_transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "CPPLUS (scrip 544466; company name not on page 1)"
+    doc_type: "peer earnings call transcript"
+    period: "Q3 FY26 (quarter and nine months ended 31 Dec 2025; call 13 Feb 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, correctly held in peer-concalls/."
+
+  - path: inputs/peer-concalls/CPPLUS_2026-06_transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Aditya Infotech Limited (CPPLUS)"
+    doc_type: "peer earnings call transcript"
+    period: "Q4 FY26 (quarter and year ended 31 Mar 2026; call 28 May 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, correctly held in peer-concalls/."
+
+  - path: inputs/peer-concalls/CPPLUS_2026-08_transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "CPPLUS (scrip 544466; company name not on page 1)"
+    doc_type: "peer earnings call transcript"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026; call 13 Aug 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, correctly held in peer-concalls/."
+
+  - path: inputs/peer-concalls/REDINGTON_2026-02_transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Redington Limited"
+    doc_type: "peer earnings call transcript"
+    period: "Q3 FY26 (quarter ended 31 Dec 2025; call 5 Feb 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, correctly held in peer-concalls/."
+
+  - path: inputs/peer-concalls/REDINGTON_2026-05_transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Redington Limited (REDINGTON, scrip 532805)"
+    doc_type: "peer earnings call transcript"
+    period: "Q4 FY26 (quarter and year ended 31 Mar 2026; call 14 May 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, correctly held in peer-concalls/."
+
+  - path: inputs/peer-concalls/REDINGTON_2026-08_transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Redington Limited (REDINGTON, scrip 532805)"
+    doc_type: "peer earnings call transcript"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026; call 30 Jul 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, correctly held in peer-concalls/."
+
+  - path: inputs/peer-concalls/REDINGTON_2026-11_transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Redington Limited (REDINGTON, scrip 532805)"
+    doc_type: "peer earnings call transcript"
+    period: "Q2 FY27 (quarter and half year ended 30 Sep 2026; call 4 Nov 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, correctly held in peer-concalls/."
+
+  - path: inputs/peer-concalls/RPTECH_2025-11_transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Rashi Peripherals Limited (RPTECH)"
+    doc_type: "peer earnings call transcript"
+    period: "Q2 FY26 (quarter and half year ended 30 Sep 2025; call 10 Nov 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, correctly held in peer-concalls/."
+
+  - path: inputs/peer-concalls/RPTECH_2026-02_transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Rashi Peripherals Limited (RPTECH)"
+    doc_type: "peer earnings call transcript"
+    period: "Q3 FY26 (quarter and nine months ended 31 Dec 2025; call 4 Feb 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, correctly held in peer-concalls/."
+
+  - path: inputs/peer-concalls/RPTECH_2026-05_transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Rashi Peripherals Limited (RPTECH)"
+    doc_type: "peer earnings call transcript"
+    period: "Q4 FY26 (quarter and year ended 31 Mar 2026; call 15 May 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, correctly held in peer-concalls/."
+
+  - path: inputs/peer-concalls/RPTECH_2026-08_transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Rashi Peripherals Limited (RPTECH)"
+    doc_type: "peer earnings call transcript"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026; call 5 Aug 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, correctly held in peer-concalls/."
+
+  - path: inputs/presentation/CNL_Q1FY27_presentation.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "investor presentation"
+    period: "Q1 FY27 (Q1 FY26-27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+
+  - path: inputs/presentation/CNL_Q2FY27_presentation.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "investor presentation"
+    period: "Q2 FY27 (Q2 H1 FY26-27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+
+  - path: inputs/presentation/CNL_Q4FY26_presentation.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "investor presentation"
+    period: "Q4 FY26 (Q4 FY25-26)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+
+  - path: inputs/rating/CNL_CRISIL_rationale_2026-08-06.txt
+    file_type: txt
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "credit rating rationale (CRISIL, bank facilities reaffirmed BBB+/Stable, A2)"
+    period: "FY2026 data (as on 31 Mar 2026); rationale dated 6 Aug 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "HTML converted to text; no PDF beside it."
+
+  - path: inputs/results/CNL_results_Q1FY27.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "results (board outcome letter, unaudited standalone and consolidated results for quarter ended 30 Jun 2026, Reg 33; results annexed)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Board meeting dated 4 Aug 2026. Annexure A (the results) is not on page 1."
+
+  - path: inputs/results/CNL_results_Q2FY27.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "results (board outcome letter, unaudited standalone and consolidated results, Reg 33)"
+    period: "Q2 FY27 (quarter and half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Board meeting dated 28 Oct 2026. Same page 1 as other/20261028-c20e97f1 duplicate."
+
+  - path: inputs/results/CNL_results_Q4FY26.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "results (board outcome letter, audited standalone and consolidated results with auditor report, Reg 33; CFO appointment)"
+    period: "Q4 FY26 (quarter and year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Board meeting dated 14 May 2026. Annexure A is not on page 1."
+
+  - path: inputs/screening/CNL-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "CREATIVE NEWTECH LTD (company name on sheet row 1)"
+    doc_type: "screener data sheet (annual P&L series)"
+    period: "FY2019 to FY2026 (latest report date 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Sheet does not state its unit on page 1."
+
+  - path: inputs/screening/CNL_Financials.xlsx
+    file_type: xlsx
+    content_ok: false
+    issuer: ""
+    doc_type: ""
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "UNREADABLE to this stage: the Read tool refuses binary xlsx and this stage has no shell. Identity not established. A script read is needed before use."
+
+  - path: inputs/announcements/20260930-0ec5b191-d76e-4990-bcba-168918824094.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "AGM proceedings intimation (Reg 30); 22nd AGM held 30 Sep 2026"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+
+  - path: inputs/announcements/20261001-540ad263-4518-4f4a-9f74-9fe33cb7e840.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "AGM e-voting scrutiniser report (enclosure to Reg 44 filing)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+
+  - path: inputs/announcements/20261001-7bb208f9-7618-436d-abc2-49924ea99423.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "AGM voting results (Reg 44)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+
+  - path: inputs/announcements/20261024-08a786e0-2b1e-44e6-889e-22bd072ceb1a.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "board meeting notice (Reg 29)"
+    period: "Q2 FY27 (quarter and half year ended 30 Sep 2026; meeting 28 Oct 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+
+  - path: inputs/announcements/20261026-ffda49e7-d5c9-4c2c-a37f-acf6b1900592.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "earnings call intimation (Reg 30)"
+    period: "Q2 FY27 (quarter and half year ended 30 Sep 2026; call 29 Oct 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+
+  - path: inputs/announcements/20261027-275685f6-dde5-4bf1-802d-5219e64ebed3.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited (announcing for subsidiary Secure Connection Limited)"
+    doc_type: "award announcement (Reg 30), WOZOYO"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+
+  - path: inputs/announcements/20261028-2b047010-aaf6-4a5f-a66d-f9e4a5fa4f03.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "results media release (audited consolidated results, Q2 and half year)"
+    period: "Q2 FY27 (Q2 and half year ended FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page says AUDITED consolidated results. The same-day board outcome (other/20261028-c20e97f1, results/CNL_results_Q2FY27) says UNAUDITED under Reg 33. Flag for orchestrator; not resolved here. Results media release held in announcements/, not results/."
+
+  - path: inputs/announcements/20261028-90974ea1-a64c-4c3d-b507-6374636de31d.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "results media release (audited standalone results, Q2 and half year)"
+    period: "Q2 FY27 (Q2 and half year ended FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page says AUDITED standalone results; same-day board outcome says UNAUDITED. Flag as for 2b047010. Held in announcements/."
+
+  - path: inputs/announcements/20261029-84eb0d62-43de-435b-945f-8493bc2662c7.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: ""
+    doc_type: "earnings call record link (page carries only a link)"
+    period: "Q2 FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "UNIDENTIFIED. Page 1 reads only 'Q2 FY27 Earnings Call Record Link: https://creativenewtech.com/announcements/' with no issuer name. The domain suggests CNL but the page does not name it, so it is not anchored evidence."
+
+  - path: inputs/announcements/20261104-55dd25cb-d3f0-4700-8739-287f48e4054c.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "board meeting outcome (Reg 30), 4 Nov 2026"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Subject line beyond page 1 excerpt not read."
+
+  - path: inputs/announcements/20261104-5d162444-bd9b-4f14-a4c2-9f57aef09e03.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "acquisition announcement (Reg 30): 100% of Zicom SaaS Private Limited, EV about Rs 50.50 Crore"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+
+  - path: inputs/announcements/20261106-86a221f7-2c93-4c09-b9fc-37c6fbadaa0e.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited"
+    doc_type: "EGM notice and explanatory statement (Zicom SaaS acquisition)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "No issuance date visible on page 1."
+
+  - path: inputs/announcements/20261107-0e50fe51-8ee8-455e-a92c-ecc4ffd6ff7a.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Creative Newtech Limited (signature block only)"
+    doc_type: "newspaper page (Active Times, 7 Nov 2026) carrying a Thane DDR MOFA public notice dated 05/11/2026 for a third-party society, plus a CNL-signed block dated 07 Nov 2026"
+    period: ""
+    folder_match: false
+    proposed_move: "inputs/other/"
+    page_read: 1
+    note: "Not an exchange filing. The body of the notice is third-party. The CNL block at the foot has no body text on page 1. Orchestrator to decide whether it stays in the corpus."
+
+  - path: inputs/announcements/20261107-eb218cce-8124-4add-8226-355bd7196d4c.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: ""
+    doc_type: "newspaper page (Marathi daily, 7 Nov 2026): market news and third-party SARFAESI notices"
+    period: ""
+    folder_match: false
+    proposed_move: "inputs/other/"
+    page_read: 1
+    note: "UNIDENTIFIED as a CNL document. No CNL reference found in the page 1 text read (lines 1 to 207). Newspaper clipping, not an exchange filing. Orchestrator to decide whether it stays in the corpus."
+
+unreadable:
+  - inputs/screening/CNL_Financials.xlsx
+
+unidentified:
+  - inputs/announcements/20261029-84eb0d62-43de-435b-945f-8493bc2662c7.pdf
+  - inputs/announcements/20261107-eb218cce-8124-4add-8226-355bd7196d4c.pdf

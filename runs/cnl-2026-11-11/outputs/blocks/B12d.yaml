@@ -1,0 +1,21 @@
+stage: B12d
+company: "CNL"
+run_date: "2026-11-11"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "RPTECH", missed_item: "Supermicro named as OEM partner in neo-cloud/DC bids; B06 says name absent from all transcripts", anchor: "RPTECH_2026-08 l.605 (Pansari); RPTECH_2025-11 l.772"}
+  - {peer: "CPPLUS", missed_item: "Khemka on Honeywell-type global brands: certified but no products, slow to cover mass distribution, sourcing-only brands not a share play", anchor: "CPPLUS_2025-11 l.638-650"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, item: "B06 states Super Micro not in any transcript; it appears in RPTECH Nov-25 and Aug-26. Q10b verdict (UNVERIFIABLE) unchanged"}
+  - {severity: MINOR, item: "Q10a VERIFIED: current revenue conversion rests on REDINGTON alone; RPTECH did no AI-DC project in FY26"}
+  - {severity: MINOR, item: "CPPLUS Honeywell commentary under-used for Q1/Q7 share-risk read"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 100

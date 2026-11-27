@@ -1,0 +1,52 @@
+stage: B02-notes
+company: "CNL"
+run_date: "2026-11-11"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "shareholding pattern absent (B00)"
+  - "screener formula sheets blank (B00)"
+  - "peer CSVs absent (B00)"
+  - "only FY2025-26 AR held: no FY24 balance sheet, so 3-year receivable days trend not computable"
+flags:
+  - {type: FLAG-CASH, reason: "Receivables +164.2% SA (+137.7% CON) vs revenue +55.2% (+51.7%); closing-basis days 78.7 vs 46.3 SA, 76.3 vs 48.7 CON; CFO (25,738.12) SA / (27,188.34) CON Rs. Lakhs funded by 25,471.81 extra short-term bank debt (SA Notes 8, 17, cash flow AR p.74, p.81, p.83)"}
+  - {type: FLAG-LEVERAGE, reason: "Short-term borrowings 32,424.87 vs 6,953.06 (Rs. Lakhs, +366.3%), all on demand; covenants referred to but not disclosed (SA Notes 17, 33, AR p.83, p.86)"}
+  - {type: FLAG-OFFSHORE-PROFIT, reason: "HK subsidiaries contribute 3,594.54 of CON PAT 7,029.29 (51.1%) at nil tax; subsidiaries not audited by group auditor; subsidiary operating cash flow (1,450.22) (CON Note 30 AR p.108; AOC-1 AR p.63; auditor Other Matters AR p.93)"}
+accounting_quality: 5
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Receivables +164.2% SA vs revenue +55.2%; days 78.7 vs 46.3; build 34,266.83 exceeds operating outflow (25,738.12) (Rs. Lakhs)", note_ref: "SA Note 8 p.81; cash flow p.74; Note 43 p.90", rating: "red", why: "Profit not converting to cash; customer credit financed by bank debt"}
+  - {rank: 2, finding: "Short-term borrowings 32,424.87 vs 6,953.06 (+366.3%), on demand; SA net debt/equity 1.01 from 0.10; covenants undisclosed", note_ref: "SA Notes 15, 17, 33 p.83, p.86", rating: "red", why: "Refinancing and covenant risk with no instrument, limit or repayment disclosure"}
+  - {rank: 3, finding: "HK subsidiaries supply 3,594.54 (51.1%) of CON PAT at nil tax; CON tax equals SA tax 1,153.11; reason, DTL and remittance path not disclosed", note_ref: "CON Note 30 p.108; AOC-1 p.63", rating: "red", why: "Half of group profit in an untaxed, lightly disclosed offshore perimeter"}
+  - {rank: 4, finding: "Subsidiary operating cash flow (1,450.22) vs PBT +3,594.54; cash-flow FX line 702.68 vs HK opening cash 1,011.37; HK cash 59.99", note_ref: "CON cash flow p.98; SA cash flow p.74; Note 9", rating: "yellow", why: "Offshore profit quality unproven"}
+  - {rank: 5, finding: "HK subsidiaries not audited by group auditor; consolidated on management-certified statements", note_ref: "Auditor Other Matters p.93 (outside notes)", rating: "yellow", why: "Offshore half of profit rests on other auditors"}
+  - {rank: 6, finding: "SCL RPT: purchases 15,539.15 (+55.3%), sales 2,208.54 (from 20.64), balance swing to (3,093.04) payable; FY27 approval up to Rs. 750 Cr; Click Retail balance 4,773.50; RPT balances do not tie to Note 8", note_ref: "SA Note 36 p.88-89; Note 8 p.81; Notice p.30", rating: "yellow", why: "Concentration and circular group flows; SA CFO flattered by 3,368.03 SCL credit swing"}
+  - {rank: 7, finding: "Segment result equals gross profit; brand gross margin 33.16% CON (34.57% FY25), SA 10.56%; 40-42% not supported; brand share 14.11% from 15.25%", note_ref: "SA Note 39 p.89-90; CON Note 37 p.111-112", rating: "yellow", why: "Thesis margin claim does not reconcile to audited segment disclosure"}
+  - {rank: 8, finding: "Allowance 76.77 on gross 55,214.80 (0.14%); incurred-loss wording; static 22.73 through FY25; disputed 236.66 at 32.4% cover; >6m 1,955.62 (3.54%) vs 517.46 (2.48%)", note_ref: "SA Note 8 p.81; Note 32 p.86; Note 2(o) p.78", rating: "yellow", why: "Provisioning light as book ages"}
+  - {rank: 9, finding: "ROCE 22.01% excludes all borrowings (10.62% on equity plus debt vs 13.01%); narrative return on net worth 19.33% mixes NCI profit with owners' equity; ratio sets differ between AR p.46 and Note 43", note_ref: "SA Note 43 p.90; AR p.46", rating: "yellow", why: "Headline returns overstate improvement"}
+  - {rank: 10, finding: "Contingent liabilities ex-guarantees 600.01 (+84.0%), 85.8% GST, none provided; DGGI item 191.44 under Section 83; customs 694.72 paid under protest carried as asset after 2023 CESTAT order", note_ref: "SA Note 35 p.87-88; Note 12 p.82", rating: "yellow", why: "Small vs equity (2.00%) but rising in a recurring category"}
+  - {rank: 11, finding: "Revenue discount 14.81 (-88.6%) vs audit KAM on rebates; commission plus promotion 2,209.06 (+143%) expensed; other income 549.71 undisclosed; incentive receivable 518.83 to nil", note_ref: "Note 23.3 p.84; Note 29 p.84-85; Notes 24, 11", rating: "yellow", why: "Possible customer consideration booked as cost; unexplained income"}
+  - {rank: 12, finding: "Subsidiary cost base 3,735.40 of royalty, service charges and reimbursements with unnamed payees; Honeywell licence not described, no commitments note", note_ref: "CON Notes 28-29 p.107-108; CON Note 34 p.109", rating: "yellow", why: "Sustainability of brand-business profit rests on an undisclosed licence"}
+  - {rank: 13, finding: "CON share premium +750.78 over SA; NCI 298.85 below 22.5% of SCL equity; FCTR credit 861.98 outside reported OCI (OCI (12.46))", note_ref: "CON Note 14 p.105-106; SOCIE p.98; CON P&L p.97", rating: "yellow", why: "Consolidation mechanics unexplained; NCI possibly understated"}
+  - {rank: 14, finding: "Promoter-family pay 236.74, personal guarantees on bank lines, related-party premises mortgaged to SBI, 12% promoter loan; no loans to promoter entities", note_ref: "SA Note 36 p.88; Notes 15, 17 p.83; Note 44(e) p.90", rating: "yellow", why: "Governance and key-person dependence"}
+  - {rank: 15, finding: "Notes silent on pending Infinova acquisition (Directors' Report s.35), new ESOP 2026, BSNL BharatNet; no FX exposure or hedge disclosure on 75,402.68 exports and 45,583.75 imports; buyers-credit expense label 4,493.48 inconsistent", note_ref: "SA Note 44(k) p.91; Note 37 p.89; Directors' Report p.41", rating: "yellow", why: "Funding needs of growth plans and FX risk unquantified"}
+red_flags:
+  - "Receivable build and negative operating cash flow funded by on-demand bank debt (SA Notes 8, 17, cash flow)"
+  - "Half of CON PAT from nil-tax, management-certified HK subsidiaries with unreconciled cash (CON Note 30, AOC-1, auditor Other Matters)"
+  - "Allowance 0.14% of gross with incurred-loss wording, static through FY25 (SA Notes 8, 32)"
+  - "Revenue discount collapse alongside expensed commission and promotion (+143%) against audit KAM on rebates (Notes 23.3, 29)"
+  - "ROCE and return on net worth built on bases that flatter (SA Note 43, AR p.46)"
+questions_for_mgmt:
+  - "Customer-wise composition, related-party share, any factoring or discounting, and post-March collections for the 55,138.03 (Rs. Lakhs) of receivables?"
+  - "Why no HK tax on SCL's 3,742.90 profit, any DTL on undistributed earnings, remittance path, and who holds the 22.5% of SCL?"
+  - "What are the Note 33 financial covenants, sanctioned limits, lenders including the NBFC, and was compliance met at 31-Mar-2026?"
+  - "Transfer-pricing basis for SCL purchases of 15,539.15, payees of the 3,735.40 royalty, service-charge and reimbursement costs, and Honeywell licence terms?"
+  - "Why is documented brand gross margin 33.2% versus 40-42% cited, and what makes up the 4,493.48 buyers credit expenses against finance cost of 2,042.92?"
+receivables_trend: "deteriorating. SA gross 55,214.80 vs 20,893.93 (+164.2%); CON net 56,511.02 vs 23,776.98 (+137.7%) vs revenue +55.2% SA / +51.7% CON; closing-basis days 78.7 vs 46.3 SA, 76.3 vs 48.7 CON; >6 months SA 1,955.62 (3.54% of gross) vs 517.46 (2.48%); 6m-1y bucket 1,258.05 vs 109.64; disputed 236.66 vs 87.08; allowance 76.77 vs 22.73; all Rs. Lakhs (SA Note 8 p.81, CON Note 8 p.104). Two years only; FY24 not available."
+restatements_found:
+  - "Generic 'regrouped / restated wherever necessary' only, no amounts (SA Note 45 p.91; CON Note 39 p.112)"
+  - "CON Note 11 FY25 'Accrued Interest' 529.98 vs SA split 11.15 interest and 518.83 incentive receivable: relabelled comparative, undisclosed (CON Note 11 p.105)"
+  - "CON FY25 SOCIE row 'Purchase of Shares from Minority (1,015.88)' is the warrant conversion: mislabelled comparative (CON Note 14 p.105-106)"
+going_concern_language: "NONE (only boilerplate: SA Note 2(a) p.75 'continue to operate as a going concern'; CON Note 2(a) p.99; no material-uncertainty language)"
+analyst_note: "Units are Rs. Lakhs; stage 10 converts. Segment result is gross profit by exact reconstruction (SA/CON, both years, within 0.02), so brand margin documented is 33.16%, not the 40-42% in memory. CON-minus-SA bridge of 3,594.54 is exact; the earlier 52.77 residual was an AOC-1 basis artefact. Receivable days: 78.7 closing vs 54.4 on Note 43 average basis; both correct on stated bases. BSNL BharatNet, Zicom absent from AR; Infinova appears only in the Directors' Report (p.41), not in the notes. 5/10 reflects thin disclosure where exposure is largest, not detected misstatement."

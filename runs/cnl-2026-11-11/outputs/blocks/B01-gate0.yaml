@@ -1,0 +1,38 @@
+stage: B01-gate0
+company: "CNL"
+run_date: "2026-11-11"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - shareholding pattern absent (E1 from AR p.105 at 31-Mar-26, E2 3-yr change and E3 pledge NOT FOUND, scored 0)
+  - screener formula sheets blank (ROCE, payables, capex by year not available; computed from raw)
+  - peer data absent (M2, M5, M6, M9 PEER DATA NEEDED, scored 0)
+  - capex FY19-FY24 and trade payables FY19-FY24 not in inputs (B4, M12)
+flags:
+  - {type: FLAG-GATE0, reason: "AVERAGE with historical depressors: CFO negative in 7 of 8 years (FY19-FY24, FY26), cumulative CFO -328.71 Cr vs cumulative PAT 215.90 Cr; FY26 CFO -271.88 Cr with receivable days 76.3 vs 48.7 and ND/EBITDA 3.32x. H1 FY27 CFO +351.24 Cr came from trade payables +281.90 Cr and other liabilities +192.83 Cr, receivables rose 51.60 Cr"}
+data_years: 8
+fy_range: "FY19 to FY26"
+blocks: {A: 11, B: 0, C: 20, D: 9, E: 9}
+core_score: 49
+moat_score: 11
+grand_total: 60
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers:
+  - "DB2 Block B 0 (<8) max GOOD; driven by FY19-FY24 and FY26 negative CFO"
+  - "DB4 cumulative CFO/PAT -1.52 (<0.50) max AVERAGE; driven by FY26 CFO -271.88 Cr and FY19-FY24 negative CFO"
+history_downgrade: false
+data_notes:
+  - "Screener PAT is owners' share; FY26 total consolidated PAT 70.29 Cr incl NCI 8.42 Cr (AR p.97). Standalone FY26 PAT 34.35 Cr vs consolidated 70.29 Cr, tax 11.47 Cr identical (results Q2 FY27 p.5, p.12); subsidiary-derived PAT about 35.94 Cr (computed), HK entity detail not verified"
+  - "ROCE computed with proxy capital employed = Equity+Reserves+Borrowings (closing), EBIT = PBT+Interest; fixed TA-CL formula only computable FY25 (22.9%) and FY26 (26.3%) and would flatter FY26 by excluding short-term debt"
+  - "ROE FY19 uses closing net worth (no opening)"
+  - "EBITDA excludes other income (FY26 91.05 Cr, 3.37%); capex only FY25 2.82 and FY26 3.30 (AR p.98); FCF FY19-FY24 negative by CFO bound"
+  - "WC days and B4/M12: payables only FY25 (135.35 Cr) and FY26 (185.11 Cr) available, B4 scored 0 NOT FOUND; days on sales basis"
+  - "D1 uses FY26 year-end net debt 302.09 Cr; at Sep-26 group is net cash 29.96 Cr (results Q2 FY27 p.11) funded by payables 467.01 Cr; D would be about 15, core about 55, still AVERAGE"
+  - "E1 is 31-Mar-26 AR figure, not latest quarter; E4 includes bank guarantees 10.58 Cr"
+  - "M11 score 3 is mechanical (not a network-effect business); M3 knife-edge, ROCE 14.9% vs 15% threshold"
+  - "PEER DATA NEEDED: M2, M5, M6, M9"
+  - "Brand 40-42% gross margin not verifiable; brand segment result 33.2% of segment revenue FY26 (results Q2 FY27 p.15)"
+block_b_trend: "deteriorating through FY26 (CFO -271.88 Cr vs +21.86 Cr FY25); H1 FY27 CFO +351.24 Cr is payables-funded, not collections"
+analyst_note: "Growth is real (revenue CAGR 33%, PAT CAGR 40%) but cash-consuming: CFO was negative in 7 of 8 years, so Block B is 0 and caps the grade. The FY26 shock was receivables (days 48.7 to 76.3) funded by short-term borrowings (324 Cr). H1 FY27's +351 Cr CFO and net cash at Sep-26 come from payables (185 to 467 Cr) and other current liabilities (19 to 216 Cr), while receivables kept rising; treat it as reversible until collections are shown. About half of FY26 group PAT sits in subsidiaries with no incremental tax. Scores of 0 for E2/E3 reflect missing data, not bad data."

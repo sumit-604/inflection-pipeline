@@ -1,0 +1,8 @@
+stage: B02-pass2
+company: "CNL"
+run_date: "2026-11-11"
+status: complete
+report: runs/cnl-2026-11-11/outputs/reports/02-notes-pass2.md
+new_findings: 18
+corrections_to_pass1: 4
+pass_2_empty: false

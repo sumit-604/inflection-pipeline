@@ -1,0 +1,34 @@
+stage: B12b
+company: "CNL"
+run_date: "2026-11-11"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+independent_flags_found: 27
+caught: 17
+partially_caught: 9
+missed:
+  - {severity: "MAJOR", item: "CFO's Q4 FY26 debt bridge does not reconcile to the audited balance sheet: told two analysts non-vendor-finance debt went 69.53 to 83.72 Cr ('only increased by INR14 crores') plus 171 Cr vendor finance (= 254.72 Cr); audited consolidated current borrowings were 324.25 Cr at Mar-26 vs 69.53 Cr at Mar-25, and 69.53 + 83.72 + 171.00 = 324.25, so bank debt rose 83.72 Cr (2.2x), not 14 Cr. B05 3C rated the answer 'reasonable, but unverifiable'.", anchor: "Q4FY26 call p17-18 and p27 (Ajit Thakur, to Sonia Keswani and Bharat Aggarwal); Q4FY26 results p16 audited consolidated balance sheet, current borrowings 32,424.88 vs 6,953.06 lakh"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "lower: C fits the 6/5/8 tally, but two explanations it files as external (Middle East, Diwali) fail peer tests and the CFO's debt bridge to analysts does not reconcile to the audited balance sheet; C toward D"
+findings:
+  - {severity: "MAJOR", type: "MISSED", item: "CFO debt bridge 83.72 + 171 = 254.72 Cr vs audited current borrowings 324.25 Cr; bank debt +83.72 Cr not +14 Cr", anchor: "Q4FY26 p17-18, p27 (Thakur); Q4FY26 results p16", pipeline_location: "B05 3C finance-cost row ('unverifiable')"}
+  - {severity: "MINOR", type: "PARTIALLY CAUGHT", item: "Middle East: CNL 'almost negligible' vs REDINGTON ME +41%, UAE +39% in Jul-Sep 2026; only in B06 net read, verdict tests a misframed 'normalised' claim, no red flag carries it", anchor: "Q2FY27 p15, p17 (Patel); REDINGTON Q2FY27 (Hariharan)", pipeline_location: "B06 Q8; B05 2B, 4D"}
+  - {severity: "MINOR", type: "PARTIALLY CAUGHT", item: "Diwali explanation graded PARTIALLY VERIFIED despite REDINGTON Q2 +48% (India distribution +67%); CNL market-entry revenue +6.7% YoY in Q2 FY27 not quantified; no flag", anchor: "Q2FY27 p20 (Patel); Q2FY27 results p15; REDINGTON Q2FY27 (Hariharan)", pipeline_location: "B06 Q9, 2A"}
+  - {severity: "MINOR", type: "PARTIALLY CAUGHT", item: "Honeywell renewal is the P1 trigger but only a MEDIUM red flag; slipped split precondition (Q1 2026, then Jul-Aug 2026, then silence) and unreconciled expiry (end-'27 vs March 2027) not noted; B05 anchor p15 should be p16", anchor: "Q2FY26 p23; Q4FY26 p16, p27 (Patel)", pipeline_location: "B05 4D, 1B, 2E, 4A"}
+  - {severity: "MINOR", type: "PARTIALLY CAUGHT", item: "Railway coach CCTV 'INR24,000 crores plus' (CNL) vs CPPLUS 'INR2,000 to INR3,000 crores worth of supplies in the coming two years' not tested; 30,000 Cr market caught", anchor: "Q2FY26 p6 (Patel); CPPLUS Q3FY26 (Khemka)", pipeline_location: "B05 3B; B06 Q1"}
+  - {severity: "MINOR", type: "OVERSTATED", item: "B06 Q2b 'without demand loss' CONTRADICTED, labelled most consequential: phrase came from B05's question; CNL MD said consumption is decreasing and consumers cannot digest 30-40% hikes; only the p8 3-4 year demand remark supports a contradiction", anchor: "Q4FY26 p8, p11, p22 (Patel)", pipeline_location: "B06 Q2, Part 4"}
+  - {severity: "MINOR", type: "OVERSTATED", item: "B05 brand GP 40-42% vs segment result 32.7-34.2% graded MEDIUM-HIGH; segment result is 'after deducting allocable cost', at or below GP by construction; non-reconciliation, not evidence the claim is wrong", anchor: "Q2FY27 p11 (Thakur); Q2FY27 results p15", pipeline_location: "B05 2D, 4D"}
+  - {severity: "MINOR", type: "OVERSTATED", item: "B05 'Chairman mis-statements': 'guidance 359-360' defensible from 'close to INR360 crores, INR370 crores'; 'turnover has got doubled' was CFO Thakur, not the Chairman; 'March 700 Cr' stands", anchor: "Q2FY26 p5; Q4FY26 p15, p16, p22, p26", pipeline_location: "B05 2B, 4D"}
+  - {severity: "MINOR", type: "PARTIALLY CAUGHT", item: "CFO gave one analyst incompatible answers (ex-brand EBITDA ~0.2% 'absolutely on the right' vs standalone distribution EBITDA 2.58%); read by B05 as 'thin core margin'", anchor: "Q2FY26 p12-14 (Pulwani; Kanvinde)", pipeline_location: "B05 3C"}
+  - {severity: "MINOR", type: "PARTIALLY CAUGHT", item: "CNL 'only four to five' STQC firms and 'never allow a foreign company' vs CPPLUS 'over a dozen', 'about 30 ... a dozen global', '40 plus'; CPPLUS calls partner Matrix 'more of a regional player'; not tied back to CNL's moat framing", anchor: "Q2FY26 p6; Q4FY26 p13; CPPLUS Q2FY26, Q3FY26, Q4FY26 (Khemka), Q1FY27 (Nair)", pipeline_location: "B05 3A; B06 Q1"}
+  - {severity: "MINOR", type: "PARTIALLY CAUGHT", item: "Infinova: 'share buyback of a foreign national' and Chinese-beneficiary STQC condition met only on transfer; not called out", anchor: "Q2FY27 p8 (Patel)", pipeline_location: "B05 3A, 4A P4"}
+  - {severity: "MINOR", type: "PARTIALLY CAUGHT", item: "Honeywell overseas fell from ~82 Cr (H1 FY26) to ~55.6 Cr (H2, derived) after 'good traction' claim; conflict began 28 Feb 2026, so most of the drop predates the war it is attributed to; untested", anchor: "Q2FY26 p5, p15; Q4FY26 p15; REDINGTON Q4FY26 (Hariharan)", pipeline_location: "B05 3D, 2B"}
+  - {severity: "MINOR", type: "PARTIALLY CAUGHT", item: "WOZOYO: MD answered 'Yes' to an analyst's 80 Cr in three-four months before restating 48-50 Cr; three first-year ranges (45-50, 48-50, 40-50) in one call", anchor: "Q2FY27 p7, p16-17 (Patel)", pipeline_location: "B05 0"}
+critical_count: 0
+major_count: 1
+minor_count: 12
+material_found: 13
+material_caught: 12
+acceptance_rate: 92.3
+coverage_basis: "27 independent items listed: 13 material (13 MAJOR, 0 CRITICAL), 14 MINOR. Of the 13 material: 8 caught in full, 4 partially caught (F3 Honeywell renewal, F12 Middle East, F13 Diwali/growth, F14 surveillance TAM), 1 missed (F18 CFO debt bridge). material_caught counts caught plus partially caught (rule 3 defines both as found); under-weighting logged as MINOR findings 2-5. Strict full-catch rate 8/13 = 61.5%. Spot checks on B05 2A rows 1, 4, 12, 15, 16."

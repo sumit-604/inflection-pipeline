@@ -1,0 +1,52 @@
+stage: B07-emoat
+company: "INVPRECQ"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "No earnings calls: F2 tested on capex completion and Reg 30 record, not on concall promise delivery"
+  - "Order values for GTRE, MKU, HAL, PLR and CQB withheld; no order book; A&D 11% of H1 FY27 is a deck claim with no filed split"
+  - "Funding mix, phasing and timeline of the Rs 100 Cr approval, cost of lost-foam line, solar cost and generation: NOT FOUND"
+  - "Plant-wise output and utilisation, H1 FY27 tonnes, global qualified-manufacturer count, qualification timelines, segment margins: NOT FOUND"
+  - "Nadcap heat treatment accreditation not checked at the Nadcap register: PENDING LIVE VERIFICATION"
+  - "Q2 FY27 board outcome note 6 reads 2100 crore in OCR; Rs 100 Cr confirmed from the Q2 FY27 deck p.6; results PDF page not opened"
+  - "Conflicting counts in the corpus: employees 165 vs about 1,100; engineers 57 vs 80+; CNC machines 21/31/51/446; vacuum capacity 60 t vs up to 100 t"
+flags:
+  - "FLAG-CAPEX: Rs 100 Cr approval is 88.8% of 30-Sep-2026 standalone equity; up to 4.3x yearly NCA of Rs 23-30 Cr; gearing 1.60x if all debt (illustration); mix NOT FOUND"
+  - "FLAG-CLAIM: A&D 11% of H1 FY27 rests on a deck slide; HAL PO is dated 05-Sep-2026, 25 days before period end"
+  - "FLAG-CASH: H1 FY27 operating cash 348.50 lakh vs profit 1,079.22 lakh; capex 768.26 lakh funded by net borrowings 1,008.79 lakh (Q2 FY27 results p.6)"
+em_score: 7.8
+em_classification: "NONE"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability (vacuum superalloy)", strength: "Moderate", evidence_type: "DOCUMENTED capability, INFERENCE rarity", time_to_materialise: "12-36 months"}
+  - {id: "B2", name: "Qualification lock-in (A&D programmes)", strength: "Moderate", evidence_type: "DOCUMENTED", time_to_materialise: "12-24 months"}
+evidence_mix: {documented: 16, claim: 15, inference: 6}
+completionist_recount: "16 documented items across 9 categories (A1, B1, B2, C2, E2, F2, G1, G2, R1) plus the Section 2 approval; 11 documented items sit in the 5 scored categories; 6 of 23 categories carry any score; I1/I2 contribute 0.0"
+catalysts_12m:
+  - {catalyst: "Q3 FY27 results: filed A&D share, operating margin excluding inventory credit, H2 cash conversion", window: "Feb 2027 (date inferred from Q3 FY26 board outcome 04-Feb-2026)", evidence_type: "INFERENCE", anchor: "inputs/announcements/20260204-Q3-board-outcome.txt; B05 trigger 1-3"}
+  - {catalyst: "HAL, MKU and CQB parts move into monthly supply", window: "Nov 2026 to Mar 2027", evidence_type: "CLAIM", anchor: "Reg 30 17-Oct-2026; Deck H1 p.6"}
+  - {catalyst: "Rs 100 Cr programme: phasing, loan sanctions, equipment POs", window: "Next 6-12 months", evidence_type: "DOCUMENTED approval, terms NOT FOUND", anchor: "Board outcome 14-Nov-2026 p.3 note 6; Deck H1 p.11"}
+  - {catalyst: "Lost-foam line commissioning and first parts", window: "Next 6-12 months", evidence_type: "CLAIM", anchor: "Deck H1 p.5, p.11"}
+  - {catalyst: "Q4 FY27 results and FY27 AR: filed A&D rupees (industry split), foreign exchange earned vs 2,227.15 lakh", window: "May to Jul 2027 (dates inferred from FY26 cycle)", evidence_type: "INFERENCE", anchor: "AR p.74, p.172-173 pattern; board outcome 19-May-2026"}
+  - {catalyst: "CARE annual review: upgrade path and capex funding view", window: "Jul 2027 (inferred from 09-Jul-2026)", evidence_type: "INFERENCE", anchor: "CARE p.1"}
+capex_embedded_growth_pct: 1.9   # CWIP 383.89 lakh x 0.926 gross-block turnover / 18,844.62 lakh. Full Rs 100 Cr approval (not committed) would be 49.1% (gross-block) to 101.4% (net-block turnover); ceiling only.
+optionality_register:
+  - {optionality: "A&D programmes (HAL, GTRE, MKU, PLR, CQB) become monthly supply", converting_evidence: "Filed A&D rupees at or above 11% per half-year; any order with a stated value", first_appears: "Q3/Q4 FY27 results and decks; FY27 AR industry split; Reg 30", window: "Feb-May 2027 first test; FY27 AR for filed split"}
+  - {optionality: "Rs 100 Cr programme phased, funded and customer-backed", converting_evidence: "Phased plan, sanctioned loans, equipment POs, capital commitment note", first_appears: "Reg 30 loan sanction; Q3/Q4 FY27 notes; FY27 AR", window: "6-12 months"}
+  - {optionality: "Lost-foam line opens new part geometries", converting_evidence: "Commissioning date, first customer part, cost", first_appears: "H2 FY27 results note or deck", window: "6-12 months"}
+  - {optionality: "Nadcap heat treatment is a verified accreditation", converting_evidence: "Nadcap register entry or certificate", first_appears: "Nadcap register; next deck or AR", window: "Under 6 months (PENDING LIVE VERIFICATION)"}
+  - {optionality: "Civil aviation series production starts", converting_evidence: "Named international order with value or volume", first_appears: "Reg 30; FY27 AR", window: "12-24 months"}
+  - {optionality: "Solar and wind cut power cost", converting_evidence: "kWh and Rs saved; power and fuel below 8% of revenue for two quarters", first_appears: "Q3/Q4 FY27 results; FY27 AR Annexure 4", window: "2-4 quarters"}
+  - {optionality: "CARE upgrade lowers cost of debt", converting_evidence: "Finance cost falling as % of revenue; upgrade to BBB+", first_appears: "Quarterly P&L; CARE annual review", window: "8-12 months"}
+  - {optionality: "China+1 turns into export growth", converting_evidence: "Foreign exchange earned clearly above 2,227.15 lakh with a named export win", first_appears: "FY27 AR Annexure 4 and KPI pages", window: "12 months"}
+  - {optionality: "DRDO technology transfer on superalloy cores", converting_evidence: "Agreement date, scope, revenue link", first_appears: "AR note or Reg 30", window: "NOT FOUND"}
+  - {optionality: "Customer concentration falls", converting_evidence: "Top five customers below 47% of TOI", first_appears: "CARE annual review; FY27 AR", window: "12-18 months"}
+  - {optionality: "Working capital returns to FY26 levels", converting_evidence: "H2 FY27 operating cash at or above profit; operating cycle at or below 133 days", first_appears: "Mar-2027 cash flow; CARE review", window: "6-9 months"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (core 49, 0 confirmed moats) with Emerging Moat 7.8 NONE; A&D conversion is real in five Reg 30 filings but values are withheld and the 11% share is a deck slide."
+top_moat_risks:
+  - "A&D ramp stays small or lumpy (defence revenue 5.65, 3.29, 7.90 Cr); share below 8% in H2 FY27 breaks the thesis"
+  - "Rs 100 Cr approval (88.8% of equity) debt funded with utilisation near 60%; gearing above 0.80x"
+  - "H1 FY27 cash conversion 0.32x with inventory credit in margin; reversal removes the margin gain"
+  - "Vacuum capacity is 60-100 t; peers (AZAD, PTC) hold the same class of approvals"
+analyst_note: "Score 7.8 uses a strict rule: a row scores only when a dated, anchored item shows a company-specific advantage forming and no same-corpus evidence offsets it. That kept E2, G1, G2, C2, C1, F1, H2 at zero and in the register. Crediting all of them at the 0.7 minimum gives 12.7, so the NONE call is a rule choice, not a wide gap. The separating observation is filed A&D rupees or an order value. Treat the A&D 11% as a company slide until the FY27 AR industry split. The 49.1% embedded-growth figure is a ceiling for the unfunded approval; only 1.9% sits in CWIP. FY26 turnover is not causal because FY26 capex was mostly solar."

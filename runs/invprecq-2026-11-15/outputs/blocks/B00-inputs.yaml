@@ -1,0 +1,68 @@
+stage: B00-inputs
+company: INVPRECQ
+run_date: 2026-11-15
+model: orchestrator session (claude-fable-5-2); identity rows from stage-00-intake-check (claude-haiku-5-5)
+status: complete
+run_type: full
+spear_gate: "PASS. companies/INVPRECQ.md: Spear: OVERRIDE 2026-11-15 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+load_bearing_facts:   # COMPANY MEMORY, web-sourced; first verification priority; never anchored evidence
+  - "Cash conversion of the margin jump: H1 FY27 operating cash flow against PAT; inventory build; change-in-inventories credit in Q2 FY27; how much of the Q2 margin is WIP absorption; screener cash conversion cycle against CARE operating cycle for FY26."
+  - "Aerospace and defence share claimed up from 6% (FY26) to 11% (H1 FY27); verify in filings; name the HAL and MKU programmes; test the monthly-supply ramp claim."
+  - "Rs 100 Cr capex approval (Q2 FY27 results note 6) against net worth and CARE's no-major-debt-funded-capex assumption; funding mix and timeline."
+  - "Revenue basis mismatch for FY26 across presentation slides, screener and CARE; Q2 FY27 standalone revenue in results against presentation. Fix the base from the audited FY26 AR."
+concalls_available: false
+no_concall_mode: true
+sector_cap_row: "Cables / Industrial products"
+sector_cap: "25x"
+sector_cap_evidence: "Built-to-print investment castings for auto, industrial and aerospace/defence customers; one reportable segment, Investment Casting Activities (Q2 FY27 results note 2, per step1 brief). A&D share is too small for the Defence / strategic row. No auto-components row exists. Cite: .claude/skills/section-1b/references/05-sector-cap.md, sector cap table row 'Cables / Industrial products | 25x' (line 38). Collector guess Pharma / CDMO rejected. To be re-checked against B04 at the /fttcp pillar gate."
+reporting_units:
+  results: "INR lakh (face of Q2 FY27 results: Rs. In Lacs)"
+  annual_report: "INR lakh (Rs in Lacs on the statements)"
+  presentation: "INR lakh on P&L slides (Rs in Lacs); some slides in INR Cr, read each slide"
+  rating: "INR Cr (CARE)"
+  screener: "INR Cr"
+inventory:
+  prospectus: 0
+  annual-report: 1
+  results: 5      # 3 most recent quarters used: Q2 FY27, Q1 FY27, Q4 FY26 (two filings of Q4 FY26, see gaps)
+  rating: 2       # CARE rationale 09-Jul-2026 (used) + the Reg 30 filing of the same text
+  concalls: 0     # declared: concalls_available false
+  peer-concalls: 12
+  announcements: 15
+  shareholding: 1
+  research: 0
+  screening: 1
+  presentation: 4
+  other: 1
+text_extraction: "Whole run switched to pre-extracted page-marked .txt beside each PDF (tools/extract_pdfs.py). Markers are [page N]; the 8 OCR-repaired scans (all 5 results files, 3 board-outcome announcements) use ===== PAGE N ===== (tools/ocr_repair.py, Tesseract, 0 pages still corrupt). OCR digits can misread; a stage that doubts a digit reads the PDF page."
+input_gaps:
+  - "collector_warning (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. [REPAIRED in Step F: BSE page text capture, Sep 2026]"
+  - "collector_warning (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again. [PARTLY COVERED: screener-Data_Sheet.csv holds raw P&L, Quarters, Balance Sheet and Cash Flow rows, FY17-FY26; content checked, figures present]"
+  - "collector_warning (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again [REPAIRED in Step F: 5 BSE results filings]"
+  - "collector_warning (verbatim): no rating PDF yet: add later the same way [REPAIRED in Step F: CARE rationale 09-Jul-2026]"
+  - "screening: Data_Sheet Number of shares cell is blank; share count comes from the shareholding pattern (1,00,00,000 shares) and filings."
+  - "shareholding: a text capture of the BSE shareholding pages for Sep 2026 (no PDF exists for the XBRL filing). One quarter only; no multi-quarter trend. Institutions row reads 0 holders."
+  - "presentation: no Q1 FY27 investor presentation found in the 12-month BSE listing."
+  - "results: two filings carry the Q4 FY26 audited results (20260519 and a 20260525 re-filing; both dated 19.05.2026 on page 1; the reason for the re-filing is not stated on page 1). Stages use the 20260525 file as the Q4 FY26 filing and name any difference they find."
+  - "results: all five results PDFs are scanned images, read through OCR text."
+  - "concalls: none. Declared (concalls_available: false); the company holds no earnings calls. Stage 5 runs in NO-CONCALL MODE."
+  - "prospectus: none. Long-listed company (CIN year 1975); not expected, not a gap."
+  - "research: empty (.gitkeep only). No effect on anchored evidence."
+  - "annual-report: FY2025-26 AR is the one AR. The FY2024-25 AR is held in inputs/other/ (contract allows one AR); intake check proposed moving it to annual-report/, not applied, so the contract holds."
+  - "MOVED (intake check confirmed at the page): inputs/other/ppt_9dd1d11c-49c5-486f-9f49-ac8c8e2a2f25.pdf -> inputs/presentation/20250500-Q4FY25-investor-presentation.pdf; inputs/other/ppt_a75cdd22-b722-4ea8-b60b-bc70055b247d.pdf -> inputs/presentation/20251100-Q2FY26-quarterly-performance-report.pdf (filename dates are placeholders; period from page 2 titles)."
+  - "peer set: PTC Industries (closest process comp) not collected; no transcripts on screener. Peers are AZAD, STEELCAS, ALICON."
+empty_folder_confirmation: "SUPPRESSED under /step1 AUTONOMY CONTRACT. Standing answer: proceed with the gaps. Empty folders: concalls (declared), prospectus, research."
+freshness_pairs:
+  - {pair: "results to concall", trigger_doc: "inputs/results/20261114-Q2FY27-results.pdf", mate_expected: "Q2 FY27 concall transcript", status: SKIPPED, missing_doc: "", note: "concalls_available false"}
+  - {pair: "rating bulletin to rationale", trigger_doc: "inputs/rating/20260709-CARE-rationale.pdf", mate_expected: "full rationale", status: PASS, missing_doc: ""}
+  - {pair: "SEBI order to order text", trigger_doc: "none referenced (grep of all corpus text for SEBI order / adjudication / show cause: no hit)", mate_expected: "n/a", status: PASS, missing_doc: ""}
+  - {pair: "AR to latest audited annual results", trigger_doc: "inputs/results/20260525-Q4FY26-results-resubmission.pdf (FY26 audited)", mate_expected: "FY2025-26 annual report", status: PASS, missing_doc: ""}
+freshness_verdict: FRESHNESS PAIRS OK
+collector_defect_gate:
+  cmp: 1322.0
+  market_cap_cr: 1322.0
+  cmp_check: "non-zero, PASS"
+corpus_manifest_file: outputs/blocks/B00-intake.yaml   # verified rows; three folder_match false rows checked at the page (two moved, one kept by contract)
+company_memory: companies/INVPRECQ.md
+flags: []
+analyst_note: ""

@@ -1,0 +1,68 @@
+stage: B04-bizmodel
+company: "INVPRECQ"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "H1 FY27 operating cash flow, order book, rejection rates, customer-level shares, power-sale tariff and buyer, borrowing rates and covenants: NOT FOUND in documents read"
+  - "A&D 11% share, HAL and MKU programmes and monthly-supply ramp are company-stated only (Inv. Pres. p.6-9), no order values"
+  - "Named competitors NOT FOUND in the AR or presentation; peer set comes from the Step 1 brief and stage 5"
+  - "Revenue basis: results 18,539.50 lakh vs presentation 18,579.07 lakh vs AR casting segment 18,579.08 lakh vs 18,844.62 lakh with power; cause of the 39.57 lakh gap NOT FOUND"
+  - "Capacity printed as 3,060 t and 1,500 t (AR p.30), utilisation base undecidable"
+flags:
+  - "Q2 FY27 margin includes a 603.73 lakh change-in-inventories credit, 72.5% of Q2 PBT (IP p.21, calc); other expenditure +77% YoY"
+  - "Rs 100 Cr capex approval is 97.5% of net worth with no funding split"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Auto castings", type: "built-to-print recurring part supply", pct_of_revenue: 63.84, predictability: "M"}
+  - {name: "Non-auto industrial, energy, pumps, agriculture castings", type: "built-to-print recurring part supply", pct_of_revenue: 30.30, predictability: "M"}
+  - {name: "Aerospace and defence castings", type: "qualified programme supply", pct_of_revenue: 5.86, predictability: "L to M"}
+  - {name: "Power generation (segment, share of total revenue 18,844.62 lakh)", type: "captive/merchant power", pct_of_revenue: 1.41, predictability: "M"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - "Qualification switching costs: medium (high in A&D)"
+  - "Approvals and certifications (DGAQA, CEMILAC, HAL, Nadcap, EN 9100): medium to long"
+  - "Process know-how (vacuum superalloy, HIP): medium"
+  - "Cost advantage via own renewable power (about 40% of energy): short to medium"
+valuation_methods:
+  primary: {method: "P/E on forward normalised earnings", why: "profitable, modest interest burden, minority holder owns earnings; Section 1B destination PE governs the exit multiple"}
+  secondary: {method: "EV/EBITDA on operating EBITDA excl. other income", why: "leveraged and capital heavy, captures debt-funded capex"}
+  tertiary: {method: "P/B with ROE", why: "floor test; ROE about 11.5%, book mostly stock and plant"}
+  not_applicable: ["P/S", "SOTP/NAV", "dividend yield", "EV/AUM", "P/GMV", "DCF as primary"]
+irrelevant_ratios:
+  - "Company EBITDA margin incl. other income (21.6%, 22.17%): includes other income and WIP-absorption credit"
+  - "Single-quarter PAT growth: low Q2 FY26 base"
+  - "Screener cash conversion cycle 245 days: method differs from Note 39 (101.61) and CARE (133)"
+  - "Spot ROCE: solar assets enter capital base before earning"
+  - "Book value as floor: mostly WIP and plant"
+must_track_metrics:
+  - {metric: "Operating EBITDA margin excl. other income", healthy: "16.0% or above (FY26 16.40%)", red_flag: "below 15.0%"}
+  - {metric: "Change in inventories credit / revenue and WIP days", healthy: "converts to sales, near zero", red_flag: "credit above 5% of revenue two quarters (Q2 FY27 10.4%)"}
+  - {metric: "Aerospace and defence share, filed with order values", healthy: "above 11% with named monthly supply", red_flag: "below 8%"}
+  - {metric: "Operating cash flow / EBITDA", healthy: "above 60% per half (FY26 81.6%)", red_flag: "below 50%"}
+  - {metric: "Gearing and ND/EBITDA", healthy: "gearing below 0.80x, ND/EBITDA below 2.5x", red_flag: "above 0.80x or 2.5x"}
+unit_economics:
+  unit: "one tonne of castings dispatched, FY26"
+  revenue_per_unit: "Rs 12.10 lakh (18,844.62 lakh / 1,557 t)"
+  margin_per_unit: "Rs 1.98 lakh operating EBITDA excl. other income (3,089.77 lakh / 1,557 t); FY25 1.64 lakh"
+  key_lever: "utilisation (51% to about 60%) and mix toward machined, vacuum-melted parts; incremental margin about 36-37%"
+first_deterioration_signals:
+  - {risk: "auto cycle and ICE exposure", first_signal: "dispatch tonnes and auto revenue"}
+  - {risk: "WIP absorption reverses", first_signal: "change in inventories line and inventory days"}
+  - {risk: "metal price lag", first_signal: "materials consumed / revenue (31.96% FY26)"}
+  - {risk: "job-work cost", first_signal: "external processing / revenue (27.77% FY26)"}
+  - {risk: "short-term floating debt and Rs 100 Cr plan", first_signal: "finance cost / revenue and gearing above 0.80x"}
+  - {risk: "A&D ramp slower than claimed", first_signal: "A&D share on filed end-market slide"}
+mgmt_questions:
+  - "H1 FY27 operating cash flow, WIP days and how much of Q2 margin is inventory build?"
+  - "Which HAL and MKU parts are in monthly supply and at what value?"
+  - "How will the Rs 100 Cr be funded and phased?"
+  - "True capacity: 3,060 t or 1,500 t, and utilisation on that base?"
+  - "How long is the metal-price pass-through lag and what share of revenue is covered?"
+  - "Top customer share and share of parts exposed to EV shift?"
+  - "Why does the AR credit diversification while auto gave 90.8% of the FY26 increment?"
+one_line_verdict: "Weak-pricing, WIP-heavy auto castings maker whose margin gain so far comes from power, material and utilisation lines, with a narrow approvals moat and an unproven A&D mix shift."
+analyst_note: "Cost base: metal 31.96% plus outside processing 27.77% of revenue means about 60% moves with volume, and margin leverage comes from the remaining 40% over fixed plant. Q2 FY27 change in inventories credit of 603.73 lakh equals 72.5% of Q2 PBT, so the 22.17% margin is not yet steady state. FY26 base revenue is 18,579.08 lakh (castings) or 18,844.62 lakh (with power); the 189.7 Cr slide figure is total income. Results show 18,539.50 lakh on a third basis (gap 39.57 lakh, cause NOT FOUND). Valuation handoff: P/E primary, EV/EBITDA secondary, P/B-ROE tertiary. Sector cap row unchanged."

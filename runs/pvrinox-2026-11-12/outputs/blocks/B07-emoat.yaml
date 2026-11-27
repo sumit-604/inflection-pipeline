@@ -1,0 +1,54 @@
+stage: B07-emoat
+company: "PVRINOX"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "screener P&L / Balance Sheet / Cash Flow / Quarters CSVs absent (empty export)"
+  - "research/ empty"
+  - "peer CINELINE has no concall transcripts; no exhibitor competitor named on any call, so I2 and H1 cannot test competitor economics"
+  - "sector_cap_row NOT FOUND (phase 3 gap)"
+  - "prospectus not held (long-listed, not a gap)"
+  - "loyalty programme subscriber count NOT FOUND; AR says only 'scaled meaningfully' (AR p.34-35 Megatrends)"
+  - "unit economics of asset-light, FOCO and SMART screens NOT FOUND; promised 'by the time we finish the year' (Q1 FY27 call p.13)"
+  - "3-year expected revenue mix NOT FOUND (no company guidance); 1C expected % left blank"
+  - "capex under execution: Q2 FY27 guide Rs 300-320 Cr is total, not split new vs renovation; earlier split (new 225-250, renovation 80-100) was for the Rs 375-400 Cr guide"
+flags:
+  - {type: FLAG-NO-EMERGING-MOAT, reason: "EM 9.4 of ~92 (NONE, under 12). Seven of 23 rows carry any evidence; two reach Moderate (G1 balance sheet, D2 online fee). Sparse scan is the honest read, not a scoring gap."}
+  - {type: FLAG-NET-CASH-LABEL, reason: "G1 rests on net cash Rs 141 Cr (1,407 Rs Mn), borrowings-only; lease liability 58,079 Rs Mn sits outside (Pres p.30). G1 is a delivered balance sheet repair, not a forming moat."}
+  - {type: FLAG-SMART-UNPROVEN, reason: "SMART Cinema (the one new format) is 1 cinema, 4 screens, opened 4 Sep 2026 vs 2 pilots by 15 Jul and 28-30 screens promised; E1 scored 0.7 on claim weight"}
+  - {type: FLAG-VOLUME-VS-PRICE, reason: "admissions +4% vs ATP +14% and industry +23% (Pres p.8, p.11); no volume-led moat evidence"}
+  - {type: FLAG-EARNINGS-BASIS, reason: "two bases (Ind AS 116 adjusted vs reported) carried from B01/B05; EM scan uses no earnings figure for scoring"}
+em_score: 9.4
+em_classification: "NONE"
+active_categories:
+  - {id: "G1", name: "War chest", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already visible (net cash at 30 Jun and 30 Sep 2026); durability depends on 30% payout policy and lease cash"}
+  - {id: "D2", name: "Digital platform", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already visible (online 72.0% of tickets, fee income Rs 845 Mn +25.0% in Q2 FY27); growth slows per management"}
+evidence_mix: {documented: 9, claim: 6, inference: 0}
+completionist_recount: "📄 recount performed: 9 documented items across 6 categories (D2 2, G1 3, F2 1, E1 1, H2 1, H3 1); 7 categories carry any evidence in total; well under the 12-category guard"
+catalysts_12m:
+  - {catalyst: "Q3 FY27 admissions growth above the Q2 pace of +4% on the Q3 FY26 base of 40.5 Mn with ATP held (H2 slate: Ramayana P1, King, Avengers Doomsday)", window: "results Feb 2027", evidence_type: "documented (base) / management claim (slate)", anchor: "Q3 FY26 call p.4; Q2 FY27 call p.5, p.10-11"}
+  - {catalyst: "H2 gross openings 66-76 to reach 90-100 FY27 (Jaipur 5 screens filed 4 Nov 2026)", window: "by Mar 2027", evidence_type: "documented (24 opened) / management claim (rest)", anchor: "Pres p.24; Q2 FY27 call p.5; 20261104 filing"}
+  - {catalyst: "2-3 more SMART cinemas open with ATP about Rs 190 and a stated payback", window: "by Mar 2027", evidence_type: "management claim", anchor: "Q2 FY27 call p.5-6; Pres p.25"}
+  - {catalyst: "Unit economics of asset-light and FOCO screens shared", window: "by FY27 year-end, as promised", evidence_type: "management claim", anchor: "Q1 FY27 call p.13"}
+  - {catalyst: "Second distribution under the 30% surplus cash policy with net debt/EBITDA inside 0.5x", window: "next 12 months", evidence_type: "management claim (policy, Board discretion)", anchor: "Pres p.21; Q2 FY27 call p.4-5"}
+  - {catalyst: "Digital pay-per-eyeball ad platform goes live", window: "about Jun-Aug 2027 (8-10 months from 28 Oct 2026)", evidence_type: "management claim", anchor: "Q2 FY27 call p.9"}
+  - {catalyst: "Rooftop solar +3,902 kWp across 23 locations and 3,048 kWp open access in FY27", window: "FY27", evidence_type: "management claim (FY26 plan of 47 cinemas delivered 3)", anchor: "AR p.66; B03 guidance_table"}
+capex_embedded_growth_pct: 10.9
+optionality_register:
+  - {optionality: "SMART Cinema scale to Tier 3-4 (~300 cities, ~1,000 screens, capex 25-30% lower, payback 3-4 years)", converting_evidence: "3 or more cinemas open with disclosed ATP, occupancy and per-screen EBITDA; signed developer agreements with screen counts", first_appears: "Reg 30 openings, Q3/Q4 FY27 investor presentation and concall", window: "6-18 months"}
+  - {optionality: "Capital-light model (asset-light and FOCO) lowers capex and rent per screen", converting_evidence: "ROCE per vintage, fee rate, what revenue lines are booked, rent share on asset-light screens", first_appears: "Q4 FY27 concall or FY27 AR MD&A", window: "6-12 months"}
+  - {optionality: "Loyalty programme and CRM raise visit frequency and F&B spend", converting_evidence: "subscriber count, repeat-visit rate, ARPU vs non-members", first_appears: "FY27 AR or investor presentation", window: "12-24 months"}
+  - {optionality: "Digital pay-per-eyeball advertising platform lifts ad income (7.0% of revenue, H1 +1.3%)", converting_evidence: "platform launch, advertiser count, ad income per admit rising above Rs 28.7", first_appears: "concall, Reg 30 press release, quarterly ad income line", window: "9-15 months"}
+  - {optionality: "FY28 150-175 screens a year", converting_evidence: "FY27 gross at or above 90 with single-digit exits; signed pipeline count restated", first_appears: "Q4 FY27 results and concall (Apr-May 2027)", window: "6-9 months"}
+  - {optionality: "Premium formats to 20% of network (16% now, 285 of 1,782)", converting_evidence: "restated target with committed capex; share above 17%", first_appears: "FY27 AR MD&A", window: "12-24 months"}
+  - {optionality: "Alternate content and live sport fill non-peak hours", converting_evidence: "disclosed revenue and margin for the line", first_appears: "Q4 FY27 concall or presentation", window: "6-12 months"}
+  - {optionality: "Solar and open access cut power cost (utilities +7.0% Q2)", converting_evidence: "kWp installed reaching the 3,902 kWp plan; utilities cost per screen falling", first_appears: "FY27 AR conservation of energy note", window: "12 months"}
+combined_assessment: "AVOID (reported Ind AS 116 basis: core 37, EM NONE); AVERAGE on the ex-lease basis (core 44)"
+combined_reasoning: "Backward score is weak on the reported basis and forward emerging moat is NONE at 9.4; no HIGH POTENTIAL or TURNAROUND setup from the moat side, the case rests on operating leverage and capital return, not a forming moat."
+top_moat_risks:
+  - "Volume does not follow price: admissions +4% vs ATP +14% and industry +23%; value tickets (Rs 99/149/79) show the price ceiling"
+  - "Screen expansion chain keeps missing: FY27 150 to 90-100, SMART about half, net adds arithmetic broken, FY28 150-175 on an unproven format"
+  - "Net cash is borrowings-only; lease liability 58,079 Rs Mn and goodwill 77.7% of equity sit behind the war chest"
+  - "Governance silence: growth head and audit chair exits, kickback allegation unscoped, promoter tender with pledge outstanding (B08 CAUTION)"
+analyst_note: "EM 9.4 reflects a sparse scan by design. The only documented strengths are the balance sheet repair (G1) and the online fee line (D2); both are delivered results, not forming moats. G1 should not be counted again as a margin or ROCE driver downstream (no double credit). Scale (about 40% of multiplex screens), premium format brand and rent savings are existing moats in B04, not scored here. I2 scored 0: no competitor is named in any document, so the sacrifice a rival would make cannot be evidenced. Biggest watch item: whether the capital-light and SMART units show per-screen economics by FY27 year-end."

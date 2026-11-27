@@ -1,0 +1,51 @@
+stage: B02-notes
+company: "PVRINOX"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "screener P&L / Balance Sheet / Cash Flow / Quarters CSVs absent (empty export)"
+  - "research/ empty"
+  - "peer CINELINE has no concall transcripts"
+  - "sector_cap_row NOT FOUND (phase 3 gap)"
+  - "standalone accounting-policy pages (PDF pp.183-187) not re-read"
+  - "consolidated Ind AS 116 rupee bridge for 3,868 / 2,306: NOT FOUND IN DOCUMENT"
+flags:
+  - {type: FLAG-EARNINGS-BASIS, reason: "company headline PAT 3,868 / continuing 2,306 and revenue 67,426 are Ind AS 116-adjusted and unaudited; audited are 3,328 / 1,761 / 66,462 (Rs million); 871 lease write-back is 31.6% of pre-exceptional PBT 2,752"}
+  - {type: FLAG-GOODWILL, reason: "goodwill 57,367 (77.7% of equity) tested as single CGU, WACC 10.33% (12.08%), no headroom disclosed (Note 4A p.261)"}
+  - {type: FLAG-LEASE-CASH, reason: "lease cash due next year 12,904 vs 11,847 paid; lease liability 60,205 outside net debt 1,619 (Note 18, p.272)"}
+accounting_quality: 6
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Goodwill 57,367 = 77.7% of equity; single-CGU test, WACC 10.33% (12.08%), no headroom, inconsistent test description", note_ref: "Notes 2.1(c), 2.3(g), 2.3(l), 4A pp.245-261", rating: "RED", why: "Largest balance-sheet judgement, thinnest disclosure"}
+  - {rank: 2, finding: "Lease liability 60,205 vs ROU 46,329; lease cash 11,847 paid, 12,904 due; rate flat 9.5%", note_ref: "Notes 18, 4B pp.261-272", rating: "YELLOW", why: "First call on operating cash flow 21,597; outside net debt"}
+  - {rank: 3, finding: "Lease write-back 871 inside 976 liabilities written back; 31.6% of pre-exceptional PBT 2,752; FY25 790", note_ref: "Notes 25, 18(a), 18(d) pp.272-276; PDF p.94", rating: "YELLOW", why: "Profit step-up partly from lease derecognition, not operations"}
+  - {rank: 4, finding: "Two earnings bases: audited 3,328 / 1,761 vs company 3,868 / 2,306 (Ind AS 116-adjusted, unaudited); disposal gain 1,952 in discontinued", note_ref: "P&L p.240; Note 41 p.294; PDF pp.26, 94", rating: "YELLOW", why: "Use audited lines; consolidated rupee bridge not printed"}
+  - {rank: 5, finding: "Net debt 1,619 (FY25 9,522); funded by 5,707 organic FCF + 2,221 Zea Maize sale; leases, supplier finance 1,251 and deferred consideration 2,036 outside; 1,454 of cash in subsidiaries", note_ref: "Notes 17, 20, 22, 41 pp.271-294; cash flow p.241-242", rating: "YELLOW", why: "Deleveraging real; headline is borrowings-only"}
+  - {rank: 6, finding: "DTA 5,184 (3,252 on losses); reported tax 17.5% includes 319 one-offs; normal about 25.4%", note_ref: "Notes 6, 45 pp.264-265, 299", rating: "YELLOW", why: "Forward tax near 25%; DTA rests on projected profit after one profitable year"}
+  - {rank: 7, finding: "No PPE or ROU impairment on 18 exited screens; single CGU; deposits to lessors 4,210 with closed-site recovery NOT FOUND", note_ref: "Notes 3, 4B, 2.3(g), 5 pp.249-263", rating: "YELLOW", why: "Screen quality not testable from notes"}
+  - {rank: 8, finding: "Covenant waivers obtained in FY25 (standalone); FY26 compliance asserted, terms NOT FOUND", note_ref: "Standalone Note 45(d) p.228; Notes 17, 43", rating: "YELLOW", why: "Lender terms matter in a weak year"}
+  - {rank: 9, finding: "Credit cost 139 vs 76; capital advances 20 new; producer advances 655 unaged", note_ref: "Notes 8, 5, 30, 42(c)", rating: "YELLOW", why: "Credit loss in other assets while receivables are clean"}
+  - {rank: 10, finding: "Labour Codes 405 exceptional; about 244 probably unpaid in employee payables 801 (+67%) [INFERENCE]", note_ref: "Notes 31, 34, 23, 19", rating: "YELLOW", why: "FY27 cash outflow; further rules pending"}
+  - {rank: 11, finding: "Lessor/developer claims 964 (+34%); CWIP impairment 78 on landlord dispute; contingents 2,555 = 3.5% of equity", note_ref: "Notes 37, 31 pp.278, 292", rating: "YELLOW", why: "Largest contingent item rising"}
+  - {rank: 12, finding: "Supplier finance 1,251 moved out of trade payables; arrangement payables 2,178", note_ref: "Notes 2A(ii), 22 pp.258, 274", rating: "YELLOW", why: "Debt-like; flatters payable ratios"}
+  - {rank: 13, finding: "Executive pay 392 (14.2% of pre-exceptional PBT), 203 unpaid; Chairman brand fee 190 fully payable, basis not stated", note_ref: "Note 46 pp.300-301", rating: "YELLOW", why: "RPTs about 1.0% of revenue; fee basis undisclosed"}
+  - {rank: 14, finding: "Freehold land 1,307 and buildings 1,881 (plus 149, 79) not in company name since 2023 merger", note_ref: "Standalone Notes 3(v), 3B, 4A pp.189-192", rating: "YELLOW", why: "Title housekeeping; no loss indicated"}
+  - {rank: 15, finding: "Audit trail not enabled for privileged data changes (SAP Hana, Showbizz POS); FY24 SOC report missing", note_ref: "Note 50 p.304; audit report p.236", rating: "YELLOW", why: "Control gap; opinion unqualified"}
+red_flags:
+  - "Goodwill 57,367 on single-CGU test with no headroom or sensitivity disclosed; WACC cut 175 bp; test description inconsistent (Notes 2.3(g), 2.3(l), 4A)"
+questions_for_mgmt:
+  - "What is the goodwill headroom, and at what WACC and terminal growth does the test fail?"
+  - "Which banks gave the FY25 covenant waivers, which covenants, and what are the FY27 test levels?"
+  - "Who is the counterparty to the 2,036 deferred consideration (refundable), what was it for, and when is it repaid?"
+  - "What is the consolidated Ind AS 116 bridge from audited 3,328 to 3,868 and from 1,761 to 2,306?"
+  - "Where does the unsplit part of the 405 Labour Codes charge sit, and when is it paid?"
+receivables_trend: "stable to improving: gross 3,023 (FY25 2,846), net 2,672 (2,430), credit-impaired 351 (416) provided 100%; >6 months 469 = 15.5% of gross vs 538 = 18.9%; like-for-like with FY25 contract asset 131: 2,672 vs 2,561 (+4.3%) vs revenue +16.6%; about 14.7 days vs 15.6 (Rs million, Note 11 p.266). Printed table omits the less-than-6-months bucket (implied 1,883)"
+restatements_found:
+  - "FY25 comparatives re-presented for Zea Maize discontinued operations (Note 41)"
+  - "Supplier finance 1,251 (FY25 1,635) moved from trade payables to other financial liabilities (Note 2A(ii) p.258)"
+  - "FY25 contract asset 131 not re-presented; FY26 unbilled 597 inside receivables (Notes 5, 11) [INFERENCE: reclass]"
+  - "Covenant-waiver sentence carried in FY25 consolidated note, dropped from FY26 consolidated note (kept in standalone Note 45(d))"
+going_concern_language: "NONE"
+analyst_note: "Settled Pass 2 proposals at source: F-5 YELLOW (Chairman letter PDF p.26 states the Ind AS 116-adjusted basis; PDF p.94 shows the same method standalone), F-2 YELLOW (871 is lease write-back inside 976, standalone Note 24 footnote p.205), F-16 YELLOW (waiver sentence, standalone Note 45(d) p.228). One RED remains: goodwill 57,367 with no headroom. Model on audited lines only (3,328 / 1,761 / revenue 66,462). Strip the 871 lease credit and use about 25% tax. Lease cash 12,904 is contractual for FY27. Net debt 1,619 leans on 1,454 of subsidiary cash and excludes leases, supplier finance and deferred consideration. All figures Rs million."

@@ -1,0 +1,20 @@
+company: PVR Inox Ltd
+ticker: PVRINOX
+cmp: 1653.0
+market_cap_cr: 16234.0
+run_date: 2026-11-12
+run_type: full
+concalls_available: true
+sector_cap_row: "NOT FOUND"   # /step1 Step D 2026-11-12: no film exhibition / out-of-home entertainment row in section-1b chunk 05. Nearest row for the operator to weigh: Hotels 30x. HIGH gap; operator rules at the /fttcp pillar gate.
+sector_cap_row_guess: "Agri processing"   # keyword guess only, never consumed
+collector_warnings:
+  - "RESOLVED by /step1 2026-11-12 (NSE XBRL for 30-Sep-2026 dumped to text in inputs/shareholding/). Original warning: shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, CINELINE:Profit & Loss, CINELINE:Quarters, CINELINE:Balance Sheet, CINELINE:Cash Flow, CINELINE:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "RESOLVED by /step1 2026-11-12: results PDFs (Q4 FY26, Q1 FY27, Q2 FY27) fetched from BSE into inputs/results/."
+  - "RESOLVED by /step1 2026-11-12: CRISIL rating rationale 27-Feb-2026 saved as text in inputs/rating/ (CRISIL serves HTML, no PDF)."
+notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."
+remediation_cycles: 0
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+verifier_a_shadow: "skipped (claimed by runs/kusumgar-2026-11-12; ten parallel sessions, one shadow run per operator ruling 2026-10-11)"
+peers: [CINELINE, UFO, WONDERLA]
+step1_notes: "Peer CINELINE has no concall transcripts on screener; only its Data_Sheet CSV is in the corpus. UFO transcripts fetched from BSE by hand after the collector's UFO pass timed out. Two ARs held: FY2025-26 (primary) and FY2024-25 (prior year reference). Four main concalls held; stage 5 reads the three most recent, the Feb 2026 call is reference for the screen-guidance fact. Page-marked .txt extracts sit beside every PDF."

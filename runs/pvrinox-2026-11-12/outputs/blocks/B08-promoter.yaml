@@ -1,0 +1,69 @@
+stage: B08-promoter
+company: "PVRINOX"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "screener P&L / Balance Sheet / Cash Flow / Quarters CSVs absent (empty export)"
+  - "research/ empty"
+  - "peer CINELINE has no concall transcripts"
+  - "sector_cap_row NOT FOUND (phase 3 gap)"
+  - "prospectus not held (long-listed, not a gap)"
+  - "SEBI 22 Nov 2016 show-cause notice to Ajay Bijli: outcome NOT FOUND"
+  - "Pledge levels for 2023 and 2024: NOT FOUND (only Sep 2025 to Nov 2026 events found)"
+  - "RoC/MCA status of ATC Logistical Solutions Pvt Ltd and INOX Infrastructure Ltd: NOT FOUND"
+  - "Basis of Rs 190 M brand fee to Chairman: NOT FOUND IN DOCUMENT"
+  - "Source of funds for the 2 Nov 2026 pledge release: NOT FOUND"
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 5, caution: 5, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Promoter pledge: 2,944,444 shares (Ajay Bijli, personal borrowing) = 55.02% of his holding, 11.1% of promoter group holding, 3.0% of total shares at 30 Sep 2026", evidence_tier: "VERIFIED", source: "NSE XBRL shareholding pattern 30 Sep 2026; SAST 31(2) 3 Nov 2026", date: "2026-09-30"}
+  - {finding: "Media report of suspected Rs 200 Cr developer kickbacks linked to ex-CEO Growth and Investment Pramod Arora; company says preliminary external review found no evidence and does not address the Rs 200 Cr figure", evidence_tier: "MEDIA REPORTED", source: "theweek.in 2026-09-05; businesstoday.in 2026-09-07; company clarification 2026-09-07 (secondary)", date: "2026-09-07"}
+  - {finding: "Same-name executive Pramod Arora fined Rs 2 lakh by SEBI for insider-trading rule breaches in PVR shares (Apr 2014 to Mar 2017); identity not confirmed from the order", evidence_tier: "MEDIA REPORTED", source: "devdiscourse / Business Today Oct 2022", date: "2022-10"}
+  - {finding: "Rs 190 M brand licence fee to Chairman Pavan Kumar Jain, basis NOT FOUND", evidence_tier: "VERIFIED", source: "FY26 AR Note 46 PDF p.300-301", date: "2026-03-31"}
+  - {finding: "MD and ED pay Rs 391.38 M = 14.2% of PBT, 561x median, 100% variable; 10.57% voted against", evidence_tier: "VERIFIED", source: "FY26 AR CG PDF p.107, p.60; NSE scrutinizer report 2026-03-16", date: "2026-03-16"}
+  - {finding: "Audit Chair Dinesh Kanabar resigned 24 Jul 2026; Mahadevia attended 1 of 5 Audit Committee meetings", evidence_tier: "VERIFIED", source: "FY26 AR Board's Report PDF p.53; CG PDF p.105-110", date: "2026-07-24"}
+  - {finding: "Promoters tendered 502,200 shares in the Rs 1,450 buyback (about Rs 72.8 Cr) while a preliminary probe known to the promoters since April 2026 was unreported; timing is inference", evidence_tier: "VERIFIED (tender) / INFERENCE (timing)", source: "SAST 29(2) 2026-09-28; letter of offer 2026-09-07", date: "2026-09-24"}
+  - {finding: "CCI prima facie order on virtual print fee; DG to examine persons responsible; no final order found", evidence_tier: "MEDIA REPORTED", source: "livelaw / storyboard18, order 2025-09-30", date: "2025-09-30"}
+  - {finding: "SEBI show-cause notice 22 Nov 2016 to Ajay Bijli (Clause 49D / Reg 17(5)); outcome NOT FOUND", evidence_tier: "MEDIA REPORTED", source: "PTI via Business Standard 2016-11-23", date: "2016-11-22"}
+  - {finding: "Ajay Bijli sold 325,000 shares (0.33%) in the open market Aug 2024", evidence_tier: "MEDIA REPORTED", source: "storyboard18 2024-08-22", date: "2024-08-22"}
+  - {finding: "Adjacent: INOXGFL promoter Devansh Jain (not a PVR promoter group member) got a SEBI summons tied to trading in PVR Inox shares; nature and date NOT FOUND", evidence_tier: "UNVERIFIED", source: "kotakneo.com 2026-10-06 (secondary of DRHP)", date: "2026-10-06"}
+transition_evidence:
+  - "Pledge cut 27.9% on 2 Nov 2026: 2,944,444 to 2,122,344 shares (SAST 31(2), 3 Nov 2026)"
+  - "Promoters Bijli and S. Jain left the Audit Committee on 17 Oct 2025 (B03, AR CG PDF p.105-110)"
+  - "Audit Committee reconstituted 23 Jul 2026 with Chandiok as chair; Shuva Mandal added (credentials not verified)"
+  - "External third-party experts engaged on the allegation (scope NOT FOUND)"
+pledge_pct_latest: 8.0
+pledge_trend: "falling at the latest step: ~2.54M shares (derived, before 24 Dec 2025) -> 2,944,444 -> 2,122,344 after 2 Nov 2026 release of 822,100. Single borrower (Ajay Bijli), personal borrowing. 2023-24 levels NOT FOUND."
+searches_performed:
+  - "pledge release Infina HSBC InvestDirect Nov 2026"
+  - "SEBI order/adjudication/penalty promoters"
+  - "CCI merger / penalty / VPF investigation (2 searches)"
+  - "Karnataka Rs 200 ticket cap High Court"
+  - "Kanabar resignation July 2026"
+  - "brand fee Pavan Kumar Jain / IiAS"
+  - "SEBI show cause notice 2016 outcome"
+  - "remuneration vote / proxy advisor 2026"
+  - "Pramod Arora / CFO / management changes"
+  - "Pramod Arora Rs 200 crore probe clarification"
+  - "pledge total encumbered 2025-2026"
+  - "Pavan Kumar Jain GFL INOX Group SEBI/ED/court"
+  - "PVR promoters forgery case Delhi High Court"
+  - "Glassdoor/AmbitionBox"
+  - "Devansh Jain SEBI summons"
+  - "SEBI adjudication PVR insider trading Dutta Arora Gupta"
+searches_skipped:
+  - "zeebiz (402), Business Standard (403), thestatesman (403), filingreader (socket closed) fetches"
+  - "Glassdoor: no result"
+  - "IiAS / SES / InGovern: no result"
+  - "SEBI orders database, SAT, eCourts, NCLT, MCA/RoC checks: not queryable"
+  - "ED / PMLA / income-tax / SFIO targeted searches: not run"
+  - "PVR-INOX merger CCI approval terms: not found"
+  - "Karnataka HC final outcome: not found"
+  - "Convenience fee / F&B consumer cases: not searched"
+  - "Political links, peer reputation, philanthropy: not searched"
+  - "Independent exits over 3 years beyond Kanabar: not searched"
+verdict_basis: "No promoter-level SEBI order, conviction or deal-breaker, long builder record, but pledge 11.1% of group holding, an unresolved kickback allegation at a promoter-close executive, an unexplained Rs 190 M Chairman fee, 561x pay and an audit chair exit leave five of ten dimensions at caution."
+analyst_note: "CAUTION, not CONCERN. B03 prelim flag resolves down: one borrower, pledge falling, 3.0% of shares (2.2% after release). Two points a later stage cannot rebuild. The XBRL 27.02% promoter figure is a denominator artefact; SAST shows 27.60% on 96,130,997 shares after buyback. The kickback matter is the main open item. Readings: (a) no wrongdoing, ex-CEO left for personal reasons; (b) a developer-payment problem existed and is unscoped. Separating observation: a named, scoped review report or audit committee statement. Tripwires: pledge above 2,944,444; any invocation; action on the Arora matter reaching a director; CCI order naming executives; a second independent exit within 12 months. Size carries the conservatism."

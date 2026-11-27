@@ -1,0 +1,19 @@
+stage: B12d
+company: "KUSUMGAR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 2
+substantive_confirmed: 2
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, item: "Transcripts provided: 6 of 12 (GARFIBRES zero); input gap disclosed in B06, not a pipeline fault"}
+  - {severity: MINOR, item: "B06 Q8 PARTIALLY VERIFIED rests on one peer (Mayur); permitted since no VERIFIED claimed, but flagged as single-anchor"}
+  - {severity: MINOR, item: "B06 Q5 sentence 'where tariffs bit, supplier paid' rests on Arvind Jan p.8 only; Mayur reports no tariff impact"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 100

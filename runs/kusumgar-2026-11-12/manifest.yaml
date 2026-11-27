@@ -1,0 +1,21 @@
+company: Kusumgar Ltd
+ticker: KUSUMGAR
+cmp: 549.0
+market_cap_cr: 5772.0
+run_date: 2026-11-12
+run_type: full
+concalls_available: false
+sector_cap_row: "Defence / strategic"      # set by /step1 Step D and stage 0 (section-1b chunk 05, 38x); about 55% of FY26 revenue is aerospace and defence; second reading Cables / Industrial products 25x for the other 45%, operator ruling at /fttcp
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, GARFIBRES:Profit & Loss, GARFIBRES:Quarters, GARFIBRES:Balance Sheet, GARFIBRES:Cash Flow, GARFIBRES:Customization, ARVIND:Profit & Loss, ARVIND:Quarters, ARVIND:Balance Sheet, ARVIND:Cash Flow, ARVIND:Customization, MAYURUNIQ:Profit & Loss, MAYURUNIQ:Quarters, MAYURUNIQ:Balance Sheet, MAYURUNIQ:Cash Flow, MAYURUNIQ:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no AR found on screener: AR stages will be skipped"
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+  - "only 1 concalls -> no-concall mode"
+listed_date: "2026-07-15"
+remediation_cycles: 0
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+verifier_a_shadow: run
+notes: "Collected from screener.in by collect_to_repo.py v3 (dry-run, /step1 2026-11-12). Hand-added by /step1 after the collector: prospectus (SEBI), Q1 and Q2 FY27 results (company site, BSE), CARE and CRISIL rating rationales, Q1 FY27 presentation, a screener print of the Sep 2026 shareholding (SECONDARY). No annual report exists yet (listed 2026-07-15); the prospectus restated financial information stands in for it. concalls_available is false by the collector rule (fewer than 3 transcripts): the company does hold calls, one transcript (Q1 FY27) is in concalls/, and the Q2 FY27 transcript was not published at collection."

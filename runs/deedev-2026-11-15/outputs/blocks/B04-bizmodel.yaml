@@ -1,0 +1,74 @@
+stage: B04-bizmodel
+company: "DEEDEV"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Q2 FY27 investor presentation absent; Q1 FY27 deck used (36 slides)"
+  - "Q2 FY27 concall absent (call 17 Nov 2026, after run date); Q2 power division fall 1,836.76 to 463.57 lacs unexplained"
+  - "tonnes shipped and revenue/price per tonne: NOT FOUND in AR, deck or calls"
+  - "order book split by customer: NOT FOUND; slide 17 segment pie labels ambiguous in text layer"
+  - "top-10 customers about 80% of FY26 income found in CARE p.2 only, not in AR"
+  - "market share and competitor financials: NOT FOUND (prospectus names competitors only)"
+  - "empty screener P&L/BS/CF/Quarters sheets; research empty; shareholding is XBRL text"
+flags:
+  - {type: FLAG-GUIDANCE-WORDING, reason: "AR p.101 core revenue 1,400-1,500 cr and EBITDA 18-20%; calls say 1,500 cr plus and above 19%; H2 needs about 913 cr (+55% over H1 587.45 cr); Q2 29,298.68 lacs below Q1 29,446.22 lacs despite 25 cr deferral"}
+  - {type: FLAG-CASH, reason: "operating cycle 263 days Q1 FY27 vs 276 (inventory 174, debtors 123, creditors 34); H1 FY27 consolidated CFO (679.09) lacs; fixed-price contracts with about 50% material bought up front (CARE p.2-3)"}
+  - {type: FLAG-GROSS-MARGIN-MIX, reason: "consolidated gross margin 65.0% to 58.1% FY26 (derived, AR p.333-334) as material-supplied power jobs grew; EBITDA gain came from overhead leverage, incremental EBITDA margin about 20.8%"}
+  - {type: FLAG-CONCENTRATION, reason: "top 10 about 80% (CARE p.2); Numaligarh 15.12% and Dow 9.67% of consolidated revenue (AR p.336)"}
+  - {type: FLAG-POWER-SEGMENT, reason: "power division revenue 4.9% of FY26, PBT (1,083.14) lacs; Q2 FY27 division revenue 463.57 vs 1,836.76 lacs in Q1, reason NOT FOUND; MPPL assets 5,063.34 lacs unassessed (Results_Q2FY27 note 5)"}
+  - {type: FLAG-SECTOR-CAP-FIT, reason: "business is made-to-order process piping supply (order-book / build-to-spec); 'Cables / Industrial products' is a loose fit; orchestrator to confirm cap row"}
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Piping division (made-to-order spools, bends, fittings, skids; includes job work 16.4% of standalone revenue and erection/design 0.14%)", type: "project-linked product sales, milestone billing", pct_of_revenue: 87.7, predictability: "M"}
+  - {name: "Heavy fabrication (wind towers, stacks; subsidiary DFIPL)", type: "project-linked product sales", pct_of_revenue: 7.0, predictability: "M"}
+  - {name: "Biomass power (Abohar, Muktsar; pellets from Q1 FY27)", type: "regulated-tariff annuity plus new pellet sales", pct_of_revenue: 4.9, predictability: "L"}
+  - {name: "Unallocated (nature NOT FOUND)", type: "unclassified", pct_of_revenue: 0.4, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - "Vendor approvals (NTPC supercritical, NPCIL, ASME, PED): moderate durability, renewal and audit dependent"
+  - "Scale and port-adjacent capacity (Anjar): moderate, only valuable at high utilisation (about 50% now)"
+  - "Cost advantage from robotic welding and seamless backward integration: weak, claimed not yet shown in margin"
+valuation_methods:
+  primary: {method: "P/E on utilisation-normalised forward EPS", why: "positive earnings, order book 2.1x revenue, leverage changing after INR 300 cr raise; exit multiple stays with Section 1B"}
+  secondary: {method: "EV/EBITDA with trade credits and sold receivables in net debt", why: "capital structure shifting, reported gearing understates financing"}
+  tertiary: {method: "Sum of parts", why: "strip loss-making power segment and MPPL assets from core piping multiple"}
+  not_applicable: ["EV/Sales", "full DCF (FCF negative two years)", "dividend yield", "replacement cost per tonne (no comparable data)", "P/B standalone (cross-check only)"]
+irrelevant_ratios:
+  - "Gross margin % alone: misleading, moves with job-work vs material mix"
+  - "Spot ROCE 10.1%: misleading, new capex idle at about 50% utilisation"
+  - "Current ratio: inflated by inventory and receivables"
+  - "Net debt/equity 0.77 and gearing 42.87%: exclude trade credits 6,577.63 lacs"
+  - "Trade payable turnover: creditor days moved 122 to 66 to 34 on buying choice"
+  - "Dividend yield and standalone P/B: irrelevant for a growth company that consumes cash"
+must_track_metrics:
+  - {metric: "Order inflow and closing order book vs revenue", healthy: "inflow above revenue; book above 2,500 cr (2,531.04 cr Sep 2026)", red_flag: "book flat or falling for 2 quarters"}
+  - {metric: "Consolidated EBITDA margin and incremental margin", healthy: "18% to 19%+ (guided above 19%)", red_flag: "below 17% after capacity is meant to fill"}
+  - {metric: "Operating cycle days", healthy: "180-200 (target); 263 now", red_flag: "above 250 at FY27 year end"}
+  - {metric: "CFO / EBITDA", healthy: "0.5 or higher (FY26 0.10)", red_flag: "below 0.3 at FY27"}
+  - {metric: "Net debt incl. trade credits and sold receivables", healthy: "400-425 cr by Mar 2027 (management); 718 cr Jun 2026", red_flag: "above 600 cr at Mar 2027"}
+unit_economics:
+  unit: "one metric tonne of fabricated piping shipped (rated capacity 93,500 MTPA)"
+  revenue_per_unit: "NOT FOUND (tonnage not disclosed); capacity-based reference 1.07 lacs per rated MT (derived, not a price)"
+  margin_per_unit: "NOT FOUND per tonne; piping division gross margin 58.2% and pre-D&A margin about 18.6% ex other income (derived, AR p.333); incremental EBITDA margin FY26 about 20.8%"
+  key_lever: "utilisation of Anjar (about 50% to 70-75%) and seamless plant against fixed overheads, with material-vs-job-work mix as the swing in gross margin"
+first_deterioration_signals:
+  - {risk: "order slippage / deferral", first_signal: "quarterly revenue flat or down QoQ despite deferred dispatch (Q2 FY27 29,298.68 vs Q1 29,446.22 lacs)"}
+  - {risk: "customer concentration", first_signal: "top-2 share and eight-customer share of receivables (71%) rising"}
+  - {risk: "fixed-price steel exposure", first_signal: "gross profit rupees per rupee of material falling"}
+  - {risk: "utilisation does not rise", first_signal: "employee and other expense as % of revenue stops falling"}
+  - {risk: "working capital does not shorten", first_signal: "debtor days (123 in Q1 FY27) and sold receivables rise; CFO negative"}
+  - {risk: "power segment and MPPL", first_signal: "power division loss and revenue (463.57 lacs Q2 FY27 vs 1,836.76 Q1)"}
+mgmt_questions:
+  - "Which Q1 orders slipped to Q2, and why is Q2 revenue below Q1?"
+  - "What orders, by customer, support the 913 cr H2 revenue need?"
+  - "Why did power division revenue fall from 1,836.76 to 463.57 lacs between Q1 and Q2?"
+  - "What is the job work vs material-supplied split of the order book by execution quarter?"
+  - "How much of 123 debtor days is covered by bill discounting and what are the recourse terms?"
+  - "What price protection covers the 50% of materials bought up front with no escalation clause?"
+  - "What share of seamless output is captive vs sold, and at what price vs imports?"
+one_line_verdict: "Made-to-order piping supplier with a real order book and new capacity, narrow moat, fixed-price contracts, 263-day cash cycle; margin comes from procurement and overhead leverage, not pricing."
+analyst_note: "Sector cap check: this is product supply from own plants (point-in-time revenue, erection 0.14% of standalone), not site EPC. 'Power' appears twice: power SECTOR is a customer end-market (about 60-65% of orders); power SEGMENT is 4.9% biomass, loss-making. Cap row 'Cables / Industrial products' is a loose fit. FY26 EBITDA gain came from overhead leverage (employee 19.5% to 16.4% of revenue); gross margin fell 65.0% to 58.1% as material-supplied power jobs grew. Two readings of margin: (a) leverage persists and margin reaches 19%; (b) the mix shift holds gross margin lower and overheads re-grow. H2 FY27 margin and gross profit rupees separate them. Q2 power division revenue fell 75% QoQ, unexplained. inputs/other/Annual_Report_2025.txt exists though B03 logged the FY25 AR absent."

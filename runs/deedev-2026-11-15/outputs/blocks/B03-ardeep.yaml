@@ -1,0 +1,88 @@
+stage: B03-ardeep
+company: "DEEDEV"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+unit: "INR lacs as printed in the financial statements and notes; Rs crore where the MD&A and Chairman letter print crore. Nothing converted."
+input_gaps:
+  - "empty screener P&L/BS/CF/Quarters sheets (Data_Sheet populated)"
+  - "Q2 FY27 concall transcript absent (call on 17 Nov 2026, after run date; CORPUS GAPPED-FRESHNESS)"
+  - "Q2 FY27 investor presentation absent"
+  - "research empty"
+  - "shareholding is XBRL text"
+  - "Results_Q4FY26 text is an OCR layer"
+  - "FY25 annual report absent: prior-year guidance, prior-year targets and Phase 6D drift not testable"
+  - "covenant headroom, Thailand DCF, 762.90 payable nature, Abohar billing since 1 Apr 2025: NOT FOUND IN DOCUMENT"
+  - "top-10 customer 80% of operating income (brief fact 4) NOT FOUND in the AR"
+flags:
+  - {type: FLAG-CASH, reason: "consolidated CFO 1,954.84 vs PAT 7,716.71 (0.25) and EBITDA 19,121.29 (0.10); standalone CFO -4,450.03; FCF -16,998.98 consolidated; interest paid 5,368.99 sits in financing; receivables +68.9% with 15,938.75 sold; H1 FY27 CFO -679.09 (Cons. CF p.264; CF p.160; Note 6A; Q2 FY27 p.7)"}
+  - {type: FLAG-QUALIFIED-OPINION, reason: "consolidated opinion qualified on MPPL assets 4,761.67 lacs, impairment not assessable (Auditor p.253; Cons. Note 45(b) p.351)"}
+  - {type: FLAG-CONTINGENCY, reason: "Abohar 1,384.96 lacs unprovided under High Court stay, EoM on both reports, outside Note 32B table; Directors report cites a third tariff Rs 7.47 (Note 46 p.251; Auditor p.146; Directors report p.61)"}
+  - {type: FLAG-BOARD-REPORT-MISSTATES-AUDIT, reason: "Directors report says the audit report has no qualification, reservation or adverse remark (p.54) while the consolidated report is qualified (p.253) and CARO lists adverse remarks ii(b), vii(a) (p.259)"}
+  - {type: FLAG-DRAFT-ARTEFACTS, reason: "printed AR carries placeholders: [TBI], 'Diluted EPS to be inserted', 'Section to be developed with input from HR', 'to be reconciled' on FY25 order book (p.18, p.102)"}
+  - {type: FLAG-GUARANTEE-QUANTUM, reason: "guarantees outstanding stated as 668.89 (Note 32C p.230; Directors report p.47) vs 4,885.22 (CARO iii p.152 = 668.89 + 4,216.33) vs 2,300.00 MPPL given in year (Note 31B p.223)"}
+phase_verdicts: {p1: "RED", p2: "YELLOW", p3: "RED", p4: "YELLOW", p5: "YELLOW", p6: "YELLOW", p7_best_fit: "Capex-Led Growth (WATCHLIST)"}
+overall_quality: 4.75
+quality_components: {governance: 5, accounting: 5, balance_sheet: 5, earnings: 4}
+kill_switch_notes:
+  - "P1: reviewer would not stop alone; no going concern doubt, fraud or default; would size MPPL and Abohar before position size"
+  - "P2: would not stop; policies standard, no covenant default; wants ECL and covenant answers"
+  - "P3: would not stop; profits reconcile and Rs 300 cr raise repaid debt; wants operating cycle proven to shorten"
+  - "P4: would not stop; guidance checkable (H1 margin 18.5%); wants a clear answer on Abohar and MPPL"
+  - "P5: would not stop; no SEBI order or pledge; test promoter trust record in stage 8"
+triple_pass_verification:
+  verified: 13
+  discrepancies: []
+  carried_not_reopened: ["rank 10 consolidated bank-return gaps 2,068.42 and 4,996.98 (Cons. Note 9B)", "rank 14 cross-note supplier-finance wording (numbers 6,577.63 and 8,120.50 verified on BS p.158)"]
+  extensions: ["rank 2: Directors report p.61 gives third tariff Rs 7.47", "rank 15: consolidated equity shows IPO deferred tax as 380.98 vs standalone 348.12 (p.266 vs p.162), gap 32.86 derived, unexplained", "CARO vii(b) customs 1,120.09 shows paid under protest Nil vs Note 32(e) 7.5% of 815.09 (p.153 vs p.230)"]
+missing_risks:
+  - {risk: "Abohar tariff refund and High Court stay", evidence: "EoM both reports p.146, p.253; Directors report p.60-61; absent from MD&A risks p.103"}
+  - {risk: "MPPL impairment and strategic alternatives", evidence: "qualified opinion p.253; MD&A calls order decisive step p.101"}
+  - {risk: "customer concentration 30.8% in two customers, 71% of receivables in eight", evidence: "Note 33(c) p.234; Note 36 p.241 calls concentration low"}
+  - {risk: "receivable factoring and TReDS dependence", evidence: "15,938.75 sold; TReDS additions 30,028.24 (Note 6A p.186; Note 6D)"}
+  - {risk: "thin liquidity headroom", evidence: "undrawn lines 1,304.77 from 4,964.13 (Note 6D)"}
+  - {risk: "intra-group claims on Thailand and Fabricom", evidence: "Thailand 16,476.57 (Note 5, 31C); Fabricom loan 400.00 (p.47)"}
+  - {risk: "control gaps: audit trail and recurring bank-return mismatch", evidence: "Auditor p.150, p.258; CARO ii(b) p.151; Prospectus risk factor 26 PDF p.59-60"}
+  - {risk: "key person and succession", evidence: "CMD aged 71 (Annexure C p.81); daughter appointed WTD 14 Apr 2025 (p.48)"}
+  - {risk: "export obligation doubled to 20,237.29", evidence: "Note 32B p.229-230"}
+guidance_table:
+  - {claim: "FY27 order inflow", number: "above Rs 2,000 cr", timeframe: "FY27", credibility: "unverified; FY26 order inflow NOT FOUND; FY25 base 1,228 flagged 'to be reconciled' in the MD&A (p.101-102)"}
+  - {claim: "FY27 core revenue", number: "Rs 1,400-1,500 cr (brief: Rs 1,500 cr plus from Q1 call)", timeframe: "FY27", credibility: "medium-low; H1 growth +19.0% vs needed +29% to +38%; H2 needs +55% over H1 vs +31.3% in FY26 (Q2 FY27 p.4; derived)"}
+  - {claim: "FY27 core EBITDA margin", number: "18-20%", timeframe: "FY27", credibility: "medium-high; FY26 core 17.8-18.0% derived; H1 FY27 group margin 18.5% derived"}
+  - {claim: "Vision 2030 revenue", number: "above Rs 2,500 cr", timeframe: "FY30", credibility: "needs 21.6% CAGR from Rs 1,142 cr (derived)"}
+  - {claim: "net cash or minimal net debt", number: "n/a", timeframe: "FY29", credibility: "unproven; net debt 60,257.39 lacs at Mar-26, 75-77% of Rs 300 cr raise earmarked for debt (p.102)"}
+  - {claim: "power segment cash neutral", number: "n/a", timeframe: "FY27", credibility: "low so far; FY26 segment PBT (1,083.14); H1 FY27 (270.98) before interest (Q2 FY27 p.6)"}
+  - {claim: "seamless plant commissioned by January 2026", number: "7,000 MTPA, 60-70% utilisation target", timeframe: "Jan 2026", credibility: "late by about 2.5 months (19 Mar 2026, p.11, p.101)"}
+  - {claim: "Anjar 30,000 MTPA by Oct 2025", number: "30,000 MTPA", timeframe: "Oct 2025", credibility: "met: Sep 2025 (p.11, p.101)"}
+  - {claim: "capex limited to completion and maintenance beyond FY27", number: "n/a", timeframe: "FY28 on", credibility: "unproven; H1 FY27 CWIP up 761.07 (Q2 FY27 p.5)"}
+monitorables:
+  - {metric: "consolidated CFO / EBITDA", threshold: "at or above 0.5 for H2 FY27 and FY27 (FY26 0.10)", where: "Q3/Q4 cash flow; FY27 AR", why: "tests working capital normalisation"}
+  - {metric: "consolidated debtor days and receivables", threshold: "at or below 122 days; at or below 44,640.57 lacs", where: "quarterly balance sheet", why: "receivables +68.9% in FY26"}
+  - {metric: "standalone over-6-month receivables share and first ECL", threshold: "at or below 9.2%", where: "FY27 AR Note 6A", why: "nil allowance today"}
+  - {metric: "Abohar and MPPL court outcomes, FY27 audit opinion", threshold: "any final order; opinion unqualified", where: "exchange filings; FY27 auditor report", why: "1,384.96 and 4,761.67 lacs at stake"}
+  - {metric: "H2 FY27 revenue", threshold: "at least Rs 913 cr to reach Rs 1,500 cr", where: "Q3/Q4 results", why: "+55% over H1"}
+  - {metric: "gearing including trade credits", threshold: "at or below 40% consolidated", where: "quarterly net debt", why: "42.87% reported, 45.18% with credits"}
+  - {metric: "top-two customer share", threshold: "each below 15% by FY27", where: "AR Note 33(c)", why: "18.80% and 12.03% now"}
+  - {metric: "promoter holding and pledge", threshold: "at or above 65.13%, pledge nil", where: "quarterly shareholding XBRL", why: "insider signal"}
+  - {metric: "audit trail coverage and CARO ii(b) gap", threshold: "all applications enabled; gap nil", where: "FY27 auditor report", why: "recurring since FY22"}
+ar_new_downstream_entities:
+  - name: "Numaligarh Refinery Limited"
+    where_in_ar: "Note 33(c) p.234 (17,268.79 lacs, 18.80% of standalone revenue; FY25 4.38%); AR also lists a DEE Numaligarh facility, 6,000 MT/yr (p.14)"
+    entity_type: "customer above 10% of revenue for the first time in this AR (FY25 AR not in corpus to confirm earlier disclosure)"
+  - name: "Dow Chemical Canada ULC"
+    where_in_ar: "Note 33(c) p.234 (11,048.38 lacs, 12.03%; FY25 0.12%)"
+    entity_type: "customer above 10% of revenue, export"
+  - name: "Molsieve Design Limited"
+    where_in_ar: "Note 5 and Note 43 (658.82 lacs for 70%, goodwill 602.56); MD&A hydrogen platform p.101"
+    entity_type: "acquired subsidiary (nitrogen, oxygen, ammonia cracking, hydrogen purification)"
+strengths_top3:
+  - "Real operating growth that ties across statements: revenue +38.0%, EBITDA +54.5%, PAT +76.9% (Cons. P&L p.263); piping PBT 10,286.07 (Cons. Note 31 p.333)"
+  - "Capacity delivered and funded: Anjar 30,000 MTPA in Sep 2025, seamless plant 19 Mar 2026, Rs 300 cr equity at Rs 502, CARE A- limits enhanced (p.11, p.101, p.75)"
+  - "No regulatory order, no pledge, no fraud; promoter holding 65.13% with promoter shares up 3,98,406 since March (CG p.76; XBRL 30 Sep 2026)"
+red_flags_top3:
+  - "Qualified consolidated opinion on MPPL assets 4,761.67 plus Abohar 1,384.96 unprovided under a stay (Auditor p.253; Note 46 p.251)"
+  - "Cash: FCF -45,241.02 over two years (derived), receivables +68.9% with 15,938.75 sold and nil ECL (Cons. CF p.264; Note 6A)"
+  - "Disclosure quality: Board report denies the qualification, three tariff and three guarantee figures, unfinished text in the printed AR (p.54, p.61, p.102)"
+best_fit_strategy: "Capex-Led Growth (WATCHLIST); GARP WATCHLIST pending cash conversion"
+one_line_verdict: "Real capacity-led growth with unproven cash conversion and a qualified group opinion; watchlist, not GARP-ready."
+analyst_note: "Units INR lacs. The brief's Rs 9.76 cr guarantee figure is not in the AR: AR shows 668.89 lacs (Note 32C), 4,885.22 (CARO) and 2,300.00 given (Note 31B). MD&A net D/E 0.77 reproduces only with trade credits 6,577.63 and leases added; Note 35 gearing 42.87% excludes them. Consolidated cash flow adds back FX 'loss' 528.03 and 76.63 equal to the translation OCI in both years. Standalone auditor accepts a management valuation of subsidiary investments (KAM 18,784.88) while the consolidated auditor says MPPL cannot be assessed. Core EBITDA margin in the highlights (16.7%) is the whole-group margin. Unnamed counterparties (HRSG reservation EPC major, global OEM LOI, green hydrogen partner) are NOT DISCLOSED. Brief fact 4 (top-10 about 80%) not in the AR."

@@ -1,0 +1,65 @@
+stage: B07-emoat
+company: "DEEDEV"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Screener P&L/BS/CF/Quarters sheets empty (Data_Sheet populated)"
+  - "Q2 FY27 concall transcript absent: call on 17 Nov 2026, after run date (CORPUS GAPPED-FRESHNESS)"
+  - "Q2 FY27 investor presentation absent"
+  - "Research folder empty"
+  - "Shareholding is XBRL text"
+  - "Results_Q4FY26 text is an OCR layer (no figure taken from it)"
+  - "FY25 annual report absent: capex on time and budget across ARs, and revenue per employee trend, untestable"
+  - "Project-level cost NOT FOUND for Anjar expansion, pellet plant, DFIPL heavy-fabrication expansion; nuclear, HRSG and other capacity blueprint size/date NOT FOUND"
+  - "Competitor counts, qualification timelines, R&D spend, patents, capacity reconciliation (93,500 headline vs 89,500 facility sum) NOT FOUND"
+flags:
+  - "CAPEX-GAP: FY27 capex guide Rs 20-30 cr (Q4 call p.13) vs CARE planned about Rs 150 cr (CARE 9 Nov 2026 p.3) vs H1 actual Rs 58.02 cr (Q2 FY27 p.7); AR p.101 says capex limited to completion and maintenance"
+  - "EXPORT-SHARE: management says exports more than 50% (Q1 call p.13); filed outside-India share 40.5% FY26, 39.4% FY25 (AR p.314, derived)"
+  - "ANJAR-UTILISATION: three statements (almost optimal FY27; 60-65% FY27 and 100% by end of next year; 50% now and 70-75% next year)"
+  - "SCORE-SENSITIVITY: 10.1 NONE vs 12.8 MODEST depending on three unscored rows (A3, C1, H3)"
+  - "LOAD-BEARING FACTS 1-4 re-verified on the pages; fact 1d (Rs 25 cr deferral not visible in Q2 revenue) unexplained pending the 17 Nov 2026 call"
+  - "Pellet plant capacity prints 72,000 MTPA (calls, deck) and 80 MT/day (AR p.14)"
+em_score: 10.1
+em_classification: "NONE"
+active_categories:
+  - {id: "B1", name: "Backward integration and RM security (seamless plant)", strength: "Moderate", evidence_type: "DOC", time_to_materialise: "12-24 months"}
+  - {id: "B2", name: "Qualification lock-in (HRSG capacity reservation, certification stack)", strength: "Moderate", evidence_type: "DOC", time_to_materialise: "6-36 months, reservation starts 1 Jun 2027"}
+evidence_mix: {documented: 21, claim: 21, inference: 2}
+completionist_recount: "recount performed: 21 documented items across 10 categories; 12 of them across 6 scored categories (B1, B2, E2, F2, G1, H2) support a score; the other 9 are adverse (C2), not moat-grade (A3) or negative-direction F2 rows. Categories scored as active: 8 of 23, under the stop line of 12."
+catalysts_12m:
+  - {catalyst: "Q2 FY27 call: Rs 25 cr deferral, working-capital days, Rs 47.71 cr vs Rs 80 cr non-core, impairment, Rs 21 cr gap in order-filing inflow columns", window: "17 Nov 2026", evidence_type: "CLAIM", anchor: "Reg 30 call intimation 11 Nov 2026; B05 analyst_note"}
+  - {catalyst: "Q3 FY27 results: H2 revenue run-rate toward Rs 912.55 cr, positive operating cash flow, Anjar utilisation disclosed", window: "Feb 2027", evidence_type: "DOC when filed", anchor: "Q2 FY27 p.4, p.7; Q1 call p.9"}
+  - {catalyst: "GE HRSG purchase order for 15-16 units", window: "by Q4 FY27", evidence_type: "CLAIM", anchor: "Q1 call p.5, p.15; B05 trigger 3"}
+  - {catalyst: "Siemens Anjar clearance and first GT piping PO", window: "6-12 months", evidence_type: "CLAIM", anchor: "Q1 call p.5-6"}
+  - {catalyst: "BHEL tenders awarded (about Rs 210 cr L1 plus new tenders)", window: "Q2-Q3 FY27", evidence_type: "CLAIM", anchor: "AR p.101; Q1 call p.6"}
+  - {catalyst: "First nuclear order or board-approved nuclear facility", window: "12-36 months", evidence_type: "CLAIM", anchor: "Reg 30 16 Oct 2026; Q1 call p.5"}
+  - {catalyst: "HRSG capacity reservation term starts", window: "1 Jun 2027", evidence_type: "DOC", anchor: "Reg 30 21 May 2026 Annex A"}
+  - {catalyst: "FY27 results: revenue vs Rs 1,500 cr, EBITDA above 19%, audit opinion unqualified", window: "May 2027 to FY27 AR", evidence_type: "DOC when filed", anchor: "Q1 call p.9; Q4 call p.15; B05 triggers 1 and 7"}
+  - {catalyst: "Seamless external orders beyond the Rs 58 cr + Rs 68 cr class", window: "6-12 months", evidence_type: "CLAIM", anchor: "Q1 call p.14; B05 trigger 5"}
+capex_embedded_growth_pct: 14.0   # Case A: CWIP Rs 87.48 cr x 1.83 FY26 fixed-asset turnover = Rs 159.7 cr on Rs 1,142.0 cr; upper case 28.7% if the unspent balance of CARE's Rs 150 cr plan is added (overlap with CWIP NOT FOUND)
+capex_for_stage9:
+  seamless_plant: {rs_cr: 89.74, split: "plant and machinery 63.37; building 24.82; electrical 1.55", status: "complete 19 Mar 2026", anchor: "Reg 30 19 Mar 2026 p.2-3"}
+  consolidated_capex_history_rs_cr: {fy25: 163.34, fy26: 183.68, sum: 347.02, anchor: "AR p.264 (18,367.88 and 16,334.04 lacs); FY26 with intangibles Rs 189.54 cr"}
+  fy27_capex_rs_cr: {management_guide: "20-30 (Q4 call p.13)", care_plan: "about 150 incl. term loan about 40 (CARE p.3)", h1_actual: 58.02, anchor: "Q2 FY27 p.7 (5,801.85 lacs)"}
+  open_items_rs_cr: {cwip_30sep2026: 87.48, capital_commitments_mar2026_net_of_advances: 19.41, anchor: "Q2 FY27 p.5; AR p.331"}
+  not_found: ["Anjar expansion project cost", "pellet plant cost", "DFIPL heavy-fabrication expansion cost", "nuclear/HRSG capacity expansion size and date"]
+optionality_register:
+  - {optionality: "Nuclear: first order or capex under the 16 Oct 2026 framework agreement", converting_evidence: "Signed order with value under the framework, or board-approved nuclear facility with size, cost and date", first_appears: "Reg 30 order filing; board outcome; Q3/Q4 FY27 calls", window: "12-36 months (B05 kill: none by FY28)"}
+  - {optionality: "GE HRSG PO for 15-16 units", converting_evidence: "Purchase order with value and delivery dates", first_appears: "Reg 30 order filing; Q3 FY27 call", window: "by Q4 FY27"}
+  - {optionality: "Siemens GT piping, 10 units in FY28", converting_evidence: "Anjar clearance outcome plus PO or signed framework with value", first_appears: "Reg 30 filing; Q3 FY27 call", window: "6-12 months"}
+  - {optionality: "Data-centre piping", converting_evidence: "PO naming a data-centre end use, or an order-book line", first_appears: "Reg 30 order filing; monthly order-position filing", window: "12-24 months"}
+  - {optionality: "Seamless external demand beyond the Rs 58 cr + Rs 68 cr class and about 20% margin", converting_evidence: "Named seamless orders (BHEL, JSW, Thermax); segment revenue and margin", first_appears: "Reg 30; quarterly segment note", window: "6-12 months"}
+  - {optionality: "Working-capital normalisation to 190-200 days (G2)", converting_evidence: "Positive H2 FY27 operating cash flow; operating cycle printed below 220 days", first_appears: "Q3/Q4 FY27 results cash-flow statement and calls", window: "6-12 months"}
+  - {optionality: "Pellet offtake with thermal producers", converting_evidence: "Signed offtake agreement with volume and price; pellet revenue run-rate", first_appears: "Reg 30; Q2/Q3 FY27 calls", window: "6-12 months"}
+  - {optionality: "Capacity expansion blueprint (HRSG, nuclear)", converting_evidence: "Board-approved capex with Rs amount, capacity and date", first_appears: "Board outcome filing", window: "6-12 months"}
+  - {optionality: "Green-hydrogen partnership and Molsieve gas plants", converting_evidence: "Partner named; orders beyond the Rs 4.38 cr gas-plants book", first_appears: "AR note; Reg 30", window: "24-36 months"}
+  - {optionality: "Second OEM capacity reservation (Mitsubishi or other)", converting_evidence: "A reservation filing like 21 May 2026", first_appears: "Reg 30", window: "12-24 months"}
+combined_assessment: "AVOID"
+combined_reasoning: "Gate 0 AVOID (core 39, leverage override 6) plus emerging moat 10.1 NONE; the forward scan shows no transition setup, with two contract-backed items (B2, B1) and a cash cycle that has not caught up with the build-out."
+top_moat_risks:
+  - "Capex and cash: FY27 capex signalled at up to Rs 150 cr (CARE) vs Rs 20-30 cr guide; H1 FY27 operating cash flow -Rs 6.79 cr"
+  - "Seamless ramp stalls at the Rs 58-68 cr order class; coal-boiler demand risk (Rajasthan cancelled 3.2 GW)"
+  - "HRSG reservation rests on one unnamed customer; GE PO overdue"
+  - "Customer concentration: top-10 about 80% of FY26 TOI vs 59% FY25"
+analyst_note: "Score is 10.1 (NONE) on the primary path and 12.8 (MODEST) if three non-moat-grade rows (A3, C1, H3) are scored at the matrix floor; the 12.0 floor sits between. Two rows carry half the points: the Thailand HRSG reservation (documented, starts 1 Jun 2027, minimum US$15.27 m a year) and the seamless plant (documented, ramp unproven). The seamless plant is credited in B1 only, the reservation in B2 only. Capex is the item stage 9 must handle with care: management says Rs 20-30 cr, CARE says about Rs 150 cr, H1 actual is Rs 58.02 cr, and the cost of nuclear or HRSG expansion is NOT FOUND. Export share is 40.5%, not the 'more than 50%' said on the call. The observation that separates the two readings is H2 FY27 operating cash flow with a disclosed Anjar utilisation above 60%."

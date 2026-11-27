@@ -1,0 +1,62 @@
+stage: B06-peers
+company: "DEEDEV"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Screener P&L/BS/CF/Quarters sheets empty (Data_Sheet populated) [carried from B00]"
+  - "Q2 FY27 concall transcript of DEEDEV absent: call 17 Nov 2026, after run date (CORPUS GAPPED-FRESHNESS) [carried]"
+  - "Q2 FY27 investor presentation absent [carried]"
+  - "Research folder empty [carried]"
+  - "Shareholding is XBRL text [carried]"
+  - "No peer is a listed pure-play process piping fabricator; all three map only partly to DEEDEV"
+  - "No peer transcript covers HRSG, P91/P92 alloy pipe, material-supplied (free-issue) order margins, or mill credit terms to fabricators"
+flags:
+  - "0 of 7 peer questions VERIFIED; 3 PARTIALLY VERIFIED; 4 UNVERIFIABLE; 0 CONTRADICTED"
+  - "Working-capital band: peers realise ~120-165 days (ANUP 2.2-2.3 turns; Ratnamani inventory plus receivables 5-6 months gross). DEEDEV target 180-200 days and Q1 FY27 263 days sit above every peer figure"
+  - "ISGEC reports PSU/milestone orders carry retention and long collection; FGD retention of ~Rs 165 cr still uncollected at 31 Mar 2026. Relevant to a BHEL-weighted order book"
+  - "No peer states a BHEL award pace; ISGEC cancelled 2 orders worth ~Rs 550 cr in FY26 (customer and sector not named)"
+  - "No peer mentions DEEDEV by name or description"
+peers_provided: 12
+verified: []
+partially_verified:
+  - {claim: "Thermal power piping and boiler pressure-part ordering is moving at the pace management assumes; BHEL slower than L&T and private EPC", peers: ["RATNAMANI", "ANUP", "ISGEC"]}
+  - {claim: "190-200 day working-capital cycle is plausible for a build-to-print project supplier", peers: ["ANUP", "RATNAMANI", "ISGEC"]}
+  - {claim: "Nuclear capex and capacity build-out in process equipment; partner or pre-qualification needed for export nuclear", peers: ["RATNAMANI", "ANUP", "ISGEC"]}
+contradicted: []
+unverifiable:
+  - {claim: "Pipe and tube mills give soft pricing and long credit, and ask fabricators for advance payment or ~30-day LC", peers_checked: ["RATNAMANI", "ISGEC", "ANUP"]}
+  - {claim: "Gross-margin dilution from material-supplied orders while EBITDA stays above 19%", peers_checked: ["ISGEC", "ANUP", "RATNAMANI"]}
+  - {claim: "Alloy and P91/P92 seamless pipe supply is tight and domestic thick-wall capacity is scarce", peers_checked: ["RATNAMANI", "ISGEC"]}
+  - {claim: "HRSG, GT piping and heat-recovery module vendors are scarce; peers claim share gain or capacity shortage", peers_checked: ["ISGEC", "ANUP", "RATNAMANI"]}
+peer_coverage_map:
+  - {peer: "ANUP", quarter: "Q2 FY26", usage: "CITED-ONLY", contribution: "Working capital 3x (120 days) and low-advance mechanism; repeats Q3 FY26 evidence"}
+  - {peer: "ANUP", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "WC 2.2 turns, 3 turns (~120 days) target, export advances 40% vs domestic 25%, NTPC/Adani thermal pipeline, first nuclear order"}
+  - {peer: "ANUP", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "WC 2.3 turns, Rs 260 cr debtors due after March, thermal 'over 14 GW', thermal orders in Q4, Kaiga-5/6"}
+  - {peer: "ANUP", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Fixed-price orders, two-mill plate supply, Rs 150 cr+ thermal intake, FOB contracts, Hormuz freight"}
+  - {peer: "ISGEC", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "BHEL pressure-part question, PSU 15% vs private 85% with retention/collection drag, FGD retention Rs 250 cr, diversification, LC on exports"}
+  - {peer: "ISGEC", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Rs 550 cr cancellations, FGD retention Rs 165 cr left, confirmed LCs, power order demand, short-cycle strategy"}
+  - {peer: "ISGEC", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Working capital falling on short-duration projects, Rs 502 cr capex incl. piping shops, nuclear/defence contract work, inventory-light model"}
+  - {peer: "ISGEC", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "Fixed-price/no PVC, back-to-back supplier offers, tube and piping shop capex, products 38% of order book, cash better on short cycle"}
+  - {peer: "RATNAMANI", quarter: "Q4 FY25", usage: "SUBSTANTIVE", contribution: "NTPC allowed pierced boiler tubes so margins will not hold; 80,000 MW; water mix lengthens working capital"}
+  - {peer: "RATNAMANI", quarter: "Q2 FY26", usage: "CITED-ONLY", contribution: "RFSS capacity fully booked for nuclear; water orders lift working capital; adds little beyond other quarters"}
+  - {peer: "RATNAMANI", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "SS seamless capacity added and excess; extruded focus; NPCIL-approved spooling, 4,000-5,000 t spools per GW; thermal heater/condenser tubes strong; SS price +5-10%"}
+  - {peer: "RATNAMANI", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "Thermal-driven SS order book, competition from other process routes, inventory plus receivables 5-6 months, no pass-through of freight, RFSS order Rs 2,700 cr"}
+industry_cross_read:
+  demand: "Split by segment: thermal power, nuclear, and oil and gas export are strong for ANUP and Ratnamani; water and domestic carbon steel line pipe are weak (Ratnamani). ISGEC says demand is robust across product lines. Directionally consistent with DEEDEV's power-led order guide, but no peer gives BHEL timing."
+  pricing_inputs: "All three peers sell fixed price with no escalation and cover steel through back-to-back supplier offers placed after order. Freight and Hormuz-linked costs are the squeeze (Ratnamani cannot pass them on; ANUP sells FOB). Steel, copper, nickel moved up to 10% then eased (ISGEC Q2 FY27). Stainless seamless pricing is loosening as pierced capacity enters (Ratnamani)."
+  capex_cycle: "Not a lone expander. ISGEC is spending Rs 502 cr including tube and piping shops; Ratnamani has Spiral Mill-3, a Middle East plant and an RFSS expansion; ANUP finished Kheda and says no major organic capex is needed. A selective multi-peer capex phase, not an industry-wide capacity race in process piping."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Order cancellation: ISGEC lost 2 orders worth ~Rs 550 cr in FY26 (ISGEC Q4 FY26 p.4)"
+  - "Customer-not-ready holds: ISGEC Rs 130 cr order held, 95% paid, site not ready (ISGEC Q1 FY27 p.6; Q3 FY26 p.15)"
+  - "PSU and milestone terms: retention, larger collection period and working capital (ISGEC Q3 FY26 p.11); FGD retention Rs 165 cr still pending (ISGEC Q4 FY26 p.9)"
+  - "Debtor spike from year-end dispatches: Rs 260 cr due after March, short-term borrowing up (ANUP Q4 FY26 p.12-13)"
+  - "Unrecoverable freight, duty and Hormuz cost on fixed-price orders (Ratnamani Q2 FY27 p.9-10; ANUP Q1 FY27 p.10)"
+  - "Design-to-purchase price exposure of 4-6 weeks and under 10% of order value (ANUP Q1 FY27 p.9; ISGEC Q3 FY26 p.16)"
+  - "Pierced-tube acceptance squeezing margins in boiler and heater tubes (Ratnamani Q4 FY25 p.5; Q4 FY26 p.11)"
+  - "State-government finances weakening water orders (Ratnamani Q2 FY27 p.10)"
+  - "Order intake dips cut customer advances and push up borrowing (ANUP Q2 FY26 p.11)"
+net_narrative_effect: "complicates"
+cross_peer_hypothesis: "Across the three peers, cash cycle length follows the advance share of new orders and the customer mix, not execution speed. ANUP's working capital rose to 2.2-3x turns only after order intake fell and advances dried up; ISGEC cut working capital by dropping long-duration PSU milestone work; Ratnamani's cycle lengthened when water orders and deferred shipments piled up. None of them says this. Test on DEEDEV: if the order book rose from Rs 1,303 cr to Rs 2,531 cr (B05) but H1 FY27 operating cash flow was Rs -6.79 cr, customer advances (contract liabilities) should show little or no build. If they do build and cash is still negative, the leak is inventory or debtors, not advance terms."
+analyst_note: "Peers support direction only. None gives a BHEL award pace, HRSG, P91/P92, material-supplied margin or mill credit-term evidence, so four of seven questions stay UNVERIFIABLE and the verdicts must not be read as support. The 263-day Q1 FY27 working capital sits above every peer figure; ANUP 2.3 turns equals ~159 days by my division of 365 by 2.3, not a peer statement. Ratnamani is both a mill and an exporter, so its credit terms say nothing about what it asks of fabricators."

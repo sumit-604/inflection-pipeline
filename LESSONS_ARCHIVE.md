@@ -1112,3 +1112,15 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+
+## 2026-11-15 · DEEDEV /step1 Phase 1 (runs/deedev-2026-11-15)
+- Screener returned 429 under nine parallel /step1 sessions; URL checks and the collector needed retries. The first collector pass staged nothing and left a stray process that raced the second pass, so ANUP peer calls were re-collected alone.
+- Collector Reg 30 fetch takes only the newest 25 rows (22 Sep to 14 Nov 2026); 18 material filings were added by two 6-month BSE API windows. Results, rating, prospectus and shareholding all came by direct HTTP. Chrome fallback not needed.
+- Q2 FY27 call falls on 17 Nov 2026, two days after the run: results-to-concall freshness pair fails, gate capped at PROCEED WITH CAVEATS. A run two days later would have been CORPUS CURRENT on this pair.
+- Stage 7 agent stalled (stream watchdog, 600 s) after writing its report and before its block file; block built with tools/extract_block.py, no re-run. No usage figure for that row.
+- Stage 2 passes 1 and 2 wrote reports without a closing YAML block (block files were present). Stages 3, 6 and 13 reported defects they could not edit; orchestrator appended errata.
+- Verifier B gave two acceptance rates: 88.9% (caught plus partially caught) and 44.4% (fully caught only, below the REWORK line). The prompt field definition does not say whether PARTIALLY CAUGHT counts. Sent to Halt 1 for an operator ruling.
+- Verifier C: prompt 07 names "the standard matrix" for Section 6D but never prints its cells; stage 7 zeroed three evidenced rows that the matrix floors at 1 (band NONE vs MODEST).
+- session-cost.md split columns are all n/a in the desktop app (one total per subagent), so the fresh vs re-read multiple cannot be computed here.
+- No DOWNSHIFT FAILURE, no COST SPIKE.

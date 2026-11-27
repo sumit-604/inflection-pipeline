@@ -1,0 +1,74 @@
+stage: B08-promoter
+company: "PREMEXPLN"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "COLLECTOR: shareholding empty at collection; repaired at /step1 with NSE XBRL Sep 2026 and a secondary screener capture (not an exchange filing)"
+  - "COLLECTOR: screener financial sheets empty; no results PDFs; no rating PDF (text captures only)"
+  - "FRESHNESS: Q2 FY27 concall transcript ABSENT (call held 13 Nov 2026)"
+  - "PEER CONCALLS: BDL none; 8 of 12 present"
+  - "ANNOUNCEMENTS: nine open-offer attachments only as .zip, not opened; no fire/accident/licence intimation in the 12-month feed"
+  - "UNIDENTIFIED ACQUIRER: E70E41CF_39DE_40E0_A761_A85C0CA48817_102508.pdf Reg 29(1) acquirer name illegible"
+  - "RESEARCH folder empty; OCR text layer on scans, check load-bearing figures on the PDF page"
+  - "SPA text, non-compete, post-close related-party terms and board nominees NOT FOUND (SPA not in corpus; Apollo 21 Aug 2026 filing fetch timed out)"
+  - "SEBI Adjudication Order 31 Oct 2017 (Amarnath Gupta, Premier Explosives): text NOT READ, subject and penalty NOT FOUND"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: CONCERN
+    top_findings:
+      - "Auditor qualified internal financial controls opinion (single-approver procurement, material weakness) plus CARO xi(c) whistle-blower complaint and special audit absent from the governance report (AR p.103-108 vs p.54)"
+      - "Open SEBI insider trading inquiry on PEL scrip (SEBI communication 3 Nov 2025); subject, period and persons NOT FOUND"
+      - "Three fatal incidents in about 7 months at two plants (4 Jan, 29 Apr, 12 Aug 2025), TGPCB closure 7 May 2025, police cases against management reported (media), PESO status NOT FOUND"
+      - "Promoter exit: trust settled 18 Feb 2026 on a 'no change in control' exemption, sold to Apollo 9 Jul 2026 (4.7 months later); independents down to 3 of 8 after 1 Nov 2026"
+verdict: CONCERN
+scorecard: {clean: 3, caution: 5, red: 2}
+deal_breakers:
+  - "POSSIBLE, not firm: multiple independent exits within 3 years. Four earlier independents left 12 Aug 2024 (reason NOT FOUND); Dr. Kumuda Raghavan resigned 31 Jul 2026 (personal and health reasons); Lt Gen P.R. Kumar completed a full term 1 Nov 2026"
+adverse_findings:
+  - {finding: "Qualified IFC opinion, procurement approvals concentrated with one individual; management override risk named", evidence_tier: VERIFIED, source: "Annual_Report_2026.txt p.103-105", date: "2026-05-29"}
+  - {finding: "Whistle-blower complaint and special audit in CARO xi(c); governance report says no complaint", evidence_tier: VERIFIED, source: "Annual_Report_2026.txt p.108 vs p.54", date: "2026-05-29"}
+  - {finding: "SEBI communication seeking information on suspected insider trading in PEL scrip", evidence_tier: VERIFIED, source: "company disclosure of 2025-11-04, reported by https://www.businesstoday.in/markets/stocks/story/insider-trading-sebi-seeks-info-from-premier-explosives-on-suspected-transactions-500944-2025-11-06", date: "2025-11-03"}
+  - {finding: "SEBI Adjudication Order in respect of Amarnath Gupta in the matter of Premier Explosives Ltd; order text not read", evidence_tier: VERIFIED, source: "https://www.sebi.gov.in/enforcement/orders/oct-2017/adjudication-order-in-respect-of-amarnath-gupta-in-the-matter-of-premier-explosives-ltd_36405.html", date: "2017-10-31"}
+  - {finding: "Katepally explosion, four deaths per AR (three per most media), TGPCB closure order revoked on Rs 6,75,000 compensation; Peddakandukur fire/blast one death 4 Jan 2025; one more death 12 Aug 2025", evidence_tier: VERIFIED, source: "Annual_Report_2026.txt p.29, p.78, p.85, p.95; deccanchronicle 2025-08-12 (media)", date: "2025-04-29"}
+  - {finding: "Police case against management reported after Jan 2025 and Apr 2025 accidents; FIR details and status NOT FOUND", evidence_tier: MEDIA REPORTED, source: "search summaries of deccanchronicle, hansindia, telanganatoday", date: "2025-04-30"}
+  - {finding: "Trust settlement (18 Feb 2026) on 'no change in control' grounds followed by SPA sale of the same 41.33% (9 Jul 2026)", evidence_tier: VERIFIED, source: "20260220-61 exemption order p.4-6; 20260709-34 Board outcome", date: "2026-07-09"}
+  - {finding: "Independent directors 3 of 8 after Raghavan (31 Jul 2026) and Kumar (1 Nov 2026) exits; no replacement found", evidence_tier: VERIFIED, source: "20260731-28 Resignation; 20261101-06 Change in Directors", date: "2026-11-01"}
+  - {finding: "Rs 18.90 Cr export order cancelled for non-receipt of government export licence; earlier licence issues Mar 2025 and Apr 2021", evidence_tier: MEDIA REPORTED, source: "https://www.whalesbook.com/corporate-news/English/industrial-goodsservices/Premier-Explosives-Cancels-indian-rupee1890-Cr-Defence-Order-Over-Export-License-Delay/69e87deabca97ee1069efa27", date: "2026-04-22"}
+transition_evidence:
+  - "Apollo Micro Systems SPA for the whole 41.33% promoter block at Rs 698 per share, about Rs 1,550 Cr cash; closing pending (20260709-34, -33)"
+  - "26% open offer completed: 1,39,77,911 shares accepted, Rs 986.35 Cr paid 4 Nov 2026 (MEDIA REPORTED, multibagg.ai post-offer summary)"
+  - "Gupta family exits the register at SPA close; no pledge; Apollo has no SEBI order found, one Companies Act compounding order (Nov 2025)"
+  - "NOT FOUND: governance overhaul (independents fall to 3 of 8), outside CEO or CFO"
+pledge_pct_latest: 0
+pledge_trend: "stable at nil: NSE XBRL Sep 2026 shows no pledge, NDU or other encumbrance; promoter holding 41.33% flat Dec 2023 to Sep 2026 (screener secondary)"
+searches_performed:
+  - "Apollo Micro Systems Premier Explosives open offer detailed public statement"
+  - "Premier Explosives Katepally explosion April 2025"
+  - "Premier Explosives Peddakandukur fire January 2025 PESO licence suspended"
+  - "SEBI order Premier Explosives Limited Dr A N Gupta"
+  - "Apollo Micro Systems IDL Explosives acquisition Karunakar Reddy SEBI"
+  - "Amarnath Gupta Premier Explosives SEBI adjudicating officer order 2017 (x2)"
+  - "Premier Explosives Peddakandukur blast August 2025 police case"
+  - "Premier Explosives April 2026 fire licence PESO export order cancelled"
+  - "Apollo Micro Systems CCI approval Premier Explosives"
+  - "Katepally restart recommissioning 2026"
+  - "AKS Family Trust exemption order sale to Apollo"
+  - "Apollo Micro Systems promoters SEBI order penalty"
+  - "Premier Explosives insider trading SEBI inquiry update 2026"
+  - "Dr A.N. Gupta founder biography"
+  - "Apollo Micro Systems SEBI settlement adjudication show cause"
+  - "Premier Explosives AmbitionBox Glassdoor"
+  - "WebFetch: SEBI AO 2017 page, SEBI PDF 1509190257690 (different matter), businesstoday insider trading, multibagg offer completion, whalesbook x3"
+searches_skipped:
+  - "Body of SEBI Adjudication Order 31 Oct 2017 (PDF link not found; page header only)"
+  - "Apollo 21 Aug 2026 filing APOLLO_21082026212625 (WebFetch timeout)"
+  - "Detailed Public Statement and Letter of Offer (not retrieved)"
+  - "MCA / director master data and disqualification checks"
+  - "e-Courts, NGT and PESO notice searches"
+  - "IiAS, SES, InGovern proxy advice; SCORES complaints"
+  - "Political donations and government favour searches"
+  - "Short-seller and activist reports"
+  - "Q2 FY27 concall (absent from corpus)"
+verdict_basis: "Qualified IFC opinion with a whistle-blower complaint and special audit missing from the governance report, an open SEBI insider trading inquiry, and three fatal accidents in 2025; offset by nil pledge, low RPT and a full strategic sale with a completed open offer."
+analyst_note: "The verdict scores the outgoing promoter. Control passes to Apollo only when the 41.33% SPA closes; as of 5 Nov 2026 it has not, and Apollo already holds 26% from the open offer (media). Two reads of the IFC qualification: design lapse in a fast-growth year (A) versus an area where something went wrong, given the Rs 3,417.80 L supplier discount and the 11,654.90 L to 4,151.63 L payables swing (B). The separator is the FY27 IFC opinion and the special audit findings. The 2017 SEBI order against Amarnath Gupta is listed but its text was unreadable; stage 0 should treat the pair as order text NOT READ. PESO suspension and restoration, named in the brief, was not confirmed by any source."

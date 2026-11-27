@@ -1,0 +1,1186 @@
+stage: B00-inputs
+company: PREMEXPLN
+company_name: Premier Explosives Ltd
+run_date: 2026-11-15
+model: claude-fable-5-2
+status: complete
+spear: 'Spear: OVERRIDE 2026-11-15 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)'
+load_bearing_facts:
+- 'Guidance vs delivery: FY27 guide Rs 600-700 cr revenue at 15-20% margin. H1 FY27 delivered Rs 247.84 cr at 9.3% EBITDA margin. The FY26 guide of Rs 500 cr delivered Rs 388 cr. Verify the H2 run rate against the filed segment results.'
+- 'Cash conversion: FY26 operating cash flow Rs -1 cr against PAT Rs 45.8 cr. H1 FY26 PAT included Rs 28.96 cr other income. Verify the receivables, contract assets and other income notes in the FY26 annual report.'
+- 'Control change and related parties: the Apollo Micro Systems SPA (9 Jul 2026, 41.33%, Rs 1,550 cr) is pending close. Apollo also owns IDL Explosives. Verify SPA terms, non-compete, board changes and post-close related-party transactions.'
+- 'Safety and licences: accidents hit the Katepally rocket motor plant and the Peddakandukur flares plant, with licences suspended and later restored. Katepally recommissioning was targeted for Sept-Nov 2026. A Rs 18.9 cr export order was cancelled in April 2026 on licence refusal. Verify incident disclosures, licence status and export licence cover for the export book.'
+sector_cap_row: Defence / strategic
+sector_cap: 38x
+sector_cap_evidence: 'section-1b chunk 05 sector cap table (.claude/skills/section-1b/references/05-sector-cap.md). Re-checked after B04: Defence and Space is 81% of FY26 revenue (AR p.25) and 86% of Q2 FY27 revenue (Inv. Pres. p.12); order book is 95% defence at May 2026 (AR p.25) and 96% of Rs 16,420 mn at Oct 2026 (Inv. Pres. p.8). The business sits in the Defence / strategic row on filed revenue and order book. Two readings: (a) Defence / strategic 38x; (b) Specialty chemicals 35x if commercial explosives carry the earnings. The observation that separates them, the filed segment result, is NOT FOUND (single Ind AS 108 segment), so reading (b) is not evidenced. Operator rules the row at the /fttcp gate. Collector guess was ''Specialty chemicals''.'
+reporting_units:
+  results: INR Lakhs
+  annual_report: INR Lakhs
+  screener: INR Cr
+  rating: INR (India Ratings web text; unit as printed)
+concalls_available: true
+no_concall_mode: false
+inventory:
+  prospectus: 0
+  annual-report: 2
+  results: 3
+  rating: 2
+  concalls: 3
+  peer-concalls: 8
+  announcements: 84
+  shareholding: 2
+  research: 0
+  screening: 1
+  presentation: 1
+  other: 3
+input_gaps:
+- 'COLLECTOR: shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend.'
+- 'COLLECTOR: screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again.'
+- 'COLLECTOR: no results PDFs yet (screener has none): add later on github or locally + --push-again'
+- 'COLLECTOR: no rating PDF yet: add later the same way'
+- 'REPAIRED at /step1: results (3 quarters, NSE), shareholding (NSE XBRL Sep 2026 plus screener capture), rating (India Ratings web text, 2 releases) and 70 further exchange filings (NSE) were fetched. The collector warnings above on shareholding, results and rating are closed, with the limits named below.'
+- 'FRESHNESS: the Q2 FY27 concall transcript is ABSENT. The call was held 13 Nov 2026; only the audio link is filed. Expected source: BSE/NSE transcript filing or screener Documents, within days.'
+- 'PEER CONCALLS: BDL has no transcripts on screener or in the NSE feed; 8 of 12 peer transcripts present (SOLARINDS 4, ASTRAMICRO 4).'
+- 'SCREENING: only the main company Data_Sheet CSV is present and populated (''Number of shares'' row blank). P&L, Quarters, Balance Sheet, Cash Flow sheets are ABSENT (empty export); Data_Sheet carries the same raw series. No peer screening CSVs.'
+- 'RATING: the two rating files are text captures of India Ratings web releases, not PDFs (the agency publishes web text). The 2026-05-20 release carries the full rationale.'
+- 'ANNOUNCEMENTS: BSE API returned 403; the list came from NSE (16 Nov 2025 to 13 Nov 2026) plus six earlier items tagged prior-window. Nine open-offer attachments exist only as .zip and were not opened. No fire, accident or licence intimation exists in the 12-month feed; the 2025 intimations are the prior-window files.'
+- 'OCR TEXT LAYER: the three results filings are scans with an OCR text layer; 12 announcement files were re-OCR''d. Check load-bearing figures on the PDF page, not only the .txt.'
+- 'RESEARCH: empty. No broker notes collected.'
+- 'EMPTY-FOLDER CONFIRMATION suppressed under /step1 (standing answer: proceed with the gaps). Empty folders: research, prospectus (not expected).'
+- 'TEXT ROUTE: every inputs/ PDF has a page-marked .txt beside it ([page N] markers), written by tools/extract_pdfs.py. Stages and verifiers read the .txt and open the PDF page where the text is garbled.'
+- 'MISFILE MOVED: inputs/announcements/2553A87B-C739-4EA8-9989-FC49D887987E-132258.pdf -> inputs/other/ (results extract of another, unnamed issuer: paid-up capital Rs 17,553 lakhs, face value Rs 10). Never consumed.'
+- 'UNIDENTIFIED ACQUIRER: inputs/announcements/E70E41CF_39DE_40E0_A761_A85C0CA48817_102508.pdf is a Reg 29(1) disclosure on Premier Explosives shares; the acquirer name is illegible in the OCR text.'
+- 'DUPLICATES in announcements/ (same filing from BSE and NSE): 20260709-34/-35, 20260813-24/-25, 20261001-11/-498a18c3, 20261002-10/-ce127e60, 20261003-09/-99af4aeb, 20261105-05/-8eb7a5ad, 20261112-03/-54c1b4d5, 20261112-02/-c46c595d, 20261113-00/-94becea0, 20261113-01/-3ef294be. Several ''Analysts-Institutional-Investor-Meet'' files are presentations or audio-link notices; the page governs.'
+- 'SEBI AO ORDER 2017 TEXT ABSENT: Adjudication Order of 31 Oct 2017 in respect of Amarnath Gupta in the matter of Premier Explosives Ltd (sebi.gov.in, found by stage 8 on web). Subject and penalty NOT FOUND. Not referenced in a corpus filing, so the SEBI freshness pair stays PASS; the text is an operator upload item.'
+- 'SEBI INSIDER-TRADING COMMUNICATION of 3 Nov 2025 (company disclosure 4 Nov 2025, media-reported; stage 8): the disclosure falls before the 16 Nov 2025 announcement window and is not in the corpus.'
+freshness_pairs:
+- pair: RESULTS to CONCALL
+  trigger_doc: inputs/results/20261112-Q2FY27-results.pdf
+  mate_expected: Q2 FY27 concall transcript (call held 13 Nov 2026)
+  status: FAIL
+  missing_doc: Q2 FY27 concall transcript, Premier Explosives Ltd; expected source BSE/NSE transcript filing or screener Documents
+- pair: RATING BULLETIN to RATIONALE
+  trigger_doc: inputs/rating/20260721-IndRa-rating-watch-developing-PEL.txt
+  mate_expected: full India Ratings rationale
+  status: PASS
+  missing_doc: ''
+  note: the 2026-05-20 release carries the detailed rationale; the 2026-07-21 release carries its own watch rationale
+- pair: SEBI ORDER to ORDER TEXT
+  trigger_doc: inputs/annual-report/Annual_Report_2026.pdf p.41 (SEBI Exemption Order WTM/KCV/CFD/18/2025-26, 8 Jan 2026)
+  mate_expected: order text
+  status: PASS
+  missing_doc: ''
+  note: 'PASS: the order text is in the corpus at inputs/announcements/20260220-61-General-Updates.pdf. Outside the pair rule (not referenced in any corpus filing): stage 8 found by web a SEBI Adjudication Order of 31 Oct 2017 in respect of Amarnath Gupta in the matter of Premier Explosives Ltd (https://www.sebi.gov.in/enforcement/orders/oct-2017/adjudication-order-in-respect-of-amarnath-gupta-in-the-matter-of-premier-explosives-ltd_36405.html); its text was NOT READ by stage 8 or by one orchestrator fetch (page shell only). It goes on the operator''s upload list at Halt 1.'
+- pair: AR to LATEST AUDITED ANNUAL RESULTS
+  trigger_doc: inputs/results/20260529-Q4FY26-results.pdf (FY26 audited)
+  mate_expected: FY2025-26 annual report
+  status: PASS
+  missing_doc: ''
+freshness_verdict: CORPUS GAPPED-FRESHNESS
+empty_folder_question: 'suppressed by /step1 autonomy contract; defaults taken: run degraded per the DEGRADATION MAP'
+flags: []
+analyst_note: ''
+intake_check:
+  agent: stage-00-intake-check
+  model: claude-haiku-5-5
+  status: complete
+  rows: 109
+  unreadable: 0
+  unidentified: 2
+  moves_made: 1
+  note: 'Three folder_match false rows verified by the orchestrator at the page: two deliberate placements kept, one foreign-issuer file moved to other/. Screener CSV face value rows disagree (2.0 and 10.0); results filings print Rs 2. Shareholding XML is the BSE scheme (scrip 526247).'
+corpus_manifest:
+- path: inputs/announcements/20250104-prior-window-Updates.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 fire accident intimation
+  period: 2025-01-04 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20250430-prior-window-Updates.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 fire and explosion intimation
+  period: 2025-04-30 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20250603-prior-window-Updates.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 TGPCB closure order intimation
+  period: 2025-06-03 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20250916-prior-window-Credit-Rating-New.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 credit rating letter (India Ratings)
+  period: 2025-09-16 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Credit-rating letter filed under Reg 30; deliberate placement per run notes
+- path: inputs/announcements/20250916-prior-window-Updates.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 TGPCB closure order revoked
+  period: 2025-09-16 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20251111-prior-window-Bagging-Receiving-of-orders-contracts.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 export order intimation
+  period: 2025-11-11 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Order INR 16.40 crore
+- path: inputs/announcements/20251119-72-Analysts-Institutional-Investor-Meet-Con.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall transcript cover letter
+  period: Q2 FY26 (call 2025-11-14; letter 2025-11-19)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20251124-71-Bagging-Receiving-of-orders-contracts.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 export order intimation
+  period: 2025-11-24 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Order INR 73.11 crore
+- path: inputs/announcements/20251229-70-Trading-Window.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: trading window closure
+  period: 2025-12-29 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260110-68-Certificate-under-SEBI-Depositories-and.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 74(5) depository certificate (KFin)
+  period: quarter ended 2025-12-31 (letter 2026-01-10)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260121-67-Bagging-Receiving-of-orders-contracts.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 purchase order intimation
+  period: 2026-01-21 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: USD 1,928,000 rocket motors
+- path: inputs/announcements/20260212-66-Outcome-of-Board-Meeting.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: results outcome of board meeting
+  period: Q3 FY26 (quarter and nine months ended 2025-12-31)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260213-65-Copy-of-Newspaper-Publication.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: results newspaper publication
+  period: Q3 FY26 (quarter ended 2025-12-31)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Page 2 carries an unrelated e-auction notice by another party
+- path: inputs/announcements/20260217-64-Analysts-Institutional-Investor-Meet-Con.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall schedule intimation
+  period: Q3 FY26 (call 2026-02-20)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260219-63-Analysts-Institutional-Investor-Meet-Con.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: investor presentation cover letter
+  period: Q3 FY26 (letter 2026-02-19)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filename says meet; page says presentation
+- path: inputs/announcements/20260220-59-Disclosure-under-SEBI-Takeover-Regulatio.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: SAST Reg 29 disclosure (AKS Family Trust, inter-se settlement)
+  period: 2026-02-20 (letter); settlement completed 2026-02-18
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Text layer re-OCR'd
+- path: inputs/announcements/20260220-60-Analysts-Institutional-Investor-Meet-Con.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall audio recording notice
+  period: Q3 FY26 (call 2026-02-20)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260220-61-General-Updates.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 disclosure of promoter share settlement
+  period: 2026-02-20 (letter); completion 2026-02-18
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260220-62-General-Updates.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: SAST Reg 29(1)/(2) disclosure (AKS Family Trust)
+  period: 2026-02-20 (letter)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Text layer re-OCR'd
+- path: inputs/announcements/20260225-58-Analysts-Institutional-Investor-Meet-Con.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall transcript cover letter
+  period: Q3 FY26 (call 2026-02-20; letter 2026-02-25)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260317-56-Reply-to-Clarification-Financial-results.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: reply to exchange clarification on results signatory
+  period: Q3 FY26 (letter 2026-03-13)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filename date 2026-03-17 differs from page date 2026-03-13
+- path: inputs/announcements/20260326-55-Trading-Window.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: trading window closure
+  period: 2026-03-26 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260406-54-Reply-to-Clarification-Financial-results.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: reply to exchange clarification on XBRL filing
+  period: Q2 FY26 (quarter ended 2025-09-30; letter 2026-01-23)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filename date 2026-04-06 differs from page date 2026-01-23
+- path: inputs/announcements/20260410-53-Certificate-under-SEBI-Depositories-and.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 74(5) depository certificate (KFin)
+  period: quarter ended 2026-03-31 (letter 2026-04-10)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260417-52-Updates.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 intimation, promoter compliance certificate under exemption order
+  period: FY2025-26 (letter 2026-04-17)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260422-50-Bagging-Receiving-of-orders-contracts.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 export order intimation
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Order INR 350.23 crore. Letter date OCR garbled ('Apri I22, 2046'); year not confirmed on page, period left blank
+- path: inputs/announcements/20260422-51-Updates.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 export order cancellation
+  period: 2026-04-22 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Cancels Rs 18.90 crore order
+- path: inputs/announcements/20260505-49-Bagging-Receiving-of-orders-contracts.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 export order intimation
+  period: 2026-05-05 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Order INR 33.69 crore
+- path: inputs/announcements/20260521-48-Credit-Rating.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 credit rating letter (India Ratings)
+  period: 2026-05-21 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260525-47-Analysts-Institutional-Investor-Meet-Con.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall schedule intimation
+  period: Q4 FY26 (call 2026-05-30; letter 2026-05-25)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260529-45-Outcome-of-Board-Meeting.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: results outcome of board meeting (audited)
+  period: Q4 and FY2025-26 (year ended 2026-03-31)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260529-46-Dividend.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: results outcome of board meeting with dividend
+  period: FY2025-26 (year ended 2026-03-31)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Same letter text as 20260529-45; dividend Rs 0.50 per share
+- path: inputs/announcements/20260530-42-Analysts-Institutional-Investor-Meet-Con.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall audio recording notice
+  period: Q4 and FY2025-26 (call 2026-05-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260530-43-Copy-of-Newspaper-Publication.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: results newspaper publication (audited)
+  period: Q4 and FY2025-26 (letter 2026-05-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260530-44-Analysts-Institutional-Investor-Meet-Con.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: investor presentation cover letter
+  period: Q4 and FY2025-26 (letter 2026-05-29)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filename says meet; page says presentation
+- path: inputs/announcements/20260602-41-Analysts-Institutional-Investor-Meet-Con.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall transcript cover letter
+  period: Q4 and FY2025-26 (call 2026-05-30; letter 2026-06-02)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260603-40-Disclosure-under-SEBI-Takeover-Regulatio.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 31(4) SAST promoter disclosure
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Page 1 OCR letter dated 2026-04-07 (filename says 2026-06-03); holding date not read on page 1
+- path: inputs/announcements/20260622-39-Disclosure-under-SEBI-Takeover-Regulatio.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 31(4) SAST promoter declaration
+  period: FY2025-26 (holding as on 2026-03-31; letter 2026-04-01)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Promoter group holds 41.33 per cent
+- path: inputs/announcements/20260626-38-Trading-Window.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: trading window closure
+  period: 2026-06-26 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260704-37-Certificate-under-SEBI-Depositories-and.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 74(5) depository certificate (KFin)
+  period: quarter ended 2026-06-30 (letter 2026-07-04)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260709-33-Press-Release.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 letter enclosing press release (Apollo Micro Systems SPA)
+  period: 2026-07-09 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Enclosure is the acquirer's press release
+- path: inputs/announcements/20260709-34-Outcome-of-Board-Meeting.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 intimation of SPA and open offer (Apollo Micro Systems)
+  period: 2026-07-09 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: 'Open offer price on face: INR 698. Filename says outcome of board meeting; content is SPA intimation. Second version is 20260709-35'
+- path: inputs/announcements/20260709-35-Outcome-of-Board-Meeting.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 intimation of SPA and open offer (Apollo Micro Systems)
+  period: 2026-07-09 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: 'Open offer price on face: INR 697.52, differs from 20260709-34 (INR 698)'
+- path: inputs/announcements/20260710-32-News-Verification.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 letter enclosing press release (duplicate)
+  period: 2026-07-09 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Page content matches 20260709-33; filename label 'News-Verification' is not on the page
+- path: inputs/announcements/20260728-29-Copy-of-Newspaper-Publication.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 47 newspaper advertisement (IEPF transfer notice)
+  period: 2026-07-28 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Page 2 carries a results extract for quarter ended 2026-06-30
+- path: inputs/announcements/20260731-28-Resignation.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 director resignation
+  period: 2026-07-31 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260811-26-Analysts-Institutional-Investor-Meet-Con.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall schedule intimation
+  period: Q1 FY27 (call 2026-08-14; letter 2026-08-11)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260813-22-Analysts-Institutional-Investor-Meet-Con.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: investor presentation cover letter
+  period: Q1 FY27 (quarter ended 2026-06-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filename says meet; page says presentation
+- path: inputs/announcements/20260813-23-Record-Date.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 record date and AGM date intimation
+  period: FY2025-26 (letter 2026-08-13; record date 2026-09-23)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260813-24-Outcome-of-Board-Meeting.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: results outcome of board meeting (unaudited)
+  period: Q1 FY27 (quarter ended 2026-06-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260813-25-Outcome-of-Board-Meeting.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: results outcome of board meeting (unaudited)
+  period: Q1 FY27 (quarter ended 2026-06-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Duplicate text of 20260813-24
+- path: inputs/announcements/20260814-19-Analysts-Institutional-Investor-Meet-Con.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall audio recording notice
+  period: Q1 FY27 (call 2026-08-14)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260814-20-General-Updates.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 exchange fine waiver rejection (Reg 17(1A))
+  period: 2026-08-14 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260814-21-Copy-of-Newspaper-Publication.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: results newspaper publication (unaudited)
+  period: Q1 FY27 (quarter ended 2026-06-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260820-18-Analysts-Institutional-Investor-Meet-Con.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall transcript cover letter
+  period: Q1 FY27 (call 2026-08-14; letter 2026-08-20)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260821-17-General-Updates.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 letter, SEBI letter to open offer manager (Apollo Micro Systems open offer)
+  period: 2026-08-21 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Open offer for 26 per cent of share capital
+- path: inputs/announcements/20260903-16-Shareholders-meeting.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 submission of AGM notice
+  period: FY2025-26 (letter 2026-09-03)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260905-15-Copy-of-Newspaper-Publication.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: newspaper publication of AGM schedule
+  period: FY2025-26 (letter 2026-09-05)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260907-14-General-Updates.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 annual report web-link letter
+  period: FY2025-26 (letter 2026-09-07)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260927-13-Trading-Window.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: trading window closure
+  period: 2026-09-27 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20260930-12-Shareholders-meeting.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: AGM proceedings summary
+  period: FY2025-26 (AGM held 2026-09-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20261001-11-Shareholders-meeting.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: AGM voting results (Reg 44(3))
+  period: FY2025-26 (letter 2026-10-01)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20261001-498a18c3-4691-4cb8-8dd7-c3a40ca52db0.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: AGM voting results (Reg 44(3))
+  period: FY2025-26 (letter 2026-10-01)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Duplicate of 20261001-11
+- path: inputs/announcements/20261002-10-General-Updates.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 26(7) SAST IDC recommendation letter
+  period: 2026-10-02 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Open offer by Apollo Micro Systems
+- path: inputs/announcements/20261002-ce127e60-1b02-4159-ac4f-795f966c302e.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 26(7) SAST IDC recommendation letter
+  period: 2026-10-02 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Duplicate of 20261002-10
+- path: inputs/announcements/20261003-09-Certificate-under-SEBI-Depositories-and.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 74(5) depository certificate (KFin)
+  period: quarter ended 2026-09-30 (letter 2026-10-03)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20261003-99af4aeb-24b3-4712-829a-c41d128fbdc7.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 74(5) depository certificate (KFin)
+  period: quarter ended 2026-09-30 (letter 2026-10-03)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Duplicate of 20261003-09
+- path: inputs/announcements/20261101-06-Change-in-Director-s.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 cessation of independent director
+  period: 2026-11-01 (letter date; cessation effective 2026-11-01)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20261104-ebe8809d-8c9f-41d9-8804-0e1ab21590b7.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 29 board meeting intimation
+  period: Q2 and H1 FY27 (letter 2026-11-04; board 2026-11-12)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20261105-05-Analysts-Institutional-Investor-Meet-Con.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall schedule intimation
+  period: Q2 and H1 FY27 (call 2026-11-13; letter 2026-11-05)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20261105-8eb7a5ad-a238-436d-ae7b-36084ef7289f.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall schedule intimation
+  period: Q2 and H1 FY27 (call 2026-11-13; letter 2026-11-05)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Duplicate of 20261105-05
+- path: inputs/announcements/20261112-02-Analysts-Institutional-Investor-Meet-Con.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: investor presentation cover letter
+  period: Q2 and H1 FY27 (quarter ended 2026-09-30; letter 2026-11-12)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filename says meet; page says presentation
+- path: inputs/announcements/20261112-03-Outcome-of-Board-Meeting.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: results outcome of board meeting (unaudited)
+  period: Q2 and H1 FY27 (quarter and half year ended 2026-09-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20261112-54c1b4d5-5778-473f-9e04-9276d784ba09.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: results outcome of board meeting (unaudited)
+  period: Q2 and H1 FY27 (quarter and half year ended 2026-09-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Duplicate of 20261112-03 (BSE copy)
+- path: inputs/announcements/20261112-c46c595d-f8a1-450f-be74-a08b6a9ffe7c.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: investor presentation cover letter
+  period: Q2 and H1 FY27 (quarter ended 2026-09-30; letter 2026-11-12)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Duplicate of 20261112-02
+- path: inputs/announcements/20261113-00-Analysts-Institutional-Investor-Meet-Con.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall audio recording notice
+  period: Q2 and H1 FY27 (call 2026-11-13; letter 2026-11-13)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filename says meet; page says audio recording
+- path: inputs/announcements/20261113-01-Copy-of-Newspaper-Publication.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: results newspaper publication (unaudited)
+  period: Q2 and H1 FY27 (quarter ended 2026-09-30; letter 2026-11-13)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/20261113-3ef294be-3050-4aa7-90ae-0cd5045bce42.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: results newspaper publication (unaudited)
+  period: Q2 and H1 FY27 (quarter ended 2026-09-30; letter 2026-11-13)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Duplicate of 20261113-01
+- path: inputs/announcements/20261113-94becea0-0721-47f7-b153-88c96247c278.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall audio recording notice
+  period: Q2 and H1 FY27 (call 2026-11-13; letter 2026-11-13)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Duplicate of 20261113-00 (BSE copy)
+- path: inputs/other/2553A87B-C739-4EA8-9989-FC49D887987E-132258.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: ''
+  doc_type: unaudited results extract (standalone and consolidated)
+  period: quarter and half year ended 2026-09-30
+  folder_match: false
+  proposed_move: ''
+  page_read: 2
+  note: UNIDENTIFIED. Page 1 has no text layer. Page 2 extract names no company. Face value shown as Rs 10; PEL letters state Rs 2. Results-type file in announcements; destination depends on issuer, not moved. Figures in lakhs on face UNIDENTIFIED issuer
+  orchestrator_verified: 'CONFIRMED not Premier Explosives: results extract for Q2 FY27 of an unnamed issuer (paid-up capital Rs 17,553 lakhs, face value Rs 10; Premier is Rs 1,075.22 lakhs, face value Rs 2). MOVED to inputs/other/; never consumed.'
+- path: inputs/announcements/75B67FEA_0C01_4081_821B_5E4D09771EBA_104905.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: Reg 30 letter enclosing Reg 29(1) disclosure by Apollo Micro Systems
+  period: 2026-11-05 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Acquirer acquires 1,39,77,911 shares (26 per cent) via open offer
+- path: inputs/announcements/A3941200_CB20_4C85_9BE1_5FCAE217C03D_154456.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Rajasthan Global Securities Private Limited (discloser; target Premier Explosives Limited)
+  doc_type: SAST Reg 29(2) disclosure (seller)
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Page 1 OCR shows no legible date; period left blank. Target company and exchanges legible
+- path: inputs/announcements/B8822923_0806_4316_BE64_35779F57BCB4_104708.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: HDFC Asset Management Company Limited (discloser for HDFC Mutual Fund schemes; target Premier Explosives Limited)
+  doc_type: SAST Reg 29(2) disclosure (third-party holder)
+  period: holding as on 2026-11-03
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Third-party disclosure, not a company document. Holding fell 8.72 per cent per page
+- path: inputs/announcements/C4F37FF6-EEF6-49FB-BC1F-4DE0211FDD15-145626.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Apollo Micro Systems Limited (acquirer; sender not named on page 1)
+  doc_type: open offer letter to exchanges (SAST Regs 3(1) and 4)
+  period: 2026-10-08 (letter date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Open offer for 1,39,77,911 shares, 26 per cent of Premier Explosives Limited
+- path: inputs/announcements/E70E41CF_39DE_40E0_A761_A85C0CA48817_102508.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: ''
+  doc_type: SAST Reg 29(1) disclosure (acquirer)
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: UNIDENTIFIED. Target company is Premier Explosives Ltd on the face. Acquirer name is not legible in OCR text. No date legible on page 1
+  orchestrator_verified: 'KEPT: Reg 29(1) SAST disclosure, target Premier Explosives Ltd; acquirer name illegible in OCR (holding 4.71% before, +0.31%). Acquirer UNIDENTIFIED; no number from it is anchored evidence until read on the PDF page.'
+- path: inputs/annual-report/Annual_Report_2025.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: annual report (45th AR)
+  period: FY2024-25 (letter 2025-09-06)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filename year 2025 is the FY end year; page says FY2024-25
+- path: inputs/annual-report/Annual_Report_2026.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: annual report (46th AR)
+  period: FY2025-26 (letter 2026-09-03)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/concalls/Concall_Aug_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall transcript (cover letter and transcript)
+  period: Q1 FY27 (call 2026-08-14; letter 2026-08-20)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/concalls/Concall_Feb_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall transcript (cover letter and transcript)
+  period: Q3 FY26 (call 2026-02-20; letter 2026-02-25)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/concalls/Concall_Jun_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall transcript (cover letter and transcript)
+  period: Q4 and FY2025-26 (call 2026-05-30; letter 2026-06-02)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/other/Concall_Nov_2025_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: concall transcript (cover letter and transcript)
+  period: Q2 and H1 FY26 (call 2025-11-14; letter 2025-11-19)
+  folder_match: false
+  proposed_move: inputs/concalls/
+  page_read: 1
+  note: Company's own concall transcript in other/. Known deliberate placement; reported per page
+  orchestrator_verified: 'KEPT in other/: deliberate /step1 placement (4th-most-recent main transcript; SOLARINDS acquisition call, not an earnings call).'
+- path: inputs/other/SOLARINDS-202609-concall-transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Solar Industries India Limited (peer, SOLARINDS)
+  doc_type: concall transcript (peer, Omnia Holdings acquisition call)
+  period: call 2026-09-15 (letter 2026-09-17)
+  folder_match: false
+  proposed_move: inputs/peer-concalls/
+  page_read: 1
+  note: Peer transcript in other/. Known deliberate placement; reported per page
+  orchestrator_verified: 'KEPT in other/: deliberate /step1 placement (4th-most-recent main transcript; SOLARINDS acquisition call, not an earnings call).'
+- path: inputs/peer-concalls/ASTRAMICRO-202511-Q2FY26-concall-transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited (peer, ASTRAMICRO)
+  doc_type: concall transcript (peer)
+  period: Q2 FY26 (call 2025-11-13; letter 2025-11-19)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/peer-concalls/ASTRAMICRO-202602-Q3FY26-concall-transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited (peer, ASTRAMICRO)
+  doc_type: concall transcript (peer)
+  period: Q3 FY26 (call 2026-02-13; letter 2026-02-19)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/peer-concalls/ASTRAMICRO-202606-Q4FY26-concall-transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited (peer, ASTRAMICRO)
+  doc_type: concall transcript (peer)
+  period: call 2026-05-27 (letter 2026-06-01); quarter not named on page 1
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/peer-concalls/ASTRAMICRO-202608-Q1FY27-concall-transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Astra Microwave Products Limited (peer, ASTRAMICRO)
+  doc_type: concall transcript (peer)
+  period: call 2026-08-11 (letter 2026-08-17); quarter not named on page 1
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/peer-concalls/SOLARINDS-202511-Q2FY26-concall-transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Solar Industries India Limited (peer, SOLARINDS)
+  doc_type: concall transcript (peer)
+  period: Q2 FY26 (quarter ended 2025-09-30; call 2025-11-11; letter 2025-11-14)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/peer-concalls/SOLARINDS-202602-Q3FY26-concall-transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Solar Industries India Limited (peer, SOLARINDS)
+  doc_type: concall transcript (peer)
+  period: Q3 FY26 (quarter ended 2025-12-31; call 2026-02-04; letter 2026-02-09)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/peer-concalls/SOLARINDS-202605-Q4FY26-concall-transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Solar Industries India Limited (peer, SOLARINDS)
+  doc_type: concall transcript (peer)
+  period: FY2025-26 (year ended 2026-03-31; call 2026-05-15; letter 2026-05-18)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Page 1 OCR text overprinted; identity and period read from it
+- path: inputs/peer-concalls/SOLARINDS-20261113-Q2FY27-concall-transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Solar Industries India Limited (peer, SOLARINDS)
+  doc_type: concall transcript (peer)
+  period: Q2 FY27 (quarter and half year ended 2026-09-30; call 2026-11-04; letter 2026-11-06)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filename date 2026-11-13 differs from page letter date 2026-11-06
+- path: inputs/presentation/Investor_Presentation_1.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: investor presentation (Q2 and H1 FY27) with cover letter
+  period: Q2 and H1 FY27 (quarter ended 2026-09-30; letter 2026-11-12)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/results/20260529-Q4FY26-results.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: results outcome of board meeting (audited)
+  period: Q4 and FY2025-26 (year ended 2026-03-31)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/results/20260813-Q1FY27-results.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: results outcome of board meeting (unaudited)
+  period: Q1 FY27 (quarter ended 2026-06-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/results/20261112-Q2FY27-results.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: results outcome of board meeting (unaudited)
+  period: Q2 and H1 FY27 (quarter and half year ended 2026-09-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/rating/20260520-IndRa-affirm-IND-A-minus-stable-PEL-detailed-rationale.txt
+  file_type: txt
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: rating (India Ratings press release, web text capture)
+  period: 2026-05-20 (rating date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Text capture of web release; no PDF
+- path: inputs/rating/20260721-IndRa-rating-watch-developing-PEL.txt
+  file_type: txt
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: rating (India Ratings press release, web text capture)
+  period: 2026-07-21 (rating date)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Text capture of web release; no PDF
+- path: inputs/screening/screener-Data_Sheet.csv
+  file_type: csv
+  content_ok: true
+  issuer: Premier Explosives Ltd (sheet header 'PREMIER EXPLOSIVES LTD')
+  doc_type: screener data sheet (annual and quarterly figures)
+  period: annual FY2017 to FY2026; quarters to 2026-09-30
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Units not stated on the sheet. Face value row reads 2.0 while balance-sheet row reads 10.0
+- path: inputs/shareholding/20261009-SHP-Sep2026-NSE-XBRL.xml
+  file_type: xml
+  content_ok: true
+  issuer: Premier Explosives Limited
+  doc_type: XBRL shareholding pattern (BSE scrip 526247)
+  period: quarter ended 2026-09-30 (context 2026-07-01 to 2026-09-30)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: XBRL has no pages; identity from ScripCode and PREMIER EXPLOSIVES tags. Filename says NSE, scheme is BSE
+- path: inputs/shareholding/screener-shareholding-capture-SECONDARY.txt
+  file_type: txt
+  content_ok: true
+  issuer: Premier Explosives Limited (PREMEXPLN)
+  doc_type: shareholding capture from screener.in (secondary, not an exchange filing)
+  period: Dec 2023 to Sep 2026 (quarterly); Mar 2017 to Sep 2026 (annual)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Secondary capture by its own header

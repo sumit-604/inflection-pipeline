@@ -1,0 +1,51 @@
+stage: B07-emoat
+company: "PREMEXPLN"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "FRESHNESS: Q2 FY27 concall transcript (13 Nov 2026) ABSENT. Katepally commissioning, licence receipts, order book bridge (Rs 1,393 Cr to Rs 1,642 Cr) and any guidance change after 14 Aug 2026 are NOT FOUND."
+  - "UTILISATION: no facility utilisation figure in AR, calls, deck or rating. Capacity units for RDX/HMX (100 to 600 tonnes) are an analyst's words (Q3 FY26 call p.12), not restated by management."
+  - "SEGMENT RESULT NOT FOUND (single Ind AS 108 segment); expected 3-year revenue mix NOT FOUND; capex funding source NOT FOUND; export licence cover in rupees NOT FOUND; licence numbers and dates for Katepally and Peddakandukur NOT FOUND."
+  - "COLLECTOR (B00): screener P&L, Quarters, Balance Sheet, Cash Flow sheets empty; Data_Sheet only; no peer screening CSVs; BDL transcripts absent; research folder empty; results filings are OCR scans; nine open-offer zips unopened; one Reg 29(1) acquirer name illegible."
+  - "SPA terms, non-compete, board changes and post-close related-party terms with Apollo NOT FOUND."
+flags:
+  - "KNIFE-EDGE: em_score 12.3 is 0.3 above the 12.0 MODEST floor. H2 likelihood H to M gives 11.3 and class NONE. Separator: named post-close Apollo order, or first dispatch on the Rs 350.23 Cr export order."
+  - "COUNTER-EVIDENCE: F2 execution (grade D, 8 of 14 promises missed), G1 war chest (net cash Rs 23.15 Cr vs Rs 56.50 Cr; CFO Rs -1.44 Cr), G2 WC days 65.6 to 108.0 work against the scan."
+  - "E2 rests on signed orders worth Rs 474.71 Cr with no export revenue yet; Rs 18.90 Cr order cancelled on licence refusal after about 13 months."
+  - "H2 documents the investor, not an operating link; Ind-Ra put the rating on Watch Developing on 21 Jul 2026."
+  - "I1 and I2 contribute 0.0 of 12.3."
+em_score: 12.3
+em_classification: "MODEST"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "CLAIM-led with DOC capex", time_to_materialise: "6-18 months"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "DOC certifications, CLAIM sole-source", time_to_materialise: "present; margin proof 12-24 months"}
+  - {id: "E2", name: "China+1 / export beneficiary", strength: "Moderate", evidence_type: "DOC (four signed export orders)", time_to_materialise: "6-12 months"}
+  - {id: "H2", name: "Strategic partnerships (Apollo SPA, JV, inbound ToT)", strength: "Moderate", evidence_type: "DOC", time_to_materialise: "12-24 months"}
+evidence_mix: {documented: 12, claim: 12, inference: 4}
+completionist_recount: "📄 recount performed: 12 documented items across 5 categories (E2 4, A1 2, B2 2, H2 3, R1 1). Six categories carry points, below the 12 guard."
+catalysts_12m:
+  - {catalyst: "Katepally RDX/HMX water trials then qualification, first sales", window: "Q3-Q4 FY27", evidence_type: "DOC capex (CWIP Rs 33.35 Cr), CLAIM timing", anchor: "Inv. Pres. p.9; Q1 FY27 call p.8"}
+  - {catalyst: "Export licence and first dispatch on Rs 350.23 Cr order", window: "Q4 FY27", evidence_type: "DOC order, CLAIM timing", anchor: "filing 20260422-50; Q1 FY27 call p.10"}
+  - {catalyst: "Apollo SPA close (CCI approval) and named post-close orders", window: "Dec 2026 onward", evidence_type: "DOC SPA, CLAIM synergies", anchor: "Inv. Pres. p.10; AR p.29; Q1 FY27 call p.6"}
+  - {catalyst: "Katepally large rocket motor plant production", window: "Nov 2026 claim", evidence_type: "CLAIM", anchor: "Q4 FY26 call p.17"}
+  - {catalyst: "DRDO clearance of alternate raw material (mines, payloads, ammunition)", window: "About Feb 2027", evidence_type: "CLAIM", anchor: "Q1 FY27 call p.7"}
+capex_embedded_growth_pct: 33.5   # Rs 60 Cr programme x FY26 net-block turnover 2.17x = Rs 130.2 Cr on FY26 revenue Rs 388.34 Cr; 29.8% at 3-yr avg 1.93x
+optionality_register:
+  - {optionality: "DRDO clears in-house alternate high explosive, opening mines, payloads, ammunition", converting_evidence: "Written DRDO clearance and first invoice", first_appears: "Q3/Q4 FY27 call; order filing", window: "About Feb 2027, 6-12 months"}
+  - {optionality: "Medium-calibre ammunition and anti-armour mines reach production", converting_evidence: "Signed RFP award or supply order with value", first_appears: "Exchange order intimation", window: "6-18 months"}
+  - {optionality: "Drone and loitering-munition payload partnerships", converting_evidence: "Named MoU counterparty plus purchase order", first_appears: "Exchange filing or call", window: "12-24 months"}
+  - {optionality: "Apollo brings naval and electronics orders", converting_evidence: "Named order with Apollo or Navy link; related-party terms in FY27 AR", first_appears: "Order announcement; FY27 AR related-party note", window: "6-18 months"}
+  - {optionality: "Andhra Pradesh 400-acre plant", converting_evidence: "Demand note and allotment letter, board capex approval with Rs amount", first_appears: "Exchange filing; call", window: "Demand note 6-12 months; plant 1-1.5 years after"}
+  - {optionality: "QRSAM propellant share", converting_evidence: "BEL tender and order to supplier tier", first_appears: "Order intimation", window: "12-36 months"}
+  - {optionality: "Positive Indigenisation List items cover PEL products", converting_evidence: "List entry naming a PEL product with orders", first_appears: "MoD notification; order filing", window: "12-24 months"}
+  - {optionality: "Process gain from in-house materials and automation", converting_evidence: "Material cost below 60% of revenue for two quarters", first_appears: "Quarterly results", window: "6-12 months"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (core 53) plus EM 12.3 MODEST: no EXPANSION, HIGH POTENTIAL or TURNAROUND case; option value sits in the register, not the score."
+top_moat_risks:
+  - "Export licence refusal or delay (Rs 400 Cr of book awaited licences; Rs 18.90 Cr cancelled)"
+  - "Execution record: grade D, every dated operational promise slipped; third accident or licence suspension"
+  - "Apollo change of control: related-party flows, rating watch, two independent directors left"
+  - "Free-issue and single-source input dependence (Munitions India, customer free-issue material)"
+  - "Procurement control weakness (IFC qualified) and cash conversion (FY26 CFO negative)"
+analyst_note: "Score is knife-edge at 12.3 against a 12.0 floor; one likelihood step on H2 flips the class to NONE. Four Moderate rows are two signed-contract rows (E2, H2) and two claim-led rows (A1, B2). B2 repeats the switching-cost moat already in B04, so it is existing, not new. 2C: Rs 60 Cr x 2.17x = Rs 130.2 Cr = 33.5%; management's Rs 150-200 Cr RDX/HMX alone exceeds this, so treat the claim as unproven. Land conflict: Ind-Ra cites about 200 acres per site with room to expand; the MD says existing sites are full. Q2 FY27 call is the most valuable missing document."

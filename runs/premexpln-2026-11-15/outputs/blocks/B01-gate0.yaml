@@ -1,0 +1,41 @@
+stage: B01-gate0
+company: "PREMEXPLN"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "COLLECTOR: screener Profit & Loss, Quarters, Balance Sheet, Cash Flow sheets EMPTY; only Data_Sheet populated ('Number of shares' row blank). Data_Sheet carries the raw series. No screener ROCE, no trade payables, no current liabilities for FY17-FY24."
+  - "FRESHNESS: Q2 FY27 concall transcript ABSENT (call held 13 Nov 2026). Freshness verdict CORPUS GAPPED-FRESHNESS."
+  - "PEER DATA: no peer screening CSVs; BDL has no transcripts. M2, M5, M7, M9 scored 0 PEER DATA NEEDED."
+  - "RESEARCH: empty. No broker notes."
+  - "OCR TEXT LAYER: results filings are scans; figures anchored to .txt, key lines cross-checked to Data_Sheet."
+  - "STAGE 1 OWN: capex NOT FOUND FY17-FY23 (CFI used as proxy); trade payables NOT FOUND FY17-FY24 (B4 scored 0); current liabilities NOT FOUND FY17-FY24 (ROCE capital employed proxy used); R&D history FY17-FY24 NOT FOUND."
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE (core 53). Depressors are FY18-FY23: EBIT negative FY20 and FY21, ROCE 5-9% in FY18, FY19, FY22, FY23, so median ROCE 8.2% and median ROE 5.3% drive Block A to 5/20. Recovery FY24-FY26 (ROCE 18.1, 17.0, 19.9%)."}
+  - {type: FLAG-CASH, reason: "FY26 CFO Rs -1.27 cr against PAT Rs 45.81 cr (screener-data; results Q4 FY26 p.17 Rs -127.20 lakhs). FY26 PBT includes other income Rs 35.93 cr (screener-data), of which purchase discounts Rs 3,417.80 lakhs (results Q4 FY26 note 6)."}
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 5, B: 8, C: 10, D: 18, E: 12}
+core_score: 53
+moat_score: 9
+grand_total: 62
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers:
+  - "DB1 Block A 5 (<8): max GOOD. Years driving it: FY17-FY23 ROCE (FY20 -3.6%, FY21 -3.2%, FY22 5.3%, FY23 6.6%, FY18 7.4%, FY19 9.0%)"
+  - "DB3 median ROCE 8.2% (<10): max AVERAGE. Same FY17-FY23 years; FY24-FY26 sit at 17.0-19.9%"
+history_downgrade: false
+data_notes:
+  - "ROCE COMPUTED, not source-supplied: Data_Sheet has no ROCE and no current liabilities FY17-FY24. Proxy capital employed = equity capital + reserves + borrowings (closing); EBIT = PBT + interest (includes other income). FY26 ROCE ex other income = (63.87-35.93)/321.41 = 8.7%."
+  - "ROE computed on average net worth (capital + reserves); FY17 on closing only (no FY16)."
+  - "FCF = CFO - capex. Capex from filings FY24 Rs 23.39 cr, FY25 Rs 13.42 cr, FY26 Rs 27.83 cr (consolidated cash flow). FY17-FY23 capex NOT FOUND: net cash from investing used as proxy."
+  - "B4 WC days: trade payables NOT FOUND before FY25, so earliest-year WC days not computable; B4 scored 0. Memo (revenue basis, filings): FY25 65.6 days, FY26 108.0 days."
+  - "M12 WC days known for 2 of 10 years only (FY25, FY26), both above 45; scored 0."
+  - "M2, M5, M7, M9: PEER DATA NEEDED, scored 0. M6: R&D Rs 49.71 lakhs FY26 = 0.13% of revenue (AR FY26 Note 28), below 1%; scored 0."
+  - "M11 scored 5 mechanically (latest 3yr revenue CAGR 24.3% vs prior 7.1%; selling and admin 8.40% to 5.69% of sales). The test is not a network-effects finding for this business."
+  - "Net worth for E4 uses screener equity + reserves Rs 289.07 cr; contingent liabilities Rs 83.54 cr include bank LC and guarantees Rs 76.07 cr. Excluding them, claims are Rs 7.47 cr = 2.6% (E4 would be 5)."
+  - "E3 pledge 0%: NSE XBRL Sep 2026 flags Pledged false; no numeric pledge field."
+  - "Other income spike FY26 Rs 35.93 cr (screener-data) inflates FY26 PBT, ROCE, PAT CAGR and interest cover."
+block_b_trend: "deteriorating: FY26 CFO Rs -1.27 cr against PAT Rs 45.81 cr, after FY25 CFO Rs 118.48 cr (screener-data), cumulative CFO/PAT still 1.84"
+analyst_note: "Core 53 is a tale of two periods. FY17-FY23 produced median ROCE 8.2% and two loss years. FY24-FY26 ROCE is 17-20%, but FY26 leans on Rs 35.93 cr other income (Rs 34.18 cr purchase discounts), and ex other income FY26 ROCE is 8.7%. Cumulative CFO/PAT 1.84 is flattered by FY24-FY25 payables build (FY25 payables Rs 116.58 cr, FY26 Rs 41.52 cr), reversed in FY26 when CFO was negative. Net cash and low debt (D 18/20) are the strongest block. Moat is MODERATE only because four peer tests lack peer data."

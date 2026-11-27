@@ -1,0 +1,20 @@
+stage: B12d
+company: "PREMEXPLN"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 3
+substantive_confirmed: 2
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "ASTRAMICRO", missed_item: "Q4 FY26 programme delays 'for various reasons as these are all government-' and DRDO order delays question (inspection/approval theme, Q1); supportive of the cited inspection-slip read, not contradicting it", anchor: "ASTRAMICRO-202606-Q4FY26 lines 532-534, 665"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, finding: "Q1 inspection-delay evidence omits Astra Q4 FY26 programme/DRDO delay remarks (lines 532-534, 665); already carried by two Astra anchors, no verdict change", anchor: "ASTRAMICRO-202606-Q4FY26 lines 532-534"}
+  - {severity: MINOR, finding: "BDL has 0 transcripts; B06 records UNUSED honestly. Corpus gap, not a pipeline miss; buyer-side PSU view absent", anchor: "B06 Part 3"}
+  - {severity: MINOR, finding: "Q4 VERIFIED uses 6 anchors across 2 peers but neither sells countermeasures; B06 states this caveat. Acceptable; a PARTIALLY label would also be defensible", anchor: "B06 Q4 net read"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 100            # 2 of 2 peers with transcripts correctly handled; BDL excluded as corpus gap (0 transcripts); 2/3 = 67% if BDL counted

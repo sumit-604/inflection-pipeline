@@ -21,7 +21,7 @@ The source files stay in `frameworks/` and remain the legal text. If a chunk and
 - A missing number is NOT FOUND. It is never estimated.
 - One quality improvement, one mechanism. Chunk 04 holds the full single-credit map.
 - Role 1 consumes the Debt Capacity block, the FTTCP Part B Output Sheet and the Market-Implied block. It never recomputes them.
-- Probability weights and every grade-gated rule take the Role 5 trailing-four-quarter credibility grade (Rule E). Once a quarterly history exists, that grade comes from the `quarterly-review` skill; in the pipeline it arrives as `B10.credibility_grade`. This skill carries no grading logic of its own (chunk 17).
+- Probability weights and every grade-gated rule take the Role 5 trailing-four-quarter credibility grade (Rule E). Once a quarterly history exists, that grade comes from the Role 5 trailing-four-quarter credibility grade per frameworks/Quarterly_Concall_Analysis_Protocol_v1_1.md (pipeline: B10.credibility_grade). This skill carries no grading logic of its own (chunk 17).
 - Live-web steps (the Step 1C peer table, counterparty links) belong to Claude web. Claude Code marks them PENDING LIVE PEER TABLE or PENDING LIVE VERIFICATION and never fills them from memory.
 - Section 1A method selection (the Method Suitability Matrix and triangulation) stays in the Master Prompt. It is mandatory before any Section 1B math, and this skill does not replace it.
 

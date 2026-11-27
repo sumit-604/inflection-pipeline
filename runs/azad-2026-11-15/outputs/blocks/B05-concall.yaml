@@ -1,0 +1,141 @@
+stage: B05-concall
+company: "AZAD"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Carried from B00: five screener formula sheets absent; research/ empty; QIP placement document not collected; PTC Industries transcript is June 2023 and stale."
+  - "Working-capital days basis behind the management targets (H1 about 200, H2 160 to 180) is NOT STATED on any call. Four bases exist: CARE 344 at 31 Mar 2026, AR 244, B01 revenue basis 336 and 369, management 200."
+  - "Recourse terms of the ICICI Bank and DP World bill discounting lines, and whether the lines were already used, are NOT FOUND."
+  - "Content of 'other financial liabilities' movement +239.74 Mn in the H1 FY27 standalone cash flow is NOT FOUND."
+  - "Q2 call net debt Rs 423.8 Cr and cash Rs 112.6 Cr do not reconcile to the Q2 balance sheet (about Rs 470.6 Cr standalone net debt by calculation); basis NOT STATED."
+  - "Rupee value of the USD 4.5 Mn OEM advance NOT FOUND (no rate stated)."
+  - "Q4 FY26 and Q1 FY27 results quarterly columns are OCR text with digit noise; Q2 results comparatives used."
+  - "Year of the earlier BHEL rate contract in the 12 Oct 2026 filing is unreadable in the extraction. Q2 FY26 and Q3 FY26 transcripts (inputs/other) used only to date promises."
+flags:
+  - {type: FLAG-CASH, reason: "H1 FY27 consolidated OCF Rs -436.24 Mn (R2 p.11); OCF improvement of 307 Mn standalone came from operating profit and lower tax, working-capital change was 3% worse; July falsifier not cleared; days target unreported at H1."}
+  - {type: FLAG-WC-BASIS, reason: "July tripwire 344 matches CARE rationale 2026-06-22 p.3 (262 + 163 - 80 = 345). Management targets 200 and 160-180 have no stated basis; H2 target loosened from 140-150 (Feb 2026) to 160-180 (Aug 2026), then dropped in Nov."}
+  - {type: FLAG-DISCOUNTING-SOURCE, reason: "Promised cash improvement rests on bill discounting (ICICI Bank, DP World, usable from Q4 FY27, recourse NOT STATED; CARE said non-recourse factoring was only being explored), one OEM advance USD 4.5 Mn at about 1% discount, and WIP conversion of Rs 72 Cr awaiting customer approval."}
+  - {type: FLAG-GUIDANCE-TIMING, reason: "Revenue ramp date slipped Q3 to Q4 FY27 between Aug and Nov; Rolls-Royce batch promised within Q2 FY27 not delivered; engine test (4-6 weeks) and 4-5 engines in 8-12 weeks not met; capex plan and guidance revisit deferred to 'next quarter' repeatedly."}
+  - {type: FLAG-ORDERBOOK-REDEFINED, reason: "Rs 6,500 Cr order book (May) called 'not order backlog' (Nov, Q2 p.15); figure unchanged for six months."}
+  - {type: FLAG-NETDEBT-UNRECONCILED, reason: "Q2 call net debt Rs 423.8 Cr vs about Rs 470.6 Cr standalone and Rs 474.1 Cr consolidated from balance sheets (R2 p.4, p.10); Q4 call had tied."}
+  - {type: FLAG-DILUTION-HINT, reason: "Chopdar Q2 p.13: 'definitely we will go for a QIP or maybe when it is required'; acquisitions named Q2 p.10; OCF negative."}
+  - {type: FLAG-MARGIN-WIP, reason: "Consumption 4.2% of revenue vs 12.4% a year ago; change in inventories -645.67 Mn in H1; Rs 72 Cr WIP invoiceable only after customer approval; [INFERENCE] part of 37.5% margin sits in inventory."}
+  - {type: FLAG-CONCENTRATION, reason: "No top-1 or top-5 statement on any call; GE Vernova holds 3 of 6 dedicated plants, 50.9% of dedicated area (calc)."}
+quarters_analysed: ["Q4 FY26", "Q1 FY27", "Q2 FY27"]
+triggers:
+  - {priority: 1, name: "Dedicated-plant throughput and revenue ramp to Rs 1,300 Cr ARR by end FY28", type: "VOLUME", timeframe: "near to medium", conviction: "M", confirm_signal: "Q3 FY27 standalone revenue above Rs 187.8 Cr with a further step in Q4; Rs 72 Cr WIP invoiced; employee cost share falling", kill_signal: "Q3 revenue flat on Q2; another ramp date slip"}
+  - {priority: 2, name: "Cash conversion via OEM advances, bill discounting and inventory release", type: "COST (cash)", timeframe: "near", conviction: "L", confirm_signal: "FY27 OCF positive with source and recourse stated; days on a defined basis", kill_signal: "H2 OCF negative; discounted receivables not shown as borrowing; days unreported"}
+  - {priority: 3, name: "EBITDA margin held at 37.5% and PBT margin recovering to FY24 cost structure", type: "COST", timeframe: "near to medium", conviction: "M", confirm_signal: "Margin held while inventory days fall", kill_signal: "WIP write-down or margin drop when WIP is invoiced"}
+  - {priority: 4, name: "Aero engine airfoils: Rolls-Royce, Pratt and Whitney Canada, Safran", type: "VOLUME", timeframe: "near (batch) to medium", conviction: "L", confirm_signal: "RR qualification batch delivered and accepted; production orders", kill_signal: "Fourth date slip; no acceptance by Q4 FY27"}
+  - {priority: 5, name: "MHI hot-section nozzle vane segments, 8-year single source", type: "PRICE-MIX", timeframe: "medium", conviction: "M", confirm_signal: "Facility built about Mar to Apr 2027 and qualified; other OEMs in same facility", kill_signal: "Facility slips beyond FY28"}
+  - {priority: 6, name: "Baker Hughes oil and gas dedicated plant", type: "VOLUME", timeframe: "near", conviction: "L", confirm_signal: "Separate O&G revenue line from Q4 FY27", kill_signal: "Still unquantified at Q4 FY27"}
+  - {priority: 7, name: "GTRE ATGG engine production", type: "REGULATORY-POLICY", timeframe: "near to medium", conviction: "L", confirm_signal: "Production order with count and value", kill_signal: "Test failure or no order by FY28"}
+  - {priority: 8, name: "Domestic indigenisation: BHEL and others", type: "REGULATORY-POLICY", timeframe: "near", conviction: "M", confirm_signal: "Domestic share holds at 12 percent or more", kill_signal: "Domestic share falls back to about 6 percent"}
+  - {priority: 9, name: "Phase 2 land, acquisitions and possible equity raise", type: "INORGANIC", timeframe: "long", conviction: "L", confirm_signal: "Funding from internal accruals", kill_signal: "New equity raise while OCF is negative"}
+guidance:
+  - {item: "Revenue growth", number: "25 percent plus, FY27 and multiyear", timeframe: "FY27 onward", stated_in: "Q4 FY26, Q1 FY27, Q2 FY27"}
+  - {item: "Revenue run rate", number: "over Rs 1,300 Cr annual run rate", timeframe: "end FY28", stated_in: "Q2 FY27"}
+  - {item: "Revenue per dedicated plant at full utilisation", number: "Rs 150 to 180 Cr; about Rs 1,200 Cr for 8 plants", timeframe: "after ramp", stated_in: "Q1 FY27"}
+  - {item: "EBITDA margin band", number: "33 to 35 percent plus (May); 32 to 35 percent (Aug)", timeframe: "ongoing", stated_in: "Q4 FY26, Q1 FY27"}
+  - {item: "Working-capital days", number: "H1 FY27 about 200; H2 160 to 170 (May), 160 to 180 (Aug)", timeframe: "H1 and H2 FY27", stated_in: "Q4 FY26, Q1 FY27"}
+  - {item: "Operating cash flow", number: "strong in FY27 (May); cash from Q4 end, Q1 FY28 'perfectly in' (Nov)", timeframe: "FY27 to Q1 FY28", stated_in: "Q4 FY26, Q2 FY27"}
+  - {item: "Bill discounting lines", number: "ICICI Bank and DP World, usable from Q4 FY27", timeframe: "Q4 FY27", stated_in: "Q2 FY27"}
+  - {item: "OEM advance", number: "50 percent of PO, USD 4.5 Mn, discount about 1 percent", timeframe: "FY27", stated_in: "Q2 FY27"}
+  - {item: "GST credit realisation", number: "about Rs 100 Cr", timeframe: "H1 FY28", stated_in: "Q4 FY26"}
+  - {item: "Order book / contracted demand", number: "about Rs 6,500 Cr, 11x to 12x FY26 revenue; later 'not order backlog'", timeframe: "5 to 6 years", stated_in: "Q4 FY26, Q2 FY27"}
+  - {item: "Dedicated plants", number: "8 planned; 4 done in May; 6 done in Nov", timeframe: "FY27", stated_in: "Q4 FY26, Q2 FY27"}
+  - {item: "Capacity ramp", number: "throughput Q3 FY27, revenue ramp Q4 FY27, full ramp Q2 FY28", timeframe: "Q3 FY27 to Q2 FY28", stated_in: "Q2 FY27"}
+  - {item: "QIP deployment", number: "Rs 621.8 Cr of Rs 700 Cr used; Rs 78.2 Cr left; capex object Rs 75.54 Cr unutilised, deadline 31 Mar 2027", timeframe: "30 Sep 2026", stated_in: "Q2 FY27 and monitoring agency report 2026-11-06"}
+  - {item: "Export share", number: "88 percent in Q2; about 85 percent going forward", timeframe: "FY27", stated_in: "Q2 FY27"}
+  - {item: "Segment mix", number: "energy 55 to 60 percent", timeframe: "FY30 to FY31", stated_in: "Q4 FY26, Q2 FY27"}
+  - {item: "ATGG timeline", number: "weapon test in 4 to 6 weeks; 4 to 5 engines in 8 to 12 weeks", timeframe: "Aug to Nov 2026", stated_in: "Q1 FY27"}
+  - {item: "MHI hot-section facility", number: "7 to 8 months from Aug 2026", timeframe: "about Mar to Apr 2027", stated_in: "Q1 FY27"}
+  - {item: "Employee cost", number: "normalises in Q3 and Q4 FY27", timeframe: "Q3 to Q4 FY27", stated_in: "Q1 FY27, Q2 FY27"}
+  - {item: "Capex FY27", number: "NOT FOUND (never quantified on any call; H1 capex Rs 139.3 Cr)", timeframe: "FY27", stated_in: "Q4 FY26, Q2 FY27"}
+  - {item: "Dividend, debt reduction, return targets", number: "NOT FOUND (not discussed on any of the three calls)", timeframe: "n/a", stated_in: "n/a"}
+promise_delivery:
+  delivered: 6
+  partial: 5
+  missed: 8
+  rows:
+    - {promised_in: "Q4 FY26", promise: "Revenue growth 25 percent plus in FY27", outcome: "DELIVERED for H1: standalone +26.8, +31.6, +29.3 percent; consolidated +25.9, +31.1, +28.6 percent", explanation: "none needed"}
+    - {promised_in: "Q4 FY26 and Q1 FY27", promise: "EBITDA margin 33 to 35 percent plus; maintain 37.6 percent", outcome: "DELIVERED: 37.6 percent Q1, 37.5 percent Q2 standalone", explanation: "none needed; WIP caveat in report 2D"}
+    - {promised_in: "Q4 FY26", promise: "ATGG engine delivery is weeks away", outcome: "DELIVERED: filed 22 Jul 2026", explanation: "none needed"}
+    - {promised_in: "Q1 FY27", promise: "Remaining major activities done by mid-Q2, full closure Q3", outcome: "DELIVERED as claimed: foundation complete (Q2 call); two GE Vernova plants 28 Sep 2026; CWIP fell 442 Mn", explanation: "2 to 3 week delay admitted"}
+    - {promised_in: "Q4 FY26", promise: "Other income to moderate as QIP is deployed", outcome: "DELIVERED: Q2 other income 46.55 Mn vs 127.23 Mn", explanation: "FX part attributed to macro"}
+    - {promised_in: "Q4 FY26", promise: "Revenue to move up in Q1 FY27", outcome: "DELIVERED: Q1 +8.3 percent QoQ, Q2 +10.1 percent", explanation: "none"}
+    - {promised_in: "Q4 FY26", promise: "4 more dedicated plants over 6 months, on track", outcome: "PARTIAL: 2 added in 6 months; 6 of 8 done", explanation: "count reframed to six; no explanation"}
+    - {promised_in: "Q1 FY27", promise: "Revenue reflection from Q3, substantive in H2", outcome: "PARTIAL: Nov says throughput Q3, revenue ramp Q4", explanation: "delta qualification takes time; 2 to 3 week delay"}
+    - {promised_in: "Q1 FY27", promise: "Bill discounting lines in place, exports hedged by Q4", outcome: "PARTIAL: lines exist, usable from Q4 FY27, not yet a cash source", explanation: "none"}
+    - {promised_in: "Q4 FY26", promise: "Oil and gas ramp with material numbers in FY27", outcome: "PARTIAL: moved to 'from Q4 FY27'; no O&G figure on any call", explanation: "customer delivery plans"}
+    - {promised_in: "Q4 FY26", promise: "QIP balance of Rs 180 to 190 Cr to be deployed", outcome: "PARTIAL: Rs 156.34 Cr unutilised at 31 Mar 2026, Rs 75.54 Cr left at 30 Sep 2026; deadline extended to 31 Mar 2027 and not mentioned on any call", explanation: "silence"}
+    - {promised_in: "Q4 FY26 and Q1 FY27", promise: "Working-capital days about 200 in H1 FY27", outcome: "MISSED: no figure reported; receivables +Rs 92 Cr, inventory +Rs 98 Cr; revenue-basis days 336 to 369", explanation: "bandwidth on plants; WIP in delta qualification"}
+    - {promised_in: "Q4 FY26", promise: "Strong operating cash flow in FY27", outcome: "MISSED on timing: H1 consolidated OCF Rs -436.24 Mn; date moved to Q4 end and Q1 FY28", explanation: "lag between investment and revenue"}
+    - {promised_in: "Q1 FY27", promise: "Rolls-Royce first qualification batch within the quarter", outcome: "MISSED: not delivered at 7 Nov 2026", explanation: "none; 'last leg'"}
+    - {promised_in: "Q1 FY27", promise: "ATGG weapon test in 4 to 6 weeks", outcome: "MISSED: testing ongoing at 7 Nov", explanation: "MoD does not share; 'no base' hedge"}
+    - {promised_in: "Q1 FY27", promise: "4 to 5 engines in 8 to 12 weeks", outcome: "MISSED: second engine 'about to deliver' at 7 Nov", explanation: "none"}
+    - {promised_in: "Q1 FY27", promise: "Capex plan beyond FY29 next quarter", outcome: "MISSED: deferred again to next quarter", explanation: "none"}
+    - {promised_in: "Q4 FY26 and Q1 FY27", promise: "Revisit 25 percent plus guidance when stabilised", outcome: "MISSED: reiterated 25 percent plus, 'bare minimum'", explanation: "none"}
+    - {promised_in: "Q4 FY26", promise: "Saudi Baker Hughes facility", outcome: "MISSED: timelines shifted in May; silent on Aug and Nov calls", explanation: "external: war and customer priorities"}
+    - {promised_in: "Q4 FY26 and Q1 FY27", promise: "H2 FY27 days 160 to 170 then 160 to 180", outcome: "PENDING; loosened from 140 to 150 in Feb 2026", explanation: "n/a"}
+    - {promised_in: "Q1 FY27", promise: "Employee cost normalises in Q3 and Q4", outcome: "PENDING; Q2 employee cost +23.7 percent QoQ", explanation: "hired ahead"}
+    - {promised_in: "Q4 FY26", promise: "GST credit of about Rs 100 Cr realised by H1 FY28", outcome: "PENDING", explanation: "n/a"}
+    - {promised_in: "Q2 FY27", promise: "ARR over Rs 1,300 Cr by end FY28; full ramp Q2 FY28", outcome: "PENDING", explanation: "n/a"}
+    - {promised_in: "Q1 FY27", promise: "MHI hot-section facility in 7 to 8 months", outcome: "PENDING", explanation: "n/a"}
+    - {promised_in: "Q1 FY27", promise: "Subsidiaries on track with turnaround target", outcome: "PENDING; target undefined, unverifiable", explanation: "n/a"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "Working-capital days and when cash turns", quarters_asked: ["Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "answer changed between quarters (days metric dropped in Nov)"}
+  - {question: "Margin on hot section, engines and new products", quarters_asked: ["Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "deflected every time"}
+  - {question: "Why margin guidance of 33-35 percent sits below delivered 37-38 percent", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "ATGG order size, engine count and volumes", quarters_asked: ["Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "deflected every time on size; timing answers slipped"}
+  - {question: "Capex plan beyond FY29 and funding", quarters_asked: ["Q1 FY27", "Q2 FY27"], classification: "deflected every time (deferred to next quarter twice)"}
+  - {question: "Revision of the 25 percent plus guidance", quarters_asked: ["Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "deflected every time"}
+  - {question: "Rolls-Royce qualification timing", quarters_asked: ["Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "answer changed between quarters"}
+  - {question: "Order book size and nature", quarters_asked: ["Q4 FY26", "Q2 FY27"], classification: "answer changed between quarters"}
+credibility_grade: "C"
+credibility_basis: "Three quarters of call-vs-filing delivery (Q4 FY26 to Q2 FY27): 6 delivered, 5 partial, 8 missed, 6 pending; revenue, margin and plant promises kept, cash and timing promises missed; the Q3 FY27 print (OCF source, defined days, RR batch, second engine) separates C from B."
+peer_questions:
+  - {question: "What total working-capital days, receivable days and inventory days do peers report, on which basis (revenue or COGS, average or closing)?", why: "Azad's 200-day target has no stated basis; CARE basis was 344 at Mar 2026", check_peers: ["MTAR Technologies", "Unimech Aerospace", "PTC Industries"]}
+  - {question: "How long from plant commissioning to full-rate invoicing at peers, including delta or customer re-qualification?", why: "Azad says throughput Q3 FY27, revenue ramp Q4 FY27, full ramp Q2 FY28; the date slipped a quarter", check_peers: ["MTAR Technologies", "Unimech Aerospace"]}
+  - {question: "Do peers use bill discounting or factoring on export receivables, with or without recourse, and how is it shown in the cash flow statement?", why: "A positive Azad OCF from discounting would be a financing effect, not conversion", check_peers: ["MTAR Technologies", "Unimech Aerospace", "PTC Industries"]}
+  - {question: "Do OEM customers pay advances to peers (percent of PO, discount given)?", why: "Azad got a 50 percent advance from one OEM at about a 1 percent discount", check_peers: ["MTAR Technologies", "Unimech Aerospace"]}
+  - {question: "Do peers run dedicated-customer facilities with take-or-pay or minimum-volume terms?", why: "Azad's six dedicated plants are said to be volume-committed with no disclosed terms", check_peers: ["MTAR Technologies", "Unimech Aerospace"]}
+  - {question: "Peer EBITDA margin, gross margin and consumption-to-sales, and how much cost sits in WIP?", why: "Azad consumption fell from 12.4 percent to 4.2 percent of revenue; EBITDA margin 37.5 percent", check_peers: ["MTAR Technologies", "Unimech Aerospace", "PTC Industries"]}
+  - {question: "Customer concentration at peers (top-1, top-5) and any customer above 50 percent of dedicated capacity", why: "Azad top-1 18.6 percent, top-5 about 47.0 percent; GE Vernova holds 50.9 percent of dedicated area", check_peers: ["MTAR Technologies", "Unimech Aerospace", "PTC Industries"]}
+  - {question: "Hot-section and engine-component economics in India: who makes them, qualification time, margin, Howmet and PCC comparison", why: "Azad's MHI hot-section and GTRE engine claims", check_peers: ["PTC Industries", "Unimech Aerospace"]}
+  - {question: "Industry growth rates peers cite for aero engine airfoils, gas turbine components and nuclear; are 25 to 26 percent dollar growth rates for global peers right?", why: "Tests whether Azad's 25 percent plus guide is conservative or aggressive; the 25 to 26 percent figure is an analyst figure", check_peers: ["MTAR Technologies", "Unimech Aerospace", "PTC Industries"]}
+  - {question: "Have peers moved to domestic steel suppliers (Sunflag, Star Wire) and what saving do they report?", why: "Azad cites a 4 to 5 percent saving and raw material at 5 percent of sales", check_peers: ["MTAR Technologies", "Unimech Aerospace", "PTC Industries"]}
+  - {question: "Capex cycle: are peers raising equity or debt for capacity beyond FY29, and what utilisation do they quote at commissioning?", why: "Azad hints at a QIP and acquisitions; claims Rs 150 to 180 Cr per plant", check_peers: ["MTAR Technologies", "Unimech Aerospace"]}
+  - {question: "Do peers quote wallet share with OEMs, and what level?", why: "Azad says under 2 percent of wallet share; a claim of runway with no cross-check", check_peers: ["MTAR Technologies", "Unimech Aerospace", "PTC Industries"]}
+  - {question: "Do peers report currency lift on revenue and where does it sit?", why: "Azad says 5 to 6 percent revenue lift, below EBITDA; bears on quality of Q2 growth", check_peers: ["MTAR Technologies", "Unimech Aerospace", "PTC Industries"]}
+  - {question: "Are peers supplying domestic defence engine programmes (GTRE and others), at what scale?", why: "Azad's ATGG volume is unquantified", check_peers: ["MTAR Technologies", "PTC Industries"]}
+red_flags:
+  - "H1 FY27 consolidated OCF Rs -436.24 Mn; working-capital days unreported and basis undefined; H2 target loosened (HIGH)"
+  - "Bill discounting usage contradicted across three calls; recourse status unstated; lines usable only from Q4 FY27 (HIGH)"
+  - "Revenue-ramp date slipped Q3 to Q4 FY27 within one quarter; Rolls-Royce, engine test and capex-plan dates slipped (MEDIUM)"
+  - "Q2 call net debt and cash do not tie to the Q2 balance sheet by about Rs 47 to 50 Cr (MEDIUM)"
+  - "Order book Rs 6,500 Cr re-characterised as not order backlog; unchanged for six months (MEDIUM)"
+  - "Rs 72 Cr WIP awaiting customer approval and consumption at 4.2 percent of revenue; part of margin may sit in inventory (MEDIUM, inference)"
+  - "QIP hint and acquisitions while OCF is negative (MEDIUM)"
+  - "Q1 PAT headline flattered by a one-off Rs 4.3 Cr deferred tax credit not disclosed on the Q1 call (LOW)"
+  - "Eight plants became six dedicated facilities without comment; Mangampet called ready with no mention of the writ in B03 (LOW to MEDIUM)"
+dropped_triggers:
+  - "Saudi Arabia facility with Baker Hughes (slipped May 2026, silent Aug and Nov, still on slides)"
+  - "Third plant of 85,000 sq m / Phase 2 (pushed to FY29)"
+  - "In-house special processes and NADCAP heat treatment (May only)"
+  - "Organisation restructuring and ERP upgrade (May only)"
+  - "Nuclear turbine opportunity (May only; USD 40 Mn Arabelle contract on Nov slide)"
+  - "Investment castings (deflected Aug)"
+timeline_slippages:
+  - "Revenue ramp: May 'this quarter' (Q1); Aug 'from Q3 onwards'; Nov throughput Q3, revenue ramp Q4, full ramp Q2 FY28"
+  - "Working-capital H2 target: 140-150 (Feb 2026) to 160-170 (May) to 160-180 (Aug) to no figure (Nov)"
+  - "Cash generation: strong OCF in FY27 (May) to Q4 end and Q1 FY28 (Nov)"
+  - "Rolls-Royce first qualification batch: H2 (May), within Q2 (Aug), 'very soon' (Nov); production from FY28"
+  - "ATGG: weapon test in 4 to 6 weeks (Aug) still ongoing (Nov); 4 to 5 engines in 8 to 12 weeks (Aug), second engine pending (Nov)"
+  - "Capex plan beyond FY29: 'next quarter' in Aug, 'next quarter' in Nov"
+  - "Guidance revisit: 'next quarter' in May, Aug and Nov"
+  - "Oil and gas ramp: 'this year' (May) to 'from Q4 FY27' (Nov)"
+  - "Dedicated plants: 4 more in 6 months (May), 2 delivered by Nov; QIP capex deadline moved from 31 Mar 2026 to 31 Mar 2027 (board 13 Feb 2026)"
+analyst_note: "Four things a later stage cannot rebuild from the fields. (1) The Rs 187.8 Cr and Rs 358.3 Cr on the Q2 call are STANDALONE revenue from operations (R2 p.3); Rs 190.94 Cr and Rs 363.53 Cr are CONSOLIDATED (R2 p.9); conflicts.yaml row closes. (2) The July tripwire 344 is CARE's working-capital cycle at 31 Mar 2026 (rating rationale p.3: 262 + 163 - 80); management's 200 and 160-180 targets have no stated basis. (3) H1 FY27 OCF improved 307 Mn standalone from operating profit and lower tax; the working-capital line was 3 percent worse; no call states recourse for the bill discounting lines. (4) Grade C is the tracker count, not tone; two readings and the separating observation (Q3 FY27 OCF source, defined days, RR batch, second engine) are in 4C. Net debt on the Q2 call does not tie to the balance sheet."

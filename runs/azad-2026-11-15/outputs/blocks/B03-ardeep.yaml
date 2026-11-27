@@ -1,0 +1,85 @@
+stage: B03-ardeep
+company: "AZAD"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "QIP placement document (2025) not collected; Note 40 and the Corporate Governance Report (AR26 [page 74]) read against the AR only (carried from B00 and B02)."
+  - "Five screener formula sheets absent; research/ empty (carried from B00). No effect on anchored AR evidence."
+  - "Definition of the company working-capital days figure (244 at FY26, 202 at FY25, Chairman letter AR26 [page 7]) NOT FOUND IN DOCUMENT. The July tripwire 344 has no stated basis in the AR, so the two are not comparable. B02 said the AR prints no working-capital days; corrected here."
+  - "Promoter pledge status and the consideration for the 28,85,267 shares the promoter sold in FY26: NOT FOUND IN DOCUMENT. Belongs to the shareholding file and B08."
+  - "Composition and age of balance with government authorities 1,102.51 Rs Mn: NOT FOUND IN DOCUMENT."
+  - "ECL provision matrix rates, inventory write-down amount, hedge contracts, covenant terms, lease incremental borrowing rate: NOT FOUND IN DOCUMENT."
+  - "Use of the 1,562.10 Rs Mn general corporate purposes bucket of the QIP; any extension of the Tuniki Bollaram land agreement (3-year validity from 2021-09-23); names of the two customers at or above 10% of revenue: NOT FOUND IN DOCUMENT."
+  - "Reconciliation of Azad VTC and Azad Prime profit between AOC-1 (AR26 [page 47]), Note 44 (AR26 [page 251]) and CARO xvii (AR26 [page 187]): NOT FOUND IN DOCUMENT."
+  - "Schedule II useful life for plant and machinery is printed as 7.5 years in the AR policy table (AR26 [page 205]); not verified against the Act in this container. PENDING LIVE VERIFICATION."
+flags:
+  - {type: FLAG-CASH, reason: "Consolidated OCF (1,189.66) Rs Mn vs 536.67 on revenue +31.8% (AR26 [page 193]); standalone (1,232.63) vs 628.85 (AR26 [page 123]). FCF (6,914.46) Rs Mn calc. Inventory +73.9%, receivables +39.5%, government balance 1,102.51 vs 554.83. Company working-capital days 244 vs 202 (AR26 [page 7]). No factoring, discounting or recourse wording in the AR. CFO is stated before interest paid 351.61 and before interest received 215.24. Adding back possible QIP issue costs of 155.39 to 177.81 still leaves CFO negative."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Promoter Rakesh Chopdar 59.35% to 54.88%: 3,83,30,255 to 3,54,44,988 shares, 28,85,267 sold in FY26 (Note 11(v), AR26 [page 223]); 64.84% at 2024-03-31. Promoter plus group 60.32% to 55.84% (AR26 [page 71]; AR25 [page 80]). Pledge and sale consideration NOT FOUND IN DOCUMENT. Full promoter verdict from B08."}
+phase_verdicts: {p1: "YELLOW: unmodified opinion; one KAM (revenue cut-off); books reservation for audit trail; CARO i(c), vii(a), vii(b), x(b) at parent and vii(a), xvii at both subsidiaries; no going concern language", p2: "YELLOW: B02 6/10 confirmed; 9 of 15 top findings clean, 6 corrected; Note 44 conflicts with AOC-1", p3: "RED: CFO (1,189.66) Rs Mn; FCF (6,914.46) calc; net cash 4,534.45 to net debt 2,720.48; ROCE 10.7%", p4: "YELLOW: candid on working capital and other income; MD&A omits CFO, land title, FX and the net debt swing; EBITDA margin on three bases", p5: "YELLOW: promoter sold 4.47 points; two executive directors under 75% attendance; anti-bribery policy not yet formulated; clean fraud and whistle-blower answers", p6: "YELLOW: three claims fail the numbers test (dedicated capacity, operating leverage at EBIT, QIP-funded capex); five withdrawals or hedged retreats", p7_best_fit: "Capex-Led Growth: WATCHLIST"}
+overall_quality: 5.5
+quality_components: {governance: 5.5, accounting: 6.0, balance_sheet: 6.0, earnings: 4.5}
+kill_switch_notes:
+  - "P2 informational: Note 44 subsidiary split disagrees with AOC-1 and CARO xvii; about 42 Rs Mn reallocation that nets to zero in the consolidated total. A reviewer would not stop."
+  - "P3 informational: a reviewer would have reason to pause on cash conversion before price work, because CFO is (1,189.66) Rs Mn and FCF (6,914.46) Rs Mn calc on +31.8% revenue. The run continues."
+  - "P5 informational: promoter sold 28,85,267 shares in FY26; pledge unknown. A reviewer would not stop, but B08 must resolve it."
+triple_pass_verification:
+  verified: 9
+  discrepancies:
+    - {finding_rank: 4, triple_pass_value: "top-5 41.3% to 47.0%", ar_value: "47.0% reproduces (1,123.97 + 1,711.10 = 2,835.07 on 6,029.75 Rs Mn). 41.3% reproduces only as top-1 plus 4/5 of 1,711.10, an equal-split assumption. B01 reading of 28.4% is excluded because two customers at 10% or more need at least 1,726.95", note_ref: "Note 34 AR26 [page 242]; Note 31(c) [page 237]; AR25 [page 238]"}
+    - {finding_rank: 7, triple_pass_value: "76.6% plant share cited to Note 6; no technical evaluation disclosed; 15 vs 7.5 years flagged as double statutory", ar_value: "76.6% is Note 3(a) (6,885.05 of 8,991.30 Rs Mn); policy says lives rest on technical evaluation, report not disclosed; Schedule II 7.5 column unverified, PENDING LIVE VERIFICATION", note_ref: "AR26 [page 214]; [page 205]; Note 6 [page 219]"}
+    - {finding_rank: 8, triple_pass_value: "credit loss charge 17.78", ar_value: "17.78 in Notes 8 and 34; 17.87 in Note 27 and the cash flow statement", note_ref: "AR26 [page 221]; [page 242]; [page 232]; [page 193]"}
+    - {finding_rank: 9, triple_pass_value: "5% rupee move costs 104.04", ar_value: "104.07 on the USD line; EUR line (14.39) offsets; net 89.68 calc", note_ref: "Note 34 AR26 [page 245]"}
+    - {finding_rank: 11, triple_pass_value: "VTC loss (41.97), Prime +13.89, consolidation adjustment +42.10", ar_value: "AOC-1 prints VTC PAT +16.68 and Prime (2.69); NCI profit 6.86 = 49% of 13.99; PBT and equity bridges tie to AOC-1; Note 44 is a reallocation of about 42 between parent and subsidiary columns", note_ref: "AR26 [page 47]; Note 44 [page 251]; [page 192]; [page 187]"}
+    - {finding_rank: 15, triple_pass_value: "inventory turnover 0.22 not reproducible", ar_value: "0.2215 reproduces as (1,282.43 less 712.00) over average inventory 2,575.6 standalone; numerator omits conversion cost so it cannot give inventory days", note_ref: "Note 45 AR26 [page 181]; MD&A [page 32]; standalone P&L [page 122]"}
+missing_risks:
+  - "Land title at the core campus: Tunkibollaram land 259.02 Rs Mn on allotment with conditional title and a 3-year agreement from 2021-09-23 (AR26 [page 215]); Mangampet land 75.17 in CWIP under Writ Petition 18735 of 2024 (AR26 [page 218]); CARO i(c) (AR26 [page 114]). Absent from MD&A risk text (AR26 [page 33], [page 34], [page 36])."
+  - "Operating cash flow (1,189.66) Rs Mn and the swing from net cash 4,534.45 to net debt 2,720.48 never stated in the MD&A (AR26 [page 32], [page 36], [page 245])."
+  - "Foreign exchange: net long USD 21.96 Mn open, 5% = 104.07 Rs Mn pre-tax, FX gain 214.01 in other income, hedging only if beneficial (AR26 [page 245], [page 229], [page 72]); no currency item in MD&A threats (AR26 [page 34])."
+  - "Government balance 1,102.51 Rs Mn doubled with composition not disclosed (AR26 [page 222])."
+  - "Customs and export obligation demand 220.94 vs 75.11 Rs Mn, same issue open since FY21 (AR26 [page 233]; PRO [page 317])."
+  - "Control environment: audit trail gaps at parent and both subsidiaries (AR26 [page 250]); no anti-corruption policy yet (AR26 [page 91])."
+  - "Senior attrition: Company Secretary, two EGMs and the aero engines business head left in FY26 (AR26 [page 68], [page 69])."
+  - "Promoter stake sale of 28,85,267 shares with pledge unknown (AR26 [page 223])."
+  - "QIP objects deadline extended from 2026-03-31 to 2027-03-31 with 1,563.35 Rs Mn of the capex object unspent (AR26 [page 74])."
+guidance_table:
+  - {claim: "Revenue growth target for FY26 (AR25 [page 40])", number: "~30%", timeframe: "FY26", credibility: "High: delivered +31.8% consolidated, +30.3% standalone (AR26 [page 38])"}
+  - {claim: "Sustained revenue growth (AR26 [page 36])", number: "above 25% per annum", timeframe: "multi-year", credibility: "Medium-High: FY26 above it; later periods not tested here"}
+  - {claim: "Working capital efficiency benefits (AR25 [page 21])", number: "from FY26", timeframe: "FY26", credibility: "Low: days 244 vs 202 (AR26 [page 7]); revenue basis 336 vs 266"}
+  - {claim: "Positive OCF from better collections (AR25 [page 21])", number: "629 Rs Mn standalone FY25", timeframe: "FY25 onward", credibility: "Low: FY26 standalone OCF (1,232.63) Rs Mn"}
+  - {claim: "Energy share to 55% to 60% of revenue (AR26 [page 36])", number: "55% to 60%", timeframe: "4 to 5 years", credibility: "Not testable; FY26 share rose to 81.5% from 79%"}
+  - {claim: "Full utilisation of dedicated plants (AR26 [page 8])", number: "full utilisation", timeframe: "FY 2027-28", credibility: "Medium-Low: MD&A says peak utilisation over a longer horizon (AR26 [page 31])"}
+  - {claim: "Rolls-Royce first shipments (AR26 [page 22])", number: "before end of FY27", timeframe: "FY27", credibility: "Medium: contract January 2024, still in qualification"}
+  - {claim: "QIP objects completed (AR26 [page 74])", number: "5,250.00 Rs Mn capex object by 2026-03-31", timeframe: "FY26", credibility: "Low-Medium: 3,686.65 used; deadline moved to 2027-03-31"}
+  - {claim: "Return ratios to strengthen as facilities ramp (AR25 [page 21])", number: "ROCE up", timeframe: "FY26", credibility: "Mixed: reported 8.7% to 10.7%; adjusted 20.7% to 15.3% (AR26 [page 14])"}
+monitorables:
+  - {metric: "Consolidated operating cash flow", threshold: "Positive for FY27; H1 FY27 was (436.24) Rs Mn per B01", where: "Q3 and Q4 FY27 cash flow statements; AR27", why: "July falsifier; FY26 was (1,189.66) Rs Mn"}
+  - {metric: "Company working-capital days", threshold: "Below 202 (FY25 level), same definition each print; definition requested", where: "Concall and AR27 Chairman letter", why: "244 vs 202; definition NOT FOUND"}
+  - {metric: "Inventory growth vs revenue growth", threshold: "Inventory growth below revenue growth", where: "Balance sheet and Note 7", why: "+73.9% vs +31.8%"}
+  - {metric: "Balance with government authorities", threshold: "Below 1,102.51 Rs Mn with composition disclosed", where: "Note 10", why: "Doubled; 66.7 days of revenue"}
+  - {metric: "Top customer and top-5 share of revenue", threshold: "Top-1 under 20%; top-5 under 65%", where: "Note 34 customer lines", why: "18.64% and 47.02% now; top-1 up 4.45 points"}
+  - {metric: "QIP capex object spent", threshold: "1,563.35 Rs Mn spent by 2027-03-31", where: "Monitoring agency reports; Note 40", why: "Deadline already extended once"}
+  - {metric: "CWIP and capitalisation", threshold: "CWIP 2,566.82 Rs Mn falls as plant is capitalised", where: "Note 4; quarterly results", why: "Commissioning proof"}
+  - {metric: "Receivables over one year and allowance cover", threshold: "Cover at or above 100% (now 56.3%)", where: "Note 8", why: "Old bucket 159.77 vs 64.94 Rs Mn"}
+  - {metric: "Promoter holding and pledge", threshold: "No further sale; pledge nil", where: "Quarterly shareholding pattern", why: "59.35% to 54.88%"}
+  - {metric: "Net debt and interest cover", threshold: "Cover at or above 5.6x; floating share not above 76.7%", where: "Notes 13, 14, 34", why: "Leverage with negative OCF"}
+  - {metric: "Subsidiary profit", threshold: "One agreed figure in AOC-1 and Note 44", where: "Next AR", why: "About 42 Rs Mn conflict"}
+  - {metric: "Other income share of PBT", threshold: "Below 24.4%", where: "Note 22", why: "FX and treasury income carry profit growth"}
+ar_new_downstream_entities:
+  - {name: "Safran Aircraft Engines", where_in_ar: "AR26 [page 7], [page 16], [page 22]; MOU for critical rotating airfoils for strategic defence platforms", entity_type: "aero engine OEM, customer prospect (first named in AR26 vs AR25)"}
+  - {name: "Pratt & Whitney Canada", where_in_ar: "AR26 [page 16], [page 22]; Master Terms Agreement and Purchase Agreement, December 2025", entity_type: "aero engine OEM, customer contract"}
+  - {name: "GE Steam Power GmbH (GE Vernova Power, Switzerland)", where_in_ar: "AR26 [page 16]; long-term supply agreement about USD 53.5 million", entity_type: "customer contract counterparty"}
+  - {name: "Nuovo Pignone S.r.l. (Baker Hughes company)", where_in_ar: "AR26 [page 16]; amended strategic supply agreement through 2030", entity_type: "customer contract counterparty"}
+  - {name: "Arabelle Solutions (EDF group)", where_in_ar: "AR26 [page 7], [page 20], [page 31]; nuclear turbine airfoil qualification", entity_type: "customer, qualification"}
+  - {name: "Hindustan Aeronautics, Mahindra Aerospace, Tata Advanced Systems", where_in_ar: "AR26 [page 22]; domestic aerospace and defence customers", entity_type: "domestic customers named for the first time"}
+strengths_top3:
+  - "Contracted demand and growth delivered: revenue +31.8%, ~30% target met, order book about 65,000 Rs Mn or 10.8x revenue (AR26 [page 38], [page 15])."
+  - "Clean statutory record: unmodified opinion, no going concern language, no related-party loans, CSR fully spent, adequate IFC (AR26 [page 109], [page 118], [page 119])."
+  - "Balance sheet capacity: equity 15,288.36 Rs Mn, net debt 1.21x EBITDA calc, CARE A Stable (AR26 [page 191], [page 73])."
+red_flags_top3:
+  - "Cash conversion: CFO (1,189.66) Rs Mn, FCF (6,914.46) calc, working-capital days 244 vs 202, inventory +73.9%, government balance 1,102.51 (AR26 [page 193], [page 7], [page 219], [page 222])."
+  - "Earnings quality and returns: other income 24.4% of PBT, EBIT margin flat at 28.6%, ROCE 10.7%, adjusted ROCE 15.3% vs 20.7% (AR26 [page 192], [page 14])."
+  - "Disclosure and ownership integrity: Note 44 vs AOC-1 vs CARO xvii; promoter sold 28,85,267 shares; core-campus land on allotment and Mangampet land under a High Court writ (AR26 [page 251], [page 47], [page 223], [page 215], [page 218])."
+best_fit_strategy: "Capex-Led Growth (WATCHLIST)"
+one_line_verdict: "Revenue and orders are strong and cash conversion is not: Capex-Led Growth on WATCHLIST until operating cash flow turns positive and the subsidiary and cash numbers are reconciled."
+analyst_note: "Three things a later stage cannot rebuild from the fields. First, the AR does print company working-capital days: 244 (FY26) vs 202 (FY25), Chairman letter AR26 [page 7]; B02 said it did not. The July 344 is on another basis, so the tripwire cannot be tested from the AR. Second, AOC-1 (AR26 [page 47]) ties to the consolidated statements (PBT +18.18 vs +18.21, PAT sum 13.99, NCI profit 6.86 = 49% of 13.99, equity bridge within 0.39 Rs Mn); Note 44 does not. Treat the VTC loss of 41.97 in B02 as unreliable. CARO xvii on both subsidiaries still conflicts with AOC-1. Third, top-5 concentration is 47.0% calc; B02's 41.3% is an equal-split assumption. Cash facts stand: CFO (1,189.66), FCF (6,914.46) calc, no factoring wording. Promoter sold 28,85,267 shares in FY26; pledge and price NOT FOUND."

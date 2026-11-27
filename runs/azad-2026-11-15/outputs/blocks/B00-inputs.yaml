@@ -1,0 +1,65 @@
+stage: B00-inputs
+company: AZAD
+run_date: 2026-11-15
+model: orchestrator-session (claude-fable-5-2); identity check on claude-haiku-5-5 (B00-intake.yaml)
+status: complete
+run_type: full
+spear_gate: "Spear: OVERRIDE 2026-11-15 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear) - companies/AZAD.md"
+load_bearing_facts:   # first verification priority; web-sourced leads from step1-business-brief.md, NOT anchored evidence
+  - "July falsifier: Q1 FY27 consolidated operating cash flow sign and working-capital days versus 344 (July tripwire). A positive OCF sourced from non-recourse factoring does not count. Q1 filings carry no cash flow statement; the H1 FY27 cash flow statement in inputs/results/AZAD_Q2FY27_results_2026-11-06.pdf answers it."
+  - "Revenue growth guidance over 25% versus delivered (Q1 FY27, Q2 FY27, H1 FY27), and the Q4 FY27 capacity ramp claim."
+  - "Customer concentration: top-1 and top-5 share from the FY26 annual report or prospectus, against the tripwire (top-1 about 20%, top-5 65%)."
+  - "QIP deployment and capex commissioning: verify against the monitoring agency reports (inputs/announcements/) and the H1 FY27 CWIP and fixed-asset lines."
+company_memory: companies/AZAD.md   # prior run runs/azad-2026-07-12 (AVOID on valuation); record stands, not re-derived (standing ruling 2026-10-04)
+sector_cap_row: "Cables / Industrial products"
+sector_cap_row_evidence: "25x row, .claude/skills/section-1b/references/05-sector-cap.md line 38. Azad sells build-to-spec precision components to energy turbine, oil and gas and aerospace OEMs; Step D of the intake picked this row (brief: energy and oil and gas about 81.5% of FY26 revenue, aerospace and defence about 17.2%, web lead to be verified by stage 4). The collector guess 'Pharma / CDMO' is rejected. The 2026-07-12 operator ruling used 25x against 'Defence / strategic' 38x; the row name it used is not in the current chunk. The operator rules the cap row at the /fttcp pillar gate."
+reporting_units: {results: "INR million", annual_report: "INR million", prospectus: "INR million (verify on the page)", screener: "INR Cr", rating: "INR Cr (verify on the page)"}
+text_extraction: "Every inputs/ PDF has a page-marked .txt beside it (tools/extract_pdfs.py; tools/check_extraction.py clean; no OCR needed). Stages and verifiers read the .txt and cite the PDF name with the [page N] marker."
+inventory:
+  prospectus: 2        # RHP 2023-12-14, Prospectus 2023-12-23 (listed 2023-12-28, within 3 years)
+  annual-report: 2     # FY2025-26 (the AR for this run) and FY2024-25 (prior-year reference; collector two-most-recent rule)
+  results: 3           # Q2 FY27 (2026-11-06, with H1 cash flow and balance sheet), Q1 FY27 (2026-08-07), Q4 FY26 audited (2026-05-15)
+  rating: 1            # CARE rationale 2026-06-22
+  concalls: 3          # Q4 FY26 (2026-05-22), Q1 FY27 (2026-08-14), Q2 FY27 (2026-11-14)
+  peer-concalls: 9     # MTARTECH 4, UNIMECH 4, PTCIL 1 (June 2023, stale)
+  announcements: 25
+  shareholding: 2      # Sep 2026 NSE XBRL and its text rendering
+  research: 0
+  screening: 1         # screener-Data_Sheet.csv only
+  presentation: 2      # Q1 FY27, Q2 FY27
+  other: 4             # DRHP, CARE rating letter, Q2 FY26 and Q3 FY26 transcripts (preserved, never consumed)
+input_gaps:
+  - "collector_warning (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. [REPAIRED at Step F: Sep 2026 pattern fetched from NSE]"
+  - "collector_warning (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again. [OPEN: these five sheets are ABSENT documents; screener-Data_Sheet.csv is populated and carries the raw values]"
+  - "collector_warning (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again [REPAIRED at Step F: three results filings fetched from BSE]"
+  - "collector_warning (verbatim): no rating PDF yet: add later the same way [REPAIRED at Step F: CARE rationale 2026-06-22]"
+  - "research/ is empty: no broker notes. Non-anchored source only; no effect on anchored evidence."
+  - "peer-concalls: PTCIL has one transcript only, dated June 2023 (stale). PTC Industries files no transcripts on BSE or NSE; tried BSE, NSE, ptcil.com, screener. Peer verification runs on MTARTECH and UNIMECH in substance."
+  - "peer-concalls: 9 of 12 held."
+  - "QIP placement document (2025) not collected. The QIP monitoring agency reports are in announcements/."
+  - "annual-report/ holds two ARs; FY2025-26 is the AR of record, FY2024-25 is a prior-year reference."
+  - "EMPTY-FOLDER CONFIRMATION suppressed by /step1 autonomy contract; standing answer 'proceed with the gaps'. Empty folder: research/."
+freshness_pairs:
+  - {pair: "RESULTS to CONCALL", trigger_doc: "inputs/results/AZAD_Q2FY27_results_2026-11-06.pdf", mate_expected: "Q2 FY27 concall transcript", status: PASS, missing_doc: ""}
+  - {pair: "RATING BULLETIN to RATIONALE", trigger_doc: "inputs/rating/AZAD_CARE_rating_rationale_2026-06-22.pdf", mate_expected: "full rating rationale", status: PASS, missing_doc: ""}
+  - {pair: "SEBI ORDER to ORDER TEXT", trigger_doc: "none found: a text search of the FY26 AR, results and rating found no SEBI order reference; the 2026-03-25 announcement is a GST penalty order, not a SEBI order. Company memory names an open SEBI PIT Code of Conduct matter (July run); stage 8 checks it.", mate_expected: "n/a", status: PASS, missing_doc: ""}
+  - {pair: "AR to LATEST AUDITED ANNUAL RESULTS", trigger_doc: "inputs/results/AZAD_Q4FY26_audited_results_2026-05-15.pdf", mate_expected: "FY2025-26 annual report", status: PASS, missing_doc: ""}
+freshness_verdict: "FRESHNESS PAIRS OK"
+collector_defect_gate:
+  cmp: 2456.0
+  market_cap_cr: 15861.0
+  cmp_check: PASS
+  screening_content: "screener-Data_Sheet.csv populated; five formula sheets absent"
+  announcements: "25 filings, 2025-11-18 to 2026-11-07 (BSE, 12-month window)"
+  shareholding: "Sep 2026 quarter present"
+corpus_manifest: "see outputs/blocks/B00-intake.yaml (rows verified by the orchestrator where flagged)"
+flags: []
+analyst_note: ""
+intake_check_dispositions:   # B00-intake.yaml proposed five moves; each checked at the page by the orchestrator; none moved
+  - "other/AZAD_CARE_rating_letter_2026-06-16.pdf: identity confirmed (CARE rating letter). NOT moved: rating/ takes one document, the most recent, and holds the 2026-06-22 rationale."
+  - "other/AZAD_DRHP_2023-09-29.pdf: identity confirmed (DRHP). NOT moved: prospectus/ takes 0-2 and holds the RHP and the final Prospectus."
+  - "other/AZAD_Q2FY26_concall_transcript_2025-11-08.pdf and other/AZAD_Q3FY26_concall_transcript_2026-02-20.pdf: identity confirmed. NOT moved: concalls/ takes the three most recent (Q4 FY26, Q1 FY27, Q2 FY27)."
+  - "announcements/AZAD_2026-02-13_Unaudited_..._5ba67cc4.pdf: identity confirmed (Q3 FY26 results, board outcome). NOT moved: results/ takes the three most recent; it stays as a Reg 30 filing."
+  - "Annual_Report_2025.pdf is FY2024-25 on its own pages; Annual_Report_2026.pdf is FY2025-26. Filename year is the filing year."
+  - "PTCIL 2023-06-09 is an analyst and investor meet transcript; UNIMECH 2026-05-04 is an acquisition update call. Both are peer documents, not earnings calls."
+  - "Intake list held 54 files (51 PDFs, 1 CSV, 2 shareholding files); the task message said 57 in error."

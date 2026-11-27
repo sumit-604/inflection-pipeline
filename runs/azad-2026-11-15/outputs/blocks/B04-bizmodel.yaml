@@ -1,0 +1,84 @@
+stage: B04-bizmodel
+company: "AZAD"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "QIP placement document (2025) not collected (carried from B00 and B03); QIP use read from Q2R [page 6] and AR26 only."
+  - "Five screener formula sheets absent; research/ empty (carried from B00). No effect on anchored evidence."
+  - "Q1 FY27 presentation and results, Q4 FY26 and Q1 FY27 concalls, peer concalls not opened by this stage; Q2 FY27 deck and concall carry the H1 and Q2 data used."
+  - "Definition of company working-capital days (244 vs 202, AR26 [page 7]): NOT FOUND IN DOCUMENT. The 344 tripwire is CARE basis (CARE [page 3]); no H1 FY27 figure on that basis in the corpus."
+  - "Names of the two customers at or above 10% of revenue; H1 FY27 customer concentration: NOT FOUND."
+  - "Capacity utilisation percentage by plant, segment-level margins, civil vs defence split of Aerospace & Defence, annual parts delivered and revenue per part: NOT FOUND."
+  - "Job work (sale of services 1,193.62 Rs Mn) contract terms and who owns the material; reason for +71.7% growth: NOT FOUND."
+  - "Cost advantage versus Chinese suppliers, count of qualified suppliers per part: NOT FOUND."
+  - "Peer comparison in the prospectus is FY23 (stale); live peer data belongs to the peer-concall stages."
+flags:
+  - {type: FLAG-BASIS-SETTLED, reason: "Concall Rs 187.8 Cr (Q2) and Rs 358.3 Cr (H1) are STANDALONE revenue from operations (1,878.03 and 3,583.22 Rs Mn, Q2R [page 3]). Rs 190.94 Cr and Rs 363.53 Cr are CONSOLIDATED revenue from operations (1,909.35 and 3,635.34 Rs Mn, Q2R [page 9]). Neither is total income. No source is wrong."}
+  - {type: FLAG-CASH, reason: "H1 FY27 consolidated OCF (436.24) Rs Mn (Q2R [page 11]), no factoring in the period. Bill discounting lines usable from Q4 FY27 and a 50 percent OEM advance of about USD 4.5 Mn expected (Q2C [page 9]); CARE says non-recourse factoring is being explored (CARE [page 3]). Any positive OCF from Q4 FY27 must be split from these."}
+  - {type: FLAG-WC-344-BASIS, reason: "The July tripwire 344 days is CARE working capital cycle at 31 March 2026 (287 prior year; inventory 262, collection 163, creditor 80 days, CARE [page 3]). Company figure is 244 vs 202 (AR26 [page 7]); stage 1 calc is 369 on annualised H1 revenue. Three bases, same direction (worse). Corrects B03, which found no basis for 344."}
+  - {type: FLAG-LEVERAGE-NOT-AT-EBIT, reason: "H1 FY27 incremental EBITDA margin 43.1% but incremental EBIT margin 19.2% (calc, Q2R [page 9], [page 11]); depreciation +88.7%, finance cost +80.4%, other income down 63.1%; PBT (8.9)% on revenue +28.6%. Further depreciation step-up in Q3 and Q4 (Q2C [page 6])."}
+  - {type: FLAG-CAPACITY-CLAIM, reason: "Over Rs 1,300 Cr run-rate by end FY28 needs about 9.3 percent sequential growth for six quarters from Q2 FY27 (calc) and equals the top of the 10,833 to 13,000 Rs Mn a year implied by spreading the 65,000 Rs Mn order book over 5 to 6 years (calc). FY27 guidance of over 25 percent needs H2 FY27 revenue of 3,901.85 Rs Mn, only +21.8 percent on H2 FY26 (calc). A 2 to 3 week delay is already admitted (Q2C [page 10])."}
+  - {type: FLAG-NET-DEBT-UNRECONCILED, reason: "Consolidated net debt calc 4,740.69 Rs Mn at 30 Sep 2026 (borrowings 5,616.25 less cash and bank 875.56, Q2R [page 10]) vs 2,720.48 at March (B03); management says Rs 423.8 Cr (Q2C [page 7]). Gap of about 502 Rs Mn not reconciled."}
+  - {type: FLAG-JOBWORK-MIX, reason: "Sale of services (job work) 1,193.62 Rs Mn, +71.7% vs products +27.0% (AR26 [page 229]); 19.8% of revenue. Material ownership and cash profile NOT FOUND."}
+  - {type: FLAG-SEGMENT-GAP, reason: "Energy 79.7% of standalone revenue (AR26 [page 30]) vs Energy plus Oil & Gas 81.5% (AR26 [page 19]) implies Oil & Gas about 106 Rs Mn, while AR26 [page 19], [page 23] say under 100 Rs Mn. About 6 Rs Mn gap, unreconciled."}
+  - {type: FLAG-DECK-STALE-TEXT, reason: "Q2P [page 7] chairman text says revenue grew 26.8 percent and shows xx / yy placeholders; 26.8 percent is Q1 FY27 standalone growth (calc). Q2P [page 6] shows 31.6 percent for Q2. Use tables."}
+  - {type: FLAG-SECTOR-CAP, reason: "Revenue mix supports Cables / Industrial products 25x (energy about 80 percent, A&D 17.2 percent). Defence / strategic 38x not supported by revenue; civil vs defence split of A&D NOT FOUND; A&D is about 29 percent of order book. Operator rules at /fttcp."}
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Sale of products, consolidated FY26 (AR26 [page 229])", type: "transactional per-unit under long-term OEM contracts", pct_of_revenue: 78.8, predictability: "high on contracted volume, medium on timing"}
+  - {name: "Sale of services, job work, consolidated FY26 (AR26 [page 229])", type: "fee for service", pct_of_revenue: 19.8, predictability: "medium"}
+  - {name: "Scrap and export incentives, consolidated FY26 (AR26 [page 229])", type: "incidental", pct_of_revenue: 1.4, predictability: "low"}
+  - {name: "End market view, standalone FY26: Energy and Oil & Gas (AR26 [page 19])", type: "contracted OEM supply 3 to 10 years", pct_of_revenue: 81.5, predictability: "high on visibility, medium on timing"}
+  - {name: "End market view, standalone FY26: Aerospace & Defence (AR26 [page 21])", type: "contracted OEM supply plus development programme", pct_of_revenue: 17.2, predictability: "medium"}
+  - {name: "End market view, standalone FY26: Others (AR26 [page 18])", type: "incidental", pct_of_revenue: 1.35, predictability: "low"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - "Switching costs from 30 to 48 month OEM qualification, per component: strong, durable per part, weak per customer while wallet share is under 2 percent"
+  - "Intangible qualifications: 1,700+ components, 45+ processes, Nadcap, EDF/Arabelle approval: strong, decays if quality slips"
+  - "Dedicated customer plants (six, 44,800 sq m): medium until volumes ramp"
+  - "Partial cost advantage (gross margin before depreciation 45.2 percent): medium"
+valuation_methods:
+  primary: {method: "P/E on normalised earnings power", why: "Profitable and earnings explain value; destination PE set by Section 1B; strip other income and use post-depreciation earnings on ramped plants"}
+  secondary: {method: "EV/EBITDA cross-check", why: "Removes treasury income and financing swing; read beside EV/EBIT because depreciation is rising fast; use net debt including working capital borrowings"}
+  tertiary: {method: "Reverse DCF", why: "Free cash flow is deeply negative (FCF (6,914.46) Rs Mn FY26 calc, B03); use only to test what the ramp must deliver"}
+  not_applicable: ["P/B", "EV/Sales", "SOTP (single reportable segment, segment margins NOT FOUND)", "NAV / replacement cost", "DDM"]
+irrelevant_ratios:
+  - "Spot-year ROCE 10.7 percent (adjusted 15.3): CWIP and unspent QIP capex inflate capital employed before plants earn"
+  - "Inventory turnover 0.22: numerator excludes conversion cost (B03 finding 15)"
+  - "Current ratio 3.29: held up by slow-to-cash current assets"
+  - "Debt to equity 0.29: ignores the swing from net cash to net debt of 4,740.69 Rs Mn (calc, Sep 2026)"
+  - "PAT margin and EPS growth: other income 24.4 percent of FY26 PBT and falling as QIP cash is spent"
+  - "P/B and dividend yield: value sits in qualifications and growth reinvestment"
+must_track_metrics:
+  - {metric: "Consolidated operating cash flow after tax, with discounting, factoring and advances split out", healthy: "Positive without those items; H1 FY27 was (436.24) Rs Mn", red_flag: "Still negative in H2 FY27, or positive only after bill discounting or one-time advances"}
+  - {metric: "Working capital days on one fixed definition", healthy: "Below 202 (FY25 company basis)", red_flag: "Above 244 (FY26); definition changes"}
+  - {metric: "Revenue growth vs over 25 percent guidance and H2 FY27 level", healthy: "Above 25 percent; H2 FY27 above 3,901.85 Rs Mn", red_flag: "Below 25 percent for two quarters or sequential growth under 5 percent"}
+  - {metric: "EBIT margin excluding other income (and gross margin before depreciation)", healthy: "Near 26 percent EBIT; gross margin at or above 45 percent", red_flag: "EBIT below 24 percent or gross margin below 43.7 percent"}
+  - {metric: "Customer concentration (top-1, top-5)", healthy: "Top-1 under 20 percent, top-5 under 65 percent (18.64 and 47.02 now)", red_flag: "Top-1 at or above 20 percent"}
+unit_economics:
+  unit: "Rs 100 of consolidated revenue from operations (revenue per part NOT FOUND)"
+  revenue_per_unit: "Rs 100: net material 9.6, employees 22.5, other expenses 30.5 (FY26 calc, AR26 [page 192], [page 230], [page 231])"
+  margin_per_unit: "FY26 EBITDA ex other income Rs 37.4, EBIT Rs 28.6, PAT Rs 22.2; H1 FY27 EBITDA Rs 37.6, EBIT Rs 26.3, PAT Rs 18.2; incremental EBITDA 43.1 percent but incremental EBIT 19.2 percent (calc)"
+  key_lever: "Speed at which 4,273.54 Rs Mn of inventory converts to approved, billed parts across six new plants; it sets cash, depreciation absorption and the Rs 1,300 Cr run-rate claim"
+first_deterioration_signals:
+  - {risk: "Qualification or delta qualification slips", first_signal: "Inventory and work-in-progress grow faster than revenue (inventory +29.9 percent in H1 FY27 vs revenue +28.6 percent; FY26 +73.9 vs +31.8)"}
+  - {risk: "Depreciation outruns revenue", first_signal: "EBIT margin ex other income below 24 percent (26.3 percent in H1 FY27)"}
+  - {risk: "Cash conversion does not turn", first_signal: "Operating cash flow after tax negative and current borrowings rising (2,746.58 vs 1,756.92 Rs Mn in six months)"}
+  - {risk: "Non-operating items flatter OCF from Q4 FY27", first_signal: "Bill discounting, factoring or customer advances inside operating cash flow"}
+  - {risk: "Capacity ramp claim fails", first_signal: "Sequential revenue growth under 5 percent in Q3 or Q4 FY27; H2 FY27 below 3,901.85 Rs Mn"}
+  - {risk: "Customer concentration", first_signal: "Top-1 share at or above 20 percent in the AR27 customer note"}
+  - {risk: "QIP object and land title", first_signal: "755.40 Rs Mn capex object unspent after 31 March 2027; CWIP not falling"}
+mgmt_questions:
+  - "Define working capital days of 244 and map it to CARE's 344; give the target path."
+  - "How much of H2 FY27 operating cash flow comes from discounting, advances or factoring, and how will it be reported?"
+  - "Which delta qualifications clear in Q3 and Q4 by plant, and how much revenue is held behind each?"
+  - "Who are the two customers above 10 percent and do they hold termination or price-down clauses?"
+  - "Why did job work revenue rise 71.7 percent against products 27.0 percent, and who owns the material?"
+  - "What utilisation do the six plants run at, and what does the Rs 1,300 Cr run-rate assume?"
+  - "When is the 755.40 Rs Mn QIP capex balance spent and for what orders?"
+one_line_verdict: "A real qualification moat with contracted demand and 28.6 percent H1 growth, but operating leverage stops at EBITDA, cash is still negative at (436.24) Rs Mn, and the Rs 1,300 Cr run-rate by FY28 needs about 9 percent sequential growth for six quarters; value on P/E, test the cash."
+analyst_note: "Four things a later stage cannot rebuild from the fields. First, the revenue basis: concall 187.8 and 358.3 Cr are standalone revenue from operations; 190.94 and 363.53 Cr are consolidated; neither is total income. Second, the July tripwire 344 days is CARE's cycle (CARE p3), not a company or AR figure, so B03's statement that it has no AR basis is right but incomplete; the company prints 244 vs 202. Third, the factoring risk is forward: CARE says non-recourse factoring is being explored, the Q2 concall says bill discounting lines open from Q4 FY27 and one OEM will advance about USD 4.5 Mn; the H1 OCF of (436.24) contains none of it. Any later positive OCF must be split. Fourth, the 25x Cables / Industrial products row fits the revenue mix (energy about 80 percent); Defence / strategic is not supported because civil and defence aerospace are not split. Net debt of 4,740.69 Rs Mn is this stage's calc; management quotes Rs 423.8 Cr and the gap is open."

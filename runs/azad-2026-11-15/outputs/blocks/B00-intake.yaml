@@ -1,0 +1,546 @@
+stage: B00-intake
+model: claude-haiku-5-5
+status: complete
+corpus_manifest:
+  - path: inputs/annual-report/Annual_Report_2025.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "annual report"
+    period: "FY2024-25"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Filename year 2025 is the filing year. Page 1 cover letter dated 2025-09-08 says FY 2024-2025 (42nd AGM). Page 2 reads Annual Report 2024-25. Use FY2024-25."
+  - path: inputs/annual-report/Annual_Report_2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "annual report"
+    period: "FY2025-26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 cover letter dated 2026-09-07 says Annual Report for FY 2025-26 (43rd AGM)."
+  - path: inputs/concalls/AZAD_Q1FY27_concall_transcript_2026-08-14.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "concall"
+    period: "Q1FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Page 1 letter dated 2026-08-14 gives call date 2026-08-08 only. Quarter from page 2 header: Q1 FY27 Earnings Conference Call."
+  - path: inputs/concalls/AZAD_Q2FY27_concall_transcript_2026-11-14.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "concall"
+    period: "Q2FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Page 1 letter date OCR reads November 14, 2025; subject line and page 2 give call 2026-11-07. Quarter from page 2 header: Q2 FY27."
+  - path: inputs/concalls/AZAD_Q4FY26_concall_transcript_2026-05-22.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "concall"
+    period: "Q4FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Page 1 letter dated 2026-05-22 gives call date 2026-05-16. Quarter from page 2 header: Q4 FY26."
+  - path: inputs/other/AZAD_CARE_rating_letter_2026-06-16.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "rating"
+    period: "FY26"
+    folder_match: false
+    proposed_move: "inputs/rating/"
+    page_read: 1
+    note: "CARE Ratings letter to the CFO dated 2026-06-16, FY26 audited. Rating document filed in other/. Misfile by type."
+  - path: inputs/other/AZAD_DRHP_2023-09-29.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "prospectus (draft red herring prospectus)"
+    period: ""
+    folder_match: false
+    proposed_move: "inputs/prospectus/"
+    page_read: 2
+    note: "DRHP dated 2023-09-29. No financial period on pages 1 and 2. Offer document filed in other/. Misfile by type."
+  - path: inputs/other/AZAD_Q2FY26_concall_transcript_2025-11-08.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "concall"
+    period: "Q2FY26"
+    folder_match: false
+    proposed_move: "inputs/concalls/"
+    page_read: 2
+    note: "Page 1 letter dated 2025-11-08 gives call 2025-11-03. Quarter from page 2 header: Q2 H1 FY26. Concall filed in other/. Misfile by type."
+  - path: inputs/other/AZAD_Q3FY26_concall_transcript_2026-02-20.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "concall"
+    period: "Q3FY26"
+    folder_match: false
+    proposed_move: "inputs/concalls/"
+    page_read: 2
+    note: "Page 1 letter dated 2026-02-20 gives call 2026-02-14. Quarter from page 2 header: Q3 FY26. Concall filed in other/. Misfile by type."
+  - path: inputs/peer-concalls/MTARTECH_Concall_Transcript_2026-02-05.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "MTAR Technologies Limited (peer, not AZAD)"
+    doc_type: "concall"
+    period: "Q3 and 9M FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "PEER document, non-anchored for AZAD. Page 2 header: Q3 and 9M FY26 call, 2026-01-30."
+  - path: inputs/peer-concalls/MTARTECH_Concall_Transcript_2026-05-20.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "MTAR Technologies Limited (peer, not AZAD)"
+    doc_type: "concall"
+    period: "Q4 FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "PEER document, non-anchored for AZAD. Page 2 header: Q4 FY26 call, 2026-05-13."
+  - path: inputs/peer-concalls/MTARTECH_Concall_Transcript_2026-08-06.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "MTAR Technologies Limited (peer, not AZAD)"
+    doc_type: "concall"
+    period: "Q1 FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "PEER document, non-anchored for AZAD. Page 2 header: Q1 FY27 call, 2026-07-30."
+  - path: inputs/peer-concalls/MTARTECH_Concall_Transcript_2026-11-06.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "MTAR Technologies Limited (peer, not AZAD)"
+    doc_type: "concall"
+    period: "Q2 and H1 FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "PEER document, non-anchored for AZAD. Page 2 header: Q2 and H1 FY27 call, 2026-10-30."
+  - path: inputs/peer-concalls/PTCIL_Concall_Transcript_2023-06-09.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PTC Industries Limited (peer, not AZAD)"
+    doc_type: "analyst and investor meet transcript"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "PEER document, non-anchored for AZAD. Investor and analyst meet held 2023-06-09, not an earnings call. No financial period on pages 1 and 2."
+  - path: inputs/peer-concalls/UNIMECH_Concall_Transcript_2026-05-04.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Unimech Aerospace and Manufacturing Limited (peer, not AZAD)"
+    doc_type: "analyst call transcript (acquisition update)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "PEER document, non-anchored for AZAD. Acquisition update call held 2026-04-28, not an earnings call. No financial period."
+  - path: inputs/peer-concalls/UNIMECH_Concall_Transcript_2026-06-03.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Unimech Aerospace and Manufacturing Limited (peer, not AZAD)"
+    doc_type: "concall"
+    period: "Q4 FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "PEER document, non-anchored for AZAD. Page 2 header: Q4 FY26 call, 2026-05-29."
+  - path: inputs/peer-concalls/UNIMECH_Concall_Transcript_2026-08-08.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Unimech Aerospace and Manufacturing Limited (peer, not AZAD)"
+    doc_type: "concall"
+    period: "Q1 and FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "PEER document, non-anchored for AZAD. Page 2 header: Q1 and FY27 call, 2026-08-04."
+  - path: inputs/peer-concalls/UNIMECH_Concall_Transcript_2026-10-31.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Unimech Aerospace and Manufacturing Limited (peer, not AZAD)"
+    doc_type: "concall"
+    period: "Q2 and H1 FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "PEER document, non-anchored for AZAD. Page 2 header: Q2 and H1 FY27 call, 2026-10-28."
+  - path: inputs/presentation/AZAD_Q1FY27_investor_presentation_2026-08-07.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "investor presentation"
+    period: "Q1FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 letter: presentation for quarter ended June 30, 2026, call 2026-08-08."
+  - path: inputs/presentation/AZAD_Q2FY27_investor_presentation_2026-11-06.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "investor presentation"
+    period: "Q2FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 letter dated 2026-11-05 for quarter and half year ended September 30, 2026, call 2026-11-07."
+  - path: inputs/prospectus/AZAD_Prospectus_2023-12-23.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "prospectus"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Final prospectus dated 2023-12-23. No financial period on pages 1 and 2."
+  - path: inputs/prospectus/AZAD_RHP_2023-12-14.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "red herring prospectus"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "RHP dated 2023-12-14. No financial period on pages 1 and 2."
+  - path: inputs/rating/AZAD_CARE_rating_rationale_2026-06-22.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "rating"
+    period: "FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "CARE Ratings press release dated 2026-06-22, FY26 audited basis."
+  - path: inputs/results/AZAD_Q4FY26_audited_results_2026-05-15.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "results (audited, board outcome)"
+    period: "Q4FY26 and FY26 (year ended 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Board outcome dated 2026-05-15 for quarter and year ended March 31, 2026."
+  - path: inputs/results/AZAD_Q2FY27_results_2026-11-06.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "results (unaudited, board outcome)"
+    period: "Q2FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 letter date OCR reads November 5, 2025. Subject line reads board meeting 2026-11-06 for quarter and half year ended September 30, 2026."
+  - path: inputs/results/AZAD_Q1FY27_results_2026-08-07.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "results (unaudited, board outcome)"
+    period: "Q1FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Board outcome dated 2026-08-07 for quarter ended June 30, 2026."
+  - path: inputs/screening/screener-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "screener data export"
+    period: "FY2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "COMPANY NAME line reads AZAD ENGINEERING LTD. Report dates run to 2026-03-31. The sheet states no reporting unit on its face."
+  - path: inputs/shareholding/AZAD_shareholding_2026-09-30_NSE_XBRL.xml
+    file_type: xml
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "shareholding pattern (Reg 31, XBRL)"
+    period: "as of 2026-09-30 (Q2FY27 quarter end)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "XBRL facts: NameOfTheCompany AZAD ENGINEERING LIMITED, DateOfReport 2026-09-30. File is large; identified by grep, not full read."
+  - path: inputs/shareholding/AZAD_shareholding_2026-09-30_rendered.txt
+    file_type: txt
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "shareholding pattern (Reg 31, plain-text rendering of XBRL)"
+    period: "as of 2026-09-30 (Q2FY27 quarter end)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Rendering of the XBRL file above. Same filing."
+  - path: inputs/announcements/AZAD_2025-11-18_Award_of_Order_Receipt_of_Order__0d9a3825.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (Reg 30: master terms and purchase agreement, Pratt and Whitney Canada)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2025-11-18."
+  - path: inputs/announcements/AZAD_2025-11-28_Resignation_of_Company_Secretary_Compliance_Office__2e712aa5.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (Reg 30: KMP resignation)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2025-11-28."
+  - path: inputs/announcements/AZAD_2025-11-29_Appointment_of_Company_Secretary_and_Compliance_Of__e9bb67f2.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (Reg 30: KMP appointment)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2025-11-29."
+  - path: inputs/announcements/AZAD_2026-01-22_Intimation_Regarding_Change_In_Constitution_Of_The__f3c5089e.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (statutory auditor change in constitution)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2026-01-22. Statutory auditor converted from partnership to LLP."
+  - path: inputs/announcements/AZAD_2026-02-13_Unaudited_Standalone_And_Consolidated_Financial_Results__5ba67cc4.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "results (unaudited, board outcome)"
+    period: "Q3FY26"
+    folder_match: false
+    proposed_move: "inputs/results/"
+    page_read: 1
+    note: "Board outcome dated 2026-02-13 for quarter and nine months ended December 31, 2025. Results filing held in announcements/. Other quarterly results sit in results/. Orchestrator to confirm."
+  - path: inputs/announcements/AZAD_2026-02-14_Analyst_Investor_Meet_Outcome__3df3c9f4.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (earnings call audio recording notice)"
+    period: "Q3FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Filename says analyst meet outcome. Page 1 says audio recording of earnings call for quarter and nine months ended December 31, 2025, call 2026-02-14."
+  - path: inputs/announcements/AZAD_2026-02-14_Monitoring_Agency_Report__2f10e5c9.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (QIP monitoring agency report, CARE Ratings)"
+    period: "quarter ended 2025-12-31 (Q3FY26)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2026-02-14."
+  - path: inputs/announcements/AZAD_2026-03-25_Receipt_Of_Communications_Dated_24Th_March_2026_Wherein__0071baba.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (GST penalty order disclosure)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2026-03-25. Body says communications dated 24 March 2025 (OCR). Filename says 2026. Date conflict noted, not resolved."
+  - path: inputs/announcements/AZAD_2026-03-26_Award_of_Order_Receipt_of_Order__512be139.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (order: long term contract with Mitsubishi Heavy Industries)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2026-03-26."
+  - path: inputs/announcements/AZAD_2026-04-23_Award_of_Order_Receipt_of_Order__49350ad6.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (contract amendment No. 3, Nuovo Pignone / Baker Hughes)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2026-04-23. Filename says award of order; body is an amendment to a supply agreement."
+  - path: inputs/announcements/AZAD_2026-04-23_Press_Release_Media_Release__38df6b50.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (press release, facility inauguration)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2026-04-23."
+  - path: inputs/announcements/AZAD_2026-05-12_Allotment_of_ESOP_ESPS__81b522ee.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (ESOP option grant)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2026-05-12."
+  - path: inputs/announcements/AZAD_2026-05-12_Change_in_Management__54e49ca1.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (board outcome: director re-appointments)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2026-05-12."
+  - path: inputs/announcements/AZAD_2026-05-13_Monitoring_Agency_Report__88345c4c.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (QIP monitoring agency report, CARE Ratings)"
+    period: "quarter ended 2026-03-31 (Q4FY26)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2026-05-13."
+  - path: inputs/announcements/AZAD_2026-05-16_Analyst_Investor_Meet_Outcome__a61dfeed.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (earnings call audio recording notice)"
+    period: "Q4FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Filename says analyst meet outcome. Page 1 says audio recording of earnings call for quarter and year ended March 31, 2026."
+  - path: inputs/announcements/AZAD_2026-07-22_Disclosure_Under_Regulation_30_Of_The_SEBI_Listing_Obli__42c23ac8.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (Reg 30 disclosure: first indigenous turbojet engine delivered to DRDO and MoD)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2026-07-22."
+  - path: inputs/announcements/AZAD_2026-08-08_Analyst_Investor_Meet_Outcome__e29e08ab.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (earnings call audio recording notice)"
+    period: "Q1FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Filename says analyst meet outcome. Page 1 says audio recording of earnings call for quarter ended June 30, 2026, call 2026-08-08."
+  - path: inputs/announcements/AZAD_2026-09-07_Business_Responsibility_and_Sustainability_Reporting_BR__1ee83e1e.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (BRSR)"
+    period: "FY2025-26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2026-09-07. BRSR for financial year 2025-26."
+  - path: inputs/announcements/AZAD_2026-09-07_Notice_Of_Annual_General_Meeting__af47f600.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (notice of 43rd AGM)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2026-09-07. AGM on 2026-09-29."
+  - path: inputs/announcements/AZAD_2026-09-28_General_Update__9958f980.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (general update, lean manufacturing facilities for GE Vernova)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2026-09-28."
+  - path: inputs/announcements/AZAD_2026-09-29_Shareholder_Meeting_Postal_Ballot_Outcome_of_AGM__059a3f78.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (AGM proceedings summary)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2026-09-29."
+  - path: inputs/announcements/AZAD_2026-09-30_Change_in_Management__7e8ddece.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (Reg 30: AGM resolutions, director re-appointments)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2026-09-30."
+  - path: inputs/announcements/AZAD_2026-10-12_Award_of_Order_Receipt_of_Order__4274d9cc.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (order: two-year rate contract, BHEL)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2026-10-12."
+  - path: inputs/announcements/AZAD_2026-11-06_Monitoring_Agency_Report__69e0e356.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (QIP monitoring agency report, CARE Ratings)"
+    period: "quarter ended 2026-09-30 (Q2FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 2026-11-05 per letter body on page 1 (filename 2026-11-06)."
+  - path: inputs/announcements/AZAD_2026-11-07_Analyst_Investor_Meet_Outcome__2271560f.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Azad Engineering Limited"
+    doc_type: "announcement (earnings call audio recording notice)"
+    period: "Q2FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Filename says analyst meet outcome. Page 1 says audio recording of earnings call for quarter and half year ended September 30, 2026, call 2026-11-07."
+unreadable: []
+unidentified: []

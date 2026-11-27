@@ -145,3 +145,9 @@ These are weekly or slower series. The date shown is their last reading.
 
 
 <!-- market-read -->
+
+## Market read
+
+Monday's slide did not turn into a rout. Wednesday was a second soft day, and it pushed the short and middle trend counts to the lowest of this pullback. Thursday then bounced, led by IT and realty. About 100 stocks rose hard and fewer than 30 fell hard, the best balance in more than two weeks. Fear fell, and the VIX closed near 17. Yet the bounce was thin under the surface. Only a little over half of all stocks closed higher, and turnover was below a year ago. The long count rose to 993, still just under the 1,000 line the last two briefs watched. The IT index jumped on its largest names while only three IT stocks in ten hold their weekly trend lines. The banks kept their long trend, but the share of bank stocks above the four week line fell to under six in ten. The previous brief recorded eight in ten for Monday. The smallest companies slipped under their own long line. So the market is a strong top held up by a few large groups, and a wide base that has stopped falling but has not started to climb.
+
+Full brief: briefs/2026-11-26.html

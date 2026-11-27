@@ -1,0 +1,39 @@
+stage: B01-gate0
+company: "GVPIL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "concalls: no Q1 FY27 or Q2 FY27 transcript"
+  - "shareholding: screener-derived only; filed pattern and pledge absent (E3 NOT FOUND, scored 0)"
+  - "screening: only Data Sheet CSVs populated; no capex, trade payables or current liabilities lines for FY17 to FY23"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVOID (core 33). Depressors are FY22 to FY24 losses and FY19 to FY21 negative CFO; FY25 and FY26 turnaround rests on one-offs"}
+  - {type: FLAG-EARNINGS-QUALITY, reason: "FY26 EBITDA 20.4% (AR26 p.214) includes 1,016.6 mn loss-allowance credit (AR26 p.252); ex-credit 12.4%. M2 score of 5 would be 3 without it"}
+  - {type: FLAG-CASH, reason: "FY26 CFO 469.36 Cr includes receivables decrease 5,136.5 mn (AR26 p.215); 4,500.0 mn related-party loan sits outside cash"}
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 6, B: 2, C: 1, D: 16, E: 8}
+core_score: 33
+moat_score: 11
+grand_total: 44
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers:
+  - "1 Block A 6 <8, max GOOD (FY22-FY24 losses)"
+  - "2 Block B 2 <8, max GOOD (FY19-FY21 negative CFO, capex gaps)"
+  - "8 PAT negative in last 3 years (FY24 -171.33 Cr), max AVERAGE"
+history_downgrade: false
+data_notes:
+  - "Basis: FY25/FY26 screener Sales = AR consolidated continuing revenue; PAT = total incl. discontinued (AR26 p.214). FY17-FY24 as screener holds them, not restated. Revenue CAGR compares different bases."
+  - "Units: screener Cr; AR and results mn. Results files are standalone; AR financials consolidated."
+  - "ROCE computed (no source ROCE). Capital employed proxy = equity + reserves + borrowings; formal TA-CL available FY25 (62.6%) and FY26 (41.4%) only."
+  - "Loss-to-profit swing, FY24 to FY25 (-171.33 Cr to 203.00 Cr); FY17 PAT -2.46 Cr is negative endpoint, PAT CAGR N/M."
+  - "B1, B3 N/M: cumulative PAT -190.51 Cr negative. FY24-FY26 sub-window CFO/PAT 3.63x, FCF/PAT 3.60x (information only)."
+  - "B2 scored on 6 determinable years (capex NOT FOUND FY17, FY18, FY22, FY23). B4 payables NOT FOUND for FY17; scored 0."
+  - "PEER DATA NEEDED: M5 (segment universe not provided). M9 uses GM proxy (revenue less material cost net of inventory change)."
+  - "Memory facts not reproduced: 27.0% reported margin (rebuilt EBITDA 20.4%, PBT-before-exceptional/revenue 26.8%); Q2 FY27 other income 59.0% of continuing PBT standalone (memory 48%)."
+  - "Confirmed: Q1 FY27 margin 14.5%, Q2 FY27 9.8%, FY26 CFO 469.36 Cr vs PAT 252.61 Cr."
+block_b_trend: "improving on the numbers (CFO 182.40 Cr FY24 to 469.36 Cr FY26) but FY26 includes a 5,136.5 mn receivables release, so repeatability is unproven"
+analyst_note: "Core 33 reflects a ten-year window dominated by FY19 to FY24 distress. Latest-year ratios are strong (ROCE 48.4%, net cash, D 16/20) but sit on write-backs, a receivables release and a Rs 450 cr related-party loan. Do not read AVOID as a view on the FY27 run-rate; read it as the depressor set the later stages must separate from the current business. M2 score of 5 falls to 3 without the 1,016.6 mn credit."

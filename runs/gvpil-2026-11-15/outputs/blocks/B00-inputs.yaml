@@ -1,0 +1,93 @@
+stage: B00-inputs
+company: GVPIL
+company_name: GE Power India Limited
+run_date: 2026-11-15
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: true
+cmp: 617.0
+market_cap_cr: 4149.0
+codes: {bse: 532309, nse: GVPIL, former_symbol: GEPIL}
+sector_cap_row: "EPC / Civil construction"
+sector_cap_row_evidence: "Section 1B cap table, .claude/skills/section-1b/references/05-sector-cap.md line 48 (20x). Revenue is executed through an order backlog of power-plant equipment supply, erection and service contracts (step1-business-brief.md, SECTOR CAP ROW). Other reading named in the brief: Cables / Industrial products (25x) if the aftermarket services are classed as industrial products; the separating observation is the share of spares and services in filed FY27 revenue. Operator rules the row at the /fttcp pillar gate."
+reporting_units: {results: "INR million", annual_report: "INR million", screener: "INR crore", rating: "see document face"}
+text_extraction: "All PDFs pre-extracted to page-marked .txt beside each PDF (tools/extract_pdfs.py). Stages and verifiers read the .txt paths. One file GARBLED beyond page 1: inputs/announcements/20261115-f68052f4-d056-4ada-88e0-b645cb131036 (vernacular newspaper notice of results)."
+spear: "Spear: OVERRIDE 2026-11-15 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+load_bearing_facts:
+  - "Guidance against delivery: FY27 execution of 85-90% of the Mar 2026 core services backlog and an 11% normalised EBITDA margin, against Q1 and Q2 FY27 operating margins."
+  - "Related party and governance: royalty and trademark fee to the GE group; terms of the gas and hydro sales to GE Vernova entities; Durgapur demerger to JSW Energy."
+  - "Earnings quality: FY26 reported against normalised margin; other income share of PBT; one-off write-backs and FGD termination settlements."
+  - "Concentration and cash: customer concentration; FY26 CFO against PAT; net cash; whether CFO is a one-time working-capital release."
+
+inventory:
+  prospectus:    { count: 0, status: ABSENT, note: "not expected; long-listed company" }
+  annual-report: { count: 2, status: present, detail: ["Annual_Report_2026 = FY2025-26, 332pp (primary)", "Annual_Report_2025 = FY2024-25, 353pp (prior-year reference)"] }
+  results:
+    count: 4
+    status: present
+    detail:
+      - "Results_Q2FY27_30Sep2026 (quarter and half year ended 30 Sep 2026, letter 13 Nov 2026)"
+      - "Results_Q1FY27_30Jun2026 (letter 13 Aug 2026)"
+      - "Results_Q4FY26_31Mar2026_audited (audited quarter and year, letter 11 May 2026)"
+      - "Results_Q3FY26_31Dec2025 (moved from announcements/; 4th, older than the 3 most recent)"
+    stage_use: "3 most recent: Q4 FY26, Q1 FY27, Q2 FY27"
+  rating:        { count: 1, status: present, detail: "ICRA rationale 03 Mar 2026, full rationale 7pp" }
+  concalls:
+    count: 3
+    status: present
+    quarter_map:
+      - { file: "Concall_Nov_2025_Q2FY26_Transcript", quarter: "Q2 FY26", call_date: "2025-11-14" }
+      - { file: "Concall_Feb_2026_Transcript",        quarter: "Q3 FY26", call_date: "2026-02-17" }
+      - { file: "Concall_May_2026_Transcript",        quarter: "Q4 FY26", call_date: "2026-05-12" }
+    note: "Quarter not printed on page 1 of the transcripts; mapped from call dates against the results calendar. No Q1 FY27 earnings call was held. Q2 FY27 call is scheduled for 16 Nov 2026."
+  peer-concalls:
+    count: 12
+    status: present
+    peers:
+      BHEL:      ["Q1 FY22 (Jul 2021)", "Q4 FY22 (May 2022)", "Q4 FY23 (May 2023)", "Q4 FY24 (May 2024)"]
+      ISGEC:     ["Q3 FY26 (Feb 2026)", "Q4 FY26 (May 2026)", "Q1 FY27 (Aug 2026)", "Q2 FY27 (Nov 2026)"]
+      POWERMECH: ["Q2 FY26 (Nov 2025)", "Q3 FY26 (Feb 2026)", "Q4 FY26 (May 2026)", "Q1 FY27 (Aug 2026)"]
+  announcements: { count: 31, status: present, detail: "Reg 30 filings 10 Dec 2025 to 15 Nov 2026, date-prefixed" }
+  shareholding:  { count: 1, status: partial, detail: "screener-derived table to Sep 2026; NOT the filed pattern; no pledge detail" }
+  research:      { count: 0, status: ABSENT }
+  screening:     { count: 4, status: partial, detail: "Data_Sheet CSVs for GVPIL, BHEL, ISGEC, POWERMECH, populated (content checked). Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization sheets exported EMPTY for all four; counted ABSENT." }
+  presentation:  { count: 3, status: present, detail: ["Investor_Presentation_1 (investor meets 6 and 10 Jul 2026)", "Investor_Presentation_Q4FY26_2026-05-11", "Investor_Presentation_Q3FY26_2026-02-16 (moved from announcements/)"] }
+  other:         { count: 2, status: present, detail: "InvestorMeet transcripts 2026-07-06 and 2026-07-10 (6pp each). Preserved; passed to stages 5 and 7 as supplementary management commentary, since no Q1 FY27 earnings call exists." }
+
+corpus_manifest_ref: "outputs/blocks/B00-intake.yaml (63 rows, stage-00-intake-check, claude-haiku-5-5). Orchestrator verified both folder_match false rows at page 1 and moved them. No UNIDENTIFIED or UNREADABLE rows."
+moves:
+  - { from: "inputs/announcements/20260211-0421b8f8-b0e8-4232-8bd0-1fc9b6b55871.pdf", to: "inputs/results/Results_Q3FY26_31Dec2025.pdf", reason: "page 1 subject: Unaudited Financial Results for the quarter ended 31 December 2025" }
+  - { from: "inputs/announcements/20260216-78f09ca0-b748-4e62-bca7-049b331b6ffc.pdf", to: "inputs/presentation/Investor_Presentation_Q3FY26_2026-02-16.pdf", reason: "page 1 subject: Presentation for the Earnings Conference Call Scheduled on 17 February 2026" }
+
+freshness_pairs:
+  - { pair: "RESULTS to CONCALL", trigger_doc: "inputs/results/Results_Q2FY27_30Sep2026.pdf", mate_expected: "Q2 FY27 earnings-call transcript in inputs/concalls/", status: FAIL, missing_doc: "Q2 FY27 concall transcript. The call is scheduled for 16 Nov 2026 (BSE intimation 6 Nov 2026); the transcript does not exist on the run date. Source when filed: BSE scrip 532309 or screener GVPIL documents." }
+  - { pair: "RATING BULLETIN to RATIONALE", trigger_doc: "inputs/rating/ICRA_Rationale_2026-03-03.pdf", mate_expected: "full rationale", status: PASS, missing_doc: "" }
+  - { pair: "SEBI ORDER to ORDER TEXT", trigger_doc: "none found (grep of AR FY26, results and announcements for SEBI order, adjudication, show cause returned nothing)", mate_expected: "n/a", status: PASS, missing_doc: "" }
+  - { pair: "AR to LATEST AUDITED ANNUAL RESULTS", trigger_doc: "inputs/results/Results_Q4FY26_31Mar2026_audited.pdf", mate_expected: "FY2025-26 annual report", status: PASS, missing_doc: "" }
+freshness_verdict: "CORPUS GAPPED-FRESHNESS"
+
+input_gaps:
+  - { type: concalls, severity: HIGH, reason: "FRESHNESS FAIL. No Q2 FY27 earnings-call transcript (call scheduled 16 Nov 2026, one day after the run date). No Q1 FY27 earnings call was held; only investor meets on 6 and 10 Jul 2026. Latest earnings-call transcript is Q4 FY26 (12 May 2026)." }
+  - { type: shareholding, severity: MEDIUM, reason: "Screener-derived table only (read through the operator's Chrome), not the filed BSE pattern. Promoter pledge detail absent. UA qualifier and pledge trend stay open until the filed pattern is pushed." }
+  - { type: screening, severity: LOW, reason: "Only Data_Sheet CSVs populated. Data Sheet carries no ROCE row, no current liabilities, and capex and payables gaps before FY24." }
+  - { type: peer-concalls, severity: MEDIUM, reason: "BHEL transcripts are stale: latest is Q4 FY24 (May 2024). BHEL posted no transcript on BSE in the last 12 months. ISGEC and POWERMECH are current." }
+  - { type: presentation, severity: LOW, reason: "No Q2 FY27 investor presentation yet. Latest decks: Jul 2026 investor meet, Q4 FY26, Q3 FY26." }
+  - { type: announcements, severity: LOW, reason: "No FGD contract termination filing (Jaypee Bina, Nigrie) found in the 12-month BSE list. One file garbled beyond page 1 (newspaper notice, 15 Nov 2026)." }
+  - { type: research, severity: LOW, reason: "No broker notes. No effect on anchored evidence." }
+  - { type: misfile, severity: LOW, reason: "Moved inputs/announcements/20260211-0421b8f8-... to inputs/results/Results_Q3FY26_31Dec2025.pdf and inputs/announcements/20260216-78f09ca0-... to inputs/presentation/Investor_Presentation_Q3FY26_2026-02-16.pdf after page-1 verification." }
+  - { type: collector_warning, severity: INFO, reason: "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. [Partly closed in Step F by the screener-derived table.]" }
+  - { type: collector_warning, severity: INFO, reason: "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization for screener, BHEL, POWERMECH, ISGEC. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again." }
+  - { type: collector_warning, severity: INFO, reason: "no results PDFs yet (screener has none): add later on github or locally + --push-again [Closed in Step F: results fetched from BSE.]" }
+  - { type: collector_warning, severity: INFO, reason: "no rating PDF yet: add later the same way [Closed in Step F: ICRA rationale fetched.]" }
+
+empty_folder_confirmation: "SUPPRESSED per /step1 autonomy contract. Standing answer: proceed with the gaps. Empty folders: prospectus (not expected), research."
+degradation_applied:
+  - "Stage 5 runs on three earnings-call transcripts (Q2, Q3, Q4 FY26) plus the two Jul 2026 investor-meet transcripts as supplementary commentary; Q1 and Q2 FY27 delivery is checked against the filed results only."
+  - "Shareholding: screener-derived; UA qualifier stays unaffirmed until the filed pattern is in the corpus."
+  - "Gate recommendation capped at PROCEED WITH CAVEATS by the freshness verdict."
+company_memory: "companies/GVPIL.md (created by this intake; spear override, load-bearing facts). Prior run: none."
+remediation_cycles: 0
+verifier_runs: {A: 0, B: 0, C: 0, D: 0}
+verifier_a_shadow: "not run in this session (operator batch instruction: the single shadow run belongs to the TD Power session)"
+flags: []

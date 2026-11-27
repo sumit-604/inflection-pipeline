@@ -1,0 +1,636 @@
+stage: B00-intake
+model: claude-haiku-5-5
+status: complete
+corpus_manifest:
+  - path: "inputs/announcements/20251210-7214704a-8627-4a13-a028-5495edce37a1.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 10 Dec 2025"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260204-fd8261e7-5bc4-4066-a7e2-5dfe059b0f9c.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 04 Feb 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260211-0421b8f8-b0e8-4232-8bd0-1fc9b6b55871.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "results (unaudited, board outcome letter with limited review report)"
+    period: "quarter ended 31 Dec 2025 (Q3 FY26); filed 11 Feb 2026"
+    folder_match: false
+    proposed_move: "inputs/results/"
+    page_read: 1
+    note: "Results document filed in announcements/. results/ holds the Q1 FY27, Q2 FY27 and Q4 FY26 results; no other folder fits."
+  - path: "inputs/announcements/20260216-78f09ca0-b748-4e62-bca7-049b331b6ffc.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "presentation (cover letter enclosing earnings call presentation)"
+    period: "earnings call 17 Feb 2026 (quarter not stated on page 1)"
+    folder_match: false
+    proposed_move: "inputs/presentation/"
+    page_read: 1
+    note: "Presentation filing in announcements/. presentation/ holds the other presentation filings (Investor_Presentation_Q4FY26 and Investor_Presentation_1)."
+  - path: "inputs/announcements/20260217-8b22e8fb-587c-41dd-b9da-d7ec7b8a3e8d.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 17 Feb 2026 (audio recording of call 17 Feb 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260303-1a400915-37d9-46dd-b210-cc2811abc5e1.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 03 Mar 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260313-c7f90f3c-4f54-4e3f-a429-15d00f4b4b8d.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 13 Mar 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260323-53d2f52c-2af5-4a6d-a9ef-3587dad69ad8.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 23 Mar 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260402-b90221d6-8fb7-4004-a4a3-bfbafc154841.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 02 Apr 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260406-5dd7f27d-9073-4934-8651-0957d81b0185.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 06 Apr 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260505-528e801e-e850-4f34-b20e-eb214ac173b3.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 05 May 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260511-f5ce3a51-3ab1-456a-b8f9-c4de960cc3f6.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 11 May 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260512-bb9b304a-6bc9-4728-8c2a-9bacf9ea4607.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 12 May 2026 (audio recording of call 12 May 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260520-7fa01dbc-dd1f-4ddd-b627-955e3a3141dd.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 20 May 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260603-5b2ae334-0a96-46ca-80e2-e8d3cf581c09.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 03 Jun 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260619-1769ead3-bdcd-43db-9f14-1ed657f8e0e8.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 19 Jun 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260619-2e1a8682-7124-4c2c-8c99-f87704618e06.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 19 Jun 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260619-5d8cd1ed-190b-493b-b840-c608fb4c88b7.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 19 Jun 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260706-e2259426-0efe-4a4c-ad1d-08b2ad18f059.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 06 Jul 2026 (audio recording of investor meet 06 Jul 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260710-35d50b2e-7843-4331-8a90-aaf02ba0c00b.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 10 Jul 2026 (audio recording of investor meet 10 Jul 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260720-93cb4313-2437-4228-b5fe-800ad3e1d24a.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 20 Jul 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260812-3d4e27bc-625b-4a9f-abcd-78fafdf20be0.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 12 Aug 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260814-2452594e-a667-4a62-9343-a19b0e252683.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 14 Aug 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260908-c523a295-7690-45dc-84f1-e33cddf62eca.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 08 Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260918-793b1c90-31e6-4eb8-99e3-cfc495b9c0f3.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 18 Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260919-62d1ab2b-f67d-41d9-9588-4df392346037.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 19 Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260928-b0e7165e-8bd8-4abe-8f6c-0776d12e0802.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 28 Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261001-42a1fcb6-5a43-4175-95aa-882d40f8847e.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 01 Oct 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261014-d45f54dc-cde3-4d7a-8b94-f765d1518d81.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 14 Oct 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261104-b6d411cd-3cd5-4aa5-ab11-97b5c5eb54c8.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 29 board meeting intimation)"
+    period: "filed 04 Nov 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261106-acf94906-a46a-4182-8f36-7aa002f04d63.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30)"
+    period: "filed 06 Nov 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261113-c0e2dfda-481b-4e50-a4cd-a183dfa6429a.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30(5) KMP contact update)"
+    period: "filed 13 Nov 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261115-f68052f4-d056-4ada-88e0-b645cb131036.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "exchange filing (Reg 30, newspaper advertisement)"
+    period: "filed 15 Nov 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/annual-report/Annual_Report_2025.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "annual report"
+    period: "FY2025 (year ended 31 Mar 2025; cover reads 2024-25)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Period taken from cover, not filename."
+  - path: "inputs/annual-report/Annual_Report_2026.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "annual report"
+    period: "FY2026 (year ended 31 Mar 2026; cover reads 2025-26)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/concalls/Concall_Feb_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "concall transcript"
+    period: "earnings call 17 Feb 2026 (quarter not stated on page 1)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/concalls/Concall_May_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "concall transcript"
+    period: "earnings call 12 May 2026 (quarter not stated on page 1)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/concalls/Concall_Nov_2025_Q2FY26_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "concall transcript"
+    period: "earnings call 14 Nov 2025 (quarter not stated on page 1)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/other/InvestorMeet_2026-07-06_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "investor meet transcript"
+    period: "investor meet 06 Jul 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/other/InvestorMeet_2026-07-10_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "investor meet transcript"
+    period: "investor meet 10 Jul 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/peer-concalls/BHEL-Concall_Jul_2021_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Bharat Heavy Electricals Limited (BHEL, peer)"
+    doc_type: "concall transcript (peer)"
+    period: "Q1 FY22 earnings call 30 Jul 2021"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, non-anchored for GVPIL."
+  - path: "inputs/peer-concalls/BHEL-Concall_May_2022_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Bharat Heavy Electricals Limited (BHEL, peer)"
+    doc_type: "concall transcript (peer)"
+    period: "Q4 FY22 earnings call 21 May 2022"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, non-anchored for GVPIL."
+  - path: "inputs/peer-concalls/BHEL-Concall_May_2023_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Bharat Heavy Electricals Limited (BHEL, peer)"
+    doc_type: "concall transcript (peer)"
+    period: "Q4 FY23 earnings call 26 May 2023"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, non-anchored for GVPIL."
+  - path: "inputs/peer-concalls/BHEL-Concall_May_2024_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Bharat Heavy Electricals Limited (BHEL, peer)"
+    doc_type: "concall transcript (peer)"
+    period: "Q4 FY24 earnings call 21 May 2024"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, non-anchored for GVPIL."
+  - path: "inputs/peer-concalls/ISGEC-Concall_Aug_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "ISGEC Heavy Engineering Limited (peer)"
+    doc_type: "concall transcript (peer)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026); call 12 Aug 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, non-anchored for GVPIL."
+  - path: "inputs/peer-concalls/ISGEC-Concall_Feb_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "ISGEC Heavy Engineering Limited (peer)"
+    doc_type: "concall transcript (peer)"
+    period: "Q3 FY26 (quarter and nine months ended 31 Dec 2025); call 10 Feb 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, non-anchored for GVPIL. File name month differs from call date; period from page."
+  - path: "inputs/peer-concalls/ISGEC-Concall_Jun_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "ISGEC Heavy Engineering Limited (peer)"
+    doc_type: "concall transcript (peer)"
+    period: "Q4 FY26 and FY26 (quarter and year ended 31 Mar 2026); call 29 May 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, non-anchored for GVPIL. File name month is the letter date (03 Jun 2026); period from page."
+  - path: "inputs/peer-concalls/ISGEC-Concall_Nov_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "ISGEC Heavy Engineering Limited (peer)"
+    doc_type: "concall transcript (peer)"
+    period: "Q2 FY27 (quarter and half year ended 30 Sep 2026); call 05 Nov 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, non-anchored for GVPIL."
+  - path: "inputs/peer-concalls/POWERMECH-Concall_Aug_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Power Mech Projects Limited (POWERMECH, peer)"
+    doc_type: "concall transcript (peer)"
+    period: "Q1 FY27; call 10 Aug 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, non-anchored for GVPIL."
+  - path: "inputs/peer-concalls/POWERMECH-Concall_Feb_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Power Mech Projects Limited (POWERMECH, peer)"
+    doc_type: "concall transcript (peer)"
+    period: "Q3 FY26; call 12 Feb 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, non-anchored for GVPIL."
+  - path: "inputs/peer-concalls/POWERMECH-Concall_May_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Power Mech Projects Limited (POWERMECH, peer)"
+    doc_type: "concall transcript (peer)"
+    period: "Q4 FY26; call 22 May 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, non-anchored for GVPIL."
+  - path: "inputs/peer-concalls/POWERMECH-Concall_Nov_2025_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Power Mech Projects Limited (POWERMECH, peer)"
+    doc_type: "concall transcript (peer)"
+    period: "Q2 FY26 and half year (page 1 reads Q2 and FY26); call 13 Nov 2025"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer document, non-anchored for GVPIL."
+  - path: "inputs/presentation/Investor_Presentation_1.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "investor presentation (investor meets)"
+    period: "investor meets 06 and 10 Jul 2026 (cover letter dated 03 Jul 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/presentation/Investor_Presentation_Q4FY26_2026-05-11.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "investor presentation (earnings call)"
+    period: "earnings call 12 May 2026 (cover letter dated 11 May 2026; quarter not stated on page 1)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/rating/ICRA_Rationale_2026-03-03.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited (ICRA rating subject)"
+    doc_type: "credit rating rationale (ICRA)"
+    period: "rating action 03 Mar 2026; cites 9M FY2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/results/Results_Q1FY27_30Jun2026.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "results (unaudited, board outcome letter)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026); letter dated 13 Aug 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/results/Results_Q2FY27_30Sep2026.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "results (unaudited, board outcome letter)"
+    period: "Q2 FY27 (quarter and half year ended 30 Sep 2026); letter dated 13 Nov 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/results/Results_Q4FY26_31Mar2026_audited.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "results (audited, board outcome letter)"
+    period: "Q4 FY26 and FY26 (quarter and year ended 31 Mar 2026); letter dated 11 May 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/screening/BHEL-Data_Sheet.csv"
+    file_type: csv
+    content_ok: true
+    issuer: "Bharat Heavy Electricals Limited (BHEL, peer)"
+    doc_type: "screener data sheet (peer)"
+    period: "annual FY2017 to FY2026 (report dates to 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer data sheet."
+  - path: "inputs/screening/ISGEC-Data_Sheet.csv"
+    file_type: csv
+    content_ok: true
+    issuer: "ISGEC Heavy Engineering Limited (peer)"
+    doc_type: "screener data sheet (peer)"
+    period: "annual FY2017 to FY2026 (report dates to 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer data sheet."
+  - path: "inputs/screening/POWERMECH-Data_Sheet.csv"
+    file_type: csv
+    content_ok: true
+    issuer: "Power Mech Projects Limited (POWERMECH, peer)"
+    doc_type: "screener data sheet (peer)"
+    period: "annual FY2017 to FY2026 (report dates to 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer data sheet."
+  - path: "inputs/screening/screener-Data_Sheet.csv"
+    file_type: csv
+    content_ok: true
+    issuer: "GE Power India Limited"
+    doc_type: "screener data sheet (main company)"
+    period: "annual FY2017 to FY2026 (report dates to 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/shareholding/Shareholding_Pattern_screener_Sep2026.csv"
+    file_type: csv
+    content_ok: true
+    issuer: "GE Power India Limited (GVPIL)"
+    doc_type: "shareholding table (screener.in derivative, not the filed BSE pattern)"
+    period: "quarterly Dec 2023 to Sep 2026 (latest Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Row 1 of the file states it is derived from BSE filings via screener.in and is NOT the filed BSE shareholding PDF."
+unreadable: []
+unidentified: []

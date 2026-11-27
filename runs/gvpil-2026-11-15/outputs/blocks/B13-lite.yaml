@@ -1,0 +1,32 @@
+stage: B13-synthesis
+mode: PHASE-1-LITE
+company: "GVPIL"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+files_written:
+  - runs/gvpil-2026-11-15/outputs/final/business-narrative.md
+  - runs/gvpil-2026-11-15/outputs/final/gate-recommendation.md
+  - runs/gvpil-2026-11-15/outputs/final/verifier-summary.md
+files_not_written_by_mode: ["fttcp-handoff.md", "fttcp-recommendation.md", "notion-payload.md", "verifier-disagreement-log.md (set carried inside verifier-summary.md: none)"]
+first_line_gate_file: "MISSING MATE DOCUMENT: Q2 FY27 earnings-call transcript (call 16 Nov 2026); source BSE scrip 532309 or screener.in GVPIL documents page"
+verdict: "PROCEED WITH CAVEATS"   # the five-verdict set only
+verdict_rule_applied: 3          # FLAG-CASH INDETERMINATE cap; freshness cap (B00 CORPUS GAPPED-FRESHNESS) and rule 4 (verifier MAJORs) concur; rules 1 and 2 checked, not fired
+caps_applied: ["freshness: CORPUS GAPPED-FRESHNESS", "cash: INDETERMINATE", "rule 4: verifier MAJORs carried (A 4, B 3, C 2)"]
+flags_active: ["FLAG-CASH (INDETERMINATE)", "FLAG-GATE0 (AVOID, core 33; Verifier C recompute 31)"]
+flags_not_fired: ["FLAG-PROMOTER: B08 verdict CAUTION, below CONCERN; findings shown in flag format, labelled not fired"]
+partial_stages: ["B08 promoter (vote tallies, filed pledge pattern, proxy advisers, MCA/RoC not reached)", "B09 TAM (realistic TAM NOT FOUND; BHEL FY26 bookings, CEA R&M PDF, competitor aggregation not reached)"]
+cash_determination: INDETERMINATE
+cash_missing_evidence: ["H1 FY27 cash flow and balance sheet from Results_Q2FY27_30Sep2026.pdf (OCR illegible) or BSE XBRL", "non-BHEL receivables ageing by customer", "Q2 FY27 call commentary on collections and cash pool"]
+transition_posture: "NOT CLASSIFIED (Mental Model unsigned; recognition gap resolves at stage 11)"
+confidence_delta: {numerical: 98, redflag: 86, framework: 89.3, peer: 83.3, overall: 83.3, overall_set_by: peer_utilisation, band: "75-89 normal", framework_valuation_half: "PENDING PHASE 3"}
+valuation_decision: "NOT RUN (phase 1 lite; formed in phase 3)"
+entry_range: "NOT RUN (phase 1 lite)"
+headline: "Service orders climb while profit quality lags"
+falsification_metric: "Q3 FY27 (quarter to 31 Dec 2026) EBITDA excluding other income below 10% of revenue from operations for a second straight quarter after Q2 FY27 9.8%, with no named mix reason"
+contradicted_claims_peer_stage: 0
+monitorables_count: 8
+verifier_disagreements: 0   # "none"; three Verifier A source-fidelity rows corrected by errata, none carried
+publish_candidate: false
+publish_candidate_summary: ""
+notion_save: "not emitted in PHASE 1 LITE (phase 3 /finalize emits the payload)"

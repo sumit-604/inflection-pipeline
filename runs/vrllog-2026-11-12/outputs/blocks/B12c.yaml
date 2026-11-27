@@ -1,0 +1,51 @@
+stage: B12c
+company: "VRLLOG"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"
+status: complete
+scope: "phase 1: Gate 0 (B01) and Emerging Moat (B07) only; valuation half pending phase 3"
+gate0:
+  rules_checked: 48
+  rules_passed: 43
+  fails:
+    - {id: "G0-07", rule: "FCF fixed formula: capex = purchase of PPE + intangibles, exclude acquisitions (01-gate-0-pipeline.md L39-40)", severity: "MAJOR", delivered: "FY17-FY24 capex replaced by -CFI; B2 4, B3 5, Block B 14", recomputed: "reading (a) fixed-formula years FY25-FY26: B2 5, B3 461.75/419.75 = 1.10 -> 5, Block B 18 with B4 3; reading (b) NOT FOUND: B2 0, B3 0, Block B 5, deal-breaker 2 fires", effect: "classification GOOD under delivered and (a); AVERAGE under (b)"}
+    - {id: "G0-27", rule: "E2 promoter change over 3 years; NOT FOUND scores 0 (L91-92, L20-21)", severity: "MAJOR", delivered: "3 on 31 Mar 2024 to 30 Sep 2026 window", recomputed: "0; 30 Sep 2023 start point NOT FOUND; 5.4% promoter sale undated in corpus; Block E 15; core 60", effect: "GOOD holds at the band floor"}
+    - {id: "G0-04", rule: "ROCE = EBIT / (TA - CL) or source figure (L29-31)", severity: "MINOR", delivered: "proxy (PBT+Int)/(Equity+Reserves+Borrowings); FY26 18.1%", recomputed: "FY26 proxy 414.50/2,296.57 = 18.05%; strict FY26 18.9%, FY25 15.8%; A1 3, A2 1, A4 5 unchanged", effect: "none"}
+    - {id: "G0-41", rule: "M12 0-15 days consistently (L134-135)", severity: "MINOR", delivered: "3 on FY25 and FY26 only", recomputed: "0 under reading (b); moat 8, 2 present, MODERATE", effect: "class unchanged"}
+    - {id: "G0-03", rule: "show every number extracted (L14)", severity: "MINOR", delivered: "yearly revenue FY18-FY25, FY23 revenue, yearly net worth not shown", recomputed: "C3, M4, M10, M11, A3 re-derived from stated intermediates only", effect: "none shown"}
+  classification_delivered: "GOOD (core 63, moat 11 MODERATE, grand total 74)"
+  classification_recomputed: "GOOD at core 60 with E2 corrected; GOOD at core 64 under reading (a); AVERAGE at core 51 under reading (b)"
+  separating_observation: "FY17-FY24 purchase of PPE and intangibles from earlier AR cash-flow statements; 30 Sep 2023 shareholding pattern"
+emoat:
+  rules_checked: 27
+  rules_passed: 21
+  fails:
+    - {id: "EM-04", rule: "source anchor on every evidence item (07-emerging-moat-pipeline.md L35-36)", severity: "MINOR", delivered: "May call p.? (4B); FY25 AR with no page (C2)", recomputed: "no score effect", effect: "none"}
+    - {id: "EM-08", rule: "2C capex under execution x historical FAT (L59-62)", severity: "MINOR", delivered: "H2 FY27 guided capex 150-160 Cr x 1.887 = 9.1%", recomputed: "commitments 79.84 Cr x 1.887 = 150.66 Cr = 4.7%; full FY27 programme 313 Cr x 1.887 = 590.6 Cr = 18.3%", effect: "capex_embedded_growth_pct basis-dependent; no phase-1 class effect"}
+    - {id: "EM-13", rule: "evidence multiplier by tier (L173)", severity: "MINOR", delivered: "B3 at 0.7 while its moat conclusion is tagged inference", recomputed: "0.5 -> total 12.4; 1.0 -> total 13.4", effect: "MODEST unchanged"}
+    - {id: "EM-15", rule: "full scoring table, all 23 rows (L173-174)", severity: "MINOR", delivered: "19 rows; A1-A4 and B1-B2 grouped", recomputed: "grouped rows all 0; total 12.8", effect: "none"}
+    - {id: "EM-21", rule: "I2 answered for each moat claimed (L140-141)", severity: "MINOR", delivered: "F2 and G1 not named", recomputed: "I2 stays 0", effect: "none"}
+    - {id: "EM-24", rule: "optionality register covers 0-scored or claim/inference-only advantages (L184)", severity: "MINOR", delivered: "customised supply chain solutions with storage (Pres. p.19) absent", recomputed: "1 item to add", effect: "none"}
+  em_score_delivered: 12.8
+  em_score_recomputed: "12.4 to 13.4 by B3 multiplier; MODEST in every case"
+valuation: {rules_checked: 0, fails: [], status: "pending phase 3"}
+expectation_ledger: {present: "pending phase 3", downside_row: "pending phase 3", all_rows_confirm_by: "pending phase 3", all_rows_metric_threshold: "pending phase 3", prob_in_range: "pending phase 3", decay_status_valid: "pending phase 3", off_ledger_credit: "pending phase 3", residual_pct_cmp: "pending phase 3", residual_starter_cap_ok: "pending phase 3", fails: []}  # rules 13-14; any fail = REWORK stage 11
+business_narrative: {present: "pending phase 3", fails: []}  # rule 9; any fail = REWORK stage 13
+recomputed_destination_pe: "pending phase 3"
+recomputed_decision: "pending phase 3"
+findings:
+  - {id: "G0-07", severity: "MAJOR", summary: "FCF FY17-FY24 built on -CFI, not the fixed capex line; Gate 0 is GOOD (core 64) under one admissible reading and AVERAGE (core 51) under the other; FY17-FY24 capex lines separate them"}
+  - {id: "G0-27", severity: "MAJOR", summary: "E2 scored 3 on a 2.5-year window; 30 Sep 2023 start point NOT FOUND and a 5.4% promoter sale is undated; E2 0, core 60, GOOD at band floor"}
+  - {id: "G0-04", severity: "MINOR", summary: "ROCE proxy denominator, disclosed and tested on FY25-FY26; FY26 18.05% shown as 18.1%; no band change"}
+  - {id: "G0-41", severity: "MINOR", summary: "M12 consistently scored on 2 of 10 years; 0 under reading (b); class MODERATE unchanged"}
+  - {id: "G0-03", severity: "MINOR", summary: "yearly revenue, FY23 revenue and yearly net worth not shown; scores re-derivable only from intermediates"}
+  - {id: "EM-04", severity: "MINOR", summary: "two incomplete anchors (May call p.?, FY25 AR page)"}
+  - {id: "EM-08", severity: "MINOR", summary: "2C uses a guided H2 plan, not capex under execution; 4.7% on commitments, 18.3% on the full FY27 programme, 9.1% delivered"}
+  - {id: "EM-13", severity: "MINOR", summary: "B3 tier tagged both claim and inference; total 12.4 to 13.4, MODEST holds"}
+  - {id: "EM-15", severity: "MINOR", summary: "scorecard shows 19 rows, not 23; grouped rows are all 0"}
+  - {id: "EM-21", severity: "MINOR", summary: "I2 sacrifice question not answered for F2 and G1; score 0 unaffected"}
+  - {id: "EM-24", severity: "MINOR", summary: "customised supply chain solutions item missing from the optionality register"}
+critical_count: 0
+major_count: 2
+minor_count: 9
+acceptance_rate: 85.3

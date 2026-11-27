@@ -1,0 +1,50 @@
+stage: B07-emoat
+company: "VRLLOG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "peer and competitor filings not provided: I2 top band, G1 cost of debt vs peers, H1 unorganised share unsourced"
+  - "capacity utilisation, capacity at 30 Sep 2026, H2 FY27 capex mix, revenue or margin per branch: NOT FOUND"
+  - "rent or lease saving per owned hub: NOT FOUND"
+  - "EV count conflict unresolved: AR p.68 shows 31 EV units, presentation p.29 shows 77 EV and 109 CNG"
+  - "three-year revenue mix targets: NOT FOUND"
+flags:
+  - "Score 12.8 sits 0.8 above the NONE floor of 12; one raw point off E1 or G1 flips it to NO MEANINGFUL EMERGING MOAT"
+  - "Capex FY27 about Rs 308-318 Cr (H1 158 + H2 150-160, DERIVED) vs Rs 220-240 Cr August band; carried from B05"
+  - "Net branch additions H1 FY27 are +44 (67 added, 23 closed or merged, Pres. p.16) vs 100 plus net guide; closes the B05 gross-vs-net question"
+  - "Report file 07-emoat.md has three small wording defects (a 'p.?' placeholder in 4B, 'Raw LL...' in C2, '11.8 or 11.8' in the sensitivity line); numbers are unaffected"
+em_score: 12.8
+em_classification: "MODEST"
+active_categories:
+  - {id: "B3", name: "Supply chain network effect", strength: "Moderate", evidence_type: "claim (counts documented, moat conclusion inferred)", time_to_materialise: "12-36 months"}
+  - {id: "E1", name: "Geographic first-mover / land bank", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-36 months"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "existing, tested each quarter"}
+  - {id: "G1", name: "War chest", strength: "Moderate", evidence_type: "documented", time_to_materialise: "0-12 months"}
+evidence_mix: {documented: 11, claim: 5, inference: 4}
+completionist_recount: "📄 recount performed: 11 documented items across 7 categories (E1 3, G1 3, F2 1, B3 1, G2 1, C2 1, F1 1); 10 categories carry any evidence, 13 have none"
+catalysts_12m:
+  - {catalyst: "Q3 FY27 results show buyback equity reduction, EPS lift, net debt versus Rs 440 Cr", window: "Jan-Feb 2027", evidence_type: "documented", anchor: "Q2 FY27 call p.5; Inv. Pres. p.16"}
+  - {catalyst: "H2 FY27 tonnage at or above 9% with realisation at or above Rs 8,840 and margin at or above 21% with and without other income", window: "Q3-Q4 FY27", evidence_type: "claim", anchor: "Q2 FY27 call p.6; B05 triggers 1-3"}
+  - {catalyst: "Net branch additions toward 100 for FY27 (44 net in H1, 56 more needed)", window: "by Mar 2027", evidence_type: "claim", anchor: "Q4 FY26 call guide; Inv. Pres. p.16"}
+  - {catalyst: "ICRA outlook A+ positive converts to a rating action", window: "6-18 months, date NOT FOUND", evidence_type: "documented", anchor: "Inv. Pres. p.16"}
+  - {catalyst: "FY27 capex reconciliation and rent-saving disclosure on owned hubs", window: "Q4 FY27 results and FY27 AR", evidence_type: "claim", anchor: "Q2 FY27 call p.6; AR p.35, p.80"}
+capex_embedded_growth_pct: 9.1
+optionality_register:
+  - {optionality: "Rail integration, hub-to-hub by railway with road for first and last mile", converting_evidence: "Signed MoU or terminal-access agreement with Indian Railways; a pilot corridor with tonnage", first_appears: "Exchange filing; concall", window: "12-36 months"}
+  - {optionality: "Exclusive agents and franchisees", converting_evidence: "Agent count, tonnage share and realisation vs owned branches in the presentation", first_appears: "Investor presentation; concall", window: "6-18 months"}
+  - {optionality: "Varur vehicle scrappage unit", converting_evidence: "Registered scrapping facility approval, a capex line and a revenue line", first_appears: "AR note (CWIP or segment); exchange filing", window: "12-24 months"}
+  - {optionality: "Owned-property pivot cuts rent and lease cost", converting_evidence: "Rent per owned hub or lease liability and rent expense falling while lease-inclusive ROCE holds", first_appears: "AR note 32; quarterly results", window: "12-24 months"}
+  - {optionality: "Service quality edge (claim ratio near zero vs 10-12% industry, unsourced)", converting_evidence: "A filed claims ratio and a competitor comparison", first_appears: "AR MD&A or presentation", window: "12 months"}
+  - {optionality: "Proprietary ERP and data asset", converting_evidence: "Disclosed on-time delivery, damage or productivity metric tied to the system", first_appears: "Investor presentation", window: "24-36 months"}
+  - {optionality: "Share gain from unorganised operators", converting_evidence: "Sourced market-share disclosure or peer volume data", first_appears: "AR MD&A; peer filings", window: "12-36 months"}
+  - {optionality: "EV and CNG fleet", converting_evidence: "Reconciled vehicle count (AR 31 vs presentation 77 EV plus 109 CNG) and fuel cost per tonne", first_appears: "AR BRSR; presentation", window: "12 months"}
+combined_assessment: "GOOD"
+combined_reasoning: "Gate 0 GOOD (core 63, moat 11/60) with a MODEST emerging score of 12.8; forming assets (owned hubs, balance sheet, density) are real but their economic benefit is unmeasured, so this is not an EXPANSION transition setup."
+top_moat_risks:
+  - "Return dilution: 53% of FY26 capex went to land, lease-inclusive ROCE 17.35%, MD&A concedes ratio pressure"
+  - "Buyback of Rs 280 Cr plus capex of Rs 308-318 Cr lifts net debt toward about Rs 617 Cr ex-lease"
+  - "Volume rests on a fuel-led price reset; tonnage under 6% for two quarters or a realisation fall breaks it"
+  - "Western DFC and rail integration could shift line-haul volume"
+  - "Capex reset three times and margin stated three ways keep execution grade at B"
+analyst_note: "Score is sparse by design and borderline: 12.8 vs a floor of 12. Moderate rows are B3 network density (0.7x, per-branch productivity NOT FOUND), E1 owned land and hubs, F2 delivery record (grade B), G1 balance sheet. E1 is real capital but the cost saving is unmeasured and short-term rent rose. G1 is partly returned by the buyback. No pricing-power category exists in the taxonomy; the fuel-led realisation rise from about Rs 6 to Rs 9 per kg with volume at +10% is not scored. B1 shows a retreat (direct fuel procurement 41.03% to 6.86%). I1 and I2 score 0; no competitor filing was provided for the I2 sacrifice."

@@ -1,0 +1,538 @@
+stage: B00-inputs
+company: VRLLOG
+run_date: '2026-11-12'
+model: orchestrator session (claude-fable-5-2)
+status: complete
+spear: 'Spear: OVERRIDE 2026-11-12 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)'
+load_bearing_facts:
+- 'MARGIN PAIR: Q2 FY27 EBITDA margin 23.3% / H1 22.6% vs management 21-22% sustainable (earlier 20-21%); verify on results face, EBITDA definition, stated reason'
+- 'VOLUME AFTER PRICE RESET: FY26 tonnage and contracts dropped; H1 FY27 tonnage 2,099 thousand tonnes (+10%); guidance trail 6-7% -> 8% -> 9-10%'
+- 'PROMOTER AND RELATED PARTIES: Rs 280 Cr buyback at Rs 320, promoters not tendering, post-buyback holding; earlier promoter stake sale; AR related-party note'
+- 'CASH AND CAPEX: H1 FY27 CFO Rs 362.5 Cr, net debt Rs 337 Cr vs Rs 440 Cr, lease liabilities, capex Rs 220-240 Cr; buyback plus capex cover'
+reporting_units:
+  results: INR lakhs
+  annual_report: INR lakhs
+  screener: INR Cr
+  presentation: INR Cr (check each slide face)
+  rating: INR Cr
+sector_cap_row: NOT FOUND
+sector_cap_row_evidence: 'section-1b chunk 05 cap table has two logistics rows: Logistics (asset-light) 25x and Logistics (WC-heavy / project cargo) 20x. VRL owns its fleet (not asset-light) and is an LTL
+  parcel carrier (not WC-heavy, not project cargo). No row fits; HIGH gap; operator rules at the /fttcp pillar gate. Collector guess was Logistics (asset-light). Re-check against B04 when it lands.'
+inventory:
+  prospectus: 0
+  annual-report: 2
+  results: 3
+  rating: 1
+  concalls: 4
+  peer-concalls: 12
+  announcements: 17
+  shareholding: 2
+  research: 0
+  screening: 2
+  presentation: 1
+  other: 0
+concall_quarter_map:
+- file: inputs/concalls/Concall_Feb_2026_Transcript.pdf
+  quarter: Q3 FY26
+  call_date: '2026-02-06'
+- file: inputs/concalls/Concall_May_2026_Transcript.pdf
+  quarter: Q4 FY26
+  call_date: '2026-05-19'
+- file: inputs/concalls/Concall_Aug_2026_Transcript.pdf
+  quarter: Q1 FY27
+  call_date: '2026-08-05'
+- file: inputs/concalls/Concall_Nov_2026_Transcript.pdf
+  quarter: Q2 FY27
+  call_date: '2026-11-05'
+stage5_transcripts: 'the three most recent, oldest first: Q4 FY26, Q1 FY27, Q2 FY27. Q3 FY26 is held as extra context.'
+text_extraction: Every PDF has a page-marked .txt beside it (tools/extract_pdfs.py). Stages read the .txt and open the PDF page where the .txt is weak.
+input_gaps:
+- 'COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend.'
+- 'COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet,
+  screener:Cash Flow, screener:Customization, TCI:Profit & Loss, TCI:Quarters, TCI:Balance Sheet, TCI:Cash Flow, TCI:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again.'
+- 'COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again'
+- 'COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way'
+- 'REPAIRED after collection: shareholding/ now holds the NSE Sep 2026 XBRL and the NSE quarter master (text, not PDF).'
+- 'REPAIRED after collection: results/ holds Q4 FY26 (audited, BSE via screener link), Q1 FY27 and Q2 FY27 (from the earlier screens corpus).'
+- 'REPAIRED after collection: rating/ holds the ICRA rationale dated 2025-11-19 (Id 139064). It is twelve months old; no newer ICRA rationale is listed on screener.'
+- 'ABSENT (empty export): screener Profit & Loss, Quarters, Balance Sheet, Cash Flow CSVs. Only screener-Data_Sheet.csv is populated (annual FY2017-FY2026, figures present). TCI-Data_Sheet.csv is a peer
+  sheet. No TCIEXP or DELHIVERY sheet.'
+- 'WEAK TEXT LAYER: inputs/results/Results_Q2FY27_Sep2026.pdf is a scan with a poor OCR layer. Its .txt misreads characters. Every figure from it must be read from the PDF page, and cross-checked with inputs/presentation/Investor_Presentation_1.pdf
+  (Q2 FY27).'
+- 'WEAK TEXT LAYER: announcements 20261017-ff2c708b (1 of 4 pages carry text), 20261026-6bb8026d and 20261112-888c895a (newspaper advertisements, garbled font encoding). No tesseract on this machine; tools/ocr_repair.py
+  did not run. Read the PDF pages.'
+- annual-report/ holds two reports (FY2025-26 and FY2024-25). The contract expects one; the FY2025-26 report is primary and FY2024-25 is the prior-year cross-check.
+- 'prospectus/ empty: listed 2015, not expected, not a gap.'
+- 'research/ empty: no effect on anchored evidence.'
+- 'sector_cap_row NOT FOUND (HIGH): blocks stage 11 in phase 3 until the operator rules the row.'
+- 'EMPTY-FOLDER CONFIRMATION suppressed under the /step1 autonomy contract; standing answer: proceed with the gaps.'
+- 'Verifier A shadow NOT RUN: .claude/shadow.yaml reads armed, but ten parallel /step1 sessions share it and the shadow was claimed by runs/kusumgar-2026-11-12. This run left the switch untouched.'
+freshness_pairs:
+- pair: results to concall
+  trigger_doc: inputs/results/Results_Q2FY27_Sep2026.pdf
+  mate_expected: Q2 FY27 concall transcript
+  status: PASS
+  missing_doc: ''
+- pair: rating bulletin to rationale
+  trigger_doc: inputs/rating/ICRA_Rationale_139064.pdf
+  mate_expected: full rationale
+  status: PASS
+  missing_doc: ''
+- pair: SEBI order to order text
+  trigger_doc: none referenced at stage 0 (stages 2, 3, 8 re-check)
+  mate_expected: order text
+  status: PASS
+  missing_doc: ''
+- pair: AR to latest audited annual results
+  trigger_doc: inputs/results/Results_Q4FY26_Mar2026.pdf (FY26 audited)
+  mate_expected: FY2025-26 annual report
+  status: PASS
+  missing_doc: ''
+freshness_verdict: FRESHNESS PAIRS OK
+collector_defect_gate:
+  cmp: 333.0
+  market_cap_cr: 5832.0
+  url_variant: standalone /company/VRLLOG/ (consolidated page has no price)
+flags: []
+analyst_note: ''
+corpus_manifest:
+- path: inputs/announcements/20260901-5718e4d8-f33e-43e1-80ec-b4425607c3fa.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: exchange intimation (investor meeting schedule)
+  period: Q1 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Dated 01.09.2026. Meeting on 4 Sep 2026. Period is the quarter the meeting discusses.
+- path: inputs/announcements/20260901-fccb4354-a7c6-4986-8d82-5b0ebb4d8951.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: exchange filing (postal ballot notice, buyback)
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Dated 01.09.2026. Notice dated 28 Aug 2026.
+- path: inputs/announcements/20261003-828e0441-89a2-48fc-b718-a5106d4f701d.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: exchange intimation (ISIN freeze, buyback)
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Freeze effective 04/10/2026. Filename date 20261003 is not stated on the page.
+- path: inputs/announcements/20261006-40692fa6-3fb9-413e-8741-bd63ba522500.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: exchange filing (postal ballot result and scrutinizer report)
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Dated 06.10.2026. Voting closed 3 Oct 2026.
+- path: inputs/announcements/20261008-90a90947-64e9-4996-92a2-3e9ed13611eb.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: exchange intimation (director resignation)
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Dated 08.10.2026. Resignation letter dated 7 Oct 2026.
+- path: inputs/announcements/20261015-339a3dd4-ceab-46b6-8fd3-4e6104c49cb6.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: exchange intimation (revised buyback record date)
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Dated 15 Oct 2026. Revised record date 22 Oct 2026.
+- path: inputs/announcements/20261017-ff2c708b-ae04-4a6d-9fce-9e076e484fe8.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: exchange filing (buyback public announcement corrigendum)
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Dated 17.10.2026.
+- path: inputs/announcements/20261024-44aad60b-60ec-4107-8538-3bfea948117d.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: exchange filing (buyback letter of offer)
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Letter of offer dated 24 Oct 2026.
+- path: inputs/announcements/20261024-b370330c-6ca9-4e26-97c4-1bf3b015f9ad.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: exchange intimation (prior notice of board meeting)
+  period: Q2 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Dated 24 Oct 2026. Board meeting 2 Nov 2026 for quarter and half year ended 30 Sep 2026.
+- path: inputs/announcements/20261026-6bb8026d-3486-4436-95d7-d1a13edd4c38.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: exchange filing (buyback offer opening advertisement)
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Page date line reads 26.10.2024, which conflicts with the 2026 date in the body (published 26 Oct 2026). Page error, not a misfile.
+- path: inputs/announcements/20261028-b8825b6b-025a-4050-bdb8-aecd6bb2b1ca.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: exchange intimation (earnings call schedule)
+  period: Q2 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Dated 28.10.2026. Call on 5 Nov 2026.
+- path: inputs/announcements/20261102-506cb21b-79e9-4205-84df-8a1a9a1b1686.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: exchange filing (earnings presentation cover)
+  period: Q2 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Dated 02.11.2026.
+- path: inputs/announcements/20261102-785b8143-f56a-476f-b1b0-5b6462d445e9.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: exchange filing (board outcome, reviewed results)
+  period: Q2 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Board meeting 2 Nov 2026. Results for quarter and half year ended 30 Sep 2026.
+- path: inputs/announcements/20261105-16d8426e-506b-4ccb-8049-a2a038237bd3.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: exchange intimation (earnings call audio link)
+  period: Q2 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Dated 05.11.2026. Call held 5 Nov 2026.
+- path: inputs/announcements/20261107-b439f6d6-a177-424f-be19-e289ba86f0ce.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: exchange filing (earnings call transcript cover)
+  period: Q2 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Dated 07.11.2026. Transcript of call held 5 Nov 2026.
+- path: inputs/announcements/20261111-485877f6-22e7-4d09-bc27-e61e06c540a7.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: exchange intimation (investor conference attendance)
+  period: Q2 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Dated 11.11.2026. Conference on 17 Nov 2026. Refers to results for quarter and half year ended 30 Sep 2026.
+- path: inputs/announcements/20261112-888c895a-7218-4282-801e-9751b659f637.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: exchange filing (post buyback public announcement)
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Advertisement published 12 Nov 2026 per page.
+- path: inputs/annual-report/Annual_Report_2025.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: annual report (filing cover letter for AR and AGM notice)
+  period: FY2025 (F.Y. 2024-25)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: AGM 6 Aug 2025. Page 1 is the cover letter; AR body follows.
+- path: inputs/annual-report/Annual_Report_2026.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: annual report (filing cover letter for AR and AGM notice)
+  period: FY2026 (F.Y. 2025-26)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: AGM 4 Aug 2026. Page 1 is the cover letter; AR body follows.
+- path: inputs/concalls/Concall_Feb_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: concall transcript
+  period: Q3 FY26
+  folder_match: true
+  proposed_move: ''
+  page_read: 2
+  note: Call 6 Feb 2026 (page 2). Page 1 is the cover letter dated 10.02.2026.
+- path: inputs/concalls/Concall_May_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: concall transcript
+  period: Q4 FY26
+  folder_match: true
+  proposed_move: ''
+  page_read: 2
+  note: Call 19 May 2026 (page 2, Q4 and FY26 call). Page 1 is the cover letter dated 22.05.2026.
+- path: inputs/concalls/Concall_Aug_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: concall transcript
+  period: Q1 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 2
+  note: Call 5 Aug 2026 (page 2). Page 1 is the cover letter dated 08.08.2026.
+- path: inputs/concalls/Concall_Nov_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: concall transcript
+  period: Q2 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 2
+  note: Call 5 Nov 2026 (page 2). Page 1 is the cover letter dated 07.11.2026.
+- path: inputs/peer-concalls/DELHIVERY-Concall_Feb_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Delhivery Ltd
+  doc_type: concall transcript (peer)
+  period: Q3 FY26
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer. Quarter and nine months ended 31 Dec 2025. Call 31 Jan 2026 (page 2 header). Cover dated 05 Feb 2026.
+- path: inputs/peer-concalls/DELHIVERY-Concall_May_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Delhivery Ltd
+  doc_type: concall transcript (peer)
+  period: Q4 FY26
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer. Quarter and year ended 31 Mar 2026. Call 16 May 2026 (page 2 header). Cover dated 22 May 2026.
+- path: inputs/peer-concalls/DELHIVERY-Concall_Aug_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Delhivery Ltd
+  doc_type: concall transcript (peer)
+  period: Q1 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer. Quarter ended 30 Jun 2026. Call 8 Aug 2026 (page 2 header). Cover dated 13 Aug 2026.
+- path: inputs/peer-concalls/DELHIVERY-Concall_Nov_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Delhivery Ltd
+  doc_type: concall transcript (peer)
+  period: Q2 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer. Quarter and half year ended 30 Sep 2026. Call 30 Oct 2026 (cover). Cover dated 5 Nov 2026.
+- path: inputs/peer-concalls/TCI-Concall_Feb_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Transport Corporation of India Ltd
+  doc_type: concall transcript (peer)
+  period: Q3 FY26
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer. Nine months FY26 investor call, 5 Feb 2026 (page 1).
+- path: inputs/peer-concalls/TCI-Concall_Jun_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Transport Corporation of India Ltd
+  doc_type: concall transcript (peer)
+  period: Q4 FY26
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer. 12M FY2026 call dated May 27, 2026 on page 1. The filename says Jun; the page does not.
+- path: inputs/peer-concalls/TCI-Concall_Aug_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Transport Corporation of India Ltd
+  doc_type: concall transcript (peer)
+  period: Q1 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer. Quarter ended 30 Jun 2026. Call 3 Aug 2026 (page 2 header). Cover dated 7 Aug 2026.
+- path: inputs/peer-concalls/TCI-Concall_Nov_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Transport Corporation of India Ltd
+  doc_type: concall transcript (peer)
+  period: Q2 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer. Quarter and half year ended 30 Sep 2026. Call 30 Oct 2026 (page 2 header). Cover dated 5 Nov 2026.
+- path: inputs/peer-concalls/TCIEXP-Concall_Feb_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: TCI Express Ltd
+  doc_type: concall transcript (peer)
+  period: Q3 FY26
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer. Quarter-3 and nine months ended 31 Dec 2025. Call 3 Feb 2026 (page 2 header). Cover dated 9 Feb 2026.
+- path: inputs/peer-concalls/TCIEXP-Concall_Jun_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: TCI Express Ltd
+  doc_type: concall transcript (peer)
+  period: Q4 FY26
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer. Quarter and FY ended 31 Mar 2026. Call 29 May 2026 (page 2 header). Cover dated 4 Jun 2026. The filename says Jun; the call was May.
+- path: inputs/peer-concalls/TCIEXP-Concall_Aug_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: TCI Express Ltd
+  doc_type: concall transcript (peer)
+  period: Q1 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer. Quarter ended 30 Jun 2026. Call 6 Aug 2026 (page 2 header). Cover dated 12 Aug 2026.
+- path: inputs/peer-concalls/TCIEXP-Concall_Nov_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: TCI Express Ltd
+  doc_type: concall transcript (peer)
+  period: Q2 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer. Quarter and half year ended 30 Sep 2026. Call 5 Nov 2026 (page 2 header). Cover dated 10 Nov 2026.
+- path: inputs/presentation/Investor_Presentation_1.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: investor presentation (earnings)
+  period: Q2 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 2
+  note: Financial results presentation for quarter and half year ended 30 Sep 2026. Page 1 is the exchange cover letter dated 02.11.2026.
+- path: inputs/rating/ICRA_Rationale_139064.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: rating (ICRA rationale)
+  period: FY2025 actuals and H1 FY2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Rating action dated 19 Nov 2025. Upgrade outlook to Positive.
+- path: inputs/results/Results_Q4FY26_Mar2026.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: results (board outcome with audited results)
+  period: Q4 FY26
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Quarter and year ended 31 Mar 2026. Board outcome dated 18.05.2026. Page 2 is the auditor report.
+- path: inputs/results/Results_Q1FY27_Jun2026.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: results (board outcome, reviewed results)
+  period: Q1 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Quarter ended 30 Jun 2026. Board meeting 4 Aug 2026. Also carries buyback approval.
+- path: inputs/results/Results_Q2FY27_Sep2026.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: results (board outcome, reviewed results)
+  period: Q2 FY27
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Quarter and half year ended 30 Sep 2026. Board meeting 2 Nov 2026.
+- path: inputs/screening/screener-Data_Sheet.csv
+  file_type: csv
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: screener data sheet (financials)
+  period: FY2026 (report date 2026-03-31)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Annual columns FY2017 to FY2026. Figures are not read or used here.
+- path: inputs/screening/TCI-Data_Sheet.csv
+  file_type: csv
+  content_ok: true
+  issuer: Transport Corporation of India Ltd
+  doc_type: screener data sheet (peer financials)
+  period: FY2026 (report date 2026-03-31)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Peer sheet. Screening location is the expected location per the task message.
+- path: inputs/shareholding/SHP_master_NSE.txt
+  file_type: txt
+  content_ok: true
+  issuer: VRLLOG (NSE symbol; name not on page)
+  doc_type: shareholding pattern master (NSE quarter list)
+  period: Quarters to 30-SEP-2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Fetched 2026-11-12 from NSE. Latest quarter 30-SEP-2026.
+- path: inputs/shareholding/SHP_Sep2026_NSE_xbrl.txt
+  file_type: txt
+  content_ok: true
+  issuer: VRL Logistics Ltd
+  doc_type: shareholding pattern (XBRL filing)
+  period: Q2 FY27 (quarter ended 30 Sep 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: 'XBRL header: NameOfTheCompany VRL LOGISTICS LIMITED, ISIN INE366I01010, period end 2026-09-30. Single-line file, no page markers.'

@@ -1,0 +1,55 @@
+stage: B02-notes
+company: "KPL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "KPL Q2 FY27 concall transcript ABSENT: call held 13 Nov 2026; freshness pair 1 FAILS. Re-collect after about 20 Nov 2026 (B00)."
+  - "KPL Q3 FY26 (Feb 2026) concall transcript ABSENT (B00)."
+  - "research/ empty (non-anchored; leads only) (B00)."
+  - "shareholding/: BSE summary only, no FII/DII category breakdown (B00)."
+  - "screening/: screener export sheets Profit & Loss, Quarters, Balance Sheet, Cash Flow absent for KPL and peers (B00)."
+  - "peer-concalls 10 of 12 (B00)."
+  - "Notes: customer/country/product split, own vs partner registration revenue, ECL model, interest rates and covenants, 5-year repayment table, tax reconciliation, leave encashment, CWIP ageing, capital commitments, Ind AS 10 events note, ownership of Iair Infocom and Kaler Biopharmachem: NOT FOUND IN DOCUMENT (AR FY2026 notes)."
+flags:
+  - {type: FLAG-CASH, reason: "CFO 1,658.62 vs PAT 6,734.60 (24.6%, INR lakhs); receivables 15,430.58 -> 28,005.24 (+81.5%) vs revenue +35.9%; year-end receivable days 135.9 -> 152.1 -> 203.2 (derived); FY25 like-for-like CFO/PAT 85.3% after removing 1,876.75 borrowing from CFO (derived); nil ECL; at least 1,166.32 aged balances left ledger with no disclosed route (Note 9, p.211-212; CFS p.190-191)"}
+accounting_quality: 5
+pass_2_empty: false
+pass_3_empty: true
+top_findings:
+  - {rank: 1, finding: "CFO 1,658.62 vs PAT 6,734.60 (24.6%) INR lakhs; receivables +12,574.66 (+81.5%) vs revenue +35.9%; FCF -3,235.42; FY25 like-for-like CFO/PAT 85.3% (1,876.75 borrowing inside FY25 CFO, derived); two-year 47.2%", note_ref: "CFS p.190-191; Note 9 p.211", rating: "red", why: "Profit is not converting to cash on a consistent basis for two years; feeds FLAG-CASH"}
+  - {rank: 2, finding: "Receivable days 135.9 -> 152.1 -> 203.2 (derived); receivables 28,005.24 lakhs = 69.0% of current assets", note_ref: "Note 9 p.211-212; Note 39 p.236", rating: "red", why: "Three straight years of lengthening in both domestic and export balances"}
+  - {rank: 3, finding: "No ECL or doubtful provision on 28,005.24 lakhs; 3,030.29 over 6 months; 564.29 over 2 years; incurred-loss impairment wording; subsidiary debtor 116.73 over 3 years (standalone) unprovided", note_ref: "Note 9(a) p.212; Note 2.2(p) p.202; standalone Note 10(a) p.141", rating: "red", why: "No loss allowance on a book that doubled in two years"}
+  - {rank: 4, finding: "At least 1,166.32 lakhs (67.4%) of FY25 one-year-plus overdue receivables left the ledger in FY26 with no provision, write-off or bad-debt line (derived)", note_ref: "Note 9(a)/(b) p.212; Note 32 p.225", rating: "red", why: "Exit route undisclosed; Kaler return 262.75 is a candidate [INFERENCE]"}
+  - {rank: 5, finding: "Unhedged FX receivables 8,101.83 -> 15,599.05 lakhs (55.7% of receivables; 59.6% of the build); USD lakh 90.27 -> 164.28", note_ref: "Note 37 p.229", rating: "red", why: "Concentrated unhedged export credit; no country split or sensitivity; Middle East debtors in the brief unverifiable here"}
+  - {rank: 6, finding: "GST contingent liabilities 3,697.75 lakhs = 11.2% of net worth, 54.9% of PAT, no provision; 630.06 order lost at Commissioner (Appeals), writ pending; 3,026.07 SCN stayed; penalty = 100% of tax; interest unquantified", note_ref: "Note 34 p.226-227; CARO (vii)(a) p.105", rating: "yellow", why: "Largest tail risk in the notes; IGST receivable 852.37 on balance sheet"}
+  - {rank: 7, finding: "Payables 5,579.34 -> 10,168.66 lakhs (+82.3%); payable days 108.6 -> 146.6 (derived); CFO would be -2,930.69 without the payable increase", note_ref: "Note 20 p.219-220", rating: "yellow", why: "Working capital funded by suppliers; MSME interest accrued 11.02"}
+  - {rank: 8, finding: "Cash 73.64 lakhs (FY25 1,202.02 incl. cheque in hand 1,050.00); borrowings 13,046.06; WC lines 67.4% drawn; rates, covenants, maturity profile not disclosed", note_ref: "Note 10 p.213; Notes 16, 19 p.217-219", rating: "yellow", why: "Capex and receivables lean on bank lines"}
+  - {rank: 9, finding: "New related parties: Kaler Biopharmachem sale 121.48, return 262.75; Iair Infocom 20.25 + 6.40 (lakhs); ownership undisclosed; Board report says no conflict RPT", note_ref: "Note 40 p.238-239; Board report p.41-42", rating: "yellow", why: "Director-interested flows with return above sale"}
+  - {rank: 10, finding: "Gross margin 48.63% vs 50.70%; operating margin 23.50% vs 21.71% from distribution, power, testing, factory lines falling in rupees; no reasons given", note_ref: "Notes 25, 27-30, 32 p.222-225", rating: "yellow", why: "Repeatability of the margin gain unverifiable from notes"}
+  - {rank: 11, finding: "Capex cash 4,894.04 lakhs (2.0x FY25); CWIP 1,700.62 unaged; bioequivalence study 433.89 capitalised, test unstated; capital-advance liability 594.50; vehicles net block +103%; five luxury-car loans 486.11", note_ref: "Notes 3-5 p.206-209; Note 18 p.218", rating: "yellow", why: "Capitalisation judgement and perquisite questions"}
+  - {rank: 12, finding: "Customer advances 6.01% -> 1.34% -> 1.75% of revenue; supplier advances 791.13 -> 1,581.25; staff advances 6.22 -> 72.39 (lakhs)", note_ref: "Note 22 p.221; Note 13 p.214", rating: "yellow", why: "Credit terms replaced advances; advances out unexplained"}
+  - {rank: 13, finding: "Gratuity DBO 283.52 lakhs (+78.2%); first-time past service cost 82.94 (52.1% of opening DBO); funded 44.4% from 73.8%; exceptional-item cause given as Labour Codes in one note and court order in another", note_ref: "Note 38 p.231-235; Note 2.2(m) p.201; Note 30 p.224", rating: "yellow", why: "More Labour Code cost possible; conflicting disclosure"}
+  - {rank: 14, finding: "Ind AS 116 first recognised FY26 via opening reserves (+4.47 lakhs), FY25 not restated; lease fits promoter factory lease [INFERENCE]", note_ref: "Notes 2.2(n), 18, 31, 40; CARO (i)(c) p.104", rating: "yellow", why: "Close-process control signal, small in size"}
+  - {rank: 15, finding: "Subsidiary (51%): net liabilities 256.68 lakhs, not audited by group auditor, negative NCI (167.47), investment 354.78 not impaired; loans mentioned but not shown", note_ref: "AOC-1 p.241; Note 1 p.194; auditor Other Matters p.178", rating: "yellow", why: "Immaterial to group but unsupported and unreconciled"}
+red_flags:
+  - "Nil ECL / doubtful provision on 28,005.24 lakhs receivables with incurred-loss policy wording (Note 9, p.211-212; Note 2.2(p), p.202)"
+  - "At least 1,166.32 lakhs of FY25 one-year-plus overdue receivables left the ledger with no disclosed route (derived; Note 9, p.212)"
+  - "CFO/PAT 24.6% in FY26; FY25 like-for-like 85.3% after 1,876.75 borrowing inside FY25 CFO (derived; CFS p.190-191)"
+  - "Related-party sale return 262.75 exceeds sale 121.48 with a new director-interested party, Board report asserts no conflict RPT (Note 40, p.239)"
+  - "Unhedged FX receivables 15,599.05 lakhs = 55.7% of receivables, no sensitivity (Note 37, p.229)"
+  - "Indicators only; the filing states no manipulation and gives no cause for any of these"
+questions_for_mgmt:
+  - "What was the exit route for at least 1,166.32 lakhs of FY25 balances over one year past due: cash, credit note, set-off or the Kaler return?"
+  - "Who owns Kaler Biopharmachem and Iair Infocom, which director is interested, and why did Kaler return 262.75 against sales of 121.48?"
+  - "Which countries and customers hold the 15,599.05 lakhs of unhedged FX receivables, what is their age, and is there credit insurance or hedging?"
+  - "What is the expected loss rate on 28,005.24 lakhs of receivables and why is no ECL provision held with 3,030.29 over six months?"
+  - "What drove the falls in distribution (-5.5%), testing (-51.5%) and factory expense (-29.2%) against revenue +35.9%, and which repeat in FY27?"
+receivables_trend: "deteriorating. Total 11,438.57 -> 15,430.58 -> 28,005.24 lakhs; days on year-end revenue 135.9 -> 152.1 -> 203.2 (derived). Over 6 months 3,205.61 (28.0%) -> 2,883.08 (18.7%) -> 3,030.29 (10.8%); share fell on a larger denominator, not on clearance. Over 2 years 898.11 -> 1,164.44 -> 564.29. Nil provision all years (Note 9, p.211-212; AR FY25 Note 9(b))."
+restatements_found:
+  - "Ind AS 116 adopted FY26 as prior-period adjustment through opening reserves 1 Apr 2025, +4.47 lakhs, FY25 comparatives not restated (Note 2.2(n), p.201-202; SOCE p.193)"
+  - "FY25 CFO 5,271.78 lakhs repeated unrestated and includes 1,876.75 of short-term borrowing (derived tie); FY26 puts borrowing in financing (CFS p.190-191)"
+  - "FY25 'Reclassification adjustment' +1.94 to retained earnings; FY26 2.20 NCI transfer to owners, no note text (SOCE p.193; Note 15, p.216)"
+  - "Deferred tax method changed from P&L approach to balance sheet approach effective FY2024-25, note text has unfilled template (Note 6, p.210)"
+going_concern_language: "NONE in the notes. Board states accounts prepared on going-concern basis; auditor CARO (xix): 'no material uncertainty exists as on the date of the audit report' (p.108-109). Subsidiary net liabilities 256.68 lakhs have no stated support (AOC-1 p.241)."
+analyst_note: "All AR figures are INR lakhs; stage 10 converts. The FY25 CFO adjustment (1,876.75) is a derived tie (177.52 + 1,876.75 = 2,054.27); the filing does not label it, so treat 85.3% as derived. The Kaler return as the exit route for aged receivables is an [INFERENCE]; the filing links neither. The 12 Nov 2026 auditor resignation is not in the AR and is not anchored here. Several external-law recollections (Schedule II P&M life, GST s.74, CSR 2% base) sit in Passes 1-2 flagged for the verifier; none is used in a rating here."

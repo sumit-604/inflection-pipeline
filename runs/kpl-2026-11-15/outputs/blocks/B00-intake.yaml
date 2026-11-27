@@ -1,0 +1,436 @@
+stage: B00-intake
+model: claude-haiku-5-5
+status: complete
+corpus_manifest:
+  - path: inputs/annual-report/Annual_Report_2025.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "annual report"
+    period: "FY2024-25"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is the BSE submission letter dated 16 Aug 2025 enclosing the AR for FY 2024-25 (42nd AGM). Period from the letter."
+  - path: inputs/annual-report/Annual_Report_2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "annual report"
+    period: "FY2025-26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is the BSE submission letter dated 09 Aug 2026 enclosing the AR for FY 2025-26 (43rd AGM)."
+  - path: inputs/results/20260519-3ba529f9-474e-48d3-8e31-376da84782ad.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "results (audited, board outcome letter)"
+    period: "Q4FY26 (quarter and year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/results/20260810-a801ea43-622f-4ca8-88dd-45b8c1d3aba2.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "results (unaudited, board submission letter)"
+    period: "Q1FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/results/20261112-Q2FY27-results-board-outcome-49e6260f.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "results (unaudited, board outcome letter)"
+    period: "Q2FY27 (quarter and half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Same letter as announcements/20261112-4a20fb35-241b-4936-bfb4-b001f5571f15.pdf (duplicate copy)."
+  - path: inputs/concalls/Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "concall (transcript)"
+    period: "Q1FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is the BSE cover letter dated 12 Aug 2026 for the call held 10 Aug 2026."
+  - path: inputs/concalls/Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "concall (transcript)"
+    period: "Q4FY26 (FY ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is the BSE cover letter dated 21 May 2026 for the analyst call held 19 May 2026."
+  - path: inputs/presentation/20260519-2dd8e61b-3c35-4b6b-a32d-4192ec555861.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "investor presentation"
+    period: "Q4FY26 (FY26)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/presentation/Investor_Presentation_1.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "investor presentation"
+    period: "Q2FY27 (H1FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Generic filename. Cover reads Q2 & H1 FY27 Investor Presentation."
+  - path: inputs/presentation/Q1FY27_Investor_Presentation.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "investor presentation"
+    period: "Q1FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/rating/ICRA_rationale_2026-05-07_via_BSE_20260508.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "rating (ICRA rating action forwarded by company)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is the company BSE letter dated 08 May 2026 forwarding ICRA report dated 07 May 2026 (as-of date, not a FY). Rationale pages after page 1 not read. Same letter as announcements/20260508-1ab08dfa-e4ab-4df9-8272-4097408ffedd.pdf."
+  - path: inputs/peer-concalls/CAPLIPOINT-Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Caplin Point Laboratories Ltd"
+    doc_type: "concall (transcript)"
+    period: "Q1FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Call dated 12 Aug 2026 on page 1."
+  - path: inputs/peer-concalls/CAPLIPOINT-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Caplin Point Laboratories Ltd"
+    doc_type: "concall (transcript)"
+    period: "Q3FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Call dated 05 Feb 2026 on page 1."
+  - path: inputs/peer-concalls/CAPLIPOINT-Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Caplin Point Laboratories Ltd"
+    doc_type: "concall (transcript)"
+    period: "Q4FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Call dated 14 May 2026 on page 1."
+  - path: inputs/peer-concalls/CAPLIPOINT-Concall_Nov_2025_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Caplin Point Laboratories Ltd"
+    doc_type: "concall (transcript)"
+    period: "Q2FY26 (H1FY26)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Call dated 06 Nov 2025 on page 1."
+  - path: inputs/peer-concalls/LINCOLN-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Lincoln Pharmaceuticals Ltd"
+    doc_type: "concall (transcript)"
+    period: "Q3FY26 (nine months ended 31 Dec 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is the exchange cover letter dated 23 Feb 2026 for the call held 18 Feb 2026."
+  - path: inputs/peer-concalls/LINCOLN-Concall_May_2024_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Lincoln Pharmaceuticals Ltd"
+    doc_type: "concall (transcript)"
+    period: "FY2023-24 (Q4 and year ended 31 Mar 2024)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is the exchange cover letter dated 18 May 2024 for the call held 16 May 2024. Filename year 2024 matches the page."
+  - path: inputs/peer-concalls/SENORES-Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Senores Pharmaceuticals Ltd"
+    doc_type: "concall (transcript)"
+    period: "Q1FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is the cover letter dated 03 Aug 2026 for the Q1FY27 call held 27 Jul 2026."
+  - path: inputs/peer-concalls/SENORES-Concall_Jan_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Senores Pharmaceuticals Ltd"
+    doc_type: "concall (transcript)"
+    period: "Q3FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is the cover letter dated 27 Jan 2026 for the call held 20 Jan 2026."
+  - path: inputs/peer-concalls/SENORES-Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Senores Pharmaceuticals Ltd"
+    doc_type: "concall (transcript)"
+    period: "Q4FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is the cover letter dated 19 May 2026 for the call held 14 May 2026."
+  - path: inputs/peer-concalls/SENORES-Concall_Nov_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Senores Pharmaceuticals Ltd"
+    doc_type: "concall (transcript)"
+    period: "Q2FY27 (H1FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Page 1 is the cover letter dated 05 Nov 2026 for the call held 29 Oct 2026. Filename says Nov 2026; period from page."
+  - path: inputs/announcements/20260202-1c9baff5-4a70-4f18-997d-4e361ebcc82a.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "announcement (Reg 30 letter)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Event notice dated 02 Feb 2026. No reporting period."
+  - path: inputs/announcements/20260204-d5f6d161-828e-4bc6-9da7-888907fdac5c.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "announcement (Reg 30 letter, revised)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Revised intimation dated 04 Feb 2026. No reporting period."
+  - path: inputs/announcements/20260310-ca1468fc-601a-4471-8001-1557a31f0037.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "announcement (Reg 30 letter)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Event notice dated 10 Mar 2026. No reporting period."
+  - path: inputs/announcements/20260508-1ab08dfa-e4ab-4df9-8272-4097408ffedd.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "announcement (Reg 30 letter, rating)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 08 May 2026. Same letter as rating/ICRA_rationale_2026-05-07_via_BSE_20260508.pdf (duplicate copy)."
+  - path: inputs/announcements/20260602-5daf24b4-068f-424c-8000-d4f636d2dba1.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "announcement (Reg 30 letter)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 02 Jun 2026. No reporting period."
+  - path: inputs/announcements/20260724-2309b54c-7728-4e10-9a52-76ae7822ed97.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "announcement (Reg 30 letter)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 24 Jul 2026. No reporting period."
+  - path: inputs/announcements/20260831-0e3956d0-a303-4cf7-b25c-a1b4bf5221ce.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "announcement (Reg 30, AGM proceedings)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 31 Aug 2026. No reporting period."
+  - path: inputs/announcements/20260902-2027a046-342f-4140-98ff-8c88b4f63fee.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "announcement (Reg 30, AGM outcome)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 02 Sep 2026. No reporting period."
+  - path: inputs/announcements/20260902-b1febf97-60e6-44d5-ac92-b3972dbc6d1c.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "announcement (Reg 44, e-voting results)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 02 Sep 2026. No reporting period."
+  - path: inputs/announcements/20261019-0262eb06-f1af-4a40-9305-caf6eabba3d7.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "announcement (Reg 30 letter)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 19 Oct 2026. No reporting period."
+  - path: inputs/announcements/20261104-f03edc9a-1023-4806-a894-aa2156e2183e.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "announcement (Reg 30 letter)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 04 Nov 2026. No reporting period."
+  - path: inputs/announcements/20261105-b9c39466-4c15-431c-9138-bca2e48ea4c3.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "announcement (Reg 29 board meeting intimation)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 05 Nov 2026. No reporting period."
+  - path: inputs/announcements/20261107-bc892786-a17a-4087-8996-94b2ce1d6f70.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "announcement (call intimation)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 07 Nov 2026. Text layer of page 1 is empty; identity read from the page render. No reporting period."
+  - path: inputs/announcements/20261109-2dadd748-dcf2-475a-9722-882d8fc6bbc2.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "announcement (call intimation)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 09 Nov 2026. No reporting period."
+  - path: inputs/announcements/20261112-4a20fb35-241b-4936-bfb4-b001f5571f15.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "announcement (Reg 30, board outcome)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 12 Nov 2026. Same letter as results/20261112-Q2FY27-results-board-outcome-49e6260f.pdf (duplicate copy)."
+  - path: inputs/announcements/20261114-20e59f13-f127-4a0b-8df4-1d492b720c60.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "announcement (Reg 30 letter, call recording)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 14 Nov 2026. No reporting period."
+  - path: inputs/shareholding/BSE_shareholding_summary_539997.txt
+    file_type: txt
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "shareholding pattern (BSE summary)"
+    period: "Quarter ending Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Company name not printed; identity from BSE scrip code 539997 on page. Page header: fetched 2026-11-16."
+  - path: inputs/shareholding/BSE_shareholding_summary_539997_raw.html
+    file_type: html
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "shareholding pattern (BSE summary, raw HTML)"
+    period: "Quarter ending Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Raw HTML of the same BSE summary as the .txt. Company name not printed; scrip code 539997."
+  - path: inputs/screening/screener-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Kwality Pharmaceuticals Ltd"
+    doc_type: "screener data sheet"
+    period: "FY2017-FY2026 annual (latest report date 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "COMPANY NAME row: KWALITY PHARMACEUTICALS LTD. Sheet states no monetary unit. File name has no ticker."
+  - path: inputs/screening/CAPLIPOINT-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Caplin Point Laboratories Ltd"
+    doc_type: "screener data sheet"
+    period: "FY2017-FY2026 annual (latest report date 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "COMPANY NAME row: CAPLIN POINT LABORATORIES LTD. Sheet states no monetary unit."
+  - path: inputs/screening/SENORES-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Senores Pharmaceuticals Ltd"
+    doc_type: "screener data sheet"
+    period: "FY2022-FY2026 annual (latest report date 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "COMPANY NAME row: SENORES PHARMACEUTICALS LTD. Annual columns start FY2022; earlier columns blank. Sheet states no monetary unit."
+  - path: inputs/screening/LINCOLN-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Lincoln Pharmaceuticals Ltd"
+    doc_type: "screener data sheet"
+    period: "FY2017-FY2026 annual (latest report date 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "COMPANY NAME row: LINCOLN PHARMACEUTICALS LTD. Sheet states no monetary unit."
+unreadable: []
+unidentified: []

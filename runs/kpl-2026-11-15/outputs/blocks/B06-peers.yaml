@@ -1,0 +1,58 @@
+stage: B06-peers
+company: "KPL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Peer files 10 of 12: no CAPLIPOINT Q2 FY27 call yet; LINCOLN has no call after 18 Feb 2026 (Q3 FY26) and a STALE Q4 FY24 call (16 May 2024)"
+  - "Day-count bases differ across peers (Caplin receivable days; Senores net working capital days; Lincoln debtor days from FY24), so the Q2 comparison is directional"
+  - "KPL per-registration revenue unit (rupees or dollars) not stated in the Aug call; Q4 verdict depends on it (B05)"
+  - "KPL own-held vs partner-held revenue and margin NOT FOUND (B05); Q7 and Q8 cannot be closed from peers"
+flags:
+  - {type: FLAG-RECEIVABLES-OUTLIER, reason: "KPL 178 debtor days vs Caplin 117-136, Senores NWC 90-104, Lincoln 89-101 (stale); no peer attributes lengthening to a Gulf disruption (Caplin Q4 FY26 p.9, p.13-14)"}
+  - {type: FLAG-APPROVAL-SHARE-LOW, reason: "KPL 18-19 of 70 Mexico filings (about 27%) vs Caplin up to 57% (20 of 35+, Q2 FY26 p.5) and Senores 37% (Q2 FY27 p.17), derived"}
+  - {type: FLAG-REGULATED-MARGIN-CONDITIONAL, reason: "40% regulated EBITDA corroborated only for owned US ANDAs (Senores); Lincoln and Caplin regulated exposure sits at or below emerging-market margin"}
+peers_provided: 10
+verified: []
+partially_verified:
+  - {claim: "Q1 LATAM/MENA/Africa growth: registration-led share gain, not market growth", peers: ["SENORES", "CAPLIPOINT", "LINCOLN"]}
+  - {claim: "Q3 API cost and pass-through: mild inflation, dollar offset, structural no pass-through under B2B", peers: ["CAPLIPOINT", "SENORES"]}
+  - {claim: "Q4 Approval timelines and revenue per registration", peers: ["CAPLIPOINT", "SENORES"]}
+  - {claim: "Q5 Thin competition and price erosion after first generic", peers: ["CAPLIPOINT", "SENORES"]}
+  - {claim: "Q7 Regulated-market margin step-up (3-4 pts gross, 40% EBITDA)", peers: ["SENORES", "LINCOLN", "CAPLIPOINT"]}
+  - {claim: "Q8 Own vs partner-held revenue split and margin gap", peers: ["SENORES", "CAPLIPOINT", "LINCOLN"]}
+contradicted:
+  - {claim: "Q2 Peers run 150-180 receivable days; Gulf disruption lengthened cycles", contradicting_peer: "CAPLIPOINT", quote_anchor: "CAPLIPOINT Q4 FY26 p.9 (136 days, 125 ex-FX) and p.14 ('100 to 130-days even is probably still okay'); SENORES Q3 FY26 p.16 (90-94 NWC days)"}
+unverifiable:
+  - {claim: "Q6 EU Annex 1, oncology utilisation 35-40% to 65%, 50 Cr line", peers_checked: ["SENORES", "LINCOLN", "CAPLIPOINT"]}
+  - {claim: "Q9 First-mover BE margins fade 40-45% to 25-30% in 2-3 years", peers_checked: ["SENORES", "CAPLIPOINT"]}
+  - {claim: "Q10 Statutory auditor change mid-term at peers and previewed on calls", peers_checked: ["CAPLIPOINT", "SENORES", "LINCOLN"]}
+peer_coverage_map:
+  - {peer: "CAPLIPOINT", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Receivables 117 days; Mexico 20 approvals; erosion rule"}
+  - {peer: "CAPLIPOINT", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Mexico/Chile 18-24 month gestation; 75/25 product vs profit share"}
+  - {peer: "CAPLIPOINT", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Receivables 136 days; El Salvador tender; B2B repricing; CSL EBITDA 30%"}
+  - {peer: "CAPLIPOINT", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Group +20%; gross margin 59.8%; capacity-limited; stock build"}
+  - {peer: "SENORES", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "EM +48%; own vs CDMO 55/45; 4-6 pt gap; US EBITDA 40%"}
+  - {peer: "SENORES", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "EM 145 Cr; realisation 1.20 to 1.90; working capital 187 vs 104 days"}
+  - {peer: "SENORES", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "EM +30%; sterile capex downsized; capex 100-120 Cr"}
+  - {peer: "SENORES", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "EM +21%; 558 approved / 944 pending; beta-lactam competition; joint auditor"}
+  - {peer: "LINCOLN", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Growth 12-18%; EBITDA 15-18% after Canada; no own distribution"}
+  - {peer: "LINCOLN", quarter: "Q4 FY24", usage: "CITED-ONLY", contribution: "STALE; 20-22% EBITDA target and 89-101 debtor days comparison only"}
+industry_cross_read:
+  demand: "Split and no boom: Caplin +10-20% and capacity-limited, Senores EM +21-30%, Lincoln 12-18%; no peer cites industry-wide LATAM or Africa demand growth"
+  pricing_inputs: "Mild logistics-driven inflation (Caplin COGS +1.5-2% worst product), offset by rupee weakness; Senores EM realisation up but beta-lactam competitive; no peer matches KPL's 46.2% to 52.1% gross-margin swing"
+  capex_cycle: "Not a lone expander and not a race: Caplin is the one large expander (17 injectable lines, internally funded), Senores calibrating (capex 100-120 Cr, sterile downsized), Lincoln seeking a unit or acquisition; peers fund from cash while KPL shows net borrowing"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "US tariff on generics, waiver two years out: CAPLIPOINT Q1 FY27 p.15; SENORES Q1 FY27 p.15"
+  - "Single large tender distorting growth and receivables: CAPLIPOINT Q4 FY26 p.11"
+  - "Government payment delay and shipping disruption: CAPLIPOINT Q2 FY26 p.20"
+  - "Controlled-substance quota lag 45-50 days: SENORES Q2 FY27 p.11"
+  - "FDA 483 observation at acquired plant: SENORES Q2 FY27 p.4"
+  - "Promoter pledge and warrants: SENORES Q3 FY26 p.14"
+  - "Accrued profit-share asset growth: SENORES Q4 FY26 p.9, Q2 FY27 p.12"
+  - "Loans and advances to third parties; other income about 50% of EBITDA: LINCOLN Q3 FY26 p.5-6, p.9"
+  - "Regulator inspection queue gating: LINCOLN Q3 FY26 p.7; CAPLIPOINT Q2 FY26 p.11"
+net_narrative_effect: "complicates"
+analyst_note: "The receivable-day contradiction is the item most likely to move the verdict: all three peers sit at 90-136 days against KPL 178 (day-count bases differ, so directional). Q4 per-registration revenue hinges on whether KPL's 1.5-2 million is rupees (0.15-0.20 Cr, plausible against Senores 0.3 Cr) or dollars (30 to 40 times Caplin Chile, unsupported); B05 says unit not stated. 40% regulated EBITDA holds only where the company owns the ANDA (Senores); Lincoln and Caplin regulated exposure sits at or below EM margin, so the own-vs-partner-held split (NOT FOUND) decides the margin bridge. Cross-peer hypothesis is in the report Part 5."
+cross_peer_hypothesis: "Regulated-market margin uplift accrues only to registration or ANDA owners, not to partner-registration suppliers: Senores owned US ANDAs about 40% EBITDA and CDMO 4-6 pts lower gross margin (Q3 FY26 p.7, p.15); Lincoln guide fell from 20-22% (Q4 FY24, stale) to 15-18% (Q3 FY26 p.8) after Canada via CDMO; Caplin regulated US arm 30% vs 38-39% group (Q4 FY26 p.15, p.18). Test for KPL: own-held vs partner-held revenue and margin split (NOT FOUND)."

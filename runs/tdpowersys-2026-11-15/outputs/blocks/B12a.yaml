@@ -1,0 +1,24 @@
+stage: B12a
+company: "TDPOWERSYS"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+numbers_checked: 582
+mandatory_checked: 277
+mandatory_total: 277
+findings:
+  - {severity: "MAJOR", location: "04-bizmodel.md s1B row 5 and s2B Alstom row; 05-concall.md s3D Customers bullet", claimed: "Alstom long-term agreement dated 2020 (Pres. slide 5)", source_truth: "Pres. slide 5 prints the Alstom agreement under 2017; 2020 is 'Increases footprint in the European and Turkish Market' (PDF page 5 rendered)", note: "Wrong year on a non-pillar fact; 07-emoat.md has 2017 correctly", source_fidelity: true}
+  - {severity: "MINOR", location: "05-concall.md s1B rows FY28 capacity, Debottlenecking capex, FY29-FY30 capacity, Large-generator announcement; s2A row 23", claimed: "INR22 billion, INR500 million, INR40 billion and above, 'month of August' at Q1C p.3", source_truth: "All four are on Q1C p.4 (txt lines 154-164); p.3 holds order book, inflow and sales", note: "Figures exist one page later; 04 and 09 anchor p.4", source_fidelity: true}
+  - {severity: "MINOR", location: "05-concall.md s0A item 1 and s1B Capacity row", claimed: "NK Q4C p.13: capacity to address INR32 billion for FY28", source_truth: "Quote is on Q4C p.14 (txt line 597); p.13 has no INR32 billion text", note: "One page off", source_fidelity: true}
+  - {severity: "MINOR", location: "05-concall.md s3A first row and s3D Customers bullet", claimed: "Siemens 2012 licence and Alstom agreement in presentation p.4", source_truth: "Timeline is on slide 5; slide 4 is the divider page", note: "One page off; 04 and 07 cite slide 5", source_fidelity: true}
+  - {severity: "MINOR", location: "07-emoat.md s0 item 1", claimed: "Q1C p.5: 'it is not written in stone'", source_truth: "Text is on Q1C p.6 (txt line 245)", note: "One page off; 09 anchors p.6", source_fidelity: true}
+  - {severity: "MINOR", location: "09-tam.md s1B", claimed: "p.6: no market-share number (B04 cites p.9)", source_truth: "Market-share answer is on Q1C p.9 (txt lines 377-381); p.6 has none", note: "Self-contradicting anchor; p.9 half is right", source_fidelity: true}
+  - {severity: "MINOR", location: "04-bizmodel.md s2A competition row and s2B BRUSH row", claimed: "BRUSH Group, CG Newage, Kirloskar Electric at Pres. slide 15, 17", source_truth: "CG Newage slide 15, Kirloskar slide 17, BRUSH Group slide 18", note: "BRUSH one slide beyond the cited pair", source_fidelity: true}
+  - {severity: "MINOR", location: "04-bizmodel.md s0 item 4, s4A, s4C; 05-concall.md s0A item 4; 07-emoat.md s0 item 4", claimed: "Promoter holding 26.5% at 30 Sep 2026 (Pres. slide 36), paired in 05 with the 30 Sep 2026 shareholding pattern", source_truth: "Slide 36 prints 26.5% on a post-QIP denominator; Reg 31 for 30 Sep 2026 p.3 prints 27.16% (85,207,322 of 313,706,860); 26.51% is in the 12 Oct 2026 pattern", note: "Unlabelled basis; 01 and 08 use 27.16% and explain 26.51% correctly; no score input wrong", source_fidelity: false}
+critical_count: 0
+major_count: 1
+minor_count: 7
+false_positives_struck: 5
+material_universe: 680
+acceptance_rate: 98.6
+coverage_note: "Mandatory tier 277 of 277 checked: the whole Gate 0 scorecard (01-gate0.md), counted as distinct input figures with 10-year series as 10 values; no verdict card or Section 1B pillar input exists in the reports yet (stages 10, 11, 13 not run). Sample tier: about 680 material numbers in 02-09, about 305 checked (roughly 45%), highest materiality first. Not checked: most standalone Note 1-57 lines below the 02 top-15, BRSR detail tables, most 06 Part 2 quotes beyond those spot-checked, web-sourced figures in 08 and 09 (no PDF exists; arithmetic on them recomputed, inputs left unverified and not a finding), the Q2 FY26 transcript in other/. Data_Sheet FY23 borrowings is blank and 01 treats it as nil; the AR FY23 balance sheet was not in the inputs. Acceptance rate is (582 checked - 8 findings) / 582."

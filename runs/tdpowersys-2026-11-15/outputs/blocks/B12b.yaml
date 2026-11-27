@@ -1,0 +1,31 @@
+stage: B12b
+company: "TDPOWERSYS"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 25
+caught: 18
+partially_caught: 6
+missed:
+  - {severity: "MINOR", item: "DFPS subsidiary: 100% of the investment (Rs 30 mn) provided in FY26, volunteered in Q4 prepared remarks; absent from B05 and B06", anchor: "Q4C p.3, NK"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
+credibility_grade_concur: "concur: B fits; every headline revenue and inflow promise beaten, against two-quarter large-generator deferral, drifting capacity numbers and no call signal of the equity raise; reclassifying the US-customer row from missed to unverified does not move the grade"
+findings:
+  - {id: F1, severity: MAJOR, finding: "B06 Q9 CONTRADICTED (no order disruption from US tariff) is OVERSTATED: its weighting premise that TD sells capital equipment to the end buyer is wrong; TD sells to prime-mover OEMs (the Azad position, no disruption), and TD Q3 FY26 inflow was a record Rs 6.56 bn, +61% YoY, 84% export", anchor: "B06 Q9; AR FY26 p.82 BRSR; Q4C p.8 NK; Q3C p.3 NK", fix: "Reclassify for TD to PARTIALLY VERIFIED (customer-pays corroborated, disruption not shown at TD); keep peer deferral as context; add Q1C p.11 analyst note that FY26 exports were routed via Turkey because of tariff uncertainty"}
+  - {id: F2, severity: MAJOR, finding: "Material item partially caught: management moved from '180 degrees reverse' (Q4) to 'there are execution delays on the data centre side' (Q1), after first denying it on the same call; B05 3B records it as delays 'not at TD'. Triveni reports dispatches pushed out for the same reason", anchor: "Q4C p.7; Q1C p.8, p.9 NK; TRITURBINE Q1 FY27 p.7; B05 3B", fix: "Record as tone shift and leading indicator; add tracker kill signal: OEM or customer reports of deferred dispatch or commissioning"}
+  - {id: F3, severity: MINOR, finding: "B06 Q1 labels domestic 10-12% growth PARTIALLY VERIFIED though its net read says the latest quarter reverses it; TD domestic inflow share 21% to 7%; Triveni domestic orders -35.4%, decline broad-based; Q1C says 'all segments' buoyant (p.3) and India 'fairly subdued' (p.14)", anchor: "Q3C p.4-5; Q4C p.4; Q1C p.3-4, p.14; TRITURBINE Q1 FY27 p.3, p.6; TRITURBINE Q4 FY26 p.15", fix: "Label CONTRADICTED for the latest quarter, magnitude unanchored; B05 to list the management claim as contradicted by TD's own inflow (segment about 25% of revenue, Q4C p.12)"}
+  - {id: F4, severity: MINOR, finding: "B05 2A row 9 (big new US customer) classed missed; neither later call shows non-conversion; Q1C p.10 'no major client additions at the moment' is present-tense", anchor: "Q3C p.7; Q1C p.10; B05 2A row 9", fix: "Reclassify UNVERIFIED (silence); counts 11 delivered, 5 partial, 3 missed; grade unchanged"}
+  - {id: F5, severity: MINOR, finding: "B05 carries MV's 'scaling up from 1,750 to 2,600' as headcount fact (1B, 2B, 2E, 3C, 4B item 8) and B06 Q8 partially verifies it; the phrase is ambiguous: 2,600 equals the FY27 revenue guide on the same call; AR shows 1,550 total staff at 31 Mar 2026 (730 employees + 820 workers), which also fits", anchor: "Q1C p.13 MV; Q1C p.4; Q4C p.3; AR FY26 p.82 BRSR item 20", fix: "State both readings; drop headcount 2,600 as a fact; flag B06 Q8 as resting on it"}
+  - {id: F6, severity: MINOR, finding: "Speaker attribution: B05 row 2 credits 'about INR590 crores' to NK (analyst Ganeshram's words); row 21 credits 'INR700 crores ... completely covered' to MV (analyst Garvit Goyal's restatement; MV said 'outstanding creditors have been completely covered', then 'Yes')", anchor: "Q4C p.9; Q4C p.11", fix: "Correct speakers; note CFO used 'creditors' for receivables"}
+  - {id: F7, severity: MINOR, finding: "Missed volunteered negative: 100% of DFPS subsidiary investment (Rs 30 mn) provided in FY26", anchor: "Q4C p.3 NK", fix: "Add to B05 2D or subsidiary notes beside the Turkey penalty"}
+  - {id: F8, severity: MINOR, finding: "B05 3D roll-forward uses consolidated revenue against an order book and inflow of unstated basis; on B05's standalone Q4 FY26 revenue Rs 534.3 cr the Q3-to-Q4 gap is about -Rs 4 cr not +Rs 51 cr (my arithmetic); Q4-to-Q1 gap stays positive, at most Rs 131 cr on standalone total income Rs 630 cr", anchor: "Q3C p.3; Q4C p.3; Q1C p.3; B05 3D", fix: "Name revenue basis as a candidate driver; flag stands in part"}
+  - {id: F9, severity: MINOR, finding: "B05 row 24 says the equity raise was never pre-signalled; the board meeting was notified to the exchange before the Q1 call and an analyst asked about the QIP on it", anchor: "Q1C p.15, p.17 NK", fix: "Reword: not signalled on the Q3 or Q4 calls; pre-notified by board notice before the Q1 call"}
+  - {id: F10, severity: MINOR, finding: "Recorded but not weighed: guidance upside language shrank to 'small chance' (I-15); hydro softening and 'abroad' vs 'not global' (I-17); FX about 90% unhedged by choice (I-19); CFO answer quality (I-24)", anchor: "Q3C p.5, p.12; Q4C p.4-5, p.11; Q1C p.4, p.10", fix: "Carry as tone notes; FX into margin-bridge sensitivity"}
+critical_count: 0
+major_count: 2
+minor_count: 8
+material_found: 9
+material_caught: 7
+acceptance_rate: 78
+coverage_basis: "9 material (1 CRITICAL, 8 MAJOR) of 25 listed; 7 caught, 2 partially caught, 0 missed; 78% counts CAUGHT only (100% if PARTIALLY CAUGHT counts). TDPS 3 of 3 transcripts read in full; peers 3 of 12 in full, 9 by topic search"

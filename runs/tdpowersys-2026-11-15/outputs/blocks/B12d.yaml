@@ -1,0 +1,18 @@
+stage: B12d
+company: "TDPOWERSYS"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, item: "Q7 VERIFIED: the first half (OEMs raise prices) rests on CG alone. Azad's gas-turbine price rise came from an analyst question, and Triveni declines to push price. The second half (supplier/OEM pricing difficult) has Azad and Triveni. B06 states this itself (direction only). PARTIALLY VERIFIED would be the stricter label.", anchor: "AZAD Q3 FY26 txt line 492; CGPOWER Q2 FY26 txt line 105-106; TRITURBINE Q1 FY27 txt line 812-813"}
+  - {severity: MINOR, item: "B06 Part 4, 2B and the cross-peer hypothesis pool CG Power margin gains of 280-380 bps as price-led. CG Q4 FY26 attributes the 287 bps to 'efficient order execution and strong operating leverage', not price realization. Q2 (310 bps) and Q3 (378 bps) do cite price realization.", anchor: "CGPOWER Q4 FY26 txt line 128-131; CGPOWER Q2 FY26 txt line 105-107; CGPOWER Q3 FY26 txt line 99"}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 100

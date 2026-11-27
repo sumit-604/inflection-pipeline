@@ -1,0 +1,74 @@
+stage: B06-peers
+company: "TDPOWERSYS"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "FRESHNESS: Q2 FY27 earnings call transcript absent (call held 13 Nov 2026; BSE, screener and tdps.co.in show audio only as of 15 Nov 2026). Expected source: BSE corporate announcements for 533553, about 19 Nov 2026."
+  - "collector_warning (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. [REPAIRED in Step F: two shareholding filings downloaded from tdps.co.in]"
+  - "collector_warning (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again. [OPEN: those five sheets are ABSENT documents; Data_Sheet is populated, annual FY2017-FY2026, quarterly Jun 2024-Sep 2026; Number of shares row blank]"
+  - "collector_warning (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again [REPAIRED in Step F: three results filings downloaded from BSE]"
+  - "collector_warning (verbatim): no rating PDF yet: add later the same way [REPAIRED in Step F: CRISIL rationale 22 Jun 2026, a print of the HTML rationale, not the agency PDF]"
+  - "research/ empty: no broker notes (non-anchored source only; no effect on anchored evidence)"
+  - "prospectus/ empty: not expected, company listed 2011; not a gap"
+  - "Peer Q2 FY27 transcripts absent: TRITURBINE and AZAD list audio only; CGPOWER latest is Q1 FY27"
+  - "No peer screening sheets (collector peer pass delivered zero files; peer transcripts fetched by direct download)"
+  - "Rating: only CRISIL checked; no other agency rationale sought"
+  - "Read route: pre-extracted page-marked .txt beside every PDF (tools/extract_pdfs.py) for all stages and verifiers; the SAST Reg 29(1) scan of 14 Nov 2026 and one newspaper notice went through OCR"
+  - "STAGE 6: peer set holds no generator, alternator or motor-for-generator maker; grep for generator, alternator and TD Power across all 12 peer transcripts returned zero hits. Every verdict rests on adjacent segments (transformers and switchgear, steam turbines, turbine engine components)."
+flags:
+  - {type: FLAG-PEER-CONTRADICTION, reason: "Q9 CONTRADICTED: Triveni (capital-equipment parallel to TD) kept finalised US orders out of its book for want of advances under tariff uncertainty, and CG slowed US industrial exports for duty; Azad (critical engine parts) saw no disruption. Tariff has since fallen to 18% (Triveni Q3 FY26 p.4)."}
+  - {type: FLAG-DATA-CENTRE-NOT-YET-ORDERS, reason: "Triveni Q1 FY27 p.11: data-centre steam-turbine demand is enquiries, 'hoping it could translate in this year'; US under 10% of aftermarket orders (p.12). Only CG booked a data-centre order (Rs 900 cr transformers, Q3 FY26 p.3-4)."}
+  - {type: FLAG-MARGIN-CAPTURE-BY-CONTRACT-TYPE, reason: "Same upcycle, three outcomes: CG with price variation clauses expands Power PBIT margin; Azad with a plus-minus 5% band holds 36-38% EBITDA; Triveni on fixed-price contracts fell to 18.0% EBITDA in Q1 FY27 from 25.8%. TD price-variation coverage is not evidenced in this stage."}
+  - {type: FLAG-PEER-SET-ADJACENT, reason: "No peer makes generators; all 12 verdicts weight adjacent evidence. Peer silence on generators is a limit of the set, not evidence."}
+  - {type: FLAG-GUIDANCE-COUNTEREXAMPLE, reason: "Triveni guided double-digit FY26 growth on the Q3 call (p.14) and delivered 9% (Q4 call p.4): guidance can miss in this cycle. B05 reads the TD ladder as a floor."}
+peers_provided: 12
+verified:
+  - {claim: "OEMs raise prices but TD says better pricing is difficult", peers: ["AZAD", "CGPOWER", "TRITURBINE"], anchor_count: 5}
+partially_verified:
+  - {claim: "Domestic steam turbine and captive power market growing 10-12% a year, large sets moving to 30-60 MW", peers: ["TRITURBINE", "CGPOWER"]}
+  - {claim: "Gas turbine and engine OEMs doubling capacity by 2030 (INNIO tripling) with firm forecasts to 2030", peers: ["AZAD", "TRITURBINE"]}
+  - {claim: "Share of OEM backlog that is slot reservation vs firm order; non-refundable advances", peers: ["AZAD", "TRITURBINE"]}
+  - {claim: "Copper near $14,000, customer price talks approaching double digits, price variation clauses protect margin", peers: ["CGPOWER", "AZAD", "TRITURBINE"]}
+  - {claim: "Headcount 1,750 to 2,600 in a year, wage hike built in", peers: ["AZAD", "CGPOWER", "TRITURBINE"]}
+  - {claim: "Receivable days and customer advances in export OEM business", peers: ["CGPOWER", "TRITURBINE", "AZAD"]}
+  - {claim: "India power capex: large coal sets booked 3-4 years, domestic demand subdued at 10-12%, no India hyperscaler demand", peers: ["TRITURBINE", "CGPOWER"]}
+  - {claim: "Chinese equipment competition below 100 MW has no impact", peers: ["TRITURBINE", "CGPOWER", "AZAD"]}
+contradicted:
+  - {claim: "US tariff paid by customers on India-made product with no order disruption", contradicting_peer: "TRITURBINE (CGPOWER partial)", quote_anchor: "TRITURBINE Q2 FY26 call p.6, Nikhil Sawhney: 'We have finalised orders, but we have not taken them into our order book given the fact that we have currently not received advances of those, given uncertainty around the exact tariff structure.' Also Q3 FY26 p.3 (order booking down about 26%). CGPOWER Q3 FY26 p.12, Amar Kaul: 'with the duty structure, we have kind of slowed down on these areas.'"}
+unverifiable:
+  - {claim: "Is TD gaining share with OEMs (competitor-replacement order cited, share claim refused)", peers_checked: ["AZAD", "CGPOWER"]}
+  - {claim: "Machine-tool lead time 15-16 months for large machining as everyone expands", peers_checked: ["AZAD", "CGPOWER", "TRITURBINE"]}
+peer_coverage_map:
+  - {peer: "CGPOWER", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Railway price variation lag 1-2 quarters (p.7), transformer lead time 24 months (p.9), thermal generation picking up (p.10), China stance (p.6-7)"}
+  - {peer: "CGPOWER", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Price variation clause in almost the entire Power order book, uncapped (p.6, p.12); tariff and US slowdown (p.12, p.14-15); China one company sold out 2 years (p.8); Rs 900 cr data-centre order (p.3-4)"}
+  - {peer: "CGPOWER", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Trade receivables 90-100 days (p.8); motor price hikes 17.5% (p.12); tap-changer lead time 9-12 months (p.12-13); capacity 75,000 plus 45,000 MVA (p.10)"}
+  - {peer: "CGPOWER", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Capacity-race and pricing answer (p.4); further 5% motor price rise (p.4-5); plant build 12-14 months vs 24-36 typical (p.8); China (p.10)"}
+  - {peer: "TRITURBINE", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Tariff-frozen US orders (p.6); advances 10-30% (p.13); domestic share and growth (p.8, p.14); 56% US tariff (p.21)"}
+  - {peer: "TRITURBINE", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Orders -26% for want of advances (p.3); gas turbine OEMs booked 5 years (p.12-13); tariff cut to 18% (p.4); guidance of double-digit FY26 growth (p.14)"}
+  - {peer: "TRITURBINE", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Receivable days 84 vs 49 (p.5); rate contracts and lagged pass-through (p.13-14); enquiry book 18 GW product (p.7); FY26 revenue +9% (p.4)"}
+  - {peer: "TRITURBINE", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Domestic orders -35.4% and enquiry decline (p.3, p.6, p.8); EBITDA 18.0% vs 25.8% on fixed-price orders (p.3, p.9, p.14); freight 3-4x deferring dispatch (p.5-6); data centre still enquiry (p.11)"}
+  - {peer: "AZAD", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Plus-minus 5% tri-party price band (p.10-11); tariff no impact (p.18-19); wallet share 1-1.5% (p.11); QIP Rs 700 cr (p.17)"}
+  - {peer: "AZAD", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Suppliers get no price lift from OEM price rises (p.13); hiring 150-200 a month (p.14); working-capital days target (p.13-14); firm-contract capacity (p.4)"}
+  - {peer: "AZAD", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "8-year single-source MHI contract (p.4); order book Rs 6,500 cr over 5-6 years (p.6, p.9); inventory build and receivables Rs 309 cr (p.7); no single-customer dependence (p.5)"}
+  - {peer: "AZAD", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Debtor days 170-180 to 90 via bill discounting (p.11); employee cost Rs 29 cr to Rs 42 cr and headcount +42% (p.17-18); rupee help 5-6% (p.15); execution risk (p.18-19)"}
+industry_cross_read:
+  demand: "Strong at the OEM and equipment-maker level (CG backlog Rs 17,333 cr +45%, Azad book Rs 6,500 cr, GT OEMs sold out 4-5 years) but split downstream: Triveni domestic orders -35.4% and enquiries down in Q1 FY27, data-centre steam demand still enquiries; no peer discusses generators."
+  pricing_inputs: "Margin capture splits by contract type, not by demand: CG price variation clauses and motor price rises of 17.5% plus 5% hold margin, Azad band of plus-minus 5% holds 36-38%, Triveni fixed-price orders cut EBITDA to 18.0% with freight at 3-4x."
+  capex_cycle: "Industry-wide capacity race in power equipment and OEM supplier tiers (CG transformer 17,000 to 75,000 MVA plus 45,000 more, Azad 8 dedicated plants and Rs 700 cr QIP), with only Triveni asset-light; TD is a participant in a race, not a lone expander."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Freight at 3-4x and vessel shortage deferring export dispatch under FOB terms (TRITURBINE Q1 FY27 p.5-6, p.11)"
+  - "Orders finalised but excluded from the book until advances arrive, so order-book optics lag demand (TRITURBINE Q2 FY26 p.6; Q3 FY26 p.3)"
+  - "Imported critical components set delivery floor: tap changers 9-12 months (CGPOWER Q4 FY26 p.12-13)"
+  - "Skilled-labour supply as the binding constraint on ramp (AZAD Q3 FY26 p.14; Q1 FY27 p.17-18)"
+  - "Multi-plant ramp execution, working-capital stretch and inventory build ahead of revenue (AZAD Q4 FY26 p.7; Q1 FY27 p.11, p.18-19)"
+  - "Receivables stretch against revenue growth in the power cycle (CGPOWER Q4 FY26 p.8, analyst Mohit Kumar; TRITURBINE Q4 FY26 p.5 days 84 vs 49)"
+  - "Fixed-price contracts leave commodity and freight risk with the maker (TRITURBINE Q1 FY27 p.9)"
+  - "New labour code one-off charges (CGPOWER Q3 FY26 p.2; TRITURBINE Q3 FY26 p.3, Rs 15.7 cr; Q4 FY26 p.4, Rs 157 mn)"
+  - "Mark-to-market and forex swings in other income (TRITURBINE Q4 FY26 p.4, Rs 8.5 cr loss; AZAD Q1 FY27 p.6)"
+  - "Chinese entry into Indian T&D tenders and capacity-race pricing pressure (CGPOWER Q3 FY26 p.5-8; Q1 FY27 p.4, p.10)"
+  - "Gas-turbine buyers moving to combined cycle face water and permit delays (TRITURBINE Q4 FY26 p.10-11)"
+  - "Customer-concentration answered unprompted by Azad as 'not dependent on any single customer' (AZAD Q3 FY26 p.5; Q4 FY26 p.5); B05 records TD concentration never raised on its calls"
+net_narrative_effect: "complicates"
+analyst_note: "Peer set has no generator maker and none names TD, so no verdict is a direct read. Strongest finding: margin capture in this upcycle depends on contract indexation, not on demand. CG (price variation clauses) expands margin, Azad (plus-minus 5% band) holds 36-38%, Triveni (fixed price) fell to 18.0% EBITDA. Cross-peer hypothesis, testable: in this cycle sold-out demand does not separate winners; the price-adjustment clause and bought-out content do. If TD's OEM contracts lack price variation, gross margin falls below 32% (B05 kill signal) when copper moves; the observation that separates the readings is the share of TD order book carrying price variation, which no document in this stage shows. Second: Triveni missed its own double-digit FY26 guide (9%), so B05's 'guidance is a floor' reading is not a sector law. Data-centre generator volume rests on OEM demand (Azad, Triveni) not yet on steam or generator orders (Triveni Q1 FY27 p.11). Tariff verdict depends on product type: capital-equipment peers saw deferral, critical-part peers did not."

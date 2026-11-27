@@ -1,0 +1,44 @@
+stage: B12a
+company: "TDPOWERSYS"
+run_date: "2026-11-15"
+model: claude-haiku-5-5
+status: complete
+numbers_checked: 243
+mandatory_checked: 146
+mandatory_total: 146
+findings:
+  - severity: "MAJOR"
+    location: "02-notes.md section 3 item 7 and P3-02 sensitivity (CFO ex advances less capital creditor build, 4,189.10 / 19.4%); section D question 1; section A rank 2; orchestrator appendix analyst_note"
+    claimed: "capital creditor build 1,596.63 lakh, stated as an inference that it sits in CFO"
+    source_truth: "NOT PRINTED in the AR text (no capital creditor line in standalone or consolidated notes 2, 3, 22). S cash flow p.130 PPE payment (10,376.36) equals accrual additions (10,302.84) plus CWIP change (73.52), so no 1,596.63 residual is visible in the capex lines. Derivation not shown in the report."
+    note: "Material UNANCHORED. The 19.4 percent sensitivity and the open question depend on this figure. Clearance route: show the arithmetic from printed AR or results lines, or drop the figure. Shadow run: binds nothing."
+    source_fidelity: true
+    tier: sample
+  - severity: "MINOR"
+    location: "01-gate0.md section 1 ROCE table (FY26 interest), section 4 D2 (interest cover 43.9x), section 0 item 1 basis note"
+    claimed: "FY26 interest 7.60 Rs cr (screener Data_Sheet Interest row); EBIT 333.72; interest cover 43.9x"
+    source_truth: "Data_Sheet Interest FY26 = 7.60 (transcription correct). AR consolidated Finance costs FY26 = 190.32 lakh = 1.90 Rs cr (AR consolidated P&L line Finance costs; MD&A Interest and Finance Charges 190.32). The two rows differ by 5.70 Rs cr."
+    note: "Value is correct on its screener label, so no transcription finding. Basis is not reconciled to the AR line. On AR basis interest cover would be about 172x (328.02 / 1.90). Scored 5 either way, so no score change. Cross-stage spread for FY26 EBITDA margin: 18.07 percent (Gate 0, screener), 17.76 percent (B03 and stage 5, AR finance cost), 18.3 percent (deck slide 34). Name the basis in the scorecard. Counted as not clean for acceptance."
+    source_fidelity: false
+    tier: mandatory
+  - severity: "MINOR"
+    location: "04-bizmodel.md section 0 row 3 and section 1 cash conversion (FLAG-CASH)"
+    claimed: "H1 FY27 receivables rose Rs 209.7 Cr (20,965.02 lakh)"
+    source_truth: "20,965.02 is the cash-flow line Decrease/(Increase) in trade receivables (Q2 FY27 results p.9). Balance sheet movement 95,292.50 less 74,208.77 = 21,083.73 lakh (Rs 210.8 Cr), results p.8. Text does not name the cash-flow basis."
+    note: "Unlabelled basis in the text (labelled only in the anchor). Value exists at the cited page. Not material enough for MAJOR. Shadow run: binds nothing."
+    source_fidelity: false
+    tier: sample
+  - severity: "MINOR"
+    location: "04-bizmodel.md section 0 row 1 (book-to-bill sentence: inflow Rs 822.4-824.4 Cr vs revenue Rs 841.4 Cr)"
+    claimed: "Q2 FY27 revenue Rs 841.4 Cr"
+    source_truth: "Q2 FY27 consolidated revenue from operations 84,131.88 lakh = Rs 841.32 Cr (results Q2 FY27 p.7; screener quarter 841.32). Rounds to Rs 841.3 Cr, the figure 04 uses elsewhere."
+    note: "Rounding imprecision in one sentence. Book-to-bill 0.98 is unaffected. Counted as not clean for acceptance."
+    source_fidelity: false
+    tier: sample
+critical_count: 0
+major_count: 1
+minor_count: 3
+false_positives_struck: 2
+material_universe: 264
+acceptance_rate: 98.4
+coverage_note: "SHADOW RUN (operator ruling 2026-10-11): findings bind nothing. MANDATORY TIER: 146 of 146 checked. The 146 cells are the Gate 0 scorecard input cells in 01-gate0.md: screener Data_Sheet rows FY17-FY26 (PBT, interest, CE components, ROE, sales, net profit, CFO, receivables, EBITDA inputs, FY26 scalars); AR scalars (capex, trade payables, current assets and liabilities, total assets, borrowings, R&D, contingent liabilities, customer shares, promoter table, Europe GmbH and USA Inc values); Q2 FY27 results scalars (H1 revenue, Sep-26 and Mar-26 receivables, other current liabilities, H1 CFO, other payables line, H1 capex, H1 PAT, cash, bank, current assets and liabilities, net worth, nil borrowings); Reg 31 30 Sep 2026 promoter and total shares. No verdict-card or Section 1B pillar input exists in this run (stages 11 and 13 not run). SAMPLE TIER: 118 material figures enumerated in 02, 04, 08 and 09 and the 05 sections read; 97 checked; 21 not checked: 41,342.32, 460.34, 824.87, top-10 84 percent, S commission 410.00, 14,813.73 Mn and 8,413.19 Mn, 4,008.73 and 7,855.88, 08 Trilegal, Trident and allotment figures, 96.16 percent AGM vote, diesel, induction and traction chart values, and web-only items. Not read in full: 03-ardeep, 06-peers, 07-emoat; their numbers are outside material_universe, so the universe is understated for those stages. material_universe = 146 mandatory plus 118 sample. acceptance_rate = clean checked numbers / checked: mandatory 145/146 (F1 counted as not clean), sample 94/97, overall 239/243 = 98.4. WEB-SOURCED FIGURES (08, 09): no PDF in corpus, not checked against PDFs, none in mandatory tier, logged NOT CHECKED. Covered: AR chart values in 09 (present in AR text), CRISIL figures in 09, and promoter figures also in Reg 31 filings. Not covered: USD/INR 95.25 (web), alternator, peer and market-share figures. REWORK trigger: none (no CONFIRMED CRITICAL). Source-fidelity rows: one (F2, MAJOR, sample, material UNANCHORED)."

@@ -1112,3 +1112,17 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+
+## 2026-11-15 · TDPOWERSYS /step1 + Phase 1 (runs/tdpowersys-2026-11-15)
+- Collector: REPO_ROOT hard-coded to a path that does not exist and headed Chromium fails ("spawn UNKNOWN"); ran through a scratch wrapper and a headless sitecustomize hook. Peer pass delivered zero files for CGPOWER, TRITURBINE and AZAD (screener landing page in Playwright, Excel download timed out); all 12 peer transcripts came by direct download from the links on the public screener pages.
+- Collector warnings: results, rating and shareholding empty (repaired by direct HTTP from BSE, crisil.com and tdps.co.in); five screener formula sheets exported empty (still open, Data_Sheet only); sector_cap_row_guess "Pharma / CDMO" wrong (row set to "Cables / Industrial products").
+- BSE: curl and the AnnGetData endpoint returned 403; Python requests on AnnSubCategoryGetData with a 12-month window worked.
+- Freshness: Q2 FY27 call held 13 Nov 2026, transcript not yet filed (audio only on screener, so the Chrome fallback could not help). CORPUS GAPPED-FRESHNESS; gate capped at PROCEED WITH CAVEATS. Re-check BSE 533553 after 19 Nov 2026.
+- extract_pdfs.py took about 25 minutes on the 267-page AR; the AR .txt carries each spread twice.
+- Harness: subagents launch in the background and report total tokens only; the completion check ran on every stage; ledger split columns are n/a.
+- Stage 2 pass 3 ended its report with a stub YAML (orchestrator appended the full block). Stage 7 self-reported three anchor slips (errata appended). Stage 2 used the prior-year AR parked in inputs/other/ for FY24 comparatives.
+- Stage 9 was dispatched before stage 7, so its capex input came from B01, B03 and the filings, not B07.
+- Verifier A shadow (Haiku 5.5) ran here and .claude/shadow.yaml is now spent; Sonnet 8 findings, Haiku 4, no overlap (shadow/verifier-a-comparison.md).
+- Verifier C: prompts/07 names a 6D "standard matrix" it does not contain, has no mixed-tier multiplier rule, and prompts/01 is silent on stand-in formulas (C-G05: Gate 0 ROCE proxy; strict reading core 39). Operator rulings needed.
+- No DOWNSHIFT FAILURE, no COST SPIKE (first run for this ticker).

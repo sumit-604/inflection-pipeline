@@ -1,0 +1,95 @@
+stage: B04-bizmodel
+company: "TDPOWERSYS"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "FRESHNESS: Q2 FY27 earnings call transcript absent (call held 13 Nov 2026; BSE, screener and tdps.co.in show audio only as of 15 Nov 2026). Expected source: BSE corporate announcements for 533553, about 19 Nov 2026."
+  - "collector_warning (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. [REPAIRED in Step F: two shareholding filings downloaded from tdps.co.in]"
+  - "collector_warning (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again. [OPEN: those five sheets are ABSENT documents; Data_Sheet is populated, annual FY2017-FY2026, quarterly Jun 2024-Sep 2026; Number of shares row blank]"
+  - "collector_warning (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again [REPAIRED in Step F: three results filings downloaded from BSE]"
+  - "collector_warning (verbatim): no rating PDF yet: add later the same way [REPAIRED in Step F: CRISIL rationale 22 Jun 2026, a print of the HTML rationale, not the agency PDF]"
+  - "research/ empty: no broker notes (non-anchored source only; no effect on anchored evidence)"
+  - "prospectus/ empty: not expected, company listed 2011; not a gap"
+  - "Peer Q2 FY27 transcripts absent: TRITURBINE and AZAD list audio only; CGPOWER latest is Q1 FY27"
+  - "No peer screening sheets (collector peer pass delivered zero files; peer transcripts fetched by direct download)"
+  - "Rating: only CRISIL checked; no other agency rationale sought"
+  - "Read route: pre-extracted page-marked .txt beside every PDF (tools/extract_pdfs.py) for all stages and verifiers; the SAST Reg 29(1) scan of 14 Nov 2026 and one newspaper notice went through OCR"
+  - "STAGE 4: product-wise and customer-wise revenue split NOT FOUND in AR or Q2 FY27 presentation; revenue-mix percentages are given by geography only (AR p.170 S Note 42)"
+  - "STAGE 4: nameplate capacity NOT FOUND; Q1 FY27 transcript prints FY28 capacity as INR22 billion (p.4) and INR32 billion (p.5, p.6)"
+  - "STAGE 4: nature of the Rs 240 Cr rise in other current liabilities (Mar-26 to Sep-26) NOT FOUND in the filings; CFO said customer advances plus tax provision (Q1 call p.16)"
+  - "STAGE 4: competitor names and market share NOT FOUND; management says no market-share number (Q1 call p.9)"
+flags:
+  - {type: FLAG-CASH, reason: "H1 FY27 C CFO Rs 211.7 Cr (21,174.13 lakh) is 100.8% of PAT (21,003.97 lakh) only because other payables, provisions and liabilities added 29,764.52 lakh; receivables rose 20,965.02 lakh; CFO without that line is -8,590.39 lakh (Res. p.9; my arithmetic). FY21-FY26 cumulative CFO/PAT 46.9% (Data_Sheet, Rs Cr, my arithmetic). Carries the B02/B03 flag."}
+  - {type: FLAG-ORDERBOOK-ROLL, reason: "Order book roll-forward does not close: FY26 gap 22,262.38 lakh (opening 136,801.40 + inflow 223,848.20 - C revenue 185,623.38 vs closing 197,288.60, AR p.50) and H1 FY27 gap Rs 268.7 Cr (1,972.9 + 1,558.5 - 1,481.4 = 2,050.0 vs 2,318.7, Pres. slide 26 and 29, Res. p.7). Cause NOT FOUND."}
+  - {type: FLAG-CONCENTRATION, reason: "Top 10 customers 84% of C revenue; C Customer A 23.17%, B 10.74%; S Customer B 24.08% equals subsidiary sales (AR p.50, p.238, p.170). Q1 call p.10: no big new client additions, growth is deeper share inside existing OEMs."}
+  - {type: FLAG-RAIL-WINDDOWN, reason: "Q1 FY27 call p.4: no fresh railway orders, sustainability reviewed at year end; traction order book 31,636.77 to 24,762.20 lakh (AR p.50) then 1,696 Mn at 30 Sep 2026 (Pres. slide 29); AR p.48 describes rail as steady progress."}
+  - {type: FLAG-GUIDE-IMPLIED-H2, reason: "FY27 guide Rs 2,900-3,000 Cr less H1 Rs 1,481.4 Cr implies H2 Rs 1,418.6-1,518.6 Cr, Rs 709-759 Cr a quarter vs Q2 Rs 841.3 Cr; Q2 book-to-bill 0.98 (Pres. slide 38, 30, 26; my arithmetic)."}
+  - {type: FLAG-NO-VOLUME-FLOOR, reason: "Siemens Energy 10-year build-to-print framework (13 Aug 2026): total business based on individual purchase orders; no minimum volume disclosed (announcement 14 Aug 2026 p.2). INNIO and Alstom terms NOT FOUND."}
+  - {type: FLAG-LICENSED-TECH, reason: "Core designs licensed (Toyo Denki, Voith, Siemens); royalty 64.89 lakh falling on lower licensed-product sales (AR p.54); licence terms and expiry NOT FOUND; R&D 0.51% of turnover (B03)."}
+  - {type: FLAG-DOC-MISMATCH, reason: "AR hydro limit 45 MW (p.47) vs 75 MVA (p.10); synchronous motor 50 MW (p.47) vs 60 MW (p.10); deck Q2 inflow 8,224 Mn (slide 26) vs 8,244 Mn (slide 28); deck PAT tile equals total comprehensive income."}
+business_type: manufacturing
+revenue_streams:
+  - {name: "Export sales, standalone FY26 (geography cut)", type: "order-based product sale, long cycle", pct_of_revenue: 56.4, predictability: "M"}
+  - {name: "Domestic sales incl deemed exports, standalone FY26 (geography cut)", type: "order-based product sale", pct_of_revenue: 42.8, predictability: "M"}
+  - {name: "Net overseas branch sales, standalone FY26", type: "branch sale", pct_of_revenue: 0.8, predictability: "L"}
+  - {name: "Generators for gas engines and gas turbines (product cut, ranked largest by words only)", type: "order-based product sale, serial OEM programmes", pct_of_revenue: "NOT FOUND", predictability: "M-H"}
+  - {name: "Generators for steam turbines (product cut)", type: "order-based product sale", pct_of_revenue: "NOT FOUND", predictability: "M"}
+  - {name: "Hydro generators and refurbishment (product cut)", type: "project sale", pct_of_revenue: "NOT FOUND", predictability: "L"}
+  - {name: "Motors incl traction components (product cut)", type: "build-to-print and qualification-stage sale", pct_of_revenue: "NOT FOUND", predictability: "L"}
+  - {name: "Spares and aftermarket (0.7% of Sep-26 order book, not revenue)", type: "repeat and service", pct_of_revenue: "NOT FOUND", predictability: "M"}
+asset_intensity: medium
+wc_intensity: high
+pricing_power: moderate
+cyclicality: cyclical
+moats_present:
+  - "Switching costs from OEM qualification and design-in: moderate durability; contract floors NOT FOUND"
+  - "Product certifications and approvals (AR p.8): moderate durability"
+  - "Technology licences (Toyo Denki, Voith, Siemens): low-moderate, licensed not owned, expiry NOT FOUND"
+  - "Cost position, gross margin 33-36% FY23-26: moderate durability"
+  - "Installed base lock-in (8,772 units): low today, aftermarket 0.7% of order book"
+valuation_methods:
+  primary: {method: "Forward P/E on normalised mid-cycle earnings", why: "Profitable, net cash, order-book led, no SOTP possible; fits Section 1B destination PE; use mid-cycle margin because PBT was negative in FY17-18 (Data_Sheet)"}
+  secondary: {method: "EV/EBITDA", why: "Cross-check that removes cash, tax and QIP effects; cash and bank Rs 418.5 Cr at Sep-26 before the Oct 2026 QIP of about Rs 600 Cr"}
+  tertiary: {method: "Reverse DCF on cash flow", why: "Cumulative FY21-26 CFO/PAT 46.9% means a PAT-based DCF overstates cash; use to test the growth the price implies"}
+  not_applicable:
+    - "P/B or ROE based: not a lender or asset play"
+    - "EV/Sales: EBITDA margin moved 11.3% to 18.3% over FY21-26"
+    - "SOTP: one reported segment, product revenue NOT FOUND"
+    - "Dividend yield, NAV, EV/GMV: not relevant"
+irrelevant_ratios:
+  - "Debt to equity and interest cover: borrowings nil at Sep-26 (Res. p.8), net cash"
+  - "Standalone EBITDA margin alone: S and C margins diverged in FY26 and 24.08% of S sales go to subsidiaries"
+  - "Spot-year ROCE or ROE: order timing and a changing capital base (Rs 75 Cr preferential, about Rs 600 Cr QIP)"
+  - "Price to book as primary: not an asset-driven business"
+  - "One-year CFO/PAT in isolation: 54% FY26 and 100.8% H1 FY27 both depend on customer advances and other payables"
+  - "Dividend yield: small payout, growth capex and working capital take priority"
+must_track_metrics:
+  - {metric: "Book-to-bill and rebuilt order book roll-forward", healthy: "above 1.0x; H1 FY27 1.05; roll-forward gap explained", red_flag: "below 1.0x for two quarters or gap above Rs 269 Cr"}
+  - {metric: "Receivable days on trailing-year revenue", healthy: "below 138 (Sep-26); FY21 99.5", red_flag: "above 146 (FY26 145.9)"}
+  - {metric: "CFO/PAT and CFO excluding other-liability build", healthy: "positive and above 54% without advances", red_flag: "negative without advances again, as in H1 FY27"}
+  - {metric: "Consolidated gross margin and EBITDA margin", healthy: "gross 33-35%, EBITDA 18-20%", red_flag: "gross below 32% or EBITDA below 17.5%"}
+  - {metric: "Customer A and top-10 customer share", healthy: "Customer A below 23.17%, top 10 below 84%", red_flag: "above those levels"}
+unit_economics:
+  unit: "One generator or motor supplied (cumulative count 8,055 at Mar-26; 8,772 at Sep-26)"
+  revenue_per_unit: "About Rs 2.08 Cr in FY26 (Rs 1,856.2 Cr / 893 units) and Rs 2.07 Cr in H1 FY27 (Rs 1,481.4 Cr / 717 units); blended average including spares and unit-size mix, my arithmetic"
+  margin_per_unit: "EBITDA about Rs 0.38 Cr per unit FY26 (Rs 342.9 Cr / 893); gross margin 33.6% FY26, 34.0% H1 FY27"
+  key_lever: "Throughput of OEM orders over a largely fixed cost base: incremental EBITDA margin 17.3% FY26, 21.3% H1 FY27, plus price variation clauses and export mix"
+first_deterioration_signals:
+  - {risk: "Demand concentrated in gas and data-centre ordering; top 10 customers 84%", first_signal: "Quarterly order inflow and book-to-bill below 1.0x (Q2 FY27 already 0.98)"}
+  - {risk: "Order book roll-forward does not close", first_signal: "Gap between reported and rebuilt order book above Rs 269 Cr"}
+  - {risk: "Collection and advance dependence", first_signal: "Receivable days above 146, then other current liabilities falling while receivables rise"}
+  - {risk: "Margin rests on fixed-cost leverage and pass-through", first_signal: "Gross margin below 32% or EBITDA margin below 17.5%"}
+  - {risk: "Rail wind-down", first_signal: "Rail order book (Rs 169.6 Cr at Sep-26) and any stranded rail inventory"}
+  - {risk: "Subsidiary channel and transfer pricing", first_signal: "Sales to subsidiaries as % of S revenue above 24.08% or a new TP order"}
+  - {risk: "Execution and capacity", first_signal: "Finished goods in transit and inventory days above 106; union or production-loss disclosure"}
+mgmt_questions:
+  - "What is nameplate capacity in MVA by plant, and is FY28 capacity Rs 2,200 Cr or Rs 3,200 Cr as the transcript prints both?"
+  - "Why does the order book roll-forward not close (Rs 222.6 Cr FY26; Rs 268.7 Cr H1 FY27)?"
+  - "What is the Rs 240 Cr rise in other current liabilities made of, and how do advances map to delivery dates?"
+  - "What minimum volume or price mechanism sits in the Siemens Energy, INNIO and Alstom agreements?"
+  - "Who are Customer A and B, what is collected after 30 Sep 2026, and what are their payment terms?"
+  - "What happens to rail capacity and the Rs 169.6 Cr rail book after the year-end review?"
+  - "What licence terms and expiry apply to the Toyo Denki, Voith and Siemens designs, and who owns the 40-200 MW UK designs?"
+one_line_verdict: "A build-to-spec generator maker riding a gas and data-centre upswing with 20% margins and net cash, but cash comes in slowly, sales sit with a few OEMs, and the 2,900-3,000 Cr guide still leans on customer advances staying in place."
+analyst_note: "Sector cap row Cables / Industrial products (25x) is supported: one segment, AC generators and motors (AR p.170, p.238); no better row exists (Recycling / Manufacturing is also 25x; energy transition equipment 28x does not fit gas and data-centre generators). New this stage: (1) H1 FY27 CFO is 100.8% of PAT only because other payables and liabilities added Rs 297.6 Cr; without it CFO is negative (Res. p.9). (2) Order-book roll-forward gap repeats: Rs 222.6 Cr FY26, Rs 268.7 Cr H1 FY27. (3) Q1 call: no fresh rail orders. (4) Siemens Energy framework has no volume floor. (5) Implied H2 revenue under the new guide is below the Q2 run-rate. Revenue per unit is a blended average, not a price. Product mix and capacity are NOT FOUND."

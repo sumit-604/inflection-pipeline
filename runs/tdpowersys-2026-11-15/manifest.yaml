@@ -1,0 +1,18 @@
+company: TD Power Systems Ltd
+ticker: TDPOWERSYS
+cmp: 638.0
+market_cap_cr: 20494.0
+run_date: 2026-11-15
+run_type: full
+concalls_available: true
+sector_cap_row: "Cables / Industrial products"
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+notes: "Collected by collect_to_repo.py v3 and repaired in /step1 Step F (see outputs/run-log.md). sector_cap_row set in /step1 Step D from section-1b chunk 05. Peers: CGPOWER, TRITURBINE, AZAD. Filings report in Rs lakh; manifest and screener in Rs crore."
+remediation_cycles: 0
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+verifier_a_shadow: run

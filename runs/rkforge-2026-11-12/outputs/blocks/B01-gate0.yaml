@@ -1,0 +1,43 @@
+stage: B01-gate0
+company: "RKFORGE"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "screening: only screener-Data_Sheet.csv populated; no ROCE, capex, trade payables or current-liability rows, so ROCE computed with Other Liabilities as current-liability proxy"
+  - "capex FY17-FY23 NOT FOUND (AR covers FY24-FY26 only); B2/B3 scored on 3 years"
+  - "trade payables FY17-FY23 NOT FOUND; B4 scored on FY24 vs FY26"
+  - "promoter holding Mar 2023 / Sep 2023 NOT FOUND; E2 scored 0"
+  - "peer data not supplied: M2, M5, M6 (margin leg), M9 PEER DATA NEEDED"
+flags:
+  - {type: FLAG-GATE0, reason: "AVOID by deal-breaker 6 (ND/EBITDA 3.65x, interest cover 1.38x, FY26). Depressors: FY24-26 capex build of 2,490.70 Cr not yet earning (ROCE 5.1%), FY24/FY25 inventory restatement (220.52 Cr FY25, 50.22 Cr FY24), FY20-21 trough years, 16.2% promoter pledge."}
+  - {type: FLAG-CASH, reason: "FCF negative FY25 (-944.32 Cr) and FY26 (-85.34 Cr) despite CFO 839.76 Cr in FY26; non-recourse bills discounted 399.78 Cr sit outside receivables and borrowings"}
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 5, B: 10, C: 17, D: 4, E: 4}
+core_score: 40
+moat_score: 7
+grand_total: 47
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers:
+  - "DB1 Block A 5 <8: max GOOD"
+  - "DB3 median ROCE 9.5% <10%: max AVERAGE (FY17, FY20, FY21, FY25, FY26 below 7%)"
+  - "DB5 pledge 16.2% of promoter shares >15%: max AVERAGE (30 Sep 2026)"
+  - "DB6 ND/EBITDA 3.65x >3x AND IC 1.38x <3x: AVOID (FY26)"
+history_downgrade: false
+data_notes:
+  - "ROCE computed: EBIT = PBT + Interest - Other income; capital employed = Equity + Reserves + Borrowings (Total assets less Other Liabilities proxy); year-end basis"
+  - "ROE on average net worth; FY17 on closing"
+  - "EBITDA computed from screener cost rows (FY26 627.00 Cr; quarterly sum 624.86 Cr)"
+  - "FY25 PAT 415.03 Cr includes 183.87 Cr tax credit and discontinued-operations gain; FY17 and FY26 PAT CAGR endpoints both trough years (C2 22.9%)"
+  - "B4 +5 is fragile: adding back 399.78 Cr non-recourse discounted bills, FY26 WC days 111.9 vs FY24 87.5"
+  - "E4 includes JV shortfall undertaking 524.79 Cr (51% share); without it 1.7% of net worth"
+  - "TTM Sep-26 interest cover from screener quarters 2.04x (not used, rule is latest FY)"
+  - "Promoter fall 43.39% to 39.82% is reclassification of Maa Chandi Financial Advisory Services to Public (19 Sep 2026); 40.93% after 34,00,000 warrants converted 24 Sep 2026"
+  - "Inventory: FY26 no further adjustment (AR2026 p.238 Note 53); screener FY25 inventory 1257.71 vs AR 1254.29 Cr, not reconciled"
+  - "Warrant money 204.75 Cr and Tata Motors revenue share NOT FOUND in this stage"
+  - "PEER DATA NEEDED: M2, M5, M6, M9"
+block_b_trend: "improving from a trough but FCF still negative: FY26 FCF -85.34 Cr vs FY25 -944.32 Cr; FY26 CFO 839.76 Cr vs 32.55 Cr"
+analyst_note: "AVOID is mechanical and rests on one year: FY26 net debt 2,285.87 Cr on EBITDA 627.00 Cr with interest cover 1.38x. Borrowings doubled since FY24 funding 2,490.70 Cr of capex that is not yet in earnings (ROCE 5.1% year-end basis). TTM to Sep-26 interest cover is 2.04x and quarterly operating profit has risen from 117.70 to 255.55 Cr, so the deal-breaker may be a trough artifact; the Sep-26 balance sheet was not scored. Cash quality is the second concern: CFO/PAT 2.17x flatters because FY25 PAT carries a non-cash tax credit, and 399.78 Cr of discounted bills sit outside reported receivables. Pledge of 16.2% of promoter shares is real and unchanged between 19 and 30 Sep 2026."

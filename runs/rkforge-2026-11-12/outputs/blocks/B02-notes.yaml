@@ -1,0 +1,56 @@
+stage: B02-notes
+company: "RKFORGE"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "screening: only screener-Data_Sheet.csv populated; P&L, Quarters, Balance Sheet, Cash Flow sheets empty"
+  - "announcements: BSE fetch failed; 23 filings fetched by hand, a selection not the full feed"
+  - "shareholding: NSE summary and XBRL as .txt only"
+  - "rating: CRISIL rationale not collected"
+  - "research and prospectus empty"
+  - "Q4 FY26 results scan with OCR digit errors (not used for figures)"
+flags:
+  - {type: FLAG-CASH, reason: "Over-6-month gross receivables 19,885.72 INR lakh = 21.7% of gross (FY25 8.0%); ECL 5,091.76 = 5.5% (0.62%); 4,204.84 exceptional provision (Note 8 p.110; Note 51 p.153). Working-capital funding of 15,430.36 INR lakh from acceptances and sold receivables (computed; Notes 20, 8.7). Foreign-currency receivables 55,560.20 vs 27,623.64 INR lakh while outside-India revenue fell 19.9% (Note 41(C) p.145)."}
+  - {type: FLAG-LENDER-RECON, reason: "Quarterly receivables reported to banks differ from books in all four quarters; Dec 2025 gap 20,602.56 INR lakh; reason one unit not integrated; CARO ii(b) (Note 18.3 p.122; AR 2026 p.80)."}
+  - {type: FLAG-OFFBALANCE, reason: "Contingent liabilities 1,21,799.99 INR lakh = 37.2% of equity (17.5%); acceptances 65,016.26 in trade payables; 39,978.46 receivables sold non-recourse (Notes 35A, 20, 8.7)."}
+  - {type: FLAG-EARNINGS-QUALITY, reason: "Consolidated profit 7,179.73 vs 41,502.52 INR lakh with RKCSL net tax credit 1,235.94 (Notes 11, 47b); FY26 exceptionals net (969.27) include contested +4,176.40 electricity duty recovery (Note 51 p.152)."}
+accounting_quality: 5
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Receivable ageing deteriorated: over 6 months gross 19,885.72 lakh = 21.7% of gross (FY25 8.0%); ECL 5,091.76 = 5.5% (0.62%); 4,204.84 as exceptional for US/Europe customers", note_ref: "Note 8 p.110; Note 51(c) p.153", rating: RED, why: "Cash conversion failing in export book"}
+  - {rank: 2, finding: "Working-capital release financed: acceptances +12,415.23 and sold receivables +3,015.13 lakh (computed) under standalone CFO 67,815.70 (FY25 10,106.53)", note_ref: "Notes 20, 8.7; cash flow pp.88-89", rating: RED, why: "CFO not repeatable; leverage above reported borrowings"}
+  - {rank: 3, finding: "Contingent liabilities 1,21,799.99 lakh = 37.2% of equity (17.5%); JV shortfall 52,479.46; subsidiary guarantees 64,253.31", note_ref: "Note 35A pp.132-133", rating: RED, why: "2.3x in one year; RKCSL 26.9% and RTRWL 25.6% of equity"}
+  - {rank: 4, finding: "Bank stock statements disagree with books in all four quarters; Dec 2025 receivables gap 20,602.56 lakh (19.1%); CARO ii(b); reason one unit", note_ref: "Note 18.3 p.122; CARO p.80", rating: RED, why: "Lender collateral reporting differs from books; likely ACIL integration [INFERENCE]"}
+  - {rank: 5, finding: "Foreign-currency receivables 55,560.20 vs 27,623.64 lakh while outside-India revenue fell 19.9%; 171 days vs 68 (computed)", note_ref: "Note 41(C) p.145; Note 24 p.127", rating: RED, why: "Stress is in exports; customer split NOT FOUND"}
+  - {rank: 6, finding: "Exceptionals: +4,176.40 contested electricity duty recovery offsets 4,204.84 ECL and 940.83 labour codes; pre-exceptional PBT 12,640.29 vs 11,671.02", note_ref: "Note 51 pp.152-153; Note 13 p.114", rating: RED, why: "Post-exceptional profit quality; appeal status NOT FOUND"}
+  - {rank: 7, finding: "Consolidated profit 7,179.73 vs 41,502.52 lakh; net tax credit 1,235.94 from RKCSL; ex-credit 5,943.79", note_ref: "Notes 11, 31, 45, 47b", rating: RED, why: "Group earnings power lower than headline"}
+  - {rank: 8, finding: "Inventory overstatement 22,052.43 (Mar 2025) and 5,022.26 (Mar 2024) lakh closed in FY26 as errors and process gaps; no fraud up to interim report; no further adjustment; SAP admin audit-trail gap", note_ref: "Note 52 p.153; Note 50 p.152; AR 2025 Note 47", rating: YELLOW, why: "Load-bearing fact 1; closed on paper; report dates and agencies NOT FOUND"}
+  - {rank: 9, finding: "Leverage: standalone borrowings 1,77,162.17 (+11.8%); consolidated 2,33,503.35 (+16.0%); consolidated net debt 2,17,760.22 (+9.3%); 98.2% floating; covenant waiver two years", note_ref: "Notes 18, 39 (consol p.230), 41(C)", rating: YELLOW, why: "Net debt up against guided fall; Ind AS 1 change FY27"}
+  - {rank: 10, finding: "Interest cover 1.48x consolidated; interest expense +46.6%, D&A +22.7% vs revenue +5.1%", note_ref: "Notes 29, 6A pp.215, 189", rating: YELLOW, why: "Fixed costs outgrow revenue five times"}
+  - {rank: 11, finding: "Warrants at INR 2,100 (9,75,000) and INR 588 (34,00,000); 37,35,000 outstanding; pricing basis and allottees NOT FOUND; promoter holding 43.32% with 3.58% pending reclassification", note_ref: "Note 16(c),(d),(l) pp.116-118", rating: YELLOW, why: "Load-bearing fact 3; dilution 2.44% computed"}
+  - {rank: 12, finding: "Revenue and other income quality: JV fee 1,500.00, net forex 3,214.68, die design 4,189.95 (+142%); 48.2% of other income non-cash", note_ref: "Notes 24, 25, 39.6", rating: YELLOW, why: "About 37% of pre-exceptional PBT is forex and a one-off fee"}
+  - {rank: 13, finding: "Claims on government 21,285.00 vs 12,584.82 lakh (+69%); grant receivable all non-current", note_ref: "Note 13 p.114", rating: YELLOW, why: "Cash realisation timing unknown"}
+  - {rank: 14, finding: "Disclosure tie-out failures across notes (Note 35 vs CARO, KMP total, gratuity, MSME interest, FCNR hedge date) and thin disclosure on largest items", note_ref: "Notes 35, 39E, 43, 36, 18.4, 34", rating: YELLOW, why: "Lower reliance on notes-based ratios"}
+  - {rank: 15, finding: "JV loss 3,500.14 with tax asset on start-up losses, liabilities 1,27,838.54 vs equity 45,358.33; Mexico net assets 4,019.23 below cost 5,248.14", note_ref: "Notes 42, 45, 7", rating: YELLOW, why: "Equity-accounted loss and impairment risk"}
+red_flags:
+  - "Stock statements to banks disagree with books every quarter; Dec 2025 gap 20,602.56 lakh (Note 18.3)"
+  - "Over-6-month receivables 21.7% of gross; ECL 5.5% via exceptional (Notes 8, 51)"
+  - "Off-borrowing financing: acceptances 65,016.26 and sold receivables 39,978.46 lakh (Notes 20, 8.7)"
+  - "Contingent liabilities 37.2% of equity, 2.3x in a year (Note 35A)"
+  - "Foreign-currency receivables doubled while exports fell 19.9% (Note 41(C))"
+  - "Contested electricity duty recovery 4,176.40 booked as exceptional income (Note 51)"
+  - "Consolidated profit lifted by 1,235.94 RKCSL net tax credit (Notes 11, 47b)"
+questions_for_mgmt:
+  - "Which unit was left out of the quarterly bank statements, how large were its receivables at 31 Dec 2025 against the 20,602.56 lakh gap, and have Q1 and Q2 FY27 returns agreed with books?"
+  - "What share of the 55,560.20 lakh foreign-currency receivables is past due, which customers carry the 4,204.84 lakh provision, and how much has been collected since 31 Mar 2026?"
+  - "Which bank, covenant and loan amount sit behind the waiver, and how will the covenant be met without a waiver from FY27?"
+  - "On what basis was the INR 588 warrant price set after INR 2,100, who are the allottees, and what net debt basis and ROCE definition sit behind the guidance?"
+  - "What is the size, tenor and bank limit of the acceptance and receivable sale programmes, and what happens if a bank cuts the limits?"
+receivables_trend: "deteriorating. Standalone gross over 6 months 19,885.72 INR lakh = 21.7% of gross 91,802.17 (FY25 7,617.31 = 8.0% of 95,032.75); not due fell 58.7% to 49.1%; ECL 5,091.76 = 5.5% (0.62%); computed days 84.3 vs 94.8 but 123.1 vs 132.0 adding back 39,978.46 non-recourse sold; consolidated over 6 months 25.1% (8.8%). (Note 8 pp.109-111; Note 8.7 p.111)"
+restatements_found:
+  - "FY25 AR Note 47 (Annual_Report_2025.pdf p.161): inventory (WIP, raw material, scrap) overstated 22,052.43 INR lakh at 31 Mar 2025 and 5,022.26 at 31 Mar 2024; FY24 comparatives restated under Ind AS 8. FY26 Note 52 (p.153) and Note 53 (p.238): no further discrepancies, no additional adjustment; FY25 inventory totals not re-opened in FY26 (1,08,510.11 standalone; 1,25,428.65 consolidated)."
+  - "Reclassification: government grant receivable 2,722.59 INR lakh current in FY25, all non-current in FY26 (Note 13 p.114)."
+going_concern_language: "NONE. Note 2.1 states statements are prepared on a going concern basis; CARO clause xix (p.83): no material uncertainty came to the auditor's attention."
+analyst_note: "Three things a downstream stage cannot rebuild from the fields. First, the cash-flow footnote (p.89) says the receivables line is net of non-recourse bills, so the 10,830.00 lakh release includes 3,015.13 of extra receivable sales, and the ECL charge of 4,499.05 explains over half of the 7,729.63 net balance-sheet fall; both flatter FY26 CFO. Second, the Dec 2025 bank gap and the 2025 mergers (ACIL, MAPL) point to one cause, the integration of acquired units, but the company does not say so: treat as [INFERENCE] until the unit is named. Third, notes-based ROCE (6.27%) uses a different basis from the 12-15% guidance; do not compare them. Net debt on the guidance basis is NOT FOUND; filed bases are 1,64,613.51 (standalone) and 2,17,760.22 (consolidated) lakh."

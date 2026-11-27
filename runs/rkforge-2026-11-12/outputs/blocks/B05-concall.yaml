@@ -1,0 +1,104 @@
+stage: B05-concall
+company: "RKFORGE"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Q2 FY26 call (Oct/Nov 2025) not in corpus; Jan 2026 call used for promise tracking only; statements analysts attribute to the Q2 FY26 call are unverified"
+  - "Oct/Nov 2026 transcript file is named Nov but the call date inside is 30 Oct 2026 (trusted)"
+  - "Rail revenue Rs 64-65 Cr per quarter is an analyst figure on the Oct call, not management-stated; export share 30% and bill discounting Rs 173 Cr are computed from call figures"
+flags:
+  - "Inventory restatement, controls, promoter warrants and the fall in promoter holding were never discussed on any of four calls (2D)"
+  - "Debt reduction 25% done at H1 FY27 (Rs 126 Cr of Rs 500 Cr)"
+  - "Capex guide raised Rs 350 Cr to about Rs 550 Cr in one quarter"
+  - "Net debt guidance is net of bill discounting (about Rs 173 Cr outside gross debt at March)"
+  - "Rail wheel JV slipped on three successive calls"
+quarters_analysed: ["Q4 FY26", "Q1 FY27", "Q2 FY27"]
+triggers:
+  - {priority: 1, name: "Utilisation ramp on new press, cold forging, aluminium and casting capacity", type: "VOLUME", timeframe: "near", conviction: "M", confirm_signal: "Q3 and Q4 FY27 revenue above Rs 1,405 Cr with EBITDA margin up 30-40 bps a quarter", kill_signal: "Revenue flat QoQ for two quarters; margin stalls near 18%"}
+  - {priority: 2, name: "North America and Europe export recovery to 35% export share", type: "VOLUME", timeframe: "near", conviction: "M", confirm_signal: "Export share above 30% in H2; Mexico revenue from Q3 FY27", kill_signal: "Class 8 reversal; export share stays at 30%"}
+  - {priority: 3, name: "Debt cut Rs 500 Cr to net debt Rs 1,500 Cr by Mar 2027", type: "COST", timeframe: "near", conviction: "M", confirm_signal: "Net debt below Rs 1,700 Cr at Dec 2026; H2 cut near Rs 374 Cr", kill_signal: "H1 pace of Rs 126 Cr repeats; further capex raise"}
+  - {priority: 4, name: "Casting business and NA light vehicle entry", type: "VOLUME", timeframe: "near-medium", conviction: "M", confirm_signal: "NA samples approved within 6-9 months; casting realisation recovers", kill_signal: "Casting realisation stays weak"}
+  - {priority: 5, name: "Rail wheel JV", type: "VOLUME", timeframe: "medium", conviction: "L", confirm_signal: "First 300 wheels accepted; December production of 2,000-3,000 wheels", kill_signal: "Another slip beyond December; larger JV losses"}
+  - {priority: 6, name: "Railway assemblies (bogies, frames, bolsters)", type: "VOLUME", timeframe: "medium", conviction: "L", confirm_signal: "Segment revenue above Rs 65 Cr a quarter", kill_signal: "Flat at Rs 64-65 Cr"}
+  - {priority: 7, name: "Margin path to prior peak, energy and shipping relief", type: "PRICE-MIX", timeframe: "medium", conviction: "L", confirm_signal: "Gross-to-EBITDA gap narrows; shipping cost falls", kill_signal: "Energy and shipping stay elevated and unrecovered"}
+  - {priority: 8, name: "Passenger vehicle and EV to 10% of revenue", type: "VOLUME", timeframe: "medium-long", conviction: "L", confirm_signal: "Disclosed PV revenue growth and bulk supply start", kill_signal: "Date slips again beyond FY29"}
+  - {priority: 9, name: "Aerospace and non-ferrous verticals", type: "VOLUME", timeframe: "long", conviction: "L", confirm_signal: "First signed order", kill_signal: "Zero order book persists into FY28"}
+  - {priority: 10, name: "Working capital release 15-20 days", type: "COST", timeframe: "medium", conviction: "L", confirm_signal: "Inventory and receivable days below March levels", kill_signal: "Value rises with revenue and days do not fall"}
+guidance:
+  - {item: "Revenue growth FY27-FY29", number: "10-15% a year", timeframe: "FY27-FY29", stated_in: "Q3 FY26 call"}
+  - {item: "Revenue target", number: "Rs 8,000 Cr by FY29, 22-25% CAGR (was FY28)", timeframe: "FY29", stated_in: "Q1 FY27 call"}
+  - {item: "EBITDA margin", number: "17.1% Q4 FY26 plus 100-150 bps; 30-40 bps a quarter", timeframe: "FY27", stated_in: "Q4 FY26 call; Q2 FY27 call"}
+  - {item: "Debt reduction", number: "Rs 500 Cr; net debt Rs 1,500 Cr; gross Rs 1,670-1,700 Cr", timeframe: "Mar 2027", stated_in: "Q1 FY27 call; Q2 FY27 call"}
+  - {item: "Capex", number: "Rs 300-400 Cr (May), Rs 350 Cr (Jul), about Rs 550 Cr (Oct)", timeframe: "FY27", stated_in: "Q4 FY26, Q1 FY27, Q2 FY27 calls"}
+  - {item: "ROCE", number: "12-15% FY27; 20% FY28 (aspiration)", timeframe: "FY27-FY28", stated_in: "Q1 FY27 call; Q2 FY27 call"}
+  - {item: "Export share", number: "about 35% of consolidated revenue; exports growth 20%+", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "Utilisation", number: "80% overall; casting 85-90%; cold forging 75-80%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Rail wheels", number: "20,000-25,000 wheels FY27 (was 40,000)", timeframe: "FY27", stated_in: "Q2 FY27 call"}
+  - {item: "Working capital", number: "15-20 days improvement, 10 days a year", timeframe: "FY27-FY28", stated_in: "Q1 FY27 call"}
+  - {item: "Debt reduction FY28", number: "Rs 300-400 Cr", timeframe: "FY28", stated_in: "Q2 FY27 call"}
+promise_delivery:
+  delivered: 6
+  partial: 4
+  missed: 7
+  rows:
+    - {promised_in: "Q3 FY26 call", promise: "FY26 double-digit growth", outcome: "MISSED", explanation: "FY26 revenue +5% (Rs 4,238 Cr vs Rs 4,034 Cr); no explanation given"}
+    - {promised_in: "Q3 FY26 call", promise: "Debt below Rs 2,000 Cr, maybe Rs 1,900 Cr by Mar 2026", outcome: "PARTIAL", explanation: "Gross Rs 2,173 Cr, net of bill discounting about Rs 2,000 Cr"}
+    - {promised_in: "Q3 FY26 call", promise: "Casting commercial production in Q4 FY26", outcome: "DELIVERED", explanation: "Standalone from 31 March 2026"}
+    - {promised_in: "Q3 FY26 call", promise: "Rail wheel trial production end Q4 FY26", outcome: "MISSED", explanation: "Trial started by Jul; first 300 wheels under inspection Oct; no reason given"}
+    - {promised_in: "Q3 FY26 call", promise: "Mexico machining operational shortly", outcome: "PARTIAL", explanation: "Started by Q1 FY27 with Rs 6 Cr revenue; about two quarters late"}
+    - {promised_in: "Q3 FY26 call", promise: "Margin improves each quarter", outcome: "DELIVERED", explanation: "14.9, 17.1, 17.96, 18.23 percent across four quarters"}
+    - {promised_in: "Q3 FY26 call", promise: "FY27 growth 10-15%", outcome: "DELIVERED", explanation: "Q1 +19.84%, Q2 +54.9% YoY; H1 only"}
+    - {promised_in: "Q3 FY26 call", promise: "North America worst behind", outcome: "DELIVERED", explanation: "Q2 FY27 exports Rs 424 Cr vs Rs 277 Cr"}
+    - {promised_in: "Q4 FY26 call", promise: "Casting utilisation 85-90% in FY27 by H1", outcome: "DELIVERED", explanation: "88% per analyst, not disputed"}
+    - {promised_in: "Q4 FY26 call", promise: "FY27 capex not above Rs 300-400 Cr", outcome: "MISSED", explanation: "Rs 550 Cr by Oct; buoyant market, value-add machining"}
+    - {promised_in: "Q4 FY26 call", promise: "Margin 100-150 bps above 17.1%", outcome: "DELIVERED", explanation: "18.23% in Q2 FY27, +113 bps"}
+    - {promised_in: "Q4 FY26 call", promise: "Customers to compensate for energy cost from 1 April", outcome: "MISSED", explanation: "Customers not prepared to pay; Rs 8-9 Cr shipping borne in Q2; external-blame"}
+    - {promised_in: "Q4 FY26 call", promise: "Wheel plant production from May/June, 40,000 wheels in FY27", outcome: "MISSED", explanation: "Production December; 20,000-25,000 wheels"}
+    - {promised_in: "Q1 FY27 call", promise: "Bulk wheel production Sep/Oct, 300 samples in August", outcome: "MISSED", explanation: "Samples under inspection in Oct; production December"}
+    - {promised_in: "Q3 FY26 call", promise: "PV 10% of revenue by FY28", outcome: "PARTIAL", explanation: "Moved to CY28 or FY29; no PV revenue disclosed"}
+    - {promised_in: "Q3 FY26 call", promise: "Rs 8,000 Cr revenue by FY28", outcome: "MISSED", explanation: "Admitted one year delayed to FY29"}
+    - {promised_in: "Q4 FY26 call", promise: "Aerospace order book by FY27 end", outcome: "PARTIAL", explanation: "Jul: zero order book, orders in next two years"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "When will EBITDA margin return to 19-22%", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "deflected every time"}
+  - {question: "Next-year and multi-year revenue guidance", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "answer changed between quarters"}
+  - {question: "Rail wheel start date", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "answer changed between quarters"}
+  - {question: "FY27 capex quantum", quarters_asked: ["Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "answer changed between quarters"}
+  - {question: "Aerospace revenue and order book timing", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "answer changed between quarters"}
+  - {question: "Pass-through of input, freight and energy cost", quarters_asked: ["Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "answer changed between quarters"}
+  - {question: "Rail segment rupee revenue and margin", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q2 FY27"], classification: "deflected every time"}
+  - {question: "PV share that is EV vs ICE", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters"}
+  - {question: "Customer and product mix, OEM concentration", quarters_asked: ["Q3 FY26", "Q1 FY27", "Q2 FY27"], classification: "deflected every time"}
+credibility_grade: "C"
+credibility_basis: "Four trailing quarters (Q3 FY26 to Q2 FY27 calls): 17 scored promises, 6 delivered, 4 partial, 7 missed (47% counting partial as half); margin, growth and export promises delivered, while capex, wheel JV, debt, PV and Rs 8,000 Cr timeline promises slipped"
+peer_questions:
+  - {question: "Do peers confirm India CV +28.7% and PV +30.7% growth in Q2 FY27 and IIP at 7.4-8%", why: "Basis for utilisation and 54.9% YoY revenue growth", check_peers: ["Bharat Forge", "M M Forgings", "Happy Forgings"]}
+  - {question: "Do peers describe North America Class 8 as a V-curve recovery lasting to Q3 CY27", why: "Drives export recovery and the 35% export share", check_peers: ["Bharat Forge", "M M Forgings", "Happy Forgings"]}
+  - {question: "Do peers pass steel through with a quarter lag in domestic and not in export contracts", why: "RKFL reports export steel hike not recovered (Rs 6-7 Cr negative carry)", check_peers: ["Bharat Forge", "Happy Forgings", "M M Forgings"]}
+  - {question: "Do peers bear the same energy and shipping cost without customer recovery", why: "RKFL bore Rs 8-9 Cr shipping in Q2 FY27", check_peers: ["Bharat Forge", "M M Forgings", "Happy Forgings"]}
+  - {question: "Is gross margin near 54% against EBITDA margin near 18% normal, and are peers choosing products selectively at high utilisation", why: "The 36 point gap needs a benchmark", check_peers: ["Bharat Forge", "M M Forgings", "Happy Forgings"]}
+  - {question: "Market share gain: trailer axle 4-5% share and wallet-share gains; did any peer lose share", why: "Share-gain claim unverified", check_peers: ["Happy Forgings", "M M Forgings"]}
+  - {question: "Are peers raising FY27 capex into value-add machining and casting, and stating 75-80% utilisation before next capex", why: "RKFL raised capex from Rs 350 Cr to Rs 550 Cr after saying capex was behind", check_peers: ["Bharat Forge", "M M Forgings", "Happy Forgings"]}
+  - {question: "Peer asset turn and forging utilisation; is 2.5x asset turn on net block plausible", why: "RKFL claims Rs 9,000 Cr sales at 100% on Rs 3,700 Cr net block", check_peers: ["Bharat Forge", "Happy Forgings"]}
+  - {question: "Aerospace forging approval timelines: 12-24 months for non-engine, 4-5 years for engine", why: "RKFL's own timeline ranges from 12 months to 8-10 quarters", check_peers: ["Bharat Forge"]}
+  - {question: "Peer working capital days, receivable days, and use of bill discounting or LCs", why: "RKFL H1 net working capital +Rs 140 Cr and Rs 173 Cr bill discounting outside gross debt", check_peers: ["Bharat Forge", "M M Forgings", "Happy Forgings"]}
+  - {question: "Are peers seeing European inquiries tied to EU FTA", why: "RKFL says no UK inquiries and EU FTA still unapproved", check_peers: ["Bharat Forge", "M M Forgings"]}
+red_flags:
+  - "HIGH: debt reduction Rs 126 Cr in H1 against Rs 500 Cr plan; H1 net working capital +Rs 140 Cr"
+  - "HIGH: no call coverage of the FY25 inventory restatement, controls, promoter warrant conversion or fall in promoter holding"
+  - "HIGH: net debt measure nets bill discounting (about Rs 173 Cr outside gross debt); measure shifted after Rs 1,900 Cr miss"
+  - "MEDIUM: rail wheel JV slipped three times; FY27 volume 20-25k vs 40k; JV loss unquantified"
+  - "MEDIUM: capex raised Rs 350 Cr to Rs 550 Cr after capex was said to be behind"
+  - "MEDIUM: gross-to-EBITDA margin gap unexplained; rail revenue flat; export share 30% vs 35% target"
+  - "LOW: ROCE 20% softened to aspiration; denial of prior statements; aerospace over-promotion with zero order book"
+dropped_triggers:
+  - "Trailer axle growth to Rs 250 Cr (May call only)"
+  - "Class 8 volume commentary (declined after Jul)"
+timeline_slippages:
+  - "Rail wheel JV: end Q4 FY26 trial -> Jun -> Aug samples -> Sep/Oct -> December"
+  - "PV 10% of revenue: FY28 -> FY29"
+  - "Rs 8,000 Cr revenue: FY28 -> FY29"
+  - "Aerospace order book: FY27 end -> next two years"
+  - "Mexico: Q4 FY26 -> started Q1 FY27, significant revenue Q3 FY27"
+analyst_note: "Grade C is a count, not a judgement of the P&L: financial headline promises (growth, margin trend, exports, casting) delivered, capital and project promises slipped. Rows 4, 13, 14 are one project (wheel JV) counted three times; counted once, missed is 5 and delivered stays 6, which would lift the score to about 53%. The grade moves to B if net debt is at or below Rs 1,700 Cr by Dec 2026 and the 300 wheels are accepted. Calls are silent on the inventory restatement and on promoter warrants; downstream governance stages cannot lean on the calls for either."

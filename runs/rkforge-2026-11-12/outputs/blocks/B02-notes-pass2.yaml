@@ -1,0 +1,19 @@
+stage: B02-notes-pass2
+company: "RKFORGE"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+pass_2_empty: false
+new_findings_count: 21
+report_path: runs/rkforge-2026-11-12/outputs/reports/02-notes-pass2.md
+input_gaps:
+  - "consolidated notes 4,5,6,7,11-13,15-17,19-33,36-40,42-54 read for the first time in pass 2; pass 1 had read 13 of them"
+top_new_findings:
+  - {id: B1, finding: "Consolidated PAT 7,179.73 vs 41,502.52 INR lakh; net deferred tax credit 1,235.94 from RKCSL merger (Note 11 p.194, Note 47b p.237); ex-credit PAT 5,943.79 computed", rating: RED}
+  - {id: B5, finding: "Standalone FX trade receivables 55,560.20 vs 27,623.64 INR lakh while outside-India revenue fell 19.9%; 170.9 vs 68.0 days (computed)", note_ref: "Note 41(C) p.145; Note 24 p.127", rating: RED}
+  - {id: B10, finding: "Bank stock-statement gap reason (one unit) may be erstwhile ACIL, whose current assets sit outside main bank charge [INFERENCE]", note_ref: "Note 18.1, 18.3 pp.201-211", rating: RED}
+  - {id: A1, finding: "Consolidated net debt filed 2,17,760.22 (1,99,286.96) INR lakh; cash 16,222.90 vs 1,602.97", note_ref: "Note 39 p.230", rating: YELLOW}
+  - {id: A2, finding: "No-fraud statement limited to discrepancies identified up to interim report date", note_ref: "Note 53 p.238; Note 52 p.153", rating: YELLOW}
+corrections_to_pass1:
+  - "Pass 1 said consolidated net debt not published; Note 39 p.230 publishes 2,17,760.22 INR lakh"
+  - "FY25 inventory comparatives in AR 2026 equal AR 2025 restated totals (1,08,510.11 standalone; 1,25,428.65 consolidated); no second restatement"

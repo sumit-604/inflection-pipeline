@@ -1,0 +1,58 @@
+stage: B00-inputs
+company: RKFORGE
+run_date: 2026-11-12
+model: orchestrator session (claude-fable-5-2), inline
+status: complete
+spear: "Spear: OVERRIDE 2026-11-12 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+load_bearing_facts:
+  - "Inventory restatement and controls: Rs 220.5 Cr overstatement (FY25 count), restated FY24/FY25, FY26 auditor opinion and internal-control report, any further FY26 adjustment"
+  - "Guidance against delivery: net debt Rs 1,500 Cr and ROCE 12-15% by end FY27, 20% in FY28, against H1 FY27 actuals; FY27 capex guide Rs 350 Cr to about Rs 550 Cr"
+  - "Promoter capital and holding: Rs 204.75 Cr warrant money, the 24 Sep 2026 conversion, and the fall in promoter holding from 43.39% to about 40.9% in the Sep 2026 quarter"
+  - "Cash conversion and concentration: inventory days, working capital cycle, bill discounting and LC acceptances, Tata Motors share"
+sector_cap_row: "Recycling / Manufacturing"
+sector_cap: "25x"
+sector_cap_evidence: "Forged and machined metal components sold built-to-drawing to vehicle makers (screener About; India Ratings rationale 22 Jun 2026, About the Company). No auto-component row exists in the cap table; Cables / Industrial products carries the same 25x. Cite: .claude/skills/section-1b/references/05-sector-cap.md, sector cap table. Collector guess Pharma / CDMO rejected."
+reporting_units: {results: "INR lakh", annual_report: "INR lakh", rating: "INR million", screener: "INR Cr"}
+inventory:
+  prospectus: 0          # not expected: listed 2004, long-listed
+  annual-report: 2       # FY2025-26 (primary) and FY2024-25
+  results: 3             # Q2 FY27, Q1 FY27, Q4 FY26 (audited FY26, board outcome copy)
+  rating: 1              # India Ratings rationale 22 Jun 2026 (full rationale)
+  concalls: 4            # Q3 FY26, Q4 FY26, Q1 FY27, Q2 FY27; stage 5 uses the latest three
+  peer-concalls: 12      # Bharat Forge 4, M M Forgings 4, Happy Forgings 4
+  announcements: 23
+  shareholding: 3        # NSE summary + two XBRL filings (.txt)
+  research: 0
+  screening: 4           # Data_Sheet only, main + 3 peers
+  presentation: 1        # Q2 FY27 investor presentation
+concall_quarter_map:
+  - {file: inputs/concalls/Concall_Feb_2026_Transcript.pdf, quarter: "Q3 FY26", call_date: 2026-01-27}
+  - {file: inputs/concalls/Concall_May_2026_Transcript.pdf, quarter: "Q4 FY26", call_date: 2026-05-04}
+  - {file: inputs/concalls/Concall_Jul_2026_Transcript.pdf, quarter: "Q1 FY27", call_date: 2026-07-24}
+  - {file: inputs/concalls/Concall_Nov_2026_Transcript.pdf, quarter: "Q2 FY27", call_date: 2026-10-30}
+input_gaps:
+  - "collector_warning (verbatim): BSE announcements fetch FAILED (HTTPSConnectionPool(host='api.bseindia.com', port=443): Read); announcements/ left empty, fill it by hand"
+  - "collector_warning (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "collector_warning (verbatim, peers abridged): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, and the same five sheets for BHARATFORG, MMFL, HAPPYFORGE. ABSENT documents. Only the Data_Sheet CSVs are populated (checked for figures, not for existence)."
+  - "collector_warning (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "collector_warning (verbatim): no rating PDF yet: add later the same way"
+  - "REPAIRED at /step1 Step F: results (3), announcements (23), rating (1), shareholding (3) fetched by hand. Announcements are a selection from ramkrishnaforgings.com, not the complete BSE feed: a collector gap, never evidence that nothing else was filed."
+  - "Q4 FY26 results: the company-site PDF is an image-only scan (0 of 19 pages with text; no tesseract on this machine). Replaced in inputs/results/ by the 1 May 2026 board outcome, moved from inputs/announcements/2026_05_Outcome-of-Board-Meeting-01.05.2026.pdf to inputs/results/Results_Q4_FY26_Mar_2026_BoardOutcome_01May2026.pdf. Its OCR text layer misreads digits."
+  - "rating: CRISIL rationale (Dec 2025) not collected; only the company intimation letter is in announcements/."
+  - "shareholding: no PDF pattern; NSE API summary and XBRL only. Pledge detail must be read from the XBRL."
+  - "research/: empty. No effect on anchored evidence."
+  - "prospectus/: empty; not a gap (long-listed)."
+  - "annual-report/ holds two reports against a 0-1 contract: FY2025-26 is primary, FY2024-25 is kept for the inventory restatement year."
+empty_folder_confirmation: "SUPPRESSED under the /step1 AUTONOMY CONTRACT. Standing answer: proceed with the gaps. Empty folders: research, prospectus (not expected). No question asked."
+document_identity: "stage-00-intake-check (claude-haiku-5-5) inventoried 54 documents: 0 folder mismatches, 0 unreadable, 0 unidentified. Rows are in outputs/blocks/B00-intake.yaml (corpus_manifest). No file moved on its proposal. Several board-outcome filings in announcements/ carry quarterly results; they stay as announcements."
+freshness_pairs:
+  - {pair: "RESULTS to CONCALL", trigger_doc: "inputs/results/Results_Q2_FY27_Sep_2026.pdf", mate_expected: "Q2 FY27 concall transcript", status: PASS, missing_doc: ""}
+  - {pair: "RATING BULLETIN to RATIONALE", trigger_doc: "inputs/rating/IndiaRatings_Rationale_22_Jun_2026.pdf", mate_expected: "full rationale", status: PASS, missing_doc: ""}
+  - {pair: "SEBI ORDER to ORDER TEXT", trigger_doc: "none identified at stage 0", mate_expected: "order text", status: PASS, missing_doc: ""}
+  - {pair: "AR to LATEST AUDITED ANNUAL RESULTS", trigger_doc: "FY26 audited results (board outcome 1 May 2026)", mate_expected: "FY2025-26 annual report", status: PASS, missing_doc: ""}
+freshness_verdict: "FRESHNESS PAIRS OK"
+collector_defect_gate: {cmp: 786.0, market_cap_cr: 14581.0, cmp_check: PASS}
+tooling: "Pre-extracted page-marked .txt beside every PDF (tools/extract_pdfs.py); stages and verifiers read the .txt and cite the PDF page. tools/check_extraction.py flagged one file (the Q4 FY26 scan), replaced as above."
+verifier_a_shadow: "SKIPPED. .claude/shadow.yaml reads armed, but ten parallel /step1 sessions started today and the one-run shadow was claimed by step1-kusumgar (shared notes, shadow-claim.txt). This run leaves the switch untouched and does not run the shadow."
+flags: []
+analyst_note: ""

@@ -1,0 +1,7 @@
+run: anawil-2026-11-12
+produced_at: 2026-11-12
+finalized_at: 2026-11-17
+framework_git_commit: ec6529dd23dc2522946ee19008b7669a93331871
+framework_tag: fw-2026-07-18b-1414-gec6529dd
+framework_versions: "Master v3.7 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10 / FTTCP v2.3"
+framework_files_match_origin_main: true   # checkout guard passed 2026-11-17

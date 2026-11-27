@@ -1,0 +1,247 @@
+stage: B10-valinputs
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+phase: "3 (finalize), assembled 2026-11-17; deliberation SIGNED OFF 2026-11-17 is authoritative"
+input_gaps:
+  - "No annual report, no concall transcript (H1 FY27 call 2026-11-09; transcript not filed). Carried B00/B05. Named limitation, Ruling 7."
+  - "Peer financial data: none provided; peer medians unresolved; Step 1C PENDING LIVE PEER TABLE."
+  - "Darpan Infrastructure check (moves Track 1 r by 0.5), Model 3 steel clause, 9-Nov call transcript: open with Claude web at sign-off (deliberation Ruling 7)."
+  - "H1 FY26 operating cash flow not in corpus, so TTM CFO, TTM FCF and P/FCF are unresolved."
+flags:
+  - {type: FLAG-FRAMEWORK-CONFLICT, reason: "Chunk 01 maps a FIRING ROCE forward verdict to Current ROCE (base 19.2x, Track 2 21.2x, Track 1 16.9x). Operator Ruling 4 uses the midpoint of 23.45% and FY28 base-case ROCE 19.76% = 21.61% (base 18.3x). Recorded not resolved; operator method is the approved base; both carried (deliberation Ruling 4 FLAG)."}
+  - {type: FLAG-CASH, reason: "Cash conversion INDETERMINATE (operator Ruling 5). Caps disposition at PROCEED WITH CAVEATS. Pillar 2 1.00x. FY26 CFO 12.47 Cr audited vs 18.44 Cr restated."}
+  - {type: FLAG-GATE0, reason: "Gate 0 AVERAGE, core 66, grand 71, moat THIN (B01). Block D date 31-Mar-2026 (dossier Section 7 ruling 3)."}
+  - {type: FLAG-SHARED-CATALYST, reason: "Kutch supports both the ROCE FIRING credit and Pillar 3 +2x; also sits in the option slice (p 0.4). Count each rupee of Kutch profit once (deliberation Ruling 2 and 6)."}
+  - {type: FLAG-KUTCH-CONTRADICTION, reason: "Pros p.232 'commenced March 2026, 16 towers' vs PR 2026-11-06 p.3 'trial runs underway'; Gujarat revenue Rs 3.23 Cr H1 FY27 (B05)."}
+  - {type: FLAG-PROVISIONAL, reason: "Exit-PE card provisional on: cash INDETERMINATE (structural 0.65x case gives base 11.9x on approved ROCE input); steel clause NOT FOUND; Model 3 slice ROCE and WC NOT FOUND; numeric r table and Track 1 base definition NOT FOUND in frameworks; Darpan r adjustment (deliberation Ruling 4)."}
+  - {type: FLAG-PRICE-STALE, reason: "CMP Rs 391 is the 12-Nov-2026 screener close (manifest). Last seen Rs 413 on 30-Oct-2026 [SECONDARY]. Role 1 fetches live price at Section 0 (Ruling 6)."}
+reporting_units:
+  note: "Carried from B00.reporting_units. Table is in Rs Cr; conversion once here: Rs lakh / 100 = Rs Cr."
+  results_H1FY27_and_FY26_audited: "INR lakh (face of results pp.4, 7, 8)"
+  prospectus_restated: "INR lakh"
+  FY26_FY25_audited_statements: "INR lakh"
+  FY24_audited_statements: "INR thousand"
+  presentation: "INR Cr"
+  press_release: "INR Cr"
+  rating: "INR crore (CRISIL p.1 '1 crore = 10 million')"
+  screener: "INR Cr"
+table:
+  identity:
+    company: "Anawil Wire and Engineering Ltd (NSE SME Emerge: ANAWIL) (manifest; results p.1)"
+    sector: "Wind turbine tower fabrication and heavy engineering, onshore steel tubular towers (B04 one_line_verdict; B09 market_definition)"
+    business_model_type: "build-to-spec component maker (archetype), manufacturing, asset heavy, high WC; Model 3 (64.3% of H1 FY27 revenue) classified CONVERTER per OR-6 (B04.flags; deliberation approved-pillars 'Converter treatment')"
+    sector_cap_row: "Cables / Industrial products, 25x (manifest; operator ruling 2026-11-15; deliberation approved-pillars)"
+    cmp_rs: "391.0 (manifest cmp; 12-Nov-2026 screener close per deliberation Ruling 6 note). Live price fetched at Role 1 Section 0."
+    market_cap_cr: "977.0 (manifest market_cap_cr)"
+    shares_outstanding_diluted: "2,49,99,800 shares (results p.4 paid-up capital 2,499.98 lakh / Rs 10 face = 249.998 lakh shares; deliberation Ruling 1). Results p.4 prints one 'Basic and Diluted' EPS line, so diluted = basic."
+    net_debt_cr: "33.41 at 30-Sep-2026 (results p.7: long-term borrowings 2,701.83 + short-term 658.96 = 3,360.79 lakh less cash 19.61 lakh = 3,341.18 lakh / 100). Includes CMD loan Rs 21.68 Cr (B03)."
+    net_debt_cr_31Mar2026: "126.65 (results p.7: 9,844.37 + 2,980.40 = 12,824.77 lakh less cash 159.72 = 12,665.05 lakh / 100; pre-IPO repayment)"
+    enterprise_value_cr: "1010.41 (977.0 mcap (manifest) + 33.41 net debt at 30-Sep-2026)"
+  latest_financials:
+    note: "Latest-period priority: H1 FY27 (6 months to 30-Sep-2026, unaudited, results p.4) and TTM; FY26 audited as comparative. Company is seasonal, H2 is 70-80% of the year (B05.guidance), so H1 is not annualised. TTM = FY26 + H1 FY27 - H1 FY26 (results p.4 columns)."
+    revenue_cr:
+      FY26_audited: "143.27 (results p.4: 14,326.69 lakh / 100)"
+      H1_FY27: "153.97 (results p.4: 15,396.72 lakh / 100)"
+      H1_FY26: "41.37 (results p.4: 4,137.16 lakh / 100)"
+      TTM_Sep2026: "255.86 (14,326.69 + 15,396.72 - 4,137.16 = 25,586.25 lakh / 100)"
+    ebitda_cr:
+      definition: "PBT + finance cost + depreciation - other income, from results p.4 (derived arithmetic, no adjustment)"
+      FY26_audited: "61.23 (4,450.25 + 578.58 + 1,130.14 - 35.98 = 6,122.99 lakh / 100)"
+      H1_FY27: "36.08 (1,815.41 + 528.16 + 1,286.53 - 21.86 = 3,608.24 lakh / 100; PR 2026-11-06 p.2 prints 36.08; B04 prints 3,608.25)"
+      H2_FY26: "51.09 (4,152.45 + 325.98 + 630.99 - 0.55 = 5,108.87 lakh / 100)"
+      H1_FY26: "10.14 (297.80 + 252.60 + 499.16 - 35.43 = 1,014.13 lakh / 100)"
+      TTM_Sep2026: "87.17 (6,122.99 + 3,608.24 - 1,014.13 = 8,717.10 lakh / 100)"
+    pat_cr:
+      FY26_audited: "35.95 (results p.4: 3,595.25 lakh / 100). Restated 36.63 (B01 data_notes; Pros Annexure V p.187)"
+      H1_FY27: "14.39 (results p.4: 1,438.69 lakh / 100)"
+      H1_FY26: "2.25 (results p.4: 225.03 lakh / 100)"
+      TTM_Sep2026: "48.09 (3,595.25 + 1,438.69 - 225.03 = 4,808.91 lakh / 100; deliberation Ruling 1 'trailing alternative PAT Rs 48.09 Cr')"
+    diluted_eps_rs:
+      FY26_audited: "18.78 (results p.4)"
+      H1_FY27_not_annualised: "6.74 (results p.4)"
+      TTM_Sep2026: "19.24 (deliberation Ruling 1: H1R p.4; 4,808.91 lakh / 249.998 lakh shares)"
+      FY27_forward_basis: "about 18.00 to 22.80 (deliberation Ruling 1: FY27 scenario PAT Rs 45 to 57 Cr [INFERENCE, handover V5] on 2,49,99,800 shares). Guidance PAT Rs 55 to 60 Cr is not the base (grade C)."
+    cfo_cr:
+      FY26_audited: "12.47 (results p.8: 1,246.70 lakh / 100; AFS p.15 prints 1,246.69)"
+      FY26_restated: "18.44 (B01 flags FLAG-CASH; Pros Annexure III p.174: 1,843.94 lakh / 100)"
+      H1_FY27: "28.28 (results p.8: 2,828.40 lakh / 100). Rests on Rs 18.38 Cr inventory release and Rs 20.90 Cr payables fall (B01.block_b_trend)"
+      TTM: "unresolved, see unresolved[]"
+    capex_cr:
+      FY26_audited: "93.01 (results p.8: 9,300.61 lakh / 100)"
+      FY26_restated: "93.05 (B01 flags DB2)"
+      H1_FY27: "53.39 (results p.8: 5,339.49 lakh / 100)"
+    fcf_cr:
+      FY26_audited_basis: "-80.54 (12.467 CFO - 93.006 capex, results p.8)"
+      FY26_restated_basis: "-74.61 (B01 DB2 line)"
+      H1_FY27: "-25.11 (28.284 - 53.395, results p.8)"
+    fcf_to_pat:
+      FY26_audited_basis: "-2.24 (-80.54 / 35.95)"
+      FY26_restated_basis: "-2.04 (-74.61 / 36.63, B01)"
+    p_fcf: "not meaningful: FCF negative in FY26 and H1 FY27 (results p.8)"
+    book_value_per_share_rs: "90.54 (results p.7: net worth 22,634.51 lakh / 249.998 lakh shares, at 30-Sep-2026)"
+    net_worth_cr: "226.35 at 30-Sep-2026 (results p.7: 22,634.51 lakh / 100); 89.51 at 31-Mar-2026 (results p.7: 8,951.16 lakh / 100)"
+    ebitda_margin_pct:
+      FY26_audited: "42.7 (61.23 / 143.27; B04.flags 42.7; B01 prints 42.6 on restated)"
+      H1_FY27: "23.4 (36.08 / 153.97; B01 data_notes)"
+      H2_FY26: "50.1 (51.09 / 101.90; B02 top finding 5)"
+      H1_FY26: "24.5 (B02 top finding 5)"
+      TTM: "34.1 (87.17 / 255.86)"
+    pat_margin_pct:
+      FY26_audited: "25.1 (35.95 / 143.27; CRISIL p.2 prints 25.07)"
+      H1_FY27: "9.3 (14.39 / 153.97)"
+      TTM: "18.8 (48.09 / 255.86)"
+    roce_latest_pct: "26.87 trailing two halves to 30-Sep-2026 (EBIT 6,822.00 lakh over capital employed 25,386.84 lakh = total assets 31,735.31 less current liabilities 6,348.47; results p.4, p.7; fttcp-draft table 2.4). FY26 26.79 restated, 26.72 audited basis (B01 data_notes; fttcp-draft 2.4). Prospectus prints 23.05 on a different formula (B12a struck item)."
+    roce_2yr_trend: "up then flat: FY24 16.39, FY25 26.25, FY26 26.79 (B01 data_notes); TTM Sep-2026 26.87 (fttcp-draft 2.4). FY23 NOT FOUND. Backward verdict SUSTAINED (fttcp-draft R12)."
+    roce_forward_verdict: "FIRING (+2), operator Ruling 2 (deliberation). Falsifier: no Kutch customer approval by 31-Mar-2027 reverts to STAGNANT and composite to 2 of 8."
+    roe_pct: "FY26 40.16 on closing net worth (results p.4 PAT 3,595.25 / results p.7 net worth 8,951.16 lakh). B01 median of 4 years 29.2%. Company prints 40.92% (List p.15) and 57% (Pres p.25), basis unlabelled (B05 FLAG-CONSISTENCY)."
+    revenue_cagr_3yr_pct: "77.1 FY23-FY26 ((143.2669/25.78)^(1/3)-1); FY23 is a ramp year (production began Dec 2022) (B01 data_notes; B12a corrected 177.1 to 77.1)"
+    pat_cagr_3yr_pct: "91.9 FY23-FY26 ((36.6283/5.18)^(1/3)-1), restated PAT, ramp base (B01 data_notes)"
+    cfo_to_pat_latest: "FY26 0.35 audited (12.47 / 35.95, results p.8, p.4); 0.50 restated (B01 DB4 line); H1 FY27 1.97 (28.28 / 14.39, results p.8, p.4)"
+    cfo_to_pat_cumulative: "0.58 restated, 0.48 audited FY23-FY26 (B01 data_notes; DB4 triggers at 0.48)"
+    depreciation_cr:
+      FY26_audited: "11.30 (results p.4: 1,130.14 lakh / 100)"
+      H1_FY27: "12.87 (results p.4: 1,286.53 lakh / 100)"
+    dps_rs: "0 (results p.8 interim dividend line blank; deliberation Ruling 4 'no dividend history')"
+  from_earlier_analysis:
+    guided_revenue: "Rs 450-500 Cr FY27 (B05.guidance; PR 2026-11-06 p.2-3; H1 deck p.7). Quarter stated: issued with H1 FY27 results, 2026-11-06."
+    guided_pat: "Rs 55-60 Cr FY27 (same anchor). Not the valuation base (grade C; deliberation Ruling 1)."
+    guided_margin_band: "no numeric margin band guided; direction only: 'margin % moderates; EBITDA per tower rises' (B05.guidance Margin direction; Outcome note 2026-10-05 p.2-3). NOT FOUND as a number."
+    ebitda_per_tower_lakh: "33.72 on reported EBITDA, 107 towers (B04.flags EBITDA_PER_TOWER_LABEL; 3,608.25 lakh / 107). The 32.82 printed in decks is operating profit before WC changes (results p.8: 3,511.65 lakh / 107)."
+    management_delivery_track_record: "Mixed (grade C; B05.credibility_grade). 2 delivered, 3 partial, 1 missed (B05.promise_delivery). No-concall default."
+    top_growth_triggers:
+      - "H2 FY27 execution to Rs 450-500 Cr revenue and Rs 55-60 Cr PAT; confirm: H2 revenue >= Rs 296 Cr with 240+ towers (B05.triggers 1)"
+      - "Kutch client approval and ramp, 192 towers a year; confirm: Gujarat revenue above Rs 8.78 Cr in a half (B05.triggers 2)"
+      - "Mix shift to Model 2 and 3 lifts EBITDA per tower; confirm: above Rs 33 lakh on reported EBITDA (B05.triggers 3)"
+    em_score_and_classification: "10.8, NONE (B07.em_score, em_classification)"
+    primary_catalyst_and_window: "Kutch client approval and certification, end of trial runs; next 1-2 quarters (B07.catalysts_12m 2). Interim read: Kutch audit result about 15-Dec-2026 plus NSE order intimations; closing test H2 FY27 results about May 2027 (deliberation Ruling 3). The B07 'Q3 FY27 results Feb 2027' catalyst is superseded: company reports half-yearly."
+    evidence_quality_mix: "mixed (B07.evidence_mix documented 13, claim 6, inference 6)"
+    cash_determination: "INDETERMINATE (operator-confirmed, deliberation Ruling 5; fttcp-draft R9). Not resolved to structural or growth induced. Evidence: B01.block_b_trend deteriorating CFO/PAT 2.03, 0.79, 0.50 then 1.97 in H1 FY27 on Rs 18.38 Cr inventory release; B02.receivables_trend stable elevated, year-end days 99 / 117 / 26, no ECL; B02 FLAG-CASH capex-neutral CFO 28.1 to 31.1 Cr (78% to 85% of PAT); CRISIL p.2 WC quote below."
+    cash_missing_evidence_named: "customer-wise receivables ageing at 31-Mar-2026 and 30-Sep-2026; vendors, order value and security behind the Rs 30.04 Cr capital advances; revenue, cost and WC by contract model per half; Model 3 payment terms and steel clause; FY27 audited cash flow (deliberation Ruling 5)"
+    strategic_asset_or_monopoly: "no. EM class NONE; active categories F2 and G1 only (B07.active_categories); B04.moats_present lists scale/location, customer approvals, ISO certification, none non-copyable; 13 approved makers on EN-156 [AGENCY, HD] (fttcp-draft R19)"
+    ua_qualifier_check:
+      listed_12m: "no. Listed 2026-08-10 (manifest listed_date), 3 months at run date 2026-11-12"
+      gate0_or_em: "yes on score: Gate 0 core 66, grand 71 (B01) clear 60; EM 10.8 below 25 (B07)"
+      fii_dii_lt3: "no. DII 10.23% + FPI 1.73% = 11.96% (NSE XBRL 30-Sep-2026 lines 1188, 1308)"
+      all_met: "no. UA not applied (deliberation approved-pillars)"
+    som_implied_revenue_cagr_pct: "yr3 49.3, yr5 35.1 from FY26 revenue Rs 143.27 Cr; FY29 SOM Rs 477 Cr, FY31 SOM Rs 646 Cr (B09.som_implied_revenue_cagr). From FY27 guidance midpoint Rs 475 Cr: 0.2% to FY29, 8.0% to FY31. B09 status partial; SAM LOW confidence."
+    peer_medians: "PENDING LIVE PEER TABLE; no peer financials in B06 (B06 input_gaps). Unresolved."
+    runway_class: "GOOD (B09.runway_class); TAM Rs 1,870-2,909 Cr annual, SAM Rs 960 Cr FY27 (B09)"
+  rating:
+    agency: "CRISIL Ratings"
+    rating: "Long term Crisil BBB/Stable (upgraded from BBB-/Stable); short term Crisil A3+ (upgraded from A3); Rs 135 crore facilities (CRISIL p.1)"
+    outlook: "Stable (CRISIL p.2)"
+    date: "rationale file dated 2026-08-19; filed with NSE 2026-08-21 (manifest step1_repairs). Date is not printed in the extracted text; taken from file name and manifest."
+    wc_commentary_page: "CRISIL p.2"
+  phase2_deliberation:
+    entity_count: "1 (handover dossier Section 1: ONE listed entity; three contract lines inside one entity; plants Koppal and Kutch)"
+    seasonal: "true (B05.guidance Seasonality 'H2 is 70-80% of annual revenue', H1 deck p.22, listing deck p.7; dossier Section 7 ruling 6 'H1 is seasonal')"
+    earnings_basis: "FORWARD, FY27 (Ruling 1). Amendment 18.1: same basis at entry and exit; Role 1 applies the exit multiple to forward EPS of the year after the exit year and names that year."
+    earnings_basis_reason: "FY27 is the first full year with the integrated mix; the trailing base includes an H2 FY26 margin of 50.1% that may be timing. (operator, 2026-11-17)"
+    fttcp_composite: "4 of 8, DEEP WATCH leaning BUY-ON-DIPS (operator Ruling 2). Revenue +2, Margin 0, Cash 0, ROCE +2. Draft was 2 of 8, DEEP WATCH leaning AVOID (OR-16 sensitivity)."
+    disposition: "PROCEED WITH CAVEATS (Ruling 5)"
+    proof_gate: "NOT FIRED. Thresholds: H2 FY27 towers >= 206; EBITDA per tower >= Rs 33 lakh with Model 3 > 50% of revenue; closing test H2 FY27 results about May 2027 (Ruling 3)"
+valuation_pillars_operator_approved:
+  source: "deliberation OPERATOR-APPROVED VALUATION PILLARS block and Rulings 1 to 6, SIGNED OFF 2026-11-17"
+  roce_forward_verdict: "FIRING (+2), Ruling 2; sole authority for Pillar 1 ROCE selection"
+  pillar1_roce_input_pct: "21.61 = (23.45 + 19.76) / 2 (Ruling 4)"
+  pillar1_roce_current_blend_pct: "23.45 (fttcp-draft R16: weighted 64.3% Model 3 through-cycle midpoint 21.59 and 35.7% current 26.79)"
+  pillar1_fy28_base_case_roce_pct: "19.76 = EBIT 67.66 / capital employed 342.41 (Ruling 4). Inputs: FY27 closing CE Rs 291.0 Cr; FY28 towers 277 flat; EBITDA per tower Rs 33.72 lakh; EBITDA Rs 93.40 Cr; depreciation Rs 25.74 Cr; interest Rs 2.8 Cr; tax 20.75%; PAT Rs 51.41 Cr retained; Kutch excluded [INFERENCE]"
+  pillar1_normalisation_route: "NONE (Route A 19.1% at 31-Mar-2026 under 20%; Route B absent) (fttcp-draft R17)"
+  pillar1_base_pe_x: "18.3 = 0.5 x 21.61 + 7.5 (Ruling 4)"
+  converter_treatment: "Model 3 CONVERTER (OR-6): through-cycle ROCE, volume test, one steel mean-reversion year in the bear case (Ruling 6; operator ruling 2026-11-15)"
+  pillar2_cash_multiplier_x: "1.00 (cash INDETERMINATE; volume test; input-price fork not open) (Ruling 4). Structural case 0.65x gives base 11.9x on approved ROCE input (shown, not used)."
+  pillar3_premium_x: "+2 (3a order book plus capacity, grade C cap); 3b +0 (EM NONE); 3c +0 (duration) (Ruling 4)"
+  strategic_premium_x: "0; ROCE recovery credited via Pillar 1 FIRING verdict only (Ruling 4)"
+  undiscovered_alpha: "not applied (listed under 12 months; institutions 11.96%) (Ruling 4)"
+  sector_cap: "25x, Cables / Industrial products; does not bind (Ruling 4)"
+  track2_additive_x: "20.3, range 18.8 to 21.8 (plus or minus 7.5%, A6) (Ruling 4)"
+  track1_rrm_x: "16.1, range 14.9 to 17.3 on r 14.5% (14.0% base + 0.5 Darpan complexity, pending Claude web check); 17.2 on r 14.0% if Darpan check clears; RRM = 1 + (13.5 - 14.5) x 0.12 = 0.88 (Ruling 4)"
+  track_divergence: "26% (20.3x against 16.1x)"
+  entry_zone_track: "Track 1, the more conservative (OR-1 as written) (Ruling 4)"
+  earnings_basis: "FORWARD, FY27 (Ruling 1)"
+  tier_and_hurdle: "Tier A, 25%. Grade C: bull EPS CAGR in Hurdle Ratio = base + 5% maximum (Ruling 6)"
+  fast_growth: "YES, Amendment 25 applies; margin of safety as position size; report T1/T2/T3/residual as % of CMP and starter test (T1+T2 >= 75% of CMP, residual <= 25%) (Ruling 6)"
+  option_probabilities: "Second EN-182 order by 30-Jun-2027 p 0.5; Kutch approved and over 30% utilised by end FY28 p 0.4; JSW Q3 wind over 300 MW p 0.4; CleanMax phase with Anawil towers by FY28 p 0.25 (T3) (handover Section 7 ruling 7)"
+  step_1c: "PENDING LIVE PEER TABLE unless Claude web supplies one (Ruling 6)"
+  section_1b_firing_rule_sensitivity: "base 19.2x, Track 2 21.2x, Track 1 16.9x (18.0x without Darpan charge) = Claude Code draft = Section 1B rule on FIRING verdict (current ROCE 23.45%) (Ruling 4, OR-16)"
+  override_cost: "Track 1 0.8x lower (16.1x against 16.9x), about 4.7% (Ruling 4)"
+  stage11_instruction: "Recompute FY28 ROCE only by the approved method (midpoint of 23.45% and its own A26.1 base-case FY28 ROCE, Kutch excluded), print beside 19.76%, print the Section 1B FIRING-rule figure as stated sensitivity. May not silently derive a different exit PE (deliberation closing paragraph)."
+operator_overrides_with_default_sensitivity:
+  - {ruling: 1, item: "Earnings basis FORWARD FY27", override_of: "Draft: not picked; trailing alternative PAT 48.09 Cr, EPS 19.24 (H1R p.4). Dossier branch full-year FY27 matches; trailing-four-half branch needs H2 FY25 PAT, NOT FOUND", anchor: "deliberation Ruling 1"}
+  - {ruling: 2, item: "ROCE forward FIRING (+2), composite 4 of 8", override_of: "Draft STAGNANT (0), composite 2 of 8 DEEP WATCH leaning AVOID; dossier none", anchor: "deliberation Ruling 2"}
+  - {ruling: 3, item: "Proof gate thresholds unchanged; Feb-2027 interim read deleted", override_of: "Draft: Q3 FY27 interim read", anchor: "deliberation Ruling 3"}
+  - {ruling: 4, item: "Pillar 1 ROCE 21.61%, base 18.3x; Track 2 20.3x, Track 1 16.1x", override_of: "Draft and Section 1B FIRING rule: 23.45%, 19.2x / 21.2x / 16.9x; dossier none", anchor: "deliberation Ruling 4"}
+role1_instructions_ruling6_verbatim:
+  - "Fetch live price and market cap at Section 0 (last seen Rs 413 on 30-Oct-2026 [SECONDARY]; Rs 391 in the FTTCP draft, undated)."
+  - "Tier A, 25% hurdle. Grade C: bull EPS CAGR in the Hurdle Ratio = base + 5% maximum."
+  - "Model 3 CONVERTER (OR-6): through-cycle ROCE, volume test, one steel mean-reversion year in the bear case."
+  - "Base revenue per Rule B on order book and capacity evidence (most evidenced path). Show the Amendment 14 fade (EM NONE -> industry growth from Year 1) as a stated sensitivity beside it."
+  - "Fast-growth: forward Revenue FIRING (OR-12) -> Amendment 25 applies. Margin of safety as position size. Report T1/T2/T3/residual as % of CMP and the starter test (T1+T2 >= 75% of CMP, residual <= 25%)."
+  - "Option probabilities from the handover Section 7. Count each rupee of Kutch profit once: in base-case earnings or as a probability slice, never both."
+  - "Step 1C: PENDING LIVE PEER TABLE unless Claude web supplies one."
+  - "Note on Rs 391: 12-Nov-2026 close on screener (manifest.yaml). Single-credit note (Ruling 2): Kutch profit sits in neither the Pillar 1 ROCE input nor base-case earnings; it enters only as the option slice (p 0.4) and the Pillar 3 capacity test; Role 3 tests that Pillar 3 +2x and the option slice do not pay for the same Kutch towers."
+named_limitations_ruling7:
+  - "Darpan Infrastructure check (moves r by 0.5): open with Claude web"
+  - "Model 3 steel clause: open with Claude web (NOT FOUND)"
+  - "9-Nov-2026 call transcript on NSE: not filed in corpus"
+conflicts:
+  - {field: "FY26 operating cash flow", value_a: "12.47 Cr audited (1,246.70 lakh)", anchor_a: "results p.8; AFS p.15 (1,246.69)", value_b: "18.44 Cr restated (1,843.94 lakh)", anchor_b: "Pros Annexure III p.174 (B01)", used: "Both printed in different documents on different bases (capex items sit in operating both ways, B02). Table shows both labelled. Gate 0 score stays on restated per B01. Not a misread; no pick of the lower."}
+  - {field: "Gate 0 totals", value_a: "core 66, grand 71 (moat 5)", anchor_a: "B01", value_b: "'68 of 160' / 'Core 61'", anchor_b: "B07.combined_reasoning (stale run-1); B12a prints corrected 66 / 73 on moat 7", used: "B01 core 66, grand 71 per injected authority rule"}
+  - {field: "Block D date", value_a: "31-Mar-2026 (D = 8)", anchor_a: "dossier Section 7 ruling 3; B01", value_b: "30-Sep-2026 (D = 15, core 73), OPERATOR-RULING-NEEDED flag", anchor_b: "B01 flags/data_notes", used: "31-Mar-2026 (operator ruling 15-Nov-2026)"}
+  - {field: "Pillar 1 ROCE input and base PE", value_a: "21.61%, 18.3x (Track 2 20.3x, Track 1 16.1x)", anchor_a: "deliberation Ruling 4 and approved block", value_b: "23.45%, 19.2x (21.2x / 16.9x), Section 1B FIRING rule", anchor_b: "fttcp-draft R16; deliberation Ruling 4 FLAG", used: "value_a (operator override, framework conflict recorded not resolved). Both carried for stage 11."}
+  - {field: "ROCE forward verdict and composite", value_a: "FIRING (+2), 4 of 8", anchor_a: "deliberation Ruling 2", value_b: "STAGNANT (0), 2 of 8", anchor_b: "fttcp-draft R13, R14", used: "value_a"}
+  - {field: "Primary catalyst window", value_a: "H2 delivery read at Q3 FY27 results Feb 2027", anchor_a: "B07.catalysts_12m 1", value_b: "No Feb-2027 print; interim read Kutch audit result about 15-Dec-2026 plus NSE intimations; close H2 FY27 results about May 2027", anchor_b: "deliberation Ruling 3", used: "value_b"}
+  - {field: "Earnings basis", value_a: "FORWARD FY27, PAT Rs 45-57 Cr, EPS about 18.00-22.80", anchor_a: "deliberation Ruling 1", value_b: "Trailing two halves PAT 48.09 Cr, EPS 19.24; guidance PAT 55-60 Cr", anchor_b: "results p.4; B05.guidance", used: "value_a; others kept as sensitivity"}
+  - {field: "EBITDA per tower, H1 FY27", value_a: "Rs 33.72 lakh (reported EBITDA / 107)", anchor_a: "B04.flags; results p.4", value_b: "Rs 32.82 lakh (operating profit before WC changes / 107)", anchor_b: "results p.8; Pres/List p.16; B05 FLAG-METRIC-REFRAME", used: "value_a; 32.82 is a label defect, not EBITDA"}
+  - {field: "ROE FY26", value_a: "40.16% (3,595.25 / 8,951.16 lakh closing)", anchor_a: "results p.4, p.7 arithmetic", value_b: "40.92% / 57%", anchor_b: "List p.15 / Pres p.25 via B05", used: "value_a; company bases unlabelled"}
+  - {field: "Kutch status", value_a: "commenced March 2026, 16 towers, Rs 8.78 Cr", anchor_a: "Pros p.232; List p.9", value_b: "nearing completion, trial runs; Gujarat H1 FY27 revenue Rs 3.23 Cr", anchor_b: "PR 2026-11-06 p.3; Pres p.23 (B05)", used: "unresolved judgment; both carried. Separator: Kutch dispatches by month and first client approval filing"}
+  - {field: "H1 FY27 tower count", value_a: "107", anchor_a: "H1 results p.8 derived; B04", value_b: "108 (once)", anchor_b: "Pres p.7 (B05 FLAG-CONSISTENCY)", used: "107 (B04: 3,511.65 / 107 = 32.82 holds)"}
+  - {field: "CMP", value_a: "Rs 391 (12-Nov-2026 close)", anchor_a: "manifest cmp; deliberation Ruling 6 note", value_b: "Rs 413 (30-Oct-2026) [SECONDARY]", anchor_b: "deliberation Ruling 6", used: "Rs 391 in table; Role 1 refetches live at Section 0"}
+unresolved:
+  - {field: "peer_medians (P/E, EV/EBITDA, P/B, growth, ROCE)", why: "No peer financial data provided; no listed pure-play tubular tower maker (B06)", where_it_might_be: "Live peer table from Claude web (Step 1C)"}
+  - {field: "TTM CFO, TTM FCF, P/FCF", why: "H1 FY26 cash flow not in corpus (results filing carries H1 FY27 and FY26 only)", where_it_might_be: "H1 FY26 results; FY27 audited cash flow"}
+  - {field: "cash conversion structural vs growth induced", why: "INDETERMINATE per operator; one half of reversal cannot separate", where_it_might_be: "Customer-wise ageing; Model 3 payment terms; FY27 audited cash flow"}
+  - {field: "guided margin band as a number", why: "Company gave direction only", where_it_might_be: "9-Nov-2026 call transcript"}
+  - {field: "FY23 ROCE, FY23 WC days, FY23 capex", why: "No FY23 current liabilities or payables (B01)", where_it_might_be: "FY23 balance sheet"}
+  - {field: "Model 3 slice ROCE and WC; steel clause", why: "Not disclosed", where_it_might_be: "Transcript; IR reply; customer contracts"}
+  - {field: "Darpan r adjustment (0.5)", why: "Claude web check pending (Ruling 7)", where_it_might_be: "Darpan financials; MCA"}
+  - {field: "numeric r table and Track 1 base definition", why: "NOT FOUND in frameworks (deliberation Ruling 4)", where_it_might_be: "Operator ruling"}
+  - {field: "live peer table", why: "None injected", where_it_might_be: "Claude web"}
+  - {field: "H2 FY25 half PAT (trailing-four-half branch)", why: "NOT FOUND in corpus", where_it_might_be: "Prospectus half-year data if any"}
+rating_wc_quote: "CRISIL Ratings, rationale p.2, 'Large working capital requirement': \"Gross current assets have been sizeable at 180–290 days for the past three fiscals and were 292 days as on March 31, 2026, led by receivables of 99 days and inventory of 226 days. The company needs to extend high credit period to customers and hold work-in-process and raw material inventory to meet business requirement.\" Liquidity (p.2): \"Liquidity should remain supported by the ample surplus available in cash accrual and b ank lines. Bank limit utilisation was around 84% for the 12 months ended June 30, 2026. Cash accrual is projected at Rs 80 crore per annum, against low yearly debt obligation from fiscal 2027 over the medium term.\" (text as extracted; 'b ank' is an extraction gap)"
+ua_qualifiers: {listed_12m: false, gate0_or_em: true, fii_dii_lt3: false, all_met: false}
+credibility_grade: "C (B05.credibility_grade; operator ruling dossier Section 7 ruling 5)"
+downstream_candidates:
+  - {signal: "Envision India wind installations and tower sourcing (EN-156 3.3 MW, EN-182 5 MW)", entity_type: "counterparty", demand_link: "Envision towers are 49 of 320 book towers and Rs 192.9 Cr of Rs 395.6 Cr; installation pace sets tower pull.", likely_source: "Type 3/2: parent and Indian unit disclosures, rating rationales (CRISIL/ICRA/CARE), trade press", cadence: "event-driven", shared: true}
+  - {signal: "Sany Renewable Energy India installations and tower sourcing", entity_type: "counterparty", demand_link: "Sany towers are 111 of 320 book towers (Rs 66.9 Cr); Model 1 conversion fee Rs 58.7 lakh flat.", likely_source: "Type 2: rating rationales, MCA filings, trade press", cadence: "event-driven", shared: true}
+  - {signal: "MNRE monthly installed wind capacity, state-wise (Gujarat and Karnataka)", entity_type: "regulatory", demand_link: "GW installed sets towers needed; Gujarat plus Karnataka are 43.95% of the Sep 2026 base.", likely_source: "Type 5/7: MNRE physical progress page, CEA installed capacity report, PIB", cadence: "monthly", shared: true}
+  - {signal: "Suzlon and Inox Wind quarterly deliveries, order books, tower make-or-buy and new tower plants", entity_type: "counterparty", demand_link: "In-house OEM towers cap outsourced demand; Inox is adding a South India tower plant.", likely_source: "Type 1: NSE/BSE announcements, concall transcripts, investor presentations", cadence: "quarterly", shared: true}
+  - {signal: "Wind and RTC/FDRE tender awards (SECI, NTPC, NHPC, state agencies)", entity_type: "regulatory", demand_link: "Awards today become tower orders in 12 to 18 months; 8 to 9 GW awarded in H1 FY27 (Suzlon call p.3).", likely_source: "Type 5/4: SECI, NTPC, NHPC tender award pages, PIB, Lok Sabha Q&A", cadence: "event-driven", shared: false}
+  - {signal: "Hot-rolled steel plate price (Model 3 steel input)", entity_type: "macro", demand_link: "Model 3 is 51.3% of book and puts steel on Anawil's books; price clause not disclosed.", likely_source: "Type 7: MCX/industry steel price series, ICRA/CRISIL steel notes", cadence: "monthly", shared: false}
+  - {signal: "ALMM or localisation rules extended to wind towers; tower vendor approvals", entity_type: "regulatory", demand_link: "Approved-list rules decide which fabricators OEMs may use; Kutch approval still pending.", likely_source: "Type 5: MNRE ALMM/RLMM wind lists and orders page", cadence: "event-driven", shared: false}
+  - {signal: "Anawil order intimations and H1 FY27 call transcript (Customer A 36.6% of book)", entity_type: "end-customer", demand_link: "New Reg 30 order filings and the filed call show real tower demand and customer mix.", likely_source: "Type 1: NSE announcements page for ANAWIL, concall transcript (target's own claim, rank 6)", cadence: "event-driven", shared: false}
+demand_externally_verifiable: true
+ar_new_downstream_entities:
+  - {name: "SANY (WTG OEM; Sany WTG towers)", where_in_ar: "Pros p.114 order book; Pres p.21", entity_type: "customer OEM (named by product description; legal customer letters anonymised)"}
+  - {name: "Envision (WTG OEM; Envision WTG towers, EN-156 3.3MW and EN-182 5MW)", where_in_ar: "Pros p.114; Pres p.21; Order 2026-09-10 p.2; Order 2026-10-29 p.2", entity_type: "customer OEM / end project (FDRE wind project, Andhra Pradesh)"}
+  - {name: "Darpan Infrastructure Private Limited", where_in_ar: "Pros p.50-51 RPT; Pros p.30 registered office; Pros p.241-242 criminal case MS STP Ltd", entity_type: "promoter group company: guarantor, lender, contractor, landlord, former holding company"}
+  - {name: "India-Ahead Venture Fund", where_in_ar: "Pros p.62-63 private placement of 7,00,000 shares at Rs 101", entity_type: "pre-IPO investor"}
+  - {name: "Mukul Mahavir Agrawal", where_in_ar: "Pros p.62 private placement of 6,80,000 shares at Rs 101", entity_type: "pre-IPO investor"}
+  - {name: "Bank of Baroda; The Cosmos Co-operative Bank Ltd", where_in_ar: "Pros p.74-76; CRISIL p.4", entity_type: "lenders"}
+entity_count: 1
+seasonal: true
+exit_pe_base_approved: "Single entity. Pillar 1 base 18.3x (ROCE input 21.61%) x Pillar 2 1.00x + Pillar 3 +2x + strategic 0 = raw 20.3x. Track 2 (additive) 20.3x, range 18.8x-21.8x. Track 1 (RRM, r 14.5%) 16.1x, range 14.9x-17.3x (17.2x on r 14.0%). Track 1 sets entry zone (OR-1). Sector cap 25x does not bind. Source: deliberation Ruling 4 and approved block, SIGNED OFF 2026-11-17."
+pe_basis: "forward (FY27; Amendment 18.1 same basis at entry and exit; deliberation Ruling 1)"
+expectation_ledger:
+  - {row: 1, catalyst: "Second EN-182 order (10 towers at Rs 40 to 50 lakh EBITDA a tower, less tax at 20.75%)", pat_increment_cr: "about +3.6", probability: 0.50, weighted_cr: "+1.8", confirm: "NSE order intimation for EN-182 towers by 30-Jun-2027", tier: T2, anchor: "fttcp-draft 3.5; probability operator approved 2026-11-15 (dossier Section 7 ruling 7)"}
+  - {row: 2, catalyst: "Kutch approved and over 30% used (58 towers at Rs 25 to 30 lakh, less tax)", pat_increment_cr: "+11.5 to +13.8", probability: 0.40, weighted_cr: "+4.6 to +5.5", confirm: "Approval filed; Gujarat revenue above Rs 8.78 Cr a half; end FY28; first read 15-Dec-2026", tier: T3, anchor: "fttcp-draft 3.5; Kutch profit counted once (Ruling 6)"}
+  - {row: 3, catalyst: "JSW pulls Sany towers (FY27 PAT Rs 57 Cr, not Rs 45 Cr)", pat_increment_cr: "about +12 (FY27)", probability: 0.40, weighted_cr: "+4.8", confirm: "JSW wind commissioned above 300 MW in FY27 by Q3, late Jan-2027", tier: T3, anchor: "fttcp-draft 3.5 [SECONDARY, HD V2, V5]"}
+  - {row: 4, catalyst: "CleanMax phase with Anawil towers", pat_increment_cr: "NOT FOUND (no phase signed; no Anawil share stated)", probability: 0.25, weighted_cr: "not creditable until sized", confirm: "Definitive agreement naming Karnataka sites and Anawil towers, FY28", tier: T3, anchor: "fttcp-draft 3.5 [COUNTERPARTY, HD V7]"}
+  - {row: D1, catalyst: "Downside: Section 115BAB rate denied (25.168% against 17.16%)", pat_increment_cr: "-4.4 to -5.5 a year, plus about -5.2 once for FY24 to FY26", probability: "0.35 (Claude Code proposal, not ruled)", weighted_cr: "-1.5 to -1.9 a year", confirm: "NSE filing of rectification order, FY27 results May-2027", tier: netted, anchor: "fttcp-draft 3.5; Pros p.240-241"}
+  - {row: D2, catalyst: "Downside: Evren call offs slip past Q4 FY27 (38 towers move into FY28)", pat_increment_cr: "about -13.5 in FY27, timing shift", probability: "0.30 (proposal, not ruled)", weighted_cr: "-4.1 in FY27", confirm: "38 towers billed by 31-Mar-2027", tier: netted, anchor: "fttcp-draft 3.5; Suzlon Q1 FY27 call p3 via B06"}
+  - {row: D3, catalyst: "Downside if a trailing base is chosen: depreciation step up (H1 FY27 Rs 12.87 Cr against Rs 6.31 Cr in H2 FY26)", pat_increment_cr: "about -5.2 a year", probability: "0.90 (proposal, not ruled)", weighted_cr: "-4.7", confirm: "H2 FY27 depreciation at or above Rs 12.87 Cr", tier: netted, anchor: "fttcp-draft 3.5; results p.4. Moot on forward basis (Ruling 1)"}
+ledger_note: "Table base in the draft is the FY27 slow reading PAT about Rs 45 Cr; Ruling 1 sets the forward base at PAT Rs 45 to 57 Cr. Row 3 (+12) moves FY27 PAT inside that range; Role 1 must not double count (Ruling 6). T2 net of D1 about zero; T3 about +9.4 to +10.3 before row 4 (fttcp-draft 3.5)."
+peer_table: "PENDING LIVE PEER TABLE"
+analyst_note: "Phase 3 assembly. Deliberation record (SIGNED OFF 2026-11-17) overrides B07 stale Gate 0 (68) and B07 Feb-2027 catalyst; B01 governs Gate 0 (core 66, grand 71, THIN, AVERAGE, Block D date 31-Mar-2026). B12a prints grand 73 on moat 7; B01 prints moat 5 and grand 71; B01 used per instruction. EBITDA is derived arithmetic from results p.4 (PBT + finance + depreciation - other income). UA fii_dii_lt3 false: 11.96%. The B01/B07/B09 downstream and entity rows are copied as given. Pillars are copied from the approved block; stage 11 recomputes FY28 ROCE and prints both figures."

@@ -1,0 +1,25 @@
+stage: B14-thesis
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+verdict: "AVOID"            # decision rules as written: Gate 0 AVERAGE (B01) and upside/downside 0.26x (B11). Stage 11 reading WATCHLIST (hard watch, no position) surfaced as operator ruling 7
+entry_range: {low: 202, high: 227}   # Track 1 reference zone (B11); not actionable while Gate 0 AVERAGE stands; U/D reaches 2x at about Rs 241; A25 starter passes at Rs 339 or lower
+position_size: "Small"      # ceiling only (dispersion cap 128.9%; promoter CAUTION); position today zero; OR-9 open
+position_size_override: ""  # no operator override recorded (DLB, HD Sec 7, companies/ANAWIL.md)
+thesis_broken_if: "H2 FY27 print (about May 2027) shows reported EBITDA per tower below Rs 29 lakh with Model 3 above 50% of revenue; OR FY27 audited operating cash flow below 50% of EBITDA; OR no Kutch customer approval filed by 31-Mar-2027"
+monitoring_checklist:
+  - "NSE order intimations 1-Nov-2026 to 31-Mar-2027: green 34 towers or more; red no new integrated (Model 3) order by 31-Mar-2027 (tracker row 3)"
+  - "182 towers dated 31-Dec-2026: green shipped by 31-Dec-2026; red still open after that date (grade C toward D)"
+  - "Kutch: green customer approval filed (first read about 15-Dec-2026) and Gujarat revenue above Rs 8.78 Cr in a half; red no approval by 31-Mar-2027 (ROCE STAGNANT, composite 2 of 8)"
+  - "JSW FY27 wind commissioned by Q3 (late Jan-2027): green above 300 MW; red below 300 MW (tracker row 2)"
+  - "H2 FY27 towers delivered (about May 2027): green 206 or more; red below 148"
+  - "EBITDA per tower on reported EBITDA over a stated count (about May 2027): green Rs 33 lakh or more with Model 3 above 50% of revenue; red below Rs 29 lakh"
+  - "FY27 audited operating cash flow / EBITDA (about Sep 2027): green 70% or more with receivables under 60 days and inventory under 90 days at 31-Mar-2027; red below 50%"
+  - "Order book in H2 FY27 deck: green Rs 395.58 Cr or more with Customer A at or below 36.6%; red Customer A above 40% or book falling"
+  - "Section 115BAB rectification order: green upheld, FY27 effective tax near 20.75%; red denied, tax near 28.76% plus about Rs 5.2 Cr one-off"
+  - "Model 3 steel clause (transcript or IR reply, tracker row 5): green index-linked or back-to-back; red fixed price"
+  - "Second Envision EN-182 order: green filed by 30-Jun-2027; red none (tracker row 1)"
+  - "Conversion fee at the next Sany or Envision re-bid: green Rs 58.7 lakh a tower or more; red below"
+  - "Price against rule triggers: Rs 339 (A25 starter passes), Rs 241 (U/D 2x), Rs 202-227 (zone); a zone reached because a red signal fired is withdrawn"
+  - "Promoter perimeter: green Darpan Rs 97.60 lakh fee reconciled to a P&L line and board approval; red any pledge, any promoter sale after lock-in, or a second CARE 'No' with material deviation (tracker row 12)"

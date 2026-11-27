@@ -1,0 +1,79 @@
+stage: B09b-dossier
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "H1 FY27 earnings-call transcript (call held 2026-11-09)"
+    expected_source: "BSE | NSE announcements for ANAWIL, company IR page"
+    kind: "findable-missing"
+  - document: "Screener Profit and Loss, Quarters, Balance Sheet, Cash Flow sheets (company and three peers)"
+    expected_source: "screener export"
+    kind: "findable-missing"
+  - document: "FY25 CARO Annexures A and B"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Darpan Infrastructure Private Limited audited financials"
+    expected_source: "company IR page (Darpan website), MCA21"
+    kind: "findable-missing"
+  - document: "CMD loan Rs 21.68 Cr terms, approval and security"
+    expected_source: "BSE | NSE Regulation 30 filing"
+    kind: "findable-missing"
+  - document: "FY2025-26 annual report, board report, MD&A, governance report, AGM notice"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Broker or research notes"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Quarterly shareholding patterns before 2026-08-10"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Vendor names behind capital-goods advances; customer names behind Customer A to H"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Model 1 pure conversion and Model 2 conversion plus internals"
+    archetype: "Build-to-spec component maker"
+  - line: "Model 3 integrated supply"
+    archetype: "Build-to-spec component maker (Amendment 17 converter question open; steel clause separates)"
+transition:
+  - line: "Conversion plus internals (Model 2) and Koppal internals plant"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (management claim, not yet evidenced)"
+    engine: "Scope of supply per tower rises (Model 3 about 4 towers in FY26 to 64.3% of H1 FY27 revenue) and Kutch plus the Koppal internals plant fill capacity"
+    proof_gate: "H2 FY27 towers delivered at or above 206 AND EBITDA per tower on reported EBITDA over a stated tower count at or above Rs 33 lakh with Model 3 above 50% of revenue; revenue and cost by model disclosed per half"
+    recognition_gap: "Open question for Stage 11: does the market already reflect the TO state? Resolved via the PE gap; no number or conclusion here"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "H2 FY27 revenue below Rs 296 Cr or FY27 towers below about 313; EBITDA per tower below Rs 29 lakh with Model 3 above 50%; re-bid conversion fee below Rs 58.7 lakh; no Kutch approval by Q4 FY27; Customer A above 40% of book"
+  - line: "Integrated supply (Model 3)"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER"
+    to_tier: "R2 (no rung migration evidenced; scope growth only; R1 to R2 if steel is pass-through)"
+    engine: "Steel and fittings brought onto Anawil books raise revenue and EBITDA per tower; margin percent falls"
+    proof_gate: "Model 3 steel cost-variation or back-to-back clause disclosed and EBITDA per tower at or above Rs 33 lakh on a stated count"
+    recognition_gap: "Open question for Stage 11, as above"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Model 3 margin tracks steel plate spreads; EBITDA per tower below Rs 29 lakh with Model 3 above 50% of revenue"
+dominant_variables:
+  - "Towers delivered per half against the 206 to 280 H2 FY27 need, including Kutch client approval"
+  - "EBITDA per tower by model and the Model 3 steel clause"
+  - "Order-book conversion and Sany/Envision pull (Customer A 36.6% of book)"
+  - "Cash conversion: CFO to EBITDA and conversion of Rs 30.04 Cr capital-goods advances"
+business_falsifier: "Model 3 margins track steel plate spreads (commodity converter under Amendment 17), or turbine makers insource towers so Anawil serves only residual capacity"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 8
+  verifiability_ratio: "3 of 8 externally observable"
+  single_point_failure: "Customer A 38-tower order (Rs 133.98 Cr ex GST, due Q4 FY27; 36.6% of book, 71% of Model 3)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 18
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "df0a745dd33c22debe4cc96f3fee51ecb74d70a5"

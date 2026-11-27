@@ -47,6 +47,8 @@ record as of the run that produced it.
 - Trim command output; never corpus documents.
 
 ## OPEN ACTIONS
+- OPEN (2026-11-17, ANAWIL, 11): 4G fail kept the approved 16.1x (14.4x shown); Pillar 3a double-credits the order book; WATCHLIST vs AVOID; D1-D3 unruled [Master 4G, l.617, l.1129; A22]; see LESSONS_ARCHIVE.md 2026-11-17 ANAWIL.
+- OPEN (2026-11-17, ANAWIL, 12c): chunk 06 l.92 drops "downward"; Master l.296 hybrid label; prompts/12 l.379 template defect [chunk 06; Master; prompts/12]; see LESSONS_ARCHIVE.md 2026-11-17 ANAWIL.
 - OPEN (2026-10-10, CAPILLARY, finalize): chunk 15 A20.5 clause, chunk 06/08 text,
   stage 13 payload spec, stage 14 size enum, O1 operating-ROCE standing rule,
   AVOID vs WATCHLIST rule conflict [section-1b, prompts]; see LESSONS_ARCHIVE.md

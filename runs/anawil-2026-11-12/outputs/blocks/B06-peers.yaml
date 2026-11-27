@@ -1,0 +1,65 @@
+stage: B06-peers
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Carried from B05/B00: NO-CONCALL MODE (HIGH); Anawil H1 FY27 call of 2026-11-09 transcript not filed; no annual report; OCR text on results and audited statements; screener sheets absent; no broker notes. Peer questions test industry facts, not Anawil management tone."
+  - "No listed pure-play tubular tower maker with earnings calls (B00 peer note). KP Green is a diversified steel fabricator (lattice towers, solar, telecom, BSNL); Inox Wind and Suzlon are turbine makers."
+  - "No peer transcript states tubular tower price or conversion charge, tower vendor supply, tower plant or vendor approval time, hub height, tower tonnage, or steel plate free-issue versus procurement. Suzlon calls never state tower make-or-buy. Inox South India tower plant output and opening date NOT FOUND. Envision and Sany never named in any of the 12 transcripts."
+  - "12 of 12 peer files provided and read; no missing peer files."
+flags:
+  - "FLAG-TOWER-SUPPLY-UNTESTED: Q3, Q4, Q5, Q12 UNVERIFIABLE; the 'limited qualified suppliers' claim (Pros p.114) and Kutch pricing have no peer test."
+  - "FLAG-INOX-IN-HOUSE-TOWER-SOUTH: Inox Wind is building a blade and tower plant in South India for Karnataka, Andhra Pradesh, Tamil Nadu (INOXWIND Q2 FY26 p3); Karnataka is 97.9% of Anawil H1 FY27 revenue."
+  - "FLAG-KP-TUBULAR-ENTRY: KP Green lists onshore and offshore tubular towers as a new vertical (KP H2 FY26 p4, p10; H2 FY25 p8) while running 30-34% utilisation (H2 FY26 p21)."
+  - "FLAG-OEM-H2-GUIDANCE-MISS-PATTERN: Inox dropped its 1,200 MW target and reported about Rs 4,500-4,600 Cr against Rs 5,000 Cr guided (Q3 FY26 p4; Q4 FY26 p11); Suzlon deferred 10-20% of Q1 FY27 deliveries (Q1 FY27 p3). Relevant to Anawil H2-loaded FY27 guidance."
+  - "FLAG-SITE-READINESS-RISK-NOT-IN-ANAWIL-DECK: peers cite site, ROW, grid and land delays; Anawil papers do not."
+  - "FLAG-H2-RANGE-TOP: Anawil 70-80% H2 share is at or above the top of peer range 60-75%; guidance needs only 66-69%."
+  - "FLAG-WC-ABOVE-PEERS: Anawil CRISIL 292 gross current asset days exceeds peer working-capital cycles of 86-210 days."
+peers_provided: 12
+verified:
+  - {claim: "H2 is 70-80% of annual revenue; installation and dispatch skewed to October-March", peers: ["INOXWIND", "SUZLON", "KP Green"], anchor_count: 7}
+  - {claim: "Industry execution pace and outlook: 6.05 GW FY26 record, about 59 GW installed, 100 GW by 2030, OEM capacity above 20 GW (28 GW under implementation understated against Suzlon 40+ GW)", peers: ["INOXWIND", "SUZLON"], anchor_count: 8}
+  - {claim: "Steel is a pass-through cost in supply contracts; Model 3 steel exposure depends on contract clause (KP absorbs first 5%; Suzlon PSU exception)", peers: ["SUZLON", "INOXWIND", "KP Green"], anchor_count: 5}
+  - {claim: "Retention, milestone billing and long working-capital cycles are normal for this chain (peer cycles 86-210 days; retention 5-10%)", peers: ["SUZLON", "INOXWIND", "KP Green"], anchor_count: 8}
+  - {claim: "Order books convert over 6-36 months and deferrals of 10-20% of a quarter occur; no cancellations reported", peers: ["INOXWIND", "SUZLON", "KP Green"], anchor_count: 9}
+partially_verified:
+  - {claim: "Platform size and tower weight are rising (3 MW to 4-5 MW); hub height and tonnes per tower not stated by any peer", peers: ["SUZLON", "INOXWIND"]}
+  - {claim: "Gujarat and Karnataka pipeline and capacity moves: wind work spreading to Rajasthan, Andhra Pradesh, MP, Tamil Nadu; no peer names Gujarat or Kutch as growth market", peers: ["INOXWIND"]}
+  - {claim: "Margin bands by supply model: material-inclusive 14-16% in line with KP 15-20%; 33-37% and 44-50% conversion bands and EBITDA per tower have no peer comparator", peers: ["KP Green", "SUZLON", "INOXWIND"]}
+contradicted: []
+unverifiable:
+  - {claim: "OEMs buy towers from third parties; outsourced share and plan to raise or cut it (adverse signal: Inox in-house South India tower plant)", peers_checked: ["INOXWIND", "SUZLON", "KP Green"]}
+  - {claim: "Limited number of qualified tower suppliers; Kutch output sells at Rs 50-60 lakh to Rs 3.0-3.5 Cr per tower", peers_checked: ["INOXWIND", "SUZLON", "KP Green"]}
+  - {claim: "OEM approval time for a new tower plant or vendor; Kutch approval pending since March 2026", peers_checked: ["INOXWIND", "SUZLON", "KP Green"]}
+  - {claim: "Envision and Sany active in India; their tower sourcing and local supply chains", peers_checked: ["INOXWIND", "SUZLON"]}
+peer_coverage_map:
+  - {peer: "KP Green (544150)", quarter: "H1 FY25", usage: "SUBSTANTIVE", contribution: "H2 skew p5; steel 5% pass-through p9; EBITDA 15-16% p6"}
+  - {peer: "KP Green (544150)", quarter: "H2 FY25", usage: "SUBSTANTIVE", contribution: "Refuses per-tonne metric p6; receivables 142 days p11; 30-90 day execution p9; tubular offshore tower plan p8"}
+  - {peer: "KP Green (544150)", quarter: "H1 FY26", usage: "SUBSTANTIVE", contribution: "40/60 H1/H2 p15; ramp and approval lag p9, p21; EBITDA 15-18% p22"}
+  - {peer: "KP Green (544150)", quarter: "H2 FY26", usage: "SUBSTANTIVE", contribution: "Onshore tubular tower entry p4, p10; utilisation 30-34% p21; steel clause p23; cash cycle 150 days p18"}
+  - {peer: "INOXWIND", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "H2 70% p3; South India blade and tower plant p3; 6 GW and 7-8 GW outlook p9; PPA cancellations no impact p8"}
+  - {peer: "INOXWIND", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Site-readiness delays p3, p5; guidance switch from MW p4, p14; state spread p11; WC 200-210 days p7"}
+  - {peer: "INOXWIND", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Revenue about Rs 4,500 Cr vs Rs 5,000 Cr guided p11; equipment mix pivot p9; steel passed on, LC terms p14; PSU payment delays p5"}
+  - {peer: "INOXWIND", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "4.4 GW book, 24-36 months p4; H2 70-75% p8; 4X turbine, tower ready p4; receivables until commissioning p10"}
+  - {peer: "SUZLON", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "6.34 GW calendar 2025 p3; offtake and site limit p14; receivables Rs 5,700 Cr p6"}
+  - {peer: "SUZLON", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "8 GW FY27, 10 GW FY28 p8; steel largely pass-through p12; S175 and S163 p5"}
+  - {peer: "SUZLON", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "H1/H2 35-40/60-65 p5; 10-20% deliveries deferred p3; ASP Rs 6.3 Cr p3"}
+  - {peer: "SUZLON", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "59 GW, 40 GW implementing, 20 GW capacity p3; retention 5-10% p16; tower in ALMM p12; Adani and JSW entry p7"}
+industry_cross_read:
+  demand: "Volume consensus (FY26 about 6 GW, FY27 about 8 GW, FY28 8-10 GW) but conversion is limited by site readiness: Suzlon 3,900 MW delivered not installed, Inox off-take postponed; both OEMs missed or reset H2-loaded plans."
+  pricing_inputs: "Steel mostly passed through (3 peers, KP absorbs first 5%); copper, aluminium, FX, fuel not passed; mix toward project and material-inclusive supply lowers margin percentage (Suzlon WTG contribution 26.9% to 21.2%); no peer gives a tower price."
+  capex_cycle: "Industry-wide capacity race with spare capacity, not a lone expander: OEM capacity above 20 GW vs about 6 GW installed, KP 30-34% utilised, Inox adds in-house tower plant in South India, KP enters tubular towers; Anawil Kutch adds to tower capacity rising from three directions."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Site readiness, right of way, land and grid delays defer OEM off-take (Inox Q3 FY26 p3, p5; Suzlon Q3 FY26 p11, p14)"
+  - "PSU and milestone receivables locked until commissioning; working capital 150-210 days (Inox Q3 FY26 p7, Q4 FY26 p5; Suzlon Q4 FY26 p9, Q2 FY27 p16)"
+  - "West Asia supply, fuel and crane disruption deferring 10-20% of deliveries (Suzlon Q1 FY27 p3-4; Inox Q4 FY26 p11; KP H2 FY26 p7)"
+  - "OEM insourcing: Inox in-house South India tower plant (Inox Q2 FY26 p3); OEM vertical integration in cranes and transformers (Inox Q4 FY26 p9)"
+  - "New OEM entrants with captive supply: Adani and JSW (Suzlon Q2 FY27 p7-8)"
+  - "Commodity and FX not passed through beyond steel (Suzlon Q2 FY27 p7)"
+  - "Promoter royalty and group-company order dependence at the closest SME comp, analogue to CMD loan only (KP H2 FY25 p10; H2 FY26 p11, p21)"
+  - "Guidance credibility: H2-loaded plans reset by Inox and Suzlon (Inox Q3 FY26 p4, Q4 FY26 p11; Suzlon Q1 FY27 p3)"
+net_narrative_effect: "complicates"
+analyst_note: "No formal contradiction, but the peer set is thin where Anawil is most exposed. Four of twelve questions are UNVERIFIABLE because no peer discusses tubular tower prices, vendor supply, plant approval or Envision and Sany. The two tower-specific peer facts both point to more tower capacity near Anawil: Inox's South India tower plant and KP Green's tubular tower entry. Page anchors are the [page N] markers in the .txt files. Peer H2 shares run 60-75%, so Anawil's 70-80% sits at the top, but guidance needs only 66-69%. Retention comparison (Rs 6.4 Cr is 4.2% of H1 revenue) is derived. Cross-peer hypothesis (inference): sites, not fabrication, are the scarce resource, so tower supply is loose and buyer-priced. It fails if Anawil's Q4 FY27 and H1 FY28 new tower orders price above H1 FY27 realisation per tonne. Rerun KP/Inox/Suzlon checks once Anawil's 2026-11-09 transcript is filed."
+cross_peer_hypothesis: "[INFERENCE] The binding constraint in FY27-FY28 is cleared sites, not fabrication capacity (industry OEM capacity above 20 GW vs about 6 GW installed, Suzlon Q2 FY27 p3; 3,900 MW delivered not installed, Q2 FY27 p16; Inox off-take postponed, Q3 FY26 p3; KP at 30-34% utilisation, H2 FY26 p21), so tower fabrication is loose-supply and buyer-priced, against Anawil's 'limited qualified suppliers'. Fails if Anawil's Q4 FY27 and H1 FY28 new tower orders price above H1 FY27 realisation per tonne."

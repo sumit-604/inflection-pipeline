@@ -1,0 +1,45 @@
+stage: B01-gate0
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "FY2025-26 audited financial statements (inputs/annual-report/) text is BLANK in all 103 page markers (OCR not filled). Used Prospectus restated FY24-FY26 statements (INR lakh) for FY24-FY26 and the filed H1 FY27 results audited FY26 column for cross-check."
+  - "Screener P&L, Quarters, Balance Sheet, Cash Flow sheets ABSENT (only Data_Sheet populated). FY23 comes from Data_Sheet only: no FY23 current liabilities, payables, capex line, CFO detail, ROCE."
+  - "No annual report, no concall transcript, no research notes (B00 gaps carried)."
+  - "Peer data NOT used: no listed pure-play tubular tower peer; M2, M5, M9 scored 0 PEER DATA NEEDED."
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE (GOOD one tier down for LIMITED 4-year history). Depressors: Block B 3/20 (FY26 capex Rs 93.05 Cr, CFO/PAT 0.50 in FY26, WC days 68 to 109 FY24-FY26, Rs 50.0 Cr short-term loans and advances), Block D 8/20 on FY26 pre-IPO leverage (repaid after year end), E2 0 from IPO dilution 100% to 65.26%, M1 0 from FY23 ramp-year margin base."}
+  - {type: FLAG-CASH, reason: "FY26 operating cash flow prints Rs 18.44 Cr (Prospectus restated, Annexure III p.174) and Rs 12.47 Cr (filed H1 FY27 results audited FY26 column, p.8). On Rs 12.47 Cr cumulative CFO/PAT is 0.48, B1 falls 1 to 0 and deal-breaker 4 (<0.50) triggers. Classification is AVERAGE on either basis."}
+data_years: 4
+fy_range: "FY23 to FY26"
+blocks: {A: 20, B: 3, C: 15, D: 8, E: 15}
+core_score: 61
+moat_score: 7
+grand_total: 68
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers:
+  - "DB2: Block B 3 < 8, max GOOD (driven by FY26: capex Rs 93.05 Cr, FCF -74.61 Cr, B3 0, B4 0 from WC days +41.4 FY24 to FY26)"
+  - "DB4 CONDITIONAL: not triggered on restated CFO (0.58); triggers at 0.48 if filed audited FY26 CFO Rs 12.47 Cr governs (max AVERAGE)"
+history_downgrade: true
+data_notes:
+  - "Data available: 4 years (FY23 to FY26). Scoring adapted to 4-year history. Confidence LIMITED, one tier downgrade applied: GOOD to AVERAGE."
+  - "Basis: FY24-FY26 from Prospectus restated statements (INR lakh converted to Rs Cr by /100, shown in anchors); FY23 from screener Data_Sheet (Rs Cr). Restated PAT FY24/25/26 = 4.39/12.31/36.63 Cr; originally audited PAT = 3.34/13.98/35.95 Cr (Prospectus Annexure V p.187). Screener matches restated."
+  - "ROCE computed (screener Data_Sheet carries none): EBIT = PBT + finance cost, over (Total Assets - Current Liabilities) at year end. FY24 16.39%, FY25 26.25%, FY26 26.79%. FY23 NOT FOUND (no current liabilities). Median of 3 years."
+  - "ROE FY23 uses closing net worth only (no opening). Median of 4 years 29.2%."
+  - "CFO is the load-bearing ambiguity: 18.44 (restated) vs 12.47 (filed audited FY26 column, H1 results p.8; presentation p.27 prints 12.5). Gap 5.97 Cr. Scored on restated because the audited statements file is blank and screener carries 18.44."
+  - "FY23 capex NOT FOUND; FY23 CFO is -2.81 so FY23 FCF is negative whatever the capex. B2 counts 2 of 4 years FCF-positive; B3 negative."
+  - "WC days FY23 NOT FOUND (no payables). B4 compares FY26 109.5 with FY24 68.1 (earliest computable): +41.4 days. Revenue basis used (COGS not used). FY25 peak 132.3."
+  - "CAGR window FY23 to FY26 starts from a ramp year (production began Dec 2022): revenue CAGR 177.1%, PAT CAGR 91.9%. C4 = -85.2pp scores 0. FY23 PAT 5.18 exceeds FY24 PAT 4.39 (PAT fell once)."
+  - "D block scored on FY26 year-end (pre-IPO). Sensitivity on 30-Sep-2026 interim (unaudited, post-IPO, Rs 115 Cr debt repaid): D1 0.38x LTM = 4, D2 4.44x H1 = 2, D3 0.15 = 4, D4 2.02 = 5, D = 15, core 68, still GOOD then AVERAGE."
+  - "E2: 3-year promoter change derived, not filed: promoters held ~100% at Mar 2024 (arithmetic from Prospectus pp.66-67 holdings; 96,50,000 shares), 65.26% at 30-Sep-2026 (NSE XBRL). Decline is IPO dilution plus 7.2 lakh share sales Sept 2025. Scored 0 by rule."
+  - "E4: contingent liabilities Rs 0.00 at 31-Mar-2026 (FY25 and FY24 Rs 2.27 Cr income tax demand) over net worth Rs 89.51 Cr = 0%."
+  - "PEER DATA NEEDED: M2, M5, M9 scored 0. M6 R&D NOT FOUND scored 0. M7 no regulated segment evidenced, 0. M8 no distribution network, 0."
+  - "M1 uses FY23 base: EBITDA margin 49.7% (FY23) to 42.6% (FY26), -7.1pp scores 0. On FY24 base (41.1%) it is +1.5pp = 3. FY27 H1 EBITDA margin 23.4% (Rs 36.08 Cr on Rs 153.97 Cr), computed from the filed H1 results."
+  - "M11 scored 3 mechanically on the fewer-than-6-years rule (revenue CAGR >=20%, selling and admin share 1.9% FY23, 2.0% FY26); it is a growth artefact, not a network effect. Without it moats = 1 (THIN); classification unchanged."
+  - "Unit trap handled: results and Prospectus in INR lakh, presentation and screener in Rs Cr."
+  - "Short-term loans and advances Rs 50.02 Cr at Mar 2026: vendor advances 30.63, GST receivable 18.79, employees 0.37, prepaids 0.23 (Prospectus Annexure P). No loans to promoters or related parties (Annexure K/P notes)."
+block_b_trend: "deteriorating: CFO/PAT 2.03 (FY24) to 0.79 (FY25) to 0.50 (FY26); FCF +2.10 to +2.51 to -74.61 Cr. H1 FY27 CFO Rs 28.28 Cr vs PAT Rs 14.39 Cr rests on an Rs 18.38 Cr inventory release and an Rs 20.90 Cr payables fall."
+analyst_note: "Score 68 of 160 reads weaker than the business ROCE (26.8%) and ROE suggest. Three things drive it: a ramp-year base (FY23) that wrecks C4, M1 and B4; a FY26 cash year (Rs 93 Cr capex, Rs 50 Cr advances and GST receivable, WC days 109) that zeroes B3 and B4; and a four-year history that forces a one-tier downgrade. The IPO repaid Rs 115 Cr of debt after year end, so Block D improves from 8 to 15 on the Sep-26 balance sheet. FY26 CFO prints Rs 18.44 Cr in the Prospectus and Rs 12.47 Cr in the filed audited column; that gap decides whether deal-breaker 4 fires. Name who reconciles it."

@@ -1,0 +1,10 @@
+stage: B02-notes-pass2
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+report: runs/anawil-2026-11-12/outputs/reports/02-notes-pass2.md
+pass_2_empty: false
+afs_pages_with_text_read: "1-7, 36-41, 71-78 (21 pages)"
+afs_pages_ocr_pending: "8-35, 42-70, 79-103 (82 pages)"
+note: "Final B02-notes block is written by pass 3."

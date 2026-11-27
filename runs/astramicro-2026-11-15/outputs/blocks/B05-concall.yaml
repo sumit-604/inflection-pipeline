@@ -1,0 +1,104 @@
+stage: B05-concall
+company: "ASTRAMICRO"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Q2 FY27 concall transcript absent (call held 2026-11-13, not yet filed; freshness pair FAILS). Q2 FY27 delivery checked from results, press release and presentation only; management explanations for H1 FY27 cash outflow and ARC target NOT FOUND"
+  - "screener sheets other than Data Sheet empty"
+  - "PARAS peer concalls absent"
+  - "filing on the successor MD appointment and the warrant allotment filing not in announcements/"
+  - "prospectus and research folders empty (not expected)"
+  - "HAL Uttam order: margin, advance terms and payment schedule NOT FOUND on any call or in the Reg 30 filing"
+flags:
+  - "FLAG-CASH: H1 FY27 standalone CFO -14,612.63 Rs Lakhs (consolidated -14,784.83) after management said on the Q4 FY26 call it expected to maintain the CFO trend and that working capital would improve further"
+  - "FLAG-FRESHNESS: latest filed call is Q1 FY27 (11 Aug 2026); Q2 FY27 call (13 Nov 2026) not in corpus"
+  - "FLAG-DISCLOSURE: MD step-down filed 3 Apr 2026, not mentioned on the 27 May 2026 call; first call mention is 11 Aug 2026 closing remark"
+  - "FLAG-NUMBERS: base year turnover stated as Rs 1,057 Cr on Q1 FY27 call vs Rs 1,155.67 Cr standalone filed; ARC FY27 sales Rs 600+ Cr (Q4 FY26 call) vs Rs 360 Cr (Q1 FY27 call); ARC called a JV and a wholly owned subsidiary; Q1 FY27 revenue Rs 182 Cr said vs 17,620.54 Rs Lakhs filed"
+quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "HAL Uttam radar AAAU production execution (122 AAAU + 121 interface frames)", type: "revenue (volume)", timeframe: "medium: Phase 1 of 12 units by Sep 2027, balance within 5 years, possibly by FY31", conviction: "H on order and schedule, margin and advance terms NOT FOUND", confirm_signal: "Phase 1 deliveries by Sep 2027; disclosed advance and margin; H2 FY27 revenue ramp", kill_signal: "DRDO bulk production clearance delay, Phase 1 slip past Sep 2027, or no advance with WC borrowings rising"}
+  - {priority: 2, name: "H2 FY27 revenue catch-up to Rs 1,350 Cr +/-25 standalone", type: "revenue (volume)", timeframe: "near: Q3-Q4 FY27", conviction: "M", confirm_signal: "H2 standalone revenue near Rs 913 Cr (calc) and Q3 call stating material receipt for Q3/Q4 execution", kill_signal: "Q3 FY27 revenue below Q3 FY26 Rs 258.2 Cr or guidance cut or widened"}
+  - {priority: 3, name: "QRSAM production orders via BEL (Rs 700-800 Cr for first three regiments)", type: "revenue (volume)", timeframe: "medium: BEL contract then 3-4 months to Astra POs", conviction: "L-M (slipped on three consecutive calls)", confirm_signal: "BEL QRSAM contract signed and Astra subsystem POs booked", kill_signal: "Further slip past FY27 year end"}
+  - {priority: 4, name: "Margin held through mix (production and ARC value-add)", type: "margin (price-mix)", timeframe: "near", conviction: "M", confirm_signal: "FY27 EBITDA margin at or above 28.07% FY26 ex-other-income and gross margin at or above 51.5% H1", kill_signal: "Q3/Q4 EBITDA margin below 27% or Uttam booked at lower initial margin (management said trade-off possible)"}
+  - {priority: 5, name: "Astra Rafael Comsys growth (order book Rs 836 Cr)", type: "both", timeframe: "near to medium", conviction: "M (FY27 sales target contradictory: Rs 600+ Cr vs Rs 360 Cr)", confirm_signal: "ARC FY27 sales stated and met, share of profit at or above Rs 20 Cr (said as minimum)", kill_signal: "ARC receivable ageing rises or sales target held at Rs 360 Cr"}
+  - {priority: 6, name: "Su-30 Virupaksha and Angad development to production (at least Rs 3,000 Cr orders claimed)", type: "revenue", timeframe: "long: qualification FY28, production orders 2-3 years later", conviction: "L-M", confirm_signal: "AAAU handover to DRDO, qualification milestones", kill_signal: "No handover update; BEL view that Su-30 stays in development for years"}
+  - {priority: 7, name: "Space and Met demerger into Astra Space Technologies, independent from 1 Apr 2027", type: "inorganic/structural", timeframe: "near to medium", conviction: "M (exchange observation letters 29 Oct 2026)", confirm_signal: "NCLT filing and carve-out financials; space entity Rs 300+ Cr revenue, 18-20% PBT (management view)", kill_signal: "Date slips past 1 Apr 2027 or carve-out margin below stated"}
+  - {priority: 8, name: "Positive operating cash flow for FY27", type: "cash", timeframe: "near", conviction: "L", confirm_signal: "FY27 CFO positive despite H1 -146 Cr; Q3 call update on working capital", kill_signal: "Inventory above Rs 793 Cr standalone with receivables flat at year end"}
+  - {priority: 9, name: "Own-IP products (EM wall, anti-drone, own radars) and AMCA AAAU (L1)", type: "revenue (price-mix)", timeframe: "medium to long", conviction: "L (explicitly excluded from guidance)", confirm_signal: "First priced order for an Astra-IP product; AMCA AAAU contract (said within about a month on 11 Aug)", kill_signal: "Launches slip past Diwali again"}
+guidance:
+  - {item: "FY26 revenue, about 10% growth", number: "Rs 1,150 Cr (standalone)", timeframe: "FY26", stated_in: "Q3 FY26 call, SGR, p.4"}
+  - {item: "FY26 order inflow", number: "Rs 1,300-1,400 Cr (SGR); order book guidance Rs 1,400-1,450 Cr (MVR)", timeframe: "FY26", stated_in: "Q3 FY26 call, SGR p.4 and MVR p.5"}
+  - {item: "Q4 FY26 order inflow", number: "Rs 550-600 Cr (defence 450, met 120)", timeframe: "Q4 FY26", stated_in: "Q3 FY26 call, MVR, p.13"}
+  - {item: "FY27 revenue growth", number: "about 15% (Q3 FY26 call); 15-20%, Rs 1,300-1,400 Cr (Q4 FY26 call); more than 15%, Rs 1,350 Cr +/-25 (Q1 FY27 call)", timeframe: "FY27", stated_in: "Q3 FY26 call p.4; Q4 FY26 call MVR p.5; Q1 FY27 call SGR p.3, Atim p.7"}
+  - {item: "FY28 revenue", number: "Rs 1,650-1,700 Cr (Q3 FY26 call, Atim); Rs 1,600 Cr +/-50 (Q1 FY27 call)", timeframe: "FY28", stated_in: "Q3 FY26 call p.8; Q1 FY27 call Atim p.8"}
+  - {item: "FY27 order inflow", number: "Rs 1,500-1,600 Cr (Q3 FY26 call); Rs 1,600 Cr plus (Q4 FY26 call); Rs 1,600 Cr excluding Uttam (Q1 FY27 call)", timeframe: "FY27", stated_in: "Q3 FY26 call p.13; Q4 FY26 call p.5; Q1 FY27 call p.8"}
+  - {item: "Order intake over 3-4 years", number: "Rs 8,000-10,000 Cr (Q3 FY26); Rs 8,000-9,000 Cr (Q1 FY27), against Rs 4,300 Cr order book", timeframe: "next 3-4 years", stated_in: "Q3 FY26 call Atim p.8; Q1 FY27 call Atim p.7"}
+  - {item: "Turnover multiple", number: "more than double in 3-4 years (Q3 FY26); nearly triple in 4.5-5.5 years (Q4 FY26); 6-7x last year's turnover in 5 years (Q1 FY27)", timeframe: "to FY30-FY31", stated_in: "Q3 FY26 call Atim p.6; Q4 FY26 call Atim pp.5-6; Q1 FY27 call Atim p.6"}
+  - {item: "ARC revenue", number: "Rs 350+ Cr FY26, Rs 400+ Cr FY27 (Q3 FY26); over Rs 600 Cr FY27, minimum 50% growth (Q4 FY26); Rs 360 Cr this year (Q1 FY27)", timeframe: "FY27", stated_in: "Q3 FY26 call p.12; Q4 FY26 call MVR p.5; Q1 FY27 call MVR p.3"}
+  - {item: "ARC share of profit FY27", number: "at least Rs 20 Cr (minimum), EBITDA 18-20%", timeframe: "FY27", stated_in: "Q4 FY26 call p.18"}
+  - {item: "EBITDA margin FY27", number: "similar to last year, delta increase", timeframe: "FY27", stated_in: "Q1 FY27 call p.16"}
+  - {item: "Capex", number: "Rs 40-50 Cr a year, no additional", timeframe: "recurring", stated_in: "Q4 FY26 call p.10"}
+  - {item: "Space and weather entity", number: "Rs 300+ Cr revenue, 18-20% PBT in first year", timeframe: "after demerger, from 1 Apr 2027", stated_in: "Q1 FY27 call Atim pp.16-17"}
+  - {item: "Space revenue within FY27 Rs 1,350 Cr", number: "Rs 120-150 Cr", timeframe: "FY27", stated_in: "Q1 FY27 call p.16"}
+  - {item: "Uttam execution", number: "Phase 1: 12 units by Sep 2027; about 25 plus a year after; before FY32", timeframe: "to FY31-FY32", stated_in: "Q1 FY27 call MVR p.11; HAL Reg 30 filing 2026-07-30 (within 5 years)"}
+  - {item: "Funding", number: "no equity raise for working capital; no dilution", timeframe: "ongoing", stated_in: "Q3 FY26 call p.12; Q1 FY27 call p.14"}
+  - {item: "Dividend", number: "Rs 2.40 a share recommended for FY26", timeframe: "FY26", stated_in: "Q4 FY26 call SGR p.3"}
+promise_delivery:
+  delivered: 5
+  partial: 3
+  missed: 3
+  rows:
+    - {promised_in: "Q3 FY26 call", promise: "FY26 revenue about 10% growth, Rs 1,150 Cr", outcome: "delivered", explanation: "Standalone Rs 1,155.67 Cr (115,566.75 Rs Lakhs), +10.67% (B03); 42% of it in Q4"}
+    - {promised_in: "Q3 FY26 call", promise: "FY26 order inflow Rs 1,300-1,400 Cr (SGR); book guidance Rs 1,400-1,450 Cr (MVR)", outcome: "partial", explanation: "Inflow Rs 1,336 Cr (B03) inside SGR range, below MVR figure; two figures in one call"}
+    - {promised_in: "Q3 FY26 call", promise: "Q4 FY26 inflow Rs 550-600 Cr (price negotiations concluded)", outcome: "partial", explanation: "Q4 inflow about Rs 530 Cr (Q4 FY26 call); further Rs 300 Cr at price negotiation stage; shortfall not explained"}
+    - {promised_in: "Q3 FY26 call / Q4 FY26 call", promise: "Uttam order from HAL: negotiation advanced, order in Q2 or Q3 FY27", outcome: "delivered", explanation: "HAL order 30 Jul 2026, Rs 2,205.23 Cr incl taxes (Reg 30), Rs 1,878.8 Cr in Q2 order table (presentation p.6), inside the window"}
+    - {promised_in: "Q3 FY26 call", promise: "Man-portable SDR trials end, bids open about March", outcome: "delivered", explanation: "SDR programs listed among Q4 FY26 key orders (Q4 FY26 call MVR p.5); value NOT FOUND"}
+    - {promised_in: "Q3 FY26 call / Q4 FY26 call", promise: "QRSAM orders: customer Q1 FY27, hopeful by March; BEL contract by June", outcome: "missed", explanation: "Q1 FY27 call: some in FY27 'partly before this year-end'; slipped on all three calls; only FOPM small quantities"}
+    - {promised_in: "FY25 AR (via B03)", promise: "FY26 revenue growth 15-20%", outcome: "missed", explanation: "Delivered 10.67% (B03 guidance table); cut disclosed on Q3 FY26 call as 'in line with guidance'"}
+    - {promised_in: "Q3 FY26 call", promise: "ARC FY26 revenue Rs 350+ Cr", outcome: "delivered", explanation: "ARC FY26 sales Rs 360 Cr (Q4 FY26 call MVR p.5)"}
+    - {promised_in: "Q4 FY26 call", promise: "Board scheme for demerger of space, met, hydrology expected within weeks", outcome: "delivered", explanation: "Board approved 10 Jun 2026 (Q2 FY27 results note); exchange observation letters 29 Oct 2026"}
+    - {promised_in: "Q4 FY26 call", promise: "Maintain operating cash flow trend; working capital improves further; manage within sanctioned limits", outcome: "missed", explanation: "H1 FY27 standalone CFO -14,612.63 Rs Lakhs vs +23,632.34 H1 FY26; inventory Rs 793 Cr vs 609 Cr March; no explanation on a filed call (Q2 call absent)"}
+    - {promised_in: "Q4 FY26 call", promise: "Astra-owned products and first NCNC demo within Q1 FY27, products before Diwali", outcome: "partial", explanation: "Demos in Jalandhar in July 2026 (Q1 FY27 call); commercial launch before Diwali not evidenced in Q2 filings"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "QRSAM order timing", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "answer changed between quarters (Q1 FY27 by March -> by June -> partly before FY27 end)"}
+  - {question: "Margin trajectory (will it hold or rise)", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters (improve -> 'top end, factor slightly lower' -> 'similar, delta increase' while 'we do not want to commit')"}
+  - {question: "Working capital and funding need", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters (borrowings will rise -> improves further -> no significant change, similar to last year)"}
+  - {question: "ARC profitability vs revenue target", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "answer changed between quarters (PBT 10-12% -> EBITDA 18-20% with Rs 20 Cr plus profit share, 'lower end')"}
+  - {question: "Size of new programmes (DAC Rs 3.6 trn approvals, Rafale 114, AMCA, EM wall and counter-drone)", quarters_asked: ["Q3 FY26", "Q1 FY27"], classification: "deflected every time (no number given; 'we will come back')"}
+  - {question: "Exports growth restart", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answered consistently, timeline rolling (couple of years in Feb; 1-2 years for solutions and 2 years for components in Aug)"}
+credibility_grade: "B"
+credibility_basis: "Trailing window Q3 FY26 to Q2 FY27 (Q2 FY27 call absent, checked on filings only): 5 delivered, 3 partial, 3 missed; hard numbers hit (FY26 Rs 1,155.67 Cr, ARC FY26 Rs 360 Cr, HAL order inside window, demerger scheme on time), Q2 FY27 EBITDA 33.2% and PAT +126.5% ahead, but FY26 growth guide cut from 15-20% to 10.67%, QRSAM slipped three calls, H1 FY27 CFO -146 Cr contradicts the cash claims, and ten-plus statement inconsistencies"
+peer_questions:
+  - {question: "Do DPSU-routed production orders carry advances, and what receivable and inventory days do peers run? Astra says production orders from PSUs get no advance and development orders 20-25%", why: "Sets how much of the Rs 1,878.8 Cr Uttam order is funded by borrowings", check_peers: ["DATAPATTNS", "APOLLO"]}
+  - {question: "Is a negative H1 operating cash flow and an inventory build normal for peers before a back-ended Q4? Astra says March receivables are always high and Q1/Q2 working capital looks better", why: "Separates seasonal timing from structural cash conversion (H1 FY27 CFO -146 Cr)", check_peers: ["DATAPATTNS", "APOLLO"]}
+  - {question: "Customer approval, inspection and R&D-project delays as the cause of quarterly revenue misses: do peers cite the same and how often do they recover within the year?", why: "Tests whether Astra's Q1 FY27 shortfall and promised H2 catch-up (about Rs 913 Cr, calc) is industry normal", check_peers: ["DATAPATTNS", "APOLLO"]}
+  - {question: "Industry claims: backlogs are no longer a constraint, execution is; 75% of capital acquisition to domestic firms; defence exports above Rs 38,000 Cr in FY26; budget allocation +15%; accessible market Rs 25,000-30,000 Cr shifting from FY28 to FY30-31", why: "Industry growth rates cited by management, unverified", check_peers: ["DATAPATTNS", "APOLLO"]}
+  - {question: "Gross and EBITDA margin on indigenous radar, EW and SDR production (Astra: gross about 55% in Q4 FY26, 'top end', EBITDA 33.2% in Q2 FY27); are peer margins at that level and is mix or timing the driver?", why: "Tests margin sustainability behind Role 1 base margin", check_peers: ["DATAPATTNS", "APOLLO"]}
+  - {question: "Capex cycle: Astra says Rs 40-50 Cr a year suffices for a tripling; do peers need step-up capex and capacity for similar scale-up?", why: "Capital intensity of the growth claim (AR26 shows Rs 75 Cr FY27 capex)", check_peers: ["DATAPATTNS", "APOLLO"]}
+  - {question: "Input and supply chain: Astra cites high foreign content, minimum order quantities, forex and global restocking; what do peers report on component lead times and forex margin effect?", why: "Raw material and supply-chain claim, with Uttam volume ramp ahead", check_peers: ["DATAPATTNS", "APOLLO"]}
+  - {question: "BEL/HAL programme timing: QRSAM contract, Su-30 and AMCA development-to-production lag (BEL view: development for five years) and Uttam AAAU supply-chain share", why: "Astra's QRSAM slipped three calls; Su-30 production timing disputed", check_peers: ["DATAPATTNS", "APOLLO"]}
+  - {question: "Market share gain: Astra claims at least 25% of designated Mk1A supply chain, L1/L2 on AMCA AAAU and single qualified source in several programmes; do peers claim the same programmes?", why: "Market-share claim unverified", check_peers: ["DATAPATTNS", "APOLLO"]}
+red_flags:
+  - "HIGH: H1 FY27 standalone CFO -14,612.63 Rs Lakhs (consolidated -14,784.83) vs H1 FY26 +23,632.34, after the Q4 FY26 call said the CFO trend would be maintained; inventory 793 vs 609 Rs Cr (presentation p.11)"
+  - "HIGH: Uttam order Rs 1,878.8 Cr ex-tax has no stated margin or advance on any call or in the filing, and management said production orders from PSUs carry no advance (Q3 FY26 call p.11)"
+  - "MEDIUM: MD step-down filed 3 Apr 2026 (effective 30 Sep 2026, stays Executive Director) not mentioned on the 27 May 2026 call; successor MD filing not in corpus"
+  - "MEDIUM: base number and multiple unstable: FY26 turnover quoted Rs 1,057 Cr vs Rs 1,155.67 Cr filed; turnover aim moved from 'double in 3-4 years' to 'nearly triple in 4.5-5.5 years' to '6-7x in 5 years' in six months"
+  - "MEDIUM: ARC described as a JV (Q3 FY26 call) and a wholly owned subsidiary (Q4 FY26 call); ARC FY27 sales Rs 600+ Cr (May) vs Rs 360 Cr (Aug)"
+  - "MEDIUM: QRSAM production orders slipped on three consecutive calls"
+  - "MEDIUM: growth rear-ended (management: 'rear-ended', Q4 FY26 call p.18); H1 FY27 standalone revenue +6.6% vs guided 15-20%, H2 must grow about 22% (calc)"
+  - "LOW: defensiveness under analyst pressure (Q3 FY26 call p.10-11); quarterly numbers disowned (Q1 FY27 call p.17)"
+  - "INFO: Q2 FY27 call not filed; H1 FY27 cash and ARC target unexplained"
+dropped_triggers:
+  - "Pseudo/stratospheric satellite (Q3 FY26 Q&A, p.14): 'initial stages'; replaced by own-satellite constellation within 6 months of the space entity listing"
+  - "Rafale 114 India supply chain (Q3 FY26 p.11): not in supply chain, never raised again"
+  - "Rs 3.6 trillion DAC approvals TAM (Q3 FY26 p.13): 'will come back'; never sized"
+  - "Pre-Diwali launch of 'multiple Astra-branded products' (Q4 FY26): narrowed in Q1 FY27 to two radars and one drone-mounted ELINT product 'around Diwali'"
+timeline_slippages:
+  - "QRSAM orders: Q1 FY27 / March (Q3 FY26 call) -> BEL contract June (Q4 FY26 call) -> partly before FY27 end (Q1 FY27 call)"
+  - "Turnover multiple horizon: FY30-31 and 'down the line three to four years' in one call (Q4 FY26 p.13) vs 4.5-5.5 years in prepared remarks (p.6)"
+  - "Accessible market: FY28 -> FY28-29 -> FY30-31 (Q3 FY26 p.17, Q4 FY26 p.12)"
+  - "Q1 FY27 sales slipped to Q3/Q4 on inspection and supply chain issues (Q1 FY27 call p.17)"
+  - "Astra-IP product demo: 'within this quarter' (Q4 FY26, Q1 FY27 window) held in July 2026"
+analyst_note: "Three things a later stage cannot rebuild. (1) FY27 guidance is a midpoint game: Rs 1,350 Cr +/-25 on a Rs 1,155.67 Cr base is +16.8% (calc); H1 standalone is Rs 437 Cr (press release p.2), so H2 needs about Rs 913 Cr against Rs 745 Cr in H2 FY26 (calc, +22%). Q4 FY26 alone was Rs 487.2 Cr (48,721.75 Rs Lakhs). (2) Cash: the Q4 FY26 CFO strength (37,595.92 Rs Lakhs) came with a March spike; management itself said March balances are always high and Q3/Q4 carry the pressure, so H1 -146 Cr is not yet proof of reversal, but it contradicts the 'Q1/Q2 looks better' line. Observation that separates the readings: year-end FY27 CFO and inventory. (3) Uttam: Rs 1,878.8 Cr ex-tax booked in Q2; mgmt order book figures use Rs 2,205 Cr tax-inclusive. Grade B rests on hard-number delivery; a C reading is live if H2 revenue misses or CFO stays negative."

@@ -1,0 +1,38 @@
+stage: B12b
+company: "ASTRAMICRO"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 24
+caught: 12
+partially_caught: 8
+missed:
+  - {severity: "MAJOR", item: "Volunteered admission that part of reported inventory is legacy stock accumulated over about three decades, not tied to current production, with obsolescence risk; absent from B05, which flags the H1 FY27 inventory build without it", anchor: "Q3 FY26 call (13 Feb 2026), Atim Kabra, PDF p.7; also p.6 ('seem scary high')"}
+  - {severity: "MINOR", item: "Equity stance gained a carve-out: 'we won't be raising any equity capital' became 'Till we have accretive nonorganic opportunities, we will not dilute for working capital'", anchor: "Q3 FY26 call, mgmt, PDF p.11 and Atim p.7; Q1 FY27 call (11 Aug 2026), mgmt, PDF p.15"}
+  - {severity: "MINOR", item: "Q4 FY26 standalone order-book roll-forward leaves about Rs 125 Cr unexplained [calc: 2,226 + 530 - 490 = 2,266 vs 2,141 reported]; Q1 FY27 reconciles within Rs 12 Cr", anchor: "Q3 FY26 call, SGR, PDF p.3; Q4 FY26 call (27 May 2026), MVR, PDF p.5; Q1 FY27 call, SGR p.3 and MVR p.4"}
+  - {severity: "MINOR", item: "Mission Mausam ordering timeline pulled forward with no stated cause: 'at least a couple of years to finalize' became 'more orders in the current financial year'", anchor: "Q3 FY26 call, mgmt, PDF p.17; Q1 FY27 call, mgmt, PDF p.13"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
+credibility_grade_concur: "lower: B is defensible on hard numbers, but delivered is 4 not 5 (B05 2A row 5 MP-SDR unevidenced) and the grade omits the order-book goalpost redefinition, the volunteered inventory-obsolescence admission and the 18-month senior churn; reads B-minus, with B05's own C trigger (H2 FY27 revenue near Rs 913 Cr, FY27 year-end CFO) unchanged"
+findings:
+  - {severity: "MAJOR", status: "MISSED", location: "B05 (no entry); Q3 FY26 call Atim PDF p.6-7", finding: "Management's own admission that part of reported inventory is legacy stock with obsolescence risk is absent; it changes how the H1 FY27 inventory build (B05 FLAG-CASH) reads"}
+  - {severity: "MAJOR", status: "PARTIALLY CAUGHT", location: "B05 1B, guidance YAML 'Order intake over 3-4 years', 3D; Q3 FY26 Atim p.8; Q1 FY27 Atim p.7, SGR p.3", finding: "Order-book goalpost redefinition missed: Feb 'new order booking over 4 years' became 'over 5 years' with the full current book (pre-commitment Rs 2,156 Cr backlog, tax-inclusive Uttam, an expected QRSAM portion) counted 'in the bag'; B05 caught the GST part only and treats the two commitments as like for like"}
+  - {severity: "MAJOR", status: "PARTIALLY CAUGHT", location: "B05 FLAG-DISCLOSURE, 2D; Q1 FY27 Atim p.6", finding: "18-month senior churn volunteered on the Q1 FY27 call (new CTO, HR, quality, purchase, R&D domain and sales heads; 'replacements for folks who have moved on') missed; MD exit caught"}
+  - {severity: "MAJOR", status: "PARTIALLY CAUGHT", location: "B05 trigger 7, 1C, FLAG-NUMBERS; Q1 FY27 mgmt p.19; Q4 FY26 mgmt p.12, MVR p.5", finding: "Turnover multiples sit on a combined base that includes the space-weather segment being demerged while the order build is 'mostly defense'; management gave both readings in one answer; not flagged"}
+  - {severity: "MINOR", status: "WEIGHTING", location: "B05 4D 'Defensiveness and not quarterly stance' LOW", finding: "Execution-delay and deflection pattern spans three calls, the Q1 FY27 deferred-revenue quantum went unanswered, and SGR 'modest' vs MVR 'robust operational execution' (Q1 FY27 p.3-4) is unrecorded; MEDIUM fits"}
+  - {severity: "MINOR", status: "SPOT CHECK WRONG", location: "B05 2A row 5 and promise_delivery row 'Man-portable SDR'", finding: "Marked delivered, but no later call reports bid opening, L1 or award; 'SDR programs' in Q4 FY26 orders (MVR p.5) do not identify the tender and SDR wins already existed in Q3 FY26 (MVR p.5); correct status OPEN; delivered tally 4"}
+  - {severity: "MINOR", status: "OVERSTATED", location: "B06 P6, FLAG-PEER-CAPEX, Part 4", finding: "CONTRADICTED rests on peers' own capex scale-up (DP Q1 FY27 p.16; APOLLO Q2 FY27 p.7), which does not test Astra's stated need (Q4 FY26 mgmt p.11); B06's own caveats say so; should not lead synthesis as a contradiction"}
+  - {severity: "MINOR", status: "MISCLASSIFIED", location: "B06 P9", finding: "DP remark 'Astra is a DcPP partner for MCA variant, not the Su30 variant' (DP Q1 FY27 p.18) scored as partial support; on the Su-30 radar sub-claim it is a hedged contradiction of Atim's 'Tier 1' (Q1 FY27 p.7); B06 2D and FLAG-PEER-COMPETE carry it correctly"}
+  - {severity: "MINOR", status: "ANCHOR FORMAT", location: "B05 throughout", finding: "About 9 of 20 spot-checked B05 page anchors cite the transcript footer page, one below the PDF page (e.g. SGR Rs 1,350 Cr 'Q1 p.3' is PDF p.4; Atim Rs 1,870 Cr 'p.6' is p.7; MVR Rs 1,157 Cr 'Q4 p.4' is p.5); one is one high (Uttam phase plan 'Q1 p.11' is p.10); referred to Verifier A, not a source-fidelity ruling"}
+  - {severity: "MINOR", status: "MISSED", location: "B05 guidance 'Funding'; Q3 FY26 mgmt p.11; Q1 FY27 mgmt p.15", finding: "Equity stance gained an 'accretive nonorganic opportunities' carve-out"}
+  - {severity: "MINOR", status: "MISSED", location: "B05 3D; Q3 FY26 SGR p.3; Q4 FY26 MVR p.5", finding: "Q4 FY26 order-book roll-forward gap of about Rs 125 Cr [calc]"}
+  - {severity: "MINOR", status: "MISSED", location: "B05 1A space/met row; Q3 FY26 mgmt p.17; Q1 FY27 mgmt p.13", finding: "Mission Mausam ordering timeline pulled forward without a stated cause"}
+  - {severity: "MINOR", status: "PARTIALLY CAUGHT", location: "B05 2A row 3; Q4 FY26 MVR p.5; Q1 FY27 MVR p.4", finding: "Rs 300 Cr PNC promised 'in next couple of months' is not tracked; Q1 FY27 inflow was Rs 185 Cr"}
+  - {severity: "MINOR", status: "PARTIALLY CAUGHT", location: "B05 1C exports; Q4 FY26 mgmt p.10, p.18; Q1 FY27 mgmt p.12", finding: "Export gross margin told as 40% and 45% to two analysts; history reframed as 'so-called exports, which was not really exports'"}
+critical_count: 0
+major_count: 4
+minor_count: 10
+material_found: 12
+material_caught: 11
+acceptance_rate: 91.7
+coverage_basis: "12 material of 24 listed (0 CRITICAL, 12 MAJOR); 7 caught, 4 partially caught, 1 missed; material_caught counts caught + partially caught (schema 'ones the pipeline already had'; rule 3 defines PARTIALLY CAUGHT as found); caught-only rate would be 7/12 = 58.3%. Main transcripts read in full (3 of 3); 8 peer transcripts keyword-searched and hit sections read, not cover to cover; PARAS absent"

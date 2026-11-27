@@ -1,0 +1,27 @@
+stage: confidence
+company: "ASTRAMICRO"
+run_date: "2026-11-15"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 97.3      # B12a.acceptance_rate; 692 numbers checked; mandatory 234 of 234
+  redflag_coverage: 91.7          # B12b.acceptance_rate; material_found 12, material_caught 11 (7 caught + 4 partially caught)
+  framework_adherence: 87.0       # B12c phase-1 portion only (Gate 0 + Emerging Moat): 40 of 46 rules; valuation half PENDING PHASE 3
+  peer_utilisation: null          # NOT APPLICABLE, see not_applicable
+  overall: 87.0
+  overall_set_by: "framework_adherence (phase-1 portion: Gate 0 + Emerging Moat, B12c)"
+  band: "75-89 normal, note specifics"
+  not_applicable:
+    - {component: "peer_utilisation", reason: "denominator below 4: 2 peers with transcripts (DATAPATTNS, APOLLO), both used substantively (2 of 2); the third selected peer PARAS has no transcripts in the corpus and was not scored", counts: "2 of 2 peers; 8 of 8 transcripts used substantively"}
+  pending_phase_3:
+    - "framework_adherence valuation component (Verifier C audit of B10, B11)"
+verifier_a_identity_check: "B12a carries 0 CRITICAL rows, so no row needed the claimed vs source_truth identity test; nothing struck by the orchestrator. Verifier A itself struck 5 false positives before reporting."
+rework_test:
+  verifier_a_confirmed_critical: 0
+  acceptance_rates: {A: 97.3, B: 91.7, C_phase1: 87.0, D: 100}
+  below_60_on_denominator_4_or_more: false
+  rework: false
+notes:
+  - "Verifier B sensitivity (reported by the verifier in coverage_basis, not applied): if only fully caught material items counted, the rate would be 7 of 12 = 58.3%, below the 60% line. The B12b block field acceptance_rate is 91.7 because the verifier prompt defines PARTIALLY CAUGHT as found. The block governs; the sensitivity goes to the gate recommendation and the Halt 1 report as an open item for the operator."
+  - "Verifier D acceptance 100 is on 2 peers; reported as a count, not used in overall."
+  - "Verifier C MAJOR C-P1-01: recomputed em_score 19.2 against 16.5 claimed; band MODEST unchanged. B07 is not re-run (no REWORK trigger; a re-run would be a remediation cycle). Carried to synthesis and Halt 1 as a named correction."
+  - "Verifier A MAJOR: stage 4 arithmetic slip on the HAL order gap (0.53%, not about 1.2%); source_fidelity false; no pillar input affected. Six MINOR page-anchor slips with source_fidelity true: every value exists at the corrected page given in B12a."

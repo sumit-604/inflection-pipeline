@@ -1,0 +1,47 @@
+stage: B02-notes
+company: "ASTRAMICRO"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Q2 FY27 concall transcript absent (call held 2026-11-13, not yet filed)"
+  - "screener sheets other than Data Sheet empty"
+  - "PARAS peer concalls absent"
+  - "prospectus and research folders empty (not expected)"
+flags:
+  - {type: FLAG-CASH, reason: "Net receivables fell 78,275.82 to 69,343.47 (Rs Lakhs, Note 9) but over-2-year past-due rose 4,591.91 to 8,158.33 with ECL cover 19.6% to 14.9% (Notes 39, 44); ARCPL receivable 19,579.28 (27.9% of current gross) has no ageing; ageing schedule does not roll forward; CFO 37,595.92 is 35.4% working capital release"}
+accounting_quality: 6
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "ARCPL 50% JV: sales 16,009.91 (+115.8%), receivable 19,579.28 (27.9% of current gross), AMPL 74.5% of ARCPL trade payables, guarantee 8,000.00, no ageing or credit terms (Rs Lakhs)", note_ref: "Note 31(ii)-(iii) pp.246-247; Cons Note 46 pp.341-342; Cons Note 44 p.335", rating: RED, why: "Largest cash exposure and a related party; revenue may outrun cash"}
+  - {rank: 2, finding: "Three unnamed external customers 52.84% of revenue (61,052.05 of 115,535.00); ARCPL 13.86% separate, overlap not disclosed", note_ref: "Note 33(c) p.251", rating: RED, why: "Concentration with no named counterparty"}
+  - {rank: 3, finding: "Receivables over 2 years past due 8,158.33 vs 4,591.91; ECL cover 14.9% vs 19.6%; 7,083.37 of old good balances carry 144.14", note_ref: "Notes 39, 44 pp.255-256, 263", rating: RED, why: "Cover rests on government presumption, not age"}
+  - {rank: 4, finding: "Ageing does not roll forward: >3 years 5,229.57 exceeds whole FY25 >2 years 4,591.91 by 637.66; Not due equals non-current receivable", note_ref: "Note 44 p.263; Cons Note 47 p.346", rating: RED, why: "Ageing percentages unreliable; basis may be invoice date"}
+  - {rank: 5, finding: "CFO 37,595.92 vs -9,893.82; working capital release 13,324.69 = 35.4% of CFO; two-year CFO/PAT 86.2%; payable days about 72 vs 40", note_ref: "CFS p.209; Notes 9, 17, 23", rating: YELLOW, why: "Real but timing driven; payables stretch reverses"}
+  - {rank: 6, finding: "March 2026 quarter bank returns not filed; auditor confirms; ARCPL lender returns differ from books; 88.6% of assets pledged", note_ref: "Note 43(iii) p.260; CARO ii(b) p.204; Cons Note 44 pp.335-337; Note 36 p.252", rating: RED, why: "Lender reporting and drawing power risk; no consequence disclosed"}
+  - {rank: 7, finding: "16,000.00 year-end deposit inside cash; net debt 12,309.93 (10%) vs 28,309.93 (21.9%) without it, against 19,993.27 floating lines", note_ref: "Note 10(a) p.233; Note 14 p.236; Note 40 p.259", rating: YELLOW, why: "Deleveraging depends on one deposit; test at 30 Jun and 30 Sep 2026"}
+  - {rank: 8, finding: "ARCPL capitalised intangibles 9,427.48 = 114.7% of net assets 8,220.63; other financial liabilities 31.8x; limit 9,000 to 26,500", note_ref: "Cons Note 46 pp.341-343; Cons Note 44 p.335", rating: RED, why: "Impairment would hit AMPL carrying 4,129.73"}
+  - {rank: 9, finding: "Navictronics 912.00 inside operating cash flow (exact tie standalone and consolidated); JV intangible 1,824.00 = 2 x 912.00; vendor undisclosed; pre-revenue loss 285.70", note_ref: "CFS p.209; Cons CFS p.283; Note 4 p.230; Cons Note 46 pp.343-344", rating: YELLOW, why: "CFO understated by 912.00; cash flow not clean at line level"}
+  - {rank: 10, finding: "Warrants up to 20,13,885 at Rs 864; 25% (Rs 43.50 crore) received; 75% (about Rs 130.49 crore calc) outstanding; window ends about 23-24 Dec 2026 (calc)", note_ref: "Note 13 p.235; Note 30 p.245", rating: YELLOW, why: "Balance cash uncertain; allottees not named"}
+  - {rank: 11, finding: "Demerger of Space, Meteorology and Hydrology undertakings into Astra Space Technologies: board in-principle 27 Feb 2026 only, no carve-out figures", note_ref: "Note 47 p.265; Cons Note 45 p.339", rating: YELLOW, why: "Structure change with no size in the notes"}
+  - {rank: 12, finding: "Net material cost flat 58,731.66 on revenue +10.67%; ratio 50.82% vs 56.13% drives margin; no reason given", note_ref: "Notes 23, 24 pp.240-241", rating: YELLOW, why: "Profit gain rests on one unexplained line"}
+  - {rank: 13, finding: "Earnings quality: FX gain 1,035.04 (88.7% unrealised); ECL swing 1,159.28; non-cash financing revenue 1,228.05; guarantee commission 85.50; DTA reversal 490.10", note_ref: "Notes 22, 28, 21, 29(d), 39", rating: YELLOW, why: "Small items together; none above 5% of PBT alone"}
+  - {rank: 14, finding: "Janyu CCPS: 28,486 sold near Rs 1,859 per share; 77,950 remaining carried near Rs 187.9; held for sale over 12 months; Level 3 with no inputs", note_ref: "Notes 46, 20, 22, 4, 38; Cons Note 46 p.344", rating: YELLOW, why: "Indicative scale 1,302.6 (calc) but unmarked"}
+  - {rank: 15, finding: "ADT guarantee 3,500.00 (Note 31) vs 4,300.00 (Note 34) vs only ADT lender limit 1,500 undrawn; capital commitments 4,445.74 from 155.37", note_ref: "Notes 31, 34 pp.246, 251; Cons Note 40 p.332", rating: YELLOW, why: "Guarantee amounts disagree and exceed visible facility"}
+red_flags:
+  - "ARCPL receivable 19,579.28 with no ageing or credit terms; AMPL guarantee 8,000.00"
+  - "Customer concentration 52.84% in three unnamed customers"
+  - "Over-2-year receivables 8,158.33 with falling ECL cover; ageing schedule does not roll forward"
+  - "March 2026 quarter bank returns not filed (Note 43(iii); CARO ii(b))"
+  - "ARCPL capitalised intangibles 114.7% of net assets"
+questions_for_mgmt:
+  - "ARCPL credit terms and how much of 19,579.28 is past terms; any USD-denominated invoices?"
+  - "Is ARCPL one of the three customers above 10%; who are they; government share of the 8,158.33 over-2-year balance?"
+  - "Ageing basis (invoice or due date); why >3 years exceeds prior year >2 years?"
+  - "Why is the 912.00 Navictronics payment in operating cash flow; who sold the 1,824.00 intangible?"
+  - "Why did net material cost stay flat on 10.67% revenue growth; why were March 2026 bank returns not filed while a 16,000.00 deposit was opened?"
+receivables_trend: "improving on balance with quality worsening: net receivables 78,275.82 to 69,343.47 (Rs Lakhs, Note 9), receivable days about 274 to 219 (calc); but over 2 years past due 4,591.91 to 8,158.33 (11.5% of gross 70,825.05), ECL cover on that bucket 19.6% to 14.9%, over 6 months 29.4% vs 37.2% (calc); ARCPL 19,579.28 (27.9% of current gross) unaged; ageing schedule internally inconsistent (>3 years 5,229.57 exceeds FY25 >2 years 4,591.91)"
+restatements_found: []
+going_concern_language: "NONE adverse. Boilerplate only: Note 40 p.259 and Cons Note 41 p.334 capital management 'safeguard ability to continue as a going concern'; standalone CARO clause xix (PDF p.206): nothing indicates material uncertainty in meeting liabilities within one year. No restatement of prior year figures declared (comparative bases are mixed in the FY25 maturity table, Note 39 p.257)."
+analyst_note: "All figures Rs Lakhs. Pass 2 INFERENCEs carried as inferences: ageing may be invoice-date based; the 912.00 Navictronics payment sits in operating cash flow. The two readings of the 16,000.00 year-end deposit (genuine liquidity versus year-end holding, net debt/equity 10% vs 21.9% calc) separate on the 30 Jun and 30 Sep 2026 balances. Brief said ARCPL 51%; notes say 50.00% (Note 31(i) p.245). ADT lender limit 1,500 is corroborated by consolidated undrawn facilities (58,014.50 vs 56,514.50)."

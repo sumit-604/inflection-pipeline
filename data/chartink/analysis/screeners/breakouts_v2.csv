@@ -7452,6 +7452,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-18,00:00,BHARTIARTL,telecom-service,largecap,1.2346,0.511
 2026-11-18,00:00,BHEL,industrials,largecap,-3.3463,0.5026
 2026-11-18,00:00,BLISSGVS,healthcare,midcap,1.0771,0.116
+2026-11-18,00:00,BLUESTARCO,consumer discretionary,largecap,2.1799,0.7898
 2026-11-18,00:00,BOSCHLTD,auto,largecap,-0.4454,0.4633
 2026-11-18,00:00,BPCL,energy,largecap,1.1589,0.6892
 2026-11-18,00:00,CANBK,bank,largecap,1.9021,0.934
@@ -7467,6 +7468,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-18,00:00,CUBEXTUB,metals & mining,smallcap,6.1167,0.095
 2026-11-18,00:00,CUPID,fmcg,largecap,-3.8645,0.2277
 2026-11-18,00:00,DCBBANK,bank,midcap,-2.3003,0.4836
+2026-11-18,00:00,DEEPAKFERT,chemicals,midcap,17.3324,2.8274
 2026-11-18,00:00,DHANBANK,bank,smallcap,-0.0746,5.6152
 2026-11-18,00:00,DIVISLAB,healthcare,largecap,-3.4347,1.1122
 2026-11-18,00:00,DLF,realty,largecap,0.7315,0.4276
@@ -7481,6 +7483,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-18,00:00,GAIL,energy,largecap,1.0638,1.3808
 2026-11-18,00:00,GLENMARK,healthcare,largecap,0.2311,1.601
 2026-11-18,00:00,GMRAIRPORT,miscellaneous,largecap,5.4545,1.0906
+2026-11-18,00:00,GRASIM,textiles,largecap,0.9229,0.8711
 2026-11-18,00:00,GREAVESCOT,industrials,midcap,17.9935,19.2884
 2026-11-18,00:00,GULFOILLUB,chemicals,midcap,1.833,1.1079
 2026-11-18,00:00,HALEOSLABS,healthcare,smallcap,2.6408,0.4408
@@ -7506,6 +7509,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-18,00:00,KDDL,consumer discretionary,midcap,17.1378,23.0267
 2026-11-18,00:00,KILITCH,healthcare,smallcap,6.9778,0.6376
 2026-11-18,00:00,KOLTEPATIL,realty,smallcap,0.6894,0.9425
+2026-11-18,00:00,KOPRAN,healthcare,smallcap,-8.005,0.2614
 2026-11-18,00:00,KOTAKBANK,bank,largecap,1.2895,1.5532
 2026-11-18,00:00,KPRMILL,readymade garments/apparels,largecap,4.2386,0.8422
 2026-11-18,00:00,LALPATHLAB,healthcare,largecap,-1.3848,0.4809
@@ -7569,9 +7573,12 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-18,00:00,TCPLPACK,industrials,smallcap,0.81,2.3831
 2026-11-18,00:00,TECHM,i.t,largecap,-0.7937,0.4252
 2026-11-18,00:00,TFCILTD,financials,midcap,3.5011,0.3591
+2026-11-18,00:00,TI,fmcg,midcap,2.9903,0.8726
+2026-11-18,00:00,TIMETECHNO,plastic products,midcap,0.0949,0.617
 2026-11-18,00:00,TIPSMUSIC,media,midcap,-0.6369,0.8192
 2026-11-18,00:00,TVSHLTD,financials,largecap,-1.0749,0.3305
 2026-11-18,00:00,TVSMOTOR,auto,largecap,-2.8031,1.2857
+2026-11-18,00:00,TVSSRICHAK,auto,smallcap,3.4527,0.8356
 2026-11-18,00:00,ULTRACEMCO,building materials,largecap,2.7107,0.721
 2026-11-18,00:00,UMIYA-MRO,telecom,smallcap,-2.8736,0.6574
 2026-11-18,00:00,UNIONBANK,bank,largecap,2.4039,0.6553
@@ -7611,6 +7618,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-19,00:00,BHARTIARTL,telecom-service,largecap,1.8044,0.7715
 2026-11-19,00:00,BHEL,industrials,largecap,-0.298,0.4651
 2026-11-19,00:00,BLISSGVS,healthcare,midcap,-1.1514,0.0459
+2026-11-19,00:00,BLUESTARCO,consumer discretionary,largecap,11.1391,6.0657
 2026-11-19,00:00,BOSCHLTD,auto,largecap,0.0202,0.8698
 2026-11-19,00:00,BPCL,energy,largecap,2.0199,0.399
 2026-11-19,00:00,CANBK,bank,largecap,3.9111,1.1669
@@ -7626,6 +7634,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-19,00:00,CUBEXTUB,metals & mining,smallcap,8.2344,0.0336
 2026-11-19,00:00,CUPID,fmcg,largecap,-3.1366,0.2479
 2026-11-19,00:00,DCBBANK,bank,midcap,0.9313,0.6354
+2026-11-19,00:00,DEEPAKFERT,chemicals,midcap,14.9073,1.1385
 2026-11-19,00:00,DHANBANK,bank,smallcap,-2.0875,3.3931
 2026-11-19,00:00,DIVISLAB,healthcare,largecap,-2.3073,1.4531
 2026-11-19,00:00,DLF,realty,largecap,1.2191,0.4462
@@ -7640,6 +7649,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-19,00:00,GAIL,energy,largecap,2.1809,1.2597
 2026-11-19,00:00,GLENMARK,healthcare,largecap,-1.1932,0.5824
 2026-11-19,00:00,GMRAIRPORT,miscellaneous,largecap,5.0505,0.4943
+2026-11-19,00:00,GRASIM,textiles,largecap,2.5412,0.906
 2026-11-19,00:00,GREAVESCOT,industrials,midcap,16.6084,3.1425
 2026-11-19,00:00,GULFOILLUB,chemicals,midcap,1.8418,0.4313
 2026-11-19,00:00,HALEOSLABS,healthcare,smallcap,-0.6225,0.3683
@@ -7663,6 +7673,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-19,00:00,KARURVYSYA,bank,largecap,0.6421,1.4588
 2026-11-19,00:00,KDDL,consumer discretionary,midcap,12.406,4.522
 2026-11-19,00:00,KILITCH,healthcare,smallcap,10.1529,0.4959
+2026-11-19,00:00,KOPRAN,healthcare,smallcap,-7.6175,0.2193
 2026-11-19,00:00,KOTAKBANK,bank,largecap,2.9577,0.7737
 2026-11-19,00:00,KPRMILL,readymade garments/apparels,largecap,2.6761,0.9009
 2026-11-19,00:00,LALPATHLAB,healthcare,largecap,-1.4952,0.5084
@@ -7724,9 +7735,12 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-19,00:00,TCPLPACK,industrials,smallcap,0.9707,0.7172
 2026-11-19,00:00,TECHM,i.t,largecap,-2.3243,0.7363
 2026-11-19,00:00,TFCILTD,financials,midcap,3.7999,0.6747
+2026-11-19,00:00,TI,fmcg,midcap,6.1156,2.8123
+2026-11-19,00:00,TIMETECHNO,plastic products,midcap,1.1598,1.7025
 2026-11-19,00:00,TIPSMUSIC,media,midcap,-0.4287,0.6705
 2026-11-19,00:00,TVSHLTD,financials,largecap,6.3162,1.6311
 2026-11-19,00:00,TVSMOTOR,auto,largecap,2.3671,1.7445
+2026-11-19,00:00,TVSSRICHAK,auto,smallcap,6.2989,0.8818
 2026-11-19,00:00,ULTRACEMCO,building materials,largecap,3.8017,0.7067
 2026-11-19,00:00,UMIYA-MRO,telecom,smallcap,-2.6847,0.2584
 2026-11-19,00:00,UNIONBANK,bank,largecap,3.4483,0.7935
@@ -7763,6 +7777,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-20,00:00,BHARTIARTL,telecom-service,largecap,2.6448,0.678
 2026-11-20,00:00,BHEL,industrials,largecap,-0.6074,0.4693
 2026-11-20,00:00,BLISSGVS,healthcare,midcap,-4.8358,0.1489
+2026-11-20,00:00,BLUESTARCO,consumer discretionary,largecap,12.8402,2.2386
 2026-11-20,00:00,BPCL,energy,largecap,4.0066,0.5032
 2026-11-20,00:00,CANBK,bank,largecap,6.1187,1.8748
 2026-11-20,00:00,CANFINHOME,financials,midcap,-1.3437,0.4206
@@ -7777,6 +7792,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-20,00:00,CUBEXTUB,metals & mining,smallcap,6.1807,0.2101
 2026-11-20,00:00,CUPID,fmcg,largecap,-3.216,0.2077
 2026-11-20,00:00,DCBBANK,bank,midcap,0.2232,0.8018
+2026-11-20,00:00,DEEPAKFERT,chemicals,midcap,13.9008,0.6552
 2026-11-20,00:00,DHANBANK,bank,smallcap,-1.7893,2.3237
 2026-11-20,00:00,DIVISLAB,healthcare,largecap,-2.2854,0.9478
 2026-11-20,00:00,DLF,realty,largecap,3.4596,1.2071
@@ -7790,6 +7806,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-20,00:00,GAIL,energy,largecap,1.8298,0.5451
 2026-11-20,00:00,GLENMARK,healthcare,largecap,0.303,0.8069
 2026-11-20,00:00,GMRAIRPORT,miscellaneous,largecap,6.0606,0.6632
+2026-11-20,00:00,GRASIM,textiles,largecap,2.2973,1.5825
 2026-11-20,00:00,GREAVESCOT,industrials,midcap,18.737,8.6309
 2026-11-20,00:00,GULFOILLUB,chemicals,midcap,1.771,3.8656
 2026-11-20,00:00,HALEOSLABS,healthcare,smallcap,1.2827,0.1422
@@ -7811,6 +7828,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-20,00:00,KARURVYSYA,bank,largecap,-1.1925,0.965
 2026-11-20,00:00,KDDL,consumer discretionary,midcap,10.9865,2.314
 2026-11-20,00:00,KILITCH,healthcare,smallcap,4.0444,0.5673
+2026-11-20,00:00,KOPRAN,healthcare,smallcap,-8.9632,0.3069
 2026-11-20,00:00,KOTAKBANK,bank,largecap,5.5777,1.0813
 2026-11-20,00:00,KPRMILL,readymade garments/apparels,largecap,2.8401,1.4783
 2026-11-20,00:00,LALPATHLAB,healthcare,largecap,0.6523,0.6845
@@ -7847,6 +7865,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-20,00:00,POONAWALLA,financials,largecap,6.9307,3.5586
 2026-11-20,00:00,PRECOT,textiles,smallcap,1.9171,0.5327
 2026-11-20,00:00,PRESTIGE,realty,largecap,1.8182,2.2842
+2026-11-20,00:00,PRIMESECU,financials,smallcap,-0.328,2.7601
 2026-11-20,00:00,PRIVISCL,chemicals,midcap,5.5319,0.5617
 2026-11-20,00:00,PVRINOX,media,midcap,0.6702,1.5084
 2026-11-20,00:00,RADICO,fmcg,largecap,1.3029,0.4963
@@ -7866,9 +7885,12 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-20,00:00,TATACONSUM,fmcg,largecap,7.127,1.3567
 2026-11-20,00:00,TECHM,i.t,largecap,-1.0091,1.306
 2026-11-20,00:00,TFCILTD,financials,midcap,4.8185,0.4422
+2026-11-20,00:00,TI,fmcg,midcap,4.7072,0.7823
+2026-11-20,00:00,TIMETECHNO,plastic products,midcap,1.2547,1.4137
 2026-11-20,00:00,TIPSMUSIC,media,midcap,-1.0288,0.4452
 2026-11-20,00:00,TVSHLTD,financials,largecap,5.8533,1.58
 2026-11-20,00:00,TVSMOTOR,auto,largecap,2.1135,1.2113
+2026-11-20,00:00,TVSSRICHAK,auto,smallcap,6.9885,0.2998
 2026-11-20,00:00,ULTRACEMCO,building materials,largecap,6.9339,1.7013
 2026-11-20,00:00,UMIYA-MRO,telecom,smallcap,-3.9276,0.755
 2026-11-20,00:00,UNIONBANK,bank,largecap,7.8079,1.56
@@ -7884,6 +7906,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-23,00:00,ABCAPITAL,financials,largecap,-1.7021,0.5186
 2026-11-23,00:00,ADANIPORTS,transportation,largecap,0.1043,0.7799
 2026-11-23,00:00,ADANIPOWER,power & utilities,largecap,-1.9108,1.282
+2026-11-23,00:00,APLLTD,healthcare,largecap,-2.32,1.6226
 2026-11-23,00:00,APOLLOHOSP,healthcare,largecap,0.6196,1.851
 2026-11-23,00:00,ARIES,chemicals,smallcap,0.5119,0.305
 2026-11-23,00:00,ASAHIINDIA,building materials,largecap,1.2762,0.7159
@@ -7895,30 +7918,42 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-23,00:00,BAJFINANCE,financials,largecap,-2.3619,1.1428
 2026-11-23,00:00,BANCOINDIA,auto,midcap,-1.0977,0.6474
 2026-11-23,00:00,BANKBARODA,bank,largecap,-3.9791,1.435
+2026-11-23,00:00,BEL,aerospace & defence,largecap,-1.5423,0.4767
 2026-11-23,00:00,BHARTIARTL,telecom-service,largecap,-1.5358,0.7315
 2026-11-23,00:00,BLISSGVS,healthcare,midcap,3.8561,0.158
+2026-11-23,00:00,BLUESTARCO,consumer discretionary,largecap,-0.3294,0.9792
+2026-11-23,00:00,BPCL,energy,largecap,-2.7857,0.4793
 2026-11-23,00:00,CANBK,bank,largecap,-3.7216,1.4416
 2026-11-23,00:00,CANFINHOME,financials,midcap,3.3011,3.902
+2026-11-23,00:00,CEATLTD,auto,midcap,-1.4282,0.3498
 2026-11-23,00:00,CEMPRO,realty,largecap,1.6173,0.726
+2026-11-23,00:00,CHOLAFIN,financials,largecap,-2.3258,1.1503
+2026-11-23,00:00,CIPLA,healthcare,largecap,-1.0671,0.5254
 2026-11-23,00:00,COFORGE,i.t,largecap,2.6645,1.4574
 2026-11-23,00:00,CONSOFINVT,financials,smallcap,0.3433,0.1616
 2026-11-23,00:00,CUB,bank,largecap,-1.3103,2.1432
 2026-11-23,00:00,CUBEXTUB,metals & mining,smallcap,-1.9991,0.0228
 2026-11-23,00:00,CUPID,fmcg,largecap,-0.9572,0.2569
 2026-11-23,00:00,DCBBANK,bank,midcap,1.8841,0.9554
+2026-11-23,00:00,DEEPAKFERT,chemicals,midcap,-1.4403,0.2821
 2026-11-23,00:00,DIVISLAB,healthcare,largecap,0.2012,2.8773
 2026-11-23,00:00,DLF,realty,largecap,1.1592,0.8251
+2026-11-23,00:00,DRREDDY,healthcare,largecap,-0.7265,0.255
 2026-11-23,00:00,DYNAMATECH,aerospace & defence,midcap,-1.7152,0.2609
 2026-11-23,00:00,EICHERMOT,auto,largecap,0.7334,1.4293
 2026-11-23,00:00,FIEMIND,auto,midcap,-2.4752,0.6405
 2026-11-23,00:00,FILATEX,textiles,smallcap,-2.5444,0.4963
+2026-11-23,00:00,GAIL,energy,largecap,-3.0506,0.3871
 2026-11-23,00:00,GLENMARK,healthcare,largecap,0.3399,0.7753
 2026-11-23,00:00,GMRAIRPORT,miscellaneous,largecap,-2.5524,0.3726
+2026-11-23,00:00,GRASIM,textiles,largecap,-0.9183,0.6376
 2026-11-23,00:00,GREAVESCOT,industrials,midcap,0.3056,1.5978
 2026-11-23,00:00,GULFOILLUB,chemicals,midcap,0.8614,0.6565
+2026-11-23,00:00,HALEOSLABS,healthcare,smallcap,-3.7559,0.67
 2026-11-23,00:00,HDFCBANK,bank,largecap,-3.3333,1.638
 2026-11-23,00:00,HEROMOTOCO,auto,largecap,-0.0181,1.1586
 2026-11-23,00:00,HINDOILEXP,energy,smallcap,3.3253,1.4702
+2026-11-23,00:00,HINDPETRO,energy,largecap,-2.8636,0.5594
 2026-11-23,00:00,HITECHCORP,industrials,smallcap,0.1569,0.0612
 2026-11-23,00:00,ICICIBANK,bank,largecap,-3.3232,1.5823
 2026-11-23,00:00,ICICIGI,financials,largecap,0.3802,1.1643
@@ -7927,13 +7962,16 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-23,00:00,INDHOTEL,services,largecap,-0.6579,1.2175
 2026-11-23,00:00,INDIANB,bank,largecap,-1.7895,0.9745
 2026-11-23,00:00,INDIGO,transportation,largecap,-1.1561,0.3519
+2026-11-23,00:00,IOC,energy,largecap,-3.6545,0.9642
 2026-11-23,00:00,JINDALSTEL,metals & mining,largecap,-0.053,1.2675
 2026-11-23,00:00,KARURVYSYA,bank,largecap,1.8833,1.3519
 2026-11-23,00:00,KDDL,consumer discretionary,midcap,-0.3614,1.9063
+2026-11-23,00:00,KOPRAN,healthcare,smallcap,0.8322,0.3519
 2026-11-23,00:00,KOTAKBANK,bank,largecap,-2.5107,1.1736
 2026-11-23,00:00,KPRMILL,readymade garments/apparels,largecap,1.3095,1.1916
 2026-11-23,00:00,LALPATHLAB,healthcare,largecap,1.7198,1.4764
 2026-11-23,00:00,LAURUSLABS,healthcare,largecap,3.3165,0.9025
+2026-11-23,00:00,LT,realty,largecap,-2.5944,0.5561
 2026-11-23,00:00,LUMAXTECH,auto,midcap,-0.1717,0.2706
 2026-11-23,00:00,M&M,auto,largecap,-1.6248,1.0107
 2026-11-23,00:00,MAHABANK,bank,largecap,-1.9005,1.6191
@@ -7961,6 +7999,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-23,00:00,POONAWALLA,financials,largecap,-0.1929,0.9665
 2026-11-23,00:00,PRECOT,textiles,smallcap,-0.3401,0.3417
 2026-11-23,00:00,PRESTIGE,realty,largecap,0.4167,2.5764
+2026-11-23,00:00,PRIMESECU,financials,smallcap,-1.3162,0.167
 2026-11-23,00:00,PRIVISCL,chemicals,midcap,1.4472,1.7789
 2026-11-23,00:00,PVRINOX,media,midcap,2.875,2.372
 2026-11-23,00:00,RADICO,fmcg,largecap,-0.6109,0.9258
@@ -7974,13 +8013,17 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-23,00:00,SHREECEM,building materials,largecap,-1.2758,0.3787
 2026-11-23,00:00,SIGMAADV,aerospace & defence,midcap,2.1254,0.4945
 2026-11-23,00:00,STEL,financials,smallcap,4.0003,1.9799
+2026-11-23,00:00,SUNPHARMA,healthcare,largecap,-1.321,0.6166
 2026-11-23,00:00,SWANDEF,transportation,midcap,0.1398,0.3639
 2026-11-23,00:00,TATACONSUM,fmcg,largecap,-1.9811,0.6335
 2026-11-23,00:00,TECHM,i.t,largecap,1.7925,1.2799
 2026-11-23,00:00,TFCILTD,financials,midcap,0.966,0.3146
+2026-11-23,00:00,TI,fmcg,midcap,1.5016,0.9374
+2026-11-23,00:00,TIMETECHNO,plastic products,midcap,-0.3488,0.687
 2026-11-23,00:00,TIPSMUSIC,media,midcap,-0.3527,0.3976
 2026-11-23,00:00,TVSHLTD,financials,largecap,-0.9191,0.4984
 2026-11-23,00:00,TVSMOTOR,auto,largecap,-1.3464,0.7323
+2026-11-23,00:00,TVSSRICHAK,auto,smallcap,-2.4964,0.4039
 2026-11-23,00:00,ULTRACEMCO,building materials,largecap,-2.2336,0.78
 2026-11-23,00:00,UMIYA-MRO,telecom,smallcap,2.6806,1.1038
 2026-11-23,00:00,UNIONBANK,bank,largecap,-4.8664,1.3142
@@ -7992,3 +8035,114 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-23,00:00,WELSPUNLIV,textiles,largecap,0.7367,2.5896
 2026-11-23,00:00,WINDMACHIN,industrials,smallcap,10.4296,26.3239
 2026-11-23,00:00,WOCKPHARMA,healthcare,largecap,-1.4695,0.4071
+2026-11-23,00:00,ZYDUSLIFE,healthcare,largecap,-0.0417,0.5748
+2026-11-25,00:00,ABCAPITAL,financials,largecap,-0.2364,0.5434
+2026-11-25,00:00,ADANIPORTS,transportation,largecap,0.4851,1.7044
+2026-11-25,00:00,APLLTD,healthcare,largecap,-1.0087,1.8226
+2026-11-25,00:00,APOLLOHOSP,healthcare,largecap,1.087,1.446
+2026-11-25,00:00,ARIES,chemicals,smallcap,-1.3842,0.1658
+2026-11-25,00:00,ASAHIINDIA,building materials,largecap,2.7243,0.8846
+2026-11-25,00:00,AUROPHARMA,healthcare,largecap,2.4458,1.2357
+2026-11-25,00:00,AXISBANK,bank,largecap,-1.9295,1.4602
+2026-11-25,00:00,BAFNAPH,healthcare,smallcap,7.937,3.5009
+2026-11-25,00:00,BAJAJFINSV,financials,largecap,1.7442,4.3939
+2026-11-25,00:00,BAJAJHLDNG,financials,largecap,-2.0824,0.751
+2026-11-25,00:00,BAJFINANCE,financials,largecap,0.8333,1.2153
+2026-11-25,00:00,BANCOINDIA,auto,midcap,-2.1671,0.6352
+2026-11-25,00:00,BANKBARODA,bank,largecap,-3.6829,1.0555
+2026-11-25,00:00,BEL,aerospace & defence,largecap,0.5721,0.794
+2026-11-25,00:00,BLUESTARCO,consumer discretionary,largecap,1.703,1.6687
+2026-11-25,00:00,BPCL,energy,largecap,-1.3212,0.4598
+2026-11-25,00:00,CANBK,bank,largecap,-3.9303,0.8051
+2026-11-25,00:00,CEATLTD,auto,midcap,1.0274,3.0254
+2026-11-25,00:00,CEMPRO,realty,largecap,-0.0848,0.3698
+2026-11-25,00:00,CHOLAFIN,financials,largecap,-0.3521,1.1625
+2026-11-25,00:00,CIPLA,healthcare,largecap,1.2862,1.8712
+2026-11-25,00:00,CONSOFINVT,financials,smallcap,-0.1248,0.1141
+2026-11-25,00:00,CUB,bank,largecap,-0.7235,1.436
+2026-11-25,00:00,CUPID,fmcg,largecap,0.1914,0.2271
+2026-11-25,00:00,DCBBANK,bank,midcap,3.4728,1.1018
+2026-11-25,00:00,DEEPAKFERT,chemicals,midcap,-3.3816,0.5713
+2026-11-25,00:00,DIVISLAB,healthcare,largecap,4.7941,1.7952
+2026-11-25,00:00,DLF,realty,largecap,1.2739,0.8971
+2026-11-25,00:00,DRREDDY,healthcare,largecap,0.5611,1.2453
+2026-11-25,00:00,DYNAMATECH,aerospace & defence,midcap,-2.3362,0.5291
+2026-11-25,00:00,EICHERMOT,auto,largecap,2.7487,1.6743
+2026-11-25,00:00,FIEMIND,auto,midcap,-2.9197,0.6744
+2026-11-25,00:00,FILATEX,textiles,smallcap,0.9474,1.1872
+2026-11-25,00:00,GAIL,energy,largecap,-2.0581,0.9988
+2026-11-25,00:00,GLENMARK,healthcare,largecap,2.6813,1.3095
+2026-11-25,00:00,GMRAIRPORT,miscellaneous,largecap,-2.2381,0.789
+2026-11-25,00:00,GRASIM,textiles,largecap,1.8784,0.799
+2026-11-25,00:00,GREAVESCOT,industrials,midcap,15.3293,19.326
+2026-11-25,00:00,GULFOILLUB,chemicals,midcap,0.087,1.9499
+2026-11-25,00:00,HALEOSLABS,healthcare,smallcap,-1.6451,0.2792
+2026-11-25,00:00,HDFCBANK,bank,largecap,0.0236,1.4142
+2026-11-25,00:00,HEROMOTOCO,auto,largecap,3.8927,1.762
+2026-11-25,00:00,HINDOILEXP,energy,smallcap,1.688,0.5892
+2026-11-25,00:00,HINDPETRO,energy,largecap,-1.3498,0.6817
+2026-11-25,00:00,HITECHCORP,industrials,smallcap,0.3621,0.082
+2026-11-25,00:00,ICICIBANK,bank,largecap,0,1.3468
+2026-11-25,00:00,ICICIGI,financials,largecap,0.0346,1.0685
+2026-11-25,00:00,ICIL,textiles,midcap,0.0776,0.467
+2026-11-25,00:00,IDFCFIRSTB,bank,largecap,0.2407,1.3593
+2026-11-25,00:00,INDHOTEL,services,largecap,-0.8936,1.4256
+2026-11-25,00:00,INDIGO,transportation,largecap,2.3695,1.1823
+2026-11-25,00:00,IOC,energy,largecap,-1.8007,0.6769
+2026-11-25,00:00,KDDL,consumer discretionary,midcap,-1.9369,1.6706
+2026-11-25,00:00,KOPRAN,healthcare,smallcap,10.0167,19.8307
+2026-11-25,00:00,KOTAKBANK,bank,largecap,-1.3183,0.9019
+2026-11-25,00:00,LALPATHLAB,healthcare,largecap,1.1117,0.744
+2026-11-25,00:00,LAURUSLABS,healthcare,largecap,7.2082,1.3938
+2026-11-25,00:00,LT,realty,largecap,-1.2616,0.5802
+2026-11-25,00:00,LUMAXTECH,auto,midcap,2.4074,0.456
+2026-11-25,00:00,M&M,auto,largecap,-1.0014,1.1107
+2026-11-25,00:00,MAHABANK,bank,largecap,-0.7441,1.026
+2026-11-25,00:00,MARICO,fmcg,largecap,1.9847,1.2135
+2026-11-25,00:00,MARUTI,auto,largecap,1.3489,1.5666
+2026-11-25,00:00,MOTHERSON,auto,largecap,-0.1621,1.4497
+2026-11-25,00:00,MOTILALOFS,financials,largecap,2.0279,0.9707
+2026-11-25,00:00,MRF,auto,largecap,-1.6388,0.5715
+2026-11-25,00:00,NAVINFLUOR,chemicals,largecap,-1.2008,1.0366
+2026-11-25,00:00,NH,healthcare,largecap,3.0869,1.5912
+2026-11-25,00:00,NITINSPIN,textiles,smallcap,-2.2847,0.3179
+2026-11-25,00:00,OBEROIRLTY,realty,largecap,1.3836,0.9337
+2026-11-25,00:00,ORIENTHOT,services,smallcap,-0.2445,0.6054
+2026-11-25,00:00,PARAGMILK,fmcg,smallcap,0.4333,0.8632
+2026-11-25,00:00,PERSISTENT,i.t,largecap,-0.0653,0.7196
+2026-11-25,00:00,PETRONET,energy,largecap,-0.6532,0.6216
+2026-11-25,00:00,PGHL,healthcare,midcap,2.2095,1.2296
+2026-11-25,00:00,PGIL,readymade garments/apparels,midcap,0.4876,0.8617
+2026-11-25,00:00,PHOENIXLTD,realty,largecap,0.0087,1.3321
+2026-11-25,00:00,PIDILITIND,chemicals,largecap,-0.1914,1.1347
+2026-11-25,00:00,POONAWALLA,financials,largecap,-0.9549,1.0722
+2026-11-25,00:00,PRECOT,textiles,smallcap,-3.7343,0.5987
+2026-11-25,00:00,PRESTIGE,realty,largecap,0.3036,1.3848
+2026-11-25,00:00,PRIMESECU,financials,smallcap,0.2797,0.5106
+2026-11-25,00:00,PRIVISCL,chemicals,midcap,2.4148,1.0702
+2026-11-25,00:00,PVRINOX,media,midcap,3.456,1.3243
+2026-11-25,00:00,RADICO,fmcg,largecap,0.7288,0.9205
+2026-11-25,00:00,RAYMOND,transportation,midcap,-0.7341,0.3123
+2026-11-25,00:00,RELIANCE,energy,largecap,-0.2613,1.2635
+2026-11-25,00:00,SANGAMIND,textiles,smallcap,2.5751,1.7435
+2026-11-25,00:00,SBILIFE,financials,largecap,-0.1423,1.6176
+2026-11-25,00:00,SBIN,bank,largecap,-2.3131,0.9001
+2026-11-25,00:00,SHREECEM,building materials,largecap,-0.9028,0.5663
+2026-11-25,00:00,STEL,financials,smallcap,3.7894,0.3788
+2026-11-25,00:00,SUNPHARMA,healthcare,largecap,0.8542,0.9288
+2026-11-25,00:00,SWANDEF,transportation,midcap,-0.0699,0.2929
+2026-11-25,00:00,TATACONSUM,fmcg,largecap,2.5867,2.1552
+2026-11-25,00:00,TECHM,i.t,largecap,3.1497,0.6122
+2026-11-25,00:00,TFCILTD,financials,midcap,1.0532,1.042
+2026-11-25,00:00,TI,fmcg,midcap,2.865,2.6591
+2026-11-25,00:00,TIMETECHNO,plastic products,midcap,2.1034,1.9324
+2026-11-25,00:00,TVSHLTD,financials,largecap,-0.1334,1.2468
+2026-11-25,00:00,TVSMOTOR,auto,largecap,0.4357,0.5879
+2026-11-25,00:00,TVSSRICHAK,auto,smallcap,-2.3196,0.4023
+2026-11-25,00:00,ULTRACEMCO,building materials,largecap,-1.0743,0.9498
+2026-11-25,00:00,UNIONBANK,bank,largecap,-2.4446,0.9514
+2026-11-25,00:00,UNITDSPR,fmcg,largecap,3.2665,1.2572
+2026-11-25,00:00,UNOMINDA,auto,largecap,-0.3623,0.8885
+2026-11-25,00:00,WELINV,financials,smallcap,-0.8758,0.1782
+2026-11-25,00:00,WELSPUNLIV,textiles,largecap,2.8983,1.327
+2026-11-25,00:00,ZYDUSLIFE,healthcare,largecap,3,1.0451

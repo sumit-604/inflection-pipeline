@@ -1,0 +1,26 @@
+stage: B12a
+company: "SOUTHWEST"
+run_date: "2026-11-09"
+model: claude-haiku-5-5
+shadow_run: true
+shadow_note: "Verifier A shadow run (operator ruling 2026-10-11). Findings bind nothing."
+status: complete
+numbers_checked: 174
+mandatory_checked: 109
+mandatory_total: 109
+findings:
+  - {severity: "MAJOR", location: "outputs/reports/01-gate0.md Block E E1; B01 data_notes", claimed: "E1 promoter holding 68.85% at 31 Mar 2026 on pre-warrant base 2,98,30,011; Jun-Sep 2026 disposals stated as not netted and outside inputs", source_truth: "Reg 29(2) filings in inputs/announcements: 20260625-9BA85695 p.2-3; 20260710-36543982; 20260813-9C8BA238 p.2-3; 6219323E_43E3 p.2-3 show 2,01,44,762 shares = 61.70% of 3,26,51,422 after sales; same 31 Mar holding on current base 62.90% (derived)", note: "68.85% correct as of 31 Mar 2026 on its base. The outside-inputs statement is contradicted by the corpus. E1 score rests on stale holding and pre-conversion base. Score effect is for Verifier C.", source_fidelity: true, tier: "mandatory"}
+  - {severity: "MAJOR", location: "outputs/reports/01-gate0.md Block E E3; B01 analyst_note", claimed: "E3 pledge NOT FOUND (no pledge or encumbrance disclosure in AR FY26), scored 0", source_truth: "Reg 29(2) encumbrance line nil (dash) before and after: 20260625-9BA85695 p.2 and p.3; 6219323E_43E3 p.2 and p.3", note: "Absence claim contradicted by nil readings in corpus filings. Stage 8 reports nil in four forms; the 10 Jul and 12 Aug forms were not re-read by Verifier A.", source_fidelity: true, tier: "mandatory"}
+  - {severity: "MAJOR", location: "outputs/reports/01-gate0.md load-bearing fact 1; data_notes", claimed: "Guidance of about 20% growth NOT FOUND in stage inputs (concall text not an input)", source_truth: "Annual_Report_2026.txt line 256 (CMD message, stage 9 anchors AR p.6): around 20 % growth year on year in short to medium term; Concall_May_2026_Transcript.txt line 194", note: "Guidance exists in an input the report cites. Label wrong.", source_fidelity: true, tier: "mandatory"}
+  - {severity: "MAJOR", location: "outputs/reports/09-tam.md Cross-check on delivery", claimed: "FY23 to FY26 revenue CAGR 27.3% = (243.02 / 117.73)^(1/3) - 1", source_truth: "screener-Data_Sheet.csv Sales: FY22 117.73, FY23 124.26, FY26 243.02. FY23 to FY26 CAGR = 25.1%", note: "Base-year MISMATCH: uses FY22 value under an FY23 label. Delivery cross-check moves 27.3% to 25.1%.", source_fidelity: true, tier: "sample"}
+  - {severity: "MINOR", location: "outputs/reports/01-gate0.md Block F M11", claimed: "prior 3-yr revenue CAGR 13.2% (FY20-23)", source_truth: "Screener Sales FY20 85.8, FY23 124.26 gives 13.1%", note: "Imprecision of 0.06 pp. No threshold affected.", source_fidelity: false, tier: "mandatory"}
+  - {severity: "MINOR", location: "outputs/reports/01-gate0.md load-bearing fact 1; data_notes", claimed: "14.38% in company memory not reproduced on either basis", source_truth: "14.38% printed in inputs/presentation/Investor_Presentation_1.txt [page 32] and [page 35] (EBITDA 83 Mn / revenue 577 Mn); filing basis 14.42%", note: "Presentation anchor omitted. Rounding gap only.", source_fidelity: false, tier: "mandatory"}
+  - {severity: "MINOR", location: "outputs/reports/08-promoter.md sections 3C, 6B, 6E; 03-ardeep.md line 216", claimed: "cash 88.81 lakh; CFO/PAT 0.40; FCF (3,520.26) lakh, no basis label in body", source_truth: "Standalone values (AR26 standalone CF line 6269: CFO 1,233.87; results Q2 FY27 p.5: PAT 3,080.05). Consolidated FY26: cash 129.40 lakh (AR26 p.166), CFO/PAT 0.38, FCF -35.09 Cr (B01)", note: "Unlabelled basis difference (rule 5a UNANCHORED). Label present upstream in B03 (S anchors). Not material.", source_fidelity: false, tier: "sample"}
+  - {severity: "MINOR", location: "outputs/reports/08-promoter.md sections 6A and 6E; analyst_note", claimed: "14.38% EBITDA margin cited to B00 for Q2 FY27", source_truth: "Presentation [page 35] rounded figure 14.38%; filing consolidated basis 14.42%", note: "Anchor points to intake block, not to the source that holds the value.", source_fidelity: false, tier: "sample"}
+critical_count: 0
+major_count: 4
+minor_count: 4
+false_positives_struck: 6
+material_universe: 174
+acceptance_rate: 94.3
+coverage_note: "Mandatory tier: 109 of 109 checked. Mandatory = every Gate 0 scorecard input and load-bearing figure in 01-gate0.md, counted by occurrence; derived ratios counted once. No verdict-card or Section 1B pillar input exists in Phase 1. Sample tier: 65 checked (stage 3: 15, stage 8: 33, stage 9: 17), drawn in materiality order. Stages 2, 4, 5, 6 and 7 not enumerated, so sample universe is a lower bound. Not checkable against corpus: stage 8 web-sourced MEDIA figures (Trendlyne prices, bulk-deal print, Rs 450 cr headline) and Q2 FY27 concall. Struck (6): five screener basis or rounding items under rule 5a (FY26 total assets 332.13 vs 332.12; FY26 PBT 43.54 vs 43.53; FY26 interest 8.79 vs AR 8.42 labelled screener; FY24 payables days 17.9 vs 17.85; employee cost 35.74 vs 35.71) plus one matched figure (2,430 Mn, page citation only). Acceptance: 164 clean of 174 checked (mandatory 104 of 109; sample 60 of 65)."

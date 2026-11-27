@@ -1,0 +1,52 @@
+stage: B12b
+company: "SOUTHWEST"
+run_date: "2026-11-09"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 47
+caught: 23
+partially_caught: 9
+missed:
+  - {severity: "CRITICAL", item: "Order-book execution phasing refused on all three calls, to three analysts; not in B05 2E or repeated_evasions", anchor: "Q2 FY26 Ankur Kumar, Piyush Jain [p.12]; Q4 FY26 Maitri Shah, Vikas Jain [p.6]; Q1 FY27 Raman KV, Piyush Jain [p.6]"}
+  - {severity: "MAJOR", item: "Coal production FY28-29 has no slack on management's own two-year lead from mining plan approval", anchor: "Q4 FY26 Vikas Jain [p.13]; Q1 FY27 Vikas Jain [p.7], [p.8]"}
+  - {severity: "MAJOR", item: "Order-book composition does not reconcile: CBM Rs 222 Cr equals extension plus Rs 55 Cr, CMD denies; 62% should be 69.5%; four of five segment lines show no Q1 burn", anchor: "Q1 FY27 Rahul, Vikas Jain [p.14]; Piyush Jain [p.6]; Vikas Jain [p.9]; decks filed 20260505 [page 18], 20260721 [page 17]"}
+  - {severity: "MINOR", item: "Debt-free became conditional on no further equipment purchase", anchor: "Q4 FY26 Vikas Jain [p.13]; Q1 FY27 Vikas Jain [p.18]"}
+  - {severity: "MINOR", item: "Margin 'contract to contract' against 'not project to project'", anchor: "Q2 FY26 Vikas Jain [p.17]; Q4 FY26 Vikas Jain [p.6]"}
+  - {severity: "MINOR", item: "HZL 'as soon as possible' became consistent revenue over four years", anchor: "Q4 FY26 Vikas Jain [p.6], [p.9]; Q1 FY27 Piyush Jain [p.9]"}
+  - {severity: "MINOR", item: "CBM 'revenue should increase' became 'same quarterly results'", anchor: "Q4 FY26 Vikas Jain [p.13]; Q1 FY27 Piyush Jain [p.8], [p.9]"}
+  - {severity: "MINOR", item: "'Super cycle' against 'quite cyclical'", anchor: "Q4 FY26 Vikas Jain [p.17]; Q1 FY27 Vikas Jain [p.8], [p.15]"}
+  - {severity: "MINOR", item: "Aquifer tender question answered with execution status", anchor: "Q1 FY27 Rahul, Vikas Jain [p.14]"}
+  - {severity: "MINOR", item: "Oman contract tenor, value, margin and stake drift; CMD said Yes to analyst figures", anchor: "Q4 FY26 Vikas Jain [p.5]; Q1 FY27 Vikas Jain [p.6], [p.17]"}
+  - {severity: "MINOR", item: "'Owner of the mines' before mining plan or clearances", anchor: "Q1 FY27 Vikas Jain [p.10]; Q4 FY26 Vikas Jain [p.16]"}
+  - {severity: "MINOR", item: "CMD and Joint MD differ on what FY26 capex bought", anchor: "Q4 FY26 Vikas Jain, Piyush Jain [p.12]"}
+  - {severity: "MINOR", item: "'Two or three competitors everywhere' against 'only players'; 'competitive market' against 'huge shortage'", anchor: "Q4 FY26 [p.6], [p.9]; Q1 FY27 [p.16]; Q2 FY26 [p.13]"}
+  - {severity: "MINOR", item: "Reliance block life asked, rig deployment answered", anchor: "Q4 FY26 Keshav Garg, Vikas Jain [p.13]"}
+  - {severity: "MINOR", item: "'Entry barriers quite high' against two onshore drillers raising IPO capital; analyst statement, low tier", anchor: "Q1 FY27 Vikas Jain [p.16]; DEEPINDS May 2026 Srikar Sai, Rohan Shah [p.18]"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
+credibility_grade_concur: "lower: B rests on 8-4-3, but row 14 is not a promise and rows 1 and 2 were locked in when said; recount 5-4-3 of 12, and the last two calls score 2-2-2 with both misses on growth and margin; carry as B- with a C bias until Q3 FY27"
+findings:
+  - {severity: "CRITICAL", location: "B05 2E, repeated_evasions", claimed: "Six repeated evasions tracked; order-book phasing absent", source_truth: "Phasing asked and refused on all three calls; peers answer the same question", note: "Rule 5, missed repeated evasion; forward revenue basis depends on book burn"}
+  - {severity: "MAJOR", location: "B05 1B, 1C", claimed: "About 2 years from plan approval and FY28-29 listed side by side", source_truth: "FY28-29 needs plan approval by about March 2027; plan not started in July", note: "Inference; sets within-hold or beyond-hold for coal"}
+  - {severity: "MAJOR", location: "B05 3D, FLAG-CONCENTRATION, trigger 4", claimed: "Two anchors 473/761 = 62%; ex-both Rs 288 Cr", source_truth: "Deck CBM Rs 222.2 Cr; two anchors 529.2/761.3 = 69.5%; ex-both Rs 232.1 Cr", note: "Derivation basis, not source fidelity; four of five segment lines show no Q1 burn; ask for a book roll"}
+  - {severity: "MAJOR", location: "B05 2E", claimed: "Per-rig capex never given, in trigger table only", source_truth: "Refused on two calls", note: "Partially caught; add to repeated_evasions"}
+  - {severity: "MAJOR", location: "B05 2E", claimed: "No names, one row in 3A", source_truth: "Drilling competitors asked and unnamed on three calls", note: "Partially caught; add to repeated_evasions"}
+  - {severity: "MAJOR", location: "B05 1C, 4D, YAML guidance", claimed: "FY27 about 20% as guidance; 'hope' in one row", source_truth: "Asked twice in July; not reaffirmed", note: "Partially caught; state that July did not reaffirm"}
+  - {severity: "MAJOR", location: "B05 4D", claimed: "Oman cash in 2D and trigger 7 only", source_truth: "'Consistent returns' against no dividend and a stabilisation loan", note: "Partially caught; JV share is 16.7% of H1 FY27 PAT"}
+  - {severity: "MAJOR", location: "B05 2A row 14", claimed: "Promise: balance 75% warrant money to be received", source_truth: "Q1 FY27 [p.5] 'was also received'; past tense", note: "Delivered 8 to 7, scored 15 to 14"}
+  - {severity: "MAJOR", location: "B05 2B, 4D, FLAG-MARGIN-EXPLANATION; B06 Q2, 2B", claimed: "Direct cost flat; diesel not visible; margin explanation does not match cost lines", source_truth: "Flat only year on year with materials +16.0 points netted against other operating -15.9; sequentially materials +5.4 points, employee +4.6; diesel sits in materials", note: "OVERSTATED; numbers correct, basis is the issue; employee cost rise stands"}
+  - {severity: "MINOR", location: "B05 4B Q6, 4D", claimed: "Rig delivery missed three calls running", source_truth: "Fleet count unreconciled; same-rig slip not shown", note: "OVERSTATED"}
+  - {severity: "MINOR", location: "B06 contradicted, 2A", claimed: "ASIANENE washout contradicts monsoon-proof book", source_truth: "CHP civil work in the quarter SOUTHWEST grew 128%", note: "OVERSTATED; work-type split"}
+  - {severity: "MINOR", location: "B06 Part 4, FLAG-Q2-CAUSE-UNSUPPORTED", claimed: "None of the three peers shows the decline", source_truth: "One peer has a Q2 FY27 call; DEEPINDS says it has no seasonality", note: "OVERSTATED"}
+  - {severity: "MINOR", location: "B06 Q1, Part 4", claimed: "No peer shows rate gains; most consequential contradiction", source_truth: "JINDRILL global rates USD 80-90k to above 100k; B06 grades the item low weight elsewhere", note: "OVERSTATED; supported for India only"}
+  - {severity: "MINOR", location: "B05 throughout", claimed: "p.N is the [page N] marker", source_truth: "Later anchors in each call run one page high", note: "Verifier A owns anchors"}
+  - {severity: "MINOR", location: "B05 2E-6, 2A counts sentence", claimed: "Consistent but unverified; delivered 7 then 8", source_truth: "YAML says deflected every time; counts sentence garbled", note: "Internal inconsistency"}
+  - {severity: "MINOR", location: "B05 2A rows 1, 2", claimed: "Delivered promises supporting the grade", source_truth: "Both locked in when said", note: "Low information"}
+  - {severity: "MINOR", location: "B05, B06", claimed: "n/a", source_truth: "12 missed and 5 partially caught minor items", note: "Items 26, 27, 28, 29, 30, 31, 32, 34, 35, 36, 37, 38, 39, 41, 43, 44, 45"}
+critical_count: 1
+major_count: 8
+minor_count: 8
+material_found: 22
+material_caught: 19
+acceptance_rate: 86.4
+coverage_basis: "22 material of 47 listed; 15 caught, 4 partially caught, 3 missed; material_caught counts partials as already had; strict rate 68.2% (15/22); 15 of 15 transcripts read in full"

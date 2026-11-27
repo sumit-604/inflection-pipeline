@@ -1,0 +1,64 @@
+stage: B02-notes
+company: "SOUTHWEST"
+run_date: "2026-11-09"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener, ASIANENE, DEEPINDS, JINDRILL Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+  - "HIGH (freshness): inputs/concalls/ has no Q2 FY27 transcript. The call is scheduled for 11 Nov 2026 at 16:00 IST, after this run."
+  - "shareholding/ is empty: COLLECTOR gap, not evidence. FII+DII UA qualifier and pledge trend stay open."
+  - "Screener export: Data_Sheet is populated for main and peers; Profit & Loss, Quarters, Balance Sheet and Cash Flow CSVs are ABSENT. Stages use Data_Sheet and filings."
+  - "results/ and rating/ were cured by /step1: three BSE results filings and the CRISIL rationale of 10 Jul 2026 (text capture; no PDF)."
+  - "Q3 FY26 concall transcript (Feb 2026) is not in the corpus."
+  - "annual-report/ holds FY26 and FY25; FY26 governs; FY25 is prior-year comparison only."
+  - "announcements/ cover Nov 2025 to Nov 2026; pre-Nov 2025 filings are not held."
+  - "inputs/announcements/20261107-eaf4e423-6c28-4f7f-b374-694a12c96ee9.txt: newspaper-advert pages garbled; not material."
+  - "inputs/announcements/20260929-ae2f036b-6e7c-4543-a22d-9a2188e91ab7.txt: AGM voting results; 15 of 32 pages carry text."
+  - "research/ is empty: no broker notes supplied."
+  - "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT. Standing default taken: proceed with the gaps."
+  - "Stage 2 text extraction gaps: standalone Note 41 (contingent liabilities) body and Note 46 segment table are missing from the .txt; consolidated Notes 42 and 47 used instead; verifier to open the PDF."
+flags:
+  - {type: FLAG-CASH, reason: "Gross trade receivables 11,832.46 vs 7,534.67 INR Lakhs (+57.0%) on revenue +35.6%; billed receivables 9,218.67 vs 4,576.59 (+101%); customer advances 342.23 to nil; cash and equivalents 88.81 vs 1,824.50; CFO 1,233.87 vs PAT 3,080.05 (Note 12 S p.131; Note 30 S p.136; Cash flow S p.115)."}
+  - {type: FLAG-GOING-CONCERN-SUBSIDIARY, reason: "Consolidated auditor reports material uncertainty on South West Resources (accumulated losses 314.88, net assets (264.94)); going-concern basis rests on an unquantified parent letter of support (C p.159; Note 52 C p.202)."}
+  - {type: FLAG-RPT-OPACITY, reason: "1,100.00 loan (PY 950.00) to an unnamed KMP-influenced enterprise repaid within the year; borrower, rate and tenor not disclosed (Note 48 S p.147-148)."}
+  - {type: FLAG-CONCENTRATION, reason: "Three customers = 72.27% of revenue (PY 48.00%), names not disclosed (Note 46 S p.146)."}
+  - {type: FLAG-DISCLOSURE-CONFLICT, reason: "Management ratio commentary and fixed/floating borrowing split contradict the figures and Note 20 (Note 51 S p.154; Note 49 S p.152; Note 20 S p.134)."}
+accounting_quality: 6
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Cash conversion weak under rig capex: gross receivables +57.0% vs revenue +35.6%, billed receivables +101%, customer advances 342.23 to nil, cash 88.81 vs 1,824.50, CFO 1,233.87 vs PAT 3,080.05 (INR Lakhs)", note_ref: "Note 12 S p.131; Note 30 S p.136; Cash flow S p.115", rating: "RED", why: "Profit not converting to cash; capex funded by working-capital lines and margin-money release"}
+  - {rank: 2, finding: "Three customers = 72.27% of revenue (PY 48.00%), names withheld; credit-risk text calls concentration low because customers are PSUs", note_ref: "Note 46 S p.146; Note 49 S p.150", rating: "RED", why: "Concentration up 24 points while receivables stretch"}
+  - {rank: 3, finding: "SWR: net assets (264.94), auditor going-concern emphasis, unquantified parent support letter, interest-free loan 410.34 (61.41% of loans), no ECL or impairment; consolidation removes only 66.53 of cost against 632.01 bought (inference)", note_ref: "Note 52 S p.154; Note 7 S p.129; Auditor C p.159; Note 48 S p.148", rating: "RED", why: "Obligation of unknown size sits on the parent; related-party purchase markup unexplained"}
+  - {rank: 4, finding: "Management commentary contradicts figures: payables 'reduction' vs +30.9%; 'stable collections' vs turnover down; ROCE 'without increase in capital employed' vs net PPE +46.9%; MD&A ratios on a different basis", note_ref: "Note 51 S p.154; MD&A p.62", rating: "RED", why: "Narrative is unreliable against the notes; bears on guidance-against-delivery test"}
+  - {rank: 5, finding: "Round-trip loan 1,100.00 (PY 950.00) to unnamed KMP-influenced enterprise, interest 15.62 (PY 3.30)", note_ref: "Note 48 S p.147-148", rating: "RED", why: "Same shape two years; borrower, rate and tenor withheld"}
+  - {rank: 6, finding: "E&E asset 1,930.58 with no policy, no impairment test, 757.73 older than three years, nil-revenue segment; PL cum ML 'underway' in note vs exploration 'completed' in Board's report", note_ref: "Note 5 S p.129; Note 1 S p.116; Note 47 C p.192", rating: "RED", why: "Jharkhand coal block load-bearing fact; 9.5% of standalone equity with no stated test"}
+  - {rank: 7, finding: "Borrowing conflict: term loans fixed 3,624.28 vs total fixed borrowings 1,132.21; implied interest 10.99% vs stated 8.00-9.75%; net debt nets margin-money FDs (gearing 38.4% on stated definition vs 33.23%)", note_ref: "Note 20 S p.134; Note 49 S p.152-153; Note 37 S p.138", rating: "YELLOW", why: "Cost of debt and leverage cannot be pinned from the notes"}
+  - {rank: 8, finding: "ECL allowance 187.95 covers only the over-one-year tail 189.34; 173.13 over three years frozen; 'all debtors good and realizable within the year' contradicted", note_ref: "Note 12 S p.131; Note 49 S p.150", rating: "YELLOW", why: "Almost no allowance against 11,643.12 of newer receivables"}
+  - {rank: 9, finding: "Contingent liabilities 2,812.69 = 13.8% of net assets; new GST demand 397.59; margin-money cover of guarantees fell 98.9% to 61.2%", note_ref: "Note 42 C p.185-186; Notes 9, 14 S", rating: "YELLOW", why: "Guarantee base grows while banks hold less cash against it"}
+  - {rank: 10, finding: "Promoter-linked capital: 288.00 for 1.56% of Alara Resources Ltd, 39.92 into Al Hadeetha, Omani JV loan 257.86 (+183%); related-party financial exposure 855.35 (4.2% of equity); JV profit non-cash, 146.90 unaudited", note_ref: "Note 48 S p.148; Note 7 S p.129-130; Note 8 S p.130; Auditor C p.161", rating: "YELLOW", why: "Thin terms; non-cash JV earnings are 4.4% of group PAT"}
+  - {rank: 11, finding: "Sub-contract and technical fees 8,109.98 (+219%) = 33.4% of revenue; coal trading ended; depreciation +150.50 on 3,900.25 plant additions (part year)", note_ref: "Note 35 S p.137; Note 47 C p.192; Note 2 S p.127", rating: "YELLOW", why: "Growth bought with outsourced execution; FY27 depreciation step-up undisclosed"}
+  - {rank: 12, finding: "Promoter remuneration +75.2% to 425.29 from CMD/JMD sales commission not taken in prior years; PY digits transposed in consolidated table", note_ref: "Note 48 S p.148-149; C p.194; Board's report p.51", rating: "YELLOW", why: "10.3% of standalone PBT; commission basis not disclosed"}
+  - {rank: 13, finding: "Warrant balance 2,797.43 received and 28,21,411 shares allotted 10 Jul 2026, after year end, with no subsequent-events note; dilution 9.46%", note_ref: "Note 19 S p.134; Board's report p.41-42", rating: "YELLOW", why: "Funding for capex arrived post balance sheet; promoter disposals Jun-Sep 2026 are outside the notes"}
+  - {rank: 14, finding: "Inventory 5,093.93 = 139% of annual consumption with no ageing or NRV note; sundry assets written off 197.79 (PY 43.86) unexplained", note_ref: "Note 11 S p.130; Note 39 S p.138", rating: "YELLOW", why: "Possible hidden write-down; write-off nature withheld"}
+  - {rank: 15, finding: "Samit JV carrying 10.70 positive vs net assets (13.51); 35.79 fall in net assets beyond the 17.71 loss unexplained", note_ref: "Note 51 C p.201; Note 7 C p.176", rating: "YELLOW", why: "Equity-method loss-cap policy not followed or an undisclosed payment for the JV"}
+red_flags:
+  - "Receivables and cash conversion deterioration under rig capex (Note 12 S p.131; Cash flow S p.115)"
+  - "Customer concentration 72.27% (PY 48.00%), names withheld (Note 46 S p.146)"
+  - "SWR going-concern emphasis with unquantified parent support letter (C p.159)"
+  - "Round-trip loan 1,100.00 to unnamed KMP-influenced enterprise (Note 48 S p.147-148)"
+  - "E&E 1,930.58 with no policy or impairment test (Note 5 S p.129)"
+  - "Management ratio commentary contradicts the figures (Note 51 S p.154)"
+questions_for_mgmt:
+  - "Who are the three customers making up 72.27% of FY26 revenue, what share does each hold, and what was overdue from each at 31 Mar 2026?"
+  - "What is the amount, term and enforceability of the financial support letter to South West Resources, and why is the 410.34 loan interest-free and untested for impairment?"
+  - "Who borrowed the 1,100.00 in FY26 (and 950.00 in FY25), at what rate and tenor, and why was it repaid within the year?"
+  - "Where does the E&E asset of 1,930.58 stand against the PL cum ML process, what impairment test applies, and who funds the remaining capex?"
+  - "Which borrowing disclosure is correct: term loans fixed (3,624.28), fixed borrowings 1,132.21, or implied interest of 10.99% on average debt?"
+receivables_trend: "deteriorating: gross 11,832.46 vs 7,534.67 INR Lakhs (+57.0%) vs revenue +35.6%; billed 9,218.67 vs 4,576.59 (+101%); not due 71.4% vs 56.3%; unbilled 22.1% vs 39.3%; overdue under 6m 496.12 vs 25.42; over 6m 270.11 (2.28%) vs 309.72 (4.11%); over 3 years 173.13 frozen; allowance 187.95 (1.59%) vs 100.78 (1.34%); derived days 177.8 vs 153.5; company turnover 2.55 vs 2.74 (Note 12 S p.131; Note 51 S p.154)"
+restatements_found: []
+going_concern_language: "Subsidiary only: 'South West Resources Private Limited ... accumulated losses amounting to INR 314.88 Lakhs ... fully eroded the net worth ... current liabilities exceeded its current assets by INR 266.40 Lakhs ... material uncertainty that may cast significant doubt ... prepared on a going concern basis as the Company has letter of financial support from Holding Company' (Consolidated auditor's report, C p.159). Parent: NONE (CARO xix, no material uncertainty)."
+analyst_note: "Scored 6, not lower, because the numbers foot (PPE, ageing, tax, gratuity, segments tie) and the parent has no going-concern doubt. The score falls on what is withheld and on commentary that contradicts the notes. Rank 3 (SWR) is the item a later stage cannot rebuild: the support letter is open-ended, the loan is interest-free, and the consolidation arithmetic suggests a pass-through markup (inference, confirmable only from SWR's own cost split). Rank 1 and rank 2 compound: receivables are stretching while three customers carry 72.27% of revenue, and margin-money cover of guarantees fell to 61.2%. The warrant money (2,797.43) arrived 10 Jul 2026, so FY27 leverage looks better than the FY26 balance sheet. Pass 2 found the 56.91 'other receivables' are all related-party balances. S Note 41 and Note 46 bodies are missing from the .txt; verifier should open the PDF. Parent auditor page for CARO xix not resolved."

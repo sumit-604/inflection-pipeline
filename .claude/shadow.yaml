@@ -2,6 +2,6 @@
 # armed  = the NEXT /run-pipeline Phase 1 runs verifier-a-shadow (claude-haiku-5-5)
 #          beside verifier-a-numerical, then sets this to spent.
 # spent  = never run the shadow. Only the operator re-arms it.
-verifier_a_shadow: armed
-spent_by_run: ""        # run folder that used the shadow, written when spent
-spent_date: ""
+verifier_a_shadow: spent
+spent_by_run: runs/southwest-2026-11-09        # run folder that used the shadow, written when spent
+spent_date: 2026-11-09

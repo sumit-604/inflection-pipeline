@@ -1,0 +1,69 @@
+stage: B09-tam
+company: "SOUTHWEST"
+run_date: "2026-11-09"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "shareholding/ is empty: FII+DII UA qualifier and promoter pledge trend open (B00)"
+  - "screener Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization sheets empty for main and three peers; Data_Sheet only (B00). Quarterly values in this stage come from Data_Sheet quarterly rows"
+  - "no Q2 FY27 transcript: call is 11 Nov 2026, after this run (B00, HIGH freshness)"
+  - "Q3 FY26 concall transcript (Feb 2026) not in corpus (B00)"
+  - "annual-report/ holds FY25 and FY26 only; announcements Nov 2025 to Nov 2026 only (B00)"
+  - "research/ empty: no broker notes (B00)"
+  - "B04 gaps carried: rig utilisation, annual metres drilled, cost per metre, top-three customer names, competitor count NOT FOUND; rig count 45/47/43 and order book 7,613 Mn vs 5,812 Mn unreconciled"
+  - "B09 gaps: no independent India exploration services market size in INR; private exploration spend, competitor count, top-3 concentration, unorganised share, NAQUIM 2.0 budget, FX rate NOT FOUND"
+flags:
+  - {type: FLAG-MGMT-TAM-INFLATED, reason: "Claim INR 15,000-18,000 Cr is 10.0x-12.0x conservative TAM 1,498 and 3.0x realistic 4,947; undated, unsourced (AR p.57)"}
+  - {type: FLAG-SAM-UPPER-BOUND, reason: "Customer and capability filters carry no cut (data NOT FOUND); floor segments equal SWPE revenue by construction so combined share 24.6% is biased; S1 share 6.6%"}
+  - {type: FLAG-STALE-INPUTS, reason: "Coal scheme INR 2,980 Cr (June 2023) STALE; NMET INR 712 Cr (Jan 2024-Jan 2025) borderline; global USD 10.31 bn (2024) borderline"}
+  - {type: FLAG-SINGLE-SOURCE-UPSIDE, reason: "Reading B rests on INR 5,925 Cr FY27-31 coal scheme from one secondary report, not verified against Cabinet release"}
+  - {type: FLAG-GUIDANCE-GT-SOM, reason: "Management 20% guidance (AR p.6) exceeds central SOM-implied 14.3%; needs +7.4 pp share on Reading A SAM or Reading B"}
+  - {type: FLAG-METHOD-DIVERGENCE, reason: "Rig bottom-up INR 461-477 Cr vs programme flows INR 1,308 Cr, 2.8x; separator is a rig census by owner, NOT FOUND"}
+  - {type: FLAG-CONCENTRATION, reason: "Three customers 72.27% of revenue (AR p.146); HZL + Reliance extension 62% of book (B07)"}
+market_definition: "India contract exploration services (coal and mineral drilling, CBM production drilling, onshore seismic, aquifer mapping, geoscience), ex Oman, ex coal block mining"
+tam_cr: {conservative: 1498, realistic: 4947}
+sam_cr: 987
+sam_pct_of_tam: 65.9           # of conservative TAM; 19.9 of realistic
+som_3yr_cr: 363                # Reading A central; Reading B 450
+som_5yr_cr: 471                # Reading A central; Reading B 584
+som_implied_revenue_cagr: {yr3: 14.3, yr5: 14.1}   # Reading A; Reading B 22.8 / 19.2
+current_sam_share_pct: 24.6    # floor-biased; S1 share 6.6
+revenue_headroom_x: 4.06
+tam_growth_pct: 10
+runway_class: "GOOD"
+mgmt_claim_cr: 15000           # low end of 15,000-18,000
+mgmt_claim_ratio: 10.0
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient on Reading A (SOM3 363 and SOM5 471 below 22% ceiling 441 and 657); Reading B SOM3 450 exceeds ceiling 441 by INR 8.6 Cr, capex plan is the tighter side there"
+methods_used: ["M2 bottom-up rig population", "M3 programme and spend aggregation with demand floor", "M3 peer scale check (not used in TAM)", "M4 import substitution (direction only)"]
+stale_data_flags:
+  - {datapoint: "Exploration of Coal and Lignite scheme INR 2,980 Cr FY22-26", source: "Cabinet approval reports", year: 2023}
+  - {datapoint: "NMET 146 projects INR 712 Cr", source: "NMET data via Tripura Star News", year: "2024-25"}
+  - {datapoint: "Global mineral exploration services USD 10.31 bn", source: "wiseguyreports/IMARC via Deck p.24", year: 2024}
+  - {datapoint: "Mission Anveshan INR 792 Cr outlay", source: "DGH Annual Report 2024-25", year: 2025}
+  - {datapoint: "NAQUIM 1.0 area completion", source: "CGWB / PIB reports", year: 2023}
+searches_performed:
+  - "India mineral exploration drilling market size crore NMET exploration expenditure 2025"
+  - "National Aquifer Mapping NAQUIM CGWB area mapped remaining crore programme"
+  - "Ministry of Coal exploration plan 2025-26 drilling meters coal exploration scheme crore target"
+  - "WebFetch CMPDI FY26 drilling targets (indianmasterminds)"
+  - "India seismic data acquisition 2D 3D market OALP ONGC Oil India Mission Anveshan 2026"
+  - "Cabinet approves continuation exploration of coal and lignite scheme 2026-27 to 2030-31 outlay"
+  - "NMET approves exploration projects worth Rs 712 crore 146 projects"
+searches_skipped:
+  - "Independent India exploration/drilling services market report (IBEF, CRISIL, ICRA, Ken, RedSeer): not found in three searches"
+  - "apbi-icma.org fetch returned unrelated page; FY27-31 coal scheme not verified against primary Cabinet or Ministry of Coal release"
+  - "CBM production drilling market size: not searched, no source"
+  - "CGWB NAQUIM 2.0 budget and remaining area: not found"
+  - "USD to INR rate: not in corpus, global USD figure not converted"
+downstream_candidates:
+  - {signal: "Reliance Industries CBM production drilling programme and well counts", entity_type: "end-customer", demand_link: "CBM is 37.19% of revenue plus INR 166 Cr extension", likely_source: "RIL Reg 30 filings, quarterly results, DGH production data", cadence: "quarterly", shared: false}
+  - {signal: "Hindustan Zinc exploration drilling and capex; Vedanta group", entity_type: "end-customer", demand_link: "INR 307 Cr order is about 40% of order book", likely_source: "HZL and Vedanta quarterly production reports, Reg 30", cadence: "quarterly", shared: false}
+  - {signal: "CMPDI outsourced drilling tenders and metres", entity_type: "end-customer", demand_link: "6.70 lakh m outsourced in FY26; coal exploration orders", likely_source: "CMPDI tender notices, Coal India annual report", cadence: "event-driven", shared: true}
+  - {signal: "Ministry of Coal exploration scheme FY27-31 outlay and release", entity_type: "regulatory", demand_link: "Funds CMPDI and non-CIL block drilling; separates Reading A and B", likely_source: "Ministry of Coal annual report, PIB, Cabinet release", cadence: "event-driven", shared: true}
+  - {signal: "NMET approvals and mineral block auctions", entity_type: "regulatory", demand_link: "Funds non-coal exploration; 500+ blocks for auction", likely_source: "Ministry of Mines, NMET governing body minutes, PIB", cadence: "event-driven", shared: false}
+  - {signal: "CGWB NAQUIM 2.0 tenders", entity_type: "counterparty", demand_link: "Aquifer mapping is 24.93% of revenue; run-off replacement", likely_source: "CGWB, Ministry of Jal Shakti tenders, Lok Sabha answers", cadence: "event-driven", shared: false}
+  - {signal: "Oil India and ONGC onshore seismic: OALP, Mission Anveshan work orders", entity_type: "counterparty", demand_link: "Seismic is 16.13% of revenue; Oil India empanelment", likely_source: "DGH, Oil India Reg 30", cadence: "event-driven", shared: false}
+  - {signal: "Copper, zinc and coal index prices", entity_type: "macro", demand_link: "Private exploration capex follows commodity prices", likely_source: "Ministry of Coal notified prices, LME", cadence: "monthly", shared: false}
+demand_externally_verifiable: true
+analyst_note: "Central case is Reading A (SAM +10% a year, +3 pp share at 3y, +5 pp at 5y) because it rests on filed and reported figures. Reading B (22.8% / 19.2%) assumes the coal exploration scheme rises from about INR 596 Cr to 1,185 Cr a year from FY27, one secondary report. Separator: FY27 Ministry of Coal scheme release plus Q3 FY27 margin and revenue. SAM is an upper bound (two filters uncut) and the 24.6% share is floor-biased; the S1 share is 6.6%. Rig bottom-up (INR 469 Cr) is circular on SWPE yield. Valuation line: 14.3% growth, TTM PAT margin 13.7%, trailing P/E about 14.7x on DS price (date unstated)."

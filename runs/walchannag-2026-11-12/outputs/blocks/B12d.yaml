@@ -1,0 +1,19 @@
+stage: B12d
+company: "WALCHANNAG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, item: "B06 Part 4 says 'Unverifiable as whole: 0' but YAML lists Q8 state-utility overruns as unverifiable while Part 1 gives Q8 PARTIALLY VERIFIED on central-PSU retention; labelling inconsistent, not an upgrade from silence"}
+  - {severity: MINOR, item: "MTAR 60-70% nuclear share line (MTAR Aug 2026 txt l.679) sits after an inaudible marker and reads as a rhetorical tag; B06 attributes it to Srinivas Reddy and flags the marker, but flag FLAG-INCUMBENT leans on it"}
+  - {severity: MINOR, item: "Q6 VERIFIED 'late delivery' rests on peer date slips (benchmark), not WIL evidence; wording could say benchmark verified"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 100

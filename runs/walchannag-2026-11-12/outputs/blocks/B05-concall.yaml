@@ -1,0 +1,89 @@
+stage: B05-concall
+company: "WALCHANNAG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "No concall transcripts (no-concall mode): sections 2E, 3C and Q&A tone have no source; defensiveness not rated."
+  - "BSE shows no call transcript or analyst-call filing Nov 2025 to Nov 2026 (B00)."
+  - "Closing order book, book-to-bill and strategic share: not stated in any press release; AR 871.77 Cr against Acuite 374.56 Cr unreconciled."
+  - "Order inflow stated only for Q2 FY27 (99.46 Cr); H2 FY26 inflow and Q1 FY27 inflow NOT FOUND, so the Q2 FY26 PR order guidance (150-200 Cr H2 FY26) is not testable."
+  - "FY27 revenue target and the Rs 600 Cr web figure: NOT FOUND in any source read."
+  - "H1 FY27 operating cash flow: OCR text layer garbled in the Q2 FY27 results, not read; check the PDF page."
+  - "Only investor presentation is May 2025; no FY26 or FY27 presentation (B00)."
+  - "Carried from B00: standalone only; shareholding exchange filing absent; screener export sheets empty; SEBI 2015 order text absent."
+flags:
+  - {type: FLAG-GUIDANCE-THIN, reason: "One numeric guidance item in five PRs (Rs 150-200 Cr order book H2 FY26); no FY27 target; DNA share and order book dropped from FY26 disclosure."}
+  - {type: FLAG-OTHER-INCOME, reason: "Other income is 34% to 68% of quarterly EBITDA; PBT excluding other income negative in Q4 FY26, Q1 FY27, Q2 FY27 (derived, Lakhs)."}
+  - {type: FLAG-PR-ACCURACY, reason: "Q3 FY26 PR labels PBT 466 as before exceptional (filing: 602 before, 466 after); quarterly PR EBITDA sums to 3,616 against FY 3,548 Lakhs."}
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26", "Q1 FY27", "Q2 FY27"]
+triggers:
+  - {priority: 1, name: "Operating leverage on revenue near 9,300 Lakhs a quarter", type: "margin", timeframe: "near", conviction: "M",
+     confirm_signal: "EBITDA excluding other income at or above 800 Lakhs a quarter (Q2 FY27 880)", kill_signal: "EBITDA excluding other income below 500 Lakhs (Q4 FY26 483)"}
+  - {priority: 2, name: "Aerospace and defence order conversion (VSSC Gaganyaan 30.53 Cr; Q2 FY27 aerospace 38.13 Cr)", type: "revenue", timeframe: "near to medium", conviction: "M",
+     confirm_signal: "Stated order book with strategic share and further PR order wins", kill_signal: "Book-to-bill under 1.0"}
+  - {priority: 3, name: "Nuclear order flow after Shanti Bill (End Shield tender)", type: "revenue", timeframe: "medium to long", conviction: "L",
+     confirm_signal: "End Shield award to WIL with a stated value", kill_signal: "Tender lost or rules not notified by mid 2027"}
+  - {priority: 4, name: "Export ramp (59.36 Cr FY26 against 9.61 Cr)", type: "revenue", timeframe: "near", conviction: "L-M",
+     confirm_signal: "Export revenue repeated in FY27 results", kill_signal: "Export falls toward FY25 level"}
+  - {priority: 5, name: "Land sale and receivable release to fund NCD instalments", type: "cash", timeframe: "near", conviction: "L",
+     confirm_signal: "Dharwad sale closes; no NCD default notice", kill_signal: "Instalment delay or default notice"}
+  - {priority: 6, name: "Foundry restart removes loss drag", type: "margin", timeframe: "near", conviction: "L",
+     confirm_signal: "Foundry revenue above FY26 1,367 Lakhs with smaller loss", kill_signal: "Segment loss continues"}
+guidance:
+  - {item: "Order book apart from rolling orders", number: "Rs 150-200 Cr", timeframe: "H2 FY26", stated_in: "Q2 FY26 PR 13 Nov 2025 p.2"}
+  - {item: "EBITDA stays positive", number: "positive, not quantified", timeframe: "after Q2 FY26", stated_in: "Q2 FY26 PR p.2"}
+  - {item: "DNA share of revenue trend continues", number: "39% FY25", timeframe: "FY26 onward", stated_in: "AR2025 MD&A lines 3438-3440"}
+  - {item: "Order book and strategic share", number: "Rs 909 Cr; 52%", timeframe: "31 Mar 2025", stated_in: "AR2025 MD&A lines 3530-3536"}
+  - {item: "Capex programme", number: "Rs 84 Cr; 45.51 Cr balance by Q3 FY26", timeframe: "Q1-Q3 FY26", stated_in: "AR2025 MD&A lines 3495-3505"}
+  - {item: "DNA opportunity and EBITDA range", number: "over Rs 100,000 Cr; 25-40%", timeframe: "none given", stated_in: "Presentation May 2025 PDF p.14"}
+  - {item: "Private nuclear orders", number: "over next 12 months", timeframe: "to about Nov 2027", stated_in: "Q2 FY27 PR 2 Nov 2026 p.3"}
+  - {item: "FY27 revenue, margin, capex, debt, dividend", number: "NOT FOUND", timeframe: "FY27", stated_in: "none"}
+promise_delivery:
+  delivered: 3
+  partial: 2
+  missed: 5
+  rows:
+    - {promised_in: "Q2 FY26 PR", promise: "EBITDA stays positive", outcome: "DELIVERED", explanation: "1,836 / 1,502 / 1,432 / 1,342 Lakhs Q3 FY26 to Q2 FY27; positive ex other income too"}
+    - {promised_in: "Q2 FY26 PR", promise: "Sales pick up in coming quarters", outcome: "DELIVERED", explanation: "Revenue from operations 5,178 to 9,353 Lakhs; H1 FY27 +82.1%"}
+    - {promised_in: "Q3 FY26 PR", promise: "Consistent profitability, structural turnaround", outcome: "DELIVERED", explanation: "PBT positive four quarters (602, 226, 118, 47 Lakhs); declining and carried by other income"}
+    - {promised_in: "AR2025 MD&A", promise: "Capex 84 Cr machines running Q1-Q3 FY26", outcome: "PARTIAL", explanation: "Gear Hobbing 1,622 Lakhs still CWIP at 31 Mar 2026; about two quarters late"}
+    - {promised_in: "AR2025 MD&A", promise: "Five senior hires incl CFO", outcome: "PARTIAL", explanation: "CFO resigned 30 Jul 2026 after 15 months"}
+    - {promised_in: "AR2025 MD&A", promise: "DNA share 39% trend continues", outcome: "MISSED", explanation: "Metric dropped; Acuite about 31%; silence"}
+    - {promised_in: "AR2025 MD&A", promise: "Grow the order book even further", outcome: "MISSED", explanation: "871.77 Cr against 908.96 Cr, -4.0%; silence"}
+    - {promised_in: "Q2 FY26 PR", promise: "Working capital improved; H1 FY26 CFO 12.15 Cr", outcome: "MISSED", explanation: "FY26 CFO (1,108) Lakhs; H2 about (2,323) Lakhs; silence"}
+    - {promised_in: "Q3 FY26 PR", promise: "Pivot not a peak; improving returns", outcome: "MISSED", explanation: "EBITDA margin on total revenue 21.9% to 13.7%; PBT falls each quarter"}
+    - {promised_in: "Q4 FY26 PR", promise: "Strengthened balance sheet trajectory", outcome: "MISSED", explanation: "Debt 19,350 to 21,891, cash 5,496 to 2,009 Lakhs"}
+    - {promised_in: "Q2 FY26 PR", promise: "Order book Rs 150-200 Cr in H2 FY26", outcome: "NOT TESTABLE (not counted)", explanation: "H2 FY26 inflow NOT FOUND"}
+excuse_pattern: "external-blame-heavy (nearest enum value; in fact silence on misses and self-credit on gains, one external blame: Foundry lockdown)"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "No concall mode default held. Trailing four quarters (Q3 FY26-Q2 FY27): revenue, EBITDA and PBT promises delivered (3), capex and hires partial (2), order book, DNA share, cash, balance sheet and margin trend missed (5), all on lines carried by other income; B not earned."
+peer_questions:
+  - {question: "What order inflow growth and book-to-bill do precision nuclear, space and defence peers report, and how do they define order book?", why: "WIL order book 871.77 Cr vs 374.56 Cr unreconciled; inflow only 1.06x revenue in Q2 FY27", check_peers: ["MTAR", "ISGEC", "Elecon"]}
+  - {question: "Are private nuclear orders being placed, and does the End Shield tender or similar scope appear in peer calls?", why: "Nuclear trigger rests on orders expected within 12 months of Nov 2026", check_peers: ["MTAR", "ISGEC"]}
+  - {question: "What EBITDA margin before other income do defence and aerospace precision peers earn?", why: "WIL ex-other-income margin 8-9% vs presentation claim of 25-40%", check_peers: ["MTAR", "Elecon", "ISGEC"]}
+  - {question: "What raw material cost trend (steel, forgings, imports) and pass-through do peers cite?", why: "No WIL PR states a raw material trend; materials 41.8% of FY26 revenue", check_peers: ["Elecon", "ISGEC", "MTAR"]}
+  - {question: "Do peers claim share gains or design wins in rocket motor casings, missile and gearbox work?", why: "WIL makes no share claim and dropped the DNA share metric", check_peers: ["MTAR", "Elecon"]}
+  - {question: "What capacity additions, utilisation and customer-funded capex do peers report in defence and nuclear?", why: "WIL capex ran late; demand cycle claim needs an outside check", check_peers: ["MTAR", "ISGEC", "Elecon"]}
+  - {question: "What receivable days and unbilled levels do peers carry?", why: "WIL receivables 204 days, 363 with unbilled", check_peers: ["ISGEC", "Elecon", "MTAR"]}
+  - {question: "How do peers describe state utility project overruns and retention?", why: "WIL TNEB provision 3,886 Lakhs left", check_peers: ["ISGEC"]}
+red_flags:
+  - "HIGH: PRs call the turnaround structural; PBT excluding other income negative in Q4 FY26, Q1 FY27, Q2 FY27 (derived)"
+  - "HIGH: operating cash flow reversed from +1,215 Lakhs (H1 FY26) to -1,108 Lakhs (FY26); no PR cites cash after Q2 FY26"
+  - "HIGH: order book and DNA share dropped from disclosure; closing order book unreconciled"
+  - "MEDIUM: no concall in 12 months"
+  - "MEDIUM: Q3 FY26 PR mislabels PBT 466; quarterly EBITDA sums to 3,616 vs FY 3,548 Lakhs"
+  - "MEDIUM: CFO exit after 15 months; interim CFO 2 Nov 2026"
+  - "MEDIUM: EBITDA margin peaked in Q3 FY26 (21.9%) and fell to 13.7% in Q2 FY27 against 'pivot not a peak'"
+  - "MEDIUM: JUD Cements CIRP, exposure not sized"
+dropped_triggers:
+  - "DNA share of revenue (39% FY25)"
+  - "Order book number guidance (150-200 Cr H2 FY26)"
+  - "Operating cash flow metric (cited Q2 FY26 only)"
+  - "Foundry status and capex progress"
+timeline_slippages:
+  - "Capex machines promised running Q1-Q3 FY26; Gear Hobbing Machine 1,622 Lakhs still CWIP at 31 Mar 2026; warrant money 82.19 Cr used by 30 Sep 2026"
+  - "Foundry restart date conflict: 17 Nov 2025 (Note 58) vs 24 Nov / December 2025 in phases (Directors' Report)"
+analyst_note: "Units Lakhs; stage 10 converts once. Grade C by rule; B was not earned because kept promises sit on P&L lines where other income carries 34-68% of quarterly EBITDA, while cash, order book, DNA share and balance sheet promises missed. EBITDA ex other income by quarter (derived): Q3 FY26 1,530; Q4 483; Q1 FY27 734; Q2 880. Q3 FY26 looks like a one-off peak [INFERENCE]. Q3 FY26 PR mislabels 466 as before exceptional (filing 602). Excuse pattern value is the nearest enum: reality is silence plus self-credit. H1 FY27 CFO not read (OCR); check PDF page. Rs 600 Cr web figure NOT FOUND; H1 FY27 revenue from operations 18,436 Lakhs."

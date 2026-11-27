@@ -1,0 +1,65 @@
+stage: B06-peers
+company: "WALCHANNAG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "None on peer files: 12 of 12 transcripts read in full (MTAR 4, ISGEC 4, ELECON 4)."
+  - "MTAR Q2 FY27 H1 order inflow is partly inaudible in the transcript (4,102 Cr marked inaudible); book-to-bill derived on that figure."
+  - "MTAR Q1 FY27 and Q2 FY27: sections of speaker lines carry inaudible markers (60 to 70% nuclear share line)."
+  - "No peer transcript names WIL; no peer discusses rocket motor casings, missile hardware, state utilities or unbilled revenue."
+  - "WIL order book 871.77 Cr vs 374.56 Cr cannot be reconciled from peer practice."
+  - "Carried from B05/B00: no WIL concall transcripts (no-concall mode); only May 2025 presentation; consolidated statements not filed (standalone only); shareholding filing absent; screener export sheets empty; H1 FY27 operating cash flow OCR text garbled."
+flags:
+  - {type: FLAG-MARGIN-GAP, reason: "Best peer EBITDA margin 24.4% (MTAR Q2 FY27) and 23.1% (ELECON Q2 FY27); WIL 8 to 9% ex-other-income; DNA presentation range 25 to 40% starts above best peer print."}
+  - {type: FLAG-INCUMBENT, reason: "MTAR already qualified for End Shield and Calandria and claims 60 to 70% share on these reactors (Q1 FY27, line has inaudible marker); WIL's End Shield tender competes with it."}
+  - {type: FLAG-INTERNAL-INCONSISTENCY, reason: "ISGEC Q2 FY27: Puri says H1 orders 4,844 Cr, Chatnani says 4,400-plus Cr. MTAR Q2 FY27 data-centre facility date stated as end Nov/Dec in one call."}
+  - {type: FLAG-PEER-TIMELINE-SLIP, reason: "MTAR Phase 3 March 2027 to June 2028; ISGEC machine-building phase 2 July 2027 to Q1 CY2028. WIL capex lateness is not an outlier."}
+peers_provided: 12
+verified:
+  - {claim: "Q1 benchmark: peers quantify order inflow, book-to-bill and order-book definition (WIL 1.06x is bottom of range)", peers: ["MTAR", "ISGEC", "ELECON"], anchor_count: 9}
+  - {claim: "Q4 input-cost rise and partial pass-through (WIL silent)", peers: ["MTAR", "ISGEC", "ELECON"], anchor_count: 8}
+  - {claim: "Q6 capacity build across peers and late delivery is normal", peers: ["MTAR", "ISGEC", "ELECON"], anchor_count: 8}
+partially_verified:
+  - {claim: "Q2 private nuclear orders and End Shield tender within 12 months", peers: ["MTAR", "ISGEC"]}
+  - {claim: "Q3 EBITDA margin range 25-40% vs WIL 8-9% ex-other-income", peers: ["MTAR", "ELECON"]}
+  - {claim: "Q5 design wins and share gains in adjacent segments (none in rocket motor casings or missile)", peers: ["MTAR", "ELECON"]}
+  - {claim: "Q7 long receivable cycles in nuclear, PSU and EPC work (WIL 204/363 days above any peer figure)", peers: ["MTAR", "ISGEC", "ELECON"]}
+  - {claim: "Q8 retention and overrun on PSU projects (no state utility peer evidence)", peers: ["ISGEC", "ELECON"]}
+contradicted: []
+unverifiable:
+  - {claim: "WIL order book 871.77 Cr vs Acuite 374.56 Cr reconciliation", peers_checked: ["MTAR", "ISGEC", "ELECON"]}
+  - {claim: "Customer-funded capex in defence and nuclear", peers_checked: ["MTAR", "ISGEC", "ELECON"]}
+  - {claim: "Unbilled revenue levels at peers", peers_checked: ["MTAR", "ISGEC", "ELECON"]}
+  - {claim: "State utility (TNEB-type) project overruns", peers_checked: ["ISGEC", "ELECON", "MTAR"]}
+peer_coverage_map:
+  - {peer: "MTAR", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "End Shield 350-400 Cr per reactor; order book definition; 2,394 Cr book; NWC 260 days"}
+  - {peer: "MTAR", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Qualified for Calandria and End Shield; ASHVINI tenders this year; 2,580 vs 2,800 Cr book miss; gross margin hit"}
+  - {peer: "MTAR", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Tenders floated via EPC vendors, 1-year award process; receivable days 140 to 82; capex slips"}
+  - {peer: "MTAR", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "24.4% EBITDA; H1 inflow 4,102 Cr; nuclear advances 30-40%; 60 Cr misclassification"}
+  - {peer: "ISGEC", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Shanti Bill answer; FGD retention; PSU retention terms"}
+  - {peer: "ISGEC", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "550 Cr cancellations; 165 Cr FGD left; input-cost rise"}
+  - {peer: "ISGEC", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Capex slippage; 4-year projects ending at 6; 130 Cr dispatch hold"}
+  - {peer: "ISGEC", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "Record 8,757 Cr book; 13.7% EBIT; fixed-price products; subsidiary-item disclosure"}
+  - {peer: "ELECON", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "40% share held not widened; metal prices stagnant (later reversed)"}
+  - {peer: "ELECON", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "No nuclear visibility; receivables 720 Cr; utilisation 56-60%; 70 Cr deferment"}
+  - {peer: "ELECON", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Blended BOM +5%; PSU dependence; MHE clearance delays; revenue cut-off"}
+  - {peer: "ELECON", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "23.1% EBITDA; intake 746 Cr; WC 89 days; competitor closures"}
+industry_cross_read:
+  demand: "Split: strong at MTAR (single-customer clean energy, nuclear 820 Cr) and ISGEC (record 8,757 Cr book), mixed at ELECON (overseas +35% intake, domestic muted); defence order flow slipping at all; no peer cites a space or missile boom."
+  pricing_inputs: "All three cite 2026 input-cost rise (steel +5-7%, BOM about +5%, commodities up to 10% swing); margins held via back-to-back buying and monthly price lists, not pricing power; WIL PRs silent."
+  capex_cycle: "Broad capacity race across all three listed peers, not a lone expander; ISGEC and ELECON fund from cash, MTAR from 75% debt against 82-day receivables; WIL is the weakest-funded entrant."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Single-customer concentration and AI-capex slowdown fear (MTAR Q2 FY27, Q1 FY27)"
+  - "Customer dispatch deferment after goods are ready: ELECON 70-77 Cr (Q4 FY26), ISGEC 130 Cr order on hold (Q1 FY27)"
+  - "Revenue cut-off: ELECON about 70 Cr finished goods not recognised (Q1 FY27)"
+  - "Order cancellations: ISGEC about 550 Cr (Q4 FY26)"
+  - "Reporting corrections: MTAR 60 Cr segment misclassification (Q2 FY27)"
+  - "Forex and subsidiary items in other income, separately disclosed: ISGEC slide 19 (Q2 FY27)"
+  - "US 50% tariff and Mexico workaround: ELECON (Q4 FY26)"
+  - "Freight and shipping disruption under the West Asia conflict: ISGEC (Q2 FY27)"
+  - "PSU budget dependence and defence RFP slippage: ELECON (Q1 FY27, Q2 FY27)"
+  - "Goodwill impairment 102 Cr: ELECON (Q4 FY26)"
+net_narrative_effect: "complicates"
+analyst_note: "Verdict counts use the 8 B05 questions as claims; none is a verbatim WIL assertion, so 'contradicted' is zero by rule, not by comfort. The largest adverse reading is the margin gap: best peer print 24.4% vs WIL 8-9% ex-other-income vs DNA range 25-40%. MTAR is both the best confirmation (nuclear pipeline real, ASHVINI floated) and the strongest rival (End Shield qualified, 60-70% share claim with inaudible marker). Derived book-to-bill and WC comparisons mix definitions; treat as direction. Cross-peer hypothesis: peers split on payment structure (advances, LC-backed short-cycle vs PSU retention); test is WIL's payment terms on next nuclear or aerospace order [INFERENCE]."

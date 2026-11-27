@@ -1,0 +1,63 @@
+stage: B08-promoter
+company: "WALCHANNAG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "SEBI AO order of 22 Dec 2015 (BCMA): sebi.gov.in page found (title, date, SAT links) but order text not readable; penalty details from media summaries only; SAT PDFs 128/130 of 2016 returned HTTP 503; Supreme Court status NOT FOUND beyond the AR sentence."
+  - "Nov 2023 warrant allottee list and promoter part of the FY24 tranche NOT FOUND (BSE filings HTTP 403). Lender of the Rs 31.59 Cr loan swapped into warrants not named in the AR."
+  - "Exchange shareholding filing and SAST Reg 31 pledge filings absent; pledge history before FY25 NOT FOUND from filed sources; screener 49.2% note is secondary."
+  - "Jurisdiction and beneficial owner of Rodin Holdings Inc and Olsson Holdings Inc NOT FOUND; MCA/RoC status of group entities NOT FOUND."
+  - "Employee reviews, proxy advisor notes, SCORES complaints, peer reputation NOT FOUND."
+flags:
+  - type: FLAG-PROMOTER
+    verdict: CAUTION
+    note: "Carried from FLAG-PROMOTER-PRELIM (B03). Verdict is CAUTION, so this is prominence only, not a CONCERN/AVOID flag."
+    top_findings:
+      - "Pledge 15.63% of paid-up capital = 49.5% of promoter holding (derived) secures a 17.5% NCD; 1,900 Lakhs due within 12 months of 31 Mar 2026; 500 each due 31 Dec 2026 and 31 Mar 2027 (AR Note 21, PDF p.109)."
+      - "Warrants were the FY24 issue, fully converted by 24 May 2025; promoter share count unchanged at 2,14,30,945 in FY25 and FY26; Rs 31.59 Cr taken as loan conversion, lender not named (AR Note 19 PDF p.98-99; CG PDF p.45)."
+      - "CFO changed twice in 20 months: Jain left 28 Feb 2025, Saigal resigned 30 Jul 2026 effective 19 Oct 2026, interim CFO from 2 Nov 2026 (Reg 30 filings; AR Note 50)."
+      - "SEBI AO order 22 Dec 2015, Rs 21.25 lakh on 9 BCMA promoter entities; SAT 28 May 2018 quashed impugned decisions on a legal point; AR says pending in Supreme Court."
+verdict: CAUTION
+scorecard: {clean: 3, caution: 6, red: 1}
+deal_breakers:
+  - "Pledge >40%: TRIGGERED on promoter-holding basis (15.63% of paid-up / 31.59% promoter holding = 49.5%, derived; screener note 49.2%, secondary). On paid-up basis 15.63%. Recorded, not enforced."
+adverse_findings:
+  - {finding: "Promoter pledge 15.63% of paid-up capital (49.5% of promoter holding) securing 17.5% NCD held by Neo Special Credit Opportunities Fund", evidence_tier: VERIFIED, source: "AR 2025-26 Note 21 PDF p.109; AR 2025", date: "2026-03-31"}
+  - {finding: "SEBI Adjudicating Officer order Rs 21.25 lakh on 9 BCMA promoter entities for 2010 acquisition of 1.53% of BCMA via bulk deal without public announcement (amount and facts from media summary); SAT 2018 quashed impugned decisions; AR says pending in Supreme Court", evidence_tier: "VERIFIED (order exists, SEBI page; AR) / MEDIA (facts)", source: "https://www.sebi.gov.in/enforcement/orders/dec-2015/adjudication-order-against-9-entities-in-the-matter-of-bombay-cycle-and-motor-agency-ltd-_31326.html ; AR PDF p.45", date: "2015-12-22"}
+  - {finding: "CFO resigned after 15 months; second CFO change in 20 months; interim CFO appointed", evidence_tier: VERIFIED, source: "Reg 30 filings 2026-07-30 and 2026-11-02; AR Note 50 PDF p.126", date: "2026-07-30"}
+  - {finding: "Related-party loans 1,981 Lakhs, of which 1,050 (two Hirachand Nemchand trusts) unplaced against Note 21; new RPT counterparty Walchand Advanced Composites (129 services, 48 advance)", evidence_tier: VERIFIED, source: "AR Note 50 PDF p.127-130", date: "2026-03-31"}
+  - {finding: "Promoter holding diluted 34.84% to 31.55% (Dec 2023 to Mar 2024); promoter share count unchanged through FY25-26 warrant conversions; promoter cash into warrants NOT FOUND", evidence_tier: "VERIFIED (AR share count) / UNVERIFIED (screener %)", source: "AR Note 19 PDF p.99; screener shareholding capture", date: "2026-03-31"}
+  - {finding: "ICDR Reg 162 non-compliance on May 2025 conversion allotment; NSE fine Rs 2,12,400 and BSE Rs 1,88,800 (Secretarial annexure prints NSE as Rs 1,94,400)", evidence_tier: VERIFIED, source: "AR CG PDF p.45; Secretarial Audit annexure", date: "2025-05-24"}
+  - {finding: "12.57% of public votes against renewal of Chairman consultancy contract (Rs 80,000 per day; no fee billed 2022-26)", evidence_tier: VERIFIED, source: "AGM voting results filing 2026-08-12 PDF p.10; AR PDF p.17-18", date: "2026-08-11"}
+  - {finding: "ASM long-term stage 1 since 22 Jun 2026 (aggregator, page not opened)", evidence_tier: UNVERIFIED, source: "trendlyne ASM page via search summary", date: "2026-06-22"}
+transition_evidence:
+  - "Rs 247.59 Cr raised through FY24 warrants, fully converted by 24 May 2025 (AR Note 19 PDF p.98-99); promoter stake not topped up."
+  - "ESOP-linked senior hires: CFO and WTD/CS ESOP cost 13 and 34 Lakhs (AR Note 50 PDF p.130); ESOP allotments 29 Nov 2025, 3 Aug 2026, 22 Oct 2026; but CFO resigned 30 Jul 2026."
+  - "Group loans of 1,981 Lakhs stay in the company; Janta Travels loan extended to 29 Mar 2028 (AR Note 21 PDF p.110)."
+pledge_pct_latest: 15.63
+pledge_trend: "stable: 15.63% of paid-up capital at 31 Mar 2025 (AR 2025) and 31 Mar 2026 (AR 2026) = 49.5% of promoter holding of 31.59%; earlier history NOT FOUND from filed sources (media: pledge agreement 19 Jul 2024, Rodin/Olsson pledges released Jul 2024, unverified)"
+searches_performed:
+  - "SEBI AO order BCMA / Walchand Kamdhenu Commercials penalty (web search)"
+  - "Walchand Kamdhenu v SEBI SAT appeal; Appeal No. 128 of 2016 (web search x2)"
+  - "Walchand Kamdhenu Supreme Court civil appeal (web search x2)"
+  - "sebi.gov.in dec-2015 BCMA adjudication order (web search x2) and SEBI order page fetch (OK)"
+  - "SAT order 28 May 2018 PDF fetch and read (OK, 20 pages)"
+  - "Promoter pledge, preferential warrants and allottees 2023 (web search x2)"
+  - "Neo NCD and promoter pledge (web search)"
+  - "Chirag Doshi background (web search)"
+  - "SEBI/ED/income tax/fraud for the company (web search)"
+  - "AmbitionBox employee reviews (web search)"
+  - "Rodin and Olsson Holdings (web search)"
+  - "2026 news, lockout, governance (web search)"
+  - "Corpus reads: AR 2026 governance, Notes 19, 21, 50; AR 2025 pledge line; Reg 30 filings 2026-07-30, 2026-08-12, 2026-11-02; shareholding capture; B00, B03"
+searches_skipped:
+  - "Business Standard PTI 2015 article fetch: HTTP 403"
+  - "Casemine order copy fetch: HTTP 403"
+  - "sat.gov.in E2018_JO2016130.PDF fetch: HTTP 503"
+  - "BSE AttachHis warrant allotment filings x3: HTTP 403"
+  - "Trendlyne SAST and ASM pages: HTTP 405"
+  - "jpmc.iiit.ac.in news page: DNS failure"
+  - "Full text of SEBI AO order, Supreme Court case record, SAST Reg 31 filings, MCA/RoC status, IiAS/SES/InGovern notes, Glassdoor/AmbitionBox for WIL: not reached"
+verdict_basis: "15.63% of paid-up capital (49.5% of promoter holding) pledged for a 17.5% NCD with 1,900 Lakhs due within 12 months, promoter share count flat through the warrant conversions, and two CFO changes in 20 months, against no evidenced integrity act (flat promoter pay, unbilled Chairman contract, group lends 1,981 Lakhs to the company)."
+analyst_note: "Correction to load-bearing fact 4: the warrant issue is the FY24 issue (2,17,18,023 at Rs 114, Rs 247.59 Cr), fully converted by 24 May 2025. Nothing is live. Promoter count is unchanged at 2,14,30,945 in FY25 and FY26. Rs 31.59 Cr was a loan swap; the lender is unnamed. [INFERENCE] If the lender is a group-influenced entity classed as public (Janta Travels, the trusts), group economic stake is understated. Check the Nov 2023 Annexure I. BCMA matter: SEBI AO order exists (22 Dec 2015). SAT on 28 May 2018 (Appeals 128 and 130 of 2016, WIL itself an appellant) quashed the impugned decisions on a legal reading; the SAT text I read does not name BCMA, so the tie rests on the SEBI page links. AR says Supreme Court pending; no case record found. Weight: low."

@@ -1,0 +1,29 @@
+stage: confidence
+company: WALCHANNAG
+run_date: '2026-11-12'
+phase: 1
+confidence_delta:
+  numerical_acceptance: 97
+  redflag_coverage: 82.4
+  framework_adherence: 91.7
+  peer_utilisation: 100
+  overall: 82.4
+  overall_set_by: 'redflag_coverage (B12b: 14 of 17 material items caught or partially caught; strict caught-only 11 of 17 = 64.7%)'
+  not_applicable: []
+denominators:
+  numerical_acceptance: B12a numbers_checked about 450; mandatory tier 26 of 26 (Gate 0 inputs only; no verdict card or Section 1B output exists in phase 1)
+  redflag_coverage: B12b material_found 17
+  framework_adherence: B12c 77 of 84 rules (Gate 0 44/48, Emerging Moat 33/36); valuation component PENDING phase 3
+  peer_utilisation: B12d 12 substantive of 12 provided
+band: 75-89 normal, note specifics
+verifier_a_identity_check: B12a has 0 CRITICAL rows; nothing to strike
+rework_triggered: false
+rework_basis: No CONFIRMED Verifier A CRITICAL; no acceptance rate below 60% on a denominator of 4 or more (OR-29)
+source_fidelity_findings_open:
+- 'B12a MAJOR 1: Gate 0 AR ROCE cross-check values (use 1.71%, -8.68%, 5.40%; scores unchanged)'
+- 'B12a MAJOR 2: ESOP outstanding is 4,98,388 (0.73%), not 3,98,388, in the 02 reports and B02 block'
+- 'B12a MAJOR 3: other income share of quarterly EBITDA is 17% to 68%, not 34% to 68% (05-concall)'
+- 'B12a MAJOR 4: DNA share 39% and FY25 inflow 248.50 Cr are on AR 2025 p.29, not p.30 (04-bizmodel, 07-emoat)'
+- 'B12a MINOR: AR p.205 is a text line, not a page (04-bizmodel)'
+verifier_b_grade_note: Verifier B would grade credibility D, not C (B05). Carried to the gate recommendation; decision is the operator's.
+verifier_a_shadow: 'not run: .claude/shadow.yaml armed on main, one-run slot claimed by runs/kusumgar-2026-11-12; switch not touched by this session'

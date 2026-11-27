@@ -1,0 +1,52 @@
+stage: B02-notes
+company: "QLL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "rating/ EMPTY: no credit rating rationale found (B00)"
+  - "concalls/ EMPTY (declared): stage 5 runs in NO-CONCALL MODE (B00)"
+  - "shareholding/ holds a screener extract only; BSE filing blocked (B00)"
+  - "research/ EMPTY: no broker notes (B00)"
+  - "AR is Indian GAAP: no Ind AS notes (ECL matrix, ROU asset, fair-value hierarchy, ESOP) exist; NOT FOUND IN DOCUMENT"
+  - "AR text extraction lost loan-to-EMI mapping in C-Note 5 (pp.117-119); PDF check recommended"
+flags:
+  - {type: FLAG-CASH, reason: "Receivables over 6 months 944.10 Lakh = 22.4% of gross 4220.12 with provision 6.08 (C-Note 15 p.127); standalone days 93.8 to 106.4, receivables +67.2% vs revenue +47.4% (S-Note 16 p.176); CFO/PBT 75.7% consolidated vs 100.8% FY25, 74.5% standalone vs 112.8% (C-CF pp.104-105; S-CF pp.160-161)"}
+accounting_quality: 5
+pass_2_empty: false
+pass_3_empty: true
+top_findings:
+  - {rank: 1, finding: "Goodwill on consolidation 7811.56 Lakh = 51.2% of equity 15242.60; ITCPL standalone cost 8498.99 vs net assets 752.02 and FY26 profit 710.83; no impairment inputs, Note 40 says no indication", note_ref: "C-Notes 11e, 33, 34, 40 (pp.125, 139-140, 143); S-Note 12 (p.175)", rating: "red", why: "Book equity rests on an untested asset; tangible equity about 7431 Lakh (derived)"}
+  - {rank: 2, finding: "Promoter share swap: 5199.73 Lakh of new shares at 310.89 (3640.15 to TIC Services) for last 50.01% of ITCPL; implied ITCPL price +57.5% in 12 months, within one point of QLL issue price rise +56.8%; no valuation report; 4507.78 goodwill on minority buy-out", note_ref: "C-Notes 3, 26, 38, 33c-d (pp.114, 131, 139, 141); S-Note 36 (p.187)", rating: "red", why: "Controlling shareholder sold to the company at a price tracking the buyer's own share price"}
+  - {rank: 3, finding: "Promoter-group credit support: guarantee cover to 6874.29 vs about 8159 bank debt (84%); corporate and personal guarantees; SKM-owned property mortgages; QLL/ITCPL cross-guarantees; debt 9363.48 vs 5029.17 (+86%)", note_ref: "C-Notes 5, 8, 26, 28 (pp.117-121, 133-134, 137)", rating: "red", why: "Credit depends on promoter balance sheets; guarantee fees 0.20 each; debt/EBITDA about 3.1x (derived)"}
+  - {rank: 4, finding: "Advances/loans with AAL entities (148.00 and 262.00 given, 148.00 taken, 151.06 outstanding, receivable 77.82 = 2.1x sales 37.30) while notes state no loans to related parties; holding line not identified", note_ref: "C-Notes 26, 12, 17, 39 (pp.126-128, 133, 141); S-Notes 18, 27, 35", rating: "red", why: "Self-contradicting related-party lending disclosure; possible insider short-term financing"}
+  - {rank: 5, finding: "Receivables over 6 months 944.10 (22.4%), over 3 years 220.46, provision 6.08 (1.7% cover on over-3-year bucket); standalone days 93.8 to 106.4", note_ref: "C-Note 15 (p.127); S-Note 16 (p.176)", rating: "yellow", why: "Aged stock far above provision; parent trend deteriorating (FLAG-CASH)"}
+  - {rank: 6, finding: "CFO/PBT 75.7% (FY25 100.8%); CFO/EBITDA 46%; capex 4636.21; FCF -3249.05; CWIP 4528.25 (+189%, 26.9% over 1 year); capitalised interest 143.14 = 7.8% of PBT", note_ref: "C-CF pp.104-105; C-Notes 11c, 32, 39(iii) (pp.124, 138, 142)", rating: "yellow", why: "Profit not converting to cash; growth debt funded"}
+  - {rank: 7, finding: "Intercompany loan interest (8.50%) waived by resolution of 20 May 2026; CARO 3(iii)(b) adverse for QLL and ITCPL, 3(xix) adverse listing for QTIPL and LabOps; 176.76 parent exposure to negative-net-asset subsidiaries unprovided", note_ref: "CARO consolidated Annex A (p.99); S-Notes 13, 27 (pp.175, 181-182)", rating: "yellow", why: "Auditor-flagged items under an unmodified opinion; going-concern clause detail not disclosed"}
+  - {rank: 8, finding: "SKM Realcon rent 21.60 to 153.60 (7.1x); KMP and relatives pay 222.81 to 430.82 (+93%); three company secretaries in 14 months", note_ref: "C-Note 26 (pp.131-134)", rating: "yellow", why: "Insider-linked costs outgrow revenue (+77.3%); no rent benchmark"}
+  - {rank: 9, finding: "Revenue +77.3% includes ITCPL full year vs from 11 Sep 2024; intra-group sales 242.13 (1.9%) not visibly eliminated; like-for-like growth not disclosed", note_ref: "C-Notes 19, 33d (pp.129, 139); S-Note 27 (p.180)", rating: "yellow", why: "Headline growth overstates organic growth"}
+  - {rank: 10, finding: "P&L pension/leave charge 28.90 vs actuarial 50.68 at parent (gap 21.78, new FY26); attrition 45% and pay rise 4% lower liability; no sensitivity", note_ref: "C-Notes 22, 27 (pp.129, 135-136); S-Notes 23, 29 (pp.177, 183-184)", rating: "yellow", why: "Unexplained expense gap, small (1.2% of PBT)"}
+  - {rank: 11, finding: "Consolidated current ratio 1.04 (1.31); standalone 0.92; cash 555.40 of which 348.28 is an undescribed debit balance in overdraft account; 310.00 loan secured on mutual funds of former ITCPL shareholder", note_ref: "C-Notes 5, 8, 16 (pp.117-121, 127); S-Note 34 (p.185)", rating: "yellow", why: "Liquidity thinner than headline; cash line unexplained"}
+  - {rank: 12, finding: "Statutory dues +224% consolidated (+447% standalone); late TDS/GST interest 7.98 vs 0.78; capital creditors 390.75 vs 83.04; vendor advances +119%", note_ref: "C-Notes 10, 17, 23 (pp.122, 128-129); S-Note 10 (p.172)", rating: "yellow", why: "Working capital stress markers, possibly timing"}
+  - {rank: 13, finding: "Opex jumps without breakdown: legal and professional 205.27 vs 71.38; rates and taxes +373%; other rent 209.25 vs nil", note_ref: "C-Note 24 (p.130); S-Note 25 (p.178)", rating: "yellow", why: "Possible deal costs in opex; split not disclosed"}
+  - {rank: 14, finding: "Text-table contradictions: leases cancellable vs 1605.91 non-cancellable; segment non-current assets 1460.52 vs PPE 7145.72; software totals do not tie; Section 192 statement vs non-cash allotment to TIC; capital turnover explanation contradicts number", note_ref: "C-Notes 11, 29, 31 (pp.124, 137-138); S-Notes 34, 39; CARO (p.154)", rating: "yellow", why: "Notes cannot always be tied across; uneven disclosure discipline"}
+  - {rank: 15, finding: "IPO proceeds 818.16 repaid promoter loan (44.7% of net 1831.18); related-party loan terms in three versions; 108.00 'after 3 years' classed short term; FY25 related-party loan 224.32 not rebuildable (gap 135.96)", note_ref: "S-Note 38 (p.188); C-Notes 5, 7, 8, 26", rating: "yellow", why: "Use of public money for promoter loan; loan-term disclosure inconsistent"}
+red_flags:
+  - "Related-party acquisition goodwill: promoter-entity seller, price tracks buyer's own share price, no valuation disclosed (C-Notes 3, 26, 38)"
+  - "Goodwill 51.2% of equity with 'no indication' impairment statement and no test inputs (C-Note 40 p.143)"
+  - "Contradictory related-party lending statements vs RPT tables (C-Note 39 p.141; S-Note 35 p.186; C-Note 26 p.133)"
+  - "Promoter and promoter-entity guarantees cover about 84% of bank debt at 0.20 Lakh fee each (C-Notes 5, 26)"
+  - "CARO adverse clauses 3(iii)(b), 3(xix) under unmodified opinion; Board report says no adverse remark (p.99; AR p.51)"
+  - "Capitalised interest 143.14 (7.8% of PBT) and aged CWIP (C-Notes 32, 39(iii))"
+questions_for_mgmt:
+  - "What independent valuation supported the 310.89 issue price and 6.56 swap ratio for ITCPL, and why was 4507.78 booked as goodwill on a buy-out after control since 11 Sep 2024?"
+  - "What CGU, growth rate and discount rate were used in the annual test of goodwill 7811.56, and what headroom against ITCPL carrying cost 8498.99?"
+  - "Where does the 151.06 advance to AAL Research and Solution sit, why do C-Note 39 and S-Note 35 say no related-party loans were given, and when will the 77.82 AAL Biosciences receivable be collected?"
+  - "What is the intercompany elimination schedule (242.13 intra-group sales) and the like-for-like organic revenue growth?"
+  - "What is the receivable ageing by entity and provisioning policy behind 6.08 against 944.10 over 6 months, the covenants, the interest waived on subsidiary loans, and cost-to-complete on CWIP 4528.25?"
+receivables_trend: "deteriorating. Consolidated gross 4220.12 Lakh: unbilled 206.67, under 6m 3069.35 (72.7%), 6m-1y 312.41, 1-2y 310.86, 2-3y 100.37, over 3y 220.46; over 6m 944.10 = 22.4% (FY25 641.53 = 22.2%), over 1y 15.0% (FY25 14.2%); provision 6.08 (C-Note 15 p.127). Standalone days 106.4 vs 93.8 (FY24 98.2), receivables +67.2% vs revenue +47.4% (S-Note 16 p.176). Consolidated 123.5 days (distorted by part-year ITCPL in FY25)."
+restatements_found:
+  - "No restatement of FY25 lines (spot-check vs Annual_Report_2025: revenue 7022.69, PAT 768.36, receivables 2885.75, goodwill 3303.78, minority interest 597.53)"
+  - "Reclassification without restating comparatives: advance income tax 226.22 and employee recoverables 18.49 moved to other non-current/current assets (C-Notes 13, 17, 18 pp.126-128)"
+going_concern_language: "NONE as a material uncertainty. Going concern basis stated (C-Note 2 p.106; S-Note 2.1 p.162); standalone CARO (xix): no material uncertainty (p.155). CARO consolidated Annexure A lists clause 3(xix) as adverse/qualified for subsidiaries QTIPL and LabOps Global (p.99), detail NOT FOUND IN DOCUMENT."
+analyst_note: "Figures are INR Lakh, Indian GAAP. Reconciled memory facts: owners' PAT 1362.22 Lakh (not 6.30 cr), EPS 12.49, NCI nil, 16.24 cr short-term borrowing is standalone (consolidated 32.85 cr). Goodwill and the swap are one story: ITCPL standalone cost 8498.99 vs net assets 752.02, and swap price tracked QLL's own price rise. Competing readings: arm's-length deal at a fair ITCPL value, or insider-priced paper. Separating observation: an independent valuation report and the goodwill test inputs. Pass 2 inference (AAL advances in subsidiary vendor advances) is unconfirmed. Intra-group revenue not eliminated is inferred from an arithmetic tie, not stated."

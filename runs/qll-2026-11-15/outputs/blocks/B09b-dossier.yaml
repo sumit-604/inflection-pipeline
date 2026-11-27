@@ -1,0 +1,79 @@
+stage: B09b-dossier
+company: "QLL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Main-company concall transcripts May 2025 and May 2026 (calls held, never published)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "H1 FY27 concall transcript (call 24 Nov 2026, not yet held)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "H1 FY27 investor presentation (not yet filed)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "BSE shareholding pattern filing Sep 2026 with pledge line"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "FY2023-24 annual report"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "BSE filings before 2025-11-16 (ITCPL share-swap approval and valuation papers, LabOps acquisition)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Credit rating rationale"
+    expected_source: "rating agency site"
+    kind: "plausibly-nonexistent"
+  - document: "Broker or research notes"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Screener P&L, Balance Sheet, Cash Flow, Quarters sheets (exported empty)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+archetypes:
+  - line: "Transport, defence, mechanical testing"
+    archetype: "Outsourcing partner (CDMO/EMS/IT services)"
+  - line: "Food and feed testing; pharma, cosmetics and life sciences testing; PPP lab operation"
+    archetype: "Outsourcing partner (CDMO/EMS/IT services)"
+transition:
+  - line: "Transport, defence, mechanical and pharma testing in spec'd accredited scope"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER (upper edge; FY26 ROCE 10.8% sits below the rung description)"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER"
+    engine: "Fill of new and acquired labs (fixed-cost absorption, CWIP Rs 6,977.28 Lakh to be capitalised) and mix toward regulated spec'd scope (NABCB 17020, USFDA-grade pharma, defence standards)"
+    proof_gate: "H2 FY27 consolidated EBITDA margin at or above 27.0% on H2 revenue at or above Rs 9,583 Lakh, growth from existing labs, standalone versus subsidiary split disclosed; companion gate FY27 CFO/PBT above 90% with over-6-month receivables below 20%"
+    recognition_gap: "Open question for Stage 11: does the TO state look already reflected in market pricing; resolved through the PE gap"
+    ugliness: "ARTIFACT-OF-CLIMB (provisional; low confidence on the cash leg, determination INDETERMINATE)"
+    transition_falsifier: "H2 FY27 consolidated EBITDA margin below 24% with growth from labs under 12 months old and PPP billing while CWIP keeps rising uncapitalised"
+  - line: "Food and feed testing, minerals and metals assay"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R2 COST-ADVANTAGED CONVERTER"
+    engine: "Capacity additions and fill at Mumbai, Chennai, Bhubaneswar food labs; PPP cluster scale"
+    proof_gate: "Group gate above; vertical revenue and margin disclosure NOT FOUND, so this line is tested through the consolidated H2 FY27 margin and CFO/PBT"
+    recognition_gap: "Open question for Stage 11, same as line one"
+    ugliness: "ARTIFACT-OF-CLIMB (provisional)"
+    transition_falsifier: "Same H2 FY27 margin and PPP receivable breakdown; food testing stays weak on price (B04) with no margin gain after fill"
+dominant_variables:
+  - "Consolidated EBITDA margin in H2 FY27, split standalone versus subsidiaries (21.6% H1 FY27; standalone 25.9%, subsidiaries 14.6% derived)"
+  - "Lab fill and commissioning: revenue per lab and CWIP capitalisation (CWIP Rs 6,977.28 Lakh; 11.5% capitalised FY26)"
+  - "Cash conversion and payer quality: CFO/PBT and over-6-month receivables (42.0% H1 FY27; 22.4%)"
+  - "Funding and leverage: borrowings, net debt/EBITDA, interest cover (Rs 11,466.88 Lakh; about 3.6x; 3.21x)"
+business_falsifier: "Standalone organic growth under 15% once the Mumbai slump-sale lab is removed; ITCPL PAT under Rs 710.83 Lakh or goodwill test inputs showing impairment of Rs 7,811.56 Lakh (roll-up with impaired core); PPP payers proving to be most incremental revenue (re-declare as government-contract operator); NABL scope suspension at a lab carrying a vertical"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 8
+  verifiability_ratio: "4 of 8 externally observable"
+  single_point_failure: "Bank credit continuity resting on promoter-side guarantees (about 84% of bank debt) while CFO/PBT is 42.0% and current ratio 0.78 (conditional kill-switch)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 18
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "ce04e6b16b8a6297d50db9e1b14922aa89723eb5"

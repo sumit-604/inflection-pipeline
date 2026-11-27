@@ -1112,3 +1112,18 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+## 2026-11-15 · QLL (Qualitek Labs) · /step1 intake + Phase 1 to Halt 1 (runs/qll-2026-11-15)
+- Screener resolves only by BSE code (544091); check_url returned 429 on first tries (nine parallel sessions). Run ticker QLL.
+- Brief said concalls available (screener Transcript chips); no transcript link exists on screener, BSE or the company site. Ran NO-CONCALL MODE. Calls are held; next 2026-11-24.
+- Collector fetched only 16 announcements; repaired with BSE 90-day windows (58 filings). BSE shareholding PDF 403; screener extract stands in. No rating found. Chrome fallback not used (no document link to fetch).
+- H1 FY27 results text layer is OCR: three Verifier A MAJOR copy errors (5,421.38 vs 5,424.38 and two 0.02-0.04 Lakh slips) came from it. Stages should open results pages as images when the text layer is OCR.
+- Stage 2 carried "share in consolidated net assets" as own net worth (Verifier A MAJOR, UNANCHORED basis); stage 3 caught it.
+- Stage 9 run 1 stalled 600s with no output; mechanical re-invoke completed (partial).
+- Stage 7 wrote its report without the closing YAML block; stage 8 reported approximate page anchors. Orchestrator errata appended.
+- Stage 09b left a scratch file in outputs/reports (no delete tool); orchestrator removed it.
+- Verifier C E08: stage 7 capex-embedded growth netted out land (72%) where the rule as written gives 98%. Verifier C asks for operator rulings on Gate 0 negative-denominator ROE/ROCE and the M11 window at exactly six years.
+- Synthesis asks for an operator ruling on verdict order when FLAG-CASH INDETERMINATE (cap at CAVEATS) meets the 60-74 confidence band (one-level downgrade): this run printed PROCEED WITH FLAGS; CMSINFO 2026-08-29 stopped at CAVEATS.
+- C2 measurement: stage 5 no-call cost 63,841 tokens (target under 100k; Kwick 254k). Closes the LESSONS.md C2 open action when the active file is next edited on a framework branch.
+- Harness note: subagents run asynchronously and expose only total tokens and wall time; the ledger split columns and the re-read multiple are n/a.
+- Verifier A shadow not run here (belongs to the TD Power session of this batch).

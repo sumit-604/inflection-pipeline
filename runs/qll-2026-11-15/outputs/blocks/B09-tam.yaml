@@ -1,0 +1,64 @@
+stage: B09-tam
+company: "QLL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "No management TAM figure in AR26, May 2026 deck or May 2025 deck; prospectus (Jan 2024) quotes Straits Research only, with a unit error (USD 26 million for what is billions)"
+  - "FY26 revenue by vertical NOT FOUND (B04); SOM share uses total revenue against a three-vertical SAM"
+  - "Regional split, NABL scope fit and customer-type filters on SAM NOT FOUND; SAM is an upper bound"
+  - "India defence, mechanical, minerals, metals, E&E and IAC market sizes NOT FOUND (only automotive TIC sized)"
+  - "Listed peer revenue aggregation (Method 3) not run; unorganised share NOT FOUND"
+flags:
+  - "FLAG-SAM-UPPER-BOUND: only one sourced filter (outsourced share 65.21%) applied; geography and capability filters NOT FOUND"
+  - "FLAG-MARKET-REPORT-SPREAD: India TIC 2025 size runs USD 7.9bn (IMARC) to 12.8bn (Mordor); a 1.6x spread"
+  - "FLAG-CAPACITY-GAP: committed capacity supports about Rs 214 Cr; SOM yr3 Rs 263 Cr needs Rs 49 Cr more; mgmt Rs 500 Cr needs Rs 286 Cr more"
+  - "FLAG-NO-MGMT-TAM: management makes no TAM claim; the Rs 500 Cr FY31 line is a revenue ambition, dependent on acquisitions (B03)"
+  - "FLAG-SHARE-IS-NOT-THE-CONSTRAINT: share of SAM is under 1%; capacity, margin and cash conversion decide the CAGR, not market size"
+market_definition: "India outsourced testing in QLL's three core verticals (transport/defence/mechanical, food and feed, pharma/cosmetics/life sciences), accredited-lab services, 2025 base, Rs Cr at USD 1 = Rs 95"
+tam_cr: {conservative: 24354, realistic: 27871}
+sam_cr: 15882
+sam_pct_of_tam: 65.2
+som_3yr_cr: 263
+som_5yr_cr: 392
+som_implied_revenue_cagr: {yr3: 28.3, yr5: 25.8}
+current_sam_share_pct: 0.78
+revenue_headroom_x: 127.6
+tam_growth_pct: 8.9
+runway_class: "STRONG"
+mgmt_claim_cr: 500
+mgmt_claim_ratio: 0.02
+mgmt_claim_read: "reasonable"
+capacity_check: "gap of Rs 49 Cr at yr3 and Rs 178 Cr at yr5 beyond committed capacity (Rs 214 Cr); SOM assumes unfunded further capex or acquisitions, so SOM is the optimistic side until capex is funded; mgmt Rs 500 Cr gap Rs 286 Cr"
+methods_used:
+  - "Top-down: India TIC (Mordor, MnM, IMARC) x testing share x outsourced share"
+  - "Bottom-up by vertical: automotive TIC + food safety testing + healthcare analytical testing"
+  - "Peer revenue aggregation: NOT RUN (skipped)"
+  - "Global benchmark: NOT RUN (no per-capita source found)"
+stale_data_flags:
+  - {datapoint: "India TIC USD 26 million (sic) 2021 to 47 million 2030, CAGR 6.9%", source: "Straits Research via Prospectus Jan 2024 p.135-136", year: 2021}
+  - {datapoint: "India pharma analytical testing outsourcing USD 285 million", source: "Market Research Future", year: 2023}
+  - {datapoint: "India food safety testing USD 1,250 million, CAGR 9.81%", source: "Market Research Future", year: 2024}
+  - {datapoint: "India automotive TIC USD 1,398.71 million", source: "DataM Intelligence (updated 28 Aug 2025)", year: 2024}
+searches_performed:
+  - "WebSearch: India TIC market size USD billion CAGR (Mordor, MnM, IMARC, Straits, MRFR returned)"
+  - "WebSearch: India TIC outsourced share, NABL labs (Mordor)"
+  - "WebSearch: India food testing and pharma testing market size"
+  - "WebFetch: Mordor India TIC page (updated 30 May 2026)"
+  - "WebFetch: DataM India automotive TIC page"
+  - "WebSearch: RBI reference rate Nov 2026 (MSEI archive, about 94.4 to 95.25)"
+searches_skipped:
+  - "Listed TIC peer revenue aggregation (Vimta, TUV India, SGS India etc.): not searched in this run"
+  - "Global per-capita TIC benchmark: not searched"
+  - "India defence, minerals and E&E testing market sizes: not searched"
+downstream_candidates:
+  - {signal: "BIS Quality Control Orders and FSSAI NABL-lab mandates", entity_type: "regulatory", demand_link: "Mandated testing creates demand for accredited labs across auto, electrical and food", likely_source: "BIS and FSSAI gazette notifications, Ministry of Commerce DGFT notices", cadence: "event-driven", shared: true}
+  - {signal: "India vehicle and EV production and registrations", entity_type: "end-customer", demand_link: "Auto, EV battery and component makers buy durability, vibration and safety tests", likely_source: "SIAM monthly production data, MoRTH VAHAN dashboard", cadence: "monthly", shared: false}
+  - {signal: "USFDA inspection outcomes and CDSCO approvals for Indian pharma", entity_type: "regulatory", demand_link: "Regulated-market pharma and cosmetics exporters need USFDA-grade testing at Bengaluru and Panchkula", likely_source: "USFDA warning letter and 483 database, CDSCO order registers", cadence: "event-driven", shared: false}
+  - {signal: "Ministry of Defence indigenisation lists and procurement orders", entity_type: "end-customer", demand_link: "Indigenous defence supply chains need qualification testing at Pune", likely_source: "MoD and PIB press releases, DRDO tender portals", cadence: "event-driven", shared: false}
+  - {signal: "Odisha and other state PPP payers: payment cadence and contract renewals", entity_type: "counterparty", demand_link: "Six PPP government labs are a fixed contract revenue base and a receivable risk", likely_source: "State finance department budget documents, Reg 30 contract disclosures", cadence: "quarterly", shared: false}
+  - {signal: "Mineral output and Paradip port cargo volumes", entity_type: "macro", demand_link: "Mining and port volumes drive per-lot minerals and metals assay demand at Bhubaneswar and Paradip", likely_source: "Ministry of Mines monthly production data, Paradip Port Authority traffic", cadence: "monthly", shared: false}
+  - {signal: "India food and pharma export volumes and export-rejection notices", entity_type: "macro", demand_link: "Exporters test pre-shipment for food and pharma, serving two revenue streams", likely_source: "Ministry of Commerce monthly trade data, APEDA, Pharmexcil, EU RASFF", cadence: "monthly", shared: true}
+  - {signal: "NABL accreditation scope grants and suspensions for QLL labs", entity_type: "regulatory", demand_link: "Each new scope or lab opens revenue; a lapse closes it across all verticals", likely_source: "NABL accredited-lab directory, company Reg 30 filings", cadence: "event-driven", shared: true}
+demand_externally_verifiable: true
+analyst_note: "No management TAM exists, so the ratio field is a share (Rs 500 Cr over conservative TAM), not an inflation test. TAM here is three verticals only, so it is below the all-vertical top-down outsourced testing figure (Rs 28,046 to 48,390 Cr). Two readings of growth: market-led (TAM 8.9%, or 6.5% on Mordor) or capacity-led (QLL 28%). QLL share is under 1% of SAM, so the market is not the limit. Separating observation: H2 FY27 revenue of at least Rs 95.83 Cr (B04) with growth from existing labs. SOM is a judgement at +0.5pp share in 3 years, half the normal-rule floor; the rule-normal reading is Rs 365 Cr (43% CAGR)."

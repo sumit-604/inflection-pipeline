@@ -1,0 +1,82 @@
+stage: B12c
+company: "QLL"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+scope: "phase 1: Gate 0 (B01) and Emerging Moat (B07) only; valuation audit (B10, B11) pending phase 3"
+gate0: {rules_checked: 41, rules_passed: 38, fails: ["G06", "G34", "G36"]}
+emoat: {rules_checked: 30, rules_passed: 25, fails: ["E02", "E08", "E11", "E23", "E29"]}
+valuation: {rules_checked: 0, fails: [], status: "pending phase 3"}
+expectation_ledger: {status: "pending phase 3", present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}  # rules 13-14; any fail = REWORK stage 11
+business_narrative: {status: "pending (stage 13 not run)", present: null, five_questions: null, prose_only: null, downstream_refs_or_sentence: null, no_valuation_vocab: null, fails: []}  # rule 9; any fail = REWORK stage 13
+recomputed_destination_pe: ""  # not applicable in phase 1 (stage 11 not run)
+recomputed_decision: ""        # concur: Gate 0 AVERAGE, moat STRONG, EM NONE, combined AVERAGE survive every FAIL recomputation
+findings:
+  - id: "G06"
+    framework: "Gate 0"
+    rule: "A3 median ROE; earliest-year fallback 'use closing and state so' (prompts/01-gate-0-pipeline.md L32-33)"
+    severity: MINOR
+    location: "outputs/reports/01-gate0.md section 3, line 57"
+    claimed: "FY21 ROE N/M on negative closing net worth; median of 5 = 20.4%; A3 = 5"
+    recomputed: "FY21 ROE on closing = 15.61 / -53.46 = -29.2%; median of 6 = 15.9%; A3 = 4; Block A 8; core 44"
+    effect: "AVERAGE unchanged; DB1 not fired at Block A 8. Fallback did not foresee negative net worth; B01 N/M is the sound economic reading; operator ruling requested on negative denominators (ROE and ROCE)."
+  - id: "G34"
+    framework: "Gate 0"
+    rule: "M9 brand tiers (L123-125) and PEER DATA NEEDED rule (L99-100)"
+    severity: MINOR
+    location: "outputs/reports/01-gate0.md section 9, M9 row line 118; M5 row line 114"
+    claimed: "M9 = 1 at a 'residual above peers' tier on a two-peer median 82.7% (KRSNAA blank); QLL 86.6%, +3.9pp"
+    recomputed: "M9 = 0: no tier fits +3.9pp with growth 81.3%, and missing KRSNAA data triggers PEER DATA NEEDED = 0, as B01 applied to M5; moat 14/60; 4 present; STRONG"
+    effect: "Moat class unchanged. Supplied-set reading for both tests gives M5 1, M9 1, moat 16. Full peer data could lift M9 to 3 (KRSNAA proxy at or below 80.7%), a fifth moat, still STRONG."
+  - id: "G36"
+    framework: "Gate 0"
+    rule: "M11 two-window test 'needs >=6 years'; fallback only 'if fewer' (L129-133)"
+    severity: MINOR
+    location: "outputs/reports/01-gate0.md section 9, M11 row line 120"
+    claimed: "two-window test not computable (no FY20 base); fewer-than-6 fallback used at 6 years; M11 = 3"
+    recomputed: "reported series: FY24-FY26 CAGR 106.6% (FY23-FY26 86.7%) > FY21-FY23 73.5%, selling and admin 20.9% to 18.2% declining on B01's own reading: M11 = 5, moat 17. Like-for-like standalone FY24-FY26 52.2% (FY26 standalone Rs 6,762 Lakh, 07-emoat.md line 81) < 73.5%: tier 3"
+    effect: "4 moats present and STRONG either way. Run the test and state the basis-break reading; operator ruling requested on the window definition at exactly 6 years."
+  - id: "E02"
+    framework: "Emerging Moat"
+    rule: "evidence taxonomy applied to every single piece of evidence (prompts/07-emerging-moat-pipeline.md L29-34)"
+    severity: MINOR
+    location: "outputs/reports/07-emoat.md lines 114, 115, 119, 135, 228"
+    claimed: "items untagged: A3 gross margin (deck p.11); A4 business lines (deck p.41); B2 defence standards JSS 55555 / MIL 810 (deck May 2026 p.29); F1 no-ESOP statement (AR26 p.64); R1 4B PPP labs (deck p.19, AR25 p.19)"
+    recomputed: "each item needs a DOC, CLAIM or INFER tag; the B2 and R1 items bear on scores, and the PPP tier decides the E11 range"
+    effect: "No score change by itself. Text tags in place of emoji glyphs are declared (line 7) and not counted."
+  - id: "E08"
+    framework: "Emerging Moat"
+    rule: "2C: total capex under execution x historical fixed asset turnover, as % above current revenue (L60-62)"
+    severity: MAJOR
+    location: "outputs/reports/07-emoat.md section 2C lines 83-94; outputs/blocks/B07-emoat.yaml line 32"
+    claimed: "capex_embedded_growth_pct 72 (case B: CWIP 6,977.28 less Barwala land and building 1,813.01 = 5,164.27 Lakh x 1.743 = 8,999.3 Lakh)"
+    recomputed: "98 (case A: total CWIP 6,977.28 Lakh at 30 Sep 2026 x FY26 FAT 1.743 = 12,158.6 Lakh = 97.6% of FY26 revenue 12,451.81 Lakh)"
+    effect: "Field understates the as-written figure by 25.3 points. The 1,813.01 is a 31 Mar 2026 value whose 30 Sep 2026 value is NOT FOUND, and the FAT denominator is total net PPE. EM score and class unaffected; stage 11 may read the field as capacity evidence. Carry 98 as headline, cases B to D as sensitivities."
+  - id: "E11"
+    framework: "Emerging Moat"
+    rule: "R1 scope: 4A regulatory approvals, 4B government policy tailwinds (L161-168)"
+    severity: MINOR
+    location: "outputs/reports/07-emoat.md 4C line 232, recount line 182, 4B line 228; B07-emoat.yaml analyst_note line 51"
+    claimed: "R1 Moderate, M x M = 2 x DOC 1.0 = 2.0, scored 'because three filed contracts exist' (IOC order 1, IOC order 2, BRDC order)"
+    recomputed: "customer orders are neither approvals nor policy tailwinds (4B: shared benefit, open tenders); the R1-scope DOC approval (NABCB 17020) is already B2's scored basis; on remaining R1-scope evidence (coal TPA empanelment CLAIM; PPP labs untagged) R1 = 1.4 to 2.0; total 10.4 to 11.0"
+    effect: "Class NONE unchanged. At 1.4, B07's own grade rule ranks R1 Weak and active_categories falls to B2 alone. Move the orders to 1A (LPO) or C1."
+  - id: "E23"
+    framework: "Emerging Moat"
+    rule: "optionality register carried in the block as optionality_register[] (L194-196)"
+    severity: MINOR
+    location: "outputs/reports/07-emoat.md lines 276-288 (11 rows); outputs/blocks/B07-emoat.yaml lines 33-43 (10 rows)"
+    claimed: "10 register rows in the block"
+    recomputed: "11 rows; missing 'Digital / AI compliance services' (digital revenue disclosed, client dashboard usage; AR27 MD&A; 12-24 months), report line 287"
+    effect: "Item drops out of the synthesis monitoring checklist. Add the row to the block."
+  - id: "E29"
+    framework: "Emerging Moat"
+    rule: "report ends with the fenced YAML block (L212-214)"
+    severity: MINOR
+    location: "outputs/reports/07-emoat.md line 361 (orchestrator erratum)"
+    claimed: "stage report written without the closing YAML block"
+    recomputed: "orchestrator appended a verbatim copy of outputs/blocks/B07-emoat.yaml; copy matches the block file line for line"
+    effect: "No content effect; output-contract miss by stage 7 on record."
+critical_count: 0
+major_count: 1
+minor_count: 7
+acceptance_rate: 88.7             # rules passed / rules checked, %: 63 / 71 (Gate 0 38/41 = 92.7; EM 25/30 = 83.3); valuation pending phase 3

@@ -1,0 +1,69 @@
+stage: B04-bizmodel
+company: "SHAWGELTIN"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Investor presentation absent (none exists); no concalls; Q2 FY27 results not filed"
+  - "Tonnage, capacity utilisation, yield %, pharma-grade share, ossein sales, customer percentages, Rs 33 Cr capex plan NOT FOUND in AR; capex only in CARE p.2"
+  - "IGCL peer screener text has structural labels only, no values; Nitta figures are rounded whole Rs Cr from screener"
+flags:
+  - {type: FLAG-ARCHETYPE, reason: "Evidence fits commodity converter (price-taker on both products, margin set by bone, coal, DCP price); no filed evidence of build-to-spec. Operator rules sector row at pillar gate; Amendment 17 binds if converter-classified (AR p.12; CARE p.1-2)"}
+  - {type: FLAG-DISCLOSURE, reason: "Gelatine volume +16.17% and ASP -5.20% imply revenue +10.1%; Note 26 shows +8.44% (about 240 lakh gap, unexplained); DCP ties (AR p.12, p.68)"}
+  - {type: FLAG-CYCLE, reason: "FY26 margin 19.2% sits above NGL's ten-year band; Nitta's own quarterly margin ranged 15% to 28% in three years; about half of NGL's 6.2 point gain matches Nitta's 3 point move, rest is company-specific or catch-up (screener, rounded)"}
+  - {type: FLAG-EXPORT, reason: "CARE credits group access to export markets; FY26 FOB exports are 214.93 lakh, 1.0% of revenue (AR p.19). Lever not yet visible"}
+business_type: manufacturing
+revenue_streams:
+  - {name: "Gelatine", type: "Transactional product sale, volume x market price", pct_of_revenue: 70.62, predictability: "M"}
+  - {name: "DCP (animal-feed grade)", type: "Transactional commodity sale, spot priced", pct_of_revenue: 29.08, predictability: "L"}
+  - {name: "Bone meal", type: "Transactional", pct_of_revenue: 0.10, predictability: "L"}
+  - {name: "Other operating income", type: "Incidental (scrap, drawback, write-backs)", pct_of_revenue: 0.20, predictability: "L"}
+asset_intensity: medium
+wc_intensity: high
+pricing_power: price-taker
+cyclicality: cyclical
+moats_present:
+  - "Cost position, partial: solar plant Rs 8.89 Cr and fuel cost down 217 bp of revenue; durability medium for fuel, low for bone cost (AR p.19; B02)"
+  - "Process know-how via Pioneer Jellice group, claimed by CARE, not quantified; durability medium if tied to group (CARE p.1)"
+  - "Switching costs with capsule makers: repeat orders only, contract terms NOT FOUND; durability low (CARE p.2)"
+valuation_methods:
+  primary: {method: "Normalised earnings P/E on through-cycle margin", why: "Earnings positive, low debt; margin 3.3% to 16% for ten years then 19% in FY26, so TTM earnings are not a base"}
+  secondary: {method: "EV/EBITDA on mid-cycle EBITDA with IGCL stake separated", why: "Removes the 4,115.31 lakh associate and its non-cash profit share from the operating multiple"}
+  tertiary: {method: "IGCL stake at market value as an add-on leg", why: "Capital parked at cost; market value NOT FOUND in the document set"}
+  not_applicable: ["Order-book valuation", "EV/sales", "Segment SOTP (one segment, AR p.12)", "NAV/replacement cost", "Dividend yield (payout 396% FY23 to 21% FY26)", "DCF as primary (no guidance, no tonnage)"]
+irrelevant_ratios:
+  - "Spot-year ROCE 28%: cycle peak, 4% to 12% in FY16 to FY22"
+  - "Trailing P/E about 8x: carries peak margin"
+  - "Consolidated PAT and EPS: include non-cash IGCL profit share"
+  - "Current ratio 3.59: inflated by 4,879.49 lakh inventory"
+  - "Note 48 DSCR, inventory days 72, return on investment 0.00%: mixed bases, wrong"
+  - "Dividend payout %: FY23 396% under prior owner"
+  - "R&D intensity 0.07%: no technology moat"
+must_track_metrics:
+  - {metric: "Operating margin before other income", healthy: "18% or higher (FY26 19.2%, Q1 FY27 20.8%)", red_flag: "Below 16.4%"}
+  - {metric: "Materials plus inventory change as % of revenue", healthy: "52% or lower (FY26 53.0%, Q1 FY27 50.6%)", red_flag: "Above 56%"}
+  - {metric: "Power and fuel as % of revenue", healthy: "11% or lower (FY26 10.8%)", red_flag: "Above 13.0%"}
+  - {metric: "CFO/PAT", healthy: "90% or higher (FY25 99.0%, FY26 86.4%)", red_flag: "Below 80% twice in a row"}
+  - {metric: "CWIP and commissioning of the Rs 33 Cr project", healthy: "Term loan draw rising toward Rs 25 Cr, notice by Jan 2027", red_flag: "No commissioning notice by Feb 2027"}
+unit_economics:
+  unit: "One tonne of gelatine with co-product DCP; tonnage NOT FOUND, so Rs 100 of revenue used"
+  revenue_per_unit: "Per tonne NOT FOUND; arithmetic floor at stated capacity: gelatine Rs 6.34 lakh a tonne, DCP Rs 0.59 lakh a tonne (computed, AR p.68; CARE p.3)"
+  margin_per_unit: "Per Rs 100 revenue: operating margin before other income 19.2 (FY25 13.0); materials 53.0, power and fuel 10.8, employee 9.3, other 7.6"
+  key_lever: "Bone cost (511 bp) and fuel cost (217 bp) of revenue; price effect net about +84 lakh of 1,540 lakh PBT gain; incremental pre-tax margin 58%"
+first_deterioration_signals:
+  - {risk: "DCP or gelatine price reversal", first_signal: "DCP realisation per tonne and revenue growth below volume growth"}
+  - {risk: "Bone cost rebound", first_signal: "Materials plus inventory change as % of revenue above 52%"}
+  - {risk: "Coal or solar shortfall", first_signal: "Power and fuel as % of revenue above 11%"}
+  - {risk: "Working capital build", first_signal: "Inventory days on cost, then CFO/PAT"}
+  - {risk: "Capex delay or empty capacity", first_signal: "CWIP and capital commitments in H1 FY27 results"}
+  - {risk: "Group flows and IGCL capital", first_signal: "Related-party purchases as % of purchases; IGCL carrying value"}
+mgmt_questions:
+  - "What drove the 511 bp fall in materials cost and 217 bp in power and fuel: price, yield, mix or coal, and which part is durable?"
+  - "Why did gelatine revenue rise 8.44% on volume +16.17% and ASP -5.20%?"
+  - "What are the pricing terms and benchmark for Pioneer Jellice supply, consultancy and lease flows?"
+  - "Which project do CWIP 528.97 and commitments 1,205.00 lakh belong to, with sanction, covenants and commissioning date?"
+  - "What share of gelatine is pharma grade, and what is the qualification period with capsule makers?"
+  - "What is the basis for carrying IGCL at 4,115.31 lakh and will more capital go in?"
+  - "What utilisation and bone mix (domestic vs imported) sit behind FY26, and is the 600 MT addition pre-sold?"
+one_line_verdict: "A commodity converter, price-taker on both products, whose FY26 margin gain is cost-led and sits at the top of its own history; the cost half looks company-specific, the bone half looks industry-wide."
+analyst_note: "Archetype: evidence says commodity converter (R1 moving to R2), not build-to-spec; no filed evidence of spec-in or content per unit. Margin: NGL ran 8 to 10 points under Nitta for FY24 to FY25, so part of the 6.2 point FY26 gain is catch-up to the leader (Nitta moved about 3 points, rounded screener). Readings: A structural (group know-how, solar, yield), B cyclical (bone and gelatine deflation; IGCL materials fell 727 bp vs 511 bp). Nitta's Sep-2026 quarter at 28% shows the spread is still wide, so Q2 FY27 alone will not separate A from B. Volume +16.17% partly came from finished-goods stock (down 276 lakh). Export is 1.0% of sales, so the group export lever is not visible yet. Gelatine volume x price does not tie to Note 26 (1.7 points). Put conservatism in position size; Amendment 17 binds if converter-classified."

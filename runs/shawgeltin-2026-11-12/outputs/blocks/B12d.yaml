@@ -1,0 +1,20 @@
+stage: B12d
+company: "SHAWGELTIN"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 3                # NATCAPSUQ, NITTAGELA, IGCL (531253)
+substantive_confirmed: 1        # NATCAPSUQ, all 3 call rows confirmed
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: NATCAPSUQ, missed_item: "Mundra says gelatin prices have been softening 'for the last six quarters' (duration of the decline; B06 Q1 quotes the same answer but omits this)", anchor: "NATCAPSUQ-concall-Q2FY26-2025-11 p.11 (txt line 397)"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, item: "B06 omits the 'last six quarters' duration in the Q2 FY26 p.11 gelatin price answer; claim-relevant to Q1 trend length"}
+  - {severity: MINOR, item: "B06 cites the 50% US tariff / HPMC slump at Q4 FY26 p.21; the tariff text sits on p.20 (txt line 788, before the [page 21] marker). The cold-shelf quote is p.21 correctly"}
+  - {severity: MINOR, item: "B06 Part 3 marks NITTAGELA UNUSED yet Part 5 and Part 4 use its screening OPM; label inconsistency only (no transcript exists)"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 100

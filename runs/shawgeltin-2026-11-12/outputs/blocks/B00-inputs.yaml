@@ -1,0 +1,63 @@
+stage: B00-inputs
+company: SHAWGELTIN
+run_date: 2026-11-12
+model: claude-opus-5-5   # orchestrator inline; document identity from B00-intake (claude-haiku-5-5)
+status: complete
+run_type: full
+mode: NO-CONCALL MODE (manifest concalls_available false)
+spear_gate: "PASS: companies/SHAWGELTIN.md carries 'Spear: OVERRIDE 2026-11-12 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)'"
+load_bearing_facts:   # first verification priority, from companies/SHAWGELTIN.md and step1-business-brief.md
+  - "Margin reset split: what moved OPM from 13% (FY25) to 19% (FY26) and 22.3% (Q4 FY26): gelatine and DCP price and volume, bone cost, power and fuel, group-sourced inputs or sales. Q1 FY27 OPM 20.8% tests persistence."
+  - "Related-party flows with the Pioneer Jellice group, including the IGCL 14% stake (about Rs 40 Cr) bought alongside the promoter's open offer."
+  - "Capex delivery: Rs 33 Cr project, term loan drawn vs Rs 25 Cr planned, commissioning Jan-2027."
+  - "Cash conversion and payout: FY26 CFO vs PAT, 156 inventory days, FY23 396% payout before the 2023 sale."
+company_memory: [companies/SHAWGELTIN.md, runs/shawgeltin-2026-11-12/step1-business-brief.md]
+sector_cap_row: "Specialty chemicals"
+sector_cap_row_evidence: "Section-1b chunk 05 cap table, row 'Specialty chemicals' 35x. CARE press release 06-Mar-2026 p.3 classifies the company as Commodities / Chemicals / Chemicals & Petrochemicals / Specialty Chemicals; product is pharma and edible gelatine sold to capsule makers (CARE p.2). FLAG for Phase 3: converter economics (crushed bones in, gelatine and DCP out; margin from spread and cost position), so Amendment 17 converter treatment binds; 'Agri processing' 20x is the competing reading. Operator rules the row at the /fttcp pillar gate."
+reporting_units:
+  annual_report: "INR lakh (AR FY2025-26 notes header: 'All amounts in Indian rupee lakhs, unless otherwise stated')"
+  results: "INR lakh (BSE results filings)"
+  rating: "INR crore (CARE)"
+  screener: "INR Cr"
+pdf_tooling: "Pre-extracted page-marked .txt beside every PDF (tools/extract_pdfs.py). FY2025-26 AR is a scanned image PDF: 131 of 133 pages re-OCR'd by tesseract 200dpi (tools/ocr_repair.py), 0 still corrupt; page markers '===== PAGE N ====='. AR PDF page N differs from printed page number (PDF p.70 = printed p.67): anchor both. Two notices (AGM notice, postal ballot outcome) OCR'd the same way."
+input_gaps:
+  - "concalls: none. Company holds no earnings calls (concalls_available false): declared, not a gap. Stage 5 runs in NO-CONCALL MODE."
+  - "presentation: none. No investor presentation on BSE or screener."
+  - "prospectus: none. Long-listed company; not expected, not a gap."
+  - "research: none. No broker coverage collected."
+  - "results: Q2 FY27 (quarter ended 30-Sep-2026) NOT in corpus. Board meeting to approve it is on 12-Nov-2026, the run date (BSE intimation 02-Nov-2026); not filed at collection. Latest results in corpus: Q1 FY27."
+  - "screening: no screener Excel export / Data_Sheet. Screener HTML tables saved as text: consolidated view (FY25-FY26 only) and standalone view (FY15-FY26 + TTM), figures rounded to whole Rs Cr. Peer tables for NITTAGELA, 531253 (IGCL), NATCAPSUQ the same way."
+  - "shareholding: Sep-2026 BSE summary statement (category level) and screener trend only. Public sub-category detail (FII/DII by name) not collected. Screener shows DII 0.01%, FII nil. Both files identified by orchestrator at source (BSE API scripcode 526739; screener SHAWGELTIN) after B00-intake marked them UNIDENTIFIED; source header added to each file."
+  - "peer-concalls: Natural Capsules only (Q4 FY25, Q2 FY26, Q4 FY26). Nitta Gelatin and IGCL hold no calls on screener. No peer ARs or presentations."
+  - "annual-report: FY2024-25 AR held in other/ only (contract allows one AR; scanned, no OCR text). Backward history beyond FY26 AR comparatives comes from screener standalone tables."
+  - "collector: Playwright Chromium launch failed (spawn UNKNOWN) for main and all peers; corpus repaired by direct download of public BSE and CARE filings."
+collector_warnings_verbatim:
+  - "collector Playwright Chromium failed to launch on this machine (BrowserType.launch: spawn UNKNOWN) for the main company and all three peers; only the BSE announcements fetch ran (4 filings). /step1 repaired the corpus by direct download of public BSE and CARE filings (2026-11-12)."
+  - "screening: no screener Excel export. Screener HTML tables saved as text instead: consolidated view (two years, FY25-FY26, consolidation began with the IGCL associate) and standalone view (FY15-FY26 plus TTM). Peer screener tables saved the same way. No Data_Sheet CSV."
+  - "annual-report: FY2025-26 AR is a scanned image PDF (6 of 133 pages carry a text layer); page-marked text built by tesseract OCR (tools/ocr_repair.py). Reporting unit Rs lakh."
+  - "FY2024-25 AR placed in other/ (input contract allows one AR); it is also a scanned image with no OCR text."
+  - "results: Q2 FY27 (Sep-2026 quarter) results NOT in corpus. Board meeting for them is on 12-Nov-2026 (run date); not filed on BSE at collection time. results/ holds Q1 FY27, Q4 FY26 (audited, standalone and consolidated) and Q3 FY26; Q2 FY26 is in other/ for the year-ago comparison."
+  - "shareholding: BSE shareholding summary for Sep-2026 saved as HTML (API response), plus screener shareholding trend as text. Public sub-category split (FII/DII names) not collected; screener shows DII 0.01%, FII nil."
+  - "rating: CARE press releases 06-Mar-2026 (rating/) and 14-Apr-2025 (other/). CARE publishes the press release as the full rationale; no separate bulletin."
+  - "announcements: duplicates of the Q1 FY27 results, the Q4 FY26 results (filed again as board outcome and change in management) and the FY26 AR (second Reg 34 filing) were not copied in."
+  - "peer-concalls: Nitta Gelatin and IGCL hold no calls on screener; only Natural Capsules transcripts (Q4 FY25, Q2 FY26, Q4 FY26) collected. No peer ARs or presentations."
+collector_defect_gate:
+  screening_content: "No CSVs. Both main-company screener text files carry figures beside every row label (checked: P&L, balance sheet, cash flow, ratios, quarters populated). Not empty exports."
+  announcements: "14 filings present (Nov-2025 to Nov-2026). Not empty."
+  shareholding: "Present (category summary + trend). FII+DII qualifier evidenced at category level: DII 0.01%, FII nil."
+  cmp_mcap: "cmp 474.0, market_cap_cr 287.0: non-zero, standalone/consolidated variant OK."
+freshness_pairs:
+  - {pair: "RESULTS to CONCALL", trigger_doc: "inputs/results/20260812-Q1FY27-results.pdf", mate_expected: "Q1 FY27 transcript", status: "SKIPPED", missing_doc: "", note: "concalls_available false; company holds no calls"}
+  - {pair: "RATING BULLETIN to RATIONALE", trigger_doc: "inputs/rating/CARE-Narmada-Gelatines-2026-03-13.pdf", mate_expected: "full rationale", status: "PASS", missing_doc: "", note: "CARE press release carries the full key-rating-drivers rationale (pp.1-2)"}
+  - {pair: "SEBI ORDER to ORDER TEXT", trigger_doc: "none found", mate_expected: "n/a", status: "PASS", missing_doc: "", note: "No SEBI order referenced in the inventoried first pages, the CARE rationale or the secretarial compliance filing cover; any stage that finds one flags it"}
+  - {pair: "AR to LATEST AUDITED ANNUAL RESULTS", trigger_doc: "inputs/results/20260525-Q4FY26-audited-results.pdf (FY2025-26)", mate_expected: "FY2025-26 AR", status: "PASS", missing_doc: "", note: "AR FY2025-26 present"}
+freshness_verdict: "FRESHNESS PAIRS OK"
+empty_folder_confirmation: "SUPPRESSED by /step1 autonomy contract (standing answer: proceed with the gaps). Empty folders: concalls (declared, no-call company), presentation, prospectus (not expected), research. Repeat at Halt 1."
+re_run_counters: {remediation_cycles: 0, verifier_runs: {A: 0, B: 0, C: 0, D: 0}}
+corpus_manifest_source: outputs/blocks/B00-intake.yaml   # 35 rows, all folder_match true, no moves
+corpus_manifest_orchestrator_corrections:
+  - "inputs/shareholding/BSE-shareholding-summary-Sep2026.html: B00-intake UNIDENTIFIED -> identified: Narmada Gelatines Ltd (BSE 526739), quarter ending Sep-2026; fetched from BSE API with scripcode=526739; total 60,49,587 shares and 7,718 holders match the screener SHAWGELTIN page."
+  - "inputs/shareholding/screener-shareholding-trend-to-Sep2026.txt: B00-intake UNIDENTIFIED -> identified: Narmada Gelatines Ltd screener shareholding table, Dec-2023 to Sep-2026."
+  - "B00-intake note on ocrcache folders: caches moved out of inputs/ before the corpus commit; they are not documents."
+flags: []
+analyst_note: "Corpus is current to Q1 FY27; Q2 FY27 lands on the run date and is not in the pack. Every AR figure comes from tesseract OCR text of a scanned PDF: stages and Verifier A must check any load-bearing AR number against the PDF page image (Read with pages=N) before relying on it."

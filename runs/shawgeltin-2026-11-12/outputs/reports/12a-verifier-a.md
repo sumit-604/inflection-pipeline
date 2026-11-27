@@ -1,0 +1,76 @@
+# VERIFIER A (B12a): Numerical audit. Narmada Gelatines Ltd (SHAWGELTIN), run 2026-11-12
+
+Model claude-sonnet-5-5. Inputs: stage reports 01 to 09 (with their ERRATA) and the source files in inputs/. AR is a scanned PDF with tesseract OCR. Page images were read for AR PDF p.12 (MD&A), p.72 (Note 36), p.79 (Note 48), p.87 (consolidated cash flow), Q3 FY26 results p.4, Q1 FY27 results p.2 and p.4. Printed AR page = PDF page minus 3. Units: AR and results in Rs lakh; CARE and screener in Rs crore.
+
+## 1. Findings (8 rows: 0 CRITICAL, 6 MAJOR, 2 MINOR)
+
+| # | Sev | Report location | Claimed (anchor) | Source truth (location) | Note |
+|---|---|---|---|---|---|
+| 1 | MAJOR | 03-ardeep.md Phase 3B, assets line | "loans and other financial 184.88" | 183.88 = Loans 20.58 + Other financial assets 163.30 (balance sheet PDF p.49; Notes 7, 8 PDF p.62). Non-current total 8,992.32 ties only with 183.88 | Arithmetic slip of 1.00 in a derived sub-total. All other heads and the 17,497.05 total match. Not a verdict-card input |
+| 2 | MAJOR | 02-notes-pass1.md s.11, employee benefits bullet | "-273.33 in the other two" sub-heads | -272.33 = (1,147.35 - 1,360.72) + (145.10 - 204.06) (Note 30, PDF p.69). With +661.82 the net 389.49 ties only with -272.33 | Arithmetic slip of 1.00. Inputs match |
+| 3 | MAJOR | 02-notes-pass1.md s.8, Pioneer Jellice bullet | payable 83.53 is "6.8% of that line" (creditors other than MSME 758.22) | 83.53 / 758.22 = 11.0%. 6.8% is the share of total payables 1,235.40 (Note 22 PDF p.67; Note 37 PDF p.73) | Wrong denominator against the line named. Inputs match |
+| 4 | MAJOR | 03-ardeep.md Phase 3A, CFO quality checks | "Removing both: CFO about 2,267, FCF about 1,431" | CFO 2,455.67 - 135.18 - 53.07 = 2,267.42 (ties). FCF on the same basis = 2,267.42 - 971.71 = 1,295.71. 1,431 is reported FCF 1,483.96 less 53.07 only (cash flow PDF p.51) | CFO figure right; FCF does not follow from the stated adjustment. Sits in a mild FLAG-CASH narrative |
+| 5 | MAJOR | 02-notes-pass1.md s.2 table, sitting fees FY25 | "8.36" | Note 37 FY25 fees 1.60 + 1.00 + 2.20 + 1.40 + 2.20 = 8.40 (PDF p.73). Note 33 prints 8.66 (PDF p.69). 8.36 is not in the source | The same cell also writes the correct 8.40 and Pass 2 B1.4 restates 8.40 vs 8.66. Stray typo, but a number not in the source |
+| 6 | MAJOR | 08-promoter.md s.3D and adverse finding 6 | "1 against in one resolution" (public e-voting 59,267 shares, 3.9%) | Scrutinizer report: 59,267 and 3.9197% match. 1 share voted against on each of 5 resolution tallies (59,267 total x4; 58,217 total x1), file 20260819-scrutinizer.txt lines 247, 307, 357, 405, 456 | Count of resolutions is wrong (one vs five). The 1-share dissent size is right |
+| 7 | MINOR | 01-gate0.md E4 anchor | "244.64 ... AR p.68 Note 36" | 244.64 is on printed p.69 (PDF p.72, page image). Printed p.68 (PDF p.71) is Note 34 | Number and note are right; page label one off (OCR footer on PDF p.72 reads 68, image reads 69). Re-anchor to printed p.69 |
+| 8 | MINOR | 06-peers.md s.2D | "ACG ... 45-50% share (Q2 FY26, p.12)" | 45-50% leader share is on Q2 FY26 [page 11] and the leader is unnamed there; ACG named with "almost closing 50%" on Q4 FY25 [page 10]. Q2 FY26 [page 12] holds the 6% and 4% growth lines | Weak anchor on a non-material figure |
+
+Rows 1 to 8 are source-fidelity findings (`source_fidelity: true`). They stand until the source PDF itself shows otherwise. None touches a verdict-card or Section 1B pillar input, so no CRITICAL.
+
+## 2. Rows struck at the rule 5b self-check (5)
+
+1. AR MD&A "material consumed increased by 1.29%" vs Note 28 (fell 1.29%). Faithfully transcribed anomaly (stages 3, 5 copy the AR correctly, image PDF p.12). Class 5a.
+2. EBITDA 40.88 Cr and +59.58% / +55.81% vs computed 42.08 Cr. Faithfully transcribed (image PDF p.12, AR p.5 text). Class 5a.
+3. Annexure IV MD pay +10.41% and KMP +4.52% vs Note 37 +49.7% and +43.9%. Faithfully transcribed (PDF p.20 text). Class 5a.
+4. OCR values Note 10 FY25 WIP "177.61", FY25 taxes paid "(853.99)", Note 31 FY25 "18.26": the reports use 1,477.61, 553.99, 15.26. The reports are right (sums tie; consolidated image p.87 shows 553.99). Not a finding.
+5. Gate 0 M11 "prior 3-yr CAGR 12.6% (FY20-23)": I compute 12.54% from the whole-number screener inputs 134 and 191. A 0.1 pp gap sits inside the rounding of the source, a basis and precision difference, not a mismatch.
+
+## 3. Mandatory tier (OR-32): 348 of 348 checked
+
+| Group | Count | Result |
+|---|---|---|
+| Gate 0 raw series, 12 years x 11 rows (sales, OPM, PAT, ROCE, net worth, CFO, FCF, debtor/inventory/payable days, CCC) vs screener standalone file | 132 | all match |
+| Gate 0 scorecard and load-bearing fact inputs: A1-A4 (incl. 12 yearly ROE values), B1-B4, C1-C4, D1-D4 (AR PDF pp.49, 51, 79), E1-E4 (screener shareholding, BSE html, AR PDF p.72), M-block inputs, load-bearing checks | 86 | all match except the E4 page label (finding 7) |
+| Verdict-card and pillar-relevant inputs, stages 3, 4, 5, 7, 8: margin bridge (2 margins, 8 cost-line ratios, 4 bp moves), revenue, PBT, PAT, cash and balance-sheet pillars, IGCL (7), Pioneer Jellice (6), capex and CWIP (7), CARE guidance and triggers (12), em-score arithmetic and capacity inputs (7), promoter, pledge and holder facts (6), revenue mix (4), quarterly persistence table Q4 FY25 to Q1 FY27 (30), Annexure IV (5), MD&A volume, price and EBITDA lines (9), Labour Code Rs 82.56 lakh (1) | 130 | all match except finding 4 (FCF) and finding 1 (sub-total) in stage 3 supporting lines |
+
+Shortfall, named. Stage 8 verdict-card facts that rest on SEBI documents not among my inputs (NGL DLOF 19-Jun-2023, IGCL DPS 12-Dec-2024, IGCL post-offer ad 17-Apr-2025): SPA date 5-Dec-2024 and price Rs 408.90, 39.42%, 27,95,932 shares, Rs 114.3 Cr, bulk-deal price Rs 408.8637, promoter 46.98%, combined 61.12%, "53%" brief figure 53.56%, and the Pioneer Jellice owner tables. The AR corroborates only the 14.14% stake, 1,003,000 shares, 4,115.31 lakh cost and the 05-12-2024 acquisition date (consolidated Note 1, PDF p.89). These are not counted in the 348. They are a coverage shortfall, not a silent skip.
+
+## 4. Sample tier
+
+Material universe outside the mandatory tier: about 680 numbers. Rule used: any figure that feeds a flag, rating, tracker row, ratio or monitor threshold, counted from printed figures in stages 2 to 9. Checked: about 420. Order of work: AR Notes 3 to 48 cited in stages 2 and 3 (balance sheet, P&L, both cash flows, Note 48 on image), AOC-1, auditor Other Matter (362.11 vs 354.93), consolidated cash flow image, CARE pp.1 to 3, Nitta and IGCL screener rows (588, 23%, 120 days, 170, 11/17/18%), NATCAPSUQ quote anchors (page markers checked for 14 quotes), BSE html (pledge No, 2 holders, 7,718), AGM outcome (65 members, Rs 11 at 110%), 2-Nov-2026 board meeting notice, and an arithmetic rebuild of every derived ratio I could reproduce. Stage 9 arithmetic (TAM, SAM, SOM, CAGR, runway) all ties from its stated inputs; the inputs are web sources outside my corpus and are unchecked.
+
+Not checked: stage 8 web items (MarketScreener, Tofler, AmbitionBox, Venture Intelligence, Bar and Bench), stage 3 "ROCE operating 37.0% / 24.7%" (definition not reproducible), directors' ages and attendance table, the secretarial report date (the "no action" and audit-committee lines were found), Pioneer Jellice and Ashok Matches history figures.
+
+## 5. Observations that are not findings
+
+- Stage 8 uses 408.86 (trade price) as "NGL carrying cost" in tripwire 1; the AR carries 4,115.31 lakh = Rs 410.30 a share (stages 2 and 3 state 410.30). Different bases, each correct on its own basis. Not a mismatch.
+- Stage 8 says the float was held "for 8 consecutive quarters"; the screener shows promoter 75.00% in 9 quarter-end columns (Sep-2024 to Sep-2026), 8 intervals. Wording, not a number error.
+- The stage 4 and 5 reports lean on stage 3 and stage 2 figures; no new numbers were found to be unsupported.
+- Gate 0 uses printed AR page labels; stages 2 to 9 use PDF page labels (each says so). Anchors resolve once the convention is applied, apart from finding 7.
+
+```yaml
+stage: B12a
+company: "SHAWGELTIN"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+numbers_checked: 768
+mandatory_checked: 348
+mandatory_total: 348
+findings:
+  - {severity: "MAJOR", location: "03-ardeep.md Phase 3B balance sheet line: assets breakdown", claimed: "loans and other financial 184.88 (lakh)", source_truth: "183.88 = Loans 20.58 + Other financial assets 163.30 (AR balance sheet, PDF p.49 / printed 46; Notes 7 and 8, PDF p.62). Non-current total 8,992.32 only ties with 183.88.", note: "Arithmetic slip of 1.00 in a derived sub-total. Total assets 17,497.05 and every other head in the line match. Not a verdict-card or pillar input.", source_fidelity: true}
+  - {severity: "MAJOR", location: "02-notes-pass1.md section 11 (Revenue details), employee benefits bullet", claimed: "-273.33 (change in salaries and wages plus provident and other funds)", source_truth: "-272.33 = (1,147.35 - 1,360.72) + (145.10 - 204.06) = -213.37 - 58.96 (Note 30, AR PDF p.69 / printed 66). With +661.82 welfare, the net 389.49 only ties with -272.33.", note: "Arithmetic slip of 1.00. The inputs and the +661.82 and 389.49 totals match the source.", source_fidelity: true}
+  - {severity: "MAJOR", location: "02-notes-pass1.md section 8 (Trade payables), Pioneer Jellice bullet", claimed: "Pioneer Jellice payable 83.53 is 6.8% of creditors other than MSME (758.22)", source_truth: "83.53 / 758.22 = 11.0% of that line. 6.8% is the share of total trade payables 1,235.40 (Note 22, AR PDF p.67; Note 37, PDF p.73).", note: "Wrong denominator against the stated line. The 83.53 and 758.22 inputs match.", source_fidelity: true}
+  - {severity: "MAJOR", location: "03-ardeep.md Phase 3A, CFO quality checks, first bullet", claimed: "Removing both (customer advances 135.18 and capex payable 53.07): CFO about 2,267, FCF about 1,431", source_truth: "CFO 2,455.67 - 135.18 - 53.07 = 2,267.42 (matches). FCF on the same basis = 2,267.42 - 971.71 = 1,295.71, not 1,431. 1,431 equals reported FCF 1,483.96 less 53.07 only (cash flow, AR PDF p.51 / printed 48).", note: "The CFO figure is right. The FCF figure does not follow from the stated adjustment. It sits inside a mild FLAG-CASH narrative, not a verdict input.", source_fidelity: true}
+  - {severity: "MAJOR", location: "02-notes-pass1.md section 2 (Related party table), sitting fees row, FY25 column", claimed: "8.36", source_truth: "Note 37 lists FY25 fees 1.60 + 1.00 + 2.20 + 1.40 + 2.20 = 8.40 (AR PDF p.73 / printed 70). Note 33 prints 8.66 (PDF p.69). 8.36 appears nowhere.", note: "The same cell also writes the correct 8.40 sum and Pass 2 B1.4 restates 8.40 vs 8.66. The stray 8.36 is a typo, but it is a number not in the source.", source_fidelity: true}
+  - {severity: "MAJOR", location: "08-promoter.md section 3D (Minority treatment) and adverse_findings 6 (AGM bullet)", claimed: "public non-institutional e-voting 59,267 shares (3.9%), 1 against in one resolution", source_truth: "59,267 shares and 3.9197% match. The scrutinizer report shows 1 share against on each of 5 resolution tallies (59,267 total with 59,266 for, 1 against on four resolutions; 58,217 with 58,216 for, 1 against on a fifth), file 20260819-scrutinizer.txt lines 247, 307, 357, 405, 456.", note: "Count of resolutions with the 1 dissent is wrong (one vs five). The tiny size of the dissent and the 3.9% turnout stand.", source_fidelity: true}
+  - {severity: "MINOR", location: "01-gate0.md E4 (contingent liabilities) anchor", claimed: "Contingent liabilities 244.64 lakh at 'AR p.68 Note 36'", source_truth: "244.64 is printed in Note 36 on printed p.69 (PDF p.72), image-checked. Printed p.68 (PDF p.71) is Note 34 (employee benefits) and does not contain it.", note: "Number is correct and Note 36 is the right note. The page label is one off (the OCR footer on PDF p.72 reads 68, the page image reads 69). Re-anchor to printed p.69.", source_fidelity: true}
+  - {severity: "MINOR", location: "06-peers.md section 2D (Competitive mentions)", claimed: "ACG named as Indian capsule leader with 45-50% share (Q2 FY26, p.12)", source_truth: "NATCAPSUQ Q2 FY26 transcript: the 45-50% leader share is on [page 11] (lines 424-425) and the leader is not named ACG there. ACG is named with 'almost closing 50%' on Q4 FY25 [page 10] (line 375). Page 12 of Q2 FY26 holds India 6% / international 4% growth.", note: "Weak anchor on a non-material figure. The 45-50% and ACG facts exist in the corpus at the corrected pages.", source_fidelity: true}
+critical_count: 0
+major_count: 6
+minor_count: 2
+false_positives_struck: 5
+material_universe: 680
+acceptance_rate: 99.0
+coverage_note: "MANDATORY TIER 348 of 348 checked (132 Gate 0 raw-series cells; 86 Gate 0 scorecard and load-bearing-fact inputs; 130 verdict-card and pillar-relevant inputs from stages 3, 4, 5, 7, 8; overlaps counted once). SHORTFALL, named: stage 8 verdict-card facts that rest on SEBI documents not among my inputs (NGL DLOF 19-Jun-2023, IGCL DPS 12-Dec-2024, IGCL post-offer ad 17-Apr-2025): SPA date 5-Dec-2024 and price Rs 408.90, 39.42%, 27,95,932 shares, Rs 114.3 Cr, bulk-deal price Rs 408.8637, promoter 46.98%, combined 61.12%, brief 53.56%, Pioneer Jellice and Ashok Matches shareholder tables. The AR corroborates only the 14.14% stake, 1,003,000 shares, 4,115.31 lakh cost and the 05-12-2024 acquisition date (consol Note 1, PDF p.89). Stage 9 market-size inputs (Mordor, MnM, MRF, trendeconomy, RBI rate 95.25, trade-press capacities) are web sources outside my inputs; I recomputed all stage 9 arithmetic from the stated inputs (all tie) but cannot confirm the inputs. SAMPLE TIER: about 680 material numbers outside the mandatory tier (rule: any figure that feeds a flag, rating, tracker row, ratio or monitor threshold; counted from the printed figures in stages 2 to 9), of which about 420 checked, in order of materiality: all AR Notes 3-48 figures cited in stages 2 and 3, balance sheet, P&L, both cash flows (standalone image, consolidated image p.87), Note 48 on page image, AR MD&A on page image (PDF p.12), Annexure III and IV, AOC-1, CARE press release pp.1-3, Q3 FY26, Q4 FY26 and Q1 FY27 results quarter tables (page images), Nitta and IGCL screener rows, NATCAPSUQ quote anchors, BSE shareholding, AGM scrutinizer, and arithmetic recompute of every derived ratio I could rebuild. Not checked: stage 8 web items (MarketScreener, Tofler, AmbitionBox, Venture Intelligence, Bar and Bench), the stage 3 'ROCE operating 37.0%/24.7%' (definition not reproducible), directors' ages and attendance table, secretarial report date, stage 8 internal sources named in the stage 8 search log. OCR faults corrected by the stages against images (Note 10 FY25 WIP 1,477.61; FY25 taxes paid 553.99; OCI 52.46; associate dividend 50.15; Note 31 FY25 other borrowing costs 15.26) were confirmed by arithmetic ties and, for PDF pp.12, 79, 87, by image. Faithfully transcribed anomalies (AR says materials 'increased 1.29%', EBITDA 40.88 Cr, Annexure IV +10.41% and +4.52%, Note 48 inventory 72 days and 100% variance) match the source and are not findings."
+```

@@ -1,0 +1,45 @@
+stage: B06-peers
+company: "SHAWGELTIN"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Only one peer with transcripts (NATCAPSUQ, 3 calls). NITTAGELA and IGCL (BSE 531253) hold no calls. No VERIFIED verdict is possible under the two-independent-peers rule."
+  - "NATCAPSUQ is a downstream capsule buyer, not a gelatine or DCP producer. It says nothing on bone price, DCP, or Indian gelatine capacity."
+  - "IGCL screener file (peer-531253-screener-tables.txt) holds row labels only, no numbers: NOT FOUND. NITTAGELA table has numbers (screening data, not a transcript)."
+  - "No NATCAPSUQ call after 02-Jun-2026; gelatine price direction for H2 FY26 and FY27 H1 has no peer statement."
+flags:
+  - {type: FLAG-SINGLE-PEER, reason: "All five verdicts rest on one adjacent-segment peer; zero VERIFIED"}
+  - {type: FLAG-GELATINE-DEFLATION-INDUSTRYWIDE-BUYER-SIDE, reason: "NATCAPSUQ Q2 FY26 (pdf p.11) says gelatine prices fell about 4% in FY25 and 4-5% in H1 FY26; supports industry-wide output-price deflation, says nothing on bone cost"}
+  - {type: FLAG-PEER-INCONSISTENCY, reason: "NATCAPSUQ Q2 FY26 pdf p.10 puts HPMC at 10% of capsule revenue; its own Q4 FY26 figures (about Rs 8 Cr of about Rs 171 Cr, pdf p.7, p.10) give about 5%"}
+peers_provided: 3
+verified: []
+partially_verified:
+  - {claim: "Q1: Global and Indian gelatine pricing falling or stabilising in FY26 H2 and FY27 H1; capsule makers bought at lower prices (NGL ASP -5.20% FY26)", peers: ["NATCAPSUQ"]}
+  - {claim: "Q2: Hard-capsule demand growth, and procurement shifting to imports or domestic makers (NGL gelatine volume +16.17%)", peers: ["NATCAPSUQ"]}
+  - {claim: "Q3 (second clause only): users also import or buy gelatine instead of making it", peers: ["NATCAPSUQ"]}
+  - {claim: "Q4: Plant-based or HPMC substitution as a volume risk, and at what share", peers: ["NATCAPSUQ"]}
+contradicted: []
+unverifiable:
+  - {claim: "Q3 (first clause): crushed-bone and imported raw-material price and availability since H2 FY26", peers_checked: ["NATCAPSUQ"]}
+  - {claim: "Q5: Any gelatine or DCP capacity being added in India that adds supply", peers_checked: ["NATCAPSUQ"]}
+peer_coverage_map:
+  - {peer: "NATCAPSUQ", quarter: "Q4 FY25 (call 04-Jun-2025)", usage: "SUBSTANTIVE", contribution: "Gelatine price softening late Q4 FY25 (pdf p.4); capsule demand 6-7% a year (p.11); ACG about 50% share (p.10)"}
+  - {peer: "NATCAPSUQ", quarter: "Q2 FY26 (call 17-Nov-2025)", usage: "SUBSTANTIVE", contribution: "Gelatine prices down about 4% FY25 and 4-5% in H1 FY26; gelatine makers consolidating; 18-20% of gelatine imported duty free (p.11); Indian capsule growth 6%, international 4% (p.12); HPMC 5% of volume (p.10)"}
+  - {peer: "NATCAPSUQ", quarter: "Q4 FY26 (call 02-Jun-2026)", usage: "SUBSTANTIVE", contribution: "Capsule backlog 36 days (p.6); gelatine capsule margin 13% vs HPMC 18% (p.11, p.20); HPMC revenue about Rs 8 Cr, US about Rs 3 Cr (p.7); US nutra slump and ACG US plant shelved (p.21); silent on gelatine price"}
+  - {peer: "NITTAGELA", quarter: "no transcript", usage: "UNUSED", contribution: "No call held. Screening table used only for margin direction: OPM 18% (Mar-25) to 25% (Dec-25), 28% (Mar-26), 24% (Jun-26), 28% (Sep-26); labelled screening data"}
+  - {peer: "IGCL (BSE 531253)", quarter: "no transcript", usage: "UNUSED", contribution: "No call held. Screener file has labels only, no numbers: NOT FOUND"}
+industry_cross_read:
+  demand: "Steady mid-single-digit capsule demand (India about 6%, international about 4%, pharma gelatine 4-6%); NATCAPSUQ runs 93-95% utilisation and a 36-day backlog; NGL +16.17% volume is about 2.7x peer-stated market growth (NATCAPSUQ Q2 FY26 pdf p.12, p.21; Q4 FY26 p.6, p.18)"
+  pricing_inputs: "Gelatine selling prices fell about 4% in FY25 and 4-5% in H1 FY26 (NATCAPSUQ Q2 FY26 pdf p.11), industry-wide per the buyer, with duty-free imports at 18-20% of its need as price competition; no peer comment on bone cost or on prices after Nov-2025"
+  capex_cycle: "Not testable for gelatine or DCP: no peer mentions either. Adjacent capsule capex is a cautious-peer setup (NATCAPSUQ adding HPMC lines, ACG's US plant on the shelf, Q4 FY26 p.5, p.21); NGL as lone expander in gelatine/DCP is UNVERIFIABLE"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Gelatine-maker consolidation: one larger company acquired two others (NATCAPSUQ Q2 FY26 pdf p.11); buyers keep import access as a counter"
+  - "US tariff of 50% on India stopped HPMC exports from July 2025; US nutra demand slow (NATCAPSUQ Q4 FY26 pdf p.7, p.21)"
+  - "Single-plant shutdown risk: Puducherry shutdown cost EBITDA in FY26 (NATCAPSUQ Q4 FY26 pdf p.4); NGL's AR names no comparable site-outage risk (B05)"
+  - "Dumping and rerouting by Chinese suppliers (NATCAPSUQ Q4 FY26 pdf p.21)"
+  - "Buyer-side stress: NATCAPSUQ consolidated loss and thin liquidity (Q4 FY26 pdf p.6); a stressed buyer is a counterparty and price-pressure risk for gelatine sellers, not tested here"
+net_narrative_effect: "complicates"
+cross_peer_hypothesis: "Producer margin gain is a spread, not a pass-through: the buyer saw gelatine prices fall 4-5% (NATCAPSUQ) while NGL's materials ratio fell 511 bp (B05) and Nitta's OPM rose from 18-20% to 24-28% (screening); inferred, no single source says it. If true, bone-side cost fell faster than gelatine price, so the reset rests on a bone and import-bone cost series no peer discloses. Test: NGL materials ratio holds near 50.6% while gelatine ASP is flat or down in Q2-Q3 FY27. Kill: materials ratio rebounds above 53% with gelatine ASP unchanged."
+analyst_note: "Load-bearing fact 1 (industry-wide versus NGL-specific). Two readings: (a) industry cycle, bone and gelatine both deflate and margins revert; (b) NGL-specific structure, cheaper imported bone and plant savings. Peers support only the output side of (a): gelatine prices fell industry-wide (NATCAPSUQ Q2 FY26 p.11). Nitta's OPM rise (screening, Dec-25 onward) shows producer margin expansion is not NGL-only, which leans toward (a) or a shared input effect. Separating observation: a bone or crushed-bone price series, or a Nitta/IGCL gross-margin disclosure, none in the corpus. NATCAPSUQ also did not get margin relief from cheaper gelatine (capsule EBITDA about 12% to 13%), but tariffs and the Puducherry shutdown confound this. All verdicts single-peer, adjacent segment, so weight low."

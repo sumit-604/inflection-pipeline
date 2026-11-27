@@ -1,0 +1,41 @@
+stage: B07-emoat
+company: "SHAWGELTIN"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "No concalls, no investor presentation (NO-CONCALL MODE): F2 promise-delivery test uses AR capex-completion statements only; one AR in corpus, so no cross-AR timeline"
+  - "Q2 FY27 results not yet filed (board meeting 12-Nov-2026); Q1 FY27 is P&L only, so capex progress after 31-Mar-2026 is NOT FOUND"
+  - "Rs 33 Cr capex, +600 MT gelatine, +1,500 MT DCP, Jan-2027 commissioning exist only in CARE press release 06-Mar-2026 p.2 (rater view); NOT FOUND in AR or Reg 30 filings"
+  - "NOT FOUND in corpus: utilisation %, yield %, tonnage sold, peer certification and capacity data, R&D headcount, FY25 headcount, customer percentages in AR, PJG consultancy scope"
+flags:
+  - {type: FLAG-SCORE-NEAR-BAND-EDGE, reason: "em_score 11.7 sits 0.3 below the 12 line (MODEST). H2 at documented weight instead of claim weight (2.0 vs 1.4) would cross it. Classification NONE stands on the evidence as tiered"}
+  - {type: FLAG-CAPEX-ONLY-IN-RATER-DOC, reason: "Capacity plan is not in the AR; Section 2 capex rows rest on CARE p.2 and are scored as claim, not documented"}
+  - {type: FLAG-RELATED-PARTY-CARRIES-THE-MOAT-CLAIM, reason: "The only forward-looking advantage candidate (H2, Pioneer Jellice know-how and export access) runs through a related party whose pricing is undisclosed (AR Note 37 p.73)"}
+em_score: 11.7
+em_classification: "NONE"
+active_categories: []
+evidence_mix: {documented: 7, claim: 5, inference: 3}
+completionist_recount: "recount performed: 7 documented items across 6 categories (A3 UF plant and radiators, A3 solar, B2 certifications, E2 export FOB, G1 net debt and FCF, H1 IGCL stake, H2 consultancy line); 9 categories carry any score, 0 rated Strong, 0 rated Moderate; guard not triggered (9 < 12)"
+catalysts_12m:
+  - {catalyst: "Q2 FY27 results: operating margin at or above 18% and materials plus inventory change at or below 52% of revenue (Q1 FY27 20.79% and 50.6%)", window: "12-Nov-2026 (board meeting, Reg 29 notice 02-Nov-2026)", evidence_type: "documented once filed", anchor: "B05 triggers 2; B03 monitorables; Reg 29 notice in inputs/announcements"}
+  - {catalyst: "H1 FY27 balance sheet: CWIP and term-loan draw rising from 528.97 lakh CWIP and about 125.57 lakh draw at Mar-2026", window: "with Q2 FY27 results, Nov-2026", evidence_type: "documented once filed", anchor: "AR Notes 4, 18 (PDF pp.61, 65); B03 monitorables"}
+  - {catalyst: "Commissioning notice for +600 MT gelatine and +1,500 MT DCP (Rs 33 Cr)", window: "Jan-2027 to Mar-2027", evidence_type: "claim (rater view) until a Reg 30 notice", anchor: "CARE 06-Mar-2026 p.2"}
+  - {catalyst: "First quarter with new capacity in the P&L and gelatine volume growth above 10%", window: "Q4 FY27 results, May-2027", evidence_type: "documented once filed", anchor: "B05 triggers 1 and 6"}
+  - {catalyst: "FY27 AR: raw-material import line in foreign-exchange outgo, export FOB above 214.93 lakh, PJ consultancy terms", window: "Aug-2027", evidence_type: "documented once filed", anchor: "AR PDF p.19 (FY26 base: FOB 214.93, no raw-material import line)"}
+capex_embedded_growth_pct: 22
+optionality_register:
+  - {optionality: "Capacity +600 MT gelatine (+25.0%) and +1,500 MT DCP (+14.2%), Rs 33 Cr, from Jan-2027", converting_evidence: "Reg 30 commissioning notice; CWIP capitalised and term loan drawn in H1 FY27 and FY27 AR; no cost overrun", first_appears: "Reg 30 filing, Sep-2026 half-year balance sheet, FY27 AR Note 4", window: "Jan-2027 to Aug-2027"}
+  - {optionality: "Imported crushed bone diversifies supply and lowers materials cost", converting_evidence: "Raw-material import line in foreign-exchange outgo; materials ratio held at or below 52% while IGCL ratio does not rebound", first_appears: "FY27 AR Annexure III; quarterly P&L", window: "Nov-2026 to Aug-2027"}
+  - {optionality: "Pioneer Jellice group gives technical know-how and export access", converting_evidence: "Disclosed scope and pricing basis of the 24.00 lakh consultancy and supply flows; named export customers; FOB above 214.93 lakh", first_appears: "FY27 AR Note 37 and AOC-2; Reg 23 related-party filing", window: "6-12 months"}
+  - {optionality: "Yield and utilisation gains credited for profit in MD&A", converting_evidence: "Disclosed yield % and utilisation % with tonnage sold", first_appears: "FY27 MD&A or investor presentation", window: "12 months"}
+  - {optionality: "Customer lock-in with capsule makers (Geltec, ACG, Fortcaps named by CARE)", converting_evidence: "Multi-year supply agreement, sole-source or qualification language, or customer share disclosed", first_appears: "Reg 30 order announcement or AR customer note", window: "12-24 months"}
+  - {optionality: "R&D start (15.29 lakh, 0.07% of turnover, FY25 nil) leads to a new grade or product", converting_evidence: "Patent filing, product launch or revenue line from a new grade", first_appears: "AR Annexure III R&D table, Reg 30", window: "24-36 months"}
+combined_assessment: "GOOD"
+combined_reasoning: "Gate 0 grand 66 (GOOD, moat THIN) plus em_score 11.7 (NONE): the margin reset is a cost-line event, not a built moat; no forward moat evidence beyond one measured power saving, retained certifications and a stretched balance sheet strength."
+top_moat_risks:
+  - "Margin reset is cyclical: materials ratio fell 511 bp at NGL and 727 bp at IGCL, so bone and global gelatine price deflation can reverse it"
+  - "Capex absent from the AR; Jan-2027 date, Rs 33 Cr cost and Rs 25 Cr loan are rater view only"
+  - "Related-party channel: the only candidate moat (PJG) has no disclosed pricing or scope; IGCL stake at 29.1% of equity with no test"
+  - "Customer concentration rising: top 10 customers 39% (FY24) to 42% (FY25) per CARE p.2; vegan and HPMC substitution named as primary market barrier (AR p.11)"
+analyst_note: "Sparse scan, correctly: nine categories carry a score, none Strong or Moderate. The 11.7 total sits 0.3 under the 12 line, so treat NONE as the floor of a thin MODEST, not a gap. Most evidenced path: the reset is cost-led (net price effect about +84 lakh of 1,540 lakh PBT rise, B03). Two readings: structural (PJG know-how, UF plant, solar) or cyclical (bone and gelatine price deflation). Separating observation: Q2 FY27 materials ratio at or under 52% while IGCL does not rebound. Solar and UF power saving is credited once, in A3. Exports 4.5x (47.99 to 214.93 lakh) are credited once, in E2; PJG appears in H2 only for the consultancy line. 2C: gross-block formula gives 69% (33 Cr x 4.51x on average gross block); the block carries 22%, the capacity-weighted figure, because the formula counts upgrade capex that adds cost savings, not volume."

@@ -1,0 +1,44 @@
+stage: B12b
+company: "ONWARDTEC"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 32
+caught: 21
+partially_caught: 3
+missed:
+  - {severity: "MAJOR", item: "FX share of reported growth: Q2 FY27 +22.4% YoY reported vs +17.7% constant currency (about 4.7 pts FX, my arithmetic); currency basis of the 15-18% FY27 guide NOT FOUND; pipeline logs cc only as a candour point", anchor: "K2 p.3, p.6, p.11; LTTS Oct p.4, p.8; Cyient Aug p.8"}
+  - {severity: "MINOR", item: "Client base told as 250 to 75 on the call vs 145 to 72 in the deck", anchor: "K4 p.16; PRES p.15"}
+  - {severity: "MINOR", item: "IR firm switch E&Y to Go India Advisors after two quarters of cc questions sent to E&Y", anchor: "K4 p.2; K1 p.2; K2 p.2"}
+  - {severity: "MINOR", item: "Worli office purchase surfaced only on a depreciation question; related-party status NOT FOUND", anchor: "K2 p.13"}
+  - {severity: "MINOR", item: "Q1 FY27 framed QoQ; YoY PAT decline admitted only under question", anchor: "K1 p.3, p.10"}
+  - {severity: "MINOR", item: "Revenue per person Rs 8-9 lakh four years ago does not reconcile with 15.3% CAGR at stable headcount (implies about Rs 12.4 lakh)", anchor: "K4 p.3, p.4, p.13"}
+  - {severity: "MINOR", item: "Q3 FY26 one-time costs (bottom-5% exits, labour code) never sized", anchor: "K3 p.5, p.7"}
+  - {severity: "MINOR", item: "Self-description drift and 'gross margin 13.2%' used for EBITDA margin", anchor: "K4 p.3, p.6, p.16; K1 p.9"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 6, confirmed: 6, wrong: 0}
+credibility_grade_concur: "concur: B holds on constant-currency delivery (Q2 +17.7% cc inside the raised band); the added candour items (selective-disclosure denial vs record, FX share unstated, AI 'shared before') put it at the bottom of the B band"
+findings:
+  - {id: F1, severity: "MAJOR", item: "MISSED: FX share of reported growth never applied to the revenue basis; guide currency basis NOT FOUND", anchor: "K2 p.3, p.6, p.11"}
+  - {id: F2, severity: "MAJOR", item: "PARTIALLY CAUGHT: selective-disclosure flag under-weighted (B05 Low-Medium, 'no evidence'); two unrebutted analyst citations of a 10-12% range contradict the universal denial; re-grade Medium", anchor: "K3 p.15; K4 p.14, p.15"}
+  - {id: F3, severity: "MAJOR", item: "PARTIALLY CAUGHT: Q2 revenue quality; H2-implied dip not linked to revenue booked ahead of delayed POs; add third reading to trigger 1 [INFERENCE]", anchor: "K2 p.3, p.4, p.5, p.13"}
+  - {id: F4, severity: "MINOR", item: "Partly OVERSTATED: B05 red flag 1 tests a sequential margin claim against YoY offshore mix; QoQ mix 68% to 69%; YoY point stands", anchor: "K2 p.6; PRES p.11"}
+  - {id: F5, severity: "MINOR", item: "B05 2E says no never-answered dodge while recording high-teens never answered; K2 utilisation non-answer not logged", anchor: "K3 p.16; K4 p.14; K2 p.12"}
+  - {id: F6, severity: "MINOR", item: "B05 says analysts did not ask on concentration; K3 had two unanswered concentration questions", anchor: "K3 p.14, p.16"}
+  - {id: F7, severity: "MINOR", item: "B05 K3 anchors often use printed page (PDF page minus one), plus one K1 slip; no direction changes", anchor: "K3 p.3, p.5, p.6, p.8, p.9, p.12, p.16; K1 p.7"}
+  - {id: F8, severity: "MINOR", item: "B06 Q4 omits Cyient's 20-30% software-development compression statement; Onward software is 50% of revenue", anchor: "Cyient Apr p.14; K4 p.17"}
+  - {id: F9, severity: "MINOR", item: "B06 growth-claim flag mixes bases (Onward H1 INR vs Tata Tech Q2 cc; 22.1% is services only); conclusion holds on like basis", anchor: "K2 p.6; Tata Tech Oct p.3, p.9"}
+  - {id: F10, severity: "MINOR", item: "MISSED: 250 vs 145 starting client count, call vs deck", anchor: "K4 p.16; PRES p.15"}
+  - {id: F11, severity: "MINOR", item: "MISSED: revenue-per-person claims do not reconcile", anchor: "K4 p.3, p.4, p.13"}
+  - {id: F12, severity: "MINOR", item: "MISSED: Q1 FY27 QoQ framing over YoY PAT decline", anchor: "K1 p.3, p.10"}
+  - {id: F13, severity: "MINOR", item: "MISSED: Worli office purchase; related-party status NOT FOUND", anchor: "K2 p.13"}
+  - {id: F14, severity: "MINOR", item: "MISSED: IR firm switch", anchor: "K4 p.2; K1 p.2"}
+  - {id: F15, severity: "MINOR", item: "MISSED: Q3 FY26 one-time costs unsized", anchor: "K3 p.5, p.7"}
+  - {id: F16, severity: "MINOR", item: "MISSED: self-description drift and gross-margin mislabel", anchor: "K4 p.3, p.6, p.16; K1 p.9"}
+critical_count: 0
+major_count: 3
+minor_count: 13
+material_found: 11
+material_caught: 8
+acceptance_rate: 72.7
+coverage_basis: "11 material (2 CRITICAL, 9 MAJOR) of 32 listed; 8 caught in full, 2 partially caught, 1 missed; rate counts full catches only (90.9% if partials count); main calls 4 of 4 read in full; peers: 2 full reads, 5 section reads, keyword search over all 11"

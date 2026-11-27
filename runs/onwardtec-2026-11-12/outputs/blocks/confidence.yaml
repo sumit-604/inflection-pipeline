@@ -1,0 +1,29 @@
+stage: confidence
+company: ONWARDTEC
+run_date: 2026-11-12
+phase: 1
+confidence_delta:
+  numerical_acceptance: 97.3      # B12a run 1, all eleven reports (numbers_checked 375; mandatory 85 of 85). Re-check of the revised Gate 0 report inside remediation cycle 1: 99, mandatory 163 of 163 (B12a-recheck)
+  redflag_coverage: 72.7          # B12b: 8 of 11 MATERIAL flags caught in full (denominator 11, floor of 4 met)
+  framework_adherence: 88.0       # B12c phase-1 scope: Gate 0 + Emerging Moat, 73 of 83 rules. Audited B01 run 1; B01 run 2 (remediation) has no Verifier C audit. Valuation component PENDING PHASE 3
+  peer_utilisation: 63.6          # B12d / B06 coverage map: 7 SUBSTANTIVE of 11 peer transcripts provided (3 CITED-ONLY, 1 UNUSED; two of the non-substantive files are Cyient event calls, not results calls)
+  overall: 63.6
+  overall_set_by: peer_utilisation
+  not_applicable: []
+  band: "60-74: PROCEED verdicts downgrade one level"
+verifier_a_identity_check:
+  critical_rows: 1
+  struck: 0
+  note: "E4 row: claimed Nil vs source_truth Rs 394.68 lakhs; values differ; orchestrator confirmed at Annual_Report_2026.pdf p.87 Note 26(a)(ii). CONFIRMED CRITICAL. REWORK fired (OR-29)."
+remediation:
+  cycles_used: 1
+  cycle_1: "Stage 1 re-run (B01 run 2: core 79, moat 21, GOOD+; E4 input corrected to 394.68 lakhs, score unchanged at 5). Verifier A re-check: 0 CRITICAL, 0 MAJOR, 1 MINOR; prior CRITICAL cleared at source. Stage 5 load-bearing anchor (B12a MAJOR) corrected p.4/p.8 -> p.3/p.9 by source re-read."
+  rework_status: "CLEARED by cycle 1. No CONFIRMED CRITICAL stands; no verifier acceptance rate is below 60%."
+open_items:
+  - "Verifier C has not audited B01 run 2. A second Verifier C run needs operator approval (verifier cap); proposed re-run: Gate 0 half only, on outputs/reports/01-gate0.md run 2."
+  - "Gate 0 class is input-gap sensitive: AVERAGE (10-year series demanded, core 55) to EXCELLENT (core 84) per B01 run 2 sensitivities and B12c; headline GOOD+ core 79. Closing documents: FY2017-FY2023 annual reports, Sep 2023 shareholding pattern, screener re-export."
+  - "Verifier A MINOR anchor slips in 05, 06, 04, 07, 09 reports not edited; corrected pages are in B12a."
+  - "Verifier A shadow not run (claimed by the kusumgar session; .claude/shadow.yaml untouched)."
+disagreement_set:
+  - {date: 2026-11-12, run: onwardtec-2026-11-12, claim: "Gate 0 E4 contingent liabilities Nil", verifier_a: "CRITICAL MISMATCH; AR26 p.87 Note 26(a)(ii) Rs 394.68 lakhs", downstream: "stage 1 run 1", disposition: "GATE HELD - figure corrected at source (correct anchor shown); forced REWORK, cleared by remediation cycle 1", note: "re-check B12a-recheck confirms"}
+  - {date: 2026-11-12, run: onwardtec-2026-11-12, claim: "R&D credit Rs 292.60 lakhs anchored to results p.4 / p.8", verifier_a: "MAJOR ANCHOR NOT FOUND; figure is on p.3 / p.9", downstream: "stage 5", disposition: "GATE HELD - figure corrected at source (correct anchor shown)", note: "orchestrator re-read the results PDF text"}

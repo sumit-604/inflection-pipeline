@@ -1,0 +1,51 @@
+stage: B02-notes
+company: "ONWARDTEC"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "inputs/prospectus/ empty: long-listed company, not expected"
+  - "inputs/research/ empty"
+  - "screening: only Data_Sheet CSVs populated; screener P&L, Quarters, Balance Sheet, Cash Flow exports EMPTY and absent"
+  - "collector BSE announcements fetch FAILED; announcements hand-filled with 3 quarterly press releases and 3 buyback filings; NOT the full Reg 30 record"
+  - "rating: ICRA withdrew 2023-11-13; last rationale 2023-03-27 stale; no live rating"
+  - "shareholding: only the Sep 2026 pattern held"
+  - "Q1 FY27 results PDF is scanned, no OCR"
+  - "empty-folder question suppressed under /step1 standing default"
+  - "notes give no ageing by customer, no customer receivable share, no onshore/offshore split of sub-contracting, no functional currency for the US subsidiary, no split of unbilled between third-party and intra-group, no events-after-balance-sheet note"
+flags:
+  - {type: FLAG-CONCENTRATION, reason: "one customer 18.3% of FY26 revenue (9,965.52 of 54,385.24 lakhs), up from 12.7% FY24; customer receivable share NOT FOUND (Note 34, p.93)"}
+  - {type: FLAG-CASH, reason: "unbilled 3,429.35 lakhs +13.2% vs revenue +10.7%, no ageing or allowance; derived subsidiary billed days 70.1 to 81.3 while parent fell 52.6 to 43.4; RPT receivables exceed standalone Note 8 by 345.60 lakhs; consolidated ageing itself clean (past due over 6 months 12.41 of 8,588.79 lakhs)"}
+  - {type: FLAG-COSTMIX, reason: "sub-contracting 3,407.42 lakhs +36.6% vs revenue +10.7% and payroll +4.1%; no reason in notes (Note 24, p.86)"}
+  - {type: FLAG-FX, reason: "forward sell book 2,673.14 lakhs vs parent net exposure 891.69 lakhs; MTM liability 129.78 lakhs through P&L; GBP net 766.47 unhedged; sensitivity table omits derivatives (Notes 29, 30, 38)"}
+  - {type: FLAG-CONTROLS, reason: "auditor unable to comment on audit trail tampering in general ledger and revenue billing system; audit trail not enabled in full at application layer; repeated from FY25 (auditor's report cl. (f), p.63)"}
+accounting_quality: 7
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "One customer 18.3% of revenue (9,965.52 of 54,385.24 lakhs, derived), up from 12.7% FY24; receivable share NOT FOUND", note_ref: "Note 34, p.93", rating: "🟡", why: "concentration up six points in two years; load-bearing fact 3"}
+  - {rank: 2, finding: "Sub-contracting 3,407.42 lakhs +36.6% vs revenue +10.7%, payroll +4.1%; implied subsidiary sub-contracting +76.7%", note_ref: "Note 24, p.86; standalone Note 23, p.123", rating: "🟡", why: "EBITDA gain came with a mix shift to variable-cost delivery; no reason given"}
+  - {rank: 3, finding: "Parent billed days 52.6 to 43.4, subsidiary 70.1 to 81.3 (derived); standalone receivable fall 93.5% intra-group; RPT receivables exceed Note 8 by 345.60", note_ref: "Notes 6, 26; standalone Note 8, pp.78, 115, 125", rating: "🟡", why: "clean consolidated ageing hides subsidiary slowdown; part is currency translation, unquantified"}
+  - {rank: 4, finding: "Unbilled 3,429.35 lakhs +13.2% vs revenue +10.7%, no ageing or allowance", note_ref: "Note 6, p.78; Note 30, p.90", rating: "🟡", why: "40.0% of net billed receivables is unaged and unprovided"}
+  - {rank: 5, finding: "Gratuity deficit 1,062.86 (FY25 536.94), funded 11.5%, contribution 10.00 vs benefits paid 130.82; labour code 315.50 on draft rules", note_ref: "Note 17, pp.83-84", rating: "🟡", why: "FY27 cash call 1,339.10 expected; exceptional can move"}
+  - {rank: 6, finding: "Operating cash flow includes 994.95 lakhs accrued pay net of labour code provision (15.3%, derived); KMP pay payable 506.29", note_ref: "Notes 15, 17, 27; cash flow p.66", rating: "🟡", why: "part of cash conversion is unpaid pay that reverses"}
+  - {rank: 7, finding: "Forward sell book 2,673.14 vs parent net exposure 891.69; GBP 766.47 unhedged; MTM liability 129.78 via P&L; sensitivity omits derivatives", note_ref: "Notes 29, 30, 38", rating: "🟡", why: "other income FX swing 99.60; disclosed sensitivity understates"}
+  - {rank: 8, finding: "Effective tax 22.3% vs 25.4%; 23.7% ex prior-period credit 53.25 and loss utilisation 28.04; 71.70 unexplained swing in non-deductible line", note_ref: "Note 12(b), p.80", rating: "🟡", why: "part of PAT growth from tax rate, partly depleting"}
+  - {rank: 9, finding: "ESOP 2024 grant cost 454.68 over four years vs FY26 expense 89.79; Trust bought at about Rs 325 vs exercise 253.48, funding gap about 214.6 into equity", note_ref: "Notes 13, 35; cash flow p.66", rating: "🟡", why: "employee cost steps up; Trust loan 1,007.77 not repayable from ESOP 2024 proceeds alone"}
+  - {rank: 10, finding: "Auditor unable to comment on audit trail tampering in GL and revenue billing system; second year", note_ref: "Auditor's report cl. (f), p.63; AR25", rating: "🟡", why: "billing system feeds revenue and unbilled; opinion unmodified"}
+  - {rank: 11, finding: "Former-employee suit vs US sub disclosed 394.68 after 1,130.64 cash freeze (vacated); tax demand notices remote, no amount", note_ref: "Note 26, p.87", rating: "🟡", why: "thin contingent liability disclosure"}
+  - {rank: 12, finding: "Reported standalone ROCE 23.48% includes other income 906.69 and adds back 315.50 exceptional; 19.17% ex other income", note_ref: "Standalone Note 33, p.131", rating: "🟡", why: "rebuild before use in valuation"}
+  - {rank: 13, finding: "RPT/governance: independent director's firm billed 9.76 (+190.5%); Infinity Direct 195.00 dividend two readings; Canada advance 358.63 no revenue trail; Trust trustee was subsidiary director (remedied)", note_ref: "Note 27, pp.87-88; standalone Notes 17, 26; p.25", rating: "🟡", why: "promoter-fall mechanism NOT FOUND in notes; Infinity entities 17.37% combined are the only structural clue"}
+  - {rank: 14, finding: "PP&E additions 2,156.00 (FY25 228.76); cash 1,804.97 ties to cash flow; vehicles 360.49 purpose NOT FOUND; credit facilities lapsed unrenewed", note_ref: "Notes 3, 4, 8, pp.77-79; cash flow p.66", rating: "🟡", why: "real cash, low risk against 12,849.24 liquid assets"}
+  - {rank: 15, finding: "Zero borrowings, no loans or guarantees, no inventory or goodwill, subsidiaries profitable, no restatement, past due over 6 months 12.41", note_ref: "Notes 5-9, 31, 33, 36", rating: "🟢", why: "limits balance sheet risk to the items above"}
+red_flags: []
+questions_for_mgmt:
+  - "What drove sub-contracting up 36.6% (3,407.42 lakhs), how much is onshore versus offshore, and does any sit with related parties?"
+  - "Why did subsidiary billed days rise from 70.1 to 81.3 while the parent fell to 43.4, and how much is currency translation?"
+  - "What share of year-end receivables and unbilled belongs to the 18.3% customer, and what are its contract terms and renewal dates?"
+  - "What is in the 506.29 lakhs of KMP pay payable, and why is Harish Mehta's balance up from 54.69 to 224.83?"
+  - "What is the remediation date for the audit trail gap in the GL and revenue billing system, and what rights (board seat, nomination) do the Infinity holders have by agreement?"
+receivables_trend: "stable on billed (consolidated billed days 56.9, 58.8, 57.5 for FY24-FY26; billed plus unbilled 77.9, 81.3, 80.5; past due over 6 months 12.41 of 8,588.79 lakhs gross = 0.14%); unbilled drifting up (3,429.35 lakhs, +13.2% vs revenue +10.7%; 21.1, 22.5, 23.0 days); derived split: parent billed days 52.6 to 43.4, subsidiaries 70.1 to 81.3 (translation part unquantified)"
+restatements_found: []
+going_concern_language: "NONE (words appear only as capital management objective, Note 31, p.93, and auditor's standard paragraph)"
+analyst_note: "Receivables look clean at group level, but the split matters: parent days improved because the parent pulled cash from its own subsidiaries (93.5% of the standalone fall is intra-group); subsidiary collections slowed, partly currency. Pass 1 forward cover and FX sensitivity readings were wrong in basis (Pass 2 C2, C4); use Pass 2. Reported ROCE 23.48% is standalone and includes other income; rebuild. The audit trail carve-out sits in the auditor's report, not the notes, and repeats FY25. Q2 FY27 R&D credit of Rs 2.9 Cr is outside this AR; FY26 UK credit is 135.94 lakhs."

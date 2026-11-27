@@ -1,0 +1,97 @@
+stage: B09-tam
+company: "SUDARCOLOR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "no investor presentation; no concalls (declared); capacity, utilisation, volume, end-market split, customer concentration NOT FOUND"
+  - "Ken Research and IMARC India pigment market definitions NOT FOUND (page fetch failed); peer revenue aggregation and unorganised share NOT FOUND"
+  - "H1 FY27 group share of sales NOT FOUND, so third-party growth in the SOM base year is not observable"
+  - "SAM filters customer and capability not quantifiable from filed evidence; SAM is a product-fit ceiling"
+flags:
+  - "FLAG-GROUP-LANE: 24.5% of revenue (191.40) is group-allocated; SAM and SOM here cover the third-party lane only (589.23). Of 200.49 outside-India revenue, 177.54 goes to three group affiliates (AR p.93-94), so third-party export is about 22.95 (derived)"
+  - "FLAG-SOM-BASE: yr3/yr5 CAGR is on third-party revenue 589.23, not total 780.63. Holding group sales flat at 191.40 as a convention gives total-revenue CAGR of 8.4% (yr3) and 8.3% (yr5)"
+  - "FLAG-MGMT-CLAIM-SCOPE: headline claim is global colour pigments USD 8.6 bn = Rs 80,367 Cr, not an India or SAM figure. Like-for-like check uses the organic component USD 5.0 bn"
+  - "FLAG-TAM-DIVERGENCE: India TAM methods give Rs 8,037 Cr and Rs 14,074 Cr (1.75x); IMARC Rs 29,904 Cr is a 2.1x outlier, likely wider definition (inference)"
+  - "FLAG-FX: Rs 93.45 per USD derived from AR p.89 (49.53 / 0.53 and 20.56 / 0.22, Mar-26); applied to 2025 USD estimates"
+  - "FLAG-CAPACITY: utilisation NOT FOUND; gap Rs 109-181 Cr against capex-embedded growth alone"
+market_definition: "Coloured organic and inorganic pigments and pigment preparations (ex black, white, metallic/effect) sold into coatings, plastics and inks, India demand; company lane = third-party sales by the Indian entity, group-allocated export lane excluded"
+tam_cr: {conservative: 8037, realistic: 14074}
+sam_cr: 8183
+sam_pct_of_tam: 58.1
+som_3yr_cr: 803
+som_5yr_cr: 970
+som_implied_revenue_cagr: {yr3: 10.9, yr5: 10.5}
+current_sam_share_pct: 7.2
+revenue_headroom_x: 13.9
+tam_growth_pct: 4.1
+runway_class: "MODERATE"
+mgmt_claim_cr: 46725
+mgmt_claim_ratio: 0.93
+mgmt_claim_read: "reasonable"
+capacity_check: "gap of Rs 109 Cr (capex-embedded 5.6% a year) to Rs 181 Cr (5.6% one-time) at yr3 against SOM 803; utilisation NOT FOUND; Q2 FY27 revenue +47% with no disclosed capex implies slack, so the capex figure is the incomplete side, not SOM (inference)"
+methods_used:
+  - "M1 top-down: India share of global (CareEdge 10-15% x management global USD 8.6 bn)"
+  - "M1b top-down: India market report (Ken Research USD 1,506 mn 2025); IMARC USD 3.2 bn shown as outlier"
+  - "M3 peer aggregation: partial, named peers only (Sudarshan third-party 589.23, Asahi Songwon Blue 370-400); unorganised NOT FOUND"
+  - "M5 global benchmark: management organic USD 5.0 bn vs independent organic USD 5.38-5.40 bn"
+  - "M2 bottom-up and M4 import substitution: not applicable / NOT FOUND (no volume, no kg realisation, no import data)"
+stale_data_flags:
+  - {datapoint: "Asahi Songwon Blue revenue 370-400 Cr, 80-85% utilisation, 3-5% growth", source: "ASAHISONG concall Nov 2024 p.5", year: 2024}
+  - {datapoint: "DGTR anti-dumping precedent on DPP Pigment Red 254 from China and Switzerland", source: "web search result, recommended 2015", year: 2015}
+  - {datapoint: "India colorant exports USD 2.6 bn and 15% of global exports", source: "2025 industry commentary via web search, FY24 data", year: 2024}
+searches_performed:
+  - "India pigments market size organic pigments FY2025 crore CAGR"
+  - "global organic pigments market size 2025 USD billion CAGR"
+  - "Indian pigments industry exports share global production China anti-dumping 2025"
+  - "CareEdge Indian dyes pigments industry FY26 contract size share"
+  - "Sudarshan Chemical Heubach acquisition market share"
+searches_skipped:
+  - "WebFetch alchempro.com India dyes pigments article: HTTP 405"
+  - "WebFetch imarcgroup.com India pigments market: HTTP 403, segment split and definition not read"
+  - "Peer revenue (Pidilite, Meghmani and others) and unorganised share: no sourced figure found; no primary DGTR or Ministry of Finance notification checked"
+downstream_candidates:
+  - signal: "Indian paint makers' volume growth (Asian Paints, Berger, Kansai Nerolac results)"
+    entity_type: "end-customer"
+    demand_link: "Coatings are the largest named application in AR p.18; paint volume drives pigment offtake."
+    likely_source: "Exchange filings and concall transcripts of listed paint makers"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Automotive and EV production volumes"
+    entity_type: "end-customer"
+    demand_link: "AR p.19 cites EV shade shift raising pigment use per vehicle; spec-in automotive coatings."
+    likely_source: "SIAM industry association monthly data"
+    cadence: "monthly"
+    shared: false
+  - signal: "Plastics, packaging and printing ink producer demand"
+    entity_type: "end-customer"
+    demand_link: "Plastics and inks are two of three core applications (AR p.18); packaging drives both."
+    likely_source: "Listed ink and masterbatch makers' exchange filings and concalls"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Sudarshan Chemical Industries consolidated results and half-yearly related-party filing"
+    entity_type: "counterparty"
+    demand_link: "Group buys 24.5% of sales and sets plant loading, product transfer and sourcing."
+    likely_source: "Exchange filings, Reg 23 related-party disclosure, parent concalls"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Anti-dumping or safeguard orders on Chinese pigments (Azo, DPP, mica pearl)"
+    entity_type: "regulatory"
+    demand_link: "Duty of 20-30% on Chinese Azo cited by ASAHISONG; shifts domestic share to Indian makers."
+    likely_source: "DGTR findings and Ministry of Finance customs notifications (regulator orders page)"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Chinese pigment export prices and India pigment import volumes"
+    entity_type: "macro"
+    demand_link: "AR p.19 risk theme: oversupply and small-player price competition; China sets the price floor."
+    likely_source: "Ministry of Commerce DGCIS trade data; industry association notes"
+    cadence: "monthly"
+    shared: false
+  - signal: "Asahi Songwon pigment utilisation and margin commentary"
+    entity_type: "counterparty"
+    demand_link: "Listed Indian pigment peer; reads industry demand, consolidation and capacity closures."
+    likely_source: "Exchange filings and peer concall transcripts"
+    cadence: "quarterly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Two readings of the SOM. Reading one: the Indian entity rides the market at 4.1% a year (share flat at 7.2%, third-party Rs 665 Cr at yr3). Reading two: it gains 1.5pp of share in 3 years (the normal 1-2pp band), giving 10.9%. The observation that separates them is third-party revenue growth in H1 FY27, which the filings do not split; third-party revenue was flat in FY26 (589.23 vs 590.15). SAM is a ceiling: product fit is the only filter evidenced, so customer and capability filters remain NOT FOUND. To reach 25% earnings CAGR on 10.9% revenue growth, operating margin must rise from 7.42% to 10.6% by yr3 (H1 FY27 was 12.2%)."

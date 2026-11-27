@@ -1,0 +1,45 @@
+stage: B01-gate0
+company: "SUDARCOLOR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "no concalls (company holds none; concalls_available false)"
+  - "no rating document"
+  - "no investor presentation"
+  - "shareholding is a screener copy, not the exchange filing; pledge data NOT FOUND (E3 scored 0)"
+  - "screener P&L/BS/CF/Quarters CSVs absent (empty export), Data_Sheet only; no screener ROCE, so ROCE computed"
+  - "two scanned announcement PDFs have no text layer"
+  - "trade payables NOT FOUND before FY24 (B4, M12 scored 0); capex NOT FOUND before FY24 (B2, B3 on FY24-FY26 only)"
+  - "H1 FY27 group share of sales, receivables, payables NOT FOUND (results filing carries no related-party split)"
+flags:
+  - {type: FLAG-GATE0, reason: "AVERAGE after deal-breaker 3 (median computed ROCE 7.98% < 10%; nine of ten years below 10% or near it, FY21 11.90% and FY25 11.08% the only years above 10%). Depressors: surplus equity and cash (cash 235.37 Cr on net worth 570.08 Cr), FY21 PAT inflated by Rs 268.06 Cr other income. Under the screener convention (PBT + interest, other income included) median ROCE is 10.2%, deal-breaker 3 does not fire, core 61, classification GOOD. Convention choice moves the class."}
+  - {type: FLAG-CASH, reason: "CFO 110.59 Cr FY25 to 34.24 Cr FY26 to minus 24.11 Cr H1 FY27 (results Q2 FY27 p.5); WC build in H1 FY27 inventories 255.22, receivables 244.95, payables 276.89 (p.4)"}
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 5, B: 15, C: 7, D: 20, E: 13}
+core_score: 60
+moat_score: 0
+grand_total: 60
+moats_confirmed: 0
+moat_class: "NONE"
+classification: "AVERAGE"
+deal_breakers:
+  - "DB3 median ROCE below 10%: median 7.98% computed (operating EBIT / (total assets minus other liabilities)); years FY17-FY20 at 1.00-4.11%, FY22-FY26 at 6.46-11.08%, FY21 11.90%"
+history_downgrade: false
+data_notes:
+  - "ROCE computed, not from source. EBIT = PBT + interest - other income; capital employed = total assets - other liabilities (data sheet has no current-liability split for FY17-FY25). Sensitivity: EBIT = PBT + interest gives median 10.2%, min 4.8%, A1=1, core 61."
+  - "Loss-to-profit swing: none. PAT positive all ten years."
+  - "FY21 PAT 219.76 Cr includes other income 268.06 Cr (screener-data). Scored cumulative CFO/PAT is 1.04 (556.49/534.73); ex-FY21 it is 499.81/314.97 = 1.59, not scored (band is 5 either way)."
+  - "ROE: FY17 uses closing net worth (opening unavailable). Median ROE 8.08%."
+  - "B2/B3 use FY24-FY26 only: capex FY24 16.52 (AR FY25 p.65, Rs lakh 1,652.46), FY25 11.89, FY26 28.72 (AR FY26 p.76). Earlier capex NOT FOUND."
+  - "B4 scored 0: FY17 trade payables NOT FOUND. Informational WC days (revenue basis): FY24 66.4, FY25 55.8, FY26 79.1."
+  - "E2 window Dec 2023 (54.37%) to Sep 2026 (70.26%), 2.75 years, table starts Dec 2023. Rise is an intra-group transfer (Q2 FY27 results p.6 note 10; AR FY26 p.93 related-party list), scored mechanically."
+  - "E3 pledge NOT FOUND, scored 0; deal-breaker 5 not testable."
+  - "FY26 revenue reconciled: 780.63 in Q4 FY26 results p.3, Q2 FY27 results p.3, AR FY26 and screener. The figure 760.63 appears only in step1-business-brief.md; no source file carries it."
+  - "PEER DATA NEEDED: M5 (segment-wide mcap and margin rank; only 3 auto-selected peers supplied, one is the parent), M6 R&D spend NOT FOUND, M8 distribution reach not quantified in supplied numbers. Peer FY26 EBITDA margin: SUDARSCHEM 9.63, MOL 11.88, ASAHISONG 9.31, median 9.63 vs company 7.42 (M2=0). Peer gross margin proxy median 42.71 vs company 39.26 (M9=0)."
+  - "SUDARSCHEM FY26 sales 9787.2 includes consolidation of the acquired Heubach business; not like-for-like."
+  - "Group share FY26 (AR FY26 p.93): sales of goods to group 191.40 of 780.63 = 24.5%; trade receivables 56.56 of 179.39 = 31.5%; trade payables 43.87 of 166.33 = 26.4%."
+  - "Contingent liabilities FY26 50.76 Cr (14.61 + 34.63 + 1.52, AR FY26 p.90) over net worth 570.08 = 8.9%."
+block_b_trend: "deteriorating: CFO 110.59 Cr (FY25) to 34.24 Cr (FY26) to -24.11 Cr (H1 FY27), FCF FY26 5.52 Cr"
+analyst_note: "Score is 60 core with zero moats. The ROCE depressor is capital employed, not operating collapse: net worth 570.08 Cr carries 235.37 Cr cash, so operating ROCE sits near 6-11% while Block D is a full 20. The class turns on one convention. Operating-EBIT ROCE gives median 7.98% and DB3 caps at AVERAGE. Screener-style ROCE (other income in) gives 10.2%, no cap, GOOD. Stage 11 should not use either as a spot-year ROCE input without the cash adjustment. Revenue is flat to down over nine years (CAGR -2.5%) while PAT CAGR +6.9% rests on a low FY17 base and other income, so C4 scores 5 on a shrinking top line. Q2 FY27 revenue 269.76 vs 183.14 (+47%) and the H1 FY27 working capital build fall after the scored window. Group counterparties take about a quarter of sales and a third of receivables."

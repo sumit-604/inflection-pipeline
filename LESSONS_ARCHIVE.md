@@ -1112,3 +1112,16 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+## 2026-11-12 · SUDARCOLOR · /step1 (Phase 1 to Halt 1), runs/sudarcolor-2026-11-12
+- Collector: Playwright's bundled Chromium would not start (Windows side-by-side error, "spawn UNKNOWN"); the collector exited 0 with only BSE announcements and warned "no AR found on screener". Re-run through installed Chrome (channel shim outside the repo) worked.
+- Collector: REPO_ROOT is hardcoded to C:\Users\SUMIT SHARMA\..., which does not exist on this machine; run through a wrapper that sets it.
+- Collector: fetched no results filings and only Sep-Oct 2026 announcements; results pulled from BSE through screener source links.
+- Intake brief carried FY26 revenue 760.63 from a web PDF parse; the filing prints 780.63. Stage 1 caught it at the page. Web parses of results PDFs are not to be trusted for load-bearing facts.
+- Results text layer misreads H1 FY27 PBT (59.87 for 59.67); stages 4, 5, 8 copied it; Verifier A caught it from the page image.
+- Stage 1 signed the inventory-change line the wrong way in peer margins (Gate 0 M2, M9); Verifier A MAJOR. Severity rule for Gate 0 inputs with no verdict card in phase 1 needs an operator ruling.
+- Verifier C: Gate 0 EBIT convention (other income) and missing-window scoring are unruled; the class moves AVERAGE to GOOD on them.
+- Verifier B counted partial catches as found (69%); strict full-catch is 37.5%. The counting rule needs one written reading.
+- Stage 5 no-call run: 106,655 tokens against the 100k target (open action C2 measurement).
+- Verifier A shadow not run and .claude/shadow.yaml left armed: ten parallel /step1 sessions would each have flipped it.
+- Subagent token split (input, cache, output) is not exposed in this harness; session-cost.md carries totals only, so the re-read multiple is n/a.

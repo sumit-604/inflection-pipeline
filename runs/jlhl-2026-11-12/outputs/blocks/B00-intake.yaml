@@ -1,0 +1,496 @@
+stage: B00-intake
+model: claude-haiku-5-5
+status: complete
+corpus_manifest:
+  - path: "inputs/announcements/20250703-Credit_Rating_Intimation_JLHL.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "reg 30 intimation; ICRA rating letter annexed"
+    period: "rating letter dated 3 Jul 2025 (no FY on page)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20251118-NCLT_Order_Scheme_of_Amalgamation.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "reg 30 intimation; NCLT order on scheme of amalgamation (Medulla Healthcare Pvt Ltd)"
+    period: "letter dated 18 Nov 2025 (no FY on page)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260130-Dombivli_Commencement.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "reg 30 intimation; Dombivli hospital commencement"
+    period: "letter dated 30 Jan 2026 (no FY on page)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260310-Credit_Rating_Intimation_Subsidiary_JHPPL.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (filer); rated entity Jupiter Hospital Projects Pvt Ltd (JHPPL)"
+    doc_type: "reg 30 intimation; ICRA rating on subsidiary facilities"
+    period: "letter dated 10 Mar 2026 (no FY on page)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260327-MMRDA_BKC_Land_Tender_Acceptance.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "reg 30 intimation; MMRDA BKC land tender acceptance"
+    period: "letter dated 27 Mar 2026 (no FY on page)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260407-Reg_31_4_Disclosure_A.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "reg 31(4) SAST disclosure; no encumbrance of promoter shares"
+    period: "FY26 (year ended 31 Mar 2026); letter dated 01 Apr 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Filename date 20260407 differs from page date 01 Apr 2026. Page date used. Not a folder issue."
+  - path: "inputs/announcements/20260515-Resignation_Director_Bhaskar_Shah.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "reg 30 intimation; non-executive director resignation (Dr Bhaskar Shah)"
+    period: "letter dated 15 May 2026 (no FY on page)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260518-Resignation_CFO_Sivasis_Sen.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "reg 30 intimation; CFO resignation (Sivasis Sen), also JHPPL CFO"
+    period: "letter dated 18 May 2026; effective 31 May 2026 (no FY on page)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260518-Secretarial_Compliance_Report_FY26.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "reg 24A annual secretarial compliance report (cover letter; report by Yogesh Sharma & Co)"
+    period: "FY26 (year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Sidecar pages 2 to 8 carry no extractable text. Report body not verified by this stage."
+  - path: "inputs/announcements/20260731-Reg_30_5_Intimation.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "reg 30(5) intimation; KMP authorised for materiality (CFO Harshad Purani added)"
+    period: "letter dated 31 Jul 2026 (no FY on page)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261007-422a07c1-96c0-404c-b501-6cbf6ec3b11d.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "reg 74(5) depository certificate from RTA (KFin Technologies)"
+    period: "Q2 FY27 (quarter ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261008-f64623b4-e636-47a8-b52c-b779ba15dfa4.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "reg 30 intimation; earnings conference call invite"
+    period: "Q2 and H1 FY27 (call on 26 Oct 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261019-3aad94cc-eacf-4e91-bdac-ad2c9b6bfdfc.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "reg 30 intimation; hypothecation agreement with HDFC Bank for capex"
+    period: "agreement executed 18 Oct 2026 (no FY on page)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261025-f2c656d1-a69b-4ff2-ba8f-7026361e798a.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "reg 30 and 47 intimation; newspaper publication of unaudited results"
+    period: "Q2 FY27 (quarter and half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Sidecar pages 2 and 3 carry no extractable text (newspaper clippings)."
+  - path: "inputs/announcements/20261026-8ae16691-b4f7-49a9-b33f-ddad74629623.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "reg 30 and 46(2) intimation; audio link of earnings call"
+    period: "Q2 FY27 (quarter and half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261109-7b1a0ce0-d348-4759-a864-f9c143ec418b.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "reg 30(6) intimation; schedule of investor conference"
+    period: "meeting on 16 Nov 2026 (no FY on page)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261112-076dfd4a-913d-43ad-bba4-b0e6451a14d0.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "reg 30 intimation; Thane Municipal Corporation LOI for 40-50 bed expansion"
+    period: "letter dated 12 Nov 2026 (no FY on page)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/annual-report/Annual_Report_2025.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "annual report"
+    period: "FY2024-25 (cover letter dated 17 Jun 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Filename year 2025 is the filing year. The report covers FY2024-25 per the page."
+  - path: "inputs/annual-report/Annual_Report_2026.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "annual report"
+    period: "FY2025-26 (cover letter dated 24 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/concalls/Concall_Feb_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "concall transcript"
+    period: "Q3 FY26 (9M FY26); call 2 Feb 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/concalls/Concall_May_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "concall transcript"
+    period: "Q4 FY26 and FY26; call 18 May 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/concalls/Concall_Aug_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "concall transcript"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026); call 3 Aug 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/concalls/Concall_Oct_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "concall transcript"
+    period: "Q2 FY27 (H1 FY27); call 26 Oct 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/peer-concalls/KIMS-Concall_Feb_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Krishna Institute of Medical Sciences Ltd (KIMS)"
+    doc_type: "concall transcript (peer)"
+    period: "Q3 FY26; call 9 Feb 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Quarter read from transcript title on page 2. Cover page 1 gives the filing only."
+  - path: "inputs/peer-concalls/KIMS-Concall_May_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Krishna Institute of Medical Sciences Ltd (KIMS)"
+    doc_type: "concall transcript (peer)"
+    period: "Q4 FY26; call 18 May 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Quarter read from transcript title on page 2."
+  - path: "inputs/peer-concalls/KIMS-Concall_Aug_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Krishna Institute of Medical Sciences Ltd (KIMS)"
+    doc_type: "concall transcript (peer)"
+    period: "Q1 FY27; call 4 Aug 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Quarter read from transcript title on page 2."
+  - path: "inputs/peer-concalls/KIMS-Concall_Nov_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Krishna Institute of Medical Sciences Ltd (KIMS)"
+    doc_type: "concall transcript (peer)"
+    period: "Q2 FY27; call 5 Nov 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Quarter read from transcript title on page 2."
+  - path: "inputs/peer-concalls/MEDANTA-Concall_Feb_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Global Health Ltd (Medanta, MEDANTA)"
+    doc_type: "concall transcript (peer)"
+    period: "Q3 FY26 (9M FY26); call 5 Feb 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Quarter read from transcript title on page 2."
+  - path: "inputs/peer-concalls/MEDANTA-Concall_May_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Global Health Ltd (Medanta, MEDANTA)"
+    doc_type: "concall transcript (peer)"
+    period: "Q4 FY26 and FY26; call 15 May 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Quarter read from transcript title on page 2."
+  - path: "inputs/peer-concalls/MEDANTA-Concall_Aug_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Global Health Ltd (Medanta, MEDANTA)"
+    doc_type: "concall transcript (peer)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026); call 31 Jul 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Filename month Aug. Call held 31 Jul 2026 per page 1 and page 2. Transcript filed 5 Aug 2026."
+  - path: "inputs/peer-concalls/MEDANTA-Concall_Nov_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Global Health Ltd (Medanta, MEDANTA)"
+    doc_type: "concall transcript (peer)"
+    period: "Q2 FY27 (H1 FY27); call 4 Nov 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Quarter read from transcript title on page 2."
+  - path: "inputs/peer-concalls/YATHARTH-Concall_Feb_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Yatharth Hospital & Trauma Care Services Ltd (YATHARTH)"
+    doc_type: "concall transcript (peer)"
+    period: "Q3 FY26; call 6 Feb 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Quarter read from transcript title on page 2."
+  - path: "inputs/peer-concalls/YATHARTH-Concall_Jun_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Yatharth Hospital & Trauma Care Services Ltd (YATHARTH)"
+    doc_type: "concall transcript (peer)"
+    period: "Q4 FY26 and FY26; call 26 May 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Filename month Jun. Cover letter dated 3 Jun 2026. Call 26 May 2026."
+  - path: "inputs/peer-concalls/YATHARTH-Concall_Aug_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Yatharth Hospital & Trauma Care Services Ltd (YATHARTH)"
+    doc_type: "concall transcript (peer)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026); call 11 Aug 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Quarter read from transcript title on page 2."
+  - path: "inputs/peer-concalls/YATHARTH-Concall_Nov_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Yatharth Hospital & Trauma Care Services Ltd (YATHARTH)"
+    doc_type: "concall transcript (peer)"
+    period: "Q2 FY27 (H1 FY27); call 4 Nov 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Quarter read from transcript title on page 2."
+  - path: "inputs/presentation/Investor_Presentation_Q1FY27_31Jul2026.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "investor presentation"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/presentation/Investor_Presentation_Q2FY27_23Oct2026.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "investor presentation"
+    period: "Q2 FY27 and H1 FY27 (quarter ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/presentation/Investor_Presentation_Q4FY26_15May2026.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "investor presentation"
+    period: "Q4 FY26 and FY26 (year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/prospectus/Red_Herring_Prospectus_30Aug2023.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "red herring prospectus (IPO)"
+    period: "RHP dated 30 Aug 2023 (no FY on page 1)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/rating/ICRA_Rationale_JLHL_10Mar2026.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "rating rationale (ICRA)"
+    period: "dated 10 Mar 2026 (no FY on page 1)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Rating action on JLHL facilities. Group view taken with JHPPL."
+  - path: "inputs/rating/ICRA_Rationale_Subsidiary_JHPPL_10Mar2026.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Hospital Projects Pvt Ltd (JHPPL)"
+    doc_type: "rating rationale (ICRA)"
+    period: "dated 10 Mar 2026 (no FY on page 1)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Rated entity JHPPL. Rationale takes a consolidated group view with JLHL."
+  - path: "inputs/results/FY26_Audited_Results_BM_Outcome_15May2026.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "results; board outcome with audited FY results and Q4 unaudited results"
+    period: "FY26 (year ended 31 Mar 2026) and Q4 FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/results/FY27-Q1_Results_BM_Outcome_31Jul2026.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "results; board outcome with unaudited results"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/results/FY27-Q2_Results_BM_Outcome_23Oct2026.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "results; board outcome with unaudited results"
+    period: "Q2 FY27 and H1 FY27 (quarter and half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/screening/screener-Data_Sheet.csv"
+    file_type: csv
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "screener data sheet (figures beside row labels)"
+    period: "annual series, latest column 2026-03-31"
+    folder_match: true
+    proposed_move: ""
+    page_read: "n/a"
+    note: "Company name row reads JUPITER LIFE LINE HOSPITALS LTD. Filename carries no ticker."
+  - path: "inputs/screening/KIMS-Data_Sheet.csv"
+    file_type: csv
+    content_ok: true
+    issuer: "Krishna Institute of Medical Sciences Ltd (KIMS)"
+    doc_type: "screener data sheet (peer)"
+    period: "annual series, latest column 2026-03-31"
+    folder_match: true
+    proposed_move: ""
+    page_read: "n/a"
+    note: ""
+  - path: "inputs/screening/MEDANTA-Data_Sheet.csv"
+    file_type: csv
+    content_ok: true
+    issuer: "Global Health Ltd (Medanta, MEDANTA)"
+    doc_type: "screener data sheet (peer)"
+    period: "annual series, latest column 2026-03-31"
+    folder_match: true
+    proposed_move: ""
+    page_read: "n/a"
+    note: "Company name row reads GLOBAL HEALTH LTD."
+  - path: "inputs/screening/YATHARTH-Data_Sheet.csv"
+    file_type: csv
+    content_ok: true
+    issuer: "Yatharth Hospital & Trauma Care Services Ltd (YATHARTH)"
+    doc_type: "screener data sheet (peer)"
+    period: "annual series, latest column 2026-03-31"
+    folder_match: true
+    proposed_move: ""
+    page_read: "n/a"
+    note: ""
+  - path: "inputs/shareholding/SHP_30Sep2026_NSE_XBRL.txt"
+    file_type: txt
+    content_ok: true
+    issuer: "Jupiter Life Line Hospitals Ltd (JLHL)"
+    doc_type: "shareholding pattern (NSE XBRL conversion)"
+    period: "Q2 FY27 (quarter ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: "n/a"
+    note: "Plain text, not a PDF. Not page-marked."
+unreadable: []
+unidentified: []

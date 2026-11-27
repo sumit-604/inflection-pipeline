@@ -1,0 +1,51 @@
+stage: B07-emoat
+company: "JLHL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "B00/B01: shareholding is one quarter only (30-Sep-2026 NSE XBRL); screener P&L, Quarters, Balance Sheet, Cash Flow sheets empty (Data_Sheet CSVs used); results text layers garbled; announcements are a selection, not the full 12-month record; no broker notes."
+  - "Peer concalls (KIMS, YATHARTH, MEDANTA; 12 in corpus) not read at this stage; supply-shortage, doctor-pay and empanelment-time claims are untested against peers. No live web used."
+  - "NOT FOUND: Dombivli revenue and hospital-wise revenue; Dombivli phase 2 capex; Dombivli budget baseline; Mira Road land-included cost; regulatory bodies and licences for Mira Road, transplant and radiation oncology; Dombivli fixed-cost unit (month vs quarter); revenue per employee trend; payer concentration."
+flags:
+  - {type: FLAG-THRESHOLD-FRAGILE, reason: "EM score 13.6 is 1.6 above the 12 floor. Removing B2 or R1 (2.0 each, both table-stakes gates shared with peers) gives 11.6 and a NONE class."}
+  - {type: FLAG-GATE0-VS-EM-GAP, reason: "Gate 0 moat class STRONG (23) is arithmetic on a hospital operator (B01). The scan finds no pricing, retention or asymmetry evidence: mgmt says mature ARPOB tracks inflation only; permanent-employee turnover 24.1% FY26 (AR26 p.53); I1 and I2 score 0."}
+  - {type: FLAG-GROWTH-IS-CAPACITY, reason: "Embedded growth of 115% to 177% over FY26 comes from bed supply (Pune South, Mira Road, BKC), delivered CY28 to CY31. Only Pune South is under construction. Capex per bed ex land rises 1.0 to 1.5 Cr across the pipeline."}
+  - {type: FLAG-FUNDING-LEVERAGE, reason: "Net cash about Rs 45 Cr (Mar-26) to net debt about Rs 170 Cr (Sep-26, mgmt); Rs 500 Cr HDFC term loan signed 18-Oct-2026; mgmt ceiling 3x EBITDA vs ICRA downgrade trigger 1.8x; carried from B05 funding drift."}
+  - {type: FLAG-DOMBIVLI-SEASONAL, reason: "Dombivli Q2 FY27 EBITDA loss Rs 0.2 Cr is partly seasonal admissions that mgmt cannot size; Q3 FY27 is the separating observation."}
+em_score: 13.6
+em_classification: "MODEST"
+active_categories:
+  - {id: "E1", name: "Geographic first-mover / land bank", strength: "Moderate", evidence_type: "documented", time_to_materialise: "CY28 to CY31"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "Tested by Pune South CY28"}
+evidence_mix: {documented: 12, claim: 10, inference: 3}
+completionist_recount: "📄 recount performed: 12 documented items across 8 categories (F2, E1, R1, G1, B1, B2, H3, F1); 9 of 23 rows carry any evidence, below the 12-category trigger."
+catalysts_12m:
+  - {catalyst: "Dombivli Q3 FY27 EBITDA vs Rs 0.2 Cr seasonal Q2 (kill line Rs 3 Cr a month)", window: "Jan-Feb 2027", evidence_type: "claim", anchor: "Q2 FY27 call p.5; Inv. Pres. Q2 p.5"}
+  - {catalyst: "Dombivli NABH award and first cashless insurer empanelment", window: "6-12 months from Oct 2026", evidence_type: "claim", anchor: "Q2 FY27 call p.9"}
+  - {catalyst: "Dombivli radiation oncology start and transplant launch", window: "Q3 FY27 to Q4 FY27", evidence_type: "claim", anchor: "Q2 FY27 call p.11"}
+  - {catalyst: "Thane +40-50 beds: environmental clearance, then construction (about Rs 25 Cr)", window: "2027", evidence_type: "documented", anchor: "Reg 30 12-Nov-2026 p.2"}
+  - {catalyst: "Mira Road approvals and next phase before FY27 end", window: "by Mar-2027", evidence_type: "claim", anchor: "Q2 FY27 call p.3"}
+  - {catalyst: "Pune South land registration (Rs 150 Cr, Rs 100 Cr new cash)", window: "Nov-Dec 2026", evidence_type: "documented", anchor: "Inv. Pres. Q2 p.4; Q2 FY27 call p.3"}
+  - {catalyst: "BKC balance 75% lease premium payment and registration", window: "FY27", evidence_type: "claim", anchor: "Q4 FY26 call p.6; Reg 30 27-Mar-2026"}
+  - {catalyst: "Onco-drug 30% margin cap impact stated by mgmt", window: "Q3 FY27 call, Jan-Feb 2027", evidence_type: "claim", anchor: "Q2 FY27 call p.7"}
+capex_embedded_growth_pct: 177   # 2,129 Rs Cr x 1.245 turnover = 2,650 Rs Cr on FY26 base 1,499.8 Rs Cr; bed-day cross-check 115%
+optionality_register:
+  - {optionality: "Dombivli reaches EBITDA breakeven early", converting_evidence: "Dombivli EBITDA footnote at or above zero in Q3 and Q4 FY27 despite weaker seasonality", first_appears: "Quarterly investor presentation EBITDA bullet", window: "Q3 FY27 to Q4 FY27"}
+  - {optionality: "Dombivli cashless empanelment lifts occupancy", converting_evidence: "NABH certificate, empanelled insurer list, Dombivli payer mix", first_appears: "Exchange filing or concall", window: "6-12 months"}
+  - {optionality: "Dombivli transplant and radiation oncology lift ARPOB", converting_evidence: "Launch filing and ARPOB disclosed with and without Dombivli", first_appears: "Concall and deck", window: "2-4 quarters"}
+  - {optionality: "Indore phase 2 (111 beds)", converting_evidence: "Indore occupancy mid-60s then capex approval", first_appears: "Concall and Reg 30", window: "6-18 months"}
+  - {optionality: "IV fluids backward integration gains margin", converting_evidence: "Plant commissioning and a gross margin or COGS percent step-down", first_appears: "Deck gross margin line, AR notes", window: "12-24 months"}
+  - {optionality: "Doctor retention advantage (zero attrition, 20-25% cost)", converting_evidence: "Disclosed full-time doctor attrition and remuneration, retention scheme", first_appears: "AR FY27 BRSR and remuneration notes", window: "about 12 months"}
+  - {optionality: "Supply gap gives mature-unit pricing above inflation", converting_evidence: "Mature-unit ARPOB growth above inflation with stable margin; peer bed counts", first_appears: "Deck by-unit ARPOB (not disclosed today); peer concalls", window: "12-24 months"}
+  - {optionality: "Dombivli green Platinum certificate", converting_evidence: "Certificate issued", first_appears: "AR FY27", window: "about 12 months"}
+  - {optionality: "BKC quaternary franchise", converting_evidence: "Registration, approvals, capex number, construction start", first_appears: "Reg 30 and concall", window: "24-36 months"}
+combined_assessment: "GOOD"
+combined_reasoning: "Gate 0 GOOD (core 71, Block B cap) with MODEST forward (13.6): growth is bed supply, not a forming moat; HIGH POTENTIAL and TURNAROUND both fail."
+top_moat_risks:
+  - "No pricing or retention edge under the build-out: mature ARPOB tracks inflation, permanent-employee turnover 24.1%"
+  - "Dombivli Q2 loss of Rs 0.2 Cr is partly seasonal; Q3 FY27 could revert toward Rs 2-3 Cr a month"
+  - "Net cash to net debt in 7 months; Rs 500 Cr term loan; 3x mgmt ceiling vs 1.8x rating trigger"
+  - "Capex per bed ex land rises 1.0 to 1.5 Cr across the pipeline; BKC date slipped 2030 to CY31; Mira Road slipped"
+  - "Onco-drug margin cap and Supreme Court review hit all private hospitals; impact not modelled"
+analyst_note: "Two readings of Dombivli. A: ramp is ahead of plan (loss Rs 9.5 Cr to 0.2 Cr, occupancy 25-30% to mid-30s on about 144 census beds). B: seasonal medical admissions flatter Q2 and dilute ARPOB, and Q3 reverts. Separating observation: Dombivli Q3 FY27 EBITDA footnote against Rs 9 Cr a quarter. Embedded growth 177% uses 2,129 Cr capex x 1.245 turnover; the bed-day cross-check (census share 84.4%, 64.8% occupancy, Rs 71,800 ARPOB, 1,200 new beds) gives 115%. Census beds x 365 x 59.5% x Rs 71,800 reproduces H1 revenue annualised (1,657.5 vs 1,657.6 Cr), so the convention ties. Score is 1.6 over the 12 floor and fragile. Peers untested."

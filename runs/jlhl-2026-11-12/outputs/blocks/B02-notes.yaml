@@ -1,0 +1,59 @@
+stage: B02-notes
+company: "JLHL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "collector warning: shareholding/ was empty; REPAIRED at /step1 with NSE XBRL pattern for 30-Sep-2026 (one quarter, no pledge trend series). No effect on notes."
+  - "screener export sheets came out empty (formulas without cached values); only the four Data_Sheet CSVs are populated. No effect on notes."
+  - "results PDFs and rating PDF absent at collection; REPAIRED at /step1 (three results filings, two ICRA rationales). Results text layers partly garbled; use page images. No effect on notes."
+  - "research: EMPTY; other: EMPTY. No broker notes. No effect on anchored evidence."
+  - "prospectus: RHP 30-Aug-2023 present; final Prospectus 11-Sep-2023 not in corpus."
+  - "announcements: collector fetched ~5 weeks from BSE; /step1 added nine NSE filings; set is a selection, not the complete 12-month record."
+  - "two scanned announcements (Secretarial_Compliance_Report_FY26, newspaper Q2 results publication); no tesseract; neither is anchored evidence."
+  - "annual-report: FY26 (237 pages, primary) and FY25 (106 pages, baseline) held. AR text complete in the notes range."
+  - "Verifier A shadow switch not flipped by this run (claimed by another session)."
+  - "NOTES-SPECIFIC NOT FOUND IN DOCUMENT: Dombivli commissioning and depreciation start dates; capitalised borrowing cost and pre-operative cost; capital commitments; BKC land price and payments; covenants; ECL matrix rates and overlay; impairment inputs; lease discount rate; interest rate on JHPPL and Medulla loans; guarantee fee; stock split in AR text; fair value hierarchy table; MAT credit and unrecognised DTA."
+flags:
+  - {type: FLAG-CASH, reason: "Gross receivables +72.3% (C Rs mn 792.22 vs 459.67) against revenue +15.2%; net days 12.1 to 18.4; unbilled Rs mn 191.07 newly shown; credit-impaired under 6 months 7.02 vs 1.36 (C Note 7 p.212). Allowance equals impaired bucket only."}
+  - {type: FLAG-COMPARATIVES, reason: "FY25 comparatives re-cut in AR26 with only 'regrouped' wording: C revenue 13,024.02 vs 12,615.45 as filed in AR25 (Rs mn); about Rs mn 3,980 moved from cash to current investments (S Note 37R p.182; C Note 36R p.235)."}
+  - {type: FLAG-CAPEX-DISCLOSURE, reason: "Capital commitments, capitalised borrowing cost and BKC land payments not disclosed in any note while capital advances reached Rs mn 1,169.36 (S) and Dombivli capitalised Rs mn 3,881.3."}
+  - {type: FLAG-CONTROL, reason: "HMIS billing software without database-level audit trail; backup logs missing for another system (Auditor paras 19.2, 19.6, 20.8 pp.129-132; S Note 37Q p.182)."}
+  - {type: FLAG-LIQUIDITY-CONCENTRATION, reason: "Rs mn 4,857.04 commercial paper of one issuer (JM Financial Services) is 89.3% of group liquid assets (C Note 6 p.211), against floating debt Rs mn 5,085.27."}
+accounting_quality: 6
+pass_2_empty: false
+pass_3_empty: true
+top_findings:
+  - {rank: 1, finding: "Borrowing-cost capitalisation, pre-operative cost and Dombivli depreciation start unquantified; parent term-loan interest expensed Rs mn 15.15 on debt 750.00 to 2,610.32; Dombivli capitalised Rs mn 3,881.3", note_ref: "S Note 31 p.167; S Note 1.1 p.156; Policy C.4 pp.145-146", rating: "RED", why: "Profit squeeze (C D&A +305.57, finance cost +219.57, Rs mn) cannot be split into expensed and capitalised cost; FY27 carries full-year charges"}
+  - {rank: 2, finding: "No capital-commitment disclosure; capital advances S Rs mn 1,169.36 vs 3.69; Pune, Mira Road, BKC named; BKC price absent", note_ref: "S Note 37B p.171; S Note 4 p.158; S Note 1 A p.144", rating: "RED", why: "Remaining capex and funding need cannot be sized from the notes"}
+  - {rank: 3, finding: "FY25 comparatives re-cut without restatement note: C revenue 13,024.02 vs 12,615.45 as filed (Rs mn); about Rs mn 3,980 cash to current investments", note_ref: "S Note 37R p.182; C Note 36R p.235", rating: "RED", why: "Growth is 15.2% on AR26 base and 18.9% on AR25 base; base choice drives trends"}
+  - {rank: 4, finding: "HMIS billing software lacks database-level audit trail; management says controls effective", note_ref: "S Note 37Q p.182; Auditor paras 19.2, 19.6, 20.8", rating: "RED", why: "HMIS is the revenue source system"}
+  - {rank: 5, finding: "Receivables gross +72.3% vs revenue +15.2%; unbilled Rs mn 191.07; ECL equals impaired bucket only (C 36.83)", note_ref: "C Note 7 p.212; S Note 7 pp.159-160", rating: "YELLOW", why: "Cash-conversion deterioration; no allowance on good balances"}
+  - {rank: 6, finding: "Group debt Rs mn 5,085.27 all floating Repo + 200 bps; 92.5% repays after year 3; covenants not disclosed; net cash Rs mn 353.45 if CP counts vs 2,763.67", note_ref: "C Note 14 p.215; C Note 36H p.229; C Note 35 p.222", rating: "YELLOW", why: "Funding of the build and finance-cost run-rate"}
+  - {rank: 7, finding: "89.3% of liquid assets (Rs mn 4,857.04) is one issuer's commercial paper; credit-risk text says bank deposits", note_ref: "C Note 6 p.211; C Note 35 p.221", rating: "YELLOW", why: "Concentration in the liquidity buffer"}
+  - {rank: 8, finding: "JHPPL loss Rs mn 34.29; cost 939.00 vs net assets 242.60; loan 293.37 no rate; Rs mn 2,500 guarantee outside contingent table, described as given in FY26 for loan outstanding March 2025", note_ref: "C Note 36D p.226; S Note 2 p.158; S Note 37B p.172", rating: "YELLOW", why: "Parent exposure about Rs mn 3,732 derived (939.00 + 293.37 + 2,500)"}
+  - {rank: 9, finding: "Doctor fees 24.27% of revenue (23.44%); inventory days 48.7 (37.8); patient food +106%, insurance +115% (S); other income 16.3% of PBT; pre-other-income profit -4.0%", note_ref: "C Notes 29, 5, 25; S Note 33 p.168", rating: "YELLOW", why: "Earnings quality under the squeeze"}
+  - {rank: 10, finding: "Leasehold-land ROU addition Rs mn 221.41 carries no lease liability; payee and plot NOT FOUND", note_ref: "S Notes 1.2, 37J", rating: "YELLOW", why: "Upfront payment unlinked to any named site"}
+  - {rank: 11, finding: "Payables +38.3%; MSME dues +188% (+209% on ageing base); Rs mn 69.90 MSME past due, nil MSMED interest", note_ref: "C Notes 20, 36E pp.216, 228", rating: "YELLOW", why: "Working-capital stretch and compliance exposure"}
+  - {rank: 12, finding: "Subsidiary revenue +24.7% vs parent +13.0%; S FY25 carried Rs mn 47.16 partnership profit that eliminates in C", note_ref: "S Note 25 p.166; C Note 24 p.218", rating: "YELLOW", why: "Standalone trend is not a clean read of the core"}
+  - {rank: 13, finding: "Promoter pay S +25.0%; S vs C disagree on Dr. Ankit Thakker FY25 pay (25.92 vs 31.91) and lease income; Anshul Sethi in no RPT list; RPTs 1.15% of revenue", note_ref: "C Note 36K p.232; S Note 37K p.179", rating: "YELLOW", why: "RPT disclosure control quality"}
+  - {rank: 14, finding: "Joint auditors from FY26; audit fee +80% (S); one firm's loss Rs mn 2.62 on unaudited accounts", note_ref: "S Note 33 p.168; Auditor para 17", rating: "YELLOW", why: "Auditor change and control finding in one year"}
+  - {rank: 15, finding: "Labour Codes exceptional Rs mn 48.87 (C) vs gratuity past service cost 37.52, gap 11.35 unreconciled; gratuity assets grossed up; leave-encashment liability NOT FOUND", note_ref: "S Note 37A p.171; S Note 37C; S Note 4 p.158", rating: "YELLOW", why: "One-time item not fully traced; presentation"}
+red_flags:
+  - "Capitalised borrowing cost, pre-operative cost and Dombivli depreciation start unquantified (S Note 31 p.167; Policy C.4)"
+  - "No capital-commitment figure; BKC land price absent (S Note 37B p.171)"
+  - "FY25 comparatives re-cut without restatement note (S Note 37R p.182)"
+  - "HMIS billing audit-trail gap (S Note 37Q p.182; Auditor paras 19.2, 19.6, 20.8)"
+questions_for_mgmt:
+  - "How much borrowing cost and pre-operative expense did you capitalise into Dombivli in FY26 and FY25, at what rate, and from what date did Dombivli depreciation start?"
+  - "What are the capital commitments at 31-Mar-2026 for Pune, Mira Road and BKC, what was paid to MMRDA, and what do Rs mn 1,169.36 of capital advances and the Rs mn 221.41 leasehold addition relate to?"
+  - "Why were FY25 comparatives re-cut (C revenue +408.57; about Rs mn 3,980 from cash to investments), and can you reconcile AR25 to AR26 line by line?"
+  - "Why does the ECL allowance equal the credit-impaired bucket only, what overlay did the KAM refer to, and what drove unbilled Rs mn 191.07 and the 5.2x rise in impaired receivables under 6 months?"
+  - "What are the HDFC covenants and instalment schedules, why was the Rs mn 2,500 JHPPL guarantee described as given in FY26 for a loan outstanding in March 2025, and what is the CP yield against floating debt?"
+receivables_trend: "deteriorating. C gross Rs mn 792.22 vs 459.67 (+72.3%) vs revenue +15.2%; net 755.39 vs 432.33; unbilled 191.07 (nil shown FY25); over 6 months 53.92 (6.8% of gross) vs 47.90 (10.4%); credit-impaired under 6 months 7.02 vs 1.36; ECL 4.65% of gross vs 5.95%; net days on year-end balance 18.4 vs 12.1 (C Note 7 p.212; Note 36L p.233)"
+restatements_found:
+  - "FY25 consolidated comparatives in AR26 differ from AR25 as filed (Rs mn): revenue 13,024.02 vs 12,615.45; purchases of consumables 2,581.70 vs 2,329.19; PBT 2,606.76 vs 2,577.01; profit 1,937.54 vs 1,935.00; total assets 19,357.50 vs 19,048.89. Disclosure is only 'regrouped wherever applicable' (S Note 37R p.182; C Note 36R p.235; Annual_Report_2025.pdf p.85)"
+  - "FY25 standalone: cash and cash equivalents 845.39 vs 3,674.10 as filed; current investments 5,122.59 vs 1,142.68; trade payables 541.75 vs 821.56 (capital creditors 279.81 moved to other financial liabilities); professional fees 2,461.49 vs 2,523.95 (Annual_Report_2025.pdf p.63)"
+  - "FY25 consolidated provisions re-split: non-current 112.21 and current 20.23 vs AR25 49.69 and 153.67 (Rs mn)"
+going_concern_language: "NONE. Only the standard basis line 'prepared on going concern basis under historical cost' (S Note 1 B(ii) p.144; C Note 1 B(ii) p.196); CARO xix reports no material uncertainty on liabilities due within a year (pp.135-136)."
+analyst_note: "The notes never state how much interest was capitalised into Dombivli. Pass 2 triangulated it: parent term-loan interest expensed was Rs mn 15.15, about 0.9 month at the full Rs mn 2,610.32 balance at 7.61% (the rate implied by the JHPPL loan). Rest was probably capitalised [INFERENCE, not filed]. Buildings depreciation rose Rs mn 4.94 against a 34.66 full-year equivalent, so FY26 carries a stub of depreciation and interest. Stage 10 should treat FY26 D&A and finance cost as a partial-year base. Growth base matters: AR26 re-cut gives 15.2%, AR25 filed gives 18.9%. Brief's Rs 584 Cr debt equals borrowings 5,085.27 plus leases 757.13 (Rs mn), not borrowings alone. All figures Rs mn."

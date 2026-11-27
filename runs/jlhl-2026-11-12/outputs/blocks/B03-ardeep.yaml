@@ -1,0 +1,83 @@
+stage: B03-ardeep
+company: "JLHL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "B00: shareholding/ was empty; REPAIRED at /step1 with NSE XBRL for 30-Sep-2026 (one quarter, no pledge trend). Promoter pledge series NOT FOUND in AR26."
+  - "B00: screener export sheets empty; only the four Data_Sheet CSVs populated. No effect on AR evidence."
+  - "B00: results PDFs and rating PDF absent at collection; REPAIRED at /step1. Results text layers garbled; this stage used presentations and ICRA only as labelled secondary cross-checks (Rs Cr)."
+  - "B00: research and other folders EMPTY; no broker notes."
+  - "B00: final Prospectus 11-Sep-2023 not in corpus; RHP used for FY21-FY23 baseline."
+  - "B00: announcements are a selection, not the complete 12-month record; two scanned announcements not used."
+  - "AR-specific NOT FOUND IN DOCUMENT: Dombivli depreciation start; capitalised borrowing cost; capital commitments; BKC premium in AR; covenants; ECL matrix and overlay; impairment inputs; Ind AS 116 rate; JHPPL and Medulla loan rates; CP yield; stock split; hospital-wise occupancy, ARPOB, EBITDA; occupancy and ARPOB definitions; Dombivli revenue; payer concentration; auditor tenure start; Western Medical Solutions LLP partners; CSR medical college name."
+flags:
+  - {type: FLAG-CASH, reason: "C CFO/EBITDA 78.0% vs 88.9%; FCF Rs mn (2,341.37) vs (608.48); receivables gross +72.3%, net days 12.1 to 18.4 (AR26 p.193, p.212); Sep-2026 receivable days about 24.7 (secondary, derived). CFO/PAT stable 1.38."}
+  - {type: FLAG-CAPEX-DISCLOSURE, reason: "No capital commitments or capitalised interest in AR26; BKC lease premium about Rs Cr 354 accepted 27-Mar-2026 not in notes; Directors' Report p.93 says no material commitments."}
+  - {type: FLAG-CONTROL, reason: "HMIS audit-trail exception in Parent and 1 subsidiary; backup-log exception in Parent and 2 subsidiaries (AR26 p.131-132, p.188)."}
+  - {type: FLAG-LIQUIDITY-CONCENTRATION, reason: "89.3% of liquid assets (Rs mn 4,857.04 of 5,438.72) in one CP issuer (C Note 6 p.211)."}
+  - {type: FLAG-NARRATIVE-CONSISTENCY, reason: "AR26 p.19 mixes FY25 margin bases (23.50 vs 23.04); '25 months' vs April 2023 start (RHP p.209); Rs 6.4 Cr vs Rs mn 48.87 exceptional; hospital-wise occupancy dropped vs AR25 p.5."}
+phase_verdicts: {p1: "YELLOW", p2: "YELLOW", p3: "YELLOW", p4: "YELLOW", p5: "YELLOW", p6: "YELLOW", p7_best_fit: "Capex-Led Growth (WATCHLIST)"}
+overall_quality: 6.4
+quality_components: {governance: 6.5, accounting: 6.0, balance_sheet: 7.0, earnings: 6.0}
+kill_switch_notes:
+  - "P1: a human reviewer would not stop; no qualification or default; name a fix date for the HMIS audit trail."
+  - "P2: would not stop; wants capitalised interest and capital commitments from management before sizing."
+  - "P3: would not stop; FCF negative but liquid assets exceed debt; wants the commitment schedule."
+  - "P4: would not stop; omissions are of emphasis, not fact."
+  - "P5: would not stop; committee independence is thin and one independent attends 50% of board meetings."
+  - "P6: would not stop; front pages are less reliable than the notes."
+triple_pass_verification:
+  verified: 14
+  discrepancies:
+    - {finding_rank: 6, triple_pass_value: "net cash comparison 2,763.67 (Rs mn)", ar_value: "not reproducible from any statement; AR adjusted net debt (cash and bank only) is 4,503.59 (Rs mn)", note_ref: "C Note 36H p.229; C Note 6 p.211"}
+    - {finding_rank: 3, triple_pass_value: "growth 18.9% on AR25 base; base choice drives every trend", ar_value: "numbers verify; cause is pharmacy 338.57 and cafeteria 116.76 now gross, partnership profit 47.43 removed, medical 0.67: exact 408.57. Like-for-like growth 15.2% total, 15.3% hospital services (Rs mn)", note_ref: "C Note 24 p.218 vs AR25 Note 22 p.97"}
+missing_risks:
+  - {risk: "Capex funding, leverage and floating-rate risk", evidence: "Debt Rs mn 5,085.27, +/-0.5% = 25.43 PBT (C Note 35 p.222); capex 5.73x D&A (AR26 p.193)"}
+  - {risk: "Project execution and approvals (Mira Road, BKC)", evidence: "BKC 2030 (AR26 p.7) vs CY31 (Q2 FY27 presentation p.11); Mira Road excavation promise (AR26 p.22)"}
+  - {risk: "New-hospital ramp-up losses", evidence: "Dombivli opex loss Rs Cr 9.4 in Q4 FY26 (Q4 FY26 presentation p.7)"}
+  - {risk: "Receivable and TPA risk", evidence: "Gross +72.3%, unbilled Rs mn 191.07, ECL on impaired bucket only (C Note 7 p.212; KAM AR26 p.128-129)"}
+  - {risk: "Mature-hospital occupancy decline and withdrawn hospital split", evidence: "Occupancy 65.3% to 61.2% (AR26 p.20); AR25 p.5 split dropped"}
+  - {risk: "Liquidity concentration in one CP issuer", evidence: "Rs mn 4,857.04 JM Financials Services (C Note 6 p.211)"}
+  - {risk: "Revenue-system control gap (HMIS)", evidence: "Auditor paras 19.2, 19.6, 20.8 (AR26 p.131-132)"}
+  - {risk: "Medical-negligence litigation vs contingent table", evidence: "RHP p.31: 9 civil cases Rs mn 150.68; AR26 S Note 37B p.171: claims 31.80, insurance 250"}
+  - {risk: "Subsidiary exposure on a loss-making JHPPL", evidence: "Cost 939.00 + loan 293.37 + guarantee 2,500 = 3,732.37 Rs mn vs net assets 242.60 (S Note 2, 37K, 37B; C Note 36D p.226)"}
+guidance_table:
+  - {claim: "Dombivli commissioning (AR25 p.11)", number: "Q1 FY27", timeframe: "delivered 15-Feb-2026", credibility: "high"}
+  - {claim: "Dombivli built in just over 25 months (AR26 p.11)", number: "25 months", timeframe: "to Feb 2026", credibility: "low: construction began April 2023 (RHP p.209, AR25 p.4), 34 months"}
+  - {claim: "Dombivli on budget, Rs Cr 425 (AR26 p.11)", number: "Rs Cr 425 vs capitalised Rs mn 3,881.3", timeframe: "FY26", credibility: "unverifiable: no budget baseline (NOT FOUND)"}
+  - {claim: "Dombivli EBITDA breakeven (AR26 p.12)", number: "end of year 2", timeframe: "Feb 2028", credibility: "medium-high: Q2 FY27 loss Rs Cr 0.2"}
+  - {claim: "Pune South on track (AR26 p.22)", number: "500 beds", timeframe: "CY2028", credibility: "high so far"}
+  - {claim: "Mira Road excavation before year end (AR26 p.22)", number: "300 beds, Rs Cr 400", timeframe: "excavation CY2026, open 2029", credibility: "low-medium: Oct-2026 still in approval stage"}
+  - {claim: "BKC hospital (AR26 p.7)", number: "400 beds", timeframe: "2030", credibility: "medium-low: moved to CY31 in Q2 FY27 presentation"}
+  - {claim: "Network of about 3,000 beds (AR26 p.4)", number: "3,000 vs listed sum 2,881", timeframe: "multi-year", credibility: "medium: AR25 target was 2,500"}
+  - {claim: "Internal accruals fund the bulk (AR26 p.22)", number: "FY26 CFO 53% of capex", timeframe: "FY27-FY30", credibility: "medium"}
+  - {claim: "CAGR 15% revenue, 17% EBITDA, 31% PAT FY21-FY26 (AR26 p.19)", number: "RHP-based 5-year revenue CAGR 25.3%", timeframe: "FY21-FY26", credibility: "low: labels not reproducible"}
+monitorables:
+  - {metric: "Dombivli quarterly EBITDA", threshold: "positive by Q4 FY27; breakeven by Feb 2028 per AR26 p.12", where: "quarterly presentation EBITDA footnote", why: "tests the ramp"}
+  - {metric: "Ex-Dombivli occupancy", threshold: "at least 65% (H1 FY27 64.8%)", where: "quarterly presentation operating metrics", why: "mature-hospital demand and dropped split"}
+  - {metric: "Capital commitments and capitalised borrowing cost", threshold: "disclosed; commitments at least Rs Cr 890-900 plus BKC 354 plus Pune land 100", where: "FY27 AR notes", why: "funding need"}
+  - {metric: "Total debt / EBITDA", threshold: "under 1.8x (Sep-2026 1.64x ex-leases, 1.86x with leases, derived)", where: "quarterly balance sheet and EBITDA", why: "ICRA downgrade trigger"}
+  - {metric: "Receivable days", threshold: "at or below 18.4 (Sep-2026 about 24.7, derived)", where: "quarterly balance sheet", why: "cash conversion"}
+  - {metric: "CFO / EBITDA", threshold: "at least 80% (FY26 78.0%)", where: "half-year cash flow", why: "profit quality"}
+  - {metric: "Quarterly D&A and finance cost", threshold: "D&A Rs Cr 28.5 and finance Rs Cr 13.8 as base", where: "quarterly results", why: "squeeze run-rate"}
+  - {metric: "HMIS audit trail", threshold: "no exception in FY27 auditor report", where: "FY27 AR auditor report", why: "revenue system control"}
+  - {metric: "Promoter holding and pledge", threshold: "at least 40.91%, no pledge", where: "quarterly shareholding pattern", why: "alignment"}
+  - {metric: "CP issuer share of liquid assets", threshold: "under 50% (FY26 89.3%)", where: "AR Note 6", why: "liquidity buffer"}
+ar_new_downstream_entities:
+  - {name: "Mumbai Metropolitan Region Development Authority (MMRDA)", where_in_ar: "S Note 1A p.144 (agreement to take BKC land on 80-year lease); lease premium about Rs Cr 354 is in the 27-Mar-2026 Reg 30 filing, not the AR", entity_type: "land lessor, statutory authority"}
+  - {name: "KKC & Associates LLP", where_in_ar: "Directors' Report p.89; Auditor's Report p.132", entity_type: "joint statutory auditor from FY26"}
+  - {name: "Mr. Anshul Sethi", where_in_ar: "C Note 36K p.232 (professional fees Rs mn 3.06; relationship not stated)", entity_type: "related-party payee"}
+  - {name: "Mr. Rajendra Thakkar", where_in_ar: "C Note 36K p.231-232 (Director of Jupiter Hospital Pharmacy Pvt Ltd; professional fees Rs mn 3.38)", entity_type: "related-party payee"}
+  - {name: "Medical college (unnamed CSR beneficiary)", where_in_ar: "Annexure V p.122; CSR text p.30", entity_type: "CSR recipient, name NOT FOUND"}
+strengths_top3:
+  - "Mature-hospital EBITDA margin held: derived ex-Dombivli 23.5% vs 23.0% while ARPOB rose 11.7% (Q4 FY26 presentation p.7; AR26 p.20)"
+  - "Delivery against guidance: Dombivli opened ahead of the AR25 Q1 FY27 date; Pune South construction on the AR25 schedule (AR25 p.11; AR26 p.43)"
+  - "Clean statutory record: unmodified opinion, no CARO adverse remark, no default, contingent liabilities 0.32% of net worth, ICRA AA- Stable (AR26 p.92, p.133-136)"
+red_flags_top3:
+  - "No capital commitments, capitalised interest or BKC premium (about Rs Cr 354) in the notes while debt rose 56% to Rs mn 5,085.27 (S Note 37B p.171; C Note 14 p.215)"
+  - "Hospital-wise occupancy dropped in the year network occupancy fell 4.1 pts; receivables +72.3%; HMIS audit-trail exception on the revenue system (AR25 p.5; C Note 7 p.212; AR26 p.132)"
+  - "Front pages mix bases and misstate facts: FY25 EBITDA margin 23.50% vs 23.04%; 25 months vs April 2023 start; Rs 6.4 Cr vs Rs mn 48.87 exceptional (AR26 p.19, p.11, p.31)"
+best_fit_strategy: "Capex-Led Growth (WATCHLIST)"
+one_line_verdict: "A well-run hospital operator whose mature margin held and whose build is on schedule, but whose commitments, hospital-wise data and front-page labels are thinner than the notes."
+analyst_note: "The FY25 re-cut is fully explained: pharmacy 338.57 and cafeteria 116.76 now gross, partnership profit 47.43 removed, medical 0.67, total 408.57 Rs mn. Like-for-like growth is 15.2%, not 18.9%. The p.19 chart compares FY25 margin on the old basis (23.50%) with FY26 on the new (22.89%); like for like it is 23.04% vs 22.89%. The profit squeeze sits below EBITDA: 41% of the D&A rise is leasehold-land amortisation and 84% of the finance rise is JHPPL's Rs mn 2,500 loan drawn in FY25. Derived ex-Dombivli margin rose to 23.5%. Dombivli completion was announced 30-Jan-2026 and ran from 15/25-Feb-2026; 25 months conflicts with the April 2023 start. BKC's Rs Cr 354 premium and the Pune land purchase sit outside ICRA's Rs Cr 890-900 plan. Per-share figures are pre-split (FV Rs 10); split is 5 for 1."

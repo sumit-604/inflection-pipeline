@@ -1,0 +1,101 @@
+stage: B05-concall
+company: "JLHL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "B00: shareholding/ held one quarter only (30-Sep-2026 NSE XBRL); no promoter pledge trend; Catalyst Trusteeship pledgor (Aug call) not named."
+  - "B00: screener export sheets empty; only four Data_Sheet CSVs populated."
+  - "B00: results text layers garbled; this stage used no results-filing figure."
+  - "B00: research and other folders empty; no broker notes."
+  - "B00: final Prospectus 11-Sep-2023 not in corpus."
+  - "B00: announcements are a selection, not the complete 12-month record."
+  - "B03: AR-level NOT FOUND items carried (Dombivli depreciation start, capitalised borrowing cost, capital commitments, BKC premium in AR, covenants, hospital-wise occupancy/ARPOB/EBITDA, Dombivli revenue, payer concentration)."
+  - "Transcripts: Dombivli revenue, ex-Dombivli ARPOB, Dombivli budget baseline, BKC land balance payment status, and the unit of the Dombivli fixed-cost figure (month vs quarter) NOT FOUND in the three calls."
+flags:
+  - {type: FLAG-GOVERNANCE-SILENCE, reason: "CFO resignation filed 18-May-2026 (effective 31-May) and director resignation 14-May-2026; not mentioned on the 18-May-2026 call; finance led by Head of Finance from Aug call."}
+  - {type: FLAG-FUNDING-DRIFT, reason: "May: accruals plus debt under 3x EBITDA; Aug: accruals and cash, debt only near end of cycle; Oct: Rs 500 Cr term loan, net debt about Rs 170 Cr. Presentation p.9 borrowings Rs Cr 588.8 vs 508.5 at Mar-26 (derived)."}
+  - {type: FLAG-PAT-SQUEEZE-UNEXPLAINED, reason: "H1 FY27 PAT Rs Cr 93.9 vs 101.4 (-7.4%) per Q2 presentation p.8; no call explains depreciation or finance cost."}
+  - {type: FLAG-SEASONAL-CAVEAT, reason: "Dombivli Q2 FY27 drag Rs Cr 0.2 vs 9.5 in Q1 helped by seasonal medical admissions; management would not size it (Oct call)."}
+  - {type: FLAG-CASH-CONVERSION, reason: "Trade receivables Rs Cr 75.5 to 118.3 Mar-26 to Sep-26 (presentation p.9); H1 CFO 136.1 vs EBITDA 186.2 = 73% derived; not discussed on calls."}
+quarters_analysed: ["Q4 FY26", "Q1 FY27", "Q2 FY27"]
+triggers:
+  - {priority: 1, name: "Dombivli EBITDA breakeven and ramp", type: "VOLUME/PRICE-MIX", timeframe: "near-medium", conviction: "M", confirm_signal: "Q3 and Q4 FY27 Dombivli EBITDA at or above zero despite weaker Q3 seasonality; occupancy above 40%", kill_signal: "Drag back above Rs 3 Cr a month"}
+  - {priority: 2, name: "Dombivli insurance empanelment and NABH", type: "VOLUME", timeframe: "near", conviction: "M", confirm_signal: "NABH award, first cashless insurers, occupancy step-up", kill_signal: "No NABH by H2 FY27; empanelment beyond 12 months"}
+  - {priority: 3, name: "Indore occupancy and case-mix ramp", type: "VOLUME/PRICE-MIX", timeframe: "medium", conviction: "M", confirm_signal: "Occupancy mid-60s and margin recovery above 12%", kill_signal: "Margin stays low after hiring"}
+  - {priority: 4, name: "Pune South on time CY28", type: "VOLUME", timeframe: "medium", conviction: "M-H", confirm_signal: "Quarterly construction update and Rs 1.2 Cr per bed holds", kill_signal: "Cost per bed above 1.2 Cr or date slip"}
+  - {priority: 5, name: "Mira Road construction start", type: "VOLUME", timeframe: "medium-long", conviction: "L-M", confirm_signal: "Approval and excavation by Mar 2027", kill_signal: "No approval by FY27 end"}
+  - {priority: 6, name: "Mature-unit inflation-linked pricing (Thane, Pune)", type: "PRICE-MIX", timeframe: "ongoing", conviction: "M", confirm_signal: "ARPOB ex Dombivli growth near inflation with stable margin", kill_signal: "Renewals below inflation or margin decline"}
+  - {priority: 7, name: "Thane bed addition", type: "VOLUME", timeframe: "near-medium", conviction: "L", confirm_signal: "Written approval with bed count", kill_signal: "No clearance by FY27 end"}
+  - {priority: 8, name: "BKC land registration and clearance", type: "VOLUME", timeframe: "long", conviction: "L", confirm_signal: "Registration, clearance, capex number", kill_signal: "Date beyond CY31 or cost per bed above 1.5 Cr"}
+  - {priority: 9, name: "IV fluids backward integration", type: "COST", timeframe: "near-medium", conviction: "L", confirm_signal: "Disclosed margin gain", kill_signal: "No margin gain after Rs 35-40 Cr capex"}
+guidance:
+  - {item: "Dombivli commissioning", number: "before Q1 FY27; opened 15-Feb-2026", timeframe: "Q1 FY27", stated_in: "Q3 FY26 call"}
+  - {item: "Dombivli project cost", number: "about Rs 425 Cr, on budget", timeframe: "FY26", stated_in: "Q3 FY26 and Q4 FY26 calls"}
+  - {item: "Dombivli EBITDA loss", number: "Rs 2-3 Cr a month average, 200 operating beds", timeframe: "FY27", stated_in: "Q4 FY26 and Q1 FY27 calls"}
+  - {item: "Dombivli EBITDA breakeven", number: "end of year 2", timeframe: "CY27 end / early 2028", stated_in: "Q3 FY26, Q4 FY26, Q1 FY27 calls"}
+  - {item: "Pune South", number: "500 beds, CY28, about Rs 1.2 Cr per bed ex land", timeframe: "CY28", stated_in: "Q3 FY26 to Q2 FY27 calls"}
+  - {item: "Pune South land", number: "Rs 150 Cr, Rs 100 Cr new cash", timeframe: "Oct 2026", stated_in: "Q2 FY27 call"}
+  - {item: "Mira Road", number: "300 beds, CY29, Rs 1.3 Cr per bed ex land", timeframe: "CY29", stated_in: "Q2 FY27 presentation, calls"}
+  - {item: "BKC", number: "400 beds, Rs 1.5 Cr per bed, CY31", timeframe: "CY31", stated_in: "Q2 FY27 presentation p.11 (calls give no date)"}
+  - {item: "BKC land payment", number: "balance 75% in FY27", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Debt ceiling", number: "3x EBITDA board ceiling", timeframe: "ongoing", stated_in: "Q4 FY26, Q1 FY27, Q2 FY27 calls"}
+  - {item: "EBITDA to cash conversion", number: "about 70%, may fall to 60-something", timeframe: "ongoing", stated_in: "Q2 FY27 call"}
+  - {item: "Maintenance capex", number: "Rs 10-20 Cr per unit per year average", timeframe: "next 4-5 years", stated_in: "Q2 FY27 call"}
+  - {item: "Indore phase 2", number: "111 beds when occupancy near 60% (May), mid-60s (Oct)", timeframe: "not within two quarters", stated_in: "Q4 FY26 and Q2 FY27 calls"}
+  - {item: "Revenue, margin, PAT guidance", number: "none given", timeframe: "n/a", stated_in: "Q2 FY27 call"}
+promise_delivery:
+  delivered: 6
+  partial: 4
+  missed: 0
+  rows:
+    - {promised_in: "Q3 FY26", promise: "Dombivli launch by Q1 FY27", outcome: "delivered", explanation: "opened 15-Feb-2026, ahead of schedule"}
+    - {promised_in: "Q3 FY26", promise: "Dombivli on budget at about Rs 425 Cr", outcome: "partial", explanation: "reiterated in May; baseline NOT FOUND, B03 capitalised Rs mn 3,881.3"}
+    - {promised_in: "Q3 FY26", promise: "200-bed Phase 1", outcome: "delivered", explanation: "200 beds operating per Aug call"}
+    - {promised_in: "Q3 FY26", promise: "EBITDA drag and higher depreciation from next quarter", outcome: "delivered", explanation: "Q4 FY26 drag Rs 9.4 Cr"}
+    - {promised_in: "Q4 FY26", promise: "Dombivli loss Rs 2-3 Cr a month in FY27", outcome: "delivered", explanation: "H1 Rs 9.7 Cr, about 1.6 Cr a month (derived)"}
+    - {promised_in: "Q4 FY26", promise: "Dombivli occupancy to be shared in a quarter or two", outcome: "delivered", explanation: "25-30% (Aug), mid-30s (Oct)"}
+    - {promised_in: "Q4 FY26", promise: "Q2 and Q4 seasonally stronger than Q1 and Q3", outcome: "delivered", explanation: "Q1 margin 19.3%, Q2 23.4% derived"}
+    - {promised_in: "Q4 FY26", promise: "Mira Road excavation by end of year", outcome: "partial", explanation: "Oct: regulatory stage, next phase by FY27 end; presentation says planning stage; not yet due but softened"}
+    - {promised_in: "Q4 FY26", promise: "Indore phase 2 at about 60% occupancy", outcome: "partial", explanation: "threshold moved to mid-60s in Oct"}
+    - {promised_in: "Q4 FY26", promise: "Accruals plus debt under 3x EBITDA fund the plan; debt only near end (Aug)", outcome: "partial", explanation: "Rs 500 Cr term loan by Oct; still inside 3x"}
+    - {promised_in: "Q4 FY26", promise: "Pune South CY28", outcome: "on track, not yet due", explanation: "reiterated Feb, May, Aug, Oct; land bought"}
+    - {promised_in: "Q4 FY26", promise: "Dombivli EBITDA breakeven by end of year 2", outcome: "on track, not yet due", explanation: "Q2 FY27 drag Rs 0.2 Cr, seasonal help unsized"}
+    - {promised_in: "Q4 FY26", promise: "Insurance tie-up in 6-12 months; Thane approvals this FY", outcome: "pending", explanation: "NABH applied, no Thane clearance as of Oct"}
+    - {promised_in: "Q2 FY27", promise: "Onco-drug margin cap impact stated at end of Q3 FY27", outcome: "pending", explanation: "tested on the Q3 FY27 call"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "Will the Dombivli breakeven guidance be revised", quarters_asked: ["Q1 FY27", "Q2 FY27"], classification: "deflected every time (rolling 1-2 quarter horizon)"}
+  - {question: "Dombivli revenue contribution", quarters_asked: ["Q4 FY26", "Q2 FY27"], classification: "deflected every time (occupancy later answered)"}
+  - {question: "Capex funding and debt level", quarters_asked: ["Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "answer changed between quarters"}
+  - {question: "Financial and margin guidance", quarters_asked: ["Q3 FY26", "Q1 FY27", "Q2 FY27"], classification: "deflected every time"}
+  - {question: "Dombivli insurance empanelment timing", quarters_asked: ["Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "answered eventually (about one year, no hard date)"}
+credibility_grade: "B"
+credibility_basis: "Trailing four quarters Q3 FY26 to Q2 FY27: 6 delivered, 4 partial, 0 missed hard milestones (Dombivli opened early, loss band beaten, Pune South on track); partials on budget baseline, funding path, Mira Road and Indore threshold; Amendment 26.4 mixed record plus delivery grades Good."
+peer_questions:
+  - {question: "How many months do peers take to EBITDA breakeven on a new greenfield hospital, and what is the typical loss per month in year 1? Does any peer run a 40% occupancy reset on expansion as Jupiter describes?", why: "Dombivli breakeven by end of year 2 and the ramp rule are the top trigger; tests whether the guidance is normal or aggressive", check_peers: ["KIMS", "YATHARTH", "MEDANTA"]}
+  - {question: "Is occupancy reported on census/operational beds or total beds, and how do peers present new-hospital dilution (ex-new-hospital occupancy)?", why: "Jupiter reports 59.5% H1 (64.8% ex Dombivli) on census beds (about 144 of 200 at Dombivli); comparability", check_peers: ["KIMS", "YATHARTH", "MEDANTA"]}
+  - {question: "What ARPOB growth do peers report for mature hospitals, and how much is price (insurance renewals) vs case mix? Is it above or at inflation?", why: "Jupiter says mature ARPOB grows only with inflation; ARPOB rose 11.7% in Q4 FY26", check_peers: ["KIMS", "YATHARTH", "MEDANTA"]}
+  - {question: "How long does NABH plus cashless insurer empanelment take for a new hospital, and what is the payer mix at 6 and 12 months?", why: "Dombivli occupancy upside depends on cashless empanelment in about one year", check_peers: ["KIMS", "YATHARTH", "MEDANTA"]}
+  - {question: "Doctor cost as % of revenue and attrition in regions where a peer opened a new hospital; any shift to exclusive full-time contracts?", why: "Jupiter claims 20-25% doctor cost and near zero attrition", check_peers: ["KIMS", "YATHARTH", "MEDANTA"]}
+  - {question: "Leverage ceiling and funding mix peers use during a capex cycle (debt/EBITDA, internal accruals share)", why: "Jupiter has a self-imposed 3x EBITDA ceiling vs ICRA 1.8x trigger (B03) and a Rs 500 Cr term loan", check_peers: ["KIMS", "YATHARTH", "MEDANTA"]}
+  - {question: "Capex per bed with and without land for new hospitals, and recent escalation", why: "Jupiter: about Rs 1.5 Cr per bed including land across 1,700 beds; Pune Rs 1.2 and Mira Road Rs 1.3 ex land", check_peers: ["KIMS", "YATHARTH", "MEDANTA"]}
+  - {question: "Do peers see Q1 and Q3 weaker and Q2 and Q4 stronger, and do medical-heavy Q2 admissions lower ARPOB?", why: "Dombivli Q2 near-breakeven is partly seasonal; Q3 FY27 is the test", check_peers: ["KIMS", "YATHARTH", "MEDANTA"]}
+  - {question: "Exposure to the 30% onco-drug margin cap (from 1 Nov 2026) and Supreme Court review of medicine markups; pharmacy share of revenue and margin", why: "Jupiter has not modelled it; pharmacy is now reported gross (B03)", check_peers: ["KIMS", "YATHARTH", "MEDANTA"]}
+  - {question: "Is high-quality bed supply short in Thane, Pune and Indore-type markets, and which peers are adding beds there?", why: "Jupiter claims supply is insufficient; Indore and Pune South growth rests on it", check_peers: ["MEDANTA", "KIMS"]}
+red_flags:
+  - "CFO resignation (filed 18-May-2026) and director resignation (14-May-2026) not mentioned on the 18-May-2026 call; finance now led by a Head of Finance"
+  - "H1 FY27 PAT -7.4% with no explanation on the calls"
+  - "Funding story changed between May, Aug and Oct; Rs 500 Cr term loan"
+  - "Dombivli Q2 FY27 near-breakeven partly seasonal and unsized"
+  - "Receivables +56.7% in six months (derived), never discussed"
+  - "Mira Road excavation promise softened; Indore threshold moved"
+  - "Dombivli 'on budget' and '24 months' unverifiable or contradicted (B03)"
+  - "Onco-drug cap and Supreme Court pharmacy margin issue not modelled"
+dropped_triggers: []
+timeline_slippages:
+  - "Mira Road: excavation by end CY26 (May call) to next phase by FY27 end (Oct call); presentation says planning stage"
+  - "Indore phase 2: trigger near 60% occupancy (May) to mid-60s (Oct)"
+  - "BKC: no call date; presentation CY31 vs AR26 2030 (B03)"
+  - "Dombivli breakeven wording: end of year 2 (Feb, May) to 1.5-2 years, hard to predict (Oct)"
+analyst_note: "Grade rests on milestone delivery, not tone. The weak points are silences, not misses: the CFO exit on the Q4 call day, the below-EBITDA squeeze (H1 PAT -7.4%), receivables, and the funding drift. B00 debt of Rs 669 Cr equals borrowings Rs 588.8 Cr plus leases Rs 79.8 Cr (presentation p.9, derived). Dombivli Q2 is a seasonal best case; Q3 FY27 is the test. Management said it will state the onco-drug cap impact on the Q3 call."

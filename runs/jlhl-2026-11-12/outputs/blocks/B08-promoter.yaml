@@ -1,0 +1,55 @@
+stage: B08-promoter
+company: "JLHL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "B00: shareholding is one quarter (30-Sep-2026 XBRL) plus the 1-Apr-2026 Reg 31(4) list; pledge series between IPO and Mar-2026 NOT FOUND (0% at RHP 30-Aug-2023, 0% FY26, 0% Sep-2026)."
+  - "B00: no research or broker notes; no final Prospectus 11-Sep-2023; announcements are a selection."
+  - "B00/B03: Western Medical Solutions LLP current partners NOT FOUND in AR26 (RHP p.261 gives 2023 partners: Ajay 99.95%, Kirtika 0.03%, Devang Gandhi 0.02%)."
+  - "Secretarial Compliance Report FY26 is a scan (1 of 8 pages with text); content NOT FOUND."
+  - "Current status of three Bombay HC PILs on Thane land, DGGI appeal, MERC petition: NOT FOUND (dockets not reachable)."
+  - "Relationship of Anshul Sethi and Rajendra Thakkar to promoters or directors: NOT FOUND in AR26."
+  - "Audit Committee and shareholder approval record for the Sulcus acquisition: NOT FOUND."
+  - "MCA/RoC status of 12 promoter-group entities: NOT FOUND."
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 4, caution: 6, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Three Bombay High Court PILs (2016, 2018, 2022) on Thane hospital land: transfer to Jupiter Foundation Trust without State approval, Fortune Park Lake City hotel on hospital land, excess FSI, mortgage without State permission. Pending at RHP date; current status NOT FOUND. AR26 still reports the hotel in operation.", evidence_tier: "VERIFIED (as filed in RHP)", source: "RHP p.341-342; AR26 standalone note; DNA India 26-Jul-2016 (MEDIA)", date: "2016-07-18 / 2018-01-18 / 2022-06-09; RHP 2023-08-30"}
+  - {finding: "Related-party acquisition of Sulcus Pvt Ltd (pre-revenue pharma-manufacturing land shell) from Dr. Ankit Thakker and Kirtika Thakker by the pharmacy subsidiary for Rs Cr 3.78; promoter-side debt of about Rs Cr 7-10 assumed; goodwill about Rs Cr 5; further Rs Cr 35-40 capex planned.", evidence_tier: "VERIFIED", source: "Results Q1 FY27 p.12-13 (Annexure III, IV); Concall Oct 2026 p.6", date: "2026-07-31"}
+  - {finding: "DGGI service tax order confirmed Rs mn 25.72 incl. penalty on Company; penalty Rs mn 0.10 on Chairman and MD for wilful misstatement and suppression of facts; appeal outcome NOT FOUND.", evidence_tier: "VERIFIED", source: "RHP p.343-344", date: "2023-03-15"}
+  - {finding: "Professional-fee RPT flow to promoter relative and non-executive directors rose from Rs mn 12.86 to 20.03; two new payees (Anshul Sethi 3.06, Rajendra Thakkar 3.38) with relationship NOT FOUND; Entisi Hospitality purchases +75%.", evidence_tier: "VERIFIED", source: "AR26 p.232 (Note 36K)", date: "FY26"}
+  - {finding: "CFO Sivasis Sen resigned after about 12.5 months (appointed 12-May-2025, resigned 18-May-2026, effective 31-May-2026), also left JHPPL Projects; replaced by 19-year insider Harshad Purani on 31-Jul-2026. Non-independent director Dr. Bhaskar Shah resigned 14-May-2026 with immediate effect.", evidence_tier: "VERIFIED", source: "ANN 20260518 p.1-4; ANN 20260515 p.1-2; Results Q1 FY27 p.1", date: "2026-05-18 / 2026-05-14"}
+  - {finding: "Dr. Ankit Thakker remuneration +22.2% (31.91 to 39.00 Rs mn) while PAT was flat per B00 brief (secondary); combined promoter pay +14.4% vs 15.2% like-for-like revenue growth.", evidence_tier: "VERIFIED (pay); secondary (PAT)", source: "AR26 p.232; B03", date: "FY26"}
+  - {finding: "MERC petition by MSEDCL alleging sale of power under captive-generation label at Thane and Pune hospitals; pending at RHP date; status NOT FOUND.", evidence_tier: "VERIFIED", source: "RHP p.341", date: "2022-07-29"}
+transition_evidence:
+  - {item: "Succession formalised: Dr. Ankit Thakker Joint MD and CEO for five years from 11-Jul-2025 (within family)", anchor: "AR26 p.97"}
+  - {item: "ICRA upgrade from A+ to AA- (Stable)", anchor: "AR26 txt line 7791; ICRA rationale 10-Mar-2026"}
+pledge_pct_latest: 0
+pledge_trend: "stable at 0%: none at RHP 30-Aug-2023 (p.103), no encumbrance in FY26 (Reg 31(4) 1-Apr-2026), pledged=false at 30-Sep-2026; promoter group 40.91% on both latest dates; intermediate quarters NOT FOUND"
+searches_performed:
+  - "Dr. Ajay Thakker Jupiter Hospital Thane promoter"
+  - "Jupiter Life Line Hospitals SEBI order OR penalty OR notice"
+  - "Fetch SEBI ORDER_1774261120 and ORDER_1776655314 (binary, unreadable)"
+  - "Jupiter Hospital Thane High Court PIL land Fortune Park Lake City Jupiter Foundation Trust"
+  - "Fetch DNA India report 2016 (Rajkumar Yadav petition)"
+  - "Jupiter Life Line Hospitals CFO resigns Sivasis Sen new CFO"
+  - "Jupiter Life Line Hospitals appoints Chief Financial Officer 2026"
+  - "Jupiter Life Line Hospitals MMRDA BKC land tender hospital 2026"
+  - "Jupiter Hospital Thane Glassdoor OR AmbitionBox reviews"
+  - "Jupiter Hospital Thane Ajay Thakker income tax raid OR ED OR SFIO OR arrested OR fraud"
+  - "Jupiter Life Line Hospitals short seller OR governance concerns OR related party criticism analyst"
+  - "Jupiter Hospital Thane medical negligence consumer commission order OR Bombay High Court hotel hospital land"
+  - "Jupiter Life Line Hospitals IPO promoters Ajay Thakker offer for sale 2023 anchor investors"
+  - "Jupiter Life Line Hospitals corporate governance rating OR proxy advisor IiAS OR InGovern OR SES"
+  - "Fetch whalesbook AGM article 22-Jun-2026"
+searches_skipped:
+  - "MCA21 / RoC master data for promoters and 12 group entities (not reachable)"
+  - "Bombay HC, SAT, NCDRC docket status for the PILs, DGGI appeal, MERC petition"
+  - "IiAS, SES, InGovern, SCORES direct checks"
+  - "Secretarial Compliance Report FY26 content (scan, no OCR)"
+  - "Identity of two 2026 SEBI orders (PDF unreadable)"
+verdict_basis: "No pledge, SEBI, criminal or auditor-exit event, but six cautions: three unresolved Thane land PILs, the Sulcus promoter-to-subsidiary purchase with goodwill and assumed debt, rising family and director fee flows, and CFO turnover in 12.5 months."
+analyst_note: "Capex funding chain (MMRDA tender, HDFC Rs Cr 500 term loan, JHPPL Projects, Medulla) is arm's length or internal; no promoter funding or pledge. Watch name collision: Q1 FY27 filing uses JHPPL for Jupiter Hospital Pharmacy Pvt Ltd, AR26 and B03 use it for Jupiter Hospital Projects. FLAG-PROMOTER not raised because verdict is CAUTION, not CONCERN or AVOID. The tripwires are for synthesis: PIL status, Sulcus approvals and goodwill basis, FY27 RPT fee lines, CFO stability with HMIS audit trail, WMS partners. Transition evidence is weak and within family."

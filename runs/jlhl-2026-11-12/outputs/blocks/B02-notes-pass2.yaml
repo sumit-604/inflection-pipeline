@@ -1,0 +1,10 @@
+stage: B02-notes-pass2
+company: "JLHL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+note: "Pass 2 interim status only. The B02-notes block is emitted after Pass 3."
+report: outputs/reports/02-notes-pass2.md
+pass_2_empty: false
+new_finding_count: 12
+input_gaps: []

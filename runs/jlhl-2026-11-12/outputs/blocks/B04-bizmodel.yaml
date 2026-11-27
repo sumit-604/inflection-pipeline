@@ -1,0 +1,80 @@
+stage: B04-bizmodel
+company: "JLHL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "B00: shareholding/ was empty; REPAIRED at /step1 with NSE XBRL for 30-Sep-2026 (one quarter, no pledge trend). No effect on the business model."
+  - "B00: screener export sheets empty; only four Data_Sheet CSVs populated. No peer metrics used in this stage."
+  - "B00: results PDFs and rating PDF absent at collection; REPAIRED at /step1. This stage used decks and ICRA, not the garbled results text layer."
+  - "B00: research and other folders EMPTY; no broker notes."
+  - "B00: final Prospectus 11-Sep-2023 not in corpus; RHP used for doctor-payment terms and competitor names."
+  - "NOT FOUND in AR26 or decks: hospital-wise revenue, occupancy, ARPOB and EBITDA for FY26 and H1 FY27 (only FY25 in AR25 p.5; Thane about 70%, Pune about 70%, Dombivli mid-30s and 144 census beds are oral statements, CC Oct p.4, p.8); Dombivli revenue; price versus mix split of ARPOB; payer concentration by insurer; Maharashtra share of revenue; market share in any micro-market; peer ARPOB and margins."
+flags:
+  - {type: FLAG-DISCREPANCY, reason: "Brief says non-census beds 140; Pres Q4 p.6 and Pres Q2 p.7 show 196 (total 1,248 / 1,259). Brief Rs 669 Cr debt includes leases; borrowings alone Rs 588.8 Cr (Pres Q2 p.9)."}
+  - {type: FLAG-DISCREPANCY, reason: "AR25 p.5 prints Thane operating beds 377; AR26 p.13 prints 364. BKC opening 2030 in AR26 p.7, CY31 in Pres Q2 p.11."}
+  - {type: FLAG-SEASONAL, reason: "Dombivli EBITDA loss narrowed Rs 9.5 Cr to Rs 0.2 Cr partly on seasonal infectious-disease admissions (management, CC Oct p.4); Q3 expected to moderate."}
+  - {type: FLAG-SQUEEZE-DEEPENING, reason: "H1 FY27 PAT down 7.4% (Rs Cr 93.9 vs 101.4); D&A +12.2 and finance cost +10.6 against EBITDA +15.5 (Pres Q2 p.6, p.8)."}
+  - {type: FLAG-RECEIVABLES, reason: "Trade receivables Rs Cr 118.3 at Sep-26 vs 75.5 at Mar-26 (+56.7%, derived) against H1 income +16.2% (Pres Q2 p.9, p.8)."}
+business_type: services
+revenue_streams:
+  - {name: "In-patient income", type: "per-episode fee for service", pct_of_revenue: 78.3, predictability: "M"}
+  - {name: "Out-patient income", type: "per-visit fee for service", pct_of_revenue: 17.5, predictability: "H"}
+  - {name: "Pharmacy", type: "retail product sales", pct_of_revenue: 2.6, predictability: "H"}
+  - {name: "Cafeteria", type: "retail product sales", pct_of_revenue: 0.9, predictability: "H"}
+  - {name: "Hotel", type: "property operated by third party", pct_of_revenue: 0.7, predictability: "H"}
+  - {name: "Academic, medical, partnership", type: "other", pct_of_revenue: 0.1, predictability: "M"}
+asset_intensity: heavy
+wc_intensity: medium
+pricing_power: moderate
+cyclicality: secular-growth
+moats_present:
+  - "Regional brand and NABH accreditation, Thane since 2007 (moderate durability, tied to doctor teams)"
+  - "Owned scarce land and approvals in dense Mumbai-Pune markets (moderate to high)"
+  - "Local scale in Thane and Pune at about 70% occupancy (moderate; unproven in Dombivli)"
+  - "Clinical process power: transplant, robotic, cath lab programmes (moderate; key-doctor risk)"
+valuation_methods:
+  primary: {method: "Bottom-up EBITDA ramp per hospital (beds x occupancy x ARPOB x margin), then EV/EBITDA", why: "EPS is held flat by D&A, interest and ramp losses; capacity comes in dated tranches (Pune CY28, Mira CY29, BKC CY31)"}
+  secondary: {method: "P/E on steady-state earnings at the Section 1B destination, same earnings basis as entry", why: "Section 1B governs the exit multiple; Amendment 18 same-basis rule"}
+  tertiary: {method: "EV per operational bed vs replacement cost Rs Cr 1.0 to 1.5 per bed", why: "Floor check; land is owned and some beds not yet earning"}
+  not_applicable:
+    - "P/B or ROE-based: ROE 13% in a build cycle, book includes CWIP"
+    - "EV/Sales and P/S: margin gap between mature and new hospitals"
+    - "SOTP or land NAV: land is operating infrastructure, not surplus"
+    - "DDM: dividend payout NOT FOUND, cash retained for capex"
+irrelevant_ratios:
+  - "Consolidated EBITDA margin as quality signal: blends mature hospitals with Dombivli drag"
+  - "Reported P/E and EPS growth: held flat by D&A and interest on capacity not yet earning; AR26 per-share figures are pre-split"
+  - "Total ROE and ROCE in the build cycle: CWIP and capital advances earn nothing yet"
+  - "Current ratio: inflated by liquid investments that fund capex"
+  - "Inventory turnover as efficiency: new-hospital stocking lifts it"
+  - "Revenue per employee: doctors are fee-paid consultants"
+  - "Interest coverage: falls mechanically as the capex loan starts; capitalised interest undisclosed"
+must_track_metrics:
+  - {metric: "Dombivli EBITDA (deck footnote)", healthy: "Positive by Q4 FY27; breakeven by Feb 2028 per management", red_flag: "Loss above Rs 5 Cr again in Q3 or Q4 FY27"}
+  - {metric: "Occupancy ex Dombivli", healthy: "65% to 70% (H1 FY27 64.8%)", red_flag: "Below 62% (FY26 62.3%)"}
+  - {metric: "Blended and IP ARPOB", healthy: "Blended Rs 71,800 H1 FY27, growth 8% or more", red_flag: "Growth below 6%"}
+  - {metric: "Doctor fees as % of income", healthy: "23.4% to 24.5%", red_flag: "Above 25% (FY26 24.3%)"}
+  - {metric: "Total debt / EBITDA", healthy: "Below 1.8x (ICRA trigger)", red_flag: "Above 1.8x sustained"}
+unit_economics:
+  unit: "One occupied census bed-day"
+  revenue_per_unit: "ARPOB Rs 67,700 FY26 (AR26 p.20); Rs 71,800 H1 FY27 (Pres Q2 p.7); total income per bed-day about Rs 70,730 FY26 (derived)"
+  margin_per_unit: "EBITDA about Rs 16,190 per bed-day, 22.9% of total income FY26 (derived from Pres Q4 p.7)"
+  key_lever: "Occupancy at mature hospitals (about 70% Thane and Pune) and Dombivli fill from mid-30s; ARPOB and doctor-fee share set the rest"
+first_deterioration_signals:
+  - {risk: "Dombivli ramp slower than Q2 print", first_signal: "Dombivli EBITDA footnote and ex-Dombivli vs group occupancy gap"}
+  - {risk: "Doctor payout outgrows revenue", first_signal: "Professional fees as % of income (24.3% FY26)"}
+  - {risk: "D&A and interest absorb EBITDA", first_signal: "D&A plus finance cost against EBITDA growth; PAT"}
+  - {risk: "Capex outruns accruals", first_signal: "Total debt / EBITDA and liquid investments"}
+  - {risk: "Insurer payment slowdown", first_signal: "Trade receivables and receivable days"}
+  - {risk: "Mature occupancy erosion", first_signal: "Occupancy ex Dombivli"}
+mgmt_questions:
+  - "What are Dombivli revenue, census occupancy and EBITDA excluding the seasonal infectious-disease admissions?"
+  - "What are hospital-wise occupancy, ARPOB and EBITDA margin, and why was the split dropped from AR26?"
+  - "How much of the ARPOB rise is price versus mix, and what is the insurer tariff change?"
+  - "What is total committed capex for Pune South, Mira Road and BKC, phased by year, and the debt peak?"
+  - "How many doctors are on fixed, minimum-plus-variable and pay-per-service terms at Dombivli and Indore?"
+  - "When do NABH accreditation and cashless empanelment land at Dombivli?"
+  - "Why did receivables rise 56.7% in six months to Sep-26 against income +16%?"
+one_line_verdict: "An owned-asset hospital operator with a steady 23% mature margin that is building 1,700 more beds, so profit stays flat until Dombivli and Pune South fill."
+analyst_note: "Dombivli's Q2 FY27 loss of Rs 0.2 Cr is real but part seasonal (management, CC Oct p.4); mid-30% occupancy on about 144 census beds is oral only. The brief's non-census beds (140) is wrong, it is 196. The Rs 669 Cr debt includes Rs 79.8 Cr leases; borrowings are Rs 588.8 Cr. Payor mix labels in the deck legend print out of order; I matched them to AR26 p.20. Unit economics are derived: bed-days use hospital services (IPD+OPD) divided by ARPOB. Incremental FY26 EBITDA margin is 21.9% (below the 23% average) because Dombivli's Q4 loss sat in the base; H1 FY27 PAT fell 7.4%, so the squeeze deepened. Capex per bed ex land is Rs Cr 1.0 to 1.5 in the decks; the ICRA Rs Cr 890-900 plan excludes BKC."
